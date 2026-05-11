@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>cc-bot — drop AI into your group chat to ship code</title>
+    <meta
+      name="description"
+      content="cc-bot is a Claude Code plugin that turns your team's group chat into a remote-control deck for shipping code. Lark today, Slack today, anywhere tomorrow."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+  </head>
+  <body>
+    <!-- Animated grain + noise canvas -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Top nav -->
+    <header class="nav" data-reveal>
+      <a class="nav__brand" href="#top" aria-label="cc-bot home">
+        <img src="./assets/logo.svg" alt="" width="36" height="36" />
+        <span class="nav__word">cc<i>—</i>bot</span>
+      </a>
+      <nav class="nav__menu" aria-label="primary">
+        <a href="#what">What</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#install">Install</a>
+        <a
+          href="https://github.com/WaterTian/cc-bot"
+          target="_blank"
+          rel="noopener"
+          class="nav__cta"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__marquee" aria-hidden="true">
+          <div class="hero__marquee-track">
+            <span>Lark</span><span>·</span><span>Slack</span><span>·</span
+            ><span>Claude Code</span><span>·</span><span>polling</span
+            ><span>·</span><span>multi-agent</span><span>·</span
+            ><span>HUD</span><span>·</span><span>permission matrix</span
+            ><span>·</span><span>Lark</span><span>·</span><span>Slack</span
+            ><span>·</span><span>Claude Code</span><span>·</span
+            ><span>polling</span><span>·</span><span>multi-agent</span
+            ><span>·</span><span>HUD</span><span>·</span
+            ><span>permission matrix</span><span>·</span>
+          </div>
+        </div>
+
+        <div class="hero__inner">
+          <p class="eyebrow" data-reveal>
+            <span class="eyebrow__dot"></span> v0.1.11 · MIT · Windows-first
+          </p>
+          <h1 id="hero-title" class="hero__title">
+            <span data-reveal data-reveal-delay="0">Drop</span>
+            <span data-reveal data-reveal-delay="60">AI</span>
+            <span data-reveal data-reveal-delay="120">into your</span>
+            <em data-reveal data-reveal-delay="180">group&nbsp;chat</em>
+            <span data-reveal data-reveal-delay="240">to ship</span>
+            <span data-reveal data-reveal-delay="300">code.</span>
+          </h1>
+          <p class="hero__lede" data-reveal data-reveal-delay="420">
+            cc-bot is a Claude Code plugin that turns Lark and Slack groups
+            into a remote-control deck for your repos. Type in plain
+            language; the bot dispatches your Claude Code sessions, reports
+            back, and stays out of your way.
+          </p>
+          <div class="hero__ctas" data-reveal data-reveal-delay="540">
+            <a class="btn btn--primary" href="#install">
+              <span>Install in two lines</span>
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/WaterTian/cc-bot"
+              target="_blank"
+              rel="noopener"
+              >Browse the source</a
+            >
+          </div>
+        </div>
+
+        <!-- Chat mockup -->
+        <aside class="hero__chat" aria-label="Example group chat" data-reveal data-reveal-delay="660">
+          <div class="chat__head">
+            <span class="chat__dot chat__dot--r"></span>
+            <span class="chat__dot chat__dot--y"></span>
+            <span class="chat__dot chat__dot--g"></span>
+            <span class="chat__title">#ship-room · cc-bot online</span>
+          </div>
+          <ol class="chat__feed">
+            <li class="chat__msg chat__msg--me">
+              <b>You</b>
+              <p>@cc-bot 把 main 部署到 staging，跑完冒烟测试再喊我</p>
+            </li>
+            <li class="chat__msg chat__msg--bot">
+              <b>cc-bot</b>
+              <p>
+                收到 — 正在跑 <code>scripts/deploy.sh staging</code>，烟测随后跟上。
+                <span class="chat__pill">slot · deploy</span>
+              </p>
+            </li>
+            <li class="chat__msg chat__msg--bot chat__msg--done">
+              <b>cc-bot</b>
+              <p>
+                ✓ staging 已上线，12/12 用例通过，耗时 1m 47s。
+                <a href="#" onclick="return false">日志</a>
+              </p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <!-- What -->
+      <section id="what" class="section section--what">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal>00 — Premise</p>
+        <h2 class="section__h" data-reveal>
+          Your team already lives in the group chat.
+          <em>cc-bot</em> meets them there.
+        </h2>
+        <div class="grid grid--two">
+          <p class="lede" data-reveal>
+            Most engineering bots are dashboards in disguise — yet another tab,
+            yet another sign-in. cc-bot is the opposite: it sits inside the
+            same IM channel where your team already coordinates and takes
+            natural-language orders. Compile a preview, query logs, ship a
+            build — Claude Code does the work, your chat thread is the UI.
+          </p>
+          <ul class="bigfacts" data-reveal>
+            <li><span>2</span><i>IM adapters today — Lark &amp; Slack</i></li>
+            <li><span>3</span><i>defensive polling layers</i></li>
+            <li><span>0</span><i>runtime dependencies on Windows</i></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Capabilities -->
+      <section id="capabilities" class="section section--cap">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal>01 — Capabilities</p>
+        <h2 class="section__h" data-reveal>Six muscles, one bot.</h2>
+
+        <ol class="cards">
+          <li class="card" data-reveal>
+            <span class="card__no">01</span>
+            <h3>IM adapter abstraction</h3>
+            <p>
+              One interface, many group chats. The Lark and Slack adapters
+              ship today; a new IM is just another implementation of the same
+              contract — message in, intent out, reply back.
+            </p>
+            <ul class="card__chips">
+              <li>Lark</li><li>Slack</li><li>plug-in pattern</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="60">
+            <span class="card__no">02</span>
+            <h3>Three-layer defensive polling</h3>
+            <p>
+              IM webhooks lie. cc-bot triangulates against the long-poll
+              channel, a short-poll fallback and a deduplicated emit log, so
+              every message is delivered exactly once even when the network
+              hiccups.
+            </p>
+            <ul class="card__chips">
+              <li>long-poll</li><li>short-poll</li><li>dedupe ledger</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="120">
+            <span class="card__no">03</span>
+            <h3>Multi-agent scheduling</h3>
+            <p>
+              Slots and tags turn parallel Claude sessions into a polite
+              queue. Two deploys won't fight each other; a query and a deploy
+              can run side by side. Conflicts resolved by config, not chance.
+            </p>
+            <ul class="card__chips">
+              <li>slot</li><li>tag</li><li>conflict matrix</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="180">
+            <span class="card__no">04</span>
+            <h3>HUD status broadcast</h3>
+            <p>
+              The Claude Code statusline becomes a live indicator: which
+              agents are busy, which slots are free, last message thread.
+              Your terminal shows the same truth the group chat shows.
+            </p>
+            <ul class="card__chips">
+              <li>statusline</li><li>real-time</li><li>shared state</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="240">
+            <span class="card__no">05</span>
+            <h3>Three-tier permission matrix</h3>
+            <p>
+              Public reads, admin-auto writes, admin-confirm for the scary
+              ones. Each intent is tagged once in the profile; the bot
+              enforces it forever. The chat stays open, the repo stays safe.
+            </p>
+            <ul class="card__chips">
+              <li>public</li><li>admin-auto</li><li>admin-confirm</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="300">
+            <span class="card__no">06</span>
+            <h3>Main-window priority</h3>
+            <p>
+              A <code>UserPromptSubmit</code> hook lets the developer at the
+              keyboard preempt any background bot task. When you're focused,
+              the bot waits — when you step away, it gets back to work.
+            </p>
+            <ul class="card__chips">
+              <li>hook</li><li>preempt</li><li>focus-aware</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Architecture -->
+      <section id="architecture" class="section section--arch">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal>02 — Architecture</p>
+        <h2 class="section__h" data-reveal>
+          A small idea, drawn carefully.
+        </h2>
+        <p class="lede lede--wide" data-reveal>
+          The bot is a thin pipeline. IM messages enter on the left, three
+          polling layers cooperate to make sure none are lost, the
+          scheduler hands them to a Claude Code session under the right
+          permission tier, and the result flows back out — to the chat and
+          to the HUD at the same time.
+        </p>
+
+        <figure class="diagram" data-reveal>
+          <svg viewBox="0 0 1200 480" role="img" aria-label="cc-bot pipeline diagram showing IM messages flowing through polling, scheduler, Claude Code, and back out to chat and HUD" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff5b29" />
+                <stop offset="50%" stop-color="#ffd166" />
+                <stop offset="100%" stop-color="#7df5cf" />
+              </linearGradient>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+              </marker>
+            </defs>
+            <!-- columns -->
+            <g class="d-col">
+              <rect x="40" y="40" width="200" height="400" rx="18" />
+              <text x="140" y="80" text-anchor="middle">IM Layer</text>
+              <g class="d-pill"><rect x="70" y="120" width="140" height="44" rx="22" /><text x="140" y="148">Lark</text></g>
+              <g class="d-pill"><rect x="70" y="184" width="140" height="44" rx="22" /><text x="140" y="212">Slack</text></g>
+              <text class="d-note" x="140" y="270" text-anchor="middle">adapter contract</text>
+              <text class="d-note" x="140" y="290" text-anchor="middle">message in / out</text>
+            </g>
+
+            <g class="d-col">
+              <rect x="290" y="40" width="240" height="400" rx="18" />
+              <text x="410" y="80" text-anchor="middle">Polling — 3 layers</text>
+              <g class="d-pill"><rect x="320" y="120" width="180" height="44" rx="10" /><text x="410" y="148">long-poll</text></g>
+              <g class="d-pill"><rect x="320" y="180" width="180" height="44" rx="10" /><text x="410" y="208">short-poll fallback</text></g>
+              <g class="d-pill"><rect x="320" y="240" width="180" height="44" rx="10" /><text x="410" y="268">dedupe ledger</text></g>
+              <text class="d-note" x="410" y="330" text-anchor="middle">exactly-once delivery</text>
+            </g>
+
+            <g class="d-col">
+              <rect x="580" y="40" width="240" height="400" rx="18" />
+              <text x="700" y="80" text-anchor="middle">Scheduler</text>
+              <g class="d-pill d-pill--accent"><rect x="610" y="120" width="180" height="44" rx="10" /><text x="700" y="148">slot · tag</text></g>
+              <g class="d-pill"><rect x="610" y="180" width="180" height="44" rx="10" /><text x="700" y="208">conflict matrix</text></g>
+              <g class="d-pill"><rect x="610" y="240" width="180" height="44" rx="10" /><text x="700" y="268">main-window hook</text></g>
+              <text class="d-note" x="700" y="330" text-anchor="middle">permission tier check</text>
+              <text class="d-note d-note--em" x="700" y="350" text-anchor="middle">public / admin-auto / admin-confirm</text>
+            </g>
+
+            <g class="d-col">
+              <rect x="870" y="40" width="290" height="400" rx="18" />
+              <text x="1015" y="80" text-anchor="middle">Output</text>
+              <g class="d-pill"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148">Claude Code session</text></g>
+              <g class="d-pill"><rect x="900" y="180" width="230" height="44" rx="10" /><text x="1015" y="208">chat reply</text></g>
+              <g class="d-pill"><rect x="900" y="240" width="230" height="44" rx="10" /><text x="1015" y="268">HUD broadcast</text></g>
+              <text class="d-note" x="1015" y="330" text-anchor="middle">terminal + chat agree</text>
+            </g>
+
+            <!-- arrows -->
+            <g stroke="url(#gline)" stroke-width="3" fill="none" marker-end="url(#arrow)" color="#ffd166" class="d-arrow">
+              <path d="M240 200 C 265 200, 270 200, 290 200" />
+              <path d="M530 200 C 555 200, 560 200, 580 200" />
+              <path d="M820 200 C 845 200, 850 200, 870 200" />
+            </g>
+            <!-- return path -->
+            <g stroke="#3a3a3a" stroke-dasharray="4 6" stroke-width="2" fill="none" class="d-arrow-back">
+              <path d="M1015 440 C 1015 460, 140 460, 140 440" />
+              <text x="600" y="455" text-anchor="middle" fill="#888" font-size="12">return: status + result</text>
+            </g>
+          </svg>
+          <figcaption>
+            Messages flow left → right; status flows back along the dotted
+            return path.
+          </figcaption>
+        </figure>
+
+        <div class="perm" data-reveal>
+          <h3 class="perm__h">Permission matrix</h3>
+          <div class="perm__grid" role="table" aria-label="Permission tiers">
+            <div role="row" class="perm__row perm__row--head">
+              <div role="columnheader">Tier</div>
+              <div role="columnheader">Who can call</div>
+              <div role="columnheader">Confirmation</div>
+              <div role="columnheader">Typical intent</div>
+            </div>
+            <div role="row" class="perm__row">
+              <div role="cell"><b>public</b></div>
+              <div role="cell">any group member</div>
+              <div role="cell">none</div>
+              <div role="cell"><code>查进度</code> · <code>查日志</code></div>
+            </div>
+            <div role="row" class="perm__row">
+              <div role="cell"><b>admin-auto</b></div>
+              <div role="cell"><code>admin_open_ids</code></div>
+              <div role="cell">none</div>
+              <div role="cell"><code>compile_preview</code> · <code>run_tests</code></div>
+            </div>
+            <div role="row" class="perm__row">
+              <div role="cell"><b>admin-confirm</b></div>
+              <div role="cell"><code>admin_open_ids</code></div>
+              <div role="cell">reply <em>yes</em></div>
+              <div role="cell"><code>deploy_prod</code> · <code>db_migrate</code></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Install -->
+      <section id="install" class="section section--install">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal>03 — Install</p>
+        <h2 class="section__h" data-reveal>Three lines to a chat-driven repo.</h2>
+
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <p class="step__no">01</p>
+            <h3>Add the marketplace</h3>
+            <pre class="code"><code><span class="tk-c">#</span> inside Claude Code
+<span class="tk-p">/plugin marketplace add</span> WaterTian/cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot" aria-label="Copy command">copy</button></pre>
+          </li>
+          <li class="step" data-reveal data-reveal-delay="80">
+            <p class="step__no">02</p>
+            <h3>Install the plugin</h3>
+            <pre class="code"><code><span class="tk-p">/plugin install</span> cc-bot@WaterTian-cc-bot</code><button class="copy" data-copy="/plugin install cc-bot@WaterTian-cc-bot" aria-label="Copy command">copy</button></pre>
+          </li>
+          <li class="step" data-reveal data-reveal-delay="160">
+            <p class="step__no">03</p>
+            <h3>Run setup</h3>
+            <pre class="code"><code><span class="tk-p">/cc-bot:setup</span></code><button class="copy" data-copy="/cc-bot:setup" aria-label="Copy command">copy</button></pre>
+            <p class="step__after">
+              You'll pick Lark or Slack, paste a few tokens, and cc-bot will
+              auto-detect chat IDs and write <code>.cc-bot/profiles/active.json</code> for you.
+              Then <code>/cc-bot:start</code> brings the bot online.
+            </p>
+          </li>
+        </ol>
+
+        <div class="commands" data-reveal>
+          <h3>Slash commands</h3>
+          <ul>
+            <li><code>/cc-bot:setup</code> — interactive onboarding</li>
+            <li><code>/cc-bot:start</code> — bring the bot online</li>
+            <li><code>/cc-bot:stop</code> — take it offline</li>
+            <li><code>/cc-bot:new-profile &lt;name&gt;</code> — clone the template</li>
+            <li><code>/cc-bot:switch &lt;name&gt;</code> — swap active profile</li>
+            <li><code>/cc-bot:doctor</code> — health check &amp; diagnostics</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--cta">
+        <div class="cta">
+          <h2 data-reveal>Ship from where the team already talks.</h2>
+          <p data-reveal data-reveal-delay="80">
+            cc-bot is MIT-licensed, runtime-free on Windows, and lives on
+            GitHub. Bring your own IM; the rest is wired up.
+          </p>
+          <div class="hero__ctas" data-reveal data-reveal-delay="160">
+            <a class="btn btn--primary" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
+              <span>Open the repo</span><span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="#install">Read the install steps</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__row">
+        <div class="foot__brand">
+          <img src="./assets/logo.svg" alt="" width="28" height="28" />
+          <strong>cc-bot</strong>
+          <span>v0.1.11 · MIT · 接 AI 进群里开发项目</span>
+        </div>
+        <nav class="foot__nav" aria-label="footer">
+          <a href="#what">What</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#install">Install</a>
+          <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+      </div>
+      <p class="foot__meta">
+        Built as a showcase site — design by way of rouserlab's calm
+        editorial pacing and the-field's animated mischief. Not affiliated
+        with Lark, Slack, or Anthropic.
+      </p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
