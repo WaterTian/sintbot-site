@@ -18,9 +18,9 @@
   --aqua: #7df5cf;
   --gold: #ffd166;
 
-  --f-display: "Fraunces", ui-serif, Georgia, serif;
-  --f-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-display: "Fraunces", "Noto Serif SC", ui-serif, Georgia, serif;
+  --f-ui: "Inter", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", "Noto Sans SC", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --gut: clamp(20px, 4vw, 56px);
   --col-max: 1280px;
@@ -46,6 +46,24 @@ body {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* CJK adjustments — Chinese mode */
+html[lang="zh"] {
+  line-height: 1.7;
+}
+html[lang="zh"] body {
+  letter-spacing: 0;
+}
+html[lang="zh"] .hero__title,
+html[lang="zh"] .section__h,
+html[lang="zh"] .cta h2 {
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+html[lang="zh"] .section__kicker,
+html[lang="zh"] .eyebrow {
+  letter-spacing: 0.12em;
 }
 
 a {
@@ -194,6 +212,40 @@ body.cursor-on .cursor-glow {
   display: none;
 }
 
+/* Language toggle ========================================== */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.lang-toggle__btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 2px 4px;
+  color: var(--muted);
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition: color 220ms var(--ease-out);
+}
+.lang-toggle__btn:hover {
+  color: var(--bone);
+}
+.lang-toggle__btn.is-active {
+  color: var(--signal);
+}
+.lang-toggle__sep {
+  color: var(--line);
+}
+
 @media (max-width: 720px) {
   .nav__menu {
     gap: 14px;
@@ -201,6 +253,11 @@ body.cursor-on .cursor-glow {
   }
   .nav__menu a:not(.nav__cta):not(:last-of-type) {
     display: none;
+  }
+  .lang-toggle {
+    margin-left: 0;
+    padding: 3px 8px;
+    font-size: 11px;
   }
 }
 
