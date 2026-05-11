@@ -31,3 +31,11 @@ The site reads as **"cc-bot for Slack"**. Lark / Feishu is mentioned as a second
 ## Design rationale
 
 Editorial calm from rouserlab — generous whitespace, oversized Fraunces display type, numbered story sections, a single muted accent color carrying the eye. Visual punch from the-field — animated grain, a giant background marquee of the product's keywords, scroll-triggered reveals, a soft cursor glow, and a tilted hero Slack-thread mockup that levels on hover. The result is an opinionated, distinctive cc-bot identity rather than a clone of either source.
+
+## i18n — EN / 中文
+
+Single-page bilingual via JS toggle in the nav (`EN / 中`). All prose strings carry `data-i18n` / `data-i18n-html` attributes and live in a `translations` object inside `app.js`. Code, command names and identifiers stay English in both modes. Language preference persists in `localStorage` (`cc_bot_site_lang`), and first-visit detection falls back to `navigator.language`.
+
+Chinese typography uses Noto Serif SC (display) + Noto Sans SC (UI), loaded from the same Google Fonts URL as the English families. `html[lang="zh"]` relaxes line-height and drops letter-tracking so CJK reads cleanly.
+
+中文版与英文版共用同一份 HTML — 不切路由，不分目录。导航右上角的 `EN / 中` 按钮即时切换。

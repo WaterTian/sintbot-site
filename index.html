@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>cc-bot for Slack — drop Claude Code into your channel</title>
+    <title>cc-bot for Slack — Claude Code in your channel</title>
     <meta
       name="description"
-      content="cc-bot is a Slack-native AI dev assistant powered by Claude Code. Triage bugs, ship code, and run async standups from the channel your team already lives in. Lark/Feishu also supported."
+      content="Slack-native Claude Code. Mention the bot, ship from chat. Lark / Feishu supported through the same IMAdapter interface."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -31,10 +31,10 @@
         <span class="nav__forslack" aria-hidden="true">for Slack</span>
       </a>
       <nav class="nav__menu" aria-label="primary">
-        <a href="#scenarios">Scenarios</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#install">Setup</a>
+        <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
+        <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+        <a href="#install" data-i18n="nav.setup">Setup</a>
         <a
           href="https://github.com/WaterTian/cc-bot"
           target="_blank"
@@ -42,6 +42,11 @@
           class="nav__cta"
           >GitHub <span aria-hidden="true">↗</span></a
         >
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="lang-toggle__btn is-active">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button type="button" data-lang="zh" class="lang-toggle__btn">中</button>
+        </div>
       </nav>
     </header>
 
@@ -64,26 +69,24 @@
 
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
-            <span class="eyebrow__dot"></span> v0.1.12 · Slack adapter shipped · MIT
+            <span class="eyebrow__dot"></span>
+            <span data-i18n="hero.eyebrow">v0.1.12 · Slack adapter shipped · MIT</span>
           </p>
           <h1 id="hero-title" class="hero__title">
-            <span data-reveal data-reveal-delay="0">Drop</span>
-            <span data-reveal data-reveal-delay="60">Claude</span>
-            <span data-reveal data-reveal-delay="120">Code into your</span>
-            <em data-reveal data-reveal-delay="180">Slack&nbsp;channel</em>
-            <span data-reveal data-reveal-delay="240">and ship</span>
-            <span data-reveal data-reveal-delay="300">from chat.</span>
+            <span class="hero__title-en" data-i18n-html="hero.titleEn">
+              <span data-reveal data-reveal-delay="0">Slack-native</span>
+              <em data-reveal data-reveal-delay="120">Claude&nbsp;Code.</em>
+              <span data-reveal data-reveal-delay="240">Ship from chat.</span>
+            </span>
           </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420">
-            cc-bot is a Slack-native AI dev assistant powered by Claude Code.
-            Mention it in any channel — it reads the thread, runs your
-            scripts, opens PRs, and replies right where the team is already
-            talking. Lark / Feishu is supported through the same adapter
-            interface.
+          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n="hero.lede">
+            Mention cc-bot in any Slack channel. It reads the thread, runs your
+            scripts, opens PRs, replies in place. Lark / Feishu through the
+            same IMAdapter.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#install">
-              <span>Set up the Slack app</span>
+              <span data-i18n="hero.cta.primary">Set up the Slack app</span>
               <span class="btn__arrow" aria-hidden="true">→</span>
             </a>
             <a
@@ -91,6 +94,7 @@
               href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12"
               target="_blank"
               rel="noopener"
+              data-i18n="hero.cta.secondary"
               >Slack adapter source</a
             >
           </div>
@@ -108,26 +112,25 @@
           </div>
           <ol class="chat__feed">
             <li class="chat__msg chat__msg--me">
-              <b>Lin · PM</b>
-              <p>@cc-bot signup is throwing 500 on staging — see screenshot in #bugs. can you triage in this thread?</p>
+              <b data-i18n="chat.user.name">Lin · PM</b>
+              <p data-i18n="chat.msg1">@cc-bot signup is throwing 500 on staging — can you triage?</p>
             </li>
             <li class="chat__msg chat__msg--bot">
               <b>cc-bot <span class="chat__app">APP</span></b>
-              <p>
-                On it. Pulled the latest <code>auth/signup.ts</code>, found a
-                missing await on <code>hashPassword()</code>. Opened
-                <a href="#" onclick="return false">PR #482</a>.
+              <p data-i18n-html="chat.msg2">
+                On it. Missing <code>await</code> on <code>hashPassword()</code>.
+                Opened <a href="#" onclick="return false">PR #482</a>.
                 <span class="chat__pill">slot · debug</span>
               </p>
             </li>
             <li class="chat__msg chat__msg--me">
-              <b>Lin · PM</b>
-              <p>nice — ship to staging when CI is green</p>
+              <b data-i18n="chat.user.name">Lin · PM</b>
+              <p data-i18n="chat.msg3">ship to staging when CI is green</p>
             </li>
             <li class="chat__msg chat__msg--bot chat__msg--done">
               <b>cc-bot <span class="chat__app">APP</span></b>
-              <p>
-                ✓ merged · staging deploy 1m 47s · 12/12 smoke passed.
+              <p data-i18n-html="chat.msg4">
+                ✓ merged · staging 1m 47s · 12/12 smoke passed.
                 <a href="#" onclick="return false">build log</a>
               </p>
             </li>
@@ -138,14 +141,12 @@
       <!-- Scenarios -->
       <section id="scenarios" class="section section--scenarios">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal>00 — In your Slack workspace</p>
-        <h2 class="section__h" data-reveal>
+        <p class="section__kicker" data-reveal data-i18n="scenarios.kicker">00 — In your workspace</p>
+        <h2 class="section__h" data-reveal data-i18n-html="scenarios.h">
           Where <em>cc-bot</em> earns its keep.
         </h2>
-        <p class="lede lede--wide" data-reveal>
-          Five everyday channels, five jobs the bot quietly handles. Nothing
-          theatrical — just the loop of "ask in chat, get a real answer, keep
-          working."
+        <p class="lede lede--wide" data-reveal data-i18n="scenarios.lede">
+          Five channels, five jobs. Ask in chat, get an answer, keep working.
         </p>
 
         <ol class="scenarios">
@@ -153,19 +154,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>bugs
             </div>
-            <h3>PM drops a screenshot, cc-bot opens a fix PR</h3>
-            <p class="scenario__scene">
-              Maya pastes a screenshot of a 500 from staging into
-              <code>#bugs</code> and writes "@cc-bot what's going on?"
+            <h3 data-i18n="scenarios.1.title">PM drops a screenshot, cc-bot opens a PR.</h3>
+            <p class="scenario__scene" data-i18n-html="scenarios.1.scene">
+              Maya pastes a 500 screenshot into <code>#bugs</code>.
             </p>
-            <p class="scenario__act">
-              cc-bot downloads the image, greps the error in the repo, traces
-              it to a stale migration, opens a PR with the fix, and replies in
-              the same thread with the diff and a link.
+            <p class="scenario__act" data-i18n="scenarios.1.act">
+              Bot reads the image, greps the repo, finds a stale migration, opens the PR, replies with the diff.
             </p>
-            <p class="scenario__win">
-              <i>Why it wins:</i> the conversation, the screenshot, the fix,
-              and the PR all live in one thread anyone can scroll back to.
+            <p class="scenario__win" data-i18n-html="scenarios.1.win">
+              <i>Why it wins:</i> screenshot, fix, PR — one thread.
             </p>
           </li>
 
@@ -173,20 +170,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>deploys
             </div>
-            <h3>Solo dev ships from the channel</h3>
-            <p class="scenario__scene">
-              You finish a feature on the train and type "ship to prod" into
-              <code>#deploys</code>.
+            <h3 data-i18n="scenarios.2.title">Solo dev ships from the channel.</h3>
+            <p class="scenario__scene" data-i18n-html="scenarios.2.scene">
+              You type "ship to prod" into <code>#deploys</code>.
             </p>
-            <p class="scenario__act">
-              Because <code>deploy_prod</code> is tagged
-              <code>admin-confirm</code>, cc-bot replays the command and waits
-              for "yes". It runs the deploy, streams the build URL, and posts
-              the version tag when it's live.
+            <p class="scenario__act" data-i18n-html="scenarios.2.act">
+              <code>deploy_prod</code> is <code>admin-confirm</code> — bot waits for "yes", deploys, posts the version tag.
             </p>
-            <p class="scenario__win">
-              <i>Why it wins:</i> no SSH, no dashboard tab, no terminal — and
-              still a full audit trail in Slack.
+            <p class="scenario__win" data-i18n-html="scenarios.2.win">
+              <i>Why it wins:</i> no SSH, no dashboard, full audit trail.
             </p>
           </li>
 
@@ -194,18 +186,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>product
             </div>
-            <h3>Cross-team status without pinging the team</h3>
-            <p class="scenario__scene">
-              In <code>#product</code> a PM asks "where are we on Feature X?"
+            <h3 data-i18n="scenarios.3.title">Status without pinging the team.</h3>
+            <p class="scenario__scene" data-i18n-html="scenarios.3.scene">
+              PM asks "where are we on Feature X?" in <code>#product</code>.
             </p>
-            <p class="scenario__act">
-              cc-bot reads the project's progress doc (path lives in the
-              profile), summarizes the open tasks and last commits touching
-              the feature flag, and posts a tidy bullet list.
+            <p class="scenario__act" data-i18n="scenarios.3.act">
+              Bot reads the progress doc, cross-refs recent commits, posts a tidy bullet list.
             </p>
-            <p class="scenario__win">
-              <i>Why it wins:</i> the engineer keeps their flow, the PM gets
-              their answer in 20 seconds.
+            <p class="scenario__win" data-i18n-html="scenarios.3.win">
+              <i>Why it wins:</i> engineer keeps flow, PM gets the answer in 20s.
             </p>
           </li>
 
@@ -213,19 +202,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>standup
             </div>
-            <h3>Async standup that writes itself</h3>
-            <p class="scenario__scene">
-              At 09:30 a scheduled prompt drops in <code>#standup</code>:
-              "what shipped yesterday?"
+            <h3 data-i18n="scenarios.4.title">Standup that writes itself.</h3>
+            <p class="scenario__scene" data-i18n-html="scenarios.4.scene">
+              At 09:30 a prompt drops in <code>#standup</code>.
             </p>
-            <p class="scenario__act">
-              cc-bot diffs the last 24h of <code>git log</code>, cross-refs
-              the intents in <code>profile.intents</code>, and posts a
-              three-line summary per repo with author handles linked.
+            <p class="scenario__act" data-i18n-html="scenarios.4.act">
+              Bot diffs 24h of <code>git log</code>, posts three lines per repo with authors linked.
             </p>
-            <p class="scenario__win">
-              <i>Why it wins:</i> the standup happens whether or not the
-              humans show up.
+            <p class="scenario__win" data-i18n-html="scenarios.4.win">
+              <i>Why it wins:</i> happens whether or not humans show up.
             </p>
           </li>
 
@@ -233,20 +218,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>ops-alerts
             </div>
-            <h3>On-call gets a triage, not just an alert</h3>
-            <p class="scenario__scene">
-              Datadog fires a latency alert into <code>#ops-alerts</code> at
-              02:14.
+            <h3 data-i18n="scenarios.5.title">On-call gets a triage, not just an alert.</h3>
+            <p class="scenario__scene" data-i18n-html="scenarios.5.scene">
+              Datadog fires a latency alert at 02:14.
             </p>
-            <p class="scenario__act">
-              cc-bot picks up the keyword, queries logs through the project's
-              configured MCP, and threads a probable cause: "p95 spike
-              correlates with the new <code>orders</code> index migration —
-              suggest pausing reindex job."
+            <p class="scenario__act" data-i18n-html="scenarios.5.act">
+              Bot queries logs via MCP, threads a probable cause: "p95 spike correlates with the new <code>orders</code> reindex."
             </p>
-            <p class="scenario__win">
-              <i>Why it wins:</i> the on-call wakes up to a starting point,
-              not a mystery.
+            <p class="scenario__win" data-i18n-html="scenarios.5.win">
+              <i>Why it wins:</i> on-call wakes to a starting point, not a mystery.
             </p>
           </li>
         </ol>
@@ -255,18 +235,16 @@
       <!-- Capabilities -->
       <section id="capabilities" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal>01 — Capabilities</p>
-        <h2 class="section__h" data-reveal>Six muscles, one bot.</h2>
+        <p class="section__kicker" data-reveal data-i18n="cap.kicker">01 — Capabilities</p>
+        <h2 class="section__h" data-reveal data-i18n="cap.h">Six muscles, one bot.</h2>
 
         <ol class="cards">
           <li class="card" data-reveal>
             <span class="card__no">01</span>
-            <h3>Slack-native, IM-agnostic</h3>
-            <p>
-              Slack ships with Socket Mode push (no public webhook needed,
-              works behind firewalls). The same <code>IMAdapter</code>
-              interface also powers the Lark adapter — and the next adapter
-              is one file.
+            <h3 data-i18n="cap.1.title">Slack-native, IM-agnostic</h3>
+            <p data-i18n-html="cap.1.body">
+              Socket Mode push — no public webhook, works behind firewalls. The same
+              <code>IMAdapter</code> powers Lark. The next adapter is one file.
             </p>
             <ul class="card__chips">
               <li>Slack</li><li>Lark</li><li>Socket Mode</li>
@@ -274,12 +252,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="60">
             <span class="card__no">02</span>
-            <h3>Defensive delivery</h3>
-            <p>
-              Slack push events get triangulated against a short-poll
-              fallback and a deduplicated emit ledger, so every channel
-              message is delivered exactly once even when the WebSocket
-              hiccups.
+            <h3 data-i18n="cap.2.title">Defensive delivery</h3>
+            <p data-i18n="cap.2.body">
+              Push events are triangulated against a short-poll fallback and a dedupe ledger. Every message delivered exactly once.
             </p>
             <ul class="card__chips">
               <li>push</li><li>poll fallback</li><li>dedupe ledger</li>
@@ -287,12 +262,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
             <span class="card__no">03</span>
-            <h3>Multi-agent scheduling</h3>
-            <p>
-              Slots and tags turn parallel Claude sessions into a polite
-              queue. Two deploys won't fight each other; a query and a
-              deploy can run side by side. Conflicts resolved by config,
-              not chance.
+            <h3 data-i18n="cap.3.title">Multi-agent scheduling</h3>
+            <p data-i18n="cap.3.body">
+              Slots and tags turn parallel Claude sessions into a polite queue. Conflicts resolved by config, not chance.
             </p>
             <ul class="card__chips">
               <li>slot</li><li>tag</li><li>conflict matrix</li>
@@ -300,11 +272,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="180">
             <span class="card__no">04</span>
-            <h3>HUD status broadcast</h3>
-            <p>
-              The Claude Code statusline becomes a live indicator: which
-              agents are busy, which slots are free, last channel thread.
-              Your terminal shows the same truth the Slack channel shows.
+            <h3 data-i18n="cap.4.title">HUD status broadcast</h3>
+            <p data-i18n="cap.4.body">
+              The statusline goes live: which agents are busy, which slots are free, last thread. Terminal and Slack agree.
             </p>
             <ul class="card__chips">
               <li>statusline</li><li>real-time</li><li>shared state</li>
@@ -312,12 +282,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="240">
             <span class="card__no">05</span>
-            <h3>Three-tier permission matrix</h3>
-            <p>
-              Public reads, admin-auto writes, admin-confirm for the scary
-              ones. Each intent is tagged once in the profile; the bot
-              enforces it forever. The channel stays open, the repo stays
-              safe.
+            <h3 data-i18n="cap.5.title">Three-tier permission matrix</h3>
+            <p data-i18n="cap.5.body">
+              Public reads, admin-auto writes, admin-confirm for the scary ones. Tag the intent once; the bot enforces it forever.
             </p>
             <ul class="card__chips">
               <li>public</li><li>admin-auto</li><li>admin-confirm</li>
@@ -325,12 +292,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="300">
             <span class="card__no">06</span>
-            <h3>Main-window priority</h3>
-            <p>
-              A <code>UserPromptSubmit</code> hook lets the developer at
-              the keyboard preempt any background bot task. When you're
-              focused, the bot waits — when you step away, it gets back
-              to work.
+            <h3 data-i18n="cap.6.title">Main-window priority</h3>
+            <p data-i18n-html="cap.6.body">
+              A <code>UserPromptSubmit</code> hook lets the dev at the keyboard preempt any background task. Focused — bot waits. Away — it works.
             </p>
             <ul class="card__chips">
               <li>hook</li><li>preempt</li><li>focus-aware</li>
@@ -342,25 +306,17 @@
       <!-- Adapter abstraction callout -->
       <section class="section section--adapter">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal>02 — Engineering note</p>
+        <p class="section__kicker" data-reveal data-i18n="adapter.kicker">02 — Engineering note</p>
         <div class="adapter">
           <div class="adapter__copy">
-            <h2 class="section__h section__h--small" data-reveal>
+            <h2 class="section__h section__h--small" data-reveal data-i18n-html="adapter.h">
               One <em>IMAdapter</em>, many group chats.
             </h2>
-            <p class="lede" data-reveal>
-              <code>adapters/base.js</code> defines the contract —
-              <code>listRecentMessages</code>, <code>sendText</code>,
-              <code>sendImage</code>, <code>downloadResource</code>,
-              <code>getUser</code>. Each IM is a single file that fulfils
-              that contract. Slack and Lark ship today; Discord, Teams, or
-              your private chat platform is a weekend project.
+            <p class="lede" data-reveal data-i18n-html="adapter.p1">
+              <code>adapters/base.js</code> defines the contract. Each IM is one file that fulfils it. Slack and Lark ship today; Discord or Teams is a weekend.
             </p>
-            <p class="lede" data-reveal>
-              The runtime reads <code>profile.im.type</code> at startup,
-              instantiates the right adapter, and the rest of the pipeline
-              never knows which IM it's talking to. Channels are channels,
-              messages are messages, replies go back the way they came.
+            <p class="lede" data-reveal data-i18n-html="adapter.p2">
+              Runtime reads <code>profile.im.type</code>, instantiates the adapter, and the rest of the pipeline never knows which IM it's talking to.
             </p>
           </div>
           <pre class="code code--block" data-reveal><code><span class="tk-c">// adapters/base.js — the contract every IM implements</span>
@@ -382,17 +338,12 @@
       <!-- Architecture -->
       <section id="architecture" class="section section--arch">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal>03 — Architecture</p>
-        <h2 class="section__h" data-reveal>
+        <p class="section__kicker" data-reveal data-i18n="arch.kicker">03 — Architecture</p>
+        <h2 class="section__h" data-reveal data-i18n="arch.h">
           A small idea, drawn carefully.
         </h2>
-        <p class="lede lede--wide" data-reveal>
-          The bot is a thin pipeline. Slack channel events arrive on
-          Socket Mode (Lark uses HTTP polling). A short-poll fallback and
-          a dedupe ledger guarantee exactly-once. The scheduler hands
-          messages to a Claude Code session under the right permission
-          tier, and the result flows back out — to the channel and to
-          the HUD at the same time.
+        <p class="lede lede--wide" data-reveal data-i18n="arch.lede">
+          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier. Result flows back to channel and HUD together.
         </p>
 
         <figure class="diagram" data-reveal>
@@ -410,39 +361,39 @@
             <!-- columns -->
             <g class="d-col">
               <rect x="40" y="40" width="200" height="400" rx="18" />
-              <text x="140" y="80" text-anchor="middle">IM Layer</text>
+              <text x="140" y="80" text-anchor="middle" data-i18n-svg="arch.col.im">IM Layer</text>
               <g class="d-pill d-pill--accent"><rect x="70" y="120" width="140" height="44" rx="22" /><text x="140" y="148">Slack</text></g>
               <g class="d-pill"><rect x="70" y="184" width="140" height="44" rx="22" /><text x="140" y="212">Lark</text></g>
-              <text class="d-note" x="140" y="270" text-anchor="middle">IMAdapter contract</text>
-              <text class="d-note" x="140" y="290" text-anchor="middle">channels · threads</text>
+              <text class="d-note" x="140" y="270" text-anchor="middle">IMAdapter</text>
+              <text class="d-note" x="140" y="290" text-anchor="middle" data-i18n-svg="arch.col.im.note">channels · threads</text>
             </g>
 
             <g class="d-col">
               <rect x="290" y="40" width="240" height="400" rx="18" />
-              <text x="410" y="80" text-anchor="middle">Delivery</text>
+              <text x="410" y="80" text-anchor="middle" data-i18n-svg="arch.col.delivery">Delivery</text>
               <g class="d-pill"><rect x="320" y="120" width="180" height="44" rx="10" /><text x="410" y="148">Socket Mode push</text></g>
-              <g class="d-pill"><rect x="320" y="180" width="180" height="44" rx="10" /><text x="410" y="208">short-poll fallback</text></g>
-              <g class="d-pill"><rect x="320" y="240" width="180" height="44" rx="10" /><text x="410" y="268">dedupe ledger</text></g>
-              <text class="d-note" x="410" y="330" text-anchor="middle">exactly-once delivery</text>
+              <g class="d-pill"><rect x="320" y="180" width="180" height="44" rx="10" /><text x="410" y="208" data-i18n-svg="arch.delivery.poll">short-poll fallback</text></g>
+              <g class="d-pill"><rect x="320" y="240" width="180" height="44" rx="10" /><text x="410" y="268" data-i18n-svg="arch.delivery.dedupe">dedupe ledger</text></g>
+              <text class="d-note" x="410" y="330" text-anchor="middle" data-i18n-svg="arch.delivery.note">exactly-once delivery</text>
             </g>
 
             <g class="d-col">
               <rect x="580" y="40" width="240" height="400" rx="18" />
-              <text x="700" y="80" text-anchor="middle">Scheduler</text>
+              <text x="700" y="80" text-anchor="middle" data-i18n-svg="arch.col.sched">Scheduler</text>
               <g class="d-pill d-pill--accent"><rect x="610" y="120" width="180" height="44" rx="10" /><text x="700" y="148">slot · tag</text></g>
-              <g class="d-pill"><rect x="610" y="180" width="180" height="44" rx="10" /><text x="700" y="208">conflict matrix</text></g>
-              <g class="d-pill"><rect x="610" y="240" width="180" height="44" rx="10" /><text x="700" y="268">main-window hook</text></g>
-              <text class="d-note" x="700" y="330" text-anchor="middle">permission tier check</text>
+              <g class="d-pill"><rect x="610" y="180" width="180" height="44" rx="10" /><text x="700" y="208" data-i18n-svg="arch.sched.matrix">conflict matrix</text></g>
+              <g class="d-pill"><rect x="610" y="240" width="180" height="44" rx="10" /><text x="700" y="268" data-i18n-svg="arch.sched.hook">main-window hook</text></g>
+              <text class="d-note" x="700" y="330" text-anchor="middle" data-i18n-svg="arch.sched.note">permission tier check</text>
               <text class="d-note d-note--em" x="700" y="350" text-anchor="middle">public / admin-auto / admin-confirm</text>
             </g>
 
             <g class="d-col">
               <rect x="870" y="40" width="290" height="400" rx="18" />
-              <text x="1015" y="80" text-anchor="middle">Output</text>
+              <text x="1015" y="80" text-anchor="middle" data-i18n-svg="arch.col.out">Output</text>
               <g class="d-pill"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148">Claude Code session</text></g>
-              <g class="d-pill"><rect x="900" y="180" width="230" height="44" rx="10" /><text x="1015" y="208">channel reply</text></g>
+              <g class="d-pill"><rect x="900" y="180" width="230" height="44" rx="10" /><text x="1015" y="208" data-i18n-svg="arch.out.reply">channel reply</text></g>
               <g class="d-pill"><rect x="900" y="240" width="230" height="44" rx="10" /><text x="1015" y="268">HUD broadcast</text></g>
-              <text class="d-note" x="1015" y="330" text-anchor="middle">terminal + Slack agree</text>
+              <text class="d-note" x="1015" y="330" text-anchor="middle" data-i18n-svg="arch.out.note">terminal + Slack agree</text>
             </g>
 
             <!-- arrows -->
@@ -454,41 +405,39 @@
             <!-- return path -->
             <g stroke="#3a3a3a" stroke-dasharray="4 6" stroke-width="2" fill="none" class="d-arrow-back">
               <path d="M1015 440 C 1015 460, 140 460, 140 440" />
-              <text x="600" y="455" text-anchor="middle" fill="#888" font-size="12">return: status + result</text>
+              <text x="600" y="455" text-anchor="middle" fill="#888" font-size="12" data-i18n-svg="arch.return">return: status + result</text>
             </g>
           </svg>
-          <figcaption>
-            Channel events flow left → right; status flows back along the
-            dotted return path. Slack uses Socket Mode push as the primary
-            channel; Lark falls back to HTTP polling.
+          <figcaption data-i18n="arch.caption">
+            Events flow left → right; status returns along the dotted path. Slack uses Socket Mode; Lark falls back to HTTP polling.
           </figcaption>
         </figure>
 
         <div class="perm" data-reveal>
-          <h3 class="perm__h">Permission matrix</h3>
+          <h3 class="perm__h" data-i18n="perm.h">Permission matrix</h3>
           <div class="perm__grid" role="table" aria-label="Permission tiers">
             <div role="row" class="perm__row perm__row--head">
-              <div role="columnheader">Tier</div>
-              <div role="columnheader">Who can call</div>
-              <div role="columnheader">Confirmation</div>
-              <div role="columnheader">Typical intent</div>
+              <div role="columnheader" data-i18n="perm.col.tier">Tier</div>
+              <div role="columnheader" data-i18n="perm.col.who">Who can call</div>
+              <div role="columnheader" data-i18n="perm.col.confirm">Confirmation</div>
+              <div role="columnheader" data-i18n="perm.col.intent">Typical intent</div>
             </div>
             <div role="row" class="perm__row">
               <div role="cell"><b>public</b></div>
-              <div role="cell">any channel member</div>
-              <div role="cell">none</div>
+              <div role="cell" data-i18n="perm.row1.who">any channel member</div>
+              <div role="cell" data-i18n="perm.row1.confirm">none</div>
               <div role="cell"><code>status</code> · <code>tail logs</code></div>
             </div>
             <div role="row" class="perm__row">
               <div role="cell"><b>admin-auto</b></div>
               <div role="cell"><code>admin_open_ids</code></div>
-              <div role="cell">none</div>
+              <div role="cell" data-i18n="perm.row2.confirm">none</div>
               <div role="cell"><code>compile_preview</code> · <code>run_tests</code></div>
             </div>
             <div role="row" class="perm__row">
               <div role="cell"><b>admin-confirm</b></div>
               <div role="cell"><code>admin_open_ids</code></div>
-              <div role="cell">reply <em>yes</em></div>
+              <div role="cell" data-i18n-html="perm.row3.confirm">reply <em>yes</em></div>
               <div role="cell"><code>deploy_prod</code> · <code>db_migrate</code></div>
             </div>
           </div>
@@ -498,36 +447,30 @@
       <!-- Install -->
       <section id="install" class="section section--install">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal>04 — Slack setup</p>
-        <h2 class="section__h" data-reveal>Four steps to a chat-driven repo.</h2>
-        <p class="lede lede--wide" data-reveal>
-          The <code>/cc-bot:setup</code> slash command runs the whole flow
-          inside Claude Code — it's idempotent, version-aware, and
-          auto-detects whatever it can. Below is what it walks you through.
+        <p class="section__kicker" data-reveal data-i18n="install.kicker">04 — Slack setup</p>
+        <h2 class="section__h" data-reveal data-i18n="install.h">Four steps to a chat-driven repo.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="install.lede">
+          <code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.
         </p>
 
         <ol class="steps">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
-            <h3>Install the cc-bot plugin</h3>
+            <h3 data-i18n="install.1.title">Install the cc-bot plugin</h3>
             <pre class="code"><code><span class="tk-c">#</span> inside Claude Code
 <span class="tk-p">/plugin marketplace add</span> WaterTian/cc-bot
 <span class="tk-p">/plugin install</span> cc-bot@WaterTian-cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot
-/plugin install cc-bot@WaterTian-cc-bot" aria-label="Copy command">copy</button></pre>
-            <p class="step__after">
-              Two lines, then run <code>/cc-bot:setup</code> in any project
-              directory. When it asks "which IM?", pick <b>Slack</b>.
+/plugin install cc-bot@WaterTian-cc-bot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.1.after">
+              Then run <code>/cc-bot:setup</code> in any project. When asked "which IM?", pick <b>Slack</b>.
             </p>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
-            <h3>Create the Slack app from the manifest</h3>
-            <p class="step__after">
-              cc-bot ships <code>templates/slack-manifest.yaml</code>. Open
-              <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a>
-              → <em>Create New App</em> → <em>From a manifest</em>, pick your
-              workspace, paste the YAML below, then <em>Create</em>.
+            <h3 data-i18n="install.2.title">Create the Slack app from the manifest</h3>
+            <p class="step__after" data-i18n-html="install.2.after">
+              Open <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>. Paste the YAML below.
             </p>
             <pre class="code"><code><span class="tk-c"># templates/slack-manifest.yaml — bot scopes &amp; Socket Mode</span>
 <span class="tk-y">display_information</span>:
@@ -581,61 +524,50 @@ settings:
       - message.channels
       - message.groups
       - app_mention
-  socket_mode_enabled: true" aria-label="Copy manifest">copy</button></pre>
+  socket_mode_enabled: true" aria-label="Copy manifest" data-i18n="copy">copy</button></pre>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
-            <h3>Generate &amp; paste the two tokens</h3>
-            <p class="step__after">
-              In the new app's <em>Basic Information</em> page:
+            <h3 data-i18n="install.3.title">Generate the two tokens</h3>
+            <p class="step__after" data-i18n="install.3.after">
+              In the new app's Basic Information page:
             </p>
             <ul class="step__list">
-              <li>
-                <b>App-Level Token</b> — generate one named
-                <code>cc-bot-socket</code> with scope
-                <code>connections:write</code>. Copy the
-                <code>xapp-1-…</code> value.
+              <li data-i18n-html="install.3.li1">
+                <b>App-Level Token</b> — name it <code>cc-bot-socket</code>, scope <code>connections:write</code>. Copy the <code>xapp-1-…</code> value.
               </li>
-              <li>
-                <em>Install App</em> → <em>Install to Workspace</em> → Allow.
-                Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).
+              <li data-i18n-html="install.3.li2">
+                <em>Install to Workspace</em> → Allow. Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).
               </li>
             </ul>
-            <p class="step__after">
-              Paste both tokens when <code>/cc-bot:setup</code> prompts
-              you. cc-bot calls <code>auth.test</code> to verify, and writes
-              them into <code>.cc-bot/profiles/active.json</code>
-              (already gitignored).
+            <p class="step__after" data-i18n-html="install.3.tail">
+              Paste both when <code>/cc-bot:setup</code> prompts. cc-bot verifies via <code>auth.test</code> and writes them into <code>.cc-bot/profiles/active.json</code>.
             </p>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
-            <h3>Invite cc-bot to a channel</h3>
-            <p class="step__after">
-              Paste the channel ID (e.g. <code>C0XXXXXXXXX</code>) when
-              asked. In Slack, run <code>/invite @cc-bot</code> in that
-              channel — cc-bot sends a probe message to confirm. Then bring
-              it online:
+            <h3 data-i18n="install.4.title">Invite cc-bot to a channel</h3>
+            <p class="step__after" data-i18n-html="install.4.after">
+              Paste the channel ID. In Slack, run <code>/invite @cc-bot</code> — bot sends a probe. Then bring it online:
             </p>
-            <pre class="code"><code><span class="tk-p">/cc-bot:start</span></code><button class="copy" data-copy="/cc-bot:start" aria-label="Copy command">copy</button></pre>
-            <p class="step__after">
-              You'll see an "online" message land in your channel. From here
-              on, talk to it like you'd talk to any teammate.
+            <pre class="code"><code><span class="tk-p">/cc-bot:start</span></code><button class="copy" data-copy="/cc-bot:start" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n="install.4.tail">
+              An "online" message lands in your channel. From here, talk to it like a teammate.
             </p>
           </li>
         </ol>
 
         <div class="commands" data-reveal>
-          <h3>Slash commands</h3>
+          <h3 data-i18n="commands.h">Slash commands</h3>
           <ul>
-            <li><code>/cc-bot:setup</code> — interactive Slack / Lark onboarding</li>
-            <li><code>/cc-bot:start</code> — bring the bot online (Socket Mode connects)</li>
-            <li><code>/cc-bot:stop</code> — take it offline</li>
-            <li><code>/cc-bot:new-profile &lt;name&gt;</code> — clone the profile template</li>
-            <li><code>/cc-bot:switch &lt;name&gt;</code> — swap active profile</li>
-            <li><code>/cc-bot:doctor</code> — health check &amp; diagnostics</li>
+            <li><code>/cc-bot:setup</code> — <span data-i18n="commands.setup">interactive Slack / Lark onboarding</span></li>
+            <li><code>/cc-bot:start</code> — <span data-i18n="commands.start">bring the bot online</span></li>
+            <li><code>/cc-bot:stop</code> — <span data-i18n="commands.stop">take it offline</span></li>
+            <li><code>/cc-bot:new-profile &lt;name&gt;</code> — <span data-i18n="commands.new">clone the profile template</span></li>
+            <li><code>/cc-bot:switch &lt;name&gt;</code> — <span data-i18n="commands.switch">swap active profile</span></li>
+            <li><code>/cc-bot:doctor</code> — <span data-i18n="commands.doctor">health check &amp; diagnostics</span></li>
           </ul>
         </div>
       </section>
@@ -643,17 +575,15 @@ settings:
       <!-- CTA -->
       <section class="section section--cta">
         <div class="cta">
-          <h2 data-reveal>Ship from where the team already talks.</h2>
-          <p data-reveal data-reveal-delay="80">
-            cc-bot is MIT-licensed, runtime-free, and lives on GitHub. The
-            Slack adapter is on the <code>slack-v0.1.12</code> branch today
-            and will land on <code>main</code> shortly.
+          <h2 data-reveal data-i18n="cta.h">Ship from where the team already talks.</h2>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">
+            MIT, runtime-free, on GitHub. Slack adapter lives on <code>slack-v0.1.12</code>; merging to <code>main</code> shortly.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
-              <span>Open the repo</span><span class="btn__arrow" aria-hidden="true">→</span>
+              <span data-i18n="cta.repo">Open the repo</span><span class="btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener">Slack adapter source</a>
+            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener" data-i18n="hero.cta.secondary">Slack adapter source</a>
           </div>
         </div>
       </section>
@@ -664,21 +594,19 @@ settings:
         <div class="foot__brand">
           <img src="./assets/logo.svg" alt="" width="28" height="28" />
           <strong>cc-bot</strong>
-          <span>v0.1.12 · MIT · Slack-first, IM-agnostic</span>
+          <span data-i18n="foot.tag">v0.1.12 · MIT · Slack-first, IM-agnostic</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
-          <a href="#scenarios">Scenarios</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#install">Setup</a>
+          <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
+          <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+          <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+          <a href="#install" data-i18n="nav.setup">Setup</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
-          <a href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener">Slack adapter ↗</a>
+          <a href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener" data-i18n="foot.adapter">Slack adapter ↗</a>
         </nav>
       </div>
-      <p class="foot__meta">
-        Built as a showcase site — design by way of rouserlab's calm
-        editorial pacing and the-field's animated mischief. Not affiliated
-        with Slack, Lark, or Anthropic.
+      <p class="foot__meta" data-i18n="foot.meta">
+        Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.
       </p>
     </footer>
 
