@@ -127,7 +127,7 @@
     },
 
     "cap.kicker": { en: "01 — Capabilities", zh: "01 — 能力" },
-    "cap.h":      { en: "Six muscles, one bot.", zh: "一个 bot，六块肌肉。" },
+    "cap.h":      { en: "Seven muscles, one bot.", zh: "一个 bot，七块肌肉。" },
 
     "cap.1.title": { en: "Slack-native, IM-agnostic", zh: "原生 Slack，IM 无关" },
     "cap.1.body":  {
@@ -141,8 +141,8 @@
     },
     "cap.3.title": { en: "Multi-agent scheduling", zh: "多 Agent 调度" },
     "cap.3.body":  {
-      en: "Slots and tags turn parallel Claude sessions into a polite queue. Conflicts resolved by config, not chance.",
-      zh: "slot 与 tag 把并行的 Claude 会话排成有序队列。冲突由配置决定，不靠运气。"
+      en: "Slots and tags turn parallel agent sessions into a polite queue. Conflicts resolved by config, not chance.",
+      zh: "slot 与 tag 把并行的 Agent 会话排成有序队列。冲突由配置决定，不靠运气。"
     },
     "cap.4.title": { en: "HUD status broadcast", zh: "HUD 状态广播" },
     "cap.4.body":  {
@@ -158,6 +158,11 @@
     "cap.6.body":  {
       en: `A <code>UserPromptSubmit</code> hook lets the dev at the keyboard preempt any background task. Focused — bot waits. Away — it works.`,
       zh: `<code>UserPromptSubmit</code> 钩子让正在敲键盘的开发者随时抢占后台任务。你在敲，bot 等；你走开，bot 干活。`
+    },
+    "cap.7.title": { en: "Multi-model routing", zh: "多模型路由" },
+    "cap.7.body":  {
+      en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini or DeepSeek for reasoning, Nano Banana for design, Seedance for video. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
+      zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini / DeepSeek 推理，Nano Banana 出图，Seedance 出视频。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
     },
 
     "adapter.kicker": { en: "02 — Engineering note", zh: "02 — 工程笔记" },
@@ -177,8 +182,8 @@
     "arch.kicker": { en: "03 — Architecture", zh: "03 — 架构" },
     "arch.h":      { en: "A small idea, drawn carefully.", zh: "一个小想法，画得仔细。" },
     "arch.lede":   {
-      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier. Result flows back to channel and HUD together.",
-      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给 Claude Code，结果同时流回频道和 HUD。"
+      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to the active agent (Claude · Gemini · DeepSeek · Nano Banana · Seedance) under the right permission tier. Result flows back to channel and HUD together.",
+      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给当前 Agent（Claude · Gemini · DeepSeek · Nano Banana · Seedance），结果同时流回频道和 HUD。"
     },
     "arch.col.im":         { en: "IM Layer",         zh: "IM 层" },
     "arch.col.im.note":    { en: "channels · threads", zh: "频道 · 消息线" },
@@ -191,6 +196,7 @@
     "arch.sched.hook":     { en: "main-window hook", zh: "主窗口钩子" },
     "arch.sched.note":     { en: "permission tier check", zh: "权限层校验" },
     "arch.col.out":        { en: "Output",           zh: "输出" },
+    "arch.out.session":    { en: "agent session",    zh: "Agent 会话" },
     "arch.out.reply":      { en: "channel reply",    zh: "频道回复" },
     "arch.out.note":       { en: "terminal + Slack agree", zh: "终端与 Slack 同步" },
     "arch.return":         { en: "return: status + result", zh: "返回：状态 + 结果" },
