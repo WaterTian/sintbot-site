@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
   </head>
   <body>
     <!-- Animated grain + noise canvas -->
@@ -26,7 +26,7 @@
     <!-- Top nav -->
     <header class="nav" data-reveal>
       <a class="nav__brand" href="#top" aria-label="cc-bot home">
-        <img src="./assets/logo.svg" alt="" width="36" height="36" />
+        <img src="./assets/logo.png" alt="" width="36" height="36" />
         <span class="nav__word">cc<i>—</i>bot</span>
         <span class="nav__forslack" aria-hidden="true">for Slack</span>
       </a>
@@ -89,14 +89,6 @@
               <span data-i18n="hero.cta.primary">Set up the Slack app</span>
               <span class="btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a
-              class="btn btn--ghost"
-              href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12"
-              target="_blank"
-              rel="noopener"
-              data-i18n="hero.cta.secondary"
-              >Slack adapter source</a
-            >
           </div>
         </div>
 
@@ -577,13 +569,12 @@ settings:
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Ship from where the team already talks.</h2>
           <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">
-            MIT, runtime-free, on GitHub. Slack adapter lives on <code>slack-v0.1.12</code>; merging to <code>main</code> shortly.
+            MIT, runtime-free, on GitHub. Slack &amp; Lark adapters both live on <code>main</code>.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
               <span data-i18n="cta.repo">Open the repo</span><span class="btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener" data-i18n="hero.cta.secondary">Slack adapter source</a>
           </div>
         </div>
       </section>
@@ -592,7 +583,7 @@ settings:
     <footer class="foot">
       <div class="foot__row">
         <div class="foot__brand">
-          <img src="./assets/logo.svg" alt="" width="28" height="28" />
+          <img src="./assets/logo.png" alt="" width="28" height="28" />
           <strong>cc-bot</strong>
           <span data-i18n="foot.tag">v0.1.12 · MIT · Slack-first, IM-agnostic</span>
         </div>
@@ -602,7 +593,6 @@ settings:
           <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
           <a href="#install" data-i18n="nav.setup">Setup</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
-          <a href="https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12" target="_blank" rel="noopener" data-i18n="foot.adapter">Slack adapter ↗</a>
         </nav>
       </div>
       <p class="foot__meta" data-i18n="foot.meta">

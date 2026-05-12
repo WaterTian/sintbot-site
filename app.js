@@ -30,7 +30,6 @@
       zh: "在任意 Slack 频道 @cc-bot。它读上下文、跑脚本、开 PR、就地回复。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
-    "hero.cta.secondary": { en: "Slack adapter source",     zh: "Slack 适配器源码" },
 
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
@@ -264,13 +263,12 @@
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `MIT, runtime-free, on GitHub. Slack adapter lives on <code>slack-v0.1.12</code>; merging to <code>main</code> shortly.`,
-      zh: `MIT 协议，无外部运行时，在 GitHub。Slack 适配器目前在 <code>slack-v0.1.12</code>，即将合入 <code>main</code>。`
+      en: `MIT, runtime-free, on GitHub. Slack &amp; Lark adapters both live on <code>main</code>.`,
+      zh: `MIT 协议，无外部运行时，在 GitHub。Slack 与飞书适配器都在 <code>main</code> 分支。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
     "foot.tag":     { en: "v0.1.12 · MIT · Slack-first, IM-agnostic", zh: "v0.1.12 · MIT · Slack 优先，IM 无关" },
-    "foot.adapter": { en: "Slack adapter ↗", zh: "Slack 适配器 ↗" },
     "foot.meta":    {
       en: "Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
       zh: "展示站点——节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
