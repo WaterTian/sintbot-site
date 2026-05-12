@@ -78,13 +78,13 @@
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn">
-              <span data-reveal data-reveal-delay="0">Slack-native</span>
-              <em data-reveal data-reveal-delay="120">Any&nbsp;model.</em>
+              <span data-reveal data-reveal-delay="0">Slack-native.</span>
+              <em data-reveal data-reveal-delay="120">Local-first.</em>
               <span data-reveal data-reveal-delay="240">Ship from chat.</span>
             </span>
           </h1>
           <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
-            You type <code>@cc-bot</code> in Slack. Your laptop types back. Five local agents — Claude, Gemini, Nano Banana, Seedance, DeepSeek — pick up the intent, run it on your hardware with your credentials, and reply in the thread. Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.
+            You type <code>@cc-bot</code> in Slack. Your laptop types back. Claude Code reads the intent — it writes the diff itself, or dispatches to a specialist on your hardware (Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning). Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#install">
@@ -140,7 +140,7 @@
           Where <em>cc-bot</em> earns its keep.
         </h2>
         <p class="lede lede--wide" data-reveal data-i18n="scenarios.lede">
-          Five channels, five jobs. Ask in chat, get an answer, keep working.
+          Six channels, six jobs. Ask in chat, get an answer, keep working.
         </p>
 
         <ol class="scenarios">
@@ -233,7 +233,7 @@
               Lin asks for a <code>rate-limit</code> PR, Maya wants a hero image regen, Kai ships docs to staging — all in <code>#ship-room</code> within a minute.
             </p>
             <p class="scenario__act" data-i18n-html="scenarios.6.act">
-              Slot scheduler hands each intent to its own agent session — Claude writes the PR, Nano Banana renders the image, a shell agent pushes the deploy. HUD lights three lanes side by side.
+              Each request spawns its own Claude Code session under the slot scheduler. Lin's session writes the PR. Maya's dispatches to Nano Banana for the image. Kai's runs the deploy script. HUD lights three lanes side by side.
             </p>
             <p class="scenario__win" data-i18n-html="scenarios.6.win">
               <i>Why it wins:</i> one project, many hands, zero conflict.
@@ -302,9 +302,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
             <span class="card__no">03</span>
-            <h3 data-i18n="cap.3.title">Multi-agent scheduling</h3>
+            <h3 data-i18n="cap.3.title">Multi-session scheduling</h3>
             <p data-i18n="cap.3.body">
-              Slots and tags turn parallel agent sessions into a polite queue. Conflicts resolved by config, not chance.
+              Slots and tags turn parallel Claude Code sessions into a polite queue. Conflicts resolved by config, not chance.
             </p>
             <ul class="card__chips">
               <li>slot</li><li>tag</li><li>conflict matrix</li>
@@ -342,9 +342,9 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="360">
             <span class="card__no">07</span>
-            <h3 data-i18n="cap.7.title">Multi-model routing</h3>
+            <h3 data-i18n="cap.7.title">Claude Code at the helm</h3>
             <p data-i18n-html="cap.7.body">
-              Same channel, different brains. Claude Code for diffs and PRs, Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. cc-bot picks per profile, per intent, or per <code>@hint</code>.
+              Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or dispatches to a specialist: Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. Results stitch back into the thread.
             </p>
             <ul class="card__chips">
               <li>Claude</li><li>Gemini</li><li>Nano Banana</li><li>Seedance</li><li>DeepSeek</li>
@@ -393,11 +393,11 @@
           A small idea, drawn carefully.
         </h2>
         <p class="lede lede--wide" data-reveal data-i18n="arch.lede">
-          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to the active agent (Claude · Gemini · DeepSeek · Nano Banana · Seedance) under the right permission tier. Result flows back to channel and HUD together.
+          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or dispatches to a specialist (Gemini · Nano Banana · Seedance · DeepSeek) as the intent demands. Result flows back to channel and HUD together.
         </p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 480" role="img" aria-label="cc-bot pipeline diagram showing Slack channel events flowing through delivery, scheduler, the active AI agent, and back out to the channel and HUD" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 480" role="img" aria-label="cc-bot pipeline diagram showing Slack channel events flowing through delivery, scheduler, Claude Code orchestrator (which dispatches to specialist agents), and back out to the channel and HUD" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -440,7 +440,7 @@
             <g class="d-col">
               <rect x="870" y="40" width="290" height="400" rx="18" />
               <text x="1015" y="80" text-anchor="middle" data-i18n-svg="arch.col.out">Output</text>
-              <g class="d-pill"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148" data-i18n-svg="arch.out.session">agent session</text></g>
+              <g class="d-pill d-pill--accent"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148" data-i18n-svg="arch.out.session">Claude Code session</text></g>
               <g class="d-pill"><rect x="900" y="180" width="230" height="44" rx="10" /><text x="1015" y="208" data-i18n-svg="arch.out.reply">channel reply</text></g>
               <g class="d-pill"><rect x="900" y="240" width="230" height="44" rx="10" /><text x="1015" y="268">HUD broadcast</text></g>
               <text class="d-note" x="1015" y="330" text-anchor="middle" data-i18n-svg="arch.out.note">terminal + Slack agree</text>
@@ -643,7 +643,7 @@ settings:
         <div class="foot__brand">
           <img src="./assets/logo.png" alt="" width="28" height="28" />
           <strong>cc-bot</strong>
-          <span data-i18n="foot.tag">v0.1.12 · MIT · Slack-first, IM-agnostic</span>
+          <span data-i18n="foot.tag">v0.1.12 · MIT · Local-first · IM-agnostic</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
