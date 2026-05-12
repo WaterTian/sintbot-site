@@ -707,11 +707,14 @@ body.cursor-on .cursor-glow {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+.card--wide { grid-column: span 2; }
 @media (max-width: 1080px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .card--wide { grid-column: span 2; }
 }
 @media (max-width: 640px) {
   .cards { grid-template-columns: 1fr; }
+  .card--wide { grid-column: span 1; }
 }
 
 .card {
