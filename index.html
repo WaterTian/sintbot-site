@@ -83,8 +83,8 @@
               <span data-reveal data-reveal-delay="240">Ship from chat.</span>
             </span>
           </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n="hero.lede">
-            Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Runs on your own machine: code, tokens, and shell stay on the laptop. Lark / Feishu through the same IMAdapter.
+          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
+            You type <code>@cc-bot</code> in Slack. Your laptop types back. Five local agents — Claude, Gemini, Nano Banana, Seedance, DeepSeek — pick up the intent, run it on your hardware with your credentials, and reply in the thread. Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#install">
@@ -242,11 +242,41 @@
         </ol>
       </section>
 
+      <!-- Local-first callout -->
+      <section id="local-first" class="section section--local">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="local.kicker">01 — On your machine</p>
+        <h2 class="section__h" data-reveal data-i18n="local.h">Your laptop is the agent.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="local.lede">
+          Slack-native, fully local. cc-bot binds your shell to your IM — every command runs on your own hardware with your own credentials, then writes back to the chat.
+        </p>
+        <ol class="locals">
+          <li class="local" data-reveal>
+            <h3 data-i18n="local.1.title">Yours, end-to-end.</h3>
+            <p data-i18n="local.1.body">
+              Code, tokens, SSH keys, git remotes — nothing leaves the machine. The IM platform sees the command you typed; everything else stays on disk.
+            </p>
+          </li>
+          <li class="local" data-reveal data-reveal-delay="80">
+            <h3 data-i18n="local.2.title">Anything you can type, the bot can type.</h3>
+            <p data-i18n="local.2.body">
+              File system, installed CLIs, the VPN-only Jenkins box, the private mirror behind the firewall. If your terminal reaches it, cc-bot reaches it.
+            </p>
+          </li>
+          <li class="local" data-reveal data-reveal-delay="160">
+            <h3 data-i18n="local.3.title">Built for the codebases SaaS forgot.</h3>
+            <p data-i18n="local.3.body">
+              Pre-2020 monorepos, SSH-only build boxes, internal Gerrit, the legacy PHP repo nobody wants to touch. SaaS agents need a clean GitHub repo; cc-bot doesn't.
+            </p>
+          </li>
+        </ol>
+      </section>
+
       <!-- Capabilities -->
       <section id="capabilities" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="cap.kicker">01 — Capabilities</p>
-        <h2 class="section__h" data-reveal data-i18n="cap.h">Eight muscles, one bot.</h2>
+        <p class="section__kicker" data-reveal data-i18n="cap.kicker">02 — Capabilities</p>
+        <h2 class="section__h" data-reveal data-i18n="cap.h">Seven muscles, one bot.</h2>
 
         <ol class="cards">
           <li class="card" data-reveal>
@@ -320,23 +350,13 @@
               <li>Claude</li><li>Gemini</li><li>Nano Banana</li><li>Seedance</li><li>DeepSeek</li>
             </ul>
           </li>
-          <li class="card card--wide" data-reveal data-reveal-delay="420">
-            <span class="card__no">08</span>
-            <h3 data-i18n="cap.8.title">Runs on your machine, not someone's cloud</h3>
-            <p data-i18n-html="cap.8.body">
-              Cloud bots ship your code to someone else's server. cc-bot lives on your laptop — no managed runtime, no data exfil. The agent has whatever your shell has: SSH into the legacy build box, edit the 2014 PHP repo, push to the private mirror. Permissions stay where you set them.
-            </p>
-            <ul class="card__chips">
-              <li>local</li><li>private</li><li>legacy-ok</li><li>full-shell</li>
-            </ul>
-          </li>
         </ol>
       </section>
 
       <!-- Adapter abstraction callout -->
       <section class="section section--adapter">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="adapter.kicker">02 — Engineering note</p>
+        <p class="section__kicker" data-reveal data-i18n="adapter.kicker">03 — Engineering note</p>
         <div class="adapter">
           <div class="adapter__copy">
             <h2 class="section__h section__h--small" data-reveal data-i18n-html="adapter.h">
@@ -368,7 +388,7 @@
       <!-- Architecture -->
       <section id="architecture" class="section section--arch">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="arch.kicker">03 — Architecture</p>
+        <p class="section__kicker" data-reveal data-i18n="arch.kicker">04 — Architecture</p>
         <h2 class="section__h" data-reveal data-i18n="arch.h">
           A small idea, drawn carefully.
         </h2>
@@ -477,7 +497,7 @@
       <!-- Install -->
       <section id="install" class="section section--install">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="install.kicker">04 — Slack setup</p>
+        <p class="section__kicker" data-reveal data-i18n="install.kicker">05 — Slack setup</p>
         <h2 class="section__h" data-reveal data-i18n="install.h">Four steps to a chat-driven repo.</h2>
         <p class="lede lede--wide" data-reveal data-i18n-html="install.lede">
           <code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.
