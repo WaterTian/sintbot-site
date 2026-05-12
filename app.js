@@ -18,12 +18,12 @@
     "hero.eyebrow":      { en: "v0.1.12 · Local-first · MIT",
                            zh: "v0.1.12 · 本地优先 · MIT" },
     "hero.titleEn":      {
-      en: `<span data-reveal data-reveal-delay="0">Slack-native.</span>
-           <em data-reveal data-reveal-delay="120">Local-first.</em>
-           <span data-reveal data-reveal-delay="240">Ship from chat.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">原生 Slack。</span>
-           <em data-reveal data-reveal-delay="120">跑在本机。</em>
-           <span data-reveal data-reveal-delay="240">从群里发布。</span>`
+      en: `<span data-reveal data-reveal-delay="0">Group chat.</span>
+           <em data-reveal data-reveal-delay="120">Local agent.</em>
+           <span data-reveal data-reveal-delay="240">Whole project.</span>`,
+      zh: `<span data-reveal data-reveal-delay="0">群里聊天。</span>
+           <em data-reveal data-reveal-delay="120">本机 Agent。</em>
+           <span data-reveal data-reveal-delay="240">整个项目。</span>`
     },
     "hero.lede":         {
       en: "<code>@cc-bot</code> in Slack — your laptop types back. Claude Code reads the intent, writes the diff itself or dispatches to a specialist on your hardware. Code, tokens, and shell never leave the machine. Lark / Feishu via the same IMAdapter.",
