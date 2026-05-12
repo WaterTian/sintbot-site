@@ -52,8 +52,8 @@
       zh: `<em>cc-bot</em> 真正发力的地方。`
     },
     "scenarios.lede": {
-      en: "Five channels, five jobs. Ask in chat, get an answer, keep working.",
-      zh: "五个频道、五种活儿。群里问一句，拿到答案，继续干。"
+      en: "Six channels, six jobs. Ask in chat, get an answer, keep working.",
+      zh: "六个频道、六种活儿。群里问一句，拿到答案，继续干。"
     },
 
     "scenarios.1.title": { en: "PM drops a screenshot, cc-bot opens a PR.", zh: "产品丢张截图，cc-bot 开 PR。" },
@@ -124,6 +124,20 @@
     "scenarios.5.win": {
       en: `<i>Why it wins:</i> on-call wakes to a starting point, not a mystery.`,
       zh: `<i>为什么有效：</i>值班醒来看到的是起点，不是谜题。`
+    },
+
+    "scenarios.6.title": { en: "Three devs, three agents — same channel, no clash.", zh: "三个人同时指挥 cc-bot，三个分身并行不打架。" },
+    "scenarios.6.scene": {
+      en: `Lin asks for a <code>rate-limit</code> PR, Maya wants a hero image regen, Kai ships docs to staging — all in <code>#ship-room</code> within a minute.`,
+      zh: `Lin 让 bot 开 <code>rate-limit</code> 的 PR，Maya 要重出营销 hero 图，Kai 把文档推到预发——三条消息几乎同时落在 <code>#ship-room</code>。`
+    },
+    "scenarios.6.act": {
+      en: "Slot scheduler hands each intent to its own agent session — Claude writes the PR, Nano Banana renders the image, a shell agent pushes the deploy. HUD lights three lanes side by side.",
+      zh: "slot 调度器把三条意图分发到独立的 Agent 会话——Claude 写 PR，Nano Banana 出图，shell agent 推部署。HUD 上三条 lane 同时亮。"
+    },
+    "scenarios.6.win": {
+      en: `<i>Why it wins:</i> one project, many hands, zero conflict.`,
+      zh: `<i>为什么有效：</i>一个项目，多人并行，互不踩脚。`
     },
 
     "cap.kicker": { en: "01 — Capabilities", zh: "01 — 能力" },
