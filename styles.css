@@ -924,13 +924,21 @@ body.cursor-on .cursor-glow {
 .step {
   display: grid;
   grid-template-columns: 100px 1fr;
-  gap: 20px;
+  gap: 8px 20px;
   align-items: start;
   padding: 28px;
   background: rgba(243, 238, 229, 0.02);
   border: 1px solid var(--line-soft);
   border-radius: 18px;
   transition: border-color 320ms var(--ease-out);
+}
+.step > .step__no {
+  grid-column: 1;
+  grid-row: 1 / span 99;
+}
+.step > *:not(.step__no) {
+  grid-column: 2;
+  min-width: 0;
 }
 .step:hover {
   border-color: rgba(214, 143, 68, 0.35);
