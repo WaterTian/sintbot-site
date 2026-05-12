@@ -26,8 +26,8 @@
            <span data-reveal data-reveal-delay="240">在群里发布。</span>`
     },
     "hero.lede":         {
-      en: "Mention cc-bot in any Slack channel. Code with Claude, design with Nano Banana, render video with Seedance, reason with Gemini or DeepSeek — one bot routes the intent to the right model. Lark / Feishu through the same IMAdapter.",
-      zh: "在任意 Slack 频道 @cc-bot。用 Claude 写代码，用 Nano Banana 出图，用 Seedance 出视频，用 Gemini 或 DeepSeek 推理 —— 同一个 bot 把意图路由到对应模型。飞书走同一套 IMAdapter。"
+      en: "Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Lark / Feishu through the same IMAdapter.",
+      zh: "在任意 Slack 频道 @cc-bot。Claude 写代码，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务 —— 同一个 bot 把意图路由到对应模型。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
@@ -175,8 +175,8 @@
     },
     "cap.7.title": { en: "Multi-model routing", zh: "多模型路由" },
     "cap.7.body":  {
-      en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini or DeepSeek for reasoning, Nano Banana for design, Seedance for video. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
-      zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini / DeepSeek 推理，Nano Banana 出图，Seedance 出视频。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
+      en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
+      zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
     },
 
     "adapter.kicker": { en: "02 — Engineering note", zh: "02 — 工程笔记" },
