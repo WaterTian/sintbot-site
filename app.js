@@ -19,15 +19,15 @@
                            zh: "v0.1.12 · Slack 适配器已发布 · MIT" },
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Slack-native</span>
-           <em data-reveal data-reveal-delay="120">Claude&nbsp;Code.</em>
+           <em data-reveal data-reveal-delay="120">Any&nbsp;model.</em>
            <span data-reveal data-reveal-delay="240">Ship from chat.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">把 Claude Code</span>
+      zh: `<span data-reveal data-reveal-delay="0">把 AI</span>
            <em data-reveal data-reveal-delay="120">放进 Slack。</em>
            <span data-reveal data-reveal-delay="240">在群里发布。</span>`
     },
     "hero.lede":         {
-      en: "Mention cc-bot in any Slack channel. It reads the thread, runs your scripts, opens PRs, replies in place. Lark / Feishu through the same IMAdapter.",
-      zh: "在任意 Slack 频道 @cc-bot。它读上下文、跑脚本、开 PR、就地回复。飞书走同一套 IMAdapter。"
+      en: "Mention cc-bot in any Slack channel. Code with Claude, design with Nano Banana, render video with Seedance, reason with Gemini or DeepSeek — one bot routes the intent to the right model. Lark / Feishu through the same IMAdapter.",
+      zh: "在任意 Slack 频道 @cc-bot。用 Claude 写代码，用 Nano Banana 出图，用 Seedance 出视频，用 Gemini 或 DeepSeek 推理 —— 同一个 bot 把意图路由到对应模型。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
