@@ -61,6 +61,14 @@ html[lang="zh"] .cta h2 {
   letter-spacing: -0.01em;
   line-height: 1.08;
 }
+/* CJK has no real italic — kill synthetic oblique on display <em>,
+   lean on Noto Serif SC bold instead. */
+html[lang="zh"] .hero__title em,
+html[lang="zh"] .section__h em,
+html[lang="zh"] .cta h2 em {
+  font-style: normal;
+  font-weight: 700;
+}
 html[lang="zh"] .section__kicker,
 html[lang="zh"] .eyebrow {
   letter-spacing: 0.12em;
