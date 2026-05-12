@@ -18,16 +18,16 @@
     "hero.eyebrow":      { en: "v0.1.12 · Local-first · MIT",
                            zh: "v0.1.12 · 本地优先 · MIT" },
     "hero.titleEn":      {
-      en: `<span data-reveal data-reveal-delay="0">Slack-native</span>
-           <em data-reveal data-reveal-delay="120">Any&nbsp;model.</em>
+      en: `<span data-reveal data-reveal-delay="0">Slack-native.</span>
+           <em data-reveal data-reveal-delay="120">Local-first.</em>
            <span data-reveal data-reveal-delay="240">Ship from chat.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">把 AI</span>
-           <em data-reveal data-reveal-delay="120">放进 Slack。</em>
-           <span data-reveal data-reveal-delay="240">在群里发布。</span>`
+      zh: `<span data-reveal data-reveal-delay="0">原生 Slack。</span>
+           <em data-reveal data-reveal-delay="120">跑在本机。</em>
+           <span data-reveal data-reveal-delay="240">从群里发布。</span>`
     },
     "hero.lede":         {
-      en: "Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Runs on your own machine: code, tokens, and shell stay on the laptop. Lark / Feishu through the same IMAdapter.",
-      zh: "在任意 Slack 频道 @cc-bot。Claude 写代码，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务 —— 同一个 bot 把意图路由到对应模型。全程跑在你自己的电脑上：代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
+      en: "You type <code>@cc-bot</code> in Slack. Your laptop types back. Five local agents — Claude, Gemini, Nano Banana, Seedance, DeepSeek — pick up the intent, run it on your hardware with your credentials, and reply in the thread. Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.",
+      zh: "你在 Slack 输入 <code>@cc-bot</code>，你的笔记本回话。五个本地 Agent——Claude、Gemini、Nano Banana、Seedance、DeepSeek——接住意图，用你自己的凭证在你自己的硬件上执行，然后回到原帖。代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
@@ -140,8 +140,30 @@
       zh: `<i>为什么有效：</i>一个项目，多人并行，互不踩脚。`
     },
 
-    "cap.kicker": { en: "01 — Capabilities", zh: "01 — 能力" },
-    "cap.h":      { en: "Eight muscles, one bot.", zh: "一个 bot，八块肌肉。" },
+    "cap.kicker": { en: "02 — Capabilities", zh: "02 — 能力" },
+    "cap.h":      { en: "Seven muscles, one bot.", zh: "一个 bot，七块肌肉。" },
+
+    "local.kicker": { en: "01 — On your machine", zh: "01 — 跑在你机器上" },
+    "local.h":      { en: "Your laptop is the agent.", zh: "你的笔记本就是 Agent。" },
+    "local.lede":   {
+      en: "Slack-native, fully local. cc-bot binds your shell to your IM — every command runs on your own hardware with your own credentials, then writes back to the chat.",
+      zh: "原生 Slack，全程本地。cc-bot 把你的 shell 绑到 IM——每条指令都用你自己的凭证、在你自己的硬件上执行，结果再写回聊天里。"
+    },
+    "local.1.title": { en: "Yours, end-to-end.", zh: "全程都是你的。" },
+    "local.1.body":  {
+      en: "Code, tokens, SSH keys, git remotes — nothing leaves the machine. The IM platform sees the command you typed; everything else stays on disk.",
+      zh: "代码、token、SSH key、git remote——什么都不出本机。IM 平台只看到你打的那一行命令，其他全部留在磁盘上。"
+    },
+    "local.2.title": { en: "Anything you can type, the bot can type.", zh: "你能敲的，bot 也能敲。" },
+    "local.2.body":  {
+      en: "File system, installed CLIs, the VPN-only Jenkins box, the private mirror behind the firewall. If your terminal reaches it, cc-bot reaches it.",
+      zh: "文件系统、本机 CLI、VPN-only 的 Jenkins、防火墙后的私有镜像。终端能到的地方，cc-bot 都能到。"
+    },
+    "local.3.title": { en: "Built for the codebases SaaS forgot.", zh: "为 SaaS 够不着的老项目而生。" },
+    "local.3.body":  {
+      en: "Pre-2020 monorepos, SSH-only build boxes, internal Gerrit, the legacy PHP repo nobody wants to touch. SaaS agents need a clean GitHub repo; cc-bot doesn't.",
+      zh: "Pre-2020 的 monorepo、SSH-only 构建机、内部 Gerrit、没人想碰的老 PHP 仓库。SaaS bot 要一个干净的 GitHub 仓库；cc-bot 不要。"
+    },
 
     "cap.1.title": { en: "Slack-native, IM-agnostic", zh: "原生 Slack，IM 无关" },
     "cap.1.body":  {
@@ -178,13 +200,8 @@
       en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
       zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
     },
-    "cap.8.title": { en: "Runs on your machine, not someone's cloud", zh: "跑在你自己的电脑上，不是别人的云" },
-    "cap.8.body":  {
-      en: `Cloud bots ship your code to someone else's server. cc-bot lives on your laptop — no managed runtime, no data exfil. The agent has whatever your shell has: SSH into the legacy build box, edit the 2014 PHP repo, push to the private mirror. Permissions stay where you set them.`,
-      zh: `云端 bot 把你的代码发到别人服务器。cc-bot 跑在你自己笔记本上——没有托管运行时，没有数据外泄。Agent 拥有 shell 的全部权限：SSH 进老旧构建机、改 2014 年的 PHP 仓库、推到私有镜像。权限你说了算。`
-    },
 
-    "adapter.kicker": { en: "02 — Engineering note", zh: "02 — 工程笔记" },
+    "adapter.kicker": { en: "03 — Engineering note", zh: "03 — 工程笔记" },
     "adapter.h": {
       en: `One <em>IMAdapter</em>, many group chats.`,
       zh: `一个 <em>IMAdapter</em>，所有群聊。`
@@ -198,7 +215,7 @@
       zh: `运行时读取 <code>profile.im.type</code>，加载对应适配器，后续管线完全不知道自己在跟哪个 IM 说话。`
     },
 
-    "arch.kicker": { en: "03 — Architecture", zh: "03 — 架构" },
+    "arch.kicker": { en: "04 — Architecture", zh: "04 — 架构" },
     "arch.h":      { en: "A small idea, drawn carefully.", zh: "一个小想法，画得仔细。" },
     "arch.lede":   {
       en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to the active agent (Claude · Gemini · DeepSeek · Nano Banana · Seedance) under the right permission tier. Result flows back to channel and HUD together.",
@@ -234,7 +251,7 @@
     "perm.row2.confirm": { en: "none",              zh: "无" },
     "perm.row3.confirm": { en: `reply <em>yes</em>`, zh: `回复 <em>yes</em>` },
 
-    "install.kicker": { en: "04 — Slack setup", zh: "04 — Slack 接入" },
+    "install.kicker": { en: "05 — Slack setup", zh: "05 — Slack 接入" },
     "install.h":      { en: "Four steps to a chat-driven repo.", zh: "四步开启群聊驱动的仓库。" },
     "install.lede":   {
       en: `<code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.`,
