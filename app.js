@@ -26,8 +26,8 @@
            <span data-reveal data-reveal-delay="240">从群里发布。</span>`
     },
     "hero.lede":         {
-      en: "You type <code>@cc-bot</code> in Slack. Your laptop types back. Claude Code reads the intent — it writes the diff itself, or dispatches to a specialist on your hardware (Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning). Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.",
-      zh: "你在 Slack 输入 <code>@cc-bot</code>，你的笔记本回话。Claude Code 接住意图——能自己写的（diff、PR）自己写；要换脑子时，派给本机上的专家模型（UI 给 Gemini、设计给 Nano Banana、视频给 Seedance、重推理给 DeepSeek）。代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
+      en: "<code>@cc-bot</code> in Slack — your laptop types back. Claude Code reads the intent, writes the diff itself or dispatches to a specialist on your hardware. Code, tokens, and shell never leave the machine. Lark / Feishu via the same IMAdapter.",
+      zh: "在 Slack <code>@cc-bot</code>，笔记本回话。Claude Code 接住意图，自己写或派给本机的专家模型。代码、token、shell 都不出本机。飞书同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
