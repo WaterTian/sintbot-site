@@ -1,8 +1,8 @@
 /* =========================================================
    cc-bot showcase — single sheet, raw CSS
    palette: PCB ink + silkscreen bone + copper trace + solder green
-   typography: Lusion-style single-sans system — General Sans for
-   display + UI (zh fallback Noto Sans SC); IBM Plex Mono for code.
+   typography: Fraunces (editorial display) + Inter (UI) +
+   JetBrains Mono (code); zh fallback Noto Serif SC + Noto Sans SC.
    ========================================================= */
 
 :root {
@@ -19,9 +19,9 @@
   --aqua: #6fd5a6;        /* via highlight */
   --gold: #e5b94d;        /* gold finger */
 
-  --f-display: "General Sans", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --f-ui: "General Sans", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --f-mono: "IBM Plex Mono", "Noto Sans SC", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-display: "Fraunces", "Noto Serif SC", ui-serif, Georgia, serif;
+  --f-ui: "Inter", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", "Noto Sans SC", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --gut: clamp(20px, 4vw, 56px);
   --col-max: 1280px;
@@ -63,7 +63,7 @@ html[lang="zh"] .cta h2 {
   line-height: 1.08;
 }
 /* CJK has no real italic — kill synthetic oblique on display <em>,
-   lean on Noto Sans SC bold (900 cut available) instead. */
+   lean on Noto Serif SC bold (700 cut) instead. */
 html[lang="zh"] .hero__title em,
 html[lang="zh"] .section__h em,
 html[lang="zh"] .cta h2 em {
