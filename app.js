@@ -26,8 +26,8 @@
            <span data-reveal data-reveal-delay="240">从群里发布。</span>`
     },
     "hero.lede":         {
-      en: "You type <code>@cc-bot</code> in Slack. Your laptop types back. Five local agents — Claude, Gemini, Nano Banana, Seedance, DeepSeek — pick up the intent, run it on your hardware with your credentials, and reply in the thread. Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.",
-      zh: "你在 Slack 输入 <code>@cc-bot</code>，你的笔记本回话。五个本地 Agent——Claude、Gemini、Nano Banana、Seedance、DeepSeek——接住意图，用你自己的凭证在你自己的硬件上执行，然后回到原帖。代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
+      en: "You type <code>@cc-bot</code> in Slack. Your laptop types back. Claude Code reads the intent — it writes the diff itself, or dispatches to a specialist on your hardware (Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning). Code, tokens, and shell never leave the machine. Lark / Feishu through the same IMAdapter.",
+      zh: "你在 Slack 输入 <code>@cc-bot</code>，你的笔记本回话。Claude Code 接住意图——能自己写的（diff、PR）自己写；要换脑子时，派给本机上的专家模型（UI 给 Gemini、设计给 Nano Banana、视频给 Seedance、重推理给 DeepSeek）。代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
@@ -132,8 +132,8 @@
       zh: `Lin 让 bot 开 <code>rate-limit</code> 的 PR，Maya 要重出营销 hero 图，Kai 把文档推到预发——三条消息几乎同时落在 <code>#ship-room</code>。`
     },
     "scenarios.6.act": {
-      en: "Slot scheduler hands each intent to its own agent session — Claude writes the PR, Nano Banana renders the image, a shell agent pushes the deploy. HUD lights three lanes side by side.",
-      zh: "slot 调度器把三条意图分发到独立的 Agent 会话——Claude 写 PR，Nano Banana 出图，shell agent 推部署。HUD 上三条 lane 同时亮。"
+      en: "Each request spawns its own Claude Code session under the slot scheduler. Lin's session writes the PR. Maya's dispatches to Nano Banana for the image. Kai's runs the deploy script. HUD lights three lanes side by side.",
+      zh: "每条请求都开一个独立的 Claude Code 会话，由 slot 调度器并行托管。Lin 的会话写 PR；Maya 的会话派给 Nano Banana 出图；Kai 的会话跑部署脚本。HUD 上三条 lane 同时亮。"
     },
     "scenarios.6.win": {
       en: `<i>Why it wins:</i> one project, many hands, zero conflict.`,
@@ -175,10 +175,10 @@
       en: "Push events are triangulated against a short-poll fallback and a dedupe ledger. Every message delivered exactly once.",
       zh: "推送事件与短轮询互为兜底，去重账本兜在最后一道，每条消息只投递一次。"
     },
-    "cap.3.title": { en: "Multi-agent scheduling", zh: "多 Agent 调度" },
+    "cap.3.title": { en: "Multi-session scheduling", zh: "多会话调度" },
     "cap.3.body":  {
-      en: "Slots and tags turn parallel agent sessions into a polite queue. Conflicts resolved by config, not chance.",
-      zh: "slot 与 tag 把并行的 Agent 会话排成有序队列。冲突由配置决定，不靠运气。"
+      en: "Slots and tags turn parallel Claude Code sessions into a polite queue. Conflicts resolved by config, not chance.",
+      zh: "slot 与 tag 把并行的 Claude Code 会话排成有序队列。冲突由配置决定，不靠运气。"
     },
     "cap.4.title": { en: "HUD status broadcast", zh: "HUD 状态广播" },
     "cap.4.body":  {
@@ -195,10 +195,10 @@
       en: `A <code>UserPromptSubmit</code> hook lets the dev at the keyboard preempt any background task. Focused — bot waits. Away — it works.`,
       zh: `<code>UserPromptSubmit</code> 钩子让正在敲键盘的开发者随时抢占后台任务。你在敲，bot 等；你走开，bot 干活。`
     },
-    "cap.7.title": { en: "Multi-model routing", zh: "多模型路由" },
+    "cap.7.title": { en: "Claude Code at the helm", zh: "Claude Code 主脑，专家协作" },
     "cap.7.body":  {
-      en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
-      zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
+      en: `Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or dispatches to a specialist: Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. Results stitch back into the thread.`,
+      zh: `Claude Code 是主脑。每条意图它先接住，能自己干的（diff、PR）自己写；需要换脑子时派给专家：Gemini 做 UI、Nano Banana 设计、Seedance 视频、DeepSeek 重推理。结果再拼回原帖。`
     },
 
     "adapter.kicker": { en: "03 — Engineering note", zh: "03 — 工程笔记" },
@@ -218,8 +218,8 @@
     "arch.kicker": { en: "04 — Architecture", zh: "04 — 架构" },
     "arch.h":      { en: "A small idea, drawn carefully.", zh: "一个小想法，画得仔细。" },
     "arch.lede":   {
-      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to the active agent (Claude · Gemini · DeepSeek · Nano Banana · Seedance) under the right permission tier. Result flows back to channel and HUD together.",
-      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给当前 Agent（Claude · Gemini · DeepSeek · Nano Banana · Seedance），结果同时流回频道和 HUD。"
+      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or dispatches to a specialist (Gemini · Nano Banana · Seedance · DeepSeek) as the intent demands. Result flows back to channel and HUD together.",
+      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给 Claude Code；Claude Code 自己回，或按意图派给专家模型（Gemini · Nano Banana · Seedance · DeepSeek），结果同时流回频道和 HUD。"
     },
     "arch.col.im":         { en: "IM Layer",         zh: "IM 层" },
     "arch.col.im.note":    { en: "channels · threads", zh: "频道 · 消息线" },
@@ -232,7 +232,7 @@
     "arch.sched.hook":     { en: "main-window hook", zh: "主窗口钩子" },
     "arch.sched.note":     { en: "permission tier check", zh: "权限层校验" },
     "arch.col.out":        { en: "Output",           zh: "输出" },
-    "arch.out.session":    { en: "agent session",    zh: "Agent 会话" },
+    "arch.out.session":    { en: "Claude Code session", zh: "Claude Code 会话" },
     "arch.out.reply":      { en: "channel reply",    zh: "频道回复" },
     "arch.out.note":       { en: "terminal + Slack agree", zh: "终端与 Slack 同步" },
     "arch.return":         { en: "return: status + result", zh: "返回：状态 + 结果" },
@@ -310,7 +310,7 @@
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
-    "foot.tag":     { en: "v0.1.12 · MIT · Slack-first, IM-agnostic", zh: "v0.1.12 · MIT · Slack 优先，IM 无关" },
+    "foot.tag":     { en: "v0.1.12 · MIT · Local-first · IM-agnostic", zh: "v0.1.12 · MIT · 本地优先 · IM 无关" },
     "foot.meta":    {
       en: "Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
       zh: "展示站点——节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
