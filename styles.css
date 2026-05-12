@@ -1,22 +1,22 @@
 /* =========================================================
    cc-bot showcase — single sheet, raw CSS
-   palette: ink black + bone + signal-orange + acid-lime
+   palette: PCB ink + silkscreen bone + copper trace + solder green
    typography: Fraunces (editorial display) + Inter (UI) + JetBrains Mono (code)
    ========================================================= */
 
 :root {
   --ink: #0a0a0a;
-  --ink-2: #161616;
-  --ink-3: #1f1f1f;
+  --ink-2: #0d1311;
+  --ink-3: #131a17;
   --bone: #f3eee5;
   --bone-2: #e6e0d3;
-  --line: #2a2a2a;
+  --line: #1d2a25;
   --line-soft: rgba(243, 238, 229, 0.12);
-  --muted: #8a8a8a;
-  --signal: #ff5b29;
-  --acid: #b8ff3a;
-  --aqua: #7df5cf;
-  --gold: #ffd166;
+  --muted: #7a8a82;
+  --signal: #d68f44;      /* copper trace */
+  --acid: #2fae6f;        /* solder-mask green */
+  --aqua: #6fd5a6;        /* via highlight */
+  --gold: #e5b94d;        /* gold finger */
 
   --f-display: "Fraunces", "Noto Serif SC", ui-serif, Georgia, serif;
   --f-ui: "Inter", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -112,7 +112,7 @@ pre {
   width: 480px;
   height: 480px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(255, 91, 41, 0.18), transparent 70%);
+  background: radial-gradient(closest-side, rgba(214, 143, 68, 0.18), transparent 70%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
@@ -163,8 +163,8 @@ body.cursor-on .cursor-glow {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--aqua);
-  background: rgba(125, 245, 207, 0.08);
-  border: 1px solid rgba(125, 245, 207, 0.3);
+  background: rgba(111, 213, 166, 0.08);
+  border: 1px solid rgba(111, 213, 166, 0.3);
 }
 @media (max-width: 540px) {
   .nav__forslack { display: none; }
@@ -294,8 +294,8 @@ body.cursor-on .cursor-glow {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(800px 600px at 20% 0%, rgba(255, 91, 41, 0.10), transparent 70%),
-    radial-gradient(700px 500px at 100% 30%, rgba(125, 245, 207, 0.06), transparent 70%);
+    radial-gradient(800px 600px at 20% 0%, rgba(214, 143, 68, 0.10), transparent 70%),
+    radial-gradient(700px 500px at 100% 30%, rgba(111, 213, 166, 0.06), transparent 70%);
 }
 
 .hero__marquee {
@@ -520,7 +520,7 @@ body.cursor-on .cursor-glow {
   font-family: var(--f-mono);
   font-size: 9px;
   letter-spacing: 0.15em;
-  background: rgba(184, 255, 58, 0.15);
+  background: rgba(47, 174, 111, 0.15);
   color: var(--acid);
   vertical-align: middle;
 }
@@ -555,8 +555,8 @@ body.cursor-on .cursor-glow {
 }
 .chat__msg--me {
   align-self: flex-end;
-  background: rgba(255, 91, 41, 0.12);
-  border: 1px solid rgba(255, 91, 41, 0.35);
+  background: rgba(214, 143, 68, 0.12);
+  border: 1px solid rgba(214, 143, 68, 0.35);
 }
 .chat__msg--bot {
   align-self: flex-start;
@@ -568,7 +568,7 @@ body.cursor-on .cursor-glow {
 }
 .chat__msg--done {
   animation-delay: 600ms;
-  border-color: rgba(184, 255, 58, 0.25);
+  border-color: rgba(47, 174, 111, 0.25);
 }
 .chat__msg code {
   background: rgba(243, 238, 229, 0.08);
@@ -585,8 +585,8 @@ body.cursor-on .cursor-glow {
   margin-left: 8px;
   padding: 2px 8px;
   border-radius: 999px;
-  background: rgba(125, 245, 207, 0.12);
-  border: 1px solid rgba(125, 245, 207, 0.3);
+  background: rgba(111, 213, 166, 0.12);
+  border: 1px solid rgba(111, 213, 166, 0.3);
   color: var(--aqua);
   font-family: var(--f-mono);
   font-size: 10.5px;
@@ -738,8 +738,8 @@ body.cursor-on .cursor-glow {
 }
 .card:hover {
   transform: translateY(-6px);
-  background: linear-gradient(180deg, rgba(255, 91, 41, 0.05), transparent 70%);
-  border-color: rgba(255, 91, 41, 0.4);
+  background: linear-gradient(180deg, rgba(214, 143, 68, 0.05), transparent 70%);
+  border-color: rgba(214, 143, 68, 0.4);
 }
 .card:hover::before {
   opacity: 0.55;
@@ -787,8 +787,8 @@ body.cursor-on .cursor-glow {
   letter-spacing: 0.04em;
   padding: 3px 9px;
   border-radius: 999px;
-  background: rgba(255, 91, 41, 0.08);
-  border: 1px solid rgba(255, 91, 41, 0.25);
+  background: rgba(214, 143, 68, 0.08);
+  border: 1px solid rgba(214, 143, 68, 0.25);
   color: var(--signal);
 }
 
@@ -826,8 +826,8 @@ body.cursor-on .cursor-glow {
   letter-spacing: -0.01em;
 }
 .diagram .d-pill rect {
-  fill: rgba(255, 91, 41, 0.08);
-  stroke: rgba(255, 91, 41, 0.35);
+  fill: rgba(214, 143, 68, 0.08);
+  stroke: rgba(214, 143, 68, 0.35);
 }
 .diagram .d-pill text {
   font-family: var(--f-mono);
@@ -837,8 +837,8 @@ body.cursor-on .cursor-glow {
   dominant-baseline: middle;
 }
 .diagram .d-pill--accent rect {
-  fill: rgba(184, 255, 58, 0.08);
-  stroke: rgba(184, 255, 58, 0.4);
+  fill: rgba(47, 174, 111, 0.08);
+  stroke: rgba(47, 174, 111, 0.4);
 }
 .diagram .d-note {
   font-family: var(--f-mono);
@@ -933,7 +933,7 @@ body.cursor-on .cursor-glow {
   transition: border-color 320ms var(--ease-out);
 }
 .step:hover {
-  border-color: rgba(255, 91, 41, 0.35);
+  border-color: rgba(214, 143, 68, 0.35);
 }
 .step__no {
   font-family: var(--f-display);
@@ -1065,7 +1065,7 @@ body.cursor-on .cursor-glow {
 }
 .scenario:hover {
   transform: translateY(-4px);
-  border-color: rgba(125, 245, 207, 0.35);
+  border-color: rgba(111, 213, 166, 0.35);
 }
 .scenario__tag {
   display: inline-flex;
@@ -1073,8 +1073,8 @@ body.cursor-on .cursor-glow {
   gap: 6px;
   align-self: flex-start;
   padding: 5px 12px 5px 8px;
-  background: rgba(125, 245, 207, 0.08);
-  border: 1px solid rgba(125, 245, 207, 0.3);
+  background: rgba(111, 213, 166, 0.08);
+  border: 1px solid rgba(111, 213, 166, 0.3);
   border-radius: 999px;
   font-family: var(--f-mono);
   font-size: 12px;
@@ -1114,7 +1114,7 @@ body.cursor-on .cursor-glow {
 }
 .scenario__act {
   padding-left: 14px;
-  border-left: 2px solid rgba(255, 91, 41, 0.6);
+  border-left: 2px solid rgba(214, 143, 68, 0.6);
 }
 .scenario__win {
   font-size: 13.5px;
