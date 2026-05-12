@@ -111,18 +111,18 @@ pre {
   position: fixed;
   top: 0;
   left: 0;
-  width: 540px;
-  height: 540px;
+  width: 860px;
+  height: 860px;
   border-radius: 50%;
   background:
-    radial-gradient(closest-side, rgba(214, 143, 68, 0.34), transparent 62%),
-    radial-gradient(closest-side, rgba(47, 174, 111, 0.14), transparent 78%);
+    radial-gradient(closest-side, rgba(214, 143, 68, 0.20), transparent 68%),
+    radial-gradient(closest-side, rgba(47, 174, 111, 0.08), transparent 82%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
   transition: opacity 300ms ease;
   opacity: 0;
-  filter: blur(22px);
+  filter: blur(32px);
   will-change: transform;
 }
 body.cursor-on .cursor-glow {
