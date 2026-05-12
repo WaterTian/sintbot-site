@@ -1035,9 +1035,34 @@ body.cursor-on .cursor-glow {
 @media (max-width: 640px) {
   .step {
     grid-template-columns: 1fr;
-    padding: 22px;
+    padding: 16px 14px;
+    gap: 6px;
   }
-  .step__no { font-size: 40px; }
+  /* collapse the 2-col head into a single stacked column so nothing
+     lands in a phantom col 2 that would balloon the card width */
+  .step > .step__no,
+  .step > h3,
+  .step > *:not(.step__no):not(h3) {
+    grid-column: 1;
+  }
+  .step > .step__no { grid-row: 1; align-self: start; text-align: left; }
+  .step > h3       { grid-row: 2; align-self: start; }
+  .step__no { font-size: 32px; }
+  .step h3 { font-size: 19px; }
+
+  /* code blocks: shrink to fit narrow viewports, leave room for the
+     copy button without forcing the card to overflow */
+  .step .code {
+    font-size: 12.5px;
+    padding: 14px 56px 14px 14px;
+    border-radius: 10px;
+  }
+  .step .copy {
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
 }
 
 .code {
