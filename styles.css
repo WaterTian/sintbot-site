@@ -109,16 +109,18 @@ pre {
 /* Soft cursor light ======================================== */
 .cursor-glow {
   position: fixed;
-  width: 480px;
-  height: 480px;
+  width: 540px;
+  height: 540px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(214, 143, 68, 0.18), transparent 70%);
+  background:
+    radial-gradient(closest-side, rgba(214, 143, 68, 0.34), transparent 62%),
+    radial-gradient(closest-side, rgba(47, 174, 111, 0.14), transparent 78%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
   transition: opacity 300ms ease;
   opacity: 0;
-  filter: blur(20px);
+  filter: blur(22px);
 }
 body.cursor-on .cursor-glow {
   opacity: 1;
