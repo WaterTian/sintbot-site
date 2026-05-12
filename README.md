@@ -22,11 +22,11 @@ npx --yes serve .
 - `index.html` — single-page site: Slack-led hero, "where cc-bot earns its keep" scenarios, capabilities, IMAdapter callout, architecture (with inline SVG diagram + permission matrix), Slack setup walkthrough (manifest + tokens + invite), CTA, footer.
 - `styles.css` — raw CSS with custom properties; ink-black canvas, signal-orange accent, aqua-tinted Slack channel chips, Fraunces (display) + Inter (UI) + JetBrains Mono (code) loaded from Google Fonts.
 - `app.js` — vanilla JS: IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), copy-to-clipboard install commands and the full Slack manifest, gentle parallax on the hero marquee, smooth-scroll anchors. Honors `prefers-reduced-motion`.
-- `assets/logo.svg` — animated inline-friendly SVG mark (chat bubble + two carets + blinking cursor).
+- `assets/logo.png` — 512×512 PCB-styled "CC" mark, mirrored from the cc-bot repo. (`logo.svg` retained as a fallback alternative.)
 
 ## Content emphasis
 
-The site reads as **"cc-bot for Slack"**. Lark / Feishu is mentioned as a secondary supported adapter — the same `IMAdapter` interface backs both. Hero, scenarios, setup walkthrough, and architecture diagram all lead with Slack terminology (channels, threads, Socket Mode push). Source for the Slack adapter is on the [`slack-v0.1.12`](https://github.com/WaterTian/cc-bot/tree/slack-v0.1.12) branch of `WaterTian/cc-bot`.
+The site reads as **"cc-bot for Slack"**. Lark / Feishu is mentioned as a secondary supported adapter — the same `IMAdapter` interface backs both. Hero, scenarios, setup walkthrough, and architecture diagram all lead with Slack terminology (channels, threads, Socket Mode push). Both adapters live on `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot).
 
 ## Design rationale
 
