@@ -15,8 +15,8 @@
     "nav.architecture":  { en: "Architecture",   zh: "架构" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
-    "hero.eyebrow":      { en: "v0.1.12 · Slack adapter shipped · MIT",
-                           zh: "v0.1.12 · Slack 适配器已发布 · MIT" },
+    "hero.eyebrow":      { en: "v0.1.12 · Local-first · MIT",
+                           zh: "v0.1.12 · 本地优先 · MIT" },
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Slack-native</span>
            <em data-reveal data-reveal-delay="120">Any&nbsp;model.</em>
@@ -26,8 +26,8 @@
            <span data-reveal data-reveal-delay="240">在群里发布。</span>`
     },
     "hero.lede":         {
-      en: "Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Lark / Feishu through the same IMAdapter.",
-      zh: "在任意 Slack 频道 @cc-bot。Claude 写代码，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务 —— 同一个 bot 把意图路由到对应模型。飞书走同一套 IMAdapter。"
+      en: "Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Runs on your own machine: code, tokens, and shell stay on the laptop. Lark / Feishu through the same IMAdapter.",
+      zh: "在任意 Slack 频道 @cc-bot。Claude 写代码，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务 —— 同一个 bot 把意图路由到对应模型。全程跑在你自己的电脑上：代码、token、shell 都不出本机。飞书走同一套 IMAdapter。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
@@ -141,7 +141,7 @@
     },
 
     "cap.kicker": { en: "01 — Capabilities", zh: "01 — 能力" },
-    "cap.h":      { en: "Seven muscles, one bot.", zh: "一个 bot，七块肌肉。" },
+    "cap.h":      { en: "Eight muscles, one bot.", zh: "一个 bot，八块肌肉。" },
 
     "cap.1.title": { en: "Slack-native, IM-agnostic", zh: "原生 Slack，IM 无关" },
     "cap.1.body":  {
@@ -177,6 +177,11 @@
     "cap.7.body":  {
       en: `Same channel, different brains. Claude Code for diffs and PRs, Gemini for UI, Nano Banana for design, Seedance for video, DeepSeek for heavy reasoning. cc-bot picks per profile, per intent, or per <code>@hint</code>.`,
       zh: `同一个频道，多副大脑。Claude Code 写 diff 开 PR，Gemini 做 UI，Nano Banana 出图，Seedance 出视频，DeepSeek 推理执行繁重任务。按 profile、按 intent、或按 <code>@hint</code> 路由到对应模型。`
+    },
+    "cap.8.title": { en: "Runs on your machine, not someone's cloud", zh: "跑在你自己的电脑上，不是别人的云" },
+    "cap.8.body":  {
+      en: `Cloud bots ship your code to someone else's server. cc-bot lives on your laptop — no managed runtime, no data exfil. The agent has whatever your shell has: SSH into the legacy build box, edit the 2014 PHP repo, push to the private mirror. Permissions stay where you set them.`,
+      zh: `云端 bot 把你的代码发到别人服务器。cc-bot 跑在你自己笔记本上——没有托管运行时，没有数据外泄。Agent 拥有 shell 的全部权限：SSH 进老旧构建机、改 2014 年的 PHP 仓库、推到私有镜像。权限你说了算。`
     },
 
     "adapter.kicker": { en: "02 — Engineering note", zh: "02 — 工程笔记" },

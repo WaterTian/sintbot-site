@@ -74,7 +74,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">v0.1.12 · Slack adapter shipped · MIT</span>
+            <span data-i18n="hero.eyebrow">v0.1.12 · Local-first · MIT</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn">
@@ -84,9 +84,7 @@
             </span>
           </h1>
           <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n="hero.lede">
-            Mention cc-bot in any Slack channel. It reads the thread, runs your
-            scripts, opens PRs, replies in place. Lark / Feishu through the
-            same IMAdapter.
+            Mention cc-bot in any Slack channel. Code with Claude, build UI with Gemini, design with Nano Banana, render video with Seedance, run heavy reasoning on DeepSeek — one bot routes the intent to the right model. Runs on your own machine: code, tokens, and shell stay on the laptop. Lark / Feishu through the same IMAdapter.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#install">
@@ -248,7 +246,7 @@
       <section id="capabilities" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="cap.kicker">01 — Capabilities</p>
-        <h2 class="section__h" data-reveal data-i18n="cap.h">Seven muscles, one bot.</h2>
+        <h2 class="section__h" data-reveal data-i18n="cap.h">Eight muscles, one bot.</h2>
 
         <ol class="cards">
           <li class="card" data-reveal>
@@ -320,6 +318,16 @@
             </p>
             <ul class="card__chips">
               <li>Claude</li><li>Gemini</li><li>Nano Banana</li><li>Seedance</li><li>DeepSeek</li>
+            </ul>
+          </li>
+          <li class="card card--wide" data-reveal data-reveal-delay="420">
+            <span class="card__no">08</span>
+            <h3 data-i18n="cap.8.title">Runs on your machine, not someone's cloud</h3>
+            <p data-i18n-html="cap.8.body">
+              Cloud bots ship your code to someone else's server. cc-bot lives on your laptop — no managed runtime, no data exfil. The agent has whatever your shell has: SSH into the legacy build box, edit the 2014 PHP repo, push to the private mirror. Permissions stay where you set them.
+            </p>
+            <ul class="card__chips">
+              <li>local</li><li>private</li><li>legacy-ok</li><li>full-shell</li>
             </ul>
           </li>
         </ol>
