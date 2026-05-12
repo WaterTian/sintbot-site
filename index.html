@@ -232,7 +232,7 @@
       <section id="capabilities" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="cap.kicker">01 — Capabilities</p>
-        <h2 class="section__h" data-reveal data-i18n="cap.h">Six muscles, one bot.</h2>
+        <h2 class="section__h" data-reveal data-i18n="cap.h">Seven muscles, one bot.</h2>
 
         <ol class="cards">
           <li class="card" data-reveal>
@@ -260,7 +260,7 @@
             <span class="card__no">03</span>
             <h3 data-i18n="cap.3.title">Multi-agent scheduling</h3>
             <p data-i18n="cap.3.body">
-              Slots and tags turn parallel Claude sessions into a polite queue. Conflicts resolved by config, not chance.
+              Slots and tags turn parallel agent sessions into a polite queue. Conflicts resolved by config, not chance.
             </p>
             <ul class="card__chips">
               <li>slot</li><li>tag</li><li>conflict matrix</li>
@@ -294,6 +294,16 @@
             </p>
             <ul class="card__chips">
               <li>hook</li><li>preempt</li><li>focus-aware</li>
+            </ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="360">
+            <span class="card__no">07</span>
+            <h3 data-i18n="cap.7.title">Multi-model routing</h3>
+            <p data-i18n-html="cap.7.body">
+              Same channel, different brains. Claude Code for diffs and PRs, Gemini or DeepSeek for reasoning, Nano Banana for design, Seedance for video. cc-bot picks per profile, per intent, or per <code>@hint</code>.
+            </p>
+            <ul class="card__chips">
+              <li>Claude</li><li>Gemini</li><li>Nano Banana</li><li>Seedance</li><li>DeepSeek</li>
             </ul>
           </li>
         </ol>
@@ -339,11 +349,11 @@
           A small idea, drawn carefully.
         </h2>
         <p class="lede lede--wide" data-reveal data-i18n="arch.lede">
-          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier. Result flows back to channel and HUD together.
+          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to the active agent (Claude · Gemini · DeepSeek · Nano Banana · Seedance) under the right permission tier. Result flows back to channel and HUD together.
         </p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 480" role="img" aria-label="cc-bot pipeline diagram showing Slack channel events flowing through delivery, scheduler, Claude Code, and back out to the channel and HUD" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 480" role="img" aria-label="cc-bot pipeline diagram showing Slack channel events flowing through delivery, scheduler, the active AI agent, and back out to the channel and HUD" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -386,7 +396,7 @@
             <g class="d-col">
               <rect x="870" y="40" width="290" height="400" rx="18" />
               <text x="1015" y="80" text-anchor="middle" data-i18n-svg="arch.col.out">Output</text>
-              <g class="d-pill"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148">Claude Code session</text></g>
+              <g class="d-pill"><rect x="900" y="120" width="230" height="44" rx="10" /><text x="1015" y="148" data-i18n-svg="arch.out.session">agent session</text></g>
               <g class="d-pill"><rect x="900" y="180" width="230" height="44" rx="10" /><text x="1015" y="208" data-i18n-svg="arch.out.reply">channel reply</text></g>
               <g class="d-pill"><rect x="900" y="240" width="230" height="44" rx="10" /><text x="1015" y="268">HUD broadcast</text></g>
               <text class="d-note" x="1015" y="330" text-anchor="middle" data-i18n-svg="arch.out.note">terminal + Slack agree</text>
