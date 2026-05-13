@@ -21,9 +21,9 @@
       en: `<span data-reveal data-reveal-delay="0">Group chat.</span>
            <em data-reveal data-reveal-delay="120">Local agent.</em>
            <span data-reveal data-reveal-delay="240">Whole project.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">群里聊天，</span>
-           <em data-reveal data-reveal-delay="120">本机代理，</em>
-           <span data-reveal data-reveal-delay="240">整个项目。</span>`
+      zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
+           <em data-reveal data-reveal-delay="120">「本机代理」</em>
+           <span data-reveal data-reveal-delay="240">整个项目</span>`
     },
     "hero.lede":         {
       en: "Mention <code>@cc-bot</code> in Slack — Claude Code runs on your laptop, reads the intent, writes the diff itself or dispatches to a specialist. Code, tokens, and shell never leave the machine.",

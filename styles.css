@@ -71,59 +71,28 @@ html[lang="zh"] .cta h2 em {
   font-weight: 700;
 }
 
-/* ZH hero title: traditional Chinese vertical typography
-   reference: 「知道過去，便知道未來」 — three columns, RTL, with
-   corner brackets. Latin-only languages keep the horizontal layout. */
-html[lang="zh"] .hero__title-en {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  line-height: 1.05;
-  position: relative;
-  padding: 0.6em 0.9em 0.9em 0.6em;
-}
-html[lang="zh"] .hero__title-en > span,
+/* ZH hero title: bold Song with bracketed accent + Latin caption
+   reference: poster typography (有田烧业「400年」纪念) — large bold
+   characters with smaller English caption tucked beneath. */
 html[lang="zh"] .hero__title-en > em {
+  font-weight: 900;          /* lean on the heaviest Noto Serif SC cut */
+  font-size: 1.22em;
+  letter-spacing: -0.02em;
+}
+html[lang="zh"] .hero__title-en > span {
+  font-weight: 500;
+}
+/* Small Latin caption below the ZH title — added via ::after on the
+   wrapper, using the i18n attribute. */
+html[lang="zh"] .hero__title-en::after {
+  content: "GROUP CHAT  ·  LOCAL AGENT  ·  WHOLE PROJECT";
   display: block;
-  width: auto;
-  max-width: none;
-  margin-block-end: 0.18em;
-}
-html[lang="zh"] .hero__title-en > em {
-  font-size: 1em;            /* in vertical, drop the size jump — colour alone emphasizes */
-}
-/* corner brackets — drawn as borders so they scale with the title */
-html[lang="zh"] .hero__title-en::before,
-html[lang="zh"] .hero__title-en::after {
-  content: "";
-  position: absolute;
-  width: 0.32em;
-  height: 0.32em;
-  border: 1px solid currentColor;
-  opacity: 0.55;
-}
-html[lang="zh"] .hero__title-en::before {
-  top: 0;
-  right: 0;
-  border-bottom: 0;
-  border-left: 0;
-}
-html[lang="zh"] .hero__title-en::after {
-  bottom: 0;
-  left: 0;
-  border-top: 0;
-  border-right: 0;
-}
-/* mobile: drop back to horizontal — three vertical columns get
-   awkward on narrow viewports and the brackets feel oversized. */
-@media (max-width: 640px) {
-  html[lang="zh"] .hero__title-en {
-    writing-mode: horizontal-tb;
-    padding: 0;
-  }
-  html[lang="zh"] .hero__title-en::before,
-  html[lang="zh"] .hero__title-en::after {
-    display: none;
-  }
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-size: 0.16em;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-top: 0.55em;
 }
 html[lang="zh"] .section__kicker,
 html[lang="zh"] .eyebrow {
