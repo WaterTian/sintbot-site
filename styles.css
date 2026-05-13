@@ -864,6 +864,14 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   margin: 0;
   color: var(--bone);
 }
+/* ZH card-style headings: heavy Noto Serif SC (思源宋体 Black)
+   to match the weight used elsewhere in display headings. */
+html[lang="zh"] .card h3,
+html[lang="zh"] .scenario h3,
+html[lang="zh"] .local h3,
+html[lang="zh"] .step h3 {
+  font-weight: 900;
+}
 .card p {
   font-size: 14.5px;
   line-height: 1.6;
