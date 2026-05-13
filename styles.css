@@ -695,9 +695,9 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   max-width: 1080px;
 }
 .section__h em {
-  font-style: italic;
+  font-style: normal;
   color: var(--signal);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .lede {
