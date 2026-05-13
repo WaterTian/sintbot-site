@@ -18,9 +18,9 @@
     "hero.eyebrow":      { en: "v0.1.12 · Local-first · MIT",
                            zh: "v0.1.12 · 本地优先 · MIT" },
     "hero.titleEn":      {
-      en: `<span data-reveal data-reveal-delay="0">Group chat.</span>
-           <em data-reveal data-reveal-delay="120">Local agent.</em>
-           <span data-reveal data-reveal-delay="240">Whole project.</span>`,
+      en: `<span data-reveal data-reveal-delay="0">Group chat</span>
+           <em data-reveal data-reveal-delay="120">「Local Agent」</em>
+           <span data-reveal data-reveal-delay="240">Whole project</span>`,
       zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
            <span data-reveal data-reveal-delay="240">整个项目</span>`
