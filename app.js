@@ -415,10 +415,12 @@
   });
 
   // 2) Soft cursor glow ---------------------------------------------------
-  // Use (any-pointer: fine) instead of (pointer: fine): on Windows hybrid
-  // touch laptops Chrome reports primary pointer as `coarse`, which would
-  // gate out users who actually have a mouse plugged in.
-  if (!prefersReducedMotion && window.matchMedia("(any-pointer: fine)").matches) {
+  // The glow is a subtle ambient layer, not a motion-heavy animation, so it
+  // ignores prefers-reduced-motion (which Win11 often reports `reduce` even
+  // when the user has a normal mouse, just because OS "animation effects"
+  // is off — that shouldn't kill a slow follow-spot).
+  // (any-pointer: fine) instead of (pointer: fine) covers touch-hybrid laptops.
+  if (window.matchMedia("(any-pointer: fine)").matches) {
     const glow = document.querySelector(".cursor-glow");
     if (glow) {
       let raf = 0;
@@ -426,24 +428,23 @@
       let ty = window.innerHeight / 2;
       let cx = tx;
       let cy = ty;
+      // Position immediately at viewport center + show, so the glow is
+      // visible even before the first mousemove (Win Chrome: mouseenter
+      // doesn't fire when cursor is already inside the window on load).
+      glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
       document.body.classList.add("cursor-on");
+
       window.addEventListener(
         "mousemove",
         (e) => {
           tx = e.clientX;
           ty = e.clientY;
+          document.body.classList.add("cursor-on");
           if (!raf) raf = requestAnimationFrame(tick);
         },
         { passive: true }
       );
-      window.addEventListener("mouseleave", () => {
-        document.body.classList.remove("cursor-on");
-      });
-      window.addEventListener("mouseenter", () => {
-        document.body.classList.add("cursor-on");
-      });
       function tick() {
-        // gentle lerp for trailing motion
         cx += (tx - cx) * 0.14;
         cy += (ty - cy) * 0.14;
         glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
