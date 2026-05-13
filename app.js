@@ -141,7 +141,7 @@
     },
 
     "cap.kicker": { en: "02 — Capabilities", zh: "02 — 能力" },
-    "cap.h":      { en: "Seven muscles, one bot.", zh: "一个 bot，七块肌肉。" },
+    "cap.h":      { en: "Seven muscles, one bot.", zh: "壹个 bot，柒块肌肉。" },
 
     "local.kicker": { en: "01 — On your machine", zh: "01 — 跑在你机器上" },
     "local.h":      { en: "Your laptop is the agent.", zh: "你的笔记本就是 Agent。" },
