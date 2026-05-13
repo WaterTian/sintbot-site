@@ -22,7 +22,7 @@
            <em data-reveal data-reveal-delay="120">Local agent.</em>
            <span data-reveal data-reveal-delay="240">Whole project.</span>`,
       zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
-           <em data-reveal data-reveal-delay="120">「本机代理」</em>
+           <em data-reveal data-reveal-delay="120">「Local Agent」</em>
            <span data-reveal data-reveal-delay="240">整个项目</span>`
     },
     "hero.lede":         {
