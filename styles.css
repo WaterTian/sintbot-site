@@ -195,9 +195,9 @@ body.cursor-on .cursor-glow {
    sit on the lowercase x-height middle, not above. */
 .nav__word i.nav__trace {
   display: inline-block;
-  width: 0.38em;
+  width: 0.24em;
   height: 0.11em;
-  margin: 0 0.24em;
+  margin: 0 0.20em;
   vertical-align: 0.20em;
   background: var(--signal);
   position: relative;
@@ -217,26 +217,28 @@ body.cursor-on .cursor-glow {
 }
 /* left end: filled solder pad */
 .nav__word i.nav__trace::before {
-  left: -0.16em;
+  left: -0.13em;
   background: var(--signal);
 }
 /* right end: hollow ring — reads as a PCB via (through-hole) */
 .nav__word i.nav__trace::after {
-  right: -0.16em;
+  right: -0.13em;
   background: transparent;
   border: 0.05em solid var(--signal);
-  animation: nav-via-pulse 2.8s ease-in-out infinite;
+  animation: nav-via-pulse 2.4s ease-in-out infinite;
 }
+/* not gated on prefers-reduced-motion: a slow ambient glow on a 4px
+   dot isn't the kind of motion that toggle is designed to suppress,
+   and Win11 reports reduce by default for many users. */
 @keyframes nav-via-pulse {
   0%, 100% {
     box-shadow: 0 0 0 0 rgba(214, 143, 68, 0);
+    background: transparent;
   }
   55% {
-    box-shadow: 0 0 6px 0.5px rgba(214, 143, 68, 0.55);
+    box-shadow: 0 0 10px 1.5px rgba(214, 143, 68, 0.8);
+    background: rgba(214, 143, 68, 0.22);
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .nav__word i.nav__trace::after { animation: none; }
 }
 .nav__forslack {
   margin-left: 10px;
