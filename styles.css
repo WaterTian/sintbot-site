@@ -77,14 +77,13 @@ html[lang="zh"] .cta h2 em {
 html[lang="zh"] .hero__title,
 html[lang="zh"] .section__h,
 html[lang="zh"] .cta h2 {
-  font-weight: 900;          /* heaviest Noto Serif SC cut, matches the em accent */
+  font-weight: 700;          /* Noto Serif SC Bold — one notch down from Black for less heft */
 }
 html[lang="zh"] .hero__title-en > em {
   font-size: 1.22em;
   letter-spacing: -0.02em;
-  font-weight: 900;          /* explicit — must beat the 700 set by the
-                                 cross-section em rule above to match the
-                                 surrounding 900-weight Song characters */
+  font-weight: 700;          /* matches the parent Bold weight; em stands
+                                 out via size (1.22×) + color, not heft */
 }
 /* Small Latin caption below the ZH title — added via ::after on the
    wrapper, using the i18n attribute. */
@@ -434,7 +433,7 @@ body.cursor-on .cursor-glow {
   line-height: 0.92;
 }
 html[lang="zh"] .hero__title-en > span:first-of-type {
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.04em;
 }
 .hero__title em {
@@ -864,13 +863,13 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   margin: 0;
   color: var(--bone);
 }
-/* ZH card-style headings: heavy Noto Serif SC (思源宋体 Black)
-   to match the weight used elsewhere in display headings. */
+/* ZH card-style headings: Noto Serif SC Bold (思源宋体 Bold 700)
+   — matches the dialed-down display weight elsewhere. */
 html[lang="zh"] .card h3,
 html[lang="zh"] .scenario h3,
 html[lang="zh"] .local h3,
 html[lang="zh"] .step h3 {
-  font-weight: 900;
+  font-weight: 700;
 }
 .card p {
   font-size: 14.5px;
