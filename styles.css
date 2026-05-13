@@ -190,11 +190,34 @@ body.cursor-on .cursor-glow {
   font-size: 22px;
   letter-spacing: -0.02em;
 }
-.nav__word i {
+/* PCB-trace divider between 'cc' and 'bot': copper pad — trace — pad.
+   Sized in em so it scales with the nav font; vertical-align tunes
+   it to the lowercase letter middle. */
+.nav__word i.nav__trace {
+  display: inline-block;
+  width: 0.44em;
+  height: 0.10em;
+  margin: 0 0.34em;
+  vertical-align: 0.34em;
+  background: var(--signal);
+  position: relative;
   font-style: normal;
-  color: var(--signal);
-  margin: 0 2px;
+  box-shadow: 0 0 4px rgba(214, 143, 68, 0.45);
 }
+.nav__word i.nav__trace::before,
+.nav__word i.nav__trace::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.22em;
+  height: 0.22em;
+  border-radius: 50%;
+  background: var(--signal);
+  transform: translateY(-50%);
+  box-shadow: 0 0 3px rgba(214, 143, 68, 0.55);
+}
+.nav__word i.nav__trace::before { left: -0.18em; }
+.nav__word i.nav__trace::after  { right: -0.18em; }
 .nav__forslack {
   margin-left: 10px;
   padding: 3px 9px;
