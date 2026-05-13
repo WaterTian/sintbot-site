@@ -215,29 +215,63 @@ body.cursor-on .cursor-glow {
   transform: translateY(-50%);
   box-sizing: border-box;
 }
-/* left end: filled solder pad */
+/* left end: hollow ring — PCB via, periodically struck by a welding arc */
 .nav__word i.nav__trace::before {
   left: -0.13em;
-  background: var(--signal);
-}
-/* right end: hollow ring — reads as a PCB via (through-hole) */
-.nav__word i.nav__trace::after {
-  right: -0.13em;
   background: transparent;
   border: 0.05em solid var(--signal);
-  animation: nav-via-pulse 2.4s ease-in-out infinite;
+  animation: nav-via-weld 3.4s steps(1, end) infinite;
 }
-/* not gated on prefers-reduced-motion: a slow ambient glow on a 4px
-   dot isn't the kind of motion that toggle is designed to suppress,
-   and Win11 reports reduce by default for many users. */
-@keyframes nav-via-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(214, 143, 68, 0);
+/* right end: filled solder pad */
+.nav__word i.nav__trace::after {
+  right: -0.13em;
+  background: var(--signal);
+}
+/* Welding-arc strike: dark plateau most of the cycle, then a fast
+   bright-dim-bright sputter (~5 frames in 0.5s) before snapping
+   back to dark. steps(1, end) on the parent keeps each frame a
+   hard cut — no smooth interpolation — so it reads as electrical
+   sparking, not a gentle glow. */
+@keyframes nav-via-weld {
+  0%, 56%, 78%, 100% {
     background: transparent;
+    border-color: var(--signal);
+    box-shadow: 0 0 0 0 transparent;
   }
-  55% {
-    box-shadow: 0 0 10px 1.5px rgba(214, 143, 68, 0.8);
-    background: rgba(214, 143, 68, 0.22);
+  58% {
+    background: rgba(255, 245, 215, 0.95);
+    border-color: #fff7e0;
+    box-shadow:
+      0 0 0 1px rgba(255, 250, 230, 1),
+      0 0 12px 3px rgba(255, 240, 200, 0.85),
+      0 0 26px 6px rgba(214, 143, 68, 0.55);
+  }
+  62% {
+    background: rgba(214, 143, 68, 0.28);
+    border-color: rgba(255, 200, 130, 1);
+    box-shadow: 0 0 5px 0.5px rgba(214, 143, 68, 0.4);
+  }
+  64% {
+    background: rgba(255, 240, 200, 0.9);
+    border-color: #ffeec0;
+    box-shadow:
+      0 0 10px 2px rgba(255, 235, 190, 0.8),
+      0 0 20px 4px rgba(214, 143, 68, 0.45);
+  }
+  68% {
+    background: rgba(214, 143, 68, 0.18);
+    border-color: rgba(255, 200, 130, 0.85);
+    box-shadow: 0 0 3px 0 rgba(214, 143, 68, 0.3);
+  }
+  72% {
+    background: rgba(255, 230, 180, 0.7);
+    border-color: #ffe0a8;
+    box-shadow: 0 0 7px 1.5px rgba(255, 225, 170, 0.7);
+  }
+  76% {
+    background: transparent;
+    border-color: var(--signal);
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 .nav__forslack {
