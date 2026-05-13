@@ -415,7 +415,10 @@
   });
 
   // 2) Soft cursor glow ---------------------------------------------------
-  if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  // Use (any-pointer: fine) instead of (pointer: fine): on Windows hybrid
+  // touch laptops Chrome reports primary pointer as `coarse`, which would
+  // gate out users who actually have a mouse plugged in.
+  if (!prefersReducedMotion && window.matchMedia("(any-pointer: fine)").matches) {
     const glow = document.querySelector(".cursor-glow");
     if (glow) {
       let raf = 0;
