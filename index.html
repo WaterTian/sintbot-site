@@ -525,6 +525,8 @@
             <pre class="code"><code><span class="tk-c"># templates/slack-manifest.yaml — bot scopes &amp; Socket Mode</span>
 <span class="tk-y">display_information</span>:
   <span class="tk-y">name</span>: cc-bot
+  <span class="tk-y">description</span>: Claude Code-powered group project assistant
+  <span class="tk-y">background_color</span>: <span class="tk-p">"#1f3a2a"</span>
 
 <span class="tk-y">features</span>:
   <span class="tk-y">bot_user</span>:
@@ -550,8 +552,14 @@
       - message.channels
       - message.groups
       - app_mention
-  <span class="tk-y">socket_mode_enabled</span>: <span class="tk-p">true</span>  <span class="tk-c"># no public webhook needed</span></code><button class="copy" data-copy="display_information:
+  <span class="tk-y">interactivity</span>:
+    <span class="tk-y">is_enabled</span>: <span class="tk-p">false</span>
+  <span class="tk-y">org_deploy_enabled</span>: <span class="tk-p">false</span>
+  <span class="tk-y">socket_mode_enabled</span>: <span class="tk-p">true</span>  <span class="tk-c"># no public webhook needed</span>
+  <span class="tk-y">token_rotation_enabled</span>: <span class="tk-p">false</span></code><button class="copy" data-copy="display_information:
   name: cc-bot
+  description: Claude Code-powered group project assistant
+  background_color: &quot;#1f3a2a&quot;
 features:
   bot_user:
     display_name: cc-bot
@@ -574,7 +582,11 @@ settings:
       - message.channels
       - message.groups
       - app_mention
-  socket_mode_enabled: true" aria-label="Copy manifest" data-i18n="copy">copy</button></pre>
+  interactivity:
+    is_enabled: false
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false" aria-label="Copy manifest" data-i18n="copy">copy</button></pre>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="160">
