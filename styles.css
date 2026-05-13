@@ -77,13 +77,12 @@ html[lang="zh"] .cta h2 em {
 html[lang="zh"] .hero__title,
 html[lang="zh"] .section__h,
 html[lang="zh"] .cta h2 {
-  font-weight: 700;          /* Noto Serif SC Bold — one notch down from Black for less heft */
+  font-weight: 900;          /* section h2 level keeps the heaviest cut */
 }
 html[lang="zh"] .hero__title-en > em {
   font-size: 1.22em;
   letter-spacing: -0.02em;
-  font-weight: 700;          /* matches the parent Bold weight; em stands
-                                 out via size (1.22×) + color, not heft */
+  font-weight: 900;          /* hero em — heaviest + colored + 1.22× */
 }
 /* Small Latin caption below the ZH title — added via ::after on the
    wrapper, using the i18n attribute. */
@@ -433,7 +432,7 @@ body.cursor-on .cursor-glow {
   line-height: 0.92;
 }
 html[lang="zh"] .hero__title-en > span:first-of-type {
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: -0.04em;
 }
 .hero__title em {
