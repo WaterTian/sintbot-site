@@ -26,8 +26,8 @@
            <span data-reveal data-reveal-delay="240">整个项目。</span>`
     },
     "hero.lede":         {
-      en: "<code>@cc-bot</code> in Slack — your laptop types back. Claude Code reads the intent, writes the diff itself or dispatches to a specialist on your hardware. Code, tokens, and shell never leave the machine. Lark / Feishu via the same IMAdapter.",
-      zh: "在 Slack <code>@cc-bot</code>，笔记本回话。Claude Code 接住意图，自己写或派给本机的专家模型。代码、token、shell 都不出本机。飞书同一套 IMAdapter。"
+      en: "Mention <code>@cc-bot</code> in Slack — Claude Code runs on your laptop, reads the intent, writes the diff itself or dispatches to a specialist. Code, tokens, and shell never leave the machine.",
+      zh: "在 Slack 群里 <code>@cc-bot</code> — Claude Code 在你的电脑上读意图、写改动，或派单给专门模型。代码、token、shell 都不出本机。"
     },
     "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
 
@@ -172,8 +172,8 @@
     },
     "cap.2.title": { en: "Defensive delivery", zh: "防御式投递" },
     "cap.2.body":  {
-      en: "Socket Mode push for Slack, HTTP polling for Lark — both pipe through the same dedupe ledger. Every message delivered exactly once.",
-      zh: "Slack 走 Socket Mode 推送 / Lark 走 HTTP 轮询，两条路径汇入同一份 dedupe ledger，每条消息恰好一次送达。"
+      en: "Socket Mode push, dedupe ledger, main-busy queue. Every message delivered exactly once — even when your terminal is mid-edit.",
+      zh: "Socket Mode 推送 + dedupe ledger + 主窗口忙时排队。每条消息恰好一次送达，哪怕你正在敲代码。"
     },
     "cap.3.title": { en: "Multi-session scheduling", zh: "多会话调度" },
     "cap.3.body":  {
