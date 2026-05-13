@@ -172,8 +172,8 @@
     },
     "cap.2.title": { en: "Defensive delivery", zh: "防御式投递" },
     "cap.2.body":  {
-      en: "Push events are triangulated against a short-poll fallback and a dedupe ledger. Every message delivered exactly once.",
-      zh: "推送事件与短轮询互为兜底，去重账本兜在最后一道，每条消息只投递一次。"
+      en: "Socket Mode push for Slack, HTTP polling for Lark — both pipe through the same dedupe ledger. Every message delivered exactly once.",
+      zh: "Slack 走 Socket Mode 推送 / Lark 走 HTTP 轮询，两条路径汇入同一份 dedupe ledger，每条消息恰好一次送达。"
     },
     "cap.3.title": { en: "Multi-session scheduling", zh: "多会话调度" },
     "cap.3.body":  {

@@ -294,10 +294,10 @@
             <span class="card__no">02</span>
             <h3 data-i18n="cap.2.title">Defensive delivery</h3>
             <p data-i18n="cap.2.body">
-              Push events are triangulated against a short-poll fallback and a dedupe ledger. Every message delivered exactly once.
+              Socket Mode push for Slack, HTTP polling for Lark — both pipe through the same dedupe ledger. Every message delivered exactly once.
             </p>
             <ul class="card__chips">
-              <li>push</li><li>poll fallback</li><li>dedupe ledger</li>
+              <li>Socket Mode</li><li>HTTP polling</li><li>dedupe ledger</li>
             </ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
@@ -480,13 +480,13 @@
             </div>
             <div role="row" class="perm__row">
               <div role="cell"><b>admin-auto</b></div>
-              <div role="cell"><code>admin_open_ids</code></div>
+              <div role="cell"><code>admin_open_ids</code> (Lark) / <code>admin_user_ids</code> (Slack)</div>
               <div role="cell" data-i18n="perm.row2.confirm">none</div>
               <div role="cell"><code>compile_preview</code> · <code>run_tests</code></div>
             </div>
             <div role="row" class="perm__row">
               <div role="cell"><b>admin-confirm</b></div>
-              <div role="cell"><code>admin_open_ids</code></div>
+              <div role="cell"><code>admin_open_ids</code> (Lark) / <code>admin_user_ids</code> (Slack)</div>
               <div role="cell" data-i18n-html="perm.row3.confirm">reply <em>yes</em></div>
               <div role="cell"><code>deploy_prod</code> · <code>db_migrate</code></div>
             </div>
