@@ -431,17 +431,17 @@ body.cursor-on .cursor-glow {
   letter-spacing: -0.04em;
   position: relative;
 }
-/* Cross-language caption beneath the title — each lang shows the
-   OTHER language's title as small Latin-letter-spaced subline,
-   echoing the bilingual layering of the reference poster.
-   Default (EN mode): Chinese caption below. */
+/* Caption beneath the title — small letter-spaced subline echoing
+   the reference poster's bilingual layering.
+   EN mode default: English tagline derived from cc-bot's upstream
+   project description (not a translation of the title above). */
 .hero__title-en::after {
-  content: "群里聊天  ·  本机代理  ·  整个项目";
+  content: "DEVELOP PROJECT FROM GROUP CHAT  ·  BY CLAUDE CODE";
   display: block;
   font-family: var(--f-mono);
   font-weight: 500;
-  font-size: 0.18em;
-  letter-spacing: 0.08em;
+  font-size: 0.16em;
+  letter-spacing: 0.22em;
   color: var(--muted);
   margin-top: 0.55em;
 }
