@@ -93,10 +93,11 @@ html[lang="zh"] .hero__title-en::after {
   display: block;
   font-family: var(--f-mono);
   font-weight: 500;
-  font-size: 0.16em;
+  font-size: 0.18em;
   letter-spacing: 0.22em;
   color: var(--muted);
-  margin-top: 0.55em;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
 }
 html[lang="zh"] .section__kicker,
 html[lang="zh"] .eyebrow {
@@ -406,7 +407,7 @@ body.cursor-on .cursor-glow {
 .hero__title {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(38px, 5.6vw, 88px);
+  font-size: clamp(46px, 7.2vw, 116px);
   line-height: 0.96;
   letter-spacing: -0.035em;
   margin: 0;
@@ -422,6 +423,12 @@ body.cursor-on .cursor-glow {
   width: max-content;
   max-width: 100%;
   margin: 0;
+}
+/* 'Group chat' / '群里聊天' — the opener gets a confident bump so
+   the title doesn't crescendo only at the em row. */
+.hero__title-en > span:first-of-type {
+  font-size: 1.12em;
+  font-weight: 600;
 }
 .hero__title em {
   font-style: normal;
@@ -440,10 +447,11 @@ body.cursor-on .cursor-glow {
   display: block;
   font-family: var(--f-mono);
   font-weight: 500;
-  font-size: 0.16em;
+  font-size: 0.18em;
   letter-spacing: 0.22em;
   color: var(--muted);
-  margin-top: 0.55em;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
 }
 
 .hero__lede {
