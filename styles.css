@@ -529,6 +529,43 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   font-size: 0.86em;             /* descend into the closer */
   align-self: flex-start;
 }
+
+/* Mobile: the asymmetric composition (em flex-end, last-span indent,
+   1.45× opener) overflows narrow viewports — 「Local Agent」 wraps
+   across two lines and the title looks broken. Collapse to a calm
+   flush-left stack with milder size variation. */
+@media (max-width: 640px) {
+  .hero__title {
+    font-size: clamp(32px, 9vw, 60px);
+    line-height: 1.0;
+  }
+  .hero__title-en {
+    align-items: flex-start;
+  }
+  .hero__title-en > span:first-of-type {
+    font-size: 1.15em;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+  }
+  html[lang="zh"] .hero__title-en > span:first-of-type {
+    letter-spacing: -0.02em;
+  }
+  .hero__title-en > em {
+    align-self: flex-start;
+    margin-top: 0;
+    font-size: 1.1em;
+    letter-spacing: -0.02em;
+  }
+  .hero__title-en > span:last-of-type {
+    margin-left: 0;
+    font-size: 1em;
+  }
+  .hero__title-en::after {
+    font-size: 0.22em;
+    letter-spacing: 0.15em;
+    margin-top: 0.8em;
+  }
+}
 .hero__title em {
   font-style: normal;
   font-weight: 700;
