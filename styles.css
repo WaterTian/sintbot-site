@@ -195,36 +195,36 @@ body.cursor-on .cursor-glow {
    sit on the lowercase x-height middle, not above. */
 .nav__word i.nav__trace {
   display: inline-block;
-  width: 0.32em;
-  height: 0.06em;
-  margin: 0 0.20em;
-  vertical-align: 0.22em;
+  width: 0.38em;
+  height: 0.11em;
+  margin: 0 0.24em;
+  vertical-align: 0.20em;
   background: var(--signal);
   position: relative;
   font-style: normal;
-  border-radius: 0.03em;
+  border-radius: 0.04em;
 }
 .nav__word i.nav__trace::before,
 .nav__word i.nav__trace::after {
   content: "";
   position: absolute;
   top: 50%;
-  width: 0.14em;
-  height: 0.14em;
+  width: 0.22em;
+  height: 0.22em;
   border-radius: 50%;
   transform: translateY(-50%);
   box-sizing: border-box;
 }
 /* left end: filled solder pad */
 .nav__word i.nav__trace::before {
-  left: -0.10em;
+  left: -0.16em;
   background: var(--signal);
 }
 /* right end: hollow ring — reads as a PCB via (through-hole) */
 .nav__word i.nav__trace::after {
-  right: -0.10em;
+  right: -0.16em;
   background: transparent;
-  border: 0.035em solid var(--signal);
+  border: 0.05em solid var(--signal);
 }
 .nav__forslack {
   margin-left: 10px;
