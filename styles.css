@@ -74,13 +74,14 @@ html[lang="zh"] .cta h2 em {
 /* ZH hero title: bold Song with bracketed accent + Latin caption
    reference: poster typography (有田烧业「400年」纪念) — large bold
    characters with smaller English caption tucked beneath. */
+html[lang="zh"] .hero__title,
+html[lang="zh"] .section__h,
+html[lang="zh"] .cta h2 {
+  font-weight: 900;          /* heaviest Noto Serif SC cut, matches the em accent */
+}
 html[lang="zh"] .hero__title-en > em {
-  font-weight: 900;          /* lean on the heaviest Noto Serif SC cut */
   font-size: 1.22em;
   letter-spacing: -0.02em;
-}
-html[lang="zh"] .hero__title-en > span {
-  font-weight: 500;
 }
 /* Small Latin caption below the ZH title — added via ::after on the
    wrapper, using the i18n attribute. */
