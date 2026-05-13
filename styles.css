@@ -424,11 +424,18 @@ body.cursor-on .cursor-glow {
   max-width: 100%;
   margin: 0;
 }
-/* 'Group chat' / '群里聊天' — the opener gets a confident bump so
-   the title doesn't crescendo only at the em row. */
+/* 'Group chat' / '群里聊天' — the opener is the visual hammer.
+   Sized larger than the em accent and the closer, breaking the
+   centered-peak convention. Bigger + heavier + tighter tracking. */
 .hero__title-en > span:first-of-type {
-  font-size: 1.12em;
-  font-weight: 600;
+  font-size: 1.45em;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+html[lang="zh"] .hero__title-en > span:first-of-type {
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 .hero__title em {
   font-style: normal;
