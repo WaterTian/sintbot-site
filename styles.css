@@ -70,6 +70,61 @@ html[lang="zh"] .cta h2 em {
   font-style: normal;
   font-weight: 700;
 }
+
+/* ZH hero title: traditional Chinese vertical typography
+   reference: 「知道過去，便知道未來」 — three columns, RTL, with
+   corner brackets. Latin-only languages keep the horizontal layout. */
+html[lang="zh"] .hero__title-en {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1.05;
+  position: relative;
+  padding: 0.6em 0.9em 0.9em 0.6em;
+}
+html[lang="zh"] .hero__title-en > span,
+html[lang="zh"] .hero__title-en > em {
+  display: block;
+  width: auto;
+  max-width: none;
+  margin-block-end: 0.18em;
+}
+html[lang="zh"] .hero__title-en > em {
+  font-size: 1em;            /* in vertical, drop the size jump — colour alone emphasizes */
+}
+/* corner brackets — drawn as borders so they scale with the title */
+html[lang="zh"] .hero__title-en::before,
+html[lang="zh"] .hero__title-en::after {
+  content: "";
+  position: absolute;
+  width: 0.32em;
+  height: 0.32em;
+  border: 1px solid currentColor;
+  opacity: 0.55;
+}
+html[lang="zh"] .hero__title-en::before {
+  top: 0;
+  right: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+html[lang="zh"] .hero__title-en::after {
+  bottom: 0;
+  left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+/* mobile: drop back to horizontal — three vertical columns get
+   awkward on narrow viewports and the brackets feel oversized. */
+@media (max-width: 640px) {
+  html[lang="zh"] .hero__title-en {
+    writing-mode: horizontal-tb;
+    padding: 0;
+  }
+  html[lang="zh"] .hero__title-en::before,
+  html[lang="zh"] .hero__title-en::after {
+    display: none;
+  }
+}
 html[lang="zh"] .section__kicker,
 html[lang="zh"] .eyebrow {
   letter-spacing: 0.12em;
