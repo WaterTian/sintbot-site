@@ -2,7 +2,7 @@
 
 Pure static HTML / CSS / JS — zero build tools. Single page, dark editorial layout, Slack-first content.
 
-Live at <https://watertian.github.io/cc-bot-site/>.
+Live at <https://sintbot.com>.
 
 ## Preview locally
 
