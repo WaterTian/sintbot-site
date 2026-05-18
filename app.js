@@ -528,4 +528,66 @@
       });
     });
   });
+
+  // 6) Analytics — GoatCounter custom events -----------------------------
+  // The plain pageview is sent automatically by count.js. Below we add
+  // intent-level events. count.js loads async; all events here fire on
+  // user interaction or scroll, by which point window.goatcounter exists.
+  function track(name, title) {
+    if (window.goatcounter && typeof window.goatcounter.count === "function") {
+      window.goatcounter.count({ path: name, title: title || name, event: true });
+    }
+  }
+
+  // copy buttons — split by what was copied
+  document.querySelectorAll(".copy[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const text = btn.getAttribute("data-copy") || "";
+      if (text.includes("/plugin install")) {
+        track("copy-install", "Copy: install command");
+      } else if (text.includes("display_information")) {
+        track("copy-manifest", "Copy: Slack manifest");
+      } else if (text.includes("/cc-bot:start")) {
+        track("copy-start", "Copy: cc-bot:start");
+      } else {
+        track("copy-other", "Copy: other snippet");
+      }
+    });
+  });
+
+  // language toggle
+  document.querySelectorAll(".lang-toggle__btn[data-lang]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+      track("lang-" + lang, "Lang switch: " + lang);
+    });
+  });
+
+  // primary CTA — 'Set up the Slack app'
+  document.querySelectorAll('.btn--primary[href="#install"]').forEach((btn) => {
+    btn.addEventListener("click", () => track("cta-setup", "CTA: Set up the Slack app"));
+  });
+
+  // outbound GitHub links
+  document.querySelectorAll('a[href*="github.com/WaterTian"]').forEach((a) => {
+    a.addEventListener("click", () => track("github-click", "Outbound: GitHub"));
+  });
+
+  // section reach — fire once the first time each section scrolls into view
+  if ("IntersectionObserver" in window) {
+    const seen = new Set();
+    const secObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting && id && !seen.has(id)) {
+            seen.add(id);
+            track("section-" + id, "Section reached: " + id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
+  }
 })();
