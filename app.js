@@ -571,25 +571,9 @@
     });
   });
 
-  // 4) Subtle parallax on hero marquee -----------------------------------
-  if (!prefersReducedMotion) {
-    const marquee = document.querySelector(".hero__marquee-track");
-    if (marquee) {
-      let lastY = 0;
-      let raf2 = 0;
-      const onScroll = () => {
-        lastY = window.scrollY;
-        if (!raf2) raf2 = requestAnimationFrame(applyParallax);
-      };
-      const applyParallax = () => {
-        // marquee already auto-scrolls; we add a vertical drift for depth
-        const offset = Math.min(lastY * 0.08, 60);
-        marquee.style.translate = `0 ${offset}px`;
-        raf2 = 0;
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-    }
-  }
+  // 4) Hero marquee parallax — folded into the unified hero parallax in
+  //    section 8 (was a separate block here, gated by prefers-reduced-
+  //    motion, which Win11 Chrome false-reports — so it never ran).
 
   // 4b) Back-to-top button — show after roughly one viewport of scroll ---
   const toTop = document.querySelector(".to-top");
@@ -766,6 +750,7 @@
   // static per-layer blur (set in CSS) — so scrolling only re-composites
   // and never re-blurs: smooth, no jank.
   const heroSel = [
+    { sel: ".hero__marquee-track",                 k: 0.2 },
     { sel: ".hero__title-en > span:first-of-type", k: 0.05 },
     { sel: ".hero__title-en > em",                 k: 0.13 },
     { sel: ".hero__title-en > span:last-of-type",  k: -0.04 },
