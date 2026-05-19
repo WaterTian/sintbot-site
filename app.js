@@ -25,16 +25,16 @@
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Group chat</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-           <span data-reveal data-reveal-delay="240">Whole project</span>`,
+           <span data-reveal data-reveal-delay="240">Desktop pet</span>`,
       zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-           <span data-reveal data-reveal-delay="240">整个项目</span>`
+           <span data-reveal data-reveal-delay="240">桌宠</span>`
     },
     "hero.lede":         {
-      en: "Mention <code>@cc-bot</code> in Slack — Claude Code runs on your laptop, reads the intent, writes the diff itself or dispatches to a specialist. Code, tokens, and shell never leave the machine.",
-      zh: "在 Slack 群里 <code>@cc-bot</code> — Claude Code 在你的电脑上读意图、写改动，或派单给专门模型。代码、token、shell 都不出本机。"
+      en: "sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and a desktop pet gives it a face that watches the project and works beside you.",
+      zh: "sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 再用一只桌宠给它一张脸，盯着项目、陪你工作。"
     },
-    "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
+    "hero.cta.primary":   { en: "Meet sintbot", zh: "认识 sintbot" },
 
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
