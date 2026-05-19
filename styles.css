@@ -1745,3 +1745,73 @@ html[lang="zh"] .pet-card h3 {
   .pet-state--alert .pet-state__img,
   .pet-state--idle .pet-state__img { animation: none; }
 }
+
+/* ── accessibility utility ─────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── back-to-top — a small PCB via, fixed bottom-right ─────────────── */
+/* semi-transparent surface; motion mirrors the .card/.pet-card recipe   */
+.to-top {
+  position: fixed;
+  right: var(--gut);
+  bottom: var(--gut);
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: rgba(19, 26, 23, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line-soft);
+  color: var(--signal);
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.42);
+  /* hidden state: faded out + offset down, clear of hover lift */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition:
+    transform 0.4s var(--ease-out),
+    border-color 0.4s var(--ease-out),
+    color 0.4s var(--ease-out),
+    opacity 0.4s var(--ease-out);
+}
+.to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.to-top__icon {
+  font-family: var(--f-mono);
+  font-size: 17px;
+  line-height: 1;
+}
+/* card-mirrored hover: lift + copper border (only meaningful while visible) */
+.to-top.is-visible:hover {
+  transform: translateY(-4px);
+  border-color: var(--signal);
+  color: var(--gold);
+}
+@media (prefers-reduced-motion: reduce) {
+  .to-top {
+    transition: opacity 0.2s linear;
+    transform: none;
+  }
+  .to-top.is-visible,
+  .to-top.is-visible:hover {
+    transform: none;
+  }
+}
