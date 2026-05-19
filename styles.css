@@ -1643,7 +1643,7 @@ html[lang="zh"] .pillar h3 {
   background: rgba(243, 238, 229, 0.03);
   border-color: var(--line);
 }
-.agent-slot--ghost b { color: var(--muted); font-weight: 600; }
+.agent-slot--ghost b { color: var(--muted); }
 .agent-slot--ghost .agent-slot__dot { background: var(--muted); }
 .agent-slot__tag { color: var(--muted); }
 .botintro__bridge {
