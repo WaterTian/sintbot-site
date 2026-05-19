@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>cc-bot for Slack — AI agents in your channel</title>
+    <title>sintbot — AI agents in your group chat, with a face</title>
     <meta
       name="description"
-      content="Slack-native AI agents — Claude Code, Gemini, Nano Banana, Seedance, DeepSeek. Mention the bot, ship from chat. Lark / Feishu through the same IMAdapter."
+      content="sintbot is a local-first platform: cc-bot puts an AI agent (Claude Code) in your Slack or Lark group, and a desktop pet gives it a face — watching the project, working beside you."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
@@ -32,15 +32,13 @@
 
     <!-- Top nav -->
     <header class="nav" data-reveal>
-      <a class="nav__brand" href="#top" aria-label="cc-bot home">
+      <a class="nav__brand" href="#top" aria-label="sintbot home">
         <img src="./assets/logo.png" alt="" width="36" height="36" />
-        <span class="nav__word">cc<i class="nav__trace" aria-hidden="true"></i>bot</span>
-        <span class="nav__forslack" aria-hidden="true">for Slack</span>
+        <span class="nav__word">sint<i class="nav__trace" aria-hidden="true"></i>bot</span>
       </a>
       <nav class="nav__menu" aria-label="primary">
-        <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
-        <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
-        <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+        <a href="#bot" data-i18n="nav.bot">Bot</a>
+        <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
         <a href="#install" data-i18n="nav.setup">Setup</a>
         <a
           href="https://github.com/WaterTian/cc-bot"
@@ -665,9 +663,8 @@ settings:
           <span data-i18n="foot.tag">MIT · Local-first · IM-agnostic</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
-          <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
-          <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
-          <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+          <a href="#bot" data-i18n="nav.bot">Bot</a>
+          <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
           <a href="#install" data-i18n="nav.setup">Setup</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
         </nav>
