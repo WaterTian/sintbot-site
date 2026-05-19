@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>cc-bot for Slack — AI agents in your channel</title>
+    <title>sintbot — AI agents in your group chat, with a face</title>
     <meta
       name="description"
-      content="Slack-native AI agents — Claude Code, Gemini, Nano Banana, Seedance, DeepSeek. Mention the bot, ship from chat. Lark / Feishu through the same IMAdapter."
+      content="sintbot is a local-first platform: cc-bot puts an AI agent (Claude Code) in your Slack or Lark group, and a desktop pet gives it a face — watching the project, working beside you."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
@@ -32,15 +32,13 @@
 
     <!-- Top nav -->
     <header class="nav" data-reveal>
-      <a class="nav__brand" href="#top" aria-label="cc-bot home">
+      <a class="nav__brand" href="#top" aria-label="sintbot home">
         <img src="./assets/logo.png" alt="" width="36" height="36" />
-        <span class="nav__word">cc<i class="nav__trace" aria-hidden="true"></i>bot</span>
-        <span class="nav__forslack" aria-hidden="true">for Slack</span>
+        <span class="nav__word">sint<i class="nav__trace" aria-hidden="true"></i>bot</span>
       </a>
       <nav class="nav__menu" aria-label="primary">
-        <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
-        <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
-        <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+        <a href="#bot" data-i18n="nav.bot">Bot</a>
+        <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
         <a href="#install" data-i18n="nav.setup">Setup</a>
         <a
           href="https://github.com/WaterTian/cc-bot"
@@ -87,15 +85,23 @@
             <span class="hero__title-en" data-i18n-html="hero.titleEn">
               <span data-reveal data-reveal-delay="0">Group chat</span>
               <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-              <span data-reveal data-reveal-delay="240">Whole project</span>
+              <span data-reveal data-reveal-delay="240">Desktop pet</span>
             </span>
           </h1>
+          <img
+            class="hero__pet"
+            src="./assets/logo.png"
+            alt=""
+            aria-hidden="true"
+            width="120"
+            height="120"
+          />
           <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
             Mention <code>@cc-bot</code> in Slack — Claude Code runs on your laptop, reads the intent, writes the diff itself or dispatches to a specialist. Code, tokens, and shell never leave the machine.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
-            <a class="btn btn--primary" href="#install">
-              <span data-i18n="hero.cta.primary">Set up the Slack app</span>
+            <a class="btn btn--primary" href="#what">
+              <span data-i18n="hero.cta.primary">Meet sintbot</span>
               <span class="btn__arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -137,6 +143,62 @@
             </li>
           </ol>
         </aside>
+      </section>
+
+      <!-- What is sintbot -->
+      <section id="what" class="section section--what">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="what.kicker">Platform</p>
+        <h2 class="section__h" data-reveal data-i18n-html="what.h">What <em>sintbot</em> is.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="what.lede">
+          Local-first, MIT, no runtime. sintbot lives in the group chat your team already uses.
+        </p>
+        <ol class="pillars">
+          <li class="pillar" data-reveal>
+            <span class="pillar__no" aria-hidden="true">①</span>
+            <h3 data-i18n="what.bot.title">Multi-model group bot</h3>
+            <p data-i18n-html="what.bot.body">
+              Drop an AI agent into a Slack / Lark channel — mention it, it works.
+              <code>cc-bot</code> is the Claude Code edition, live today.
+            </p>
+            <a class="pillar__link" href="#bot" data-i18n="what.bot.link">See the bot →</a>
+          </li>
+          <li class="pillar" data-reveal data-reveal-delay="80">
+            <span class="pillar__no" aria-hidden="true">②</span>
+            <h3 data-i18n="what.pet.title">Desktop pet</h3>
+            <p data-i18n="what.pet.body">
+              A creature on every teammate's desktop — it listens to the channel,
+              cares about the project, and works beside you with a personality.
+            </p>
+            <a class="pillar__link" href="#pet" data-i18n="what.pet.link">See the pet →</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Pillar ① — multi-model bot intro -->
+      <section id="bot" class="section section--botintro">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="bot.kicker">Pillar ①</p>
+        <h2 class="section__h" data-reveal data-i18n="bot.h">Put an AI agent in the channel.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="bot.lede">
+          The bot binds one AI agent into a Slack / Lark group — mention it, and the agent
+          reads the intent, does the work and replies, all on your own machine.
+        </p>
+        <ul class="agent-slots" data-reveal>
+          <li class="agent-slot agent-slot--live">
+            <span class="agent-slot__dot" aria-hidden="true"></span>
+            <b>Claude Code</b>
+            <span class="agent-slot__tag" data-i18n="bot.slot.live">cc-bot · live</span>
+          </li>
+          <li class="agent-slot agent-slot--ghost">
+            <span class="agent-slot__dot" aria-hidden="true"></span>
+            <b data-i18n="bot.slot.other">Other AI agents</b>
+            <span class="agent-slot__tag" data-i18n="bot.slot.planned">planned</span>
+          </li>
+        </ul>
+        <p class="botintro__bridge" data-reveal data-i18n="bot.bridge">
+          Below is cc-bot — the full Claude Code edition.
+        </p>
       </section>
 
       <!-- Scenarios -->
@@ -641,6 +703,65 @@ settings:
         </div>
       </section>
 
+      <!-- Pillar ② — desktop pet -->
+      <section id="pet" class="section section--pet">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="pet.kicker">Pillar ②</p>
+        <h2 class="section__h" data-reveal data-i18n="pet.h">Give the AI a form.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="pet.lede">
+          cc-bot works in the channel, but it has no face. The desktop pet is that face —
+          a small creature on your desktop that watches the channel, cares about the
+          project, and keeps you company with a mood.
+        </p>
+
+        <!-- state board — CSS mood variants (route 1) -->
+        <div class="pet-board" data-reveal>
+          <figure class="pet-state pet-state--focus">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.compiling">Compiling</b><span data-i18n="pet.state.focus">focused</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--happy">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.deployed">Deployed</b><span data-i18n="pet.state.happy">delighted</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--alert">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.error">Error</b><span data-i18n="pet.state.alert">alarmed</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--idle">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.idle">Idle</b><span data-i18n="pet.state.lazy">lazing</span></figcaption>
+          </figure>
+        </div>
+
+        <ol class="pet-cards">
+          <li class="pet-card" data-reveal>
+            <span class="pet-card__no" aria-hidden="true">01</span>
+            <h3 data-i18n="pet.1.title">One each</h3>
+            <p data-i18n="pet.1.body">Every teammate has their own creature on their own desktop — same channel, each their own view.</p>
+          </li>
+          <li class="pet-card" data-reveal data-reveal-delay="80">
+            <span class="pet-card__no" aria-hidden="true">02</span>
+            <h3 data-i18n="pet.2.title">Listens to the channel</h3>
+            <p data-i18n="pet.2.body">Wired live into Slack / Lark — whatever happens in the channel, it knows.</p>
+          </li>
+          <li class="pet-card" data-reveal data-reveal-delay="160">
+            <span class="pet-card__no" aria-hidden="true">03</span>
+            <h3 data-i18n="pet.3.title">Acts out the state</h3>
+            <p data-i18n="pet.3.body">cc-bot compiling, deploying, erroring — the pet plays it out in expression and motion.</p>
+          </li>
+          <li class="pet-card" data-reveal data-reveal-delay="240">
+            <span class="pet-card__no" aria-hidden="true">04</span>
+            <h3 data-i18n="pet.4.title">Has a personality</h3>
+            <p data-i18n="pet.4.body">Not a status light — it answers messages, has moods and a temper, a partner that works beside you.</p>
+          </li>
+        </ol>
+
+        <p class="pet__close" data-reveal data-i18n="pet.close">
+          Give that AI dev teammate a face that moves and answers back.
+        </p>
+      </section>
+
       <!-- CTA -->
       <section class="section section--cta">
         <div class="cta">
@@ -661,13 +782,12 @@ settings:
       <div class="foot__row">
         <div class="foot__brand">
           <img src="./assets/logo.png" alt="" width="28" height="28" />
-          <strong>cc-bot</strong>
+          <strong>sintbot</strong>
           <span data-i18n="foot.tag">MIT · Local-first · IM-agnostic</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
-          <a href="#scenarios" data-i18n="nav.scenarios">Scenarios</a>
-          <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
-          <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+          <a href="#bot" data-i18n="nav.bot">Bot</a>
+          <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
           <a href="#install" data-i18n="nav.setup">Setup</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
         </nav>
@@ -676,6 +796,11 @@ settings:
         Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.
       </p>
     </footer>
+
+    <a href="#top" class="to-top">
+      <span class="visually-hidden" data-i18n="totop.label">Back to top</span>
+      <span class="to-top__icon" aria-hidden="true">↑</span>
+    </a>
 
     <script src="./app.js" defer></script>
   </body>
