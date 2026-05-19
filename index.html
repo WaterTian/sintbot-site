@@ -714,8 +714,25 @@ settings:
           project, and keeps you company with a mood.
         </p>
 
-        <!-- state board — populated in Task 6 -->
-        <div class="pet-board" data-reveal aria-hidden="true"></div>
+        <!-- state board — CSS mood variants (route 1) -->
+        <div class="pet-board" data-reveal>
+          <figure class="pet-state pet-state--focus">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.compiling">Compiling</b><span data-i18n="pet.state.focus">focused</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--happy">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.deployed">Deployed</b><span data-i18n="pet.state.happy">delighted</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--alert">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.error">Error</b><span data-i18n="pet.state.alert">alarmed</span></figcaption>
+          </figure>
+          <figure class="pet-state pet-state--idle">
+            <img class="pet-state__img" src="./assets/logo.png" alt="" width="80" height="80" />
+            <figcaption><b data-i18n="pet.state.idle">Idle</b><span data-i18n="pet.state.lazy">lazing</span></figcaption>
+          </figure>
+        </div>
 
         <ol class="pet-cards">
           <li class="pet-card" data-reveal>

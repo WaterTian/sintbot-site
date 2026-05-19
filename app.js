@@ -99,6 +99,14 @@
       en: "Give that AI dev teammate a face that moves and answers back.",
       zh: "让团队那位 AI 开发同事，有一张会动、会回应的脸。"
     },
+    "pet.state.compiling": { en: "Compiling", zh: "编译中" },
+    "pet.state.focus":     { en: "focused",   zh: "专注" },
+    "pet.state.deployed":  { en: "Deployed",  zh: "部署成功" },
+    "pet.state.happy":     { en: "delighted", zh: "雀跃" },
+    "pet.state.error":     { en: "Error",     zh: "报错" },
+    "pet.state.alert":     { en: "alarmed",   zh: "警觉" },
+    "pet.state.idle":      { en: "Idle",      zh: "空闲" },
+    "pet.state.lazy":      { en: "lazing",    zh: "慵懒" },
 
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
