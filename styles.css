@@ -1543,7 +1543,7 @@ html[lang="zh"] .pet-card h3 {
   height: auto;
   pointer-events: none;
   z-index: 2;
-  animation: pet-idle 4.5s var(--ease-in-out) infinite;
+  animation: hero-float 5s var(--ease-in-out) infinite;
   transform-origin: 50% 100%;
   /* cast shadow — drops the pet's silhouette down onto the
      「Local Agent」 text below; near-invisible over the dark
@@ -1554,8 +1554,27 @@ html[lang="zh"] .pet-card h3 {
   0%, 100% { transform: translateY(0) rotate(-1.5deg); }
   50%      { transform: translateY(-7px) rotate(1.5deg); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero__pet { animation: none; }
+/* hero pet — a more pronounced float than the shared pet-idle.
+   Deliberately NOT gated by prefers-reduced-motion: Win11 Chrome
+   false-reports `reduce`, so — like cursor-glow, the cards and the
+   back-to-top button — this ambient motion runs for everyone. */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(-2.2deg); }
+  50%      { transform: translateY(-14px) rotate(2.2deg); }
+}
+/* occasional jitter-hop — JS toggles .is-jitter at random intervals;
+   runs on the inner layers so it composes with the span's hero-float */
+@keyframes hero-jitter {
+  0%   { transform: translateY(0) rotate(0); }
+  16%  { transform: translateY(-9px) rotate(7deg); }
+  32%  { transform: translateY(0) rotate(-6deg); }
+  48%  { transform: translateY(-5px) rotate(4deg); }
+  64%  { transform: translateY(0) rotate(-3deg); }
+  82%  { transform: translateY(-2px) rotate(1.5deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+.hero__pet.is-jitter .logo-cycle__layer {
+  animation: hero-jitter 0.7s var(--ease-out);
 }
 /* Below 880px the absolutely-positioned pet collides with the H1 title:
    on tablets it clips the 「Local Agent」 line, and below 640px the title
