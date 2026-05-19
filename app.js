@@ -758,4 +758,31 @@
       setTimeout(jitter, 3000 + Math.random() * 7000);
     }
   }
+
+  // 8) Hero parallax — staggered depth on the hero text while scrolling.
+  // Uses the standalone `translate` property so it composes with — and
+  // never fights — the reveal animation's `transform`. Stable selectors
+  // survive the i18n innerHTML rebuild of the title lines.
+  const heroLayers = [
+    { sel: ".hero__title-en > span:first-of-type", k: 0.05 },
+    { sel: ".hero__title-en > em",                 k: 0.13 },
+    { sel: ".hero__title-en > span:last-of-type",  k: -0.04 },
+    { sel: ".hero__lede",                          k: 0.09 },
+    { sel: ".hero__ctas",                          k: -0.07 },
+  ];
+  let rafHero = 0;
+  function applyHeroParallax() {
+    const y = window.scrollY;
+    heroLayers.forEach((l) => {
+      const el = document.querySelector(l.sel);
+      if (el) el.style.translate = "0 " + (y * l.k).toFixed(1) + "px";
+    });
+    rafHero = 0;
+  }
+  window.addEventListener(
+    "scroll",
+    () => { if (!rafHero) rafHero = requestAnimationFrame(applyHeroParallax); },
+    { passive: true }
+  );
+  applyHeroParallax();
 })();
