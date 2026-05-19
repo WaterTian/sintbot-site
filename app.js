@@ -692,4 +692,59 @@
     );
     document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
   }
+
+  // 7) Logo-cycle — random crossfade of the bot characters ----------------
+  // Each [data-logo-cycle] <img> is swapped for a two-layer span that fades
+  // between random bot characters on its own independent timer.
+  const cycleSlots = document.querySelectorAll("img[data-logo-cycle]");
+  if (cycleSlots.length) {
+    const COUNT = 12;
+    const bots = [];
+    for (let i = 1; i <= COUNT; i++) {
+      bots.push("./assets/bot/bot-" + String(i).padStart(2, "0") + ".webp");
+    }
+    bots.forEach((s) => { const im = new Image(); im.src = s; }); // preload
+
+    cycleSlots.forEach((orig) => {
+      const span = document.createElement("span");
+      span.className = "logo-cycle" + (orig.className ? " " + orig.className : "");
+      if (orig.getAttribute("aria-hidden")) span.setAttribute("aria-hidden", "true");
+      // class-less slots (nav / footer) keep their original icon height;
+      // classed slots (hero pet, pet-state) are sized by their existing CSS.
+      if (!orig.className) {
+        const h = orig.getAttribute("height");
+        if (h) span.style.height = h + "px";
+      }
+      const layerA = document.createElement("img");
+      const layerB = document.createElement("img");
+      layerA.className = layerB.className = "logo-cycle__layer";
+      layerA.alt = layerB.alt = "";
+      let shown = (Math.random() * COUNT) | 0;
+      let queued = (shown + 1 + ((Math.random() * (COUNT - 1)) | 0)) % COUNT;
+      layerA.src = bots[shown];
+      layerB.src = bots[queued];
+      layerA.style.opacity = "1";
+      layerB.style.opacity = "0";
+      span.append(layerA, layerB);
+      orig.replaceWith(span);
+
+      let front = layerA, back = layerB;
+      function step() {
+        back.style.opacity = "1";
+        front.style.opacity = "0";
+        shown = queued;
+        const t = front; front = back; back = t;
+        let n;
+        do { n = (Math.random() * COUNT) | 0; } while (n === shown);
+        queued = n;
+        back.src = bots[n];
+        schedule();
+      }
+      function schedule() {
+        // wide, uneven interval so the 7 slots scatter unpredictably
+        setTimeout(step, 4000 + Math.random() * 11000);
+      }
+      schedule();
+    });
+  }
 })();
