@@ -491,7 +491,7 @@ body.cursor-on .cursor-glow {
    rectangle so the title reads as movement, not a list:
      1)  Group chat       flush-left, biggest, the hammer
      2)              「Local Agent」   pushed to the right edge
-     3)     Whole project          indented, smaller, descending
+     3)     Desktop pet            indented, smaller, descending
 */
 .hero__title-en > span:first-of-type {
   font-size: 1.45em;
@@ -1550,4 +1550,11 @@ html[lang="zh"] .step h3 {
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__pet { animation: none; }
+}
+/* Below 880px the absolutely-positioned pet collides with the H1 title:
+   on tablets it clips the 「Local Agent」 line, and below 640px the title
+   collapses to a flush-left stack that leaves no clear corner for it.
+   The pet is purely decorative (aria-hidden) — drop it on narrow viewports. */
+@media (max-width: 880px) {
+  .hero__pet { display: none; }
 }
