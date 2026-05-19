@@ -983,7 +983,8 @@ html[lang="zh"] .card h3,
 html[lang="zh"] .scenario h3,
 html[lang="zh"] .local h3,
 html[lang="zh"] .step h3,
-html[lang="zh"] .pillar h3 {
+html[lang="zh"] .pillar h3,
+html[lang="zh"] .pet-card h3 {
   font-weight: 700;
 }
 .card p {
@@ -1651,4 +1652,41 @@ html[lang="zh"] .pillar h3 {
   font-family: var(--f-mono);
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+/* ---- pillar ② : desktop pet ------------------------------------ */
+.pet-cards {
+  list-style: none;
+  margin: clamp(28px, 5vw, 56px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 900px) { .pet-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .pet-cards { grid-template-columns: 1fr; } }
+.pet-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: clamp(20px, 2.6vw, 30px);
+  background: var(--ink-2);
+  transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+}
+.pet-card:hover { transform: translateY(-4px); border-color: var(--signal); }
+.pet-card__no {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--signal);
+}
+.pet-card h3 {
+  font-family: var(--f-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin: 8px 0 8px;
+}
+.pet-card p { color: var(--bone-2); margin: 0; font-size: 0.95rem; }
+.pet__close {
+  margin-top: clamp(28px, 5vw, 52px);
+  font-family: var(--f-display);
+  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
+  color: var(--bone);
 }
