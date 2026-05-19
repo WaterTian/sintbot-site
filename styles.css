@@ -1800,7 +1800,8 @@ html[lang="zh"] .pet-card h3 {
   line-height: 1;
 }
 /* card-mirrored hover: lift + copper border (only meaningful while visible) */
-.to-top.is-visible:hover {
+.to-top.is-visible:hover,
+.to-top.is-visible:focus-visible {
   transform: translateY(-4px);
   border-color: var(--signal);
   color: var(--gold);
