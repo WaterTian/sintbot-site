@@ -1623,18 +1623,27 @@ html[lang="zh"] .pillar h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 10px 18px;
   font-family: var(--f-mono);
   font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  background: rgba(243, 238, 229, 0.04);
+  border: 1px solid var(--line-soft);
 }
 .agent-slot__dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--acid);
 }
-.agent-slot--live { border-color: var(--signal); }
-.agent-slot--ghost { opacity: 0.45; }
+.agent-slot--live {
+  background: rgba(214, 143, 68, 0.08);
+  border-color: rgba(214, 143, 68, 0.4);
+}
+.agent-slot--ghost {
+  background: rgba(243, 238, 229, 0.03);
+  border-color: var(--line);
+}
+.agent-slot--ghost b { color: var(--muted); font-weight: 600; }
 .agent-slot--ghost .agent-slot__dot { background: var(--muted); }
 .agent-slot__tag { color: var(--muted); }
 .botintro__bridge {
