@@ -36,6 +36,25 @@
     },
     "hero.cta.primary":   { en: "Meet sintbot", zh: "认识 sintbot" },
 
+    "what.kicker":   { en: "Platform", zh: "平台" },
+    "what.h":        { en: `What <em>sintbot</em> is.`, zh: `<em>sintbot</em> 是什么。` },
+    "what.lede":     {
+      en: "Local-first, MIT, no runtime. sintbot lives in the group chat your team already uses.",
+      zh: "本地优先、MIT、无外部运行时。sintbot 就长在团队本来就在用的群聊里。"
+    },
+    "what.bot.title":{ en: "Multi-model group bot", zh: "多模型群聊机器人" },
+    "what.bot.body": {
+      en: `Drop an AI agent into a Slack / Lark channel — mention it, it works. <code>cc-bot</code> is the Claude Code edition, live today.`,
+      zh: `把一个 AI agent 接进飞书 / Slack 群，mention 一下就开干。<code>cc-bot</code> 是 Claude Code 版，已上线。`
+    },
+    "what.bot.link": { en: "See the bot →", zh: "看机器人 →" },
+    "what.pet.title":{ en: "Desktop pet", zh: "桌宠" },
+    "what.pet.body": {
+      en: "A creature on every teammate's desktop — it listens to the channel, cares about the project, and works beside you with a personality.",
+      zh: "人手一只趴桌面的虚拟形象，旁听群聊、关心项目，有性格有情绪陪你工作。"
+    },
+    "what.pet.link": { en: "See the pet →", zh: "看桌宠 →" },
+
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
       en: "@cc-bot signup is throwing 500 on staging — can you triage?",
