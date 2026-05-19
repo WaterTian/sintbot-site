@@ -382,15 +382,15 @@
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `MIT, runtime-free, on GitHub. Slack &amp; Lark adapters both live on <code>main</code>.`,
-      zh: `MIT 协议，无外部运行时，在 GitHub。Slack 与飞书适配器都在 <code>main</code> 分支。`
+      en: `sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
+      zh: `sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器已在 <code>main</code> 分支；桌宠在路上。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
     "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
     "foot.meta":    {
-      en: "Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
-      zh: "展示站点——节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
+      en: "sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
+      zh: "sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
     },
 
     "copy": { en: "copy", zh: "复制" }
@@ -648,6 +648,11 @@
   // outbound GitHub links
   document.querySelectorAll('a[href*="github.com/WaterTian"]').forEach((a) => {
     a.addEventListener("click", () => track("github-click", "Outbound: GitHub"));
+  });
+
+  // pillar card clicks
+  document.querySelectorAll('.pillar__link').forEach((a) => {
+    a.addEventListener("click", () => track("pillar-click", "Pillar card: " + a.getAttribute("href")));
   });
 
   // section reach — fire once the first time each section scrolls into view
