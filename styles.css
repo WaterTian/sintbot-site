@@ -87,7 +87,7 @@ html[lang="zh"] .hero__title-en > em {
 /* Small Latin caption below the ZH title — added via ::after on the
    wrapper, using the i18n attribute. */
 html[lang="zh"] .hero__title-en::after {
-  content: "GROUP CHAT  ·  LOCAL AGENT  ·  WHOLE PROJECT";
+  content: "GROUP CHAT  ·  LOCAL AGENT  ·  DESKTOP PET";
   display: block;
   font-family: var(--f-mono);
   font-weight: 500;
@@ -560,10 +560,10 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
 }
 /* Caption beneath the title — small letter-spaced subline echoing
    the reference poster's bilingual layering.
-   EN mode default: English tagline derived from cc-bot's upstream
-   project description (not a translation of the title above). */
+   EN mode default: a platform-level tagline (not a translation of the
+   title above); zh mode shows the title words instead. */
 .hero__title-en::after {
-  content: "DEVELOP PROJECT FROM GROUP CHAT  ·  BY CLAUDE CODE";
+  content: "AI AGENTS IN YOUR GROUP CHAT  ·  WITH A FACE";
   display: block;
   font-family: var(--f-mono);
   font-weight: 500;

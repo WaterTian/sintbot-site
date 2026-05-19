@@ -1,6 +1,8 @@
 # sintbot-site
 
-cc-bot 项目的展示 / 宣传网站。纯静态、单页、双语 EN/中。线上：https://sintbot.com
+**sintbot 平台**的展示 / 宣传网站。纯静态、单页、双语 EN/中。线上：https://sintbot.com
+
+sintbot 含两根支柱：① **多模型群聊机器人** —— 把 AI agent 接进飞书/Slack 群，cc-bot 是其中已上线的 Claude Code 版；② **桌宠** —— 趴桌面、演开发状态、有性格的虚拟形象。单页同时呈现这两部分。
 
 ## 技术栈
 
@@ -13,6 +15,7 @@ cc-bot 项目的展示 / 宣传网站。纯静态、单页、双语 EN/中。线
 - `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、GoatCounter 埋点
 - `assets/` — logo 等静态资源
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
+- `docs/superpowers/` — 2026-05 平台重设计的设计文档（`specs/`）与实现计划（`plans/`）
 
 ## 部署：push 即上线
 
