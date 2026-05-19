@@ -557,6 +557,9 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   color: var(--signal);
   letter-spacing: -0.04em;
   position: relative;
+  /* soft-focus — sits the title back behind the sharp foreground pet,
+     giving the hero a shallow depth-of-field */
+  filter: blur(3px);
 }
 /* Caption beneath the title — small letter-spaced subline echoing
    the reference poster's bilingual layering.
