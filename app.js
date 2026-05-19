@@ -16,9 +16,8 @@
   const VERSION = "0.1.14";
 
   const translations = {
-    "nav.scenarios":     { en: "Scenarios",      zh: "场景" },
-    "nav.capabilities":  { en: "Capabilities",   zh: "能力" },
-    "nav.architecture":  { en: "Architecture",   zh: "架构" },
+    "nav.bot":           { en: "Bot",            zh: "机器人" },
+    "nav.pet":           { en: "Desktop pet",    zh: "桌宠" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
     "hero.eyebrow":      { en: `v${VERSION} · Local-first · MIT`,
