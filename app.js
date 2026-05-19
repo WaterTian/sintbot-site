@@ -9,14 +9,20 @@
 
   // 0) i18n ----------------------------------------------------------------
   // Code blocks, command names and identifiers stay English in both modes.
+
+  // cc-bot version — single source of truth for every version string on the
+  // page. Mirror of WaterTian/cc-bot (.claude-plugin/plugin.json). Bump this
+  // one line only; the eyebrow and footer strings below interpolate it.
+  const VERSION = "0.1.14";
+
   const translations = {
     "nav.scenarios":     { en: "Scenarios",      zh: "场景" },
     "nav.capabilities":  { en: "Capabilities",   zh: "能力" },
     "nav.architecture":  { en: "Architecture",   zh: "架构" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
-    "hero.eyebrow":      { en: "v0.1.12 · Local-first · MIT",
-                           zh: "v0.1.12 · 本地优先 · MIT" },
+    "hero.eyebrow":      { en: `v${VERSION} · Local-first · MIT`,
+                           zh: `v${VERSION} · 本地优先 · MIT` },
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Group chat</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
@@ -310,7 +316,7 @@
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
-    "foot.tag":     { en: "v0.1.12 · MIT · Local-first · IM-agnostic", zh: "v0.1.12 · MIT · 本地优先 · IM 无关" },
+    "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
     "foot.meta":    {
       en: "Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
       zh: "展示站点——节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
