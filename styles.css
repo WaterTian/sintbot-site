@@ -510,6 +510,7 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
 .hero__title-en > em {
   align-self: flex-end;          /* push em to the right edge */
   margin-top: 0.06em;            /* lift slightly toward 'Group chat' descenders */
+  margin-right: clamp(56px, 12vw, 172px); /* shift left, freeing the top-right for the pet */
 }
 .hero__title-en > span:last-of-type {
   margin-left: 1.4em;            /* staircase indent */
@@ -540,6 +541,7 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   .hero__title-en > em {
     align-self: flex-start;
     margin-top: 0;
+    margin-right: 0;
     font-size: 1.1em;
     letter-spacing: -0.02em;
   }
@@ -1545,7 +1547,7 @@ html[lang="zh"] .pet-card h3 {
   position: absolute;
   top: clamp(80px, 12vw, 160px);
   right: clamp(20px, 6vw, 90px);
-  width: clamp(72px, 9vw, 120px);
+  width: clamp(108px, 13.5vw, 184px);
   height: auto;
   pointer-events: none;
   z-index: 2;
@@ -1560,28 +1562,13 @@ html[lang="zh"] .pet-card h3 {
   0%, 100% { transform: translateY(0) rotate(-1.5deg); }
   50%      { transform: translateY(-7px) rotate(1.5deg); }
 }
-/* hero pet — a more pronounced float than the shared pet-idle.
+/* hero pet — a gentle up-and-down float, no rotation.
    Deliberately NOT gated by prefers-reduced-motion: Win11 Chrome
    false-reports `reduce`, so — like cursor-glow, the cards and the
    back-to-top button — this ambient motion runs for everyone. */
 @keyframes hero-float {
-  0%, 100% { transform: translateY(0) rotate(-2.2deg); }
-  50%      { transform: translateY(-14px) rotate(2.2deg); }
-}
-/* occasional jitter-hop — JS toggles .is-jitter at random intervals;
-   runs on the inner layers so it composes with the span's hero-float */
-@keyframes hero-jitter {
-  0%   { transform: translateY(0) rotate(0); }
-  16%  { transform: translateY(-9px) rotate(7deg); }
-  32%  { transform: translateY(0) rotate(-6deg); }
-  48%  { transform: translateY(-5px) rotate(4deg); }
-  64%  { transform: translateY(0) rotate(-3deg); }
-  82%  { transform: translateY(-2px) rotate(1.5deg); }
-  100% { transform: translateY(0) rotate(0); }
-}
-.hero__pet.is-jitter .logo-cycle__layer {
-  animation: hero-jitter 0.7s var(--ease-out);
-  transform-origin: 50% 100%; /* jitter pivots at the pet's feet */
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
 }
 /* Below 880px the absolutely-positioned pet collides with the H1 title:
    on tablets it clips the 「Local Agent」 line, and below 640px the title
@@ -1856,4 +1843,20 @@ html[lang="zh"] .pet-card h3 {
    otherwise override .hero__pet { display: none } below 880px */
 @media (max-width: 880px) {
   .logo-cycle.hero__pet { display: none; }
+}
+
+/* ── hero primary CTA — frosted-glass variant ─────────────────────── */
+/* the hero "Meet sintbot" button only; the footer/CTA-section primary
+   button keeps the solid copper fill */
+.hero .btn--primary {
+  background: rgba(214, 143, 68, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-color: rgba(214, 143, 68, 0.55);
+  color: var(--bone);
+}
+.hero .btn--primary:hover {
+  background: rgba(214, 143, 68, 0.3);
+  border-color: var(--signal);
+  color: var(--bone);
 }
