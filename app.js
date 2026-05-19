@@ -221,7 +221,7 @@
     "cap.h":      { en: "Seven muscles, one bot.", zh: "壹个 bot，柒块肌肉。" },
 
     "local.kicker": { en: "①·02 — On your machine", zh: "①·02 — 跑在你机器上" },
-    "local.h":      { en: "Your laptop is the agent.", zh: "你的笔记本就是 Agent。" },
+    "local.h":      { en: "Your laptop is the agent.", zh: "你的电脑就是 Agent。" },
     "local.lede":   {
       en: "Slack-native, fully local. cc-bot binds your shell to your IM — every command runs on your own hardware with your own credentials, then writes back to the chat.",
       zh: "原生 Slack，全程本地。cc-bot 把你的 shell 绑到 IM——每条指令都用你自己的凭证、在你自己的硬件上执行，结果再写回聊天里。"
@@ -393,7 +393,9 @@
       zh: "sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
     },
 
-    "copy": { en: "copy", zh: "复制" }
+    "copy": { en: "copy", zh: "复制" },
+
+    "totop.label": { en: "Back to top", zh: "返回顶部" }
   };
 
   const STORAGE_KEY = "cc_bot_site_lang";
@@ -587,6 +589,24 @@
       };
       window.addEventListener("scroll", onScroll, { passive: true });
     }
+  }
+
+  // 4b) Back-to-top button — show after roughly one viewport of scroll ---
+  const toTop = document.querySelector(".to-top");
+  if (toTop) {
+    let rafTop = 0;
+    const updateToTop = () => {
+      toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+      rafTop = 0;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!rafTop) rafTop = requestAnimationFrame(updateToTop);
+      },
+      { passive: true }
+    );
+    updateToTop();
   }
 
   // 5) Smooth-scroll anchors with offset for sticky nav ------------------
