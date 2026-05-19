@@ -601,7 +601,7 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 22px;
+  padding: 18px 30px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 15px;
@@ -612,12 +612,17 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
 .btn:hover {
   transform: translateY(-2px);
 }
+/* primary buttons — unified semi-transparent frosted glass */
 .btn--primary {
-  background: var(--signal);
-  color: var(--ink);
+  background: rgba(214, 143, 68, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-color: rgba(214, 143, 68, 0.55);
+  color: var(--bone);
 }
 .btn--primary:hover {
-  background: var(--bone);
+  background: rgba(214, 143, 68, 0.3);
+  border-color: var(--signal);
 }
 .btn--ghost {
   background: transparent;
@@ -1845,18 +1850,5 @@ html[lang="zh"] .pet-card h3 {
   .logo-cycle.hero__pet { display: none; }
 }
 
-/* ── hero primary CTA — frosted-glass variant ─────────────────────── */
-/* the hero "Meet sintbot" button only; the footer/CTA-section primary
-   button keeps the solid copper fill */
-.hero .btn--primary {
-  background: rgba(214, 143, 68, 0.18);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-color: rgba(214, 143, 68, 0.55);
-  color: var(--bone);
-}
-.hero .btn--primary:hover {
-  background: rgba(214, 143, 68, 0.3);
-  border-color: var(--signal);
-  color: var(--bone);
-}
+/* (hero primary CTA frosted-glass styling now lives in the unified
+   .btn--primary rule above — applies to every primary button) */
