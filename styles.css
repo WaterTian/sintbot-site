@@ -1545,6 +1545,10 @@ html[lang="zh"] .pet-card h3 {
   z-index: 2;
   animation: pet-idle 4.5s var(--ease-in-out) infinite;
   transform-origin: 50% 100%;
+  /* cast shadow — drops the pet's silhouette down onto the
+     「Local Agent」 text below; near-invisible over the dark
+     canvas, darkens visibly where it lands on the bright text */
+  filter: drop-shadow(0 26px 18px rgba(0, 0, 0, 0.7));
 }
 @keyframes pet-idle {
   0%, 100% { transform: translateY(0) rotate(-1.5deg); }
