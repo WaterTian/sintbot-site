@@ -1805,13 +1805,3 @@ html[lang="zh"] .pet-card h3 {
   border-color: var(--signal);
   color: var(--gold);
 }
-@media (prefers-reduced-motion: reduce) {
-  .to-top {
-    transition: opacity 0.2s linear;
-    transform: none;
-  }
-  .to-top.is-visible,
-  .to-top.is-visible:hover {
-    transform: none;
-  }
-}
