@@ -1558,3 +1558,46 @@ html[lang="zh"] .step h3 {
 @media (max-width: 880px) {
   .hero__pet { display: none; }
 }
+
+/* ---- what-is-sintbot : two pillars ------------------------------ */
+.pillars {
+  list-style: none;
+  margin: clamp(28px, 5vw, 56px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 720px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+.pillar {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(22px, 3vw, 34px);
+  background: var(--ink-2);
+  transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+}
+.pillar:hover {
+  transform: translateY(-4px);
+  border-color: var(--signal);
+}
+.pillar__no {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  color: var(--signal);
+}
+.pillar h3 {
+  font-family: var(--f-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  margin: 6px 0 10px;
+}
+.pillar p { color: var(--bone-2); margin: 0 0 16px; }
+.pillar__link {
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  color: var(--signal);
+  text-decoration: none;
+}
+.pillar__link:hover { color: var(--gold); }
