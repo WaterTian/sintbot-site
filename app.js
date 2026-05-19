@@ -31,16 +31,16 @@
            <span data-reveal data-reveal-delay="240">桌面宠物</span>`
     },
     "hero.lede":         {
-      en: "sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and sends a desktop pet to watch the project and work beside you.",
-      zh: "sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 派一只桌宠盯着项目、陪你工作。"
+      en: "Sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and sends a desktop pet to watch the project and work beside you.",
+      zh: "Sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 派一只桌宠盯着项目、陪你工作。"
     },
-    "hero.cta.primary":   { en: "Meet sintbot", zh: "认识 sintbot" },
+    "hero.cta.primary":   { en: "Meet Sintbot", zh: "认识 Sintbot" },
 
     "what.kicker":   { en: "Platform", zh: "平台" },
-    "what.h":        { en: `What <em>sintbot</em> is.`, zh: `<em>sintbot</em> 是什么。` },
+    "what.h":        { en: `What <em>Sintbot</em> is.`, zh: `<em>Sintbot</em> 是什么。` },
     "what.lede":     {
-      en: "Local-first, MIT, no runtime. sintbot lives in the group chat your team already uses.",
-      zh: "本地优先、MIT、无外部运行时。sintbot 就长在团队本来就在用的群聊里。"
+      en: "Local-first, MIT, no runtime. Sintbot lives in the group chat your team already uses.",
+      zh: "本地优先、MIT、无外部运行时。Sintbot 就长在团队本来就在用的群聊里。"
     },
     "what.bot.title":{ en: "Multi-model group bot", zh: "多模型群聊机器人" },
     "what.bot.body": {
@@ -96,8 +96,8 @@
       zh: "不只是状态灯 —— 会回应消息、有脾气、有情绪，是陪你工作的伙伴。"
     },
     "pet.close":  {
-      en: "Give that AI dev teammate a face that moves and answers back.",
-      zh: "让团队那位 AI 开发同事，有一张会动、会回应的脸。"
+      en: "Give the team's AI teammate a vivid, living face.",
+      zh: "让团队那位 AI 同事，有一个生动的形象。"
     },
     "pet.state.compiling": { en: "Compiling", zh: "编译中" },
     "pet.state.focus":     { en: "focused",   zh: "专注" },
@@ -382,15 +382,15 @@
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
-      zh: `sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器已在 <code>main</code> 分支；桌宠在路上。`
+      en: `Sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
+      zh: `Sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器已在 <code>main</code> 分支；桌宠在路上。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
     "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
     "foot.meta":    {
-      en: "sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
-      zh: "sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
+      en: "Sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
+      zh: "Sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
     },
 
     "copy": { en: "copy", zh: "复制" },
@@ -644,9 +644,9 @@
     });
   });
 
-  // primary CTA — 'Meet sintbot'
+  // primary CTA — 'Meet Sintbot'
   document.querySelectorAll('.btn--primary[href="#what"]').forEach((btn) => {
-    btn.addEventListener("click", () => track("cta-meet", "CTA: Meet sintbot"));
+    btn.addEventListener("click", () => track("cta-meet", "CTA: Meet Sintbot"));
   });
 
   // outbound GitHub links
