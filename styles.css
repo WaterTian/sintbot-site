@@ -1691,7 +1691,7 @@ html[lang="zh"] .pet-card h3 {
   color: var(--bone);
 }
 
-/* ---- pet state board (route 1 ¡ª CSS variants, swap-ready) ------- */
+/* ---- pet state board (route 1 -- CSS variants, swap-ready) ------- */
 .pet-board {
   margin: clamp(28px, 5vw, 56px) 0 0;
   display: grid;
@@ -1715,7 +1715,7 @@ html[lang="zh"] .pet-card h3 {
 .pet-state figcaption b { font-family: var(--f-mono); font-size: 0.85rem; }
 .pet-state figcaption span { color: var(--muted); font-size: 0.8rem; }
 
-/* four moods ¡ª micro-variations on the one logo creature */
+/* four moods -- micro-variations on the one logo creature */
 .pet-state--focus .pet-state__img {
   filter: saturate(1.15);
   animation: pet-focus 1.6s var(--ease-in-out) infinite;
@@ -1726,7 +1726,7 @@ html[lang="zh"] .pet-card h3 {
 }
 .pet-state--alert .pet-state__img {
   filter: hue-rotate(-40deg) saturate(1.5) brightness(1.05);
-  animation: pet-alert 0.4s steps(2) infinite;
+  animation: pet-alert 0.5s var(--ease-in-out) infinite;
 }
 .pet-state--idle .pet-state__img {
   filter: saturate(0.7) brightness(0.85);
@@ -1734,7 +1734,14 @@ html[lang="zh"] .pet-card h3 {
 }
 @keyframes pet-focus { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
 @keyframes pet-happy { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-9px) rotate(6deg)} }
-@keyframes pet-alert { 0%{transform:translateX(-3px)} 100%{transform:translateX(3px)} }
+@keyframes pet-alert {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-3px); }
+  40%, 80% { transform: translateX(3px); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .pet-state__img { animation: none !important; }
+  .pet-state--focus .pet-state__img,
+  .pet-state--happy .pet-state__img,
+  .pet-state--alert .pet-state__img,
+  .pet-state--idle .pet-state__img { animation: none; }
 }
