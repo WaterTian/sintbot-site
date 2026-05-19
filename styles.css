@@ -1681,7 +1681,7 @@ html[lang="zh"] .pet-card h3 {
 .pet-card h3 {
   font-family: var(--f-display);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin: 8px 0 8px;
+  margin: 8px 0;
 }
 .pet-card p { color: var(--bone-2); margin: 0; font-size: 0.95rem; }
 .pet__close {
