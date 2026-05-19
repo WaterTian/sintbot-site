@@ -274,22 +274,6 @@ body.cursor-on .cursor-glow {
     box-shadow: 0 0 0 0 transparent;
   }
 }
-.nav__forslack {
-  margin-left: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  font-family: var(--f-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--aqua);
-  background: rgba(111, 213, 166, 0.08);
-  border: 1px solid rgba(111, 213, 166, 0.3);
-}
-@media (max-width: 540px) {
-  .nav__forslack { display: none; }
-}
-
 .nav__menu {
   display: flex;
   align-items: center;
