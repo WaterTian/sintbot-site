@@ -16,9 +16,8 @@
   const VERSION = "0.1.14";
 
   const translations = {
-    "nav.scenarios":     { en: "Scenarios",      zh: "场景" },
-    "nav.capabilities":  { en: "Capabilities",   zh: "能力" },
-    "nav.architecture":  { en: "Architecture",   zh: "架构" },
+    "nav.bot":           { en: "Bot",            zh: "机器人" },
+    "nav.pet":           { en: "Desktop pet",    zh: "桌宠" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
     "hero.eyebrow":      { en: `v${VERSION} · Local-first · MIT`,
@@ -26,16 +25,88 @@
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Group chat</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-           <span data-reveal data-reveal-delay="240">Whole project</span>`,
+           <span data-reveal data-reveal-delay="240">Desktop pet</span>`,
       zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-           <span data-reveal data-reveal-delay="240">整个项目</span>`
+           <span data-reveal data-reveal-delay="240">桌宠</span>`
     },
     "hero.lede":         {
-      en: "Mention <code>@cc-bot</code> in Slack — Claude Code runs on your laptop, reads the intent, writes the diff itself or dispatches to a specialist. Code, tokens, and shell never leave the machine.",
-      zh: "在 Slack 群里 <code>@cc-bot</code> — Claude Code 在你的电脑上读意图、写改动，或派单给专门模型。代码、token、shell 都不出本机。"
+      en: "sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and a desktop pet gives it a face that watches the project and works beside you.",
+      zh: "sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 再用一只桌宠给它一张脸，盯着项目、陪你工作。"
     },
-    "hero.cta.primary":   { en: "Set up the Slack app",     zh: "配置 Slack 应用" },
+    "hero.cta.primary":   { en: "Meet sintbot", zh: "认识 sintbot" },
+
+    "what.kicker":   { en: "Platform", zh: "平台" },
+    "what.h":        { en: `What <em>sintbot</em> is.`, zh: `<em>sintbot</em> 是什么。` },
+    "what.lede":     {
+      en: "Local-first, MIT, no runtime. sintbot lives in the group chat your team already uses.",
+      zh: "本地优先、MIT、无外部运行时。sintbot 就长在团队本来就在用的群聊里。"
+    },
+    "what.bot.title":{ en: "Multi-model group bot", zh: "多模型群聊机器人" },
+    "what.bot.body": {
+      en: `Drop an AI agent into a Slack / Lark channel — mention it, it works. <code>cc-bot</code> is the Claude Code edition, live today.`,
+      zh: `把一个 AI agent 接进飞书 / Slack 群，mention 一下就开干。<code>cc-bot</code> 是 Claude Code 版，已上线。`
+    },
+    "what.bot.link": { en: "See the bot →", zh: "看机器人 →" },
+    "what.pet.title":{ en: "Desktop pet", zh: "桌宠" },
+    "what.pet.body": {
+      en: "A creature on every teammate's desktop — it listens to the channel, cares about the project, and works beside you with a personality.",
+      zh: "人手一只趴桌面的虚拟形象，旁听群聊、关心项目，有性格有情绪陪你工作。"
+    },
+    "what.pet.link": { en: "See the pet →", zh: "看桌宠 →" },
+
+    "bot.kicker": { en: "Pillar ①", zh: "支柱 ①" },
+    "bot.h":      { en: "Put an AI agent in the channel.", zh: "把 AI agent 接进群。" },
+    "bot.lede":   {
+      en: "The bot binds one AI agent into a Slack / Lark group — mention it, and the agent reads the intent, does the work and replies, all on your own machine.",
+      zh: "机器人的活儿，是把一个 AI agent 绑进飞书 / Slack 群 —— 群友 mention 一下，agent 在你本机读意图、干活、回贴。"
+    },
+    "bot.slot.live":    { en: "cc-bot · live", zh: "cc-bot · 已上线" },
+    "bot.slot.other":   { en: "Other AI agents", zh: "其他 AI agent" },
+    "bot.slot.planned": { en: "planned", zh: "规划中" },
+    "bot.bridge": {
+      en: "Below is cc-bot — the full Claude Code edition.",
+      zh: "下面是 cc-bot —— Claude Code 版的完整能力。"
+    },
+
+    "pet.kicker": { en: "Pillar ②", zh: "支柱 ②" },
+    "pet.h":      { en: "Give the AI a form.", zh: "给 AI 一个形象。" },
+    "pet.lede":   {
+      en: "cc-bot works in the channel, but it has no face. The desktop pet is that face — a small creature on your desktop that watches the channel, cares about the project, and keeps you company with a mood.",
+      zh: "cc-bot 在群里干活，但它没有脸。桌宠就是那张脸 —— 一只趴在你桌面的小生物，旁听群、关心项目、有情绪地陪你。"
+    },
+    "pet.1.title": { en: "One each", zh: "人手一只" },
+    "pet.1.body":  {
+      en: "Every teammate has their own creature on their own desktop — same channel, each their own view.",
+      zh: "每个群友桌面都有自己的一只，同一个群、各自的视角。"
+    },
+    "pet.2.title": { en: "Listens to the channel", zh: "旁听群聊" },
+    "pet.2.body":  {
+      en: "Wired live into Slack / Lark — whatever happens in the channel, it knows.",
+      zh: "实时接飞书 / Slack，群里发生什么它都知道。"
+    },
+    "pet.3.title": { en: "Acts out the state", zh: "演开发状态" },
+    "pet.3.body":  {
+      en: "cc-bot compiling, deploying, erroring — the pet plays it out in expression and motion.",
+      zh: "cc-bot 编译 / 部署 / 报错，它用表情动作演出来。"
+    },
+    "pet.4.title": { en: "Has a personality", zh: "有性格有情绪" },
+    "pet.4.body":  {
+      en: "Not a status light — it answers messages, has moods and a temper, a partner that works beside you.",
+      zh: "不只是状态灯 —— 会回应消息、有脾气、有情绪，是陪你工作的伙伴。"
+    },
+    "pet.close":  {
+      en: "Give that AI dev teammate a face that moves and answers back.",
+      zh: "让团队那位 AI 开发同事，有一张会动、会回应的脸。"
+    },
+    "pet.state.compiling": { en: "Compiling", zh: "编译中" },
+    "pet.state.focus":     { en: "focused",   zh: "专注" },
+    "pet.state.deployed":  { en: "Deployed",  zh: "部署成功" },
+    "pet.state.happy":     { en: "delighted", zh: "雀跃" },
+    "pet.state.error":     { en: "Error",     zh: "报错" },
+    "pet.state.alert":     { en: "alarmed",   zh: "警觉" },
+    "pet.state.idle":      { en: "Idle",      zh: "空闲" },
+    "pet.state.lazy":      { en: "lazing",    zh: "慵懒" },
 
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
@@ -52,7 +123,7 @@
       zh: `✓ 已合并 · 预发耗时 1m 47s · 12/12 冒烟通过。<a href="#" onclick="return false">构建日志</a>`
     },
 
-    "scenarios.kicker": { en: "00 — In your workspace", zh: "00 — 在你的工作区里" },
+    "scenarios.kicker": { en: "①·01 — In your workspace", zh: "①·01 — 在你的工作区里" },
     "scenarios.h": {
       en: `Where <em>cc-bot</em> earns its keep.`,
       zh: `<em>cc-bot</em> 真正发力的地方。`
@@ -146,11 +217,11 @@
       zh: `<i>为什么有效：</i>一个项目，多人并行，互不踩脚。`
     },
 
-    "cap.kicker": { en: "02 — Capabilities", zh: "02 — 能力" },
+    "cap.kicker": { en: "①·03 — Capabilities", zh: "①·03 — 能力" },
     "cap.h":      { en: "Seven muscles, one bot.", zh: "壹个 bot，柒块肌肉。" },
 
-    "local.kicker": { en: "01 — On your machine", zh: "01 — 跑在你机器上" },
-    "local.h":      { en: "Your laptop is the agent.", zh: "你的笔记本就是 Agent。" },
+    "local.kicker": { en: "①·02 — On your machine", zh: "①·02 — 跑在你机器上" },
+    "local.h":      { en: "Your laptop is the agent.", zh: "你的电脑就是 Agent。" },
     "local.lede":   {
       en: "Slack-native, fully local. cc-bot binds your shell to your IM — every command runs on your own hardware with your own credentials, then writes back to the chat.",
       zh: "原生 Slack，全程本地。cc-bot 把你的 shell 绑到 IM——每条指令都用你自己的凭证、在你自己的硬件上执行，结果再写回聊天里。"
@@ -207,7 +278,7 @@
       zh: `Claude Code 是主脑。每条意图它先接住，能自己干的（diff、PR）自己写；需要换脑子时派给专家：Gemini 做 UI、Nano Banana 设计、Seedance 视频、DeepSeek 重推理。结果再拼回原帖。`
     },
 
-    "adapter.kicker": { en: "03 — Engineering note", zh: "03 — 工程笔记" },
+    "adapter.kicker": { en: "①·04 — Engineering note", zh: "①·04 — 工程笔记" },
     "adapter.h": {
       en: `One <em>IMAdapter</em>, many group chats.`,
       zh: `一个 <em>IMAdapter</em>，所有群聊。`
@@ -221,7 +292,7 @@
       zh: `运行时读取 <code>profile.im.type</code>，加载对应适配器，后续管线完全不知道自己在跟哪个 IM 说话。`
     },
 
-    "arch.kicker": { en: "04 — Architecture", zh: "04 — 架构" },
+    "arch.kicker": { en: "①·05 — Architecture", zh: "①·05 — 架构" },
     "arch.h":      { en: "A small idea, drawn carefully.", zh: "一个小想法，画得仔细。" },
     "arch.lede":   {
       en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or dispatches to a specialist (Gemini · Nano Banana · Seedance · DeepSeek) as the intent demands. Result flows back to channel and HUD together.",
@@ -257,7 +328,7 @@
     "perm.row2.confirm": { en: "none",              zh: "无" },
     "perm.row3.confirm": { en: `reply <em>yes</em>`, zh: `回复 <em>yes</em>` },
 
-    "install.kicker": { en: "05 — Slack setup", zh: "05 — Slack 接入" },
+    "install.kicker": { en: "①·06 — Slack setup", zh: "①·06 — Slack 接入" },
     "install.h":      { en: "Four steps to a chat-driven repo.", zh: "四步开启群聊驱动的仓库。" },
     "install.lede":   {
       en: `<code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.`,
@@ -311,18 +382,20 @@
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `MIT, runtime-free, on GitHub. Slack &amp; Lark adapters both live on <code>main</code>.`,
-      zh: `MIT 协议，无外部运行时，在 GitHub。Slack 与飞书适配器都在 <code>main</code> 分支。`
+      en: `sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
+      zh: `sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器已在 <code>main</code> 分支；桌宠在路上。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
     "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
     "foot.meta":    {
-      en: "Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
-      zh: "展示站点——节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
+      en: "sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
+      zh: "sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
     },
 
-    "copy": { en: "copy", zh: "复制" }
+    "copy": { en: "copy", zh: "复制" },
+
+    "totop.label": { en: "Back to top", zh: "返回顶部" }
   };
 
   const STORAGE_KEY = "cc_bot_site_lang";
@@ -518,6 +591,24 @@
     }
   }
 
+  // 4b) Back-to-top button — show after roughly one viewport of scroll ---
+  const toTop = document.querySelector(".to-top");
+  if (toTop) {
+    let rafTop = 0;
+    const updateToTop = () => {
+      toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+      rafTop = 0;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!rafTop) rafTop = requestAnimationFrame(updateToTop);
+      },
+      { passive: true }
+    );
+    updateToTop();
+  }
+
   // 5) Smooth-scroll anchors with offset for sticky nav ------------------
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -569,14 +660,19 @@
     });
   });
 
-  // primary CTA — 'Set up the Slack app'
-  document.querySelectorAll('.btn--primary[href="#install"]').forEach((btn) => {
-    btn.addEventListener("click", () => track("cta-setup", "CTA: Set up the Slack app"));
+  // primary CTA — 'Meet sintbot'
+  document.querySelectorAll('.btn--primary[href="#what"]').forEach((btn) => {
+    btn.addEventListener("click", () => track("cta-meet", "CTA: Meet sintbot"));
   });
 
   // outbound GitHub links
   document.querySelectorAll('a[href*="github.com/WaterTian"]').forEach((a) => {
     a.addEventListener("click", () => track("github-click", "Outbound: GitHub"));
+  });
+
+  // pillar card clicks
+  document.querySelectorAll('.pillar__link').forEach((a) => {
+    a.addEventListener("click", () => track("pillar-click", "Pillar card: " + a.getAttribute("href")));
   });
 
   // section reach — fire once the first time each section scrolls into view
