@@ -660,9 +660,9 @@
     });
   });
 
-  // primary CTA — 'Set up the Slack app'
-  document.querySelectorAll('.btn--primary[href="#install"]').forEach((btn) => {
-    btn.addEventListener("click", () => track("cta-setup", "CTA: Set up the Slack app"));
+  // primary CTA — 'Meet sintbot'
+  document.querySelectorAll('.btn--primary[href="#what"]').forEach((btn) => {
+    btn.addEventListener("click", () => track("cta-meet", "CTA: Meet sintbot"));
   });
 
   // outbound GitHub links
