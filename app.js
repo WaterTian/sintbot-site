@@ -746,5 +746,16 @@
       }
       schedule();
     });
+
+    // hero pet — an occasional jitter-hop layered on top of the float
+    const heroPet = document.querySelector(".hero__pet");
+    if (heroPet) {
+      const jitter = () => {
+        heroPet.classList.add("is-jitter");
+        setTimeout(() => heroPet.classList.remove("is-jitter"), 750);
+        setTimeout(jitter, 3000 + Math.random() * 7000);
+      };
+      setTimeout(jitter, 3000 + Math.random() * 7000);
+    }
   }
 })();
