@@ -69,6 +69,37 @@
       zh: "下面是 cc-bot —— Claude Code 版的完整能力。"
     },
 
+    "pet.kicker": { en: "Pillar ②", zh: "支柱 ②" },
+    "pet.h":      { en: "Give the AI a form.", zh: "给 AI 一个形象。" },
+    "pet.lede":   {
+      en: "cc-bot works in the channel, but it has no face. The desktop pet is that face — a small creature on your desktop that watches the channel, cares about the project, and keeps you company with a mood.",
+      zh: "cc-bot 在群里干活，但它没有脸。桌宠就是那张脸 —— 一只趴在你桌面的小生物，旁听群、关心项目、有情绪地陪你。"
+    },
+    "pet.1.title": { en: "One each", zh: "人手一只" },
+    "pet.1.body":  {
+      en: "Every teammate has their own creature on their own desktop — same channel, each their own view.",
+      zh: "每个群友桌面都有自己的一只，同一个群、各自的视角。"
+    },
+    "pet.2.title": { en: "Listens to the channel", zh: "旁听群聊" },
+    "pet.2.body":  {
+      en: "Wired live into Slack / Lark — whatever happens in the channel, it knows.",
+      zh: "实时接飞书 / Slack，群里发生什么它都知道。"
+    },
+    "pet.3.title": { en: "Acts out the state", zh: "演开发状态" },
+    "pet.3.body":  {
+      en: "cc-bot compiling, deploying, erroring — the pet plays it out in expression and motion.",
+      zh: "cc-bot 编译 / 部署 / 报错，它用表情动作演出来。"
+    },
+    "pet.4.title": { en: "Has a personality", zh: "有性格有情绪" },
+    "pet.4.body":  {
+      en: "Not a status light — it answers messages, has moods and a temper, a partner that works beside you.",
+      zh: "不只是状态灯 —— 会回应消息、有脾气、有情绪，是陪你工作的伙伴。"
+    },
+    "pet.close":  {
+      en: "Give that AI dev teammate a face that moves and answers back.",
+      zh: "让团队那位 AI 开发同事，有一张会动、会回应的脸。"
+    },
+
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
       en: "@cc-bot signup is throwing 500 on staging — can you triage?",
