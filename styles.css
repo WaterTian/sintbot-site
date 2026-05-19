@@ -1575,6 +1575,7 @@ html[lang="zh"] .pet-card h3 {
 }
 .hero__pet.is-jitter .logo-cycle__layer {
   animation: hero-jitter 0.7s var(--ease-out);
+  transform-origin: 50% 100%; /* jitter pivots at the pet's feet */
 }
 /* Below 880px the absolutely-positioned pet collides with the H1 title:
    on tablets it clips the 「Local Agent」 line, and below 640px the title
