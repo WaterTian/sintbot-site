@@ -499,6 +499,9 @@ body.cursor-on .cursor-glow {
   letter-spacing: -0.055em;
   line-height: 0.92;
   align-self: flex-start;
+  /* mid depth — a touch of soft-focus, between the sharp foreground
+     lines and the deeper, blurrier 「Local Agent」 */
+  filter: blur(1.2px);
 }
 html[lang="zh"] .hero__title-en > span:first-of-type {
   font-weight: 900;
