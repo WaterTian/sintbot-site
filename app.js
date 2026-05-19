@@ -28,11 +28,11 @@
            <span data-reveal data-reveal-delay="240">Desktop pet</span>`,
       zh: `<span data-reveal data-reveal-delay="0">群里聊天</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
-           <span data-reveal data-reveal-delay="240">桌宠</span>`
+           <span data-reveal data-reveal-delay="240">桌面宠物</span>`
     },
     "hero.lede":         {
-      en: "sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and a desktop pet gives it a face that watches the project and works beside you.",
-      zh: "sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 再用一只桌宠给它一张脸，盯着项目、陪你工作。"
+      en: "sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and sends a desktop pet to watch the project and work beside you.",
+      zh: "sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 派一只桌宠盯着项目、陪你工作。"
     },
     "hero.cta.primary":   { en: "Meet sintbot", zh: "认识 sintbot" },
 
@@ -730,17 +730,6 @@
       }
       schedule();
     });
-
-    // hero pet — an occasional jitter-hop layered on top of the float
-    const heroPet = document.querySelector(".hero__pet");
-    if (heroPet) {
-      const jitter = () => {
-        heroPet.classList.add("is-jitter");
-        setTimeout(() => heroPet.classList.remove("is-jitter"), 750);
-        setTimeout(jitter, 3000 + Math.random() * 7000);
-      };
-      setTimeout(jitter, 3000 + Math.random() * 7000);
-    }
   }
 
   // 8) Hero parallax — staggered depth on the hero text while scrolling.
@@ -750,7 +739,7 @@
   // static per-layer blur (set in CSS) — so scrolling only re-composites
   // and never re-blurs: smooth, no jank.
   const heroSel = [
-    { sel: ".hero__marquee-track",                 k: 0.2 },
+    { sel: ".hero__marquee",                       k: 0.2 },
     { sel: ".hero__title-en > span:first-of-type", k: 0.05 },
     { sel: ".hero__title-en > em",                 k: 0.13 },
     { sel: ".hero__title-en > span:last-of-type",  k: -0.04 },
