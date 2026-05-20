@@ -677,19 +677,54 @@
     document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
   }
 
-  // 7) Logo-cycle — random crossfade of the bot characters ----------------
+  // 7) Logo-cycle — PCB-themed crossfade of the bot characters -------------
   // Each [data-logo-cycle] <img> is swapped for a two-layer span that fades
-  // between random bot characters on its own independent timer.
+  // between bot characters with a brief power-on flash on the incoming layer.
+  //
+  // Selection: globally tracks what's shown in every slot (no duplicates
+  // across slots at the same moment) and per-slot recent history (RECENT_KEEP
+  // images can't repeat in the same slot until they age out).
+  //
+  // Rhythm: tighter 6-10s window (was 4-15s) with per-slot phase offset so
+  // the 7 slots scatter without long stretches of stillness or simultaneous
+  // pile-ups. Hovering a slot pauses its cycle until the pointer leaves.
   const cycleSlots = document.querySelectorAll("img[data-logo-cycle]");
   if (cycleSlots.length) {
     const COUNT = 12;
+    const RECENT_KEEP = 6;
     const bots = [];
     for (let i = 1; i <= COUNT; i++) {
       bots.push("./assets/bot/bot-" + String(i).padStart(2, "0") + ".webp");
     }
     bots.forEach((s) => { const im = new Image(); im.src = s; }); // preload
 
-    cycleSlots.forEach((orig) => {
+    const slotShown = new Map();   // span -> current bot index
+    const slotRecent = new WeakMap(); // span -> last RECENT_KEEP picks
+    function pickNext(span, current) {
+      const inUse = new Set();
+      slotShown.forEach((idx, key) => { if (key !== span) inUse.add(idx); });
+      const recent = slotRecent.get(span) || [];
+      let pool = [];
+      for (let i = 0; i < COUNT; i++) {
+        if (i === current || inUse.has(i) || recent.includes(i)) continue;
+        pool.push(i);
+      }
+      // relax recent-history constraint if the in-use set already pinned us
+      if (!pool.length) {
+        for (let i = 0; i < COUNT; i++) {
+          if (i !== current && !inUse.has(i)) pool.push(i);
+        }
+      }
+      // last resort: anything but current
+      if (!pool.length) {
+        for (let i = 0; i < COUNT; i++) if (i !== current) pool.push(i);
+      }
+      const next = pool[(Math.random() * pool.length) | 0];
+      slotRecent.set(span, [next, ...recent].slice(0, RECENT_KEEP));
+      return next;
+    }
+
+    cycleSlots.forEach((orig, slotIdx) => {
       const span = document.createElement("span");
       span.className = "logo-cycle" + (orig.className ? " " + orig.className : "");
       if (orig.getAttribute("aria-hidden")) span.setAttribute("aria-hidden", "true");
@@ -703,8 +738,10 @@
       const layerB = document.createElement("img");
       layerA.className = layerB.className = "logo-cycle__layer";
       layerA.alt = layerB.alt = "";
-      let shown = (Math.random() * COUNT) | 0;
-      let queued = (shown + 1 + ((Math.random() * (COUNT - 1)) | 0)) % COUNT;
+
+      let shown = pickNext(span, -1);
+      slotShown.set(span, shown);
+      let queued = pickNext(span, shown);
       layerA.src = bots[shown];
       layerB.src = bots[queued];
       layerA.style.opacity = "1";
@@ -713,22 +750,34 @@
       orig.replaceWith(span);
 
       let front = layerA, back = layerB;
+      let hovered = false;
+      span.addEventListener("pointerenter", () => { hovered = true; });
+      span.addEventListener("pointerleave", () => { hovered = false; });
+
       function step() {
+        if (hovered) { schedule(); return; }
+        // flash the incoming layer; CSS handles the brightness + scale beat
+        back.classList.add("logo-cycle__layer--in");
+        back.addEventListener("animationend", function onEnd() {
+          back.classList.remove("logo-cycle__layer--in");
+          back.removeEventListener("animationend", onEnd);
+        });
         back.style.opacity = "1";
         front.style.opacity = "0";
-        shown = queued;
         const t = front; front = back; back = t;
-        let n;
-        do { n = (Math.random() * COUNT) | 0; } while (n === shown);
-        queued = n;
-        back.src = bots[n];
+        shown = queued;
+        slotShown.set(span, shown);
+        queued = pickNext(span, shown);
+        back.src = bots[queued];
         schedule();
       }
       function schedule() {
-        // wide, uneven interval so the 7 slots scatter unpredictably
-        setTimeout(step, 4000 + Math.random() * 11000);
+        // 6-10s window — tighter than the old 4-15s so the rhythm reads
+        // as deliberate, not chaotic
+        setTimeout(step, 6000 + Math.random() * 4000);
       }
-      schedule();
+      // per-slot phase offset so the 7 slots stagger from the first tick
+      setTimeout(schedule, slotIdx * 1100 + Math.random() * 1500);
     });
   }
 
