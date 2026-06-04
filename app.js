@@ -610,13 +610,13 @@
     });
   });
 
-  // 6) Analytics — GoatCounter custom events -----------------------------
-  // The plain pageview is sent automatically by count.js. Below we add
-  // intent-level events. count.js loads async; all events here fire on
-  // user interaction or scroll, by which point window.goatcounter exists.
-  function track(name, title) {
-    if (window.goatcounter && typeof window.goatcounter.count === "function") {
-      window.goatcounter.count({ path: name, title: title || name, event: true });
+  // 6) Analytics — Umami custom events ----------------------------------
+  // Pageview is sent automatically by script.js. Below are intent-level
+  // events via umami.track(). script.js loads async (defer); all events
+  // fire on user interaction or scroll, by which point window.umami exists.
+  function track(name) {
+    if (window.umami && typeof window.umami.track === "function") {
+      window.umami.track(name);
     }
   }
 
@@ -625,13 +625,13 @@
     btn.addEventListener("click", () => {
       const text = btn.getAttribute("data-copy") || "";
       if (text.includes("/plugin install")) {
-        track("copy-install", "Copy: install command");
+        track("copy-install");
       } else if (text.includes("display_information")) {
-        track("copy-manifest", "Copy: Slack manifest");
+        track("copy-manifest");
       } else if (text.includes("/cc-bot:start")) {
-        track("copy-start", "Copy: cc-bot:start");
+        track("copy-start");
       } else {
-        track("copy-other", "Copy: other snippet");
+        track("copy-other");
       }
     });
   });
@@ -640,23 +640,23 @@
   document.querySelectorAll(".lang-toggle__btn[data-lang]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang");
-      track("lang-" + lang, "Lang switch: " + lang);
+      track("lang-" + lang);
     });
   });
 
   // primary CTA — 'Meet Sintbot'
   document.querySelectorAll('.btn--primary[href="#what"]').forEach((btn) => {
-    btn.addEventListener("click", () => track("cta-meet", "CTA: Meet Sintbot"));
+    btn.addEventListener("click", () => track("cta-meet"));
   });
 
   // outbound GitHub links
   document.querySelectorAll('a[href*="github.com/WaterTian"]').forEach((a) => {
-    a.addEventListener("click", () => track("github-click", "Outbound: GitHub"));
+    a.addEventListener("click", () => track("github-click"));
   });
 
   // pillar card clicks
   document.querySelectorAll('.pillar__link').forEach((a) => {
-    a.addEventListener("click", () => track("pillar-click", "Pillar card: " + a.getAttribute("href")));
+    a.addEventListener("click", () => track("pillar-click"));
   });
 
   // section reach — fire once the first time each section scrolls into view
@@ -668,7 +668,7 @@
           const id = entry.target.id;
           if (entry.isIntersecting && id && !seen.has(id)) {
             seen.add(id);
-            track("section-" + id, "Section reached: " + id);
+            track("section-" + id);
           }
         });
       },
