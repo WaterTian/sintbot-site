@@ -800,9 +800,10 @@ settings:
               <li data-i18n="pricing.pro.f4">Early access to new features &amp; the desktop pet beta</li>
               <li data-i18n="pricing.pro.f5">Funds open-source development</li>
             </ul>
-            <!-- NOTE: this is a Creem test-mode payment link. Once the SintLab store
-                 passes review and switches to live mode, this URL may need updating. -->
-            <a class="btn btn--primary plan__cta" href="https://www.creem.io/payment/prod_2fEaVmdoQNctX8GeNACzNX" target="_blank" rel="noopener">
+            <!-- NOTE: Creem test-mode payment link (/test/payment/... auto-creates a
+                 checkout session; live /payment/... 404s until the store passes review).
+                 After approval, create the live-mode product and swap this URL. -->
+            <a class="btn btn--primary plan__cta" href="https://www.creem.io/test/payment/prod_2fEaVmdoQNctX8GeNACzNX" target="_blank" rel="noopener">
               <span data-i18n="pricing.pro.cta">Subscribe to Pro</span><span class="btn__arrow" aria-hidden="true">→</span>
             </a>
           </li>
