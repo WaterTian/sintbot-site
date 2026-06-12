@@ -13,7 +13,7 @@
   // cc-bot version — single source of truth for every version string on the
   // page. Mirror of WaterTian/cc-bot (.claude-plugin/plugin.json). Bump this
   // one line only; the eyebrow and footer strings below interpolate it.
-  const VERSION = "0.1.14";
+  const VERSION = "0.1.21";
 
   const translations = {
     "nav.bot":           { en: "Bot",            zh: "机器人" },
