@@ -1768,6 +1768,174 @@ html[lang="zh"] .pet-card h3 {
   .pet-state--idle .pet-state__img { animation: none; }
 }
 
+/* ---- pricing : two plan cards ----------------------------------- */
+.plans {
+  list-style: none;
+  margin: clamp(28px, 5vw, 56px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(16px, 2.4vw, 26px);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+}
+@media (max-width: 720px) {
+  .plans { grid-template-columns: 1fr; }
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  padding: clamp(26px, 3vw, 38px);
+  background: linear-gradient(180deg, rgba(243, 238, 229, 0.03), transparent);
+  /* motion mirrors .card / .pillar — NOT gated by prefers-reduced-motion
+     (Win11 Chrome false-reports `reduce`), same recipe as back-to-top */
+  transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease-out), background 0.4s var(--ease-out);
+}
+.plan:hover {
+  transform: translateY(-6px);
+  border-color: rgba(214, 143, 68, 0.4);
+}
+/* Pro — copper accent border, lifted by default */
+.plan--pro {
+  border-color: rgba(214, 143, 68, 0.55);
+  background: linear-gradient(180deg, rgba(214, 143, 68, 0.07), transparent 70%);
+}
+.plan--pro::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(180deg, var(--signal), transparent 65%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.plan--pro:hover {
+  border-color: var(--signal);
+}
+.plan__badge {
+  position: absolute;
+  top: clamp(18px, 2.4vw, 26px);
+  right: clamp(18px, 2.4vw, 26px);
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(214, 143, 68, 0.16);
+  border: 1px solid rgba(214, 143, 68, 0.5);
+  color: var(--signal);
+}
+.plan__name {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.plan--pro .plan__name { color: var(--signal); }
+.plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+}
+.plan__amount {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--bone);
+}
+.plan__cycle {
+  font-family: var(--f-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+.plan__tagline {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--bone-2);
+}
+.plan__feats {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+}
+.plan__feats li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--bone-2);
+}
+.plan__feats li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0 8px rgba(47, 174, 111, 0.5);
+}
+.plan--pro .plan__feats li::before {
+  background: var(--signal);
+  box-shadow: 0 0 8px rgba(214, 143, 68, 0.5);
+}
+.plan__cta {
+  margin-top: 10px;
+  align-self: flex-start;
+  width: 100%;
+  justify-content: center;
+}
+.plans__note {
+  margin: clamp(22px, 3vw, 34px) 0 0;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+/* ── footer legal row — visible support email + policy links ───────── */
+.foot__legal {
+  max-width: var(--col-max);
+  margin: 0 auto 14px;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  color: var(--bone-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.foot__legal a {
+  color: var(--bone-2);
+  border-bottom: 1px solid transparent;
+  transition: color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+}
+.foot__legal a:hover {
+  color: var(--signal);
+  border-bottom-color: var(--signal);
+}
+.foot__legal span { color: var(--line); }
+
 /* ── accessibility utility ─────────────────────────────────────────── */
 .visually-hidden {
   position: absolute;

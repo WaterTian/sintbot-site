@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Welcome to Sintbot Pro — Sintbot</title>
+    <meta name="description" content="Payment received — welcome to Sintbot Pro." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <style>
+      .doc {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: clamp(48px, 9vw, 120px) var(--gut) clamp(60px, 9vw, 110px);
+        text-align: center;
+      }
+      .doc__pet { width: clamp(96px, 16vw, 140px); height: auto; margin: 0 auto clamp(22px, 4vw, 36px); }
+      .doc h1 {
+        font-family: var(--f-display);
+        font-weight: 500;
+        font-size: clamp(32px, 6vw, 54px);
+        line-height: 1.06;
+        letter-spacing: -0.03em;
+        margin: 0 0 8px;
+        color: var(--bone);
+      }
+      .doc__sub {
+        font-family: var(--f-display);
+        font-weight: 500;
+        font-size: clamp(18px, 2.6vw, 24px);
+        color: var(--signal);
+        margin: 0 0 clamp(24px, 4vw, 38px);
+      }
+      .doc p { font-size: 16px; line-height: 1.7; color: var(--bone-2); margin: 0 auto 16px; max-width: 52ch; }
+      .doc a.inline { color: var(--acid); border-bottom: 1px solid currentColor; }
+      .doc__ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        margin-top: clamp(28px, 5vw, 44px);
+      }
+      .doc__lang {
+        border-top: 1px solid var(--line-soft);
+        margin-top: clamp(40px, 7vw, 64px);
+        padding-top: clamp(32px, 6vw, 52px);
+      }
+      .doc__lang[lang="zh"] { line-height: 1.8; }
+    </style>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="doc">
+      <img class="doc__pet" src="./assets/bot/bot-06.webp" alt="" aria-hidden="true" width="140" height="140" />
+
+      <!-- English -->
+      <section lang="en">
+        <h1>Payment received</h1>
+        <p class="doc__sub">Welcome to Sintbot Pro 🎉</p>
+        <p>Thank you for backing the project. Your receipt is on its way by email from Creem.</p>
+        <p>Got a question, or want to get started? Email us anytime at <a class="inline" href="mailto:support@sintbot.com">support@sintbot.com</a> — Pro gets priority support.</p>
+        <p>You can manage or cancel your subscription anytime via the <a class="inline" href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.</p>
+        <div class="doc__ctas">
+          <a class="btn btn--primary" href="./index.html"><span>Back to home</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener"><span>Open GitHub</span><span class="btn__arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <!-- 中文 -->
+      <section class="doc__lang" lang="zh">
+        <h1>支付成功</h1>
+        <p class="doc__sub">欢迎加入 Sintbot Pro 🎉</p>
+        <p>感谢你对项目的支持。收据将由 Creem 通过邮件发送给你。</p>
+        <p>有问题，或想开始上手？随时写信至 <a class="inline" href="mailto:support@sintbot.com">support@sintbot.com</a> —— Pro 享优先支持。</p>
+        <p>你可以随时通过 <a class="inline" href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 管理或取消订阅。</p>
+        <div class="doc__ctas">
+          <a class="btn btn--primary" href="./index.html"><span>回到首页</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener"><span>打开 GitHub</span><span class="btn__arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

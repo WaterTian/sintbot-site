@@ -19,6 +19,7 @@
     "nav.bot":           { en: "Bot",            zh: "机器人" },
     "nav.pet":           { en: "Desktop pet",    zh: "桌宠" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
+    "nav.pricing":       { en: "Pricing",        zh: "定价" },
 
     "hero.eyebrow":      { en: `v${VERSION} · Local-first · MIT`,
                            zh: `v${VERSION} · 本地优先 · MIT` },
@@ -380,6 +381,60 @@
     "commands.switch": { en: "swap active profile",                 zh: "切换当前 profile" },
     "commands.doctor": { en: "health check & diagnostics",          zh: "健康检查与诊断" },
 
+    "pricing.kicker": { en: "Pricing", zh: "定价" },
+    "pricing.h": {
+      en: `Free to run. <em>Pro</em> to back it.`,
+      zh: `免费就能跑，<em>Pro</em> 撑住它。`
+    },
+    "pricing.lede": {
+      en: "cc-bot is MIT and free forever. Sintbot Pro is for teams who want priority support, guided onboarding, and the next features first — while funding the open-source work.",
+      zh: "cc-bot 是 MIT、永久免费。Sintbot Pro 给那些想要优先支持、引导式接入、第一时间用上新功能的团队——同时资助开源开发。"
+    },
+
+    "pricing.free.name":    { en: "Free", zh: "Free" },
+    "pricing.free.amount":  { en: "$0", zh: "$0" },
+    "pricing.free.cycle":   { en: "/ forever", zh: "/ 永久" },
+    "pricing.free.tagline": { en: "The full cc-bot, self-hosted.", zh: "完整 cc-bot，自托管。" },
+    "pricing.free.f1": {
+      en: "Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD",
+      zh: "cc-bot 完整核心——Slack + Lark 适配器、多会话调度、权限矩阵、HUD"
+    },
+    "pricing.free.f2": {
+      en: "MIT licensed, self-hosted on your own machine",
+      zh: "MIT 许可，在你自己机器上自托管"
+    },
+    "pricing.free.f3": {
+      en: "Community support via GitHub Issues",
+      zh: "GitHub Issues 社区支持"
+    },
+    "pricing.free.cta": { en: "Get cc-bot", zh: "获取 cc-bot" },
+
+    "pricing.pro.badge":   { en: "Recommended", zh: "推荐" },
+    "pricing.pro.name":    { en: "Pro", zh: "Pro" },
+    "pricing.pro.amount":  { en: "$19.90", zh: "$19.90" },
+    "pricing.pro.cycle":   { en: "/ month", zh: "/ 月" },
+    "pricing.pro.tagline": {
+      en: "Everything in Free, plus a direct line and early access.",
+      zh: "Free 的全部，外加一条直达通道和早鸟权益。"
+    },
+    "pricing.pro.f1": { en: "Everything in Free", zh: "Free 的全部" },
+    "pricing.pro.f2": {
+      en: "Priority email support — support@sintbot.com",
+      zh: "优先邮件支持——support@sintbot.com"
+    },
+    "pricing.pro.f3": { en: "Guided workspace onboarding", zh: "引导式 workspace 接入" },
+    "pricing.pro.f4": {
+      en: "Early access to new features & the desktop pet beta",
+      zh: "新功能 & 桌宠 beta 早鸟"
+    },
+    "pricing.pro.f5": { en: "Funds open-source development", zh: "资助开源开发" },
+    "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
+
+    "pricing.note": {
+      en: "Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the Creem customer portal.",
+      zh: "价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 Creem customer portal 取消。"
+    },
+
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
       en: `Sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
@@ -388,6 +443,8 @@
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
     "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
+    "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
+    "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
       en: "Sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.",
       zh: "Sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic 无任何隶属关系。"
@@ -657,6 +714,14 @@
   // pillar card clicks
   document.querySelectorAll('.pillar__link').forEach((a) => {
     a.addEventListener("click", () => track("pillar-click"));
+  });
+
+  // pricing CTAs — Pro (Creem checkout) vs Free (GitHub)
+  document.querySelectorAll('.plan--pro .plan__cta').forEach((a) => {
+    a.addEventListener("click", () => track("pricing-pro-click"));
+  });
+  document.querySelectorAll('.plan:not(.plan--pro) .plan__cta').forEach((a) => {
+    a.addEventListener("click", () => track("pricing-free-click"));
   });
 
   // section reach — fire once the first time each section scrolls into view

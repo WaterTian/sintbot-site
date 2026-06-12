@@ -40,6 +40,7 @@
         <a href="#bot" data-i18n="nav.bot">Bot</a>
         <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
         <a href="#install" data-i18n="nav.setup">Setup</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
         <a
           href="https://github.com/WaterTian/cc-bot"
           target="_blank"
@@ -763,6 +764,55 @@ settings:
         </p>
       </section>
 
+      <!-- Pricing -->
+      <section id="pricing" class="section section--pricing">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="pricing.kicker">Pricing</p>
+        <h2 class="section__h" data-reveal data-i18n-html="pricing.h">Free to run. <em>Pro</em> to back it.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="pricing.lede">
+          cc-bot is MIT and free forever. Sintbot Pro is for teams who want priority support, guided onboarding, and the next features first — while funding the open-source work.
+        </p>
+
+        <ol class="plans">
+          <li class="plan" data-reveal>
+            <p class="plan__name" data-i18n="pricing.free.name">Free</p>
+            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.free.amount">$0</span><span class="plan__cycle" data-i18n="pricing.free.cycle">/ forever</span></p>
+            <p class="plan__tagline" data-i18n="pricing.free.tagline">The full cc-bot, self-hosted.</p>
+            <ul class="plan__feats">
+              <li data-i18n="pricing.free.f1">Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD</li>
+              <li data-i18n="pricing.free.f2">MIT licensed, self-hosted on your own machine</li>
+              <li data-i18n="pricing.free.f3">Community support via GitHub Issues</li>
+            </ul>
+            <a class="btn btn--ghost plan__cta" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
+              <span data-i18n="pricing.free.cta">Get cc-bot</span><span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+
+          <li class="plan plan--pro" data-reveal data-reveal-delay="80">
+            <span class="plan__badge" data-i18n="pricing.pro.badge">Recommended</span>
+            <p class="plan__name" data-i18n="pricing.pro.name">Pro</p>
+            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.pro.amount">$19.90</span><span class="plan__cycle" data-i18n="pricing.pro.cycle">/ month</span></p>
+            <p class="plan__tagline" data-i18n="pricing.pro.tagline">Everything in Free, plus a direct line and early access.</p>
+            <ul class="plan__feats">
+              <li data-i18n="pricing.pro.f1">Everything in Free</li>
+              <li data-i18n="pricing.pro.f2">Priority email support — support@sintbot.com</li>
+              <li data-i18n="pricing.pro.f3">Guided workspace onboarding</li>
+              <li data-i18n="pricing.pro.f4">Early access to new features &amp; the desktop pet beta</li>
+              <li data-i18n="pricing.pro.f5">Funds open-source development</li>
+            </ul>
+            <!-- NOTE: this is a Creem test-mode payment link. Once the SintLab store
+                 passes review and switches to live mode, this URL may need updating. -->
+            <a class="btn btn--primary plan__cta" href="https://www.creem.io/payment/prod_2fEaVmdoQNctX8GeNACzNX" target="_blank" rel="noopener">
+              <span data-i18n="pricing.pro.cta">Subscribe to Pro</span><span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ol>
+
+        <p class="plans__note" data-reveal data-i18n="pricing.note">
+          Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the Creem customer portal.
+        </p>
+      </section>
+
       <!-- CTA -->
       <section class="section section--cta">
         <div class="cta">
@@ -790,9 +840,17 @@ settings:
           <a href="#bot" data-i18n="nav.bot">Bot</a>
           <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
           <a href="#install" data-i18n="nav.setup">Setup</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
         </nav>
       </div>
+      <p class="foot__legal">
+        <a href="mailto:support@sintbot.com">support@sintbot.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="./privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
+        <span aria-hidden="true">·</span>
+        <a href="./terms.html" data-i18n="foot.terms">Terms of Service</a>
+      </p>
       <p class="foot__meta" data-i18n="foot.meta">
         Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.
       </p>
