@@ -431,8 +431,8 @@
     "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
 
     "pricing.note": {
-      en: "Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the Creem customer portal.",
-      zh: "价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 Creem customer portal 取消。"
+      en: `Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
+      zh: `价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
     },
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
