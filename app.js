@@ -419,13 +419,13 @@
     },
     "pricing.pro.f1": { en: "Everything in Free", zh: "Free 的全部" },
     "pricing.pro.f2": {
-      en: "Priority email support — support@sintbot.com",
-      zh: "优先邮件支持——support@sintbot.com"
+      en: "Priority email support — support@sintbot.com (3-business-day response)",
+      zh: "优先邮件支持——support@sintbot.com（3 个工作日内回复）"
     },
     "pricing.pro.f3": { en: "Guided workspace onboarding", zh: "引导式 workspace 接入" },
     "pricing.pro.f4": {
-      en: "Early access to new features & the desktop pet beta",
-      zh: "新功能 & 桌宠 beta 早鸟"
+      en: "Early access to new features",
+      zh: "新功能早鸟"
     },
     "pricing.pro.f5": { en: "Funds open-source development", zh: "资助开源开发" },
     "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
