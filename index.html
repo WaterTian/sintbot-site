@@ -219,15 +219,15 @@
             <div class="scenario__tag">
               <span class="scenario__hash">#</span>bugs
             </div>
-            <h3 data-i18n="scenarios.1.title">PM drops a screenshot, cc-bot opens a PR.</h3>
+            <h3 data-i18n="scenarios.1.title">PM drops an error, cc-bot opens a PR.</h3>
             <p class="scenario__scene" data-i18n-html="scenarios.1.scene">
-              Maya pastes a 500 screenshot into <code>#bugs</code>.
+              Maya pastes a 500 error trace into <code>#bugs</code>.
             </p>
             <p class="scenario__act" data-i18n="scenarios.1.act">
-              Bot reads the image, greps the repo, finds a stale migration, opens the PR, replies with the diff.
+              Bot reads the trace, greps the repo, finds a stale migration, opens the PR, replies with the diff.
             </p>
             <p class="scenario__win" data-i18n-html="scenarios.1.win">
-              <i>Why it wins:</i> screenshot, fix, PR — one thread.
+              <i>Why it wins:</i> error, fix, PR — one thread.
             </p>
           </li>
 
@@ -269,7 +269,7 @@
             </div>
             <h3 data-i18n="scenarios.4.title">Standup that writes itself.</h3>
             <p class="scenario__scene" data-i18n-html="scenarios.4.scene">
-              At 09:30 a prompt drops in <code>#standup</code>.
+              At 09:30 a scheduled message drops in <code>#standup</code>.
             </p>
             <p class="scenario__act" data-i18n-html="scenarios.4.act">
               Bot diffs 24h of <code>git log</code>, posts three lines per repo with authors linked.

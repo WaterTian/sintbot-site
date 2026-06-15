@@ -134,18 +134,18 @@
       zh: "六个频道、六种活儿。群里问一句，拿到答案，继续干。"
     },
 
-    "scenarios.1.title": { en: "PM drops a screenshot, cc-bot opens a PR.", zh: "产品丢张截图，cc-bot 开 PR。" },
+    "scenarios.1.title": { en: "PM drops an error, cc-bot opens a PR.", zh: "产品丢一段报错，cc-bot 开 PR。" },
     "scenarios.1.scene": {
-      en: `Maya pastes a 500 screenshot into <code>#bugs</code>.`,
-      zh: `Maya 在 <code>#bugs</code> 贴了张 500 报错截图。`
+      en: `Maya pastes a 500 error trace into <code>#bugs</code>.`,
+      zh: `Maya 在 <code>#bugs</code> 贴了一段 500 报错堆栈。`
     },
     "scenarios.1.act": {
-      en: "Bot reads the image, greps the repo, finds a stale migration, opens the PR, replies with the diff.",
-      zh: "Bot 读图、grep 代码库、定位到一条过期 migration，开 PR 并把 diff 回到原帖。"
+      en: "Bot reads the trace, greps the repo, finds a stale migration, opens the PR, replies with the diff.",
+      zh: "Bot 读堆栈、grep 代码库、定位到一条过期 migration，开 PR 并把 diff 回到原帖。"
     },
     "scenarios.1.win": {
-      en: `<i>Why it wins:</i> screenshot, fix, PR — one thread.`,
-      zh: `<i>为什么有效：</i>截图、修复、PR 都在同一条消息线里。`
+      en: `<i>Why it wins:</i> error, fix, PR — one thread.`,
+      zh: `<i>为什么有效：</i>报错、修复、PR 都在同一条消息线里。`
     },
 
     "scenarios.2.title": { en: "Solo dev ships from the channel.", zh: "独立开发者从频道直接发布。" },
@@ -178,8 +178,8 @@
 
     "scenarios.4.title": { en: "Standup that writes itself.", zh: "自己写自己的日报。" },
     "scenarios.4.scene": {
-      en: `At 09:30 a prompt drops in <code>#standup</code>.`,
-      zh: `09:30，<code>#standup</code> 自动落下一条提问。`
+      en: `At 09:30 a scheduled message drops in <code>#standup</code>.`,
+      zh: `09:30，<code>#standup</code> 自动落下一条定时消息。`
     },
     "scenarios.4.act": {
       en: `Bot diffs 24h of <code>git log</code>, posts three lines per repo with authors linked.`,
