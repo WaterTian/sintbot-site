@@ -437,8 +437,8 @@
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `Sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are live on <code>main</code>; the desktop pet is on the way.`,
-      zh: `Sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器已在 <code>main</code> 分支；桌宠在路上。`
+      en: `Sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are both live on <code>main</code>.`,
+      zh: `Sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器都已在 <code>main</code> 分支。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
