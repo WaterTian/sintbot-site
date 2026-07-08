@@ -32,16 +32,16 @@
            <span data-reveal data-reveal-delay="240">桌面宠物</span>`
     },
     "hero.lede":         {
-      en: "Sintbot is a platform: <code>cc-bot</code> puts an AI agent in your Slack or Lark group — Claude Code runs on your laptop — and sends a desktop pet to watch the project and work beside you.",
-      zh: "Sintbot 是一个平台：<code>cc-bot</code> 把一个 AI agent 接进你的飞书/Slack 群 —— Claude Code 跑在你本机 —— 派一只桌宠盯着项目、陪你工作。"
+      en: "Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, while <code>sintpet</code> is the desktop companion now learning to watch your local Claude Code work.",
+      zh: "Sintbot 是本地优先平台：<code>cc-bot</code> 把 Claude Code 接进飞书/Slack 群；<code>sintpet</code> 是正在成形的桌面伙伴，先从旁听你本机 Claude Code 工作开始。"
     },
     "hero.cta.primary":   { en: "Meet Sintbot", zh: "认识 Sintbot" },
 
     "what.kicker":   { en: "Platform", zh: "平台" },
     "what.h":        { en: `What <em>Sintbot</em> is.`, zh: `<em>Sintbot</em> 是什么。` },
     "what.lede":     {
-      en: "Local-first, MIT, no runtime. Sintbot lives in the group chat your team already uses.",
-      zh: "本地优先、MIT、无外部运行时。Sintbot 就长在团队本来就在用的群聊里。"
+      en: "Local-first, MIT, no hosted runtime. Sintbot gives AI work both a team channel and a small desktop body.",
+      zh: "本地优先、MIT、无托管运行时。Sintbot 让 AI 工作既能进团队群，也能在桌面上长出一个小身体。"
     },
     "what.bot.title":{ en: "Multi-model group bot", zh: "多模型群聊机器人" },
     "what.bot.body": {
@@ -51,8 +51,8 @@
     "what.bot.link": { en: "See the bot →", zh: "看机器人 →" },
     "what.pet.title":{ en: "Desktop pet", zh: "桌宠" },
     "what.pet.body": {
-      en: "A creature on every teammate's desktop — it listens to the channel, cares about the project, and works beside you with a personality.",
-      zh: "人手一只趴桌面的虚拟形象，旁听群聊、关心项目，有性格有情绪陪你工作。"
+      en: "A creature on your desktop — today it can listen to local Claude Code turns, speak with local voice, and react to the work with a personality.",
+      zh: "一只趴在你桌面的虚拟形象——当前先旁听本机 Claude Code 回合，用本地语音说话，并用自己的性格回应工作。"
     },
     "what.pet.link": { en: "See the pet →", zh: "看桌宠 →" },
 
@@ -73,32 +73,32 @@
     "pet.kicker": { en: "Pillar ②", zh: "支柱 ②" },
     "pet.h":      { en: "Give the AI a form.", zh: "给 AI 一个形象。" },
     "pet.lede":   {
-      en: "cc-bot works in the channel, but it has no face. The desktop pet is that face — a small creature on your desktop that watches the channel, cares about the project, and keeps you company with a mood.",
-      zh: "cc-bot 在群里干活，但它没有脸。桌宠就是那张脸 —— 一只趴在你桌面的小生物，旁听群、关心项目、有情绪地陪你。"
+      en: "The desktop pet is the local body for AI work: a small companion that watches your Claude Code session, speaks with on-device voice and lip-sync, and reacts before the group-sync version is ready.",
+      zh: "桌宠是 AI 工作在本机长出的身体：它先旁听你的 Claude Code 会话，用本地语音和口型说话、做反应；群同步版本后续再接。"
     },
-    "pet.1.title": { en: "One each", zh: "人手一只" },
+    "pet.1.title": { en: "On your desktop", zh: "趴在你桌面" },
     "pet.1.body":  {
-      en: "Every teammate has their own creature on their own desktop — same channel, each their own view.",
-      zh: "每个群友桌面都有自己的一只，同一个群、各自的视角。"
+      en: "A transparent Tauri window keeps a full-body VRM companion beside your work without taking over the screen.",
+      zh: "透明 Tauri 窗口里是一只全身 VRM 伙伴，陪在工作边上，不抢走你的屏幕。"
     },
-    "pet.2.title": { en: "Listens to the channel", zh: "旁听群聊" },
+    "pet.2.title": { en: "Opt-in eavesdrop", zh: "可选旁听" },
     "pet.2.body":  {
-      en: "Wired live into Slack / Lark — whatever happens in the channel, it knows.",
-      zh: "实时接飞书 / Slack，群里发生什么它都知道。"
+      en: "A Claude Code Stop hook can feed recent local turns to the pet; leave it off and it stays quiet.",
+      zh: "Claude Code Stop hook 可以把最近本机会话交给桌宠；不开启时，它不会旁听。"
     },
-    "pet.3.title": { en: "Acts out the state", zh: "演开发状态" },
+    "pet.3.title": { en: "Acts out the state", zh: "演工作状态" },
     "pet.3.body":  {
-      en: "cc-bot compiling, deploying, erroring — the pet plays it out in expression and motion.",
-      zh: "cc-bot 编译 / 部署 / 报错，它用表情动作演出来。"
+      en: "Passed tests, failures, errors and risky commands become short spoken quips with body motion.",
+      zh: "测试通过、失败、报错、危险命令，会变成一句短点评和一段身体动作。"
     },
-    "pet.4.title": { en: "Has a personality", zh: "有性格有情绪" },
+    "pet.4.title": { en: "Has a personality", zh: "有性格" },
     "pet.4.body":  {
-      en: "Not a status light — it answers messages, has moods and a temper, a partner that works beside you.",
-      zh: "不只是状态灯 —— 会回应消息、有脾气、有情绪，是陪你工作的伙伴。"
+      en: "Not a status light — it chats, speaks, notices progress, and is being shaped into a real character.",
+      zh: "不只是状态灯——它会聊天、会说话、会注意进展，正在被塑造成真正的角色。"
     },
     "pet.close":  {
-      en: "Give the team's AI teammate a vivid, living face.",
-      zh: "让团队那位 AI 同事，有一个生动的形象。"
+      en: "Give the AI work on your machine a vivid, living face.",
+      zh: "让你机器上的 AI 工作，有一个生动的形象。"
     },
     "pet.state.compiling": { en: "Compiling", zh: "编译中" },
     "pet.state.focus":     { en: "focused",   zh: "专注" },
