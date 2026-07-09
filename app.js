@@ -86,7 +86,7 @@
       en: "A Claude Code Stop hook can feed recent local turns to the pet; leave it off and it stays quiet.",
       zh: "Claude Code Stop hook 可以把最近本机会话交给桌宠；不开启时，它不会旁听。"
     },
-    "pet.3.title": { en: "Acts out the state", zh: "演工作状态" },
+    "pet.3.title": { en: "Reacts out loud", zh: "出声反应" },
     "pet.3.body":  {
       en: "Passed tests, failures, errors and risky commands become short spoken quips with body motion.",
       zh: "测试通过、失败、报错、危险命令，会变成一句短点评和一段身体动作。"
