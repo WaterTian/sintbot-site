@@ -8,6 +8,26 @@
       name="description"
       content="Sintbot is a local-first platform: cc-bot puts Claude Code in your Slack or Lark group, while sintpet is a desktop companion for local Claude Code work."
     />
+    <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
+         bot into your chat", so links get pasted into Slack/Discord/Twitter/WeChat
+         constantly — without these the unfurl is blank. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sintbot" />
+    <meta property="og:url" content="https://sintbot.com/" />
+    <meta property="og:title" content="Sintbot — AI agents in your group chat, with a face" />
+    <meta
+      property="og:description"
+      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group; sintpet is the desktop companion that watches your local Claude Code work, speaks with on-device voice, and reacts."
+    />
+    <meta property="og:image" content="https://sintbot.com/assets/logo.png" />
+    <meta property="og:image:alt" content="Sintbot — PCB-styled CC mark" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sintbot — AI agents in your group chat, with a face" />
+    <meta
+      name="twitter:description"
+      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group; sintpet is the desktop companion for local Claude Code work."
+    />
+    <meta name="twitter:image" content="https://sintbot.com/assets/logo.png" />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +53,7 @@
     <!-- Top nav -->
     <header class="nav" data-reveal>
       <a class="nav__brand" href="#top" aria-label="Sintbot home">
-        <img src="./assets/bot/bot-01.webp" alt="" width="30" height="30" data-logo-cycle />
+        <img src="./assets/logo.png" alt="" width="30" height="30" />
         <span class="nav__word">Sint<i class="nav__trace" aria-hidden="true"></i>bot</span>
       </a>
       <nav class="nav__menu" aria-label="primary">
@@ -89,15 +109,6 @@
               <span data-reveal data-reveal-delay="240">Desktop pet</span>
             </span>
           </h1>
-          <img
-            class="hero__pet"
-            src="./assets/bot/bot-01.webp"
-            alt=""
-            aria-hidden="true"
-            width="120"
-            height="120"
-            data-logo-cycle
-          />
           <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
             Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, while <code>sintpet</code> is the desktop companion now learning to watch your local Claude Code work.
           </p>
@@ -716,26 +727,6 @@ settings:
           the group-sync version is ready.
         </p>
 
-        <!-- state board — CSS mood variants (route 1) -->
-        <div class="pet-board" data-reveal>
-          <figure class="pet-state pet-state--focus">
-            <img class="pet-state__img" src="./assets/bot/bot-01.webp" alt="" width="80" height="80" data-logo-cycle />
-            <figcaption><b data-i18n="pet.state.compiling">Compiling</b><span data-i18n="pet.state.focus">focused</span></figcaption>
-          </figure>
-          <figure class="pet-state pet-state--happy">
-            <img class="pet-state__img" src="./assets/bot/bot-01.webp" alt="" width="80" height="80" data-logo-cycle />
-            <figcaption><b data-i18n="pet.state.deployed">Deployed</b><span data-i18n="pet.state.happy">delighted</span></figcaption>
-          </figure>
-          <figure class="pet-state pet-state--alert">
-            <img class="pet-state__img" src="./assets/bot/bot-01.webp" alt="" width="80" height="80" data-logo-cycle />
-            <figcaption><b data-i18n="pet.state.error">Error</b><span data-i18n="pet.state.alert">alarmed</span></figcaption>
-          </figure>
-          <figure class="pet-state pet-state--idle">
-            <img class="pet-state__img" src="./assets/bot/bot-01.webp" alt="" width="80" height="80" data-logo-cycle />
-            <figcaption><b data-i18n="pet.state.idle">Idle</b><span data-i18n="pet.state.lazy">lazing</span></figcaption>
-          </figure>
-        </div>
-
         <ol class="pet-cards">
           <li class="pet-card" data-reveal>
             <span class="pet-card__no" aria-hidden="true">01</span>
@@ -830,7 +821,7 @@ settings:
     <footer class="foot">
       <div class="foot__row">
         <div class="foot__brand">
-          <img src="./assets/bot/bot-01.webp" alt="" width="28" height="28" data-logo-cycle />
+          <img src="./assets/logo.png" alt="" width="28" height="28" />
           <strong>Sintbot</strong>
           <span data-i18n="foot.tag">MIT · Local-first · IM-agnostic</span>
         </div>

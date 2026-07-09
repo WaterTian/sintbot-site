@@ -100,15 +100,6 @@
       en: "Give the AI work on your machine a vivid, living face.",
       zh: "让你机器上的 AI 工作，有一个生动的形象。"
     },
-    "pet.state.compiling": { en: "Compiling", zh: "编译中" },
-    "pet.state.focus":     { en: "focused",   zh: "专注" },
-    "pet.state.deployed":  { en: "Deployed",  zh: "部署成功" },
-    "pet.state.happy":     { en: "delighted", zh: "雀跃" },
-    "pet.state.error":     { en: "Error",     zh: "报错" },
-    "pet.state.alert":     { en: "alarmed",   zh: "警觉" },
-    "pet.state.idle":      { en: "Idle",      zh: "空闲" },
-    "pet.state.lazy":      { en: "lazing",    zh: "慵懒" },
-
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
       en: "@cc-bot signup is throwing 500 on staging — can you triage?",
@@ -740,110 +731,6 @@
       { threshold: 0.4 }
     );
     document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
-  }
-
-  // 7) Logo-cycle — PCB-themed crossfade of the bot characters -------------
-  // Each [data-logo-cycle] <img> is swapped for a two-layer span that fades
-  // between bot characters with a brief power-on flash on the incoming layer.
-  //
-  // Selection: globally tracks what's shown in every slot (no duplicates
-  // across slots at the same moment) and per-slot recent history (RECENT_KEEP
-  // images can't repeat in the same slot until they age out).
-  //
-  // Rhythm: tighter 6-10s window (was 4-15s) with per-slot phase offset so
-  // the 7 slots scatter without long stretches of stillness or simultaneous
-  // pile-ups. Hovering a slot pauses its cycle until the pointer leaves.
-  const cycleSlots = document.querySelectorAll("img[data-logo-cycle]");
-  if (cycleSlots.length) {
-    const COUNT = 12;
-    const RECENT_KEEP = 6;
-    const bots = [];
-    for (let i = 1; i <= COUNT; i++) {
-      bots.push("./assets/bot/bot-" + String(i).padStart(2, "0") + ".webp");
-    }
-    bots.forEach((s) => { const im = new Image(); im.src = s; }); // preload
-
-    const slotShown = new Map();   // span -> current bot index
-    const slotRecent = new WeakMap(); // span -> last RECENT_KEEP picks
-    function pickNext(span, current) {
-      const inUse = new Set();
-      slotShown.forEach((idx, key) => { if (key !== span) inUse.add(idx); });
-      const recent = slotRecent.get(span) || [];
-      let pool = [];
-      for (let i = 0; i < COUNT; i++) {
-        if (i === current || inUse.has(i) || recent.includes(i)) continue;
-        pool.push(i);
-      }
-      // relax recent-history constraint if the in-use set already pinned us
-      if (!pool.length) {
-        for (let i = 0; i < COUNT; i++) {
-          if (i !== current && !inUse.has(i)) pool.push(i);
-        }
-      }
-      // last resort: anything but current
-      if (!pool.length) {
-        for (let i = 0; i < COUNT; i++) if (i !== current) pool.push(i);
-      }
-      const next = pool[(Math.random() * pool.length) | 0];
-      slotRecent.set(span, [next, ...recent].slice(0, RECENT_KEEP));
-      return next;
-    }
-
-    cycleSlots.forEach((orig, slotIdx) => {
-      const span = document.createElement("span");
-      span.className = "logo-cycle" + (orig.className ? " " + orig.className : "");
-      if (orig.getAttribute("aria-hidden")) span.setAttribute("aria-hidden", "true");
-      // class-less slots (nav / footer) keep their original icon height;
-      // classed slots (hero pet, pet-state) are sized by their existing CSS.
-      if (!orig.className) {
-        const h = orig.getAttribute("height");
-        if (h) span.style.height = h + "px";
-      }
-      const layerA = document.createElement("img");
-      const layerB = document.createElement("img");
-      layerA.className = layerB.className = "logo-cycle__layer";
-      layerA.alt = layerB.alt = "";
-
-      let shown = pickNext(span, -1);
-      slotShown.set(span, shown);
-      let queued = pickNext(span, shown);
-      layerA.src = bots[shown];
-      layerB.src = bots[queued];
-      layerA.style.opacity = "1";
-      layerB.style.opacity = "0";
-      span.append(layerA, layerB);
-      orig.replaceWith(span);
-
-      let front = layerA, back = layerB;
-      let hovered = false;
-      span.addEventListener("pointerenter", () => { hovered = true; });
-      span.addEventListener("pointerleave", () => { hovered = false; });
-
-      function step() {
-        if (hovered) { schedule(); return; }
-        // flash the incoming layer; CSS handles the brightness + scale beat
-        back.classList.add("logo-cycle__layer--in");
-        back.addEventListener("animationend", function onEnd() {
-          back.classList.remove("logo-cycle__layer--in");
-          back.removeEventListener("animationend", onEnd);
-        });
-        back.style.opacity = "1";
-        front.style.opacity = "0";
-        const t = front; front = back; back = t;
-        shown = queued;
-        slotShown.set(span, shown);
-        queued = pickNext(span, shown);
-        back.src = bots[queued];
-        schedule();
-      }
-      function schedule() {
-        // 6-10s window — tighter than the old 4-15s so the rhythm reads
-        // as deliberate, not chaotic
-        setTimeout(step, 6000 + Math.random() * 4000);
-      }
-      // per-slot phase offset so the 7 slots stagger from the first tick
-      setTimeout(schedule, slotIdx * 1100 + Math.random() * 1500);
-    });
   }
 
   // 8) Hero parallax — staggered depth on the hero text while scrolling.

@@ -1547,42 +1547,6 @@ html[lang="zh"] .pet-card h3 {
   text-align: left;
 }
 
-/* ---- hero desktop-pet mascot ------------------------------------ */
-.hero__pet {
-  position: absolute;
-  top: clamp(80px, 12vw, 160px);
-  right: clamp(20px, 6vw, 90px);
-  width: clamp(108px, 13.5vw, 184px);
-  height: auto;
-  pointer-events: none;
-  z-index: 2;
-  animation: hero-float 5s var(--ease-in-out) infinite;
-  transform-origin: 50% 100%;
-  /* cast shadow — drops the pet's silhouette down onto the
-     「Local Agent」 text below; near-invisible over the dark
-     canvas, darkens visibly where it lands on the bright text */
-  filter: drop-shadow(0 26px 18px rgba(0, 0, 0, 0.7));
-}
-@keyframes pet-idle {
-  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
-  50%      { transform: translateY(-7px) rotate(1.5deg); }
-}
-/* hero pet — a gentle up-and-down float, no rotation.
-   Deliberately NOT gated by prefers-reduced-motion: Win11 Chrome
-   false-reports `reduce`, so — like cursor-glow, the cards and the
-   back-to-top button — this ambient motion runs for everyone. */
-@keyframes hero-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
-}
-/* Below 880px the absolutely-positioned pet collides with the H1 title:
-   on tablets it clips the 「Local Agent」 line, and below 640px the title
-   collapses to a flush-left stack that leaves no clear corner for it.
-   The pet is purely decorative (aria-hidden) — drop it on narrow viewports. */
-@media (max-width: 880px) {
-  .hero__pet { display: none; }
-}
-
 /* ---- what-is-sintbot : two pillars ------------------------------ */
 .pillars {
   list-style: none;
@@ -1711,61 +1675,6 @@ html[lang="zh"] .pet-card h3 {
   font-family: var(--f-display);
   font-size: clamp(1.2rem, 2.6vw, 1.9rem);
   color: var(--bone);
-}
-
-/* ---- pet state board (route 1 -- CSS variants, swap-ready) ------- */
-.pet-board {
-  margin: clamp(28px, 5vw, 56px) 0 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(12px, 2vw, 20px);
-}
-@media (max-width: 620px) { .pet-board { grid-template-columns: repeat(2, 1fr); } }
-.pet-state {
-  margin: 0;
-  border: 1px solid var(--line-soft);
-  border-radius: 16px;
-  padding: clamp(18px, 2.4vw, 28px);
-  background: var(--ink-2);
-  text-align: center;
-}
-.pet-state__img {
-  width: clamp(56px, 7vw, 80px);
-  height: auto;
-}
-.pet-state figcaption { margin-top: 12px; display: flex; flex-direction: column; gap: 2px; }
-.pet-state figcaption b { font-family: var(--f-mono); font-size: 0.85rem; }
-.pet-state figcaption span { color: var(--muted); font-size: 0.8rem; }
-
-/* four moods -- micro-variations on the one logo creature */
-.pet-state--focus .pet-state__img {
-  filter: saturate(1.15);
-  animation: pet-focus 1.6s var(--ease-in-out) infinite;
-}
-.pet-state--happy .pet-state__img {
-  filter: hue-rotate(-12deg) saturate(1.3) brightness(1.1);
-  animation: pet-happy 0.9s var(--ease-out) infinite;
-}
-.pet-state--alert .pet-state__img {
-  filter: hue-rotate(-40deg) saturate(1.5) brightness(1.05);
-  animation: pet-alert 0.5s var(--ease-in-out) infinite;
-}
-.pet-state--idle .pet-state__img {
-  filter: saturate(0.7) brightness(0.85);
-  animation: pet-idle 4.5s var(--ease-in-out) infinite;
-}
-@keyframes pet-focus { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-@keyframes pet-happy { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-9px) rotate(6deg)} }
-@keyframes pet-alert {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-3px); }
-  40%, 80% { transform: translateX(3px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .pet-state--focus .pet-state__img,
-  .pet-state--happy .pet-state__img,
-  .pet-state--alert .pet-state__img,
-  .pet-state--idle .pet-state__img { animation: none; }
 }
 
 /* ---- pricing : two plan cards ----------------------------------- */
@@ -1995,40 +1904,6 @@ html[lang="zh"] .pet-card h3 {
   transform: translateY(-4px);
   border-color: var(--signal);
   color: var(--gold);
-}
-
-/* ── logo-cycle — random crossfade of the bot characters ──────────── */
-/* JS replaces each [data-logo-cycle] <img> with this span; the span keeps
-   the original element's class (sizing / positioning / mood filters), and
-   two layers stacked in one grid cell crossfade via opacity. */
-.logo-cycle {
-  display: inline-grid;
-  aspect-ratio: 5 / 4;
-}
-.logo-cycle__layer {
-  grid-area: 1 / 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 600ms ease;
-}
-/* Power-on flash applied by JS to the incoming layer: a brightness +
-   micro-scale beat that peaks ~120ms in and tails off as the crossfade
-   completes, so the icon reads as an LED energising rather than a plain
-   fade-in. */
-@keyframes logo-cycle-power-on {
-  0%   { filter: brightness(1)    saturate(1);    transform: scale(1); }
-  18%  { filter: brightness(1.55) saturate(1.2);  transform: scale(1.028); }
-  60%  { filter: brightness(1.08) saturate(1.05); transform: scale(1.008); }
-  100% { filter: brightness(1)    saturate(1);    transform: scale(1); }
-}
-.logo-cycle__layer--in {
-  animation: logo-cycle-power-on 700ms ease-out;
-}
-/* re-assert the hero pet's mobile hide — .logo-cycle's display would
-   otherwise override .hero__pet { display: none } below 880px */
-@media (max-width: 880px) {
-  .logo-cycle.hero__pet { display: none; }
 }
 
 /* (hero primary CTA frosted-glass styling now lives in the unified
