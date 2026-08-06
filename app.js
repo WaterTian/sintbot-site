@@ -78,8 +78,8 @@
     },
     "pet.1.title": { en: "On your desktop", zh: "趴在你桌面" },
     "pet.1.body":  {
-      en: "A transparent Tauri window keeps a full-body VRM companion beside your work without taking over the screen.",
-      zh: "透明 Tauri 窗口里是一只全身 VRM 伙伴，陪在工作边上，不抢走你的屏幕。"
+      en: "A transparent, frameless window keeps a talking, expressive companion beside your work — there all day, never taking over the screen.",
+      zh: "透明无边框的窗口里，是一只会说话、有表情的伙伴——整天陪在工作旁边，却不抢走你的屏幕。"
     },
     "pet.2.title": { en: "Opt-in eavesdrop", zh: "可选旁听" },
     "pet.2.body":  {
@@ -93,8 +93,8 @@
     },
     "pet.4.title": { en: "Has a personality", zh: "有性格" },
     "pet.4.body":  {
-      en: "Not a status light — it chats, speaks, notices progress, and is being shaped into a real character.",
-      zh: "不只是状态灯——它会聊天、会说话、会注意进展，正在被塑造成真正的角色。"
+      en: "Not a status light — it chats, speaks, notices progress. The character is settled now: its own personality, its own voice.",
+      zh: "不只是状态灯——它会聊天、会说话、会注意进展；角色已经定了型，有自己的性格，也有自己的声音。"
     },
     "pet.close":  {
       en: "Give the AI work on your machine a vivid, living face.",

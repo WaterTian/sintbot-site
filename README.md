@@ -9,7 +9,7 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 Sintbot is one local-first platform with two pillars, both on a single page:
 
 - **① Multi-model group bot** — drop an AI agent into a Slack / Lark channel; mention it, it works. `cc-bot` is the Claude Code edition, live today. Both adapters share one `IMAdapter` interface and live on `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot).
-- **② Desktop pet (`sintpet`)** — a full-body VRM companion that watches your local Claude Code session, speaks with on-device voice + lip-sync, and reacts. Its character is still being shaped.
+- **② Desktop pet (`sintpet`)** — a desktop companion that watches your local Claude Code session, speaks with on-device voice + lip-sync, and reacts out loud. Its character is settled — personality and voice included.
 
 cc-bot (MIT, free) is the top of the funnel; Sintpet Pro is the paid tier — see the pricing section.
 
@@ -30,7 +30,7 @@ python -m http.server 8000   # then visit http://localhost:8000/
 - `assets/logo.png` — the PCB-styled "CC" brand mark (favicon + nav / footer + OG share image); `logo.svg` retained as a vector fallback.
 - `CNAME` — GitHub Pages custom domain (`sintbot.com`); do not delete.
 
-> The old circuit-board bot mascot (`assets/bot/*.webp`) and its JS cross-fade cycle were removed 2026-07: the desktop pet is becoming a real VRM character, so the placeholder no longer represented it. The CC mark above is the brand logo, kept.
+> The old circuit-board bot mascot (`assets/bot/*.webp`) and its JS cross-fade cycle were removed 2026-07: the desktop pet is becoming a real character with its own look and voice, so the placeholder no longer represented it. The CC mark above is the brand logo, kept.
 
 ## i18n — EN / 中文
 
