@@ -8,10 +8,12 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 
 Sintbot is one local-first platform with two pillars, both on a single page:
 
-- **① Multi-model group bot** — drop an AI agent into a Slack / Lark channel; mention it, it works. `cc-bot` is the Claude Code edition, live today. Both adapters share one `IMAdapter` interface and live on `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot).
+- **① Multi-model group bot** — drop an AI agent into a Slack / Lark channel; mention it, it works. This pillar ships in **two forms**:
+  - **`cc-bot`** — a **plugin**: it installs into Claude Code, lives inside an interactive session, and is bound to that session's model. MIT and free, on `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot); both IM adapters share one `IMAdapter` interface.
+  - **`sintbot`** — a **standalone daemon**, not a plugin: it owns its own message loop, needs nobody at the terminal, drives **Claude Code and Codex** headless, and swaps the model behind them (Claude / GPT / GLM / DeepSeek / MiniMax). One project per group, per-group permissions, local web console. Lark-native today. **Delivered with Pro** — not a public download.
 - **② Desktop pet (`sintpet`)** — a desktop companion that watches your local Claude Code session, speaks with on-device voice + lip-sync, and reacts out loud. Its character is settled — personality and voice included.
 
-cc-bot (MIT, free) is the top of the funnel; Sintpet Pro is the paid tier — see the pricing section.
+cc-bot (MIT, free) is the top of the funnel; Pro unlocks `sintbot` — see the pricing section.
 
 ## Preview locally
 

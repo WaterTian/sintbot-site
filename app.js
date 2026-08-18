@@ -13,16 +13,15 @@
   // cc-bot version — single source of truth for every version string on the
   // page. Mirror of WaterTian/cc-bot (.claude-plugin/plugin.json). Bump this
   // one line only; the eyebrow and footer strings below interpolate it.
-  const VERSION = "0.1.21";
+  const VERSION = "0.1.48";
 
   const translations = {
     "nav.bot":           { en: "Bot",            zh: "机器人" },
-    "nav.pet":           { en: "Desktop pet",    zh: "桌宠" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
     "nav.pricing":       { en: "Pricing",        zh: "定价" },
 
-    "hero.eyebrow":      { en: `v${VERSION} · Local-first · MIT`,
-                           zh: `v${VERSION} · 本地优先 · MIT` },
+    "hero.eyebrow":      { en: `v${VERSION} · Local-first · Self-hosted`,
+                           zh: `v${VERSION} · 本地优先 · 自托管` },
     "hero.titleEn":      {
       en: `<span data-reveal data-reveal-delay="0">Group chat</span>
            <em data-reveal data-reveal-delay="120">「Local Agent」</em>
@@ -32,29 +31,29 @@
            <span data-reveal data-reveal-delay="240">桌面宠物</span>`
     },
     "hero.lede":         {
-      en: "Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, while <code>sintpet</code> is the desktop companion now learning to watch your local Claude Code work.",
-      zh: "Sintbot 是本地优先平台：<code>cc-bot</code> 把 Claude Code 接进飞书/Slack 群；<code>sintpet</code> 是正在成形的桌面伙伴，先从旁听你本机 Claude Code 工作开始。"
+      en: "Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, and <code>sintbot</code> is the Pro daemon that drives Claude Code and Codex headless.",
+      zh: "Sintbot 是本地优先平台：<code>cc-bot</code> 把 Claude Code 接进飞书/Slack 群；<code>sintbot</code> 是无头驱动 Claude Code 与 Codex、模型大脑可换的 Pro 守护进程。"
     },
     "hero.cta.primary":   { en: "Meet Sintbot", zh: "认识 Sintbot" },
 
     "what.kicker":   { en: "Platform", zh: "平台" },
     "what.h":        { en: `What <em>Sintbot</em> is.`, zh: `<em>Sintbot</em> 是什么。` },
     "what.lede":     {
-      en: "Local-first, MIT, no hosted runtime. Sintbot gives AI work both a team channel and a small desktop body.",
-      zh: "本地优先、MIT、无托管运行时。Sintbot 让 AI 工作既能进团队群，也能在桌面上长出一个小身体。"
+      en: "Local-first — everything runs on your own machine, nothing hosted by us. Sintbot puts AI work where your team already talks.",
+      zh: "本地优先——全部跑在你自己机器上，我们不托管任何东西。Sintbot 把 AI 工作放进团队本来就在聊的地方。"
     },
     "what.bot.title":{ en: "Multi-model group bot", zh: "多模型群聊机器人" },
     "what.bot.body": {
-      en: `Drop an AI agent into a Slack / Lark channel — mention it, it works. <code>cc-bot</code> is the Claude Code edition, live today.`,
-      zh: `把一个 AI agent 接进飞书 / Slack 群，mention 一下就开干。<code>cc-bot</code> 是 Claude Code 版，已上线。`
+      en: `Drop an AI agent into a Slack / Lark channel — mention it, it works. <code>cc-bot</code> is the free plugin; <code>sintbot</code> is the Pro daemon that also drives Codex.`,
+      zh: `把一个 AI agent 接进飞书 / Slack 群，mention 一下就开干。<code>cc-bot</code> 是免费插件；<code>sintbot</code> 是 Pro 版守护进程，还能驱动 Codex。`
     },
     "what.bot.link": { en: "See the bot →", zh: "看机器人 →" },
     "what.pet.title":{ en: "Desktop pet", zh: "桌宠" },
     "what.pet.body": {
-      en: "A creature on your desktop — today it can listen to local Claude Code turns, speak with local voice, and react to the work with a personality.",
-      zh: "一只趴在你桌面的虚拟形象——当前先旁听本机 Claude Code 回合，用本地语音说话，并用自己的性格回应工作。"
+      en: "A creature on your desktop that watches your local Claude Code work and reacts out loud, with its own voice and personality. In development — we'll announce it here.",
+      zh: "一只趴在你桌面的虚拟形象：旁听你本机的 Claude Code 工作，用自己的声音和性格出声回应。研发中——上线会在这里公布。"
     },
-    "what.pet.link": { en: "See the pet →", zh: "看桌宠 →" },
+    "what.pet.soon": { en: "In the works — not released yet", zh: "研发中 · 尚未上线" },
 
     "bot.kicker": { en: "Pillar ①", zh: "支柱 ①" },
     "bot.h":      { en: "Put an AI agent in the channel.", zh: "把 AI agent 接进群。" },
@@ -62,44 +61,14 @@
       en: "The bot binds one AI agent into a Slack / Lark group — mention it, and the agent reads the intent, does the work and replies, all on your own machine.",
       zh: "机器人的活儿，是把一个 AI agent 绑进飞书 / Slack 群 —— 群友 mention 一下，agent 在你本机读意图、干活、回贴。"
     },
-    "bot.slot.live":    { en: "cc-bot · live", zh: "cc-bot · 已上线" },
-    "bot.slot.other":   { en: "Other AI agents", zh: "其他 AI agent" },
-    "bot.slot.planned": { en: "planned", zh: "规划中" },
+    "bot.slot.live":    { en: "cc-bot · plugin · free", zh: "cc-bot · 插件 · 免费" },
+    "bot.slot.other":   { en: "Claude Code · Codex", zh: "Claude Code · Codex" },
+    "bot.slot.planned": { en: "sintbot · daemon · Pro", zh: "sintbot · 守护进程 · Pro" },
     "bot.bridge": {
-      en: "Below is cc-bot — the full Claude Code edition.",
-      zh: "下面是 cc-bot —— Claude Code 版的完整能力。"
+      en: `Two ways to run it. <code>cc-bot</code> is a <b>plugin</b>: it installs into Claude Code, lives inside an interactive session, and is bound to that session's model — free and MIT, walked through below. <code>sintbot</code> is a <b>standalone daemon</b>: it owns its own message loop, needs no one at the terminal, drives Claude Code and Codex headless, and swaps the model behind them — <a href="#daemon">see what it does</a>.`,
+      zh: `两种跑法。<code>cc-bot</code> 是<b>插件</b>：装进 Claude Code，活在交互会话里，绑死该会话的模型——免费、MIT，下面有完整流程。<code>sintbot</code> 是<b>独立守护进程</b>：自带消息循环，终端前不用有人守着，无头驱动 Claude Code 与 Codex，并可更换背后的模型——<a href="#daemon">看它能做什么</a>。`
     },
 
-    "pet.kicker": { en: "Pillar ②", zh: "支柱 ②" },
-    "pet.h":      { en: "Give the AI a form.", zh: "给 AI 一个形象。" },
-    "pet.lede":   {
-      en: "The desktop pet is the local body for AI work: a small companion that watches your Claude Code session, speaks with on-device voice and lip-sync, and reacts before the group-sync version is ready.",
-      zh: "桌宠是 AI 工作在本机长出的身体：它先旁听你的 Claude Code 会话，用本地语音和口型说话、做反应；群同步版本后续再接。"
-    },
-    "pet.1.title": { en: "On your desktop", zh: "趴在你桌面" },
-    "pet.1.body":  {
-      en: "A transparent, frameless window keeps a talking, expressive companion beside your work — there all day, never taking over the screen.",
-      zh: "透明无边框的窗口里，是一只会说话、有表情的伙伴——整天陪在工作旁边，却不抢走你的屏幕。"
-    },
-    "pet.2.title": { en: "Opt-in eavesdrop", zh: "可选旁听" },
-    "pet.2.body":  {
-      en: "A Claude Code Stop hook can feed recent local turns to the pet; leave it off and it stays quiet.",
-      zh: "Claude Code Stop hook 可以把最近本机会话交给桌宠；不开启时，它不会旁听。"
-    },
-    "pet.3.title": { en: "Reacts out loud", zh: "出声反应" },
-    "pet.3.body":  {
-      en: "Passed tests, failures, errors and risky commands become short spoken quips with body motion.",
-      zh: "测试通过、失败、报错、危险命令，会变成一句短点评和一段身体动作。"
-    },
-    "pet.4.title": { en: "Has a personality", zh: "有性格" },
-    "pet.4.body":  {
-      en: "Not a status light — it chats, speaks, notices progress. The character is settled now: its own personality, its own voice.",
-      zh: "不只是状态灯——它会聊天、会说话、会注意进展；角色已经定了型，有自己的性格，也有自己的声音。"
-    },
-    "pet.close":  {
-      en: "Give the AI work on your machine a vivid, living face.",
-      zh: "让你机器上的 AI 工作，有一个生动的形象。"
-    },
     "chat.user.name": { en: "Lin · PM", zh: "Lin · 产品" },
     "chat.msg1": {
       en: "@cc-bot signup is throwing 500 on staging — can you triage?",
@@ -266,8 +235,8 @@
     },
     "cap.7.title": { en: "Claude Code at the helm", zh: "Claude Code 主脑，专家协作" },
     "cap.7.body":  {
-      en: `Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or hands the task to whichever specialist the developer has wired up locally — Gemini, DeepSeek, or any other model the user has set up with their own keys on their own machine. Nothing is generated by the platform itself. Results stitch back into the thread.`,
-      zh: `Claude Code 是主脑。每条意图它先接住，能自己干的（diff、PR）自己写；需要换脑子时交给开发者本机已配好的专家模型——Gemini、DeepSeek 或用户自挂的其他模型，各自用用户自己的 key 在本机运行。平台本身不做任何生成。结果再拼回原帖。`
+      en: `Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or hands the task to whichever specialist the developer has wired up locally — GPT, GLM, DeepSeek, or any other model the user has set up with their own keys on their own machine. Nothing is generated by the platform itself. Results stitch back into the thread.`,
+      zh: `Claude Code 是主脑。每条意图它先接住，能自己干的（diff、PR）自己写；需要换脑子时交给开发者本机已配好的专家模型——GPT、GLM、DeepSeek 或用户自挂的其他模型，各自用用户自己的 key 在本机运行。平台本身不做任何生成。结果再拼回原帖。`
     },
 
     "adapter.kicker": { en: "①·04 — Engineering note", zh: "①·04 — 工程笔记" },
@@ -287,8 +256,8 @@
     "arch.kicker": { en: "①·05 — Architecture", zh: "①·05 — 架构" },
     "arch.h":      { en: "A small idea, drawn carefully.", zh: "一个小想法，画得仔细。" },
     "arch.lede":   {
-      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or hands off to whichever specialist the developer has wired up locally (Gemini · DeepSeek · any user-supplied model) as the intent demands. Result flows back to channel and HUD together.",
-      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给 Claude Code；Claude Code 自己回，或按意图交给开发者本机已配好的专家模型（Gemini · DeepSeek · 用户自挂的其他模型），结果同时流回频道和 HUD。"
+      en: "A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or hands off to whichever specialist the developer has wired up locally (GPT · GLM · DeepSeek · any user-supplied model) as the intent demands. Result flows back to channel and HUD together.",
+      zh: "一条很薄的管线。事件经 Socket Mode 进入（飞书走 HTTP 轮询），去重账本保证只投一次。调度器在对应权限层把消息交给 Claude Code；Claude Code 自己回，或按意图交给开发者本机已配好的专家模型（GPT · GLM · DeepSeek · 用户自挂的其他模型），结果同时流回频道和 HUD。"
     },
     "arch.col.im":         { en: "IM Layer",         zh: "IM 层" },
     "arch.col.im.note":    { en: "channels · threads", zh: "频道 · 消息线" },
@@ -372,23 +341,64 @@
     "commands.switch": { en: "swap active profile",                 zh: "切换当前 profile" },
     "commands.doctor": { en: "health check & diagnostics",          zh: "健康检查与诊断" },
 
+    "dmn.kicker": { en: "① · sintbot", zh: "① · sintbot" },
+    "dmn.h": { en: `The other way to run it.`, zh: `另一种跑法。` },
+    "dmn.lede": {
+      en: `<code>sintbot</code> is a standalone daemon, not a plugin. Nobody sits at the terminal: it owns the message loop, binds one project per group, and hands each turn to a headless agent. Delivered with Pro.`,
+      zh: `<code>sintbot</code> 是独立守护进程，不是插件。终端前不用有人守着：它自带消息循环，一群绑一个项目，每一轮交给一个无头 agent 执行。随 Pro 提供。`
+    },
+    "dmn.1.title": { en: "Two agent CLIs, one daemon", zh: "两套 agent，一个守护进程" },
+    "dmn.1.body": {
+      en: "It drives Claude Code and Codex headless, and swaps the model behind them per group from the console. Switching costs nothing but the next spawn's environment.",
+      zh: "它无头驱动 Claude Code 与 Codex，并在控制台里按群更换背后的模型。切换的代价只是下一次启动时的环境变量。"
+    },
+    "dmn.2.title": { en: "Design work, in the channel", zh: "群里就能做设计" },
+    "dmn.2.body": {
+      en: "Brief it on a shared whiteboard. It generates images, edits them in place rather than redrawing, builds the page, then checks the result against the project's own style doc before it hands anything over.",
+      zh: "在共享画板上提需求。它生成图片、在原图上改而不是照描述重画、做出页面，交付之前先拿项目自己的设计规范逐项核对一遍。"
+    },
+    "dmn.3.title": { en: "A console, not a config file", zh: "一个控制台，不是配置文件" },
+    "dmn.3.body": {
+      en: "Health, concurrency, live turn activity, subscription quota, per-group model and permissions, and the MCP plugin library — on a local page the daemon serves itself.",
+      zh: "健康状况、并发、实时活动、订阅额度、按群的模型与权限、MCP 插件库——都在守护进程自己提供的本地网页上。"
+    },
+    "dmn.4.title": { en: "Governed per group", zh: "按群治理" },
+    "dmn.4.body": {
+      en: "One project per group. Permission tiers are set per group and never globally; unset means read-only. The working directory is fenced, and secrets and personal data are scrubbed on the way out.",
+      zh: "一群一项目。权限分层只按群设、没有全局档；没设就是只读。工作目录有围栏，密钥与个人信息在出站时被清掉。"
+    },
+    "dmn.5.title": { en: "Built to run for weeks", zh: "为长跑而写" },
+    "dmn.5.body": {
+      en: "A connection watchdog, turns that cannot hang, empty turns retried in silence, work cut short by a restart picked up again, and long sessions compacted in place.",
+      zh: "连接看门狗、永远不会卡住的轮次、空轮静默重跑、被重启打断的活儿会自己接着做、长会话原地压缩。"
+    },
+    "dmn.6.title": { en: "Your team can help themselves", zh: "群成员自助" },
+    "dmn.6.body": {
+      en: `<code>/issue</code> files a report with the last turn's technical fingerprint already attached. Scheduled tasks take one sentence. Prototypes get served to the channel on request.`,
+      zh: `<code>/issue</code> 报一个问题，上一轮的技术指纹会自动附上。定时任务一句话就能建。要给群里看原型，说一声就发出来。`
+    },
+
     "pricing.kicker": { en: "Pricing", zh: "定价" },
     "pricing.h": {
       en: `Free to run. <em>Pro</em> to back it.`,
       zh: `免费就能跑，<em>Pro</em> 撑住它。`
     },
     "pricing.lede": {
-      en: "cc-bot is MIT and free forever. Sintbot Pro is for teams who want priority support, guided onboarding, and the next features first — while funding the open-source work.",
-      zh: "cc-bot 是 MIT、永久免费。Sintbot Pro 给那些想要优先支持、引导式接入、第一时间用上新功能的团队——同时资助开源开发。"
+      en: `cc-bot is MIT and free forever. Pro unlocks <code>sintbot</code> — the standalone daemon that swaps the model brain — plus priority support and early access, while funding the open-source work.`,
+      zh: `cc-bot 是 MIT、永久免费。Pro 解锁 <code>sintbot</code>——可换模型大脑的独立守护进程——外加优先支持与早鸟权益，同时资助开源开发。`
     },
 
     "pricing.free.name":    { en: "Free", zh: "Free" },
     "pricing.free.amount":  { en: "$0", zh: "$0" },
     "pricing.free.cycle":   { en: "/ forever", zh: "/ 永久" },
-    "pricing.free.tagline": { en: "The full cc-bot, self-hosted.", zh: "完整 cc-bot，自托管。" },
+    "pricing.free.tagline": { en: "A Claude Code plugin — lives inside your session.", zh: "一个 Claude Code 插件——活在你的会话里。" },
     "pricing.free.f1": {
       en: "Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD",
       zh: "cc-bot 完整核心——Slack + Lark 适配器、多会话调度、权限矩阵、HUD"
+    },
+    "pricing.free.f0": {
+      en: "Installs into Claude Code as a plugin — it runs in an interactive session and uses whatever model that session runs",
+      zh: "以插件形式装进 Claude Code——跑在交互会话里，用的就是该会话的模型"
     },
     "pricing.free.f2": {
       en: "MIT licensed, self-hosted on your own machine",
@@ -405,8 +415,12 @@
     "pricing.pro.amount":  { en: "$19.90", zh: "$19.90" },
     "pricing.pro.cycle":   { en: "/ month", zh: "/ 月" },
     "pricing.pro.tagline": {
-      en: "Everything in Free, plus a direct line and early access.",
-      zh: "Free 的全部，外加一条直达通道和早鸟权益。"
+      en: "Everything in Free, plus the sintbot daemon to download and self-host.",
+      zh: "Free 的全部，外加可下载自托管的 sintbot 守护进程。"
+    },
+    "pricing.pro.fsintbot": {
+      en: `<b>sintbot</b> — the standalone daemon: two agent CLIs, per-group models and permissions, a local console, design work in the channel, and scheduled tasks. <a href="#daemon">Full capabilities</a>. Runs on <b>Lark</b> today.`,
+      zh: `<b>sintbot</b> —— 独立守护进程：两套 agent、按群的模型与权限、本地控制台、群里做设计、定时任务。<a href="#daemon">完整能力</a>。当前面向<b>飞书</b>。`
     },
     "pricing.pro.f1": { en: "Everything in Free", zh: "Free 的全部" },
     "pricing.pro.f2": {
@@ -422,18 +436,18 @@
     "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
 
     "pricing.note": {
-      en: `Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
-      zh: `价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
+      en: `sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the package and setup guide. Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
+      zh: `sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把安装包与部署指引发给你。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
     },
 
     "cta.h": { en: "Ship from where the team already talks.", zh: "在团队本来就在聊的地方发布。" },
     "cta.p": {
-      en: `Sintbot is MIT and runtime-free. cc-bot's Slack &amp; Lark adapters are both live on <code>main</code>.`,
-      zh: `Sintbot 采用 MIT、无外部运行时。cc-bot 的 Slack 与飞书适配器都已在 <code>main</code> 分支。`
+      en: `cc-bot is MIT and runtime-free — its Slack &amp; Lark adapters are both live on <code>main</code>. Want the standalone daemon instead? <a href="#pricing">sintbot ships with Pro</a>.`,
+      zh: `cc-bot 采用 MIT、无外部运行时——Slack 与飞书适配器都已在 <code>main</code> 分支。想要独立守护进程？<a href="#pricing">sintbot 随 Pro 提供</a>。`
     },
     "cta.repo": { en: "Open the repo", zh: "打开仓库" },
 
-    "foot.tag":     { en: `v${VERSION} · MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · MIT · 本地优先 · IM 无关` },
+    "foot.tag":     { en: `v${VERSION} · cc-bot is MIT · Local-first · IM-agnostic`, zh: `v${VERSION} · cc-bot 采用 MIT · 本地优先 · IM 无关` },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {

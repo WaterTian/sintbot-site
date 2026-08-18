@@ -6,7 +6,7 @@
     <title>Sintbot — AI agents in your group chat, with a face</title>
     <meta
       name="description"
-      content="Sintbot is a local-first platform: cc-bot puts Claude Code in your Slack or Lark group, while sintpet is a desktop companion for local Claude Code work."
+      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group, and sintbot is the Pro daemon that drives Claude Code and Codex headless with swappable model brains."
     />
     <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
          bot into your chat", so links get pasted into Slack/Discord/Twitter/WeChat
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Sintbot — AI agents in your group chat, with a face" />
     <meta
       property="og:description"
-      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group; sintpet is the desktop companion that watches your local Claude Code work, speaks with on-device voice, and reacts."
+      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group, and sintbot is the Pro daemon that drives Claude Code and Codex headless with swappable model brains."
     />
     <meta property="og:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="Sintbot — AI agents in your group chat, with a face" />
     <meta
       name="twitter:description"
-      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group; sintpet is the desktop companion for local Claude Code work."
+      content="Local-first platform: cc-bot puts Claude Code in your Slack or Lark group, and sintbot is the Pro daemon that drives Claude Code and Codex headless with swappable model brains."
     />
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -60,7 +60,6 @@
       </a>
       <nav class="nav__menu" aria-label="primary">
         <a href="#bot" data-i18n="nav.bot">Bot</a>
-        <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
         <a href="#install" data-i18n="nav.setup">Setup</a>
         <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
         <a
@@ -84,13 +83,13 @@
         <div class="hero__marquee" aria-hidden="true">
           <div class="hero__marquee-track">
             <span>Slack</span><span>·</span
-            ><span>Claude</span><span>·</span><span>Gemini</span
+            ><span>Claude</span><span>·</span><span>Codex</span><span>·</span><span>GPT</span><span>·</span><span>GLM</span
             ><span>·</span><span>DeepSeek</span><span>·</span
             ><span>local-first</span><span>·</span
             ><span>multi-agent</span><span>·</span
             ><span>HUD</span><span>·</span><span>permission matrix</span
             ><span>·</span><span>Slack</span><span>·</span
-            ><span>Claude</span><span>·</span><span>Gemini</span
+            ><span>Claude</span><span>·</span><span>Codex</span><span>·</span><span>GPT</span><span>·</span><span>GLM</span
             ><span>·</span><span>DeepSeek</span><span>·</span
             ><span>local-first</span><span>·</span
             ><span>multi-agent</span><span>·</span
@@ -102,7 +101,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Local-first · MIT</span>
+            <span data-i18n="hero.eyebrow">Local-first · Self-hosted</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn">
@@ -112,7 +111,7 @@
             </span>
           </h1>
           <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
-            Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, while <code>sintpet</code> is the desktop companion now learning to watch your local Claude Code work.
+            Sintbot is a local-first platform: <code>cc-bot</code> puts Claude Code in your Slack or Lark group, and <code>sintbot</code> is the Pro daemon that drives Claude Code and Codex headless.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#what">
@@ -166,7 +165,7 @@
         <p class="section__kicker" data-reveal data-i18n="what.kicker">Platform</p>
         <h2 class="section__h" data-reveal data-i18n-html="what.h">What <em>Sintbot</em> is.</h2>
         <p class="lede lede--wide" data-reveal data-i18n="what.lede">
-          Local-first, MIT, no runtime. Sintbot lives in the group chat your team already uses.
+          Local-first — everything runs on your own machine, nothing hosted by us. Sintbot puts AI work where your team already talks.
         </p>
         <ol class="pillars">
           <li class="pillar" data-reveal>
@@ -174,7 +173,7 @@
             <h3 data-i18n="what.bot.title">Multi-model group bot</h3>
             <p data-i18n-html="what.bot.body">
               Drop an AI agent into a Slack / Lark channel — mention it, it works.
-              <code>cc-bot</code> is the Claude Code edition, live today.
+              <code>cc-bot</code> is the free plugin; <code>sintbot</code> is the Pro daemon that also drives Codex.
             </p>
             <a class="pillar__link" href="#bot" data-i18n="what.bot.link">See the bot →</a>
           </li>
@@ -185,7 +184,7 @@
               A creature on your desktop — today it can listen to local Claude Code
               turns, speak with local voice, and react to the work with a personality.
             </p>
-            <a class="pillar__link" href="#pet" data-i18n="what.pet.link">See the pet →</a>
+            <span class="pillar__soon" data-i18n="what.pet.soon">In the works — not released yet</span>
           </li>
         </ol>
       </section>
@@ -193,7 +192,7 @@
       <!-- Pillar ① — multi-model bot intro -->
       <section id="bot" class="section section--botintro">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="bot.kicker">Pillar ①</p>
+        <p class="section__kicker" data-reveal data-i18n="bot.kicker">The bot</p>
         <h2 class="section__h" data-reveal data-i18n="bot.h">Put an AI agent in the channel.</h2>
         <p class="lede lede--wide" data-reveal data-i18n="bot.lede">
           The bot binds one AI agent into a Slack / Lark group — mention it, and the agent
@@ -203,23 +202,23 @@
           <li class="agent-slot agent-slot--live">
             <span class="agent-slot__dot" aria-hidden="true"></span>
             <b>Claude Code</b>
-            <span class="agent-slot__tag" data-i18n="bot.slot.live">cc-bot · live</span>
+            <span class="agent-slot__tag" data-i18n="bot.slot.live">cc-bot · plugin · free</span>
           </li>
-          <li class="agent-slot agent-slot--ghost">
+          <li class="agent-slot agent-slot--live">
             <span class="agent-slot__dot" aria-hidden="true"></span>
-            <b data-i18n="bot.slot.other">Other AI agents</b>
-            <span class="agent-slot__tag" data-i18n="bot.slot.planned">planned</span>
+            <b data-i18n="bot.slot.other">Claude Code · Codex</b>
+            <span class="agent-slot__tag" data-i18n="bot.slot.planned">sintbot · daemon · Pro</span>
           </li>
         </ul>
-        <p class="botintro__bridge" data-reveal data-i18n="bot.bridge">
-          Below is cc-bot — the full Claude Code edition.
+        <p class="botintro__bridge" data-reveal data-i18n-html="bot.bridge">
+          Two ways to run it. <code>cc-bot</code> is a <b>plugin</b>: it installs into Claude Code, lives inside an interactive session, and is bound to that session's model — free and MIT, walked through below. <code>sintbot</code> is a <b>standalone daemon</b>: it owns its own message loop, needs no one at the terminal, drives Claude Code and Codex headless, and swaps the model behind them — <a href="#daemon">see what it does</a>.
         </p>
       </section>
 
       <!-- Scenarios -->
       <section id="scenarios" class="section section--scenarios">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="scenarios.kicker">00 — In your workspace</p>
+        <p class="section__kicker" data-reveal data-i18n="scenarios.kicker">①·01 — In your workspace</p>
         <h2 class="section__h" data-reveal data-i18n-html="scenarios.h">
           Where <em>cc-bot</em> earns its keep.
         </h2>
@@ -329,7 +328,7 @@
       <!-- Local-first callout -->
       <section id="local-first" class="section section--local">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="local.kicker">01 — On your machine</p>
+        <p class="section__kicker" data-reveal data-i18n="local.kicker">①·02 — On your machine</p>
         <h2 class="section__h" data-reveal data-i18n="local.h">Your laptop is the agent.</h2>
         <p class="lede lede--wide" data-reveal data-i18n="local.lede">
           Slack-native, fully local. cc-bot binds your shell to your IM — every command runs on your own hardware with your own credentials, then writes back to the chat.
@@ -359,7 +358,7 @@
       <!-- Capabilities -->
       <section id="capabilities" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="cap.kicker">02 — Capabilities</p>
+        <p class="section__kicker" data-reveal data-i18n="cap.kicker">①·03 — Capabilities</p>
         <h2 class="section__h" data-reveal data-i18n="cap.h">Seven muscles, one bot.</h2>
 
         <ol class="cards">
@@ -428,10 +427,10 @@
             <span class="card__no">07</span>
             <h3 data-i18n="cap.7.title">Claude Code at the helm</h3>
             <p data-i18n-html="cap.7.body">
-              Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or hands the task to whichever specialist the developer has wired up locally — Gemini, DeepSeek, or any other model the user has set up with their own keys on their own machine. Nothing is generated by the platform itself. Results stitch back into the thread.
+              Claude Code is the main brain. It reads every intent and either writes the work itself (diffs, PRs) or hands the task to whichever specialist the developer has wired up locally — GPT, GLM, DeepSeek, or any other model the user has set up with their own keys on their own machine. Nothing is generated by the platform itself. Results stitch back into the thread.
             </p>
             <ul class="card__chips">
-              <li>Claude</li><li>Gemini</li><li>DeepSeek</li><li>your own keys</li>
+              <li>Claude</li><li>GPT</li><li>GLM</li><li>DeepSeek</li><li>your own keys</li>
             </ul>
           </li>
         </ol>
@@ -440,7 +439,7 @@
       <!-- Adapter abstraction callout -->
       <section class="section section--adapter">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="adapter.kicker">03 — Engineering note</p>
+        <p class="section__kicker" data-reveal data-i18n="adapter.kicker">①·04 — Engineering note</p>
         <div class="adapter">
           <div class="adapter__copy">
             <h2 class="section__h section__h--small" data-reveal data-i18n-html="adapter.h">
@@ -472,12 +471,12 @@
       <!-- Architecture -->
       <section id="architecture" class="section section--arch">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="arch.kicker">04 — Architecture</p>
+        <p class="section__kicker" data-reveal data-i18n="arch.kicker">①·05 — Architecture</p>
         <h2 class="section__h" data-reveal data-i18n="arch.h">
           A small idea, drawn carefully.
         </h2>
         <p class="lede lede--wide" data-reveal data-i18n="arch.lede">
-          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or hands off to whichever specialist the developer has wired up locally (Gemini · DeepSeek · any user-supplied model) as the intent demands. Result flows back to channel and HUD together.
+          A thin pipeline. Events in via Socket Mode (Lark polls HTTP). Dedupe ledger guarantees exactly-once. Scheduler hands the message to Claude Code under the right permission tier; Claude Code answers itself or hands off to whichever specialist the developer has wired up locally (GPT · GLM · DeepSeek · any user-supplied model) as the intent demands. Result flows back to channel and HUD together.
         </p>
 
         <figure class="diagram" data-reveal>
@@ -581,7 +580,7 @@
       <!-- Install -->
       <section id="install" class="section section--install">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="install.kicker">05 — Slack setup</p>
+        <p class="section__kicker" data-reveal data-i18n="install.kicker">①·06 — Slack setup</p>
         <h2 class="section__h" data-reveal data-i18n="install.h">Four steps to a chat-driven repo.</h2>
         <p class="lede lede--wide" data-reveal data-i18n-html="install.lede">
           <code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.
@@ -718,43 +717,65 @@ settings:
         </div>
       </section>
 
-      <!-- Pillar ② — desktop pet -->
-      <section id="pet" class="section section--pet">
+      <!-- ① · sintbot — the Pro daemon -->
+      <section id="daemon" class="section section--cap">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="pet.kicker">Pillar ②</p>
-        <h2 class="section__h" data-reveal data-i18n="pet.h">Give the AI a form.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="pet.lede">
-          The desktop pet is the local body for AI work: a small companion that watches your
-          Claude Code session, speaks with on-device voice and lip-sync, and reacts before
-          the group-sync version is ready.
+        <p class="section__kicker" data-reveal data-i18n="dmn.kicker">① · sintbot</p>
+        <h2 class="section__h" data-reveal data-i18n-html="dmn.h">The other way to run it.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="dmn.lede">
+          <code>sintbot</code> is a standalone daemon, not a plugin. Nobody sits at the terminal: it owns the message loop, binds one project per group, and hands each turn to a headless agent. Delivered with Pro.
         </p>
 
-        <ol class="pet-cards">
-          <li class="pet-card" data-reveal>
-            <span class="pet-card__no" aria-hidden="true">01</span>
-            <h3 data-i18n="pet.1.title">On your desktop</h3>
-            <p data-i18n="pet.1.body">A transparent, frameless window keeps a talking, expressive companion beside your work — there all day, never taking over the screen.</p>
+        <ol class="cards">
+          <li class="card" data-reveal>
+            <span class="card__no">01</span>
+            <h3 data-i18n="dmn.1.title">Two agent CLIs, one daemon</h3>
+            <p data-i18n="dmn.1.body">
+              It drives Claude Code and Codex headless, and swaps the model behind them per group from the console. Switching costs nothing but the next spawn's environment.
+            </p>
+            <ul class="card__chips"><li>Claude Code</li><li>Codex</li><li>per-group model</li></ul>
           </li>
-          <li class="pet-card" data-reveal data-reveal-delay="80">
-            <span class="pet-card__no" aria-hidden="true">02</span>
-            <h3 data-i18n="pet.2.title">Opt-in eavesdrop</h3>
-            <p data-i18n="pet.2.body">A Claude Code Stop hook can feed recent local turns to the pet; leave it off and it stays quiet.</p>
+          <li class="card" data-reveal data-reveal-delay="60">
+            <span class="card__no">02</span>
+            <h3 data-i18n="dmn.2.title">Design work, in the channel</h3>
+            <p data-i18n="dmn.2.body">
+              Brief it on a shared whiteboard. It generates images, edits them in place rather than redrawing, builds the page, then checks the result against the project's own style doc before it hands anything over.
+            </p>
+            <ul class="card__chips"><li>whiteboard loop</li><li>image edit</li><li>style check</li></ul>
           </li>
-          <li class="pet-card" data-reveal data-reveal-delay="160">
-            <span class="pet-card__no" aria-hidden="true">03</span>
-            <h3 data-i18n="pet.3.title">Reacts out loud</h3>
-            <p data-i18n="pet.3.body">Passed tests, failures, errors and risky commands become short spoken quips with body motion.</p>
+          <li class="card" data-reveal data-reveal-delay="120">
+            <span class="card__no">03</span>
+            <h3 data-i18n="dmn.3.title">A console, not a config file</h3>
+            <p data-i18n="dmn.3.body">
+              Health, concurrency, live turn activity, subscription quota, per-group model and permissions, and the MCP plugin library — on a local page the daemon serves itself.
+            </p>
+            <ul class="card__chips"><li>live activity</li><li>quota</li><li>plugin library</li></ul>
           </li>
-          <li class="pet-card" data-reveal data-reveal-delay="240">
-            <span class="pet-card__no" aria-hidden="true">04</span>
-            <h3 data-i18n="pet.4.title">Has a personality</h3>
-            <p data-i18n="pet.4.body">Not a status light — it chats, speaks, notices progress. The character is settled now: its own personality, its own voice.</p>
+          <li class="card" data-reveal data-reveal-delay="180">
+            <span class="card__no">04</span>
+            <h3 data-i18n="dmn.4.title">Governed per group</h3>
+            <p data-i18n="dmn.4.body">
+              One project per group. Permission tiers are set per group and never globally; unset means read-only. The working directory is fenced, and secrets and personal data are scrubbed on the way out.
+            </p>
+            <ul class="card__chips"><li>read-only default</li><li>directory fence</li><li>outbound redaction</li></ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="240">
+            <span class="card__no">05</span>
+            <h3 data-i18n="dmn.5.title">Built to run for weeks</h3>
+            <p data-i18n="dmn.5.body">
+              A connection watchdog, turns that cannot hang, empty turns retried in silence, work cut short by a restart picked up again, and long sessions compacted in place.
+            </p>
+            <ul class="card__chips"><li>watchdog</li><li>never-hang</li><li>auto-compaction</li></ul>
+          </li>
+          <li class="card" data-reveal data-reveal-delay="300">
+            <span class="card__no">06</span>
+            <h3 data-i18n="dmn.6.title">Your team can help themselves</h3>
+            <p data-i18n-html="dmn.6.body">
+              <code>/issue</code> files a report with the last turn's technical fingerprint already attached. Scheduled tasks take one sentence. Prototypes get served to the channel on request.
+            </p>
+            <ul class="card__chips"><li>feedback book</li><li>scheduled tasks</li><li>preview</li></ul>
           </li>
         </ol>
-
-        <p class="pet__close" data-reveal data-i18n="pet.close">
-          Give the AI work on your machine a vivid, living face.
-        </p>
       </section>
 
       <!-- Pricing -->
@@ -762,16 +783,17 @@ settings:
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="pricing.kicker">Pricing</p>
         <h2 class="section__h" data-reveal data-i18n-html="pricing.h">Free to run. <em>Pro</em> to back it.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="pricing.lede">
-          cc-bot is MIT and free forever. Sintbot Pro is for teams who want priority support, guided onboarding, and the next features first — while funding the open-source work.
+        <p class="lede lede--wide" data-reveal data-i18n-html="pricing.lede">
+          cc-bot is MIT and free forever. Pro unlocks <code>sintbot</code> — the standalone daemon that swaps the model brain — plus priority support and early access, while funding the open-source work.
         </p>
 
         <ol class="plans">
           <li class="plan" data-reveal>
             <p class="plan__name" data-i18n="pricing.free.name">Free</p>
             <p class="plan__price"><span class="plan__amount" data-i18n="pricing.free.amount">$0</span><span class="plan__cycle" data-i18n="pricing.free.cycle">/ forever</span></p>
-            <p class="plan__tagline" data-i18n="pricing.free.tagline">The full cc-bot, self-hosted.</p>
+            <p class="plan__tagline" data-i18n="pricing.free.tagline">A Claude Code plugin — lives inside your session.</p>
             <ul class="plan__feats">
+              <li data-i18n="pricing.free.f0">Installs into Claude Code as a plugin — it runs in an interactive session and uses whatever model that session runs</li>
               <li data-i18n="pricing.free.f1">Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD</li>
               <li data-i18n="pricing.free.f2">MIT licensed, self-hosted on your own machine</li>
               <li data-i18n="pricing.free.f3">Community support via GitHub Issues</li>
@@ -785,10 +807,11 @@ settings:
             <span class="plan__badge" data-i18n="pricing.pro.badge">Recommended</span>
             <p class="plan__name" data-i18n="pricing.pro.name">Pro</p>
             <p class="plan__price"><span class="plan__amount" data-i18n="pricing.pro.amount">$19.90</span><span class="plan__cycle" data-i18n="pricing.pro.cycle">/ month</span></p>
-            <p class="plan__tagline" data-i18n="pricing.pro.tagline">Everything in Free, plus a direct line and early access.</p>
+            <p class="plan__tagline" data-i18n="pricing.pro.tagline">Everything in Free, plus the sintbot daemon to download and self-host.</p>
             <ul class="plan__feats">
+              <li data-i18n-html="pricing.pro.fsintbot"><b>sintbot</b> — the standalone daemon: two agent CLIs, per-group models and permissions, a local console, design work in the channel, and scheduled tasks. <a href="#daemon">Full capabilities</a>. Runs on <b>Lark</b> today.</li>
               <li data-i18n="pricing.pro.f1">Everything in Free</li>
-              <li data-i18n="pricing.pro.f2">Priority email support — support@sintbot.com</li>
+              <li data-i18n="pricing.pro.f2">Priority email support — support@sintbot.com (3-business-day response)</li>
               <li data-i18n="pricing.pro.f3">Guided workspace onboarding</li>
               <li data-i18n="pricing.pro.f4">Early access to new features</li>
               <li data-i18n="pricing.pro.f5">Funds open-source development</li>
@@ -800,7 +823,7 @@ settings:
         </ol>
 
         <p class="plans__note" data-reveal data-i18n-html="pricing.note">
-          Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.
+          sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the package and setup guide. Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.
         </p>
       </section>
 
@@ -809,7 +832,7 @@ settings:
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Ship from where the team already talks.</h2>
           <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">
-            MIT, runtime-free, on GitHub. Slack &amp; Lark adapters both live on <code>main</code>.
+            cc-bot is MIT and runtime-free — its Slack &amp; Lark adapters are both live on <code>main</code>. Want the standalone daemon instead? <a href="#pricing">sintbot ships with Pro</a>.
           </p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
@@ -825,12 +848,11 @@ settings:
         <div class="foot__brand">
           <img src="./assets/logo.png" alt="" width="28" height="28" />
           <strong>Sintbot</strong>
-          <span data-i18n="foot.tag">MIT · Local-first · IM-agnostic</span>
+          <span data-i18n="foot.tag">cc-bot is MIT · Local-first · IM-agnostic</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#bot" data-i18n="nav.bot">Bot</a>
-          <a href="#pet" data-i18n="nav.pet">Desktop pet</a>
-          <a href="#install" data-i18n="nav.setup">Setup</a>
+            <a href="#install" data-i18n="nav.setup">Setup</a>
           <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo ↗</a>
         </nav>
@@ -843,7 +865,7 @@ settings:
         <a href="./terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
       <p class="foot__meta" data-i18n="foot.meta">
-        Showcase site — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.
+        Sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, or Anthropic.
       </p>
     </footer>
 
