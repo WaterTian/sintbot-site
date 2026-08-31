@@ -1,4 +1,4 @@
-// cc-bot showcase — vanilla JS for reveal-on-scroll, copy buttons,
+// sintbot.com — vanilla JS for reveal-on-scroll, copy buttons,
 // soft cursor glow, per-element reveal delays, and EN/zh-CN i18n.
 (function () {
   "use strict";
