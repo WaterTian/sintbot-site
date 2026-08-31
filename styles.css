@@ -955,12 +955,19 @@ html[lang="zh"] .hero__title-en > span:first-of-type {
 .card::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  /* ⚠ 必须是 0 不能是 -1px:.card 有 overflow:hidden,而这圈描边正好占据 inset~inset+padding,
+     写 -1px 等于整个环落在 -1px~0 —— 恰好是被裁掉的那一圈,一个像素都出不来。
+     后果是下面 .card:hover 的 opacity:.55 从上线起就没生效过。inset:0 让环落在卡片内边缘,
+     语义上也更对:走线本来就在板子里面,不在板外。 */
+  inset: 0;
   border-radius: 18px;
   padding: 1px;
   background: linear-gradient(180deg, var(--signal), transparent 60%);
+  /* ⚠ 标准 mask 与 -webkit- 前缀两套都要写:此前只有前缀那套,在不认它的浏览器(Firefox)里
+     等于没有遮罩 —— 这圈描边会变成一整块实心渐变盖住卡片内容。 */
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 360ms var(--ease-out);
@@ -1732,8 +1739,11 @@ html[lang="zh"] .pet-card h3 {
   border-radius: 18px;
   padding: 1px;
   background: linear-gradient(180deg, var(--signal), transparent 65%);
+  /* ⚠ 标准 mask 与 -webkit- 前缀两套都要写:此前只有前缀那套,在不认它的浏览器(Firefox)里
+     等于没有遮罩 —— 这圈描边会变成一整块实心渐变盖住卡片内容。 */
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   opacity: 0.6;
   pointer-events: none;
