@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Privacy Policy — Sintbot</title>
-    <meta name="description" content="Sintbot privacy policy: no accounts, anonymous analytics, no tracking. Payments handled by Creem as Merchant of Record." />
+    <title>Privacy Policy — SintBot</title>
+    <meta name="description" content="SintBot privacy policy: no accounts, anonymous analytics, no tracking. Payments handled by Creem as Merchant of Record." />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/privacy.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,6 +67,15 @@
         color: var(--acid);
         border-bottom: 1px solid currentColor;
       }
+
+      /* 点击目标 ≥24px(守护进程的布局体检 1280/1000/430 三档都在报)。
+         ⚠ 用 padding-block 而不是 inline-block:行内元素的纵向 padding 撑大点击区却**不撑行高**
+         (正文行距 26.3px,撑到 25px 仍不与相邻行相交);inline-block 会让长链接整段不能折行,
+         窄屏必横向溢出 —— 正文里的链接和页脚里的不是一回事,不能照抄首页那条。 */
+      .doc a:not(.doc__back), .doc a.inline { padding-block: 2.5px; }
+      .doc__back { min-height: 24px; }
+      /* 行内代码是标识符,不许断在词中间(privacy 页上 cc-bot 曾被折成「cc-」+「bot」两行) */
+      .doc code { white-space: nowrap; }
       .doc code {
         background: rgba(243, 238, 229, 0.08);
         padding: 1px 6px;
@@ -85,14 +94,14 @@
   <body>
     <div class="grain" aria-hidden="true"></div>
     <main class="doc">
-      <a class="doc__back" href="./index.html">← Sintbot · sintbot.com</a>
+      <a class="doc__back" href="./index.html">← SintBot · sintbot.com</a>
 
       <!-- English -->
       <section lang="en">
         <h1>Privacy Policy</h1>
-        <p class="doc__updated">Last updated: July 8, 2026</p>
+        <p class="doc__updated">Last updated: September 5, 2026</p>
 
-        <p>Sintbot ("we", "us") operates the website <a href="https://sintbot.com">sintbot.com</a>, the open-source software <code>cc-bot</code>, and the <code>sintpet</code> desktop pet alpha. This policy explains what little data the site touches and how purchases are handled. We keep it deliberately minimal.</p>
+        <p>SintBot ("we", "us") operates the website <a href="https://sintbot.com">sintbot.com</a>, the open-source <code>cc-bot</code> software, and <code>sintbot</code> — the self-hosted daemon delivered with SintBot Pro. This policy explains what little data the site touches, how purchases are handled, and what the software you run does and does not send us. We keep it deliberately minimal.</p>
 
         <h2>No accounts, no direct collection</h2>
         <p>The website has no login, no account system, and no forms. We do not directly collect names, emails, or other personal information when you browse the site.</p>
@@ -103,14 +112,18 @@
         <h2>Local storage</h2>
         <p>Your browser's <code>localStorage</code> is used only to remember your language preference (English or Chinese). Nothing is sent to us.</p>
 
-        <h2>Purchases (Sintbot Pro)</h2>
-        <p>When you subscribe to Sintbot Pro, payment is processed by <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> acting as our Merchant of Record. Your name, email, and payment details are submitted to and handled by Creem under their privacy policy: <a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>. We receive only the information needed to deliver support and manage your subscription.</p>
+        <h2>Purchases (SintBot Pro)</h2>
+        <p>When you subscribe to SintBot Pro, payment is processed by <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> acting as our Merchant of Record. Your name, email, and payment details are submitted to and handled by Creem under their privacy policy: <a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>. We receive only the information needed to deliver support and manage your subscription.</p>
 
         <h2>The cc-bot software</h2>
         <p>The <code>cc-bot</code> software runs entirely on your own machine. It does not send your code, credentials, or data to us. It communicates only with the services you configure (such as your Slack or Lark workspace and the AI models you connect).</p>
 
-        <h2>The sintpet desktop pet</h2>
-        <p>The current <code>sintpet</code> alpha runs on your Mac. Voice synthesis, lip-sync, and motion are computed locally. If you use chat or the optional Claude Code eavesdrop hook, text may be sent through the brain you configure (by default your Claude Code / Claude CLI account), but not to Sintbot. The eavesdrop hook is opt-in and redacts secret-shaped strings before it asks the pet to speak.</p>
+        <h2>The sintbot daemon</h2>
+        <p>The <code>sintbot</code> daemon runs on your own machines. It does not send your code, credentials, conversations, or project data to us. It talks only to the services you configure: your Lark or Slack workspace, the AI model endpoints you point it at, and whatever tools you enable for it. Its records — chat sessions, run logs, usage counters — are written to the machine it runs on and stay there; we have no access to them and no telemetry is sent back. Outbound messages pass through a redaction step that masks secret-shaped strings before anything is posted to your workspace.</p>
+        <p>Your workspace provider and your chosen AI providers handle data under their own privacy policies. Which providers see your data is entirely determined by how you configure the daemon.</p>
+
+        <h2>The desktop pet</h2>
+        <p>The desktop pet shown on our site is in development and is not yet released or distributed. It collects nothing today. If and when it ships, this policy will be updated before it is made available.</p>
 
         <h2>Contact</h2>
         <p>Questions about privacy? Email <a href="mailto:support@sintbot.com">support@sintbot.com</a>.</p>
@@ -119,9 +132,9 @@
       <!-- 中文 -->
       <section class="doc__lang" lang="zh">
         <h1>隐私政策</h1>
-        <p class="doc__updated">最后更新：2026 年 7 月 8 日</p>
+        <p class="doc__updated">最后更新：2026 年 9 月 5 日</p>
 
-        <p>Sintbot（「我们」）运营网站 <a href="https://sintbot.com">sintbot.com</a>、开源软件 <code>cc-bot</code>，以及 <code>sintpet</code> 桌宠 alpha。本政策说明本站接触到的极少量数据，以及购买流程如何处理。我们刻意把它做到最简。</p>
+        <p>SintBot（「我们」）运营网站 <a href="https://sintbot.com">sintbot.com</a>、开源软件 <code>cc-bot</code>，以及随 SintBot Pro 交付的自托管守护进程 <code>sintbot</code>。本政策说明本站接触到的极少量数据、购买流程如何处理，以及你运行的软件会与不会把什么发给我们。我们刻意把它做到最简。</p>
 
         <h2>无账号、不直接收集</h2>
         <p>本站没有登录、没有账号系统、没有表单。你浏览本站时，我们不会直接收集姓名、邮箱或其他个人信息。</p>
@@ -132,14 +145,18 @@
         <h2>本地存储</h2>
         <p>浏览器的 <code>localStorage</code> 仅用于记住你的语言偏好（英文或中文），不会向我们发送任何内容。</p>
 
-        <h2>购买（Sintbot Pro）</h2>
-        <p>订阅 Sintbot Pro 时，支付由 <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> 作为 Merchant of Record（卖方记录方）处理。你的姓名、邮箱和支付信息提交给 Creem，并按其隐私政策处理：<a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>。我们只接收提供支持和管理订阅所必需的信息。</p>
+        <h2>购买（SintBot Pro）</h2>
+        <p>订阅 SintBot Pro 时，支付由 <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> 作为 Merchant of Record（卖方记录方）处理。你的姓名、邮箱和支付信息提交给 Creem，并按其隐私政策处理：<a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>。我们只接收提供支持和管理订阅所必需的信息。</p>
 
         <h2>cc-bot 软件</h2>
         <p><code>cc-bot</code> 软件完全运行在你自己的机器上，不会把你的代码、凭证或数据传给我们。它只与你自己配置的服务通信（比如你的 Slack / 飞书 workspace 和你接入的 AI 模型）。</p>
 
-        <h2>sintpet 桌宠</h2>
-        <p>当前 <code>sintpet</code> alpha 运行在你的 Mac 上。语音合成、口型和动作在本机计算。如果你使用聊天或可选的 Claude Code 旁听 hook，文本可能会通过你配置的大脑发送出去（默认是你的 Claude Code / Claude CLI 账号），但不会发送给 Sintbot。旁听 hook 默认关闭，启用后会先脱敏疑似密钥/令牌的字符串，再让桌宠说话。</p>
+        <h2>sintbot 守护进程</h2>
+        <p><code>sintbot</code> 守护进程运行在你自己的机器上。它不会把你的代码、凭证、对话或项目数据传给我们。它只与你自己配置的服务通信：你的飞书或 Slack workspace、你指定的 AI 模型端点，以及你为它启用的工具。它产生的记录——会话、运行日志、用量计数——写在它所运行的那台机器上并留在那里，我们无从访问，也不会有任何遥测回传。出站消息会先经过脱敏，把疑似密钥的字符串遮掉，再发进你的 workspace。</p>
+        <p>你的 workspace 服务商与你选用的 AI 服务商，按它们各自的隐私政策处理数据。哪些服务商会看到你的数据，完全由你如何配置这个守护进程决定。</p>
+
+        <h2>桌宠</h2>
+        <p>本站展示的桌宠仍在研发中，尚未发布、也未对外分发，目前不收集任何数据。若将来上线，我们会在它对外提供之前先更新本政策。</p>
 
         <h2>联系</h2>
         <p>有隐私方面的问题？请写信至 <a href="mailto:support@sintbot.com">support@sintbot.com</a>。</p>

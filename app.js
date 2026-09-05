@@ -35,8 +35,8 @@
            <span data-reveal data-reveal-delay="240">全程在你自己的机器上</span>`
     },
     "hero.lede": {
-      en: `Bind a Lark or Slack group to a project, mention <code>Sintbot</code>, and it reads and changes the code, does the design work and reports back — all from your own machine.`,
-      zh: `一个飞书群或 Slack 群绑一个项目。@ 一下 <code>Sintbot</code>，它读代码、改代码、做设计、出报告——全程在你自己的机器上。`
+      en: `Bind a Lark or Slack group to a project, mention <code>SintBot</code>, and it reads and changes the code, does the design work and reports back — all from your own machine.`,
+      zh: `一个飞书群或 Slack 群绑一个项目。@ 一下 <code>SintBot</code>，它读代码、改代码、做设计、出报告——全程在你自己的机器上。`
     },
     "hero.cta.primary": {
       en: "See how it works",
@@ -52,8 +52,8 @@
     "mock.lark.title":   { en: "Design review",   zh: "设计评审" },
     "mock.lark.kind":    { en: "streaming card",  zh: "流式卡片" },
     "mock.lark.user":    { en: "Mei · Design",    zh: "小梅 · 设计" },
-    "mock.lark.ask":     { en: "@Sintbot redo the homepage in the tech-dark style",
-                           zh: "@Sintbot 把首页按科技深色风格出一版" },
+    "mock.lark.ask":     { en: "@SintBot redo the homepage in the tech-dark style",
+                           zh: "@SintBot 把首页按科技深色风格出一版" },
     "mock.lark.state":   { en: "Delivered · 4m 21s", zh: "已交付 · 4 分 21 秒" },
     "mock.lark.l1":      { en: "Read the style file · DESIGN.md", zh: "读取风格档 · DESIGN.md" },
     "mock.lark.l2":      { en: "Generated two versions · hero + pricing", zh: "生成两版 · 首屏 + 定价" },
@@ -63,8 +63,8 @@
     "mock.eq":           { en: "same daemon",      zh: "同一个守护进程" },
     "mock.slack.working":{ en: "Working…",         zh: "Working…" },
     "mock.slack.user":   { en: "Lin · PM",         zh: "Lin · 产品" },
-    "mock.slack.ask":    { en: "@Sintbot signup is throwing 500 on staging — look into it",
-                           zh: "@Sintbot signup 在 staging 报 500，查一下" },
+    "mock.slack.ask":    { en: "@SintBot signup is throwing 500 on staging — look into it",
+                           zh: "@SintBot signup 在 staging 报 500，查一下" },
     "mock.slack.ack":    { en: "Got it — working in the thread", zh: "收到，线程里跟进" },
     "mock.slack.thread": { en: "Thread · 3 replies", zh: "线程 · 3 条回复" },
     "mock.slack.progress": { en: "Reading logs · 2/5", zh: "正在读日志 · 2/5" },
@@ -79,8 +79,8 @@
     "what.kicker":   { en: "What it is", zh: "它是什么" },
     "what.h":        { en: `One daemon. <em>Your project,</em> in the group.`, zh: `一个守护进程，<em>把项目</em>放进群里。` },
     "what.lede": {
-      en: "Sintbot runs on your machine and joins the groups your team already uses; each group is bound to one project, so the agent works inside that directory and keeps its context.",
-      zh: "Sintbot 跑在你自己的机器上，进的是团队本来就在用的群；一群绑一个项目，agent 在项目目录里干活、记得上下文。"
+      en: "SintBot runs on your machine and joins the groups your team already uses; each group is bound to one project, so the agent works inside that directory and keeps its context.",
+      zh: "SintBot 跑在你自己的机器上，进的是团队本来就在用的群；一群绑一个项目，agent 在项目目录里干活、记得上下文。"
     },
     "what.bot.title":{ en: "Group-project AI", zh: "群项目 AI" },
     "what.bot.body": {
@@ -285,8 +285,8 @@
     "scenarios.1.title": { en: "Paste the error; a PR comes back.", zh: "报错贴进群，回来的是 PR。" },
     "scenarios.1.scene": { en: "A 500 trace lands in the engineering group.", zh: "研发群里贴了一段 500 堆栈。" },
     "scenarios.1.act": {
-      en: "Sintbot reads the trace, finds the cause in the project directory, fixes it, opens the PR and posts the diff in the thread.",
-      zh: "Sintbot 读堆栈、在项目目录里定位原因、改掉、开 PR，把 diff 贴回线程。"
+      en: "SintBot reads the trace, finds the cause in the project directory, fixes it, opens the PR and posts the diff in the thread.",
+      zh: "SintBot 读堆栈、在项目目录里定位原因、改掉、开 PR，把 diff 贴回线程。"
     },
     "scenarios.1.win":   { en: `<i>Why it wins:</i> error, fix, PR — one thread, nobody at a terminal.`, zh: `<i>为什么赢：</i>报错、修复、PR 在同一条线程里，终端前不用有人。` },
     "scenarios.2.title": { en: "One sentence, one homepage.", zh: "一句话，要一版首页。" },
@@ -299,8 +299,8 @@
     "scenarios.3.title": { en: "A standup that files itself at 09:30.", zh: "每天 09:30，日报自己来。" },
     "scenarios.3.scene": { en: "Someone types one sentence to schedule it.", zh: "有人在群里一句话排了个定时任务。" },
     "scenarios.3.act": {
-      en: "At 09:30 the task fires like an incoming message: Sintbot collects 24 hours of commits and posts the summary.",
-      zh: "到 09:30，任务像收到一条消息那样触发：Sintbot 汇总 24 小时的提交，发到群里。"
+      en: "At 09:30 the task fires like an incoming message: SintBot collects 24 hours of commits and posts the summary.",
+      zh: "到 09:30，任务像收到一条消息那样触发：SintBot 汇总 24 小时的提交，发到群里。"
     },
     "scenarios.3.win":   { en: `<i>Why it wins:</i> happens whether or not humans show up.`, zh: `<i>为什么赢：</i>人到不到，日报都在。` },
     "scenarios.4.title": { en: "Swap the brain mid-project.", zh: "项目做到一半，换个大脑。" },
@@ -320,8 +320,8 @@
     "scenarios.6.title": { en: "Review the prototype without leaving the group.", zh: "原型不出群就能评。" },
     "scenarios.6.scene": { en: "The page is done; the team wants to click through it.", zh: "页面做完了，团队想点开看看。" },
     "scenarios.6.act": {
-      en: `Sintbot serves it on the local network and posts the link; <code>/issue</code> files feedback with the last turn’s technical fingerprint attached.`,
-      zh: `Sintbot 起成局域网预览，链接发群；<code>/issue</code> 一句话提反馈，上一轮的技术指纹自动附上。`
+      en: `SintBot serves it on the local network and posts the link; <code>/issue</code> files feedback with the last turn’s technical fingerprint attached.`,
+      zh: `SintBot 起成局域网预览，链接发群；<code>/issue</code> 一句话提反馈，上一轮的技术指纹自动附上。`
     },
     "scenarios.6.win":   { en: `<i>Why it wins:</i> feedback lands with context, not screenshots.`, zh: `<i>为什么赢：</i>反馈带着上下文来，不是一张截图。` },
 
@@ -596,8 +596,8 @@
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
-      en: "Sintbot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.",
-      zh: "Sintbot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic、OpenAI 无任何隶属关系。"
+      en: "SintBot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.",
+      zh: "SintBot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic、OpenAI 无任何隶属关系。"
     },
 
     "copy": { en: "copy", zh: "复制" },
