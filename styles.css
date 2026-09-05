@@ -1305,6 +1305,7 @@ html[lang="zh"] .pillar h3 { font-weight: 700; }
   right: 24px;
 }
 .gov-tier h3 {
+  margin-right: 36px; /* 右上角的 ①②③ 序号是绝对定位:用 margin 让标题框本身缩短,不与序号框相交(布局体检按元素框判重叠) */
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: var(--t-h4);
@@ -1848,3 +1849,11 @@ html[lang="zh"] .pillar h3 { font-weight: 700; }
 .to-top__icon { font-family: var(--f-mono); font-size: 17px; line-height: 1; }
 .to-top.is-visible:hover,
 .to-top.is-visible:focus-visible { border-color: var(--signal); text-decoration: none; }
+
+/* 页脚法务链接:点击目标至少 24px 高(布局体检) */
+.foot__legal a { display: inline-block; padding: 4px 2px; }
+
+/* 点击目标 ≥24px(布局体检):导航链接、语言切换、页脚导航 */
+.nav__menu > a:not(.nav__cta) { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 4px; }
+.lang-toggle__btn { min-width: 26px; min-height: 26px; }
+.foot__nav a { display: inline-flex; align-items: center; min-height: 26px; padding: 2px 2px; }
