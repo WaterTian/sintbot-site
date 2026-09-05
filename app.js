@@ -27,16 +27,16 @@
     "hero.eyebrow":      { en: "Self-hosted daemon · Lark & Slack · Claude Code & Codex",
                            zh: "自托管守护进程 · 飞书 & Slack · Claude Code & Codex" },
     "hero.titleEn": {
-      en: `<span data-reveal data-reveal-delay="0">Mention it.</span>
+      en: `<span data-reveal data-reveal-delay="0">Just say it.</span>
            <em data-reveal data-reveal-delay="120">It delivers.</em>
            <span data-reveal data-reveal-delay="240">From your own machine.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">群里 @ 一下</span>
+      zh: `<span data-reveal data-reveal-delay="0">群里说一句</span>
            <em data-reveal data-reveal-delay="120">它就开工</em>
            <span data-reveal data-reveal-delay="240">全程在你自己的机器上</span>`
     },
     "hero.lede": {
-      en: `Bind a Lark or Slack group to a project, mention <code>SintBot</code>, and it reads and changes the code, does the design work and reports back — all from your own machine.`,
-      zh: `一个飞书群或 Slack 群绑一个项目。@ 一下 <code>SintBot</code>，它读代码、改代码、做设计、出报告——全程在你自己的机器上。`
+      en: `Bind a Lark or Slack group to a project and just talk — no @ needed. <code>SintBot</code> reads and changes the code, does the design work and reports back, all from your own machine.`,
+      zh: `一个飞书群或 Slack 群绑一个项目，群里直接说话就行、不用 @。<code>SintBot</code> 读代码、改代码、做设计、出报告——全程在你自己的机器上。`
     },
     "hero.cta.primary": {
       en: "See how it works",
@@ -52,8 +52,8 @@
     "mock.lark.title":   { en: "Design review",   zh: "设计评审" },
     "mock.lark.kind":    { en: "streaming card",  zh: "流式卡片" },
     "mock.lark.user":    { en: "Mei · Design",    zh: "小梅 · 设计" },
-    "mock.lark.ask":     { en: "@SintBot redo the homepage in the tech-dark style",
-                           zh: "@SintBot 把首页按科技深色风格出一版" },
+    "mock.lark.ask":     { en: "redo the homepage in the tech-dark style",
+                           zh: "把首页按科技深色风格出一版" },
     "mock.lark.state":   { en: "Delivered · 4m 21s", zh: "已交付 · 4 分 21 秒" },
     "mock.lark.l1":      { en: "Read the style file · DESIGN.md", zh: "读取风格档 · DESIGN.md" },
     "mock.lark.l2":      { en: "Generated two versions · hero + pricing", zh: "生成两版 · 首屏 + 定价" },
@@ -63,8 +63,8 @@
     "mock.eq":           { en: "same daemon",      zh: "同一个守护进程" },
     "mock.slack.working":{ en: "Working…",         zh: "Working…" },
     "mock.slack.user":   { en: "Lin · PM",         zh: "Lin · 产品" },
-    "mock.slack.ask":    { en: "@SintBot signup is throwing 500 on staging — look into it",
-                           zh: "@SintBot signup 在 staging 报 500，查一下" },
+    "mock.slack.ask":    { en: "signup is throwing 500 on staging — look into it",
+                           zh: "signup 在 staging 报 500，查一下" },
     "mock.slack.ack":    { en: "Got it — working in the thread", zh: "收到，线程里跟进" },
     "mock.slack.thread": { en: "Thread · 3 replies", zh: "线程 · 3 条回复" },
     "mock.slack.progress": { en: "Reading logs · 2/5", zh: "正在读日志 · 2/5" },
@@ -107,7 +107,7 @@
     "plat.h":      { en: `Lark and Slack, <em>side by side.</em>`, zh: `飞书与 Slack，<em>平级。</em>` },
     "plat.lede": {
       en: "Each group picks its platform, both can run in one daemon, and the rest is identical: one project per group, mention it or just talk, no public IP, progress you can stop, the same permissions and console.",
-      zh: "每个群自己选平台，两个平台可以跑在同一个守护进程里，其余完全一样：一群一项目、@ 它或直接说、免公网 IP、进度可停、同一套权限与控制台。"
+      zh: "每个群自己选平台，两个平台可以跑在同一个守护进程里，其余完全一样：一群一项目、直接说或 @ 它、免公网 IP、进度可停、同一套权限与控制台。"
     },
     "plat.lark.h":   { en: "In a Lark group", zh: "在飞书群里" },
     "plat.lark.1.t": { en: "Streaming card", zh: "流式卡片" },
@@ -153,7 +153,7 @@
     },
     "plat.core.label": { en: "Shared core", zh: "共同内核" },
     "plat.core.1": { en: "one group, one project", zh: "一群一项目" },
-    "plat.core.2": { en: "mention it, or just talk", zh: "@ 它，或直接说" },
+    "plat.core.2": { en: "just talk, or mention it", zh: "直接说，或 @ 它" },
     "plat.core.3": { en: "no public IP", zh: "免公网 IP" },
     "plat.core.4": { en: "progress visible, stoppable", zh: "进度可见可停" },
     "plat.core.5": { en: "same permissions & redaction", zh: "同一套权限与脱敏" },
@@ -169,7 +169,7 @@
     },
     "flow.return":        { en: "progress + result back to the group", zh: "进度 + 结果回群" },
     "flow.col.group":     { en: "Group", zh: "群" },
-    "flow.group.note1":   { en: "mention it, or just talk", zh: "@ 它，或直接说" },
+    "flow.group.note1":   { en: "just talk, or mention it", zh: "直接说，或 @ 它" },
     "flow.group.note2":   { en: "one group · one project", zh: "一群 · 一项目" },
     "flow.col.daemon":    { en: "Daemon · your machine", zh: "守护进程 · 你的机器" },
     "flow.daemon.1":      { en: "message loop", zh: "消息循环" },
