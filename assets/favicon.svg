@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Sintbot">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SintBot">
   <rect x="3" y="3" width="58" height="58" rx="10" fill="#235c3c"/>
   <path d="M45 19 H24 L19 24 V29 L24 34 H40 L45 39 V44 L40 49 H19"
         fill="none" stroke="#d68f44" stroke-width="7"

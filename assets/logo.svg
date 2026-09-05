@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Sintbot">
-  <title>Sintbot</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SintBot">
+  <title>SintBot</title>
   <!-- 金手指/引脚:先画,压在板下层露出边缘 -->
   <g fill="#c9a25c">
     <rect x="1.5" y="22" width="5" height="7" rx="1"/>
