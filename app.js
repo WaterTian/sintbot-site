@@ -35,8 +35,8 @@
            <span data-reveal data-reveal-delay="240">全程在你自己的机器上</span>`
     },
     "hero.lede": {
-      en: `Bind a Lark or Slack group to a project and just talk — no @ needed. <code>SintBot</code> reads and changes the code, does the design work and reports back, all from your own machine.`,
-      zh: `一个飞书群或 Slack 群绑一个项目，群里直接说话就行、不用 @。<code>SintBot</code> 读代码、改代码、做设计、出报告——全程在你自己的机器上。`
+      en: `Bind a Lark or Slack group to a project and just say what you need. <code>SintBot</code> reads and changes the code, does the design work and reports back — all from your own machine.`,
+      zh: `一个飞书群或 Slack 群绑一个项目，群里说一句要做什么。<code>SintBot</code> 读代码、改代码、做设计、出报告——全程在你自己的机器上。`
     },
     "hero.cta.primary": {
       en: "See how it works",
@@ -106,8 +106,8 @@
     "plat.kicker": { en: "01 · Platforms", zh: "01 · 平台" },
     "plat.h":      { en: `Lark and Slack, <em>side by side.</em>`, zh: `飞书与 Slack，<em>平级。</em>` },
     "plat.lede": {
-      en: "Each group picks its platform, both can run in one daemon, and the rest is identical: one project per group, mention it or just talk, no public IP, progress you can stop, the same permissions and console.",
-      zh: "每个群自己选平台，两个平台可以跑在同一个守护进程里，其余完全一样：一群一项目、直接说或 @ 它、免公网 IP、进度可停、同一套权限与控制台。"
+      en: "Each group picks its platform, both can run in one daemon, and the rest is identical: one project per group, just talk to it in the group, no public IP, progress you can stop, the same permissions and console.",
+      zh: "每个群自己选平台，两个平台可以跑在同一个守护进程里，其余完全一样：一群一项目、群里直接说、免公网 IP、进度可停、同一套权限与控制台。"
     },
     "plat.lark.h":   { en: "In a Lark group", zh: "在飞书群里" },
     "plat.lark.1.t": { en: "Streaming card", zh: "流式卡片" },
@@ -153,7 +153,7 @@
     },
     "plat.core.label": { en: "Shared core", zh: "共同内核" },
     "plat.core.1": { en: "one group, one project", zh: "一群一项目" },
-    "plat.core.2": { en: "just talk, or mention it", zh: "直接说，或 @ 它" },
+    "plat.core.2": { en: "just talk to it", zh: "群里直接说" },
     "plat.core.3": { en: "no public IP", zh: "免公网 IP" },
     "plat.core.4": { en: "progress visible, stoppable", zh: "进度可见可停" },
     "plat.core.5": { en: "same permissions & redaction", zh: "同一套权限与脱敏" },
@@ -169,7 +169,7 @@
     },
     "flow.return":        { en: "progress + result back to the group", zh: "进度 + 结果回群" },
     "flow.col.group":     { en: "Group", zh: "群" },
-    "flow.group.note1":   { en: "just talk, or mention it", zh: "直接说，或 @ 它" },
+    "flow.group.note1":   { en: "just talk to it", zh: "群里直接说" },
     "flow.group.note2":   { en: "one group · one project", zh: "一群 · 一项目" },
     "flow.col.daemon":    { en: "Daemon · your machine", zh: "守护进程 · 你的机器" },
     "flow.daemon.1":      { en: "message loop", zh: "消息循环" },
