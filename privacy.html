@@ -7,13 +7,13 @@
     <meta name="description" content="SintBot privacy policy: no accounts, anonymous analytics, no tracking. Payments handled by Creem as Merchant of Record." />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/privacy.html" />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Latin webfonts only, non-blocking; Chinese uses the platform font (see index.html). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" /></noscript>
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <style>
       .doc {
@@ -88,7 +88,7 @@
         padding-top: clamp(36px, 6vw, 60px);
       }
       .doc__lang[lang="zh"] { line-height: 1.8; }
-      .doc__lang[lang="zh"] h2 { font-family: var(--f-display), "Noto Serif SC", serif; font-weight: 700; }
+      .doc__lang[lang="zh"] h2 { font-family: var(--f-display); font-weight: 700; }
     </style>
   </head>
   <body>
@@ -99,7 +99,7 @@
       <!-- English -->
       <section lang="en">
         <h1>Privacy Policy</h1>
-        <p class="doc__updated">Last updated: September 5, 2026</p>
+        <p class="doc__updated">Last updated: September 15, 2026</p>
 
         <p>SintBot ("we", "us") operates the website <a href="https://sintbot.com">sintbot.com</a>, the open-source <code>cc-bot</code> software, and <code>sintbot</code> — the self-hosted daemon delivered with SintBot Pro. This policy explains what little data the site touches, how purchases are handled, and what the software you run does and does not send us. We keep it deliberately minimal.</p>
 
@@ -113,7 +113,7 @@
         <p>Your browser's <code>localStorage</code> is used only to remember your language preference (English or Chinese). Nothing is sent to us.</p>
 
         <h2>Purchases (SintBot Pro)</h2>
-        <p>When you subscribe to SintBot Pro, payment is processed by <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> acting as our Merchant of Record. Your name, email, and payment details are submitted to and handled by Creem under their privacy policy: <a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>. We receive only the information needed to deliver support and manage your subscription.</p>
+        <p>When you subscribe to SintBot Pro, payment is processed by <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> acting as our Merchant of Record. Your name, email, and payment details are submitted to and handled by Creem under their privacy policy: <a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>. We receive only the information needed to send you the software and manage your subscription.</p>
 
         <h2>The cc-bot software</h2>
         <p>The <code>cc-bot</code> software runs entirely on your own machine. It does not send your code, credentials, or data to us. It communicates only with the services you configure (such as your Slack or Lark workspace and the AI models you connect).</p>
@@ -132,7 +132,7 @@
       <!-- 中文 -->
       <section class="doc__lang" lang="zh">
         <h1>隐私政策</h1>
-        <p class="doc__updated">最后更新：2026 年 9 月 5 日</p>
+        <p class="doc__updated">最后更新：2026 年 9 月 15 日</p>
 
         <p>SintBot（「我们」）运营网站 <a href="https://sintbot.com">sintbot.com</a>、开源软件 <code>cc-bot</code>，以及随 SintBot Pro 交付的自托管守护进程 <code>sintbot</code>。本政策说明本站接触到的极少量数据、购买流程如何处理，以及你运行的软件会与不会把什么发给我们。我们刻意把它做到最简。</p>
 
@@ -146,7 +146,7 @@
         <p>浏览器的 <code>localStorage</code> 仅用于记住你的语言偏好（英文或中文），不会向我们发送任何内容。</p>
 
         <h2>购买（SintBot Pro）</h2>
-        <p>订阅 SintBot Pro 时，支付由 <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> 作为 Merchant of Record（卖方记录方）处理。你的姓名、邮箱和支付信息提交给 Creem，并按其隐私政策处理：<a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>。我们只接收提供支持和管理订阅所必需的信息。</p>
+        <p>订阅 SintBot Pro 时，支付由 <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> 作为 Merchant of Record（卖方记录方）处理。你的姓名、邮箱和支付信息提交给 Creem，并按其隐私政策处理：<a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>。我们只接收发送软件和管理订阅所必需的信息。</p>
 
         <h2>cc-bot 软件</h2>
         <p><code>cc-bot</code> 软件完全运行在你自己的机器上，不会把你的代码、凭证或数据传给我们。它只与你自己配置的服务通信（比如你的 Slack / 飞书 workspace 和你接入的 AI 模型）。</p>

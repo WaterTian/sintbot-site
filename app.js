@@ -523,8 +523,8 @@
       zh: `<em>两种</em>跑法。`
     },
     "pricing.lede": {
-      en: `<code>cc-bot</code> is free and MIT; the <code>sintbot</code> daemon is delivered with a Pro subscription.`,
-      zh: `<code>cc-bot</code> 免费、MIT；<code>sintbot</code> 守护进程随 Pro 订阅交付。`
+      en: `<code>cc-bot</code> is free and MIT. A Pro subscription supports development and gets you the <code>sintbot</code> daemon, provided as is.`,
+      zh: `<code>cc-bot</code> 免费、MIT。订阅 Pro 是支持项目开发，可获取 <code>sintbot</code> 守护进程，按现状提供。`
     },
 
     "pricing.free.name":    { en: "Free", zh: "Free" },
@@ -552,8 +552,8 @@
     "pricing.pro.amount":  { en: "$19.90", zh: "$19.90" },
     "pricing.pro.cycle":   { en: "/ month", zh: "/ 月" },
     "pricing.pro.tagline": {
-      en: "Everything in Free, plus the sintbot daemon, delivered for you to self-host.",
-      zh: "Free 的全部，外加交付给你自托管的 sintbot 守护进程。"
+      en: "Support development and get the sintbot package to self-host.",
+      zh: "支持项目开发，获取可自托管的 sintbot 安装包。"
     },
     "pricing.pro.fsintbot": {
       en: `<b>sintbot</b> — the daemon: <b>Lark</b> and <b>Slack</b>, Claude Code and Codex with a swappable model per group, per-group permissions and redaction, the design toolchain, the local console, and scheduled tasks. <a href="#platforms">See what it does</a>.`,
@@ -561,20 +561,14 @@
     },
     "pricing.pro.f1": { en: "Everything in Free", zh: "Free 的全部" },
     "pricing.pro.f2": {
-      en: "Priority email support — support@sintbot.com (3-business-day response)",
-      zh: "优先邮件支持——support@sintbot.com（3 个工作日内回复）"
+      en: "Provided as is — no support response times, onboarding or update commitments",
+      zh: "按现状提供——不承诺支持响应时间、接入引导或后续更新"
     },
-    "pricing.pro.f3": { en: "Guided workspace onboarding", zh: "引导式 workspace 接入" },
-    "pricing.pro.f4": {
-      en: "Early access to new features",
-      zh: "新功能早鸟"
-    },
-    "pricing.pro.f5": { en: "Funds open-source development", zh: "资助开源开发" },
     "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
 
     "pricing.note": {
-      en: `sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the package and setup guide. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep any version delivered while your subscription was active, but don't redistribute or resell it (<a href="terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
-      zh: `sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把安装包与部署指引发给你。它以可读源码形式交付，适用「源码可见、不可再分发」的许可：可在自有的至多三台设备上运行与修改，订阅期内已交付的版本可永久继续使用，但不得再分发或转售（<a href="terms.html">条款</a>）。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
+      en: `sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the current package. It is provided as is: the subscription does not include support response times, onboarding, updates or new features. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep what you received, but don't redistribute or resell it (<a href="terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
+      zh: `sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把当前版本的安装包发给你。它按现状提供：订阅不包含支持响应时间、接入引导、后续更新或新功能。它以可读源码形式交付，适用「源码可见、不可再分发」的许可：可在自有的至多三台设备上运行与修改，已收到的版本可永久继续使用，但不得再分发或转售（<a href="terms.html">条款</a>）。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
     },
 
     // ---- cta / footer ----------------------------------------------------
