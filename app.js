@@ -190,8 +190,8 @@
     "models.kicker": { en: "03 · Models", zh: "03 · 模型" },
     "models.h":      { en: `Same agent. <em>Any brain.</em>`, zh: `同一套 agent，<em>任意大脑。</em>` },
     "models.lede": {
-      en: "Claude Code against any Anthropic-compatible endpoint, or Codex through the machine’s own login — the daemon treats both alike, and swapping the model only changes what the next turn starts with.",
-      zh: "Claude Code 接任何 Anthropic 兼容端点，Codex 用机器上的登录态——守护进程一视同仁，换模型只是换下一轮启动时带的参数。"
+      en: "Claude Code against any Anthropic-compatible endpoint — GLM, DeepSeek, Kimi, MiniMax, or an open-source model you host yourself — or Codex through the machine’s own ChatGPT login. The daemon treats them all alike: switching only changes what the next turn starts with, and the project’s memory stays.",
+      zh: "Claude Code 接任何 Anthropic 兼容端点——GLM、DeepSeek、Kimi、MiniMax，或你自己部署的开源模型；Codex 则用机器上的 ChatGPT 登录态。守护进程一视同仁：换模型只是换下一轮启动时带的参数，项目记忆不变。"
     },
     "models.p.claude":   { en: "local login, no key needed", zh: "本机登录态，不用配 key" },
     "models.p.gpt":      { en: "via your Codex subscription", zh: "走你的 Codex 订阅" },
