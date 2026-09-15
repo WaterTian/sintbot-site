@@ -1,19 +1,16 @@
-# Sintbot — showcase site
+# SintBot — showcase site
 
 Pure static HTML / CSS / JS — zero build tools, zero dependencies. Single page, bilingual (EN / 中), dark editorial layout.
 
 Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds — there is no staging, so verify on the live URL after pushing.
 
-## The two pillars
+## What the page sells
 
-Sintbot is one local-first platform with two pillars, both on a single page:
+**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Volcano Engine). Lark and Slack get equal billing; Discord is listed as planned. It ships as a package with a local console and a design toolchain. **Delivered with Pro** — not a public download.
 
-- **① Multi-model group bot** — drop an AI agent into a Slack / Lark channel; mention it, it works. This pillar ships in **two forms**:
-  - **`cc-bot`** — a **plugin**: it installs into Claude Code, lives inside an interactive session, and is bound to that session's model. MIT and free, on `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot); both IM adapters share one `IMAdapter` interface.
-  - **`sintbot`** — a **standalone daemon**, not a plugin: it owns its own message loop, needs nobody at the terminal, drives **Claude Code and Codex** headless, and swaps the model behind them (Claude / GPT / GLM / DeepSeek / MiniMax). One project per group, per-group permissions, local web console. Lark-native today. **Delivered with Pro** — not a public download.
-- **② Desktop pet (`sintpet`)** — a desktop companion that watches your local Claude Code session, speaks with on-device voice + lip-sync, and reacts out loud. Its character is settled — personality and voice included.
+**`cc-bot`** — the free way in: an MIT Claude Code **plugin** that lives inside an interactive session and is bound to that session's model, with Slack and Lark adapters. On `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot). Its install walkthrough stays on the page unchanged.
 
-cc-bot (MIT, free) is the top of the funnel; Pro unlocks `sintbot` — see the pricing section.
+The desktop pet is a separate line; the page mentions it only in the footer as "in the works".
 
 ## Preview locally
 
@@ -26,20 +23,19 @@ python -m http.server 8000   # then visit http://localhost:8000/
 
 ## Files
 
-- `index.html` — the single page: hero (both pillars + a Slack-thread mockup), "what Sintbot is", the cc-bot pillar (scenarios, capabilities, IMAdapter, architecture with an inline SVG diagram + permission matrix, Slack setup walkthrough), the `#pet` pillar, pricing, CTA, footer.
-- `styles.css` — raw CSS with custom properties; ink-black canvas, signal-orange accent, PCB-board detailing. Fraunces (display) + Inter (UI) + JetBrains Mono (code), plus Noto Serif / Sans SC for CJK, all from Google Fonts.
-- `app.js` — vanilla JS: the `translations` i18n table, IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), copy-to-clipboard for install commands + the full Slack manifest, hero parallax, smooth-scroll anchors, and Umami event tracking. Honors `prefers-reduced-motion`.
-- `assets/logo.png` — the PCB-styled "CC" brand mark (favicon + nav / footer + OG share image); `logo.svg` retained as a vector fallback.
+- `index.html` — the single page, in order: hero (a Lark card and a Slack thread from the same daemon) → what it is → platforms → how it works (inline SVG flow) → models → design system → scenarios → governance → console → reliability → the cc-bot plugin and its setup steps → pricing → CTA → footer. A Lucide icon sprite is inlined at the top of `<body>`; the page uses no emoji.
+- `styles.css` — raw CSS with custom properties; ink-black canvas, one copper accent, hairline cards. Fraunces (display) + Inter (UI) + JetBrains Mono (code) from Google Fonts, loaded without blocking first paint; Chinese renders in the platform font (PingFang / YaHei), nothing downloaded for it. Transitions only — nothing animates frame by frame.
+- `app.js` — vanilla JS: the `translations` i18n table, IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), hero parallax, copy-to-clipboard for the install commands and the Slack manifest, and Umami event tracking. Honors `prefers-reduced-motion`.
+- `assets/` — `favicon.svg`; `og-banner.png` (rendered from `og-banner.source.html` at 1200×630 — re-render after changing its copy); `design-styles.png` (the daemon's 16 built-in styles, rendered by its own toolchain); `logo.png` / `logo.svg` are retained but no longer referenced by the page.
+- `privacy.html` · `terms.html` · `thanks.html` — legal pages and the post-checkout page.
 - `CNAME` — GitHub Pages custom domain (`sintbot.com`); do not delete.
-
-> The old circuit-board bot mascot (`assets/bot/*.webp`) and its JS cross-fade cycle were removed 2026-07: the desktop pet is becoming a real character with its own look and voice, so the placeholder no longer represented it. The CC mark above is the brand logo, kept.
 
 ## i18n — EN / 中文
 
-Single-page bilingual via the `EN / 中` toggle in the nav — same HTML, no routing, no separate directory. All prose carries `data-i18n` / `data-i18n-html` / `data-i18n-svg` attributes; the strings live in a `translations` object in `app.js` with an `en` + `zh` for every key. Code, command names and identifiers stay English in both modes. Preference persists in `localStorage`; first visit falls back to `navigator.language`.
+Single-page bilingual via the `EN / 中` toggle in the nav — same HTML, no routing, no separate directory. All prose carries `data-i18n` / `data-i18n-html` / `data-i18n-svg` / `data-i18n-alt` attributes; the strings live in a `translations` object in `app.js` with an `en` + `zh` for every key. Code, command names and identifiers stay English in both modes. Preference persists in `localStorage`; first visit falls back to `navigator.language`; `?lang=en|zh` forces a language for screenshots.
 
-Chinese typography uses Noto Serif SC (display) + Noto Sans SC (UI); `html[lang="zh"]` relaxes line-height and drops letter-tracking so CJK reads cleanly.
+`html[lang="zh"]` relaxes line-height and drops letter-tracking so CJK reads cleanly.
 
 ## Design rationale
 
-Editorial calm — generous whitespace, oversized Fraunces display type, numbered story sections, a single muted accent carrying the eye — with visual punch: animated grain, a giant background keyword marquee, scroll-triggered reveals, a soft cursor glow, and a tilted hero Slack-thread mockup that levels on hover. An opinionated, distinctive identity rather than a template.
+Editorial calm — generous whitespace, oversized Fraunces display type, numbered sections, a single copper accent carrying the eye — with a grain texture, scroll-triggered reveals, a soft cursor glow, and a two-platform hero mockup showing one daemon in a Lark card and a Slack thread. Every capability line on the page is checked against the daemon's current version before it goes up.

@@ -22,7 +22,7 @@
     <meta property="og:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SintBot — AI agents in your group chat, and a companion on your desktop" />
+    <meta property="og:image:alt" content="SintBot — the group-project AI daemon for Lark and Slack, running on your own machine" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
@@ -32,13 +32,29 @@
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Latin webfonts only; Chinese renders in the platform's own font (PingFang / YaHei).
+         Loaded without blocking first paint: where fonts.googleapis.com is unreachable
+         (mainland China) the page must not sit blank waiting for it. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <!-- Analytics: Umami (privacy-first, no cookies, no consent banner) -->
     <script
@@ -245,20 +261,11 @@
         </p>
         <ol class="pillars">
           <li class="pillar" data-reveal>
-            <span class="pillar__no" aria-hidden="true">①</span>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
             <p data-i18n-html="what.bot.body">
               <code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. <code>cc-bot</code> is the free plugin for your own Claude Code session.
             </p>
             <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Lark and Slack →</a>
-          </li>
-          <li class="pillar" data-reveal data-reveal-delay="80">
-            <span class="pillar__no" aria-hidden="true">②</span>
-            <h3 data-i18n="what.pet.title">Desktop pet</h3>
-            <p data-i18n="what.pet.body">
-              A creature on your desktop that watches your local Claude Code work and reacts out loud, with its own voice and personality. In development — we'll announce it here.
-            </p>
-            <span class="pillar__soon" data-i18n="what.pet.soon">In the works — not released yet</span>
           </li>
         </ol>
 
@@ -343,7 +350,7 @@
             <li data-i18n="plat.core.5">same permissions &amp; redaction</li>
             <li data-i18n="plat.core.6">one console</li>
           </ul>
-          <span class="chip chip--next"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-circle-dashed"/></svg><span data-i18n="plat.discord">Discord — next release</span></span>
+          <span class="chip chip--next"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-circle-dashed"/></svg><span data-i18n="plat.discord">Discord — planned</span></span>
         </div>
       </section>
 
@@ -771,7 +778,7 @@
                   <div><dt data-i18n="con.f.perm">Permissions</dt><dd><span data-i18n="con.v.perm">full access · developer preset</span></dd></div>
                   <div><dt data-i18n="con.f.model">Model</dt><dd>Claude <span class="con__sub" data-i18n="con.v.model">Claude Code</span></dd></div>
                   <div><dt data-i18n="con.f.style">Style file</dt><dd>DESIGN.md <span class="con__sub" data-i18n="con.v.style">tech dark</span></dd></div>
-                  <div><dt data-i18n="con.f.preview">Preview</dt><dd><span class="con__on" data-i18n="con.v.preview">on · :4173</span></dd></div>
+                  <div><dt data-i18n="con.f.preview">Preview</dt><dd><span class="con__on" data-i18n="con.v.preview">on · :4610</span></dd></div>
                   <div><dt data-i18n="con.f.last">Last turn</dt><dd data-i18n="con.v.last">signup 500 → PR #482 · 6m 12s</dd></div>
                 </dl>
                 <div class="con__actions">
@@ -1095,7 +1102,7 @@ settings:
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Self-hosted · Lark &amp; Slack · cc-bot is MIT</span>
+          <span data-i18n="foot.tag">Self-hosted · Lark &amp; Slack · cc-bot is MIT · desktop pet in the works</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>

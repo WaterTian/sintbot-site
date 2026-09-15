@@ -88,12 +88,6 @@
       zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。<code>cc-bot</code> 是免费插件，装进你自己的 Claude Code 会话。`
     },
     "what.bot.link": { en: "See it on Lark and Slack →", zh: "看飞书与 Slack 里的样子 →" },
-    "what.pet.title":{ en: "Desktop pet", zh: "桌宠" },
-    "what.pet.body": {
-      en: "A creature on your desktop that watches your local Claude Code work and reacts out loud, with its own voice and personality. In development — we'll announce it here.",
-      zh: "一只趴在你桌面的虚拟形象：旁听你本机的 Claude Code 工作，用自己的声音和性格出声回应。研发中——上线会在这里公布。"
-    },
-    "what.pet.soon": { en: "In the works — not released yet", zh: "研发中 · 尚未上线" },
 
     "facts.platforms": { en: "platforms — Lark and Slack", zh: "个平台 —— 飞书与 Slack" },
     "facts.runners":   { en: "agent runners — Claude Code and Codex", zh: "套 agent runner —— Claude Code 与 Codex" },
@@ -158,7 +152,7 @@
     "plat.core.4": { en: "progress visible, stoppable", zh: "进度可见可停" },
     "plat.core.5": { en: "same permissions & redaction", zh: "同一套权限与脱敏" },
     "plat.core.6": { en: "one console", zh: "同一个控制台" },
-    "plat.discord": { en: "Discord — next release", zh: "Discord —— 下一版支持" },
+    "plat.discord": { en: "Discord — planned", zh: "Discord —— 计划中" },
 
     // ---- flow ------------------------------------------------------------
     "flow.kicker": { en: "02 · How it works", zh: "02 · 怎么跑" },
@@ -384,7 +378,7 @@
     "con.f.style":   { en: "Style file", zh: "风格档" },
     "con.v.style":   { en: "tech dark", zh: "科技深色" },
     "con.f.preview": { en: "Preview", zh: "预览" },
-    "con.v.preview": { en: "on · :4173", zh: "运行中 · :4173" },
+    "con.v.preview": { en: "on · :4610", zh: "运行中 · :4610" },
     "con.f.last":    { en: "Last turn", zh: "最近一轮" },
     "con.v.last":    { en: "signup 500 → PR #482 · 6m 12s", zh: "signup 500 → PR #482 · 6 分 12 秒" },
     "con.a.stop":    { en: "Stop", zh: "停止" },
@@ -598,7 +592,7 @@
       zh: "GitHub 上的免费插件"
     },
 
-    "foot.tag":     { en: "Self-hosted · Lark & Slack · cc-bot is MIT", zh: "自托管 · 飞书 & Slack · cc-bot 采用 MIT" },
+    "foot.tag":     { en: "Self-hosted · Lark & Slack · cc-bot is MIT · desktop pet in the works", zh: "自托管 · 飞书 & Slack · cc-bot 采用 MIT · 桌宠研发中" },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
