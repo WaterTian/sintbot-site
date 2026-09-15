@@ -69,8 +69,8 @@
     "mock.slack.thread": { en: "Thread · 3 replies", zh: "线程 · 3 条回复" },
     "mock.slack.progress": { en: "Reading logs · 2/5", zh: "正在读日志 · 2/5" },
     "mock.slack.final":  {
-      en: `Found it: <code>hashPassword</code> is missing an <code>await</code>. Opened <a href="#" onclick="return false">PR #482</a>.`,
-      zh: `已定位：<code>hashPassword</code> 少了 <code>await</code>，已开 <a href="#" onclick="return false">PR #482</a>。`
+      en: `Found it: <code>hashPassword</code> is missing an <code>await</code>. Opened <span class="mock__link">PR #482</span>.`,
+      zh: `已定位：<code>hashPassword</code> 少了 <code>await</code>，已开 <span class="mock__link">PR #482</span>。`
     },
     "mock.slack.b1":     { en: "Stop",   zh: "停止" },
     "mock.slack.b2":     { en: "Status", zh: "状态" },

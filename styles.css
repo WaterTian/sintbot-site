@@ -653,6 +653,8 @@ html[lang="zh"] .hero__lede { max-width: 34em; }
   background: var(--acid);
 }
 .mock__final { margin: 0; }
+/* looks like the link it stands in for, but it is a mock — underlined so it is not colour-only */
+.mock__link { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 .mock__thread .mock__btns { margin-top: 4px; }
 
 .mock__eq {
