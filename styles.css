@@ -395,9 +395,61 @@ body.cursor-on .cursor-glow { opacity: 1; }
   display: block;
   margin: 0;
 }
-/* CJK breaks anywhere; on a phone the first zh line orphaned its last character.
-   Each half-sentence is kept whole so the only break is at the comma. */
-.hero__title-en .nb { white-space: nowrap; font-style: inherit; }
+/* Chinese hero — 双行夹注 (inline double-line annotation).
+   A statement in large Song, followed by a two-line note at half size whose
+   two lines together are exactly one large character tall; then a third,
+   smaller tier for the qualifier. Scale 1 : 0.46 : ~0.31. Only the notes
+   (the promises) carry gold. */
+.hero__title-en > .zh-row {
+  --zh-big: clamp(40px, 12.5vw, 96px);
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--zh-big) * 0.16);
+  margin: 0;
+  line-height: 1;
+}
+.hero__title-en > .zh-row + .zh-row { margin-top: calc(var(--zh-big) * 0.28); }
+.zh-big {
+  font-size: var(--zh-big);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--bone);
+  white-space: nowrap;
+}
+.zh-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: var(--zh-big);
+  font-family: var(--f-ui);
+  font-size: calc(var(--zh-big) * 0.46); /* two lines + a sliver of air = one large character */
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.hero__title-en > .zh-tail {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-top: clamp(28px, 4.5vw, 44px);
+  font-family: var(--f-ui);
+  font-size: clamp(19px, 5vw, 30px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text-1);
+}
+.zh-tail::before {
+  content: "";
+  flex: none;
+  width: 2.2em;
+  height: 1px;
+  background: var(--signal);
+}
+html[lang="zh"] .hero__title { max-width: none; }
 .hero__title em {
   font-style: normal;
   font-weight: 500;
