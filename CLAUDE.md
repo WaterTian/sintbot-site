@@ -29,6 +29,7 @@
 - `styles.css` — 全部样式，原生 CSS 自定义属性，PCB 电路板配色；字阶 token 64/40/24/21/17，文字四级透明度 .92/.56/.4/.1；**不加逐帧动画**（历史教训：描边流光与 WebGL 都因卡顿被撤；首页文字的滚动错层视差 2026-09-15 也撤了——用户：效果不好；**别再加任何滚动联动的位移**），过渡只允许 color / background-color / border-color / opacity
 - `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）
 - `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
+- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap（`thanks.html` 为 noindex，不进）。首页 `<head>` 有一段 JSON-LD（SoftwareApplication），改首屏口径时同步它的 description；**不写价格、不写 sameAs**
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 
 ## 部署：push 即上线
