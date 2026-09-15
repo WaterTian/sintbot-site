@@ -65,3 +65,5 @@
 `sintbot.com` 已完全上线，HTTPS 强制已开启（Let's Encrypt 证书 `CN=sintbot.com`，`http://` 自动 301 跳 HTTPS）。域名与部署链路无遗留待办。
 
 唯一长期事项：Namecheap 域名自动续费已关闭，**2027-04 前需手动续费**。
+
+待办（2026-09-15）：① 在 Bing Webmaster Tools / Google Search Console 验证站点并提交 sitemap（需站长登录）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ 站上已列 Kimi，守护进程侧 Kimi 预设尚未公开，需在守护进程开发线对齐。
