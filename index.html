@@ -32,6 +32,20 @@
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
+    <!-- Structured data: what the product is, in the same words as the page. No price/offer here —
+         the paid plan carries no service commitments and is not something to advertise to crawlers. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SintBot",
+        "url": "https://sintbot.com/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows",
+        "inLanguage": ["en", "zh-CN"],
+        "description": "A self-hosted daemon that binds a chat group (Lark or Slack) to a project. Anyone on the team can hand it work; it runs Claude Code or Codex on your own machine with a model you can switch in the group — ChatGPT, Claude, GLM, DeepSeek, Kimi or one you host — and keeps one long-term memory per project, stored locally."
+      }
+    </script>
     <link rel="stylesheet" href="./styles.css" />
     <!-- Latin webfonts only; Chinese renders in the platform's own font (PingFang / YaHei).
          Loaded without blocking first paint: where fonts.googleapis.com is unreachable
