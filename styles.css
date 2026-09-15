@@ -408,12 +408,19 @@ body.cursor-on .cursor-glow { opacity: 1; }
   margin: 0;
   line-height: 1;
 }
-.hero__title-en > .zh-row + .zh-row { margin-top: calc(var(--zh-big) * 0.28); }
+/* the lead statement carries the heaviest face (Songti SC Black) */
+.hero__title-en > .zh-row:first-child .zh-big { font-weight: 900; }
+/* second statement one step down (≈0.7×) so the two rows don't read as equals */
+.hero__title-en > .zh-row + .zh-row {
+  --zh-big: clamp(30px, 8.75vw, 68px);
+  margin-top: calc(var(--zh-big) * 0.36);
+}
 .zh-big {
   font-size: var(--zh-big);
   line-height: 1;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 700; /* Songti SC Bold; Windows falls back to YaHei Bold */
+  letter-spacing: 0.03em;
+  font-synthesis: none; /* use the real Bold/Black faces, never a smeared fake bold */
   color: var(--bone);
   white-space: nowrap;
 }
