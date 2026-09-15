@@ -98,10 +98,10 @@
 
     // ---- platforms -------------------------------------------------------
     "plat.kicker": { en: "01 · Platforms", zh: "01 · 平台" },
-    "plat.h":      { en: `Lark and Slack, <em>side by side.</em>`, zh: `飞书与 Slack，<em>平级。</em>` },
+    "plat.h":      { en: `Lark and Slack, <em>both supported.</em>`, zh: `飞书与 Slack，<em>都支持。</em>` },
     "plat.lede": {
-      en: "Each group picks its platform, both can run in one daemon, and the rest is identical: one project per group, just talk to it in the group, no public IP, progress you can stop, the same permissions and console.",
-      zh: "每个群自己选平台，两个平台可以跑在同一个守护进程里，其余完全一样：一群一项目、群里直接说、免公网 IP、进度可停、同一套权限与控制台。"
+      en: "A group can be a Lark group or a Slack channel — each one picks, and one daemon serves both. Everything else is the same: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.",
+      zh: "群可以是飞书群，也可以是 Slack 频道——每个群自己选，一个守护进程同时接两边。其余完全一样：一群一项目、群里直接说、免公网 IP、进度可见可停、同一套权限与控制台。"
     },
     "plat.lark.h":   { en: "In a Lark group", zh: "在飞书群里" },
     "plat.lark.1.t": { en: "Streaming card", zh: "流式卡片" },
@@ -793,11 +793,7 @@
     });
   });
 
-  // 4) Hero marquee parallax — folded into the unified hero parallax in
-  //    section 8 (was a separate block here, gated by prefers-reduced-
-  //    motion, which Win11 Chrome false-reports — so it never ran).
-
-  // 4b) Back-to-top button — show after roughly one viewport of scroll ---
+  // 4) Back-to-top button — show after roughly one viewport of scroll ---
   const toTop = document.querySelector(".to-top");
   if (toTop) {
     let rafTop = 0;
@@ -917,43 +913,8 @@
     document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
   }
 
-  // 8) Hero parallax — staggered depth on the hero text while scrolling.
-  // `translate` (standalone property) composes with the reveal's
-  // `transform`. Each layer carries will-change so the browser keeps it
-  // on its own compositor layer and caches the raster — including the
-  // static per-layer blur (set in CSS) — so scrolling only re-composites
-  // and never re-blurs: smooth, no jank.
-  const heroSel = [
-    { sel: ".hero__title-en > span:first-of-type", k: 0.05 },
-    { sel: ".hero__title-en > em",                 k: 0.13 },
-    { sel: ".hero__title-en > span:last-of-type",  k: -0.04 },
-    { sel: ".hero__lede",                          k: 0.09 },
-    { sel: ".hero__ctas",                          k: -0.07 },
-  ];
-  let heroLayers = [];
-  function collectHeroLayers() {
-    heroLayers = heroSel
-      .map((s) => ({ el: document.querySelector(s.sel), k: s.k }))
-      .filter((l) => l.el);
-    heroLayers.forEach((l) => { l.el.style.willChange = "transform"; });
-  }
-  collectHeroLayers();
-  // the title lines are rebuilt on language switch — re-collect them
-  document.querySelectorAll(".lang-toggle__btn").forEach((b) => {
-    b.addEventListener("click", () => requestAnimationFrame(collectHeroLayers));
-  });
-  let rafHero = 0;
-  function applyHeroParallax() {
-    const y = window.scrollY;
-    heroLayers.forEach((l) => {
-      l.el.style.translate = "0 " + (y * l.k).toFixed(1) + "px";
-    });
-    rafHero = 0;
-  }
-  window.addEventListener(
-    "scroll",
-    () => { if (!rafHero) rafHero = requestAnimationFrame(applyHeroParallax); },
-    { passive: true }
-  );
-  applyHeroParallax();
+  // 8) (removed 2026-09-15) Hero parallax — the five hero layers used to drift at
+  //    different rates while scrolling, so the headline's own lines slid past
+  //    each other. Judged a distraction, not an effect; nothing scroll-linked
+  //    moves in the hero any more. The one-shot reveal on load stays.
 })();

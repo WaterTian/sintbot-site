@@ -6,7 +6,7 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 
 ## What the page sells
 
-**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Volcano Engine). Lark and Slack get equal billing; Discord is listed as planned. It ships as a package with a local console and a design toolchain. **Delivered with Pro** — not a public download.
+**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Volcano Engine). Lark and Slack are both supported; Discord is listed as planned. It ships as a package with a local console and a design toolchain. **Delivered with Pro** — not a public download.
 
 **`cc-bot`** — the free way in: an MIT Claude Code **plugin** that lives inside an interactive session and is bound to that session's model, with Slack and Lark adapters. On `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot). Its install walkthrough stays on the page unchanged.
 
@@ -25,7 +25,7 @@ python -m http.server 8000   # then visit http://localhost:8000/
 
 - `index.html` — the single page, in order: hero (a Lark card and a Slack thread from the same daemon) → what it is → platforms → how it works (inline SVG flow) → models → design system → scenarios → governance → console → reliability → the cc-bot plugin and its setup steps → pricing → CTA → footer. A Lucide icon sprite is inlined at the top of `<body>`; the page uses no emoji.
 - `styles.css` — raw CSS with custom properties; ink-black canvas, one copper accent, hairline cards. Fraunces (display) + Inter (UI) + JetBrains Mono (code) from Google Fonts, loaded without blocking first paint; Chinese renders in the platform font (PingFang / YaHei), nothing downloaded for it. Transitions only — nothing animates frame by frame.
-- `app.js` — vanilla JS: the `translations` i18n table, IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), hero parallax, copy-to-clipboard for the install commands and the Slack manifest, and Umami event tracking. Honors `prefers-reduced-motion`.
+- `app.js` — vanilla JS: the `translations` i18n table, IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), copy-to-clipboard for the install commands and the Slack manifest, and Umami event tracking. Honors `prefers-reduced-motion`.
 - `assets/` — `favicon.svg`; `og-banner.png` (rendered from `og-banner.source.html` at 1200×630 — re-render after changing its copy); `design-styles.png` (the daemon's 16 built-in styles, rendered by its own toolchain); `logo.png` / `logo.svg` are retained but no longer referenced by the page.
 - `privacy.html` · `terms.html` · `thanks.html` — legal pages and the post-checkout page.
 - `CNAME` — GitHub Pages custom domain (`sintbot.com`); do not delete.
