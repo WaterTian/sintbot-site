@@ -198,7 +198,7 @@
     "models.p.glm":      { en: "your own key", zh: "你自己的 key" },
     "models.p.deepseek": { en: "your own key", zh: "你自己的 key" },
     "models.p.minimax":  { en: "your own key", zh: "你自己的 key" },
-    "models.p.volcano":  { en: "your own key", zh: "你自己的 key" },
+    "models.p.kimi":     { en: "your own key", zh: "你自己的 key" },
     "models.1.title": { en: "Switch in the group", zh: "群里就能切" },
     "models.1.body": {
       en: `<code>/model</code> lists, <code>/model</code> plus a name switches — anyone in the group can. A switch opens a fresh conversation; the memory files carry over.`,

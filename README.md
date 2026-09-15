@@ -6,7 +6,7 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 
 ## What the page sells
 
-**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Volcano Engine). Lark and Slack are both supported; Discord is listed as planned. It ships as a package with a local console and a design toolchain. **Delivered with Pro** — not a public download.
+**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Lark and Slack are both supported; Discord is listed as planned. It ships as a package with a local console and a design toolchain. **Delivered with Pro** — not a public download.
 
 **`cc-bot`** — the free way in: an MIT Claude Code **plugin** that lives inside an interactive session and is bound to that session's model, with Slack and Lark adapters. On `main` in [`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot). Its install walkthrough stays on the page unchanged.
 
