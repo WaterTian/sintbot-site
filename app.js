@@ -27,16 +27,16 @@
     "hero.eyebrow":      { en: "Self-hosted daemon · Lark & Slack · Claude Code & Codex",
                            zh: "自托管守护进程 · 飞书 & Slack · Claude Code & Codex" },
     "hero.titleEn": {
-      en: `<span data-reveal data-reveal-delay="0">Just say it.</span>
-           <em data-reveal data-reveal-delay="120">It delivers.</em>
-           <span data-reveal data-reveal-delay="240">From your own machine.</span>`,
-      zh: `<span data-reveal data-reveal-delay="0">群里说一句</span>
-           <em data-reveal data-reveal-delay="120">它就开工</em>
+      en: `<span data-reveal data-reveal-delay="0">Say it in the group.</span>
+           <em data-reveal data-reveal-delay="120">Any model, one memory.</em>
+           <span data-reveal data-reveal-delay="240">On your own machine.</span>`,
+      zh: `<span data-reveal data-reveal-delay="0"><i class="nb">一群一项目，</i><i class="nb">一句话开工</i></span>
+           <em data-reveal data-reveal-delay="120">模型随时换，记忆不丢</em>
            <span data-reveal data-reveal-delay="240">全程在你自己的机器上</span>`
     },
     "hero.lede": {
-      en: `Bind a Lark or Slack group to a project and just say what you need. <code>SintBot</code> reads and changes the code, does the design work and reports back — all from your own machine.`,
-      zh: `一个飞书群或 Slack 群绑一个项目，群里说一句要做什么。<code>SintBot</code> 读代码、改代码、做设计、出报告——全程在你自己的机器上。`
+      en: `Bind a chat group to a project and anyone on the team can hand it work: <code>SintBot</code> reads and changes code, does design and reports back, on your own machine. ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host — switch in the group per task; one long-term memory per project, kept for you, stored locally.`,
+      zh: `一个聊天群绑一个项目，团队里谁都能派活，<code>SintBot</code> 在你自己的机器上读代码、改代码、做设计、出报告。模型任选：ChatGPT、Claude，或 GLM、DeepSeek、Kimi、自己部署的开源模型，群里随时切换、不同任务用不同模型；项目的长期记忆只有一套，自动维护、留在本地。`
     },
     "hero.cta.primary": {
       en: "See how it works",

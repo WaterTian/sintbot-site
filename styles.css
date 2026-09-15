@@ -395,6 +395,9 @@ body.cursor-on .cursor-glow { opacity: 1; }
   display: block;
   margin: 0;
 }
+/* CJK breaks anywhere; on a phone the first zh line orphaned its last character.
+   Each half-sentence is kept whole so the only break is at the comma. */
+.hero__title-en .nb { white-space: nowrap; font-style: inherit; }
 .hero__title em {
   font-style: normal;
   font-weight: 500;
@@ -403,13 +406,12 @@ body.cursor-on .cursor-glow { opacity: 1; }
 html[lang="zh"] .hero__title-en > em { font-weight: 700; }
 
 .hero__lede {
-  max-width: 40ch;
+  max-width: 34em; /* same measure in both languages — at 40ch the English ran 8 lines against a 3-line title */
   font-size: var(--t-lead);
   line-height: var(--lh-lead);
   color: var(--text-1);
   margin: 28px 0 0;
 }
-html[lang="zh"] .hero__lede { max-width: 34em; }
 
 .hero__ctas {
   display: flex;
