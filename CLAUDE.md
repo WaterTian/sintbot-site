@@ -36,13 +36,16 @@
 
 仓库 `WaterTian/sintbot-site`。**push 到 `main` 分支 = GitHub Pages 自动部署**，几十秒生效。没有预发布环境 —— 改动前想清楚，push 后用 curl 或浏览器验证 https://sintbot.com。
 
-本地预览：浏览器直接打开 `index.html`，或 `python -m http.server 8000`。
+本地预览：**只能用** `python3 -m http.server 8000`（资源与页面链接都是根路径 `/…`，直接双击打开 `index.html` 会丢样式）。
 
 ## 双语 i18n
 
 - 文案**不要硬编码**在 HTML —— 用 `data-i18n` / `data-i18n-html` / `data-i18n-svg` 属性标记
 - 所有字符串集中在 `app.js` 的 `translations` 对象，EN + 中文各一份
-- 加新文案 = HTML 标属性 + `translations` 里补两种语言；语言偏好存 localStorage
+- 加新文案 = HTML 标属性 + `translations` 里补两种语言
+- **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。`zh/index.html` 是**生成物**：`node scripts/build-zh.mjs` 从 `index.html` 复制并按 `translations` 的 `meta.title / meta.description / meta.ogAlt` 写两边的 `<head>`（标题、描述、分享卡片、canonical、og:locale、中文分享图 `og-banner-zh.png`）。**改了 `index.html` 或 `meta.*` 就跑一次脚本**；预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交（新克隆需 `git config core.hooksPath .githooks`）。别手改 `zh/index.html`、别手改 `index.html` 里那几个 meta。
+- 语言规则在 `app.js`：`?lang=` 仅预览、不改地址不存偏好 → `/zh/` 固定中文 → 其余看已存偏好、再看浏览器语言；切换按钮原地换语言并用 `history.replaceState` 把地址换成对应路径（不刷新）。中文样式选择器用 `html:lang(zh)`（页面 lang 是 `zh-CN`）。
+- 两张分享图：`og-banner.source.html` → `og-banner.png`，`og-banner-zh.source.html` → `og-banner-zh.png`，改文案后都要重渲。
 
 ## 注意事项
 

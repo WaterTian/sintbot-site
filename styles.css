@@ -83,23 +83,23 @@ body {
 }
 
 /* CJK adjustments — Chinese mode */
-html[lang="zh"] { line-height: 1.7; }
-html[lang="zh"] body { letter-spacing: 0; }
-html[lang="zh"] .hero__title,
-html[lang="zh"] .section__h,
-html[lang="zh"] .cta h2 {
+html:lang(zh) { line-height: 1.7; }
+html:lang(zh) body { letter-spacing: 0; }
+html:lang(zh) .hero__title,
+html:lang(zh) .section__h,
+html:lang(zh) .cta h2 {
   letter-spacing: 0;
   font-weight: 700;
 }
 /* CJK has no real italic — kill synthetic oblique on display <em>. */
-html[lang="zh"] .hero__title em,
-html[lang="zh"] .section__h em,
-html[lang="zh"] .cta h2 em {
+html:lang(zh) .hero__title em,
+html:lang(zh) .section__h em,
+html:lang(zh) .cta h2 em {
   font-style: normal;
   font-weight: 700;
 }
-html[lang="zh"] .section__kicker,
-html[lang="zh"] .eyebrow { letter-spacing: 0.12em; }
+html:lang(zh) .section__kicker,
+html:lang(zh) .eyebrow { letter-spacing: 0.12em; }
 
 a {
   color: inherit;
@@ -456,13 +456,13 @@ body.cursor-on .cursor-glow { opacity: 1; }
   height: 1px;
   background: var(--signal);
 }
-html[lang="zh"] .hero__title { max-width: none; }
+html:lang(zh) .hero__title { max-width: none; }
 .hero__title em {
   font-style: normal;
   font-weight: 500;
   color: var(--gold);
 }
-html[lang="zh"] .hero__title-en > em { font-weight: 700; }
+html:lang(zh) .hero__title-en > em { font-weight: 700; }
 
 .hero__lede {
   max-width: 34em; /* same measure in both languages — at 40ch the English ran 8 lines against a 3-line title */
@@ -815,7 +815,7 @@ html[lang="zh"] .hero__title-en > em { font-weight: 700; }
   margin: 0 0 3em;
 }
 .lede--wide { max-width: 62ch; }
-html[lang="zh"] .lede { max-width: 36em; }
+html:lang(zh) .lede { max-width: 36em; }
 
 /* Generic chip */
 .chip {
@@ -885,10 +885,10 @@ html[lang="zh"] .lede { max-width: 36em; }
   margin: 0;
   color: var(--bone);
 }
-html[lang="zh"] .card h3,
-html[lang="zh"] .scenario h3,
-html[lang="zh"] .step h3,
-html[lang="zh"] .pillar h3 { font-weight: 700; }
+html:lang(zh) .card h3,
+html:lang(zh) .scenario h3,
+html:lang(zh) .step h3,
+html:lang(zh) .pillar h3 { font-weight: 700; }
 .card p {
   font-size: var(--t-small);
   line-height: var(--lh-small);

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<!-- Chinese share card for https://sintbot.com/zh/ (og-banner-zh.png, 1200×630).
+     Same ground as og-banner.source.html; the headline uses the homepage's 双行夹注 hierarchy.
+     Render: DevTools emulate 1200x630x1, await document.fonts.ready, screenshot PNG. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0a0a0a; --bone:#f3eee5; --bone-2:#e6e0d3; --muted:#7a8a82;
+    --signal:#d68f44; --gold:#e5b94d; --line:#1d2a25;
+    --f-display:"Fraunces",serif; --f-mono:"JetBrains Mono",monospace;
+    --f-song:"Songti SC","Source Han Serif SC","Noto Serif SC",serif;
+    --f-sans:"PingFang SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{background:var(--ink);color:var(--bone);position:relative;overflow:hidden}
+  .glow{position:absolute;inset:0;background:
+      radial-gradient(60% 80% at 82% 18%, rgba(229,185,77,.16), transparent 60%),
+      radial-gradient(70% 90% at 90% 40%, rgba(214,143,68,.14), transparent 55%)}
+  .grid{position:absolute;inset:0;opacity:.05;
+    background-image:linear-gradient(var(--bone) 1px,transparent 1px),linear-gradient(90deg,var(--bone) 1px,transparent 1px);
+    background-size:56px 56px;mask-image:radial-gradient(75% 75% at 30% 50%,#000 30%,transparent 78%)}
+  .frame{position:absolute;inset:0;border:1px solid var(--line)}
+  .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 92px 40px}
+
+  .brand{display:flex;align-items:center;gap:22px;margin-bottom:34px}
+  .word{font-family:var(--f-display);font-variation-settings:"opsz" 144;font-size:60px;font-weight:900;line-height:1;letter-spacing:-.02em}
+  .word .tie{color:var(--signal)}
+  .eyebrow{font-family:var(--f-sans);font-size:20px;letter-spacing:.18em;color:var(--muted);display:flex;align-items:center;gap:12px}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+
+  /* 双行夹注: big Song statement + two-line gold note, the two note lines together = one big character */
+  .row{display:flex;align-items:flex-start;line-height:1}
+  .big{font-family:var(--f-song);font-weight:900;color:var(--bone);white-space:nowrap;letter-spacing:.03em;font-synthesis:none}
+  .note{display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-sans);font-weight:500;color:var(--gold);white-space:nowrap;letter-spacing:.06em;line-height:1}
+  .r1{--s:112px;gap:18px}
+  .r2{--s:78px;gap:14px;margin-top:28px}
+  .r2 .big{font-weight:700}
+  .row .big{font-size:var(--s)}
+  .row .note{height:var(--s);font-size:calc(var(--s)*.46)}
+
+  .tail{display:flex;align-items:center;gap:18px;margin-top:40px;font-family:var(--f-sans);font-size:28px;letter-spacing:.12em;color:var(--bone-2)}
+  .tail::before{content:"";width:56px;height:1px;background:var(--signal)}
+
+  .foot{position:absolute;left:92px;bottom:46px;font-family:var(--f-mono);font-size:21px;letter-spacing:.06em;color:var(--bone)}
+  .badge{position:absolute;right:92px;bottom:42px;font-family:var(--f-sans);font-size:18px;letter-spacing:.12em;color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;padding:8px 18px}
+</style>
+</head>
+<body>
+  <div class="glow"></div><div class="grid"></div><div class="frame"></div>
+  <div class="wrap">
+    <div class="brand"><div class="word">Sint<span class="tie">·</span>Bot</div><div class="eyebrow"><span class="dot"></span>自托管 · 飞书 &amp; Slack</div></div>
+    <div class="row r1"><span class="big">一群一项目</span><span class="note"><span>一句话</span><span>就开工</span></span></div>
+    <div class="row r2"><span class="big">模型随时换</span><span class="note"><span>记忆</span><span>不丢</span></span></div>
+    <div class="tail">全程在你自己的机器上</div>
+  </div>
+  <div class="foot">sintbot.com</div>
+  <div class="badge">Claude Code + Codex · ChatGPT · Claude · GLM · DeepSeek · Kimi</div>
+</body>
+</html>

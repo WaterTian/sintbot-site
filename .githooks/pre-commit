@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refuse a commit whose index.html / zh/index.html heads are out of sync with app.js.
+# Enable once per clone: git config core.hooksPath .githooks
+exec node scripts/build-zh.mjs --check
