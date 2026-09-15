@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SintBot">
-  <rect x="3" y="3" width="58" height="58" rx="10" fill="#235c3c"/>
-  <path d="M45 19 H24 L19 24 V29 L24 34 H40 L45 39 V44 L40 49 H19"
-        fill="none" stroke="#d68f44" stroke-width="7"
-        stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="64" height="64" role="img" aria-label="SintBot">
+  <!-- Black disc, white mark. The mark is cut out of the disc (nonzero, reversed winding), so a
+       white disc sits underneath to show through the cut-outs — without it the tab background bleeds in. -->
+  <circle cx="50" cy="50" r="50" fill="#fff"/>
+  <path fill="#000" d="M100,50A50,50,0,1,1,50,0,50,50,0,0,1,100,50ZM22.08,42.76,64,63.69l-7,3.49H43l-7-3.49v-7l-14,7v7l14,7H64l14-7v-14l-14-7,14-7v-14l-14-7v14l-14,7-14-7v-14l-14,7Z"/>
 </svg>

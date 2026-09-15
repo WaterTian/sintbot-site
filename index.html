@@ -6,7 +6,7 @@
     <title>SintBot — the group-project AI daemon, on your machine</title>
     <meta
       name="description"
-      content="Bind a Lark or Slack group to a project and mention SintBot: it reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
+      content="Bind a Lark or Slack group to a project and just say what you need: SintBot reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
     />
     <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
          bot into your chat", so links get pasted into Slack/Lark/WeChat
@@ -17,7 +17,7 @@
     <meta property="og:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       property="og:description"
-      content="Bind a Lark or Slack group to a project and mention SintBot: it reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
+      content="Bind a Lark or Slack group to a project and just say what you need: SintBot reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
     />
     <meta property="og:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       name="twitter:description"
-      content="Bind a Lark or Slack group to a project and mention SintBot: it reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
+      content="Bind a Lark or Slack group to a project and just say what you need: SintBot reads and changes code, does design work and reports back, with progress visible in the group. Runs Claude Code or Codex on your own machine, with a swappable model per group."
     />
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -268,7 +268,7 @@
           <li><span>6</span><i data-i18n="facts.models">model backends, swappable per group</i></li>
           <li><span>16</span><i data-i18n="facts.styles">built-in design styles</i></li>
           <li><span>13</span><i data-i18n="facts.redact">outbound redaction patterns</i></li>
-          <li><span>1,500+</span><i data-i18n="facts.tests">unit tests</i></li>
+          <li><span>1,600+</span><i data-i18n="facts.tests">unit tests</i></li>
         </ul>
       </section>
 
@@ -290,7 +290,7 @@
             <ul class="plat-list">
               <li>
                 <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.lark.1.t">Streaming card</b><p data-i18n="plat.lark.1.b">The reply card updates while the work runs; the result and its buttons land in the same card.</p></div>
+                <div><b data-i18n="plat.lark.1.t">Streaming card</b><p data-i18n="plat.lark.1.b">The card updates while the work runs — how long, what it is doing now, a line per finished step; the answer and its buttons land in the same card, the steps folded away.</p></div>
               </li>
               <li>
                 <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-pen-tool"/></svg>
@@ -351,7 +351,7 @@
       <section id="flow" class="section section--flow">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="flow.kicker">02 · How it works</p>
-        <h2 class="section__h" data-reveal data-i18n-html="flow.h">From <em>@</em> to delivery.</h2>
+        <h2 class="section__h" data-reveal data-i18n-html="flow.h">From <em>one sentence</em> to delivery.</h2>
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">
           The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.
         </p>
@@ -528,7 +528,7 @@
               <div>
                 <h3 data-i18n="dsn.3.title">Images without a key</h3>
                 <p data-i18n="dsn.3.body">
-                  Images borrow the machine’s Codex subscription — no API key, instant reply, no group lock. Edit on the original, repaint a masked region, transparent background; the style file rides along.
+                  Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.
                 </p>
                 <ul class="card__chips"><li data-i18n="dsn.3.c1">edit in place</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent</li></ul>
               </div>
@@ -553,7 +553,7 @@
             <span class="chip chip--lark"><span data-i18n="plat.lark">Lark</span> <span data-i18n="dsn.board.only">only</span></span>
           </div>
           <p data-i18n="dsn.board.body">
-            The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history.
+            The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.
           </p>
         </div>
       </section>
@@ -682,7 +682,7 @@
             <span class="gov-tier__no">③</span>
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-lock"/></svg>
             <h3 data-i18n="gov.t3.title">Directory fence</h3>
-            <p data-i18n="gov.t3.body">The agent works only inside the project directory bound to that group.</p>
+            <p data-i18n="gov.t3.body">The agent works only inside the project directory bound to that group, and groups can only be bound inside your projects root — symlinks included.</p>
           </li>
         </ol>
 
@@ -712,6 +712,17 @@
             <ul class="card__chips"><li data-i18n="gov.3.c1">pause a group</li><li data-i18n="gov.3.c2">recall stops the turn</li><li data-i18n="gov.3.c3">feedback book</li></ul>
           </li>
         </ol>
+
+        <div class="dsn-board" data-reveal>
+          <div class="dsn-board__head">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-key-round"/></svg>
+            <h3 data-i18n="gov.takeover.h">Browser takeover</h3>
+            <span class="chip chip--lark"><span data-i18n="plat.lark">Lark</span> <span data-i18n="dsn.board.only">only</span></span>
+          </div>
+          <p data-i18n="gov.takeover.body">
+            When a job in its browser hits a login, a verification code, a slider or a QR code, it posts a card: a screenshot of that page, why it needs you, one button. Tap it and work the page yourself from your phone or desk — tap, drag, type, pinch to zoom; the login stays on its side and it carries on. The link opens once, lasts 10 minutes by default and reaches only that page, and the card flips to in use, ended or expired. Nobody pastes a password or a code into the group.
+          </p>
+        </div>
       </section>
 
       <!-- Console -->
@@ -720,7 +731,7 @@
         <p class="section__kicker" data-reveal data-i18n="con.kicker">07 · Console</p>
         <h2 class="section__h" data-reveal data-i18n-html="con.h">One local page for <em>every group.</em></h2>
         <p class="lede lede--wide" data-reveal data-i18n="con.lede">
-          The daemon serves its own console — a local page with no dependencies that listens on this machine only, unless you set a password and open it to the LAN.
+          The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Lark.
         </p>
 
         <div class="con-wrap">
@@ -792,7 +803,7 @@
             </li>
             <li data-reveal data-reveal-delay="180">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-layout-dashboard"/></svg>
-              <div><b data-i18n="con.p4.t">Operations</b><p data-i18n="con.p4.b">Live activity stream, scheduled tasks, running previews, feedback book, version history; per group stop, new session, interject.</p></div>
+              <div><b data-i18n="con.p4.t">Operations</b><p data-i18n="con.p4.b">Live activity stream, scheduled tasks, running previews, feedback book, version history; per group stop, new session, interject. In English or Chinese.</p></div>
             </li>
           </ul>
         </div>
@@ -842,11 +853,11 @@
           </li>
           <li class="card" data-reveal data-reveal-delay="240">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-bell"/></svg><span class="card__no">05</span></div>
-            <h3 data-i18n="ops.5.title">Tells the group what changed</h3>
+            <h3 data-i18n="ops.5.title">Says what is going on</h3>
             <p data-i18n="ops.5.body">
-              After an upgrade the daemon reads its changelog and posts the new abilities to each group.
+              After an upgrade it posts the new abilities to each group. If the model is overloaded it says so plainly, keeps what it had written and carries on when you say “continue”; a compacted session is announced, with the quota left when the model reports one.
             </p>
-            <ul class="card__chips"><li data-i18n="ops.5.c1">upgrade broadcast</li><li data-i18n="ops.5.c2">per group</li></ul>
+            <ul class="card__chips"><li data-i18n="ops.5.c1">upgrade broadcast</li><li data-i18n="ops.5.c2">plain-language errors</li><li data-i18n="ops.5.c3">compaction notice</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="300">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>

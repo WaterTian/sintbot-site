@@ -112,8 +112,8 @@
     "plat.lark.h":   { en: "In a Lark group", zh: "在飞书群里" },
     "plat.lark.1.t": { en: "Streaming card", zh: "流式卡片" },
     "plat.lark.1.b": {
-      en: "The reply card updates while the work runs; the result and its buttons land in the same card.",
-      zh: "回复卡片边跑边更新，结果和按钮落在同一张卡里。"
+      en: "The card updates while the work runs — how long, what it is doing now, a line per finished step; the answer and its buttons land in the same card, the steps folded away.",
+      zh: "卡片边跑边更新：已跑多久、正在做什么、每完成一步多一行；做完正文和按钮落在同一张卡里，过程收进折叠区。"
     },
     "plat.lark.2.t": { en: "Whiteboard loop", zh: "画板闭环" },
     "plat.lark.2.b": {
@@ -162,7 +162,7 @@
 
     // ---- flow ------------------------------------------------------------
     "flow.kicker": { en: "02 · How it works", zh: "02 · 怎么跑" },
-    "flow.h":      { en: `From <em>@</em> to delivery.`, zh: `从 <em>@</em> 到交付。` },
+    "flow.h":      { en: `From <em>one sentence</em> to delivery.`, zh: `从<em>一句话</em>到交付。` },
     "flow.lede": {
       en: "The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.",
       zh: "你机器上的守护进程核对这个群的权限，把这一轮交给项目目录里的 Claude Code 或 Codex，进度回流到群——模型是你给这个群选的那一个。"
@@ -254,8 +254,8 @@
     "dsn.2.c3": { en: "font availability", zh: "字体可得性" },
     "dsn.3.title": { en: "Images without a key", zh: "生图不用 key" },
     "dsn.3.body": {
-      en: "Images borrow the machine’s Codex subscription — no API key, instant reply, no group lock. Edit on the original, repaint a masked region, transparent background; the style file rides along.",
-      zh: "生图借机器上的 Codex 订阅：零 API key，秒回，不占群锁。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。"
+      en: "Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.",
+      zh: "生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。"
     },
     "dsn.3.c1": { en: "edit in place", zh: "原图上改" },
     "dsn.3.c2": { en: "masked repaint", zh: "局部重绘" },
@@ -271,8 +271,8 @@
     "dsn.board.h":    { en: "The whiteboard loop", zh: "画板闭环" },
     "dsn.board.only": { en: "only", zh: "限定" },
     "dsn.board.body": {
-      en: "The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history.",
-      zh: "第一次要展示图时，守护进程自动建画板并挂成群标签页。画箭头、贴便签、写评论，点「按标注改图」，结果回填同一张卡。历史版本与标注全部保留，画板就是这份设计的演变档案。"
+      en: "The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.",
+      zh: "第一次要展示图时，守护进程自动建画板并挂成群标签页。画箭头、贴便签、写评论，点「按标注改图」，结果回填同一张卡。历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。"
     },
 
     // ---- scenarios -------------------------------------------------------
@@ -337,7 +337,7 @@
     "gov.t2.title": { en: "Tool allow / deny list", zh: "工具白名单 / 黑名单" },
     "gov.t2.body":  { en: "Three presets — read-only, developer, full trust — or your own list.", zh: "三档预设：只读、开发、全信任；也可以自己列。" },
     "gov.t3.title": { en: "Directory fence", zh: "目录围栏" },
-    "gov.t3.body":  { en: "The agent works only inside the project directory bound to that group.", zh: "agent 只能在这个群绑定的项目目录里干活。" },
+    "gov.t3.body":  { en: "The agent works only inside the project directory bound to that group, and groups can only be bound inside your projects root — symlinks included.", zh: "agent 只能在这个群绑定的项目目录里干活；能绑的目录也只限你的项目根目录之内，符号链接绕不出去。" },
     "gov.1.title": { en: "Redacted on the way out", zh: "出站先脱敏" },
     "gov.1.body": {
       en: "Thirteen patterns are masked before a message reaches the group — bearer tokens, JWTs, API-key prefixes, AWS, GitHub, PEM, key-value secrets, emails, phones. Secrets always; PII per group.",
@@ -359,13 +359,18 @@
     "gov.3.c1": { en: "pause a group", zh: "群可暂停" },
     "gov.3.c2": { en: "recall stops the turn", zh: "撤回即停" },
     "gov.3.c3": { en: "feedback book", zh: "反馈本" },
+    "gov.takeover.h": { en: "Browser takeover", zh: "接管浏览器" },
+    "gov.takeover.body": {
+      en: "When a job in its browser hits a login, a verification code, a slider or a QR code, it posts a card: a screenshot of that page, why it needs you, one button. Tap it and work the page yourself from your phone or desk — tap, drag, type, pinch to zoom; the login stays on its side and it carries on. The link opens once, lasts 10 minutes by default and reaches only that page, and the card flips to in use, ended or expired. Nobody pastes a password or a code into the group.",
+      zh: "它用浏览器干活时撞上登录、验证码、滑块或扫码，会往群里发一张卡：卡住那一页的截图、为什么要你、一个按钮。点开就在手机或电脑上亲手操作那一页——点、拖、输入、两指缩放；登录态留在它那边，它接着干。链接只能打开一次、默认 10 分钟内有效、只通向那一页，卡片会翻成「接管中」「已结束」「已过期」。密码和验证码不用再往群里发。"
+    },
 
     // ---- console ---------------------------------------------------------
     "con.kicker": { en: "07 · Console", zh: "07 · 控制台" },
     "con.h":      { en: `One local page for <em>every group.</em>`, zh: `一个本地网页，<em>管所有群。</em>` },
     "con.lede": {
-      en: "The daemon serves its own console — a local page with no dependencies that listens on this machine only, unless you set a password and open it to the LAN.",
-      zh: "守护进程自己提供控制台——零依赖的本地网页，默认只监听本机，设了密码才开给局域网。"
+      en: "The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Lark.",
+      zh: "守护进程自己提供控制台——零依赖的单页网页，默认只在本机；要开出去，局域网靠密码，挂到你自己的 HTTPS 域名上则只放行名单里的管理员用飞书登录。"
     },
     "con.tab.overview": { en: "Overview", zh: "概览" },
     "con.tab.groups":   { en: "Groups · Projects", zh: "群 · 项目" },
@@ -405,8 +410,8 @@
     },
     "con.p4.t": { en: "Operations", zh: "运维" },
     "con.p4.b": {
-      en: "Live activity stream, scheduled tasks, running previews, feedback book, version history; per group stop, new session, interject.",
-      zh: "实时活动流、定时任务、运行中的预览、反馈本、版本历史；每群一键停止、新会话、插话。"
+      en: "Live activity stream, scheduled tasks, running previews, feedback book, version history; per group stop, new session, interject. In English or Chinese.",
+      zh: "实时活动流、定时任务、运行中的预览、反馈本、版本历史；每群一键停止、新会话、插话。界面中英文可切。"
     },
 
     // ---- ops -------------------------------------------------------------
@@ -444,13 +449,14 @@
     },
     "ops.4.c2": { en: "natural language", zh: "中文简写" },
     "ops.4.c3": { en: "one-off", zh: "一次性" },
-    "ops.5.title": { en: "Tells the group what changed", zh: "升级了，告诉群" },
+    "ops.5.title": { en: "Says what is going on", zh: "有事说人话" },
     "ops.5.body": {
-      en: "After an upgrade the daemon reads its changelog and posts the new abilities to each group.",
-      zh: "守护进程升级后，按更新日志把新能力发到各个群。"
+      en: "After an upgrade it posts the new abilities to each group. If the model is overloaded it says so plainly, keeps what it had written and carries on when you say “continue”; a compacted session is announced, with the quota left when the model reports one.",
+      zh: "升级后把新能力发到各个群。模型那边排不上队时说句人话，已经写出来的保住，过一会儿发一句「继续」就接着做；长会话自动压缩会告诉群，查得到额度就一并报上。"
     },
     "ops.5.c1": { en: "upgrade broadcast", zh: "升级播报" },
-    "ops.5.c2": { en: "per group", zh: "逐群" },
+    "ops.5.c2": { en: "plain-language errors", zh: "出错说人话" },
+    "ops.5.c3": { en: "compaction notice", zh: "压缩提示" },
     "ops.6.title": { en: "Small footprint, smart egress", zh: "依赖少，出网会分流" },
     "ops.6.body": {
       en: "Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.",
