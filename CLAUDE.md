@@ -29,7 +29,7 @@
 - `styles.css` — 全部样式，原生 CSS 自定义属性，PCB 电路板配色；字阶 token 64/40/24/21/17，文字四级透明度 .92/.56/.4/.1；**不加逐帧动画**（历史教训：描边流光与 WebGL 都因卡顿被撤；首页文字的滚动错层视差 2026-09-15 也撤了——用户：效果不好；**别再加任何滚动联动的位移**），过渡只允许 color / background-color / border-color / opacity
 - `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）
 - `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
-- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap（`thanks.html` 为 noindex，不进）。首页 `<head>` 有一段 JSON-LD（SoftwareApplication），改首屏口径时同步它的 description；**不写价格、不写 sameAs**
+- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap（`thanks.html` 为 noindex，不进）。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格、不写 sameAs**；`/llms.txt` 同为生成物
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 
 ## 部署：push 即上线
@@ -43,7 +43,8 @@
 - 文案**不要硬编码**在 HTML —— 用 `data-i18n` / `data-i18n-html` / `data-i18n-svg` 属性标记
 - 所有字符串集中在 `app.js` 的 `translations` 对象，EN + 中文各一份
 - 加新文案 = HTML 标属性 + `translations` 里补两种语言
-- **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。`zh/index.html` 是**生成物**：`node scripts/build-zh.mjs` 从 `index.html` 复制并按 `translations` 的 `meta.title / meta.description / meta.ogAlt` 写两边的 `<head>`（标题、描述、分享卡片、canonical、og:locale、中文分享图 `og-banner-zh.png`）。**改了 `index.html` 或 `meta.*` 就跑一次脚本**；预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交（新克隆需 `git config core.hooksPath .githooks`）。别手改 `zh/index.html`、别手改 `index.html` 里那几个 meta。
+- **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。**静态文字全部由 `node scripts/build-zh.mjs` 从 `translations` 生成**：两页的正文（`data-i18n*` 元素）、`<head>`（`meta.*` → 标题/描述/分享卡片/canonical/og:locale/分享图）、JSON-LD（SoftwareApplication + 由 `faq.*` 生成的 FAQPage）、以及 `/llms.txt`。原因：分享卡片和 AI 爬虫都不执行 JS。**改文案只改 `app.js`，然后跑一次脚本**；`index.html` 里 `data-i18n*` 元素的文字、那几个 meta、JSON-LD 和 `zh/index.html`、`llms.txt` 都别手改。预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交（新克隆需 `git config core.hooksPath .githooks`）。
+- **常见问题 `faq.*`**（GEO 用，2026-09-15）：每条回答必须是守护进程当前版本真有的事实，同时进页面、FAQPage 和 llms.txt；新增问题 = `app.js` 加 `faq.N.q/a` + `index.html` 加一行 `faq__item`。
 - 语言规则在 `app.js`：`?lang=` 仅预览、不改地址不存偏好 → `/zh/` 固定中文 → 其余看已存偏好、再看浏览器语言；切换按钮原地换语言并用 `history.replaceState` 把地址换成对应路径（不刷新）。中文样式选择器用 `html:lang(zh)`（页面 lang 是 `zh-CN`）。
 - 两张分享图：`og-banner.source.html` → `og-banner.png`，`og-banner-zh.source.html` → `og-banner-zh.png`，改文案后都要重渲。
 

@@ -41,13 +41,88 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "SintBot",
-        "url": "https://sintbot.com/",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Windows",
-        "inLanguage": ["en", "zh-CN"],
-        "description": "A self-hosted daemon that binds a chat group (Lark or Slack) to a project. Anyone on the team can hand it work; it runs Claude Code or Codex on your own machine with a model you can switch in the group — ChatGPT, Claude, GLM, DeepSeek, Kimi or one you host — and keeps one long-term memory per project, stored locally."
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "SintBot",
+            "url": "https://sintbot.com/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS, Windows",
+            "inLanguage": "en",
+            "description": "Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+          },
+          {
+            "@type": "FAQPage",
+            "url": "https://sintbot.com/#faq",
+            "inLanguage": "en",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is SintBot?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is it different from cc-bot?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which models can it use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does switching models lose the project's memory?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do my code and data live?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a server or a public IP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What can the agent do by default?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I get SintBot?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is not a public download. A Pro subscription supports development; after checkout, write to support@sintbot.com from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? cc-bot installs into Claude Code in two commands."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
     <link rel="stylesheet" href="/styles.css" />
@@ -179,15 +254,11 @@
             <span data-i18n="hero.eyebrow">Self-hosted daemon · Lark &amp; Slack · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
-            <span class="hero__title-en" data-i18n-html="hero.titleEn">
-              <span data-reveal data-reveal-delay="0">Say it in the group.</span>
-              <em data-reveal data-reveal-delay="120">Any model, one memory.</em>
-              <span data-reveal data-reveal-delay="240">On your own machine.</span>
-            </span>
+            <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
+           <em data-reveal data-reveal-delay="120">Any model, one memory.</em>
+           <span data-reveal data-reveal-delay="240">On your own machine.</span></span>
           </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">
-            Bind a chat group to a project and anyone on the team can hand it work: <code>SintBot</code> reads and changes code, does design and reports back, on your own machine. ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host — switch in the group per task; one long-term memory per project, kept for you, stored locally.
-          </p>
+          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">Bind a chat group to a project and anyone on the team can hand it work: <code>SintBot</code> reads and changes code, does design and reports back, on your own machine. ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host — switch in the group per task; one long-term memory per project, kept for you, stored locally.</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="540">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="hero.cta.primary">See how it works</span>
@@ -274,15 +345,11 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="what.kicker">What it is</p>
         <h2 class="section__h" data-reveal data-i18n-html="what.h">One daemon. <em>Your project,</em> in the group.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="what.lede">
-          SintBot runs on your machine and joins the groups your team already uses; each group is bound to one project, so the agent works inside that directory and keeps its context.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="what.lede">SintBot runs on your machine and joins the groups your team already uses; each group is bound to one project, so the agent works inside that directory and keeps its context.</p>
         <ol class="pillars">
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
-            <p data-i18n-html="what.bot.body">
-              <code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. <code>cc-bot</code> is the free plugin for your own Claude Code session.
-            </p>
+            <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. <code>cc-bot</code> is the free plugin for your own Claude Code session.</p>
             <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Lark and Slack →</a>
           </li>
         </ol>
@@ -302,9 +369,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · Platforms</p>
         <h2 class="section__h" data-reveal data-i18n-html="plat.h">Lark and Slack, <em>both supported.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">
-          A group can be a Lark group or a Slack channel — each one picks, and one daemon serves both. Everything else is the same: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">A group can be a Lark group or a Slack channel — each one picks, and one daemon serves both. Everything else is the same: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.</p>
 
         <div class="plat">
           <article class="plat-card plat-card--lark" data-reveal>
@@ -377,9 +442,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="flow.kicker">02 · How it works</p>
         <h2 class="section__h" data-reveal data-i18n-html="flow.h">From <em>one sentence</em> to delivery.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="flow.lede">
-          The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="flow.lede">The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.</p>
 
         <figure class="diagram" data-reveal>
           <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark or Slack group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, the fenced project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
@@ -460,9 +523,7 @@
             </g>
             <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">style file · check · images · preview</text>
           </svg>
-          <figcaption data-i18n="flow.caption">
-            Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, the fenced project directory and the design toolchain hang off the daemon.
-          </figcaption>
+          <figcaption data-i18n="flow.caption">Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, the fenced project directory and the design toolchain hang off the daemon.</figcaption>
         </figure>
       </section>
 
@@ -471,9 +532,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="models.kicker">03 · Models</p>
         <h2 class="section__h" data-reveal data-i18n-html="models.h">Same agent. <em>Any brain.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="models.lede">
-          Claude Code against any Anthropic-compatible endpoint — GLM, DeepSeek, Kimi, MiniMax, or an open-source model you host yourself — or Codex through the machine’s own ChatGPT login. The daemon treats them all alike: switching only changes what the next turn starts with, and the project’s memory stays.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="models.lede">Claude Code against any Anthropic-compatible endpoint — GLM, DeepSeek, Kimi, MiniMax, or an open-source model you host yourself — or Codex through the machine’s own ChatGPT login. The daemon treats them all alike: switching only changes what the next turn starts with, and the project’s memory stays.</p>
 
         <ul class="model-grid" data-reveal>
           <li class="model-tile"><b>Claude</b><i data-i18n="models.p.claude">local login, no key needed</i></li>
@@ -488,25 +547,19 @@
           <li class="card" data-reveal>
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-left-right"/></svg><span class="card__no">01</span></div>
             <h3 data-i18n="models.1.title">Switch in the group</h3>
-            <p data-i18n-html="models.1.body">
-              <code>/model</code> lists, <code>/model</code> plus a name switches — anyone in the group can. A switch opens a fresh conversation; the memory files carry over.
-            </p>
+            <p data-i18n-html="models.1.body"><code>/model</code> lists, <code>/model</code> plus a name switches — anyone in the group can. A switch opens a fresh conversation; the memory files carry over.</p>
             <ul class="card__chips"><li>/model</li><li data-i18n="models.1.c2">fresh conversation</li><li data-i18n="models.1.c3">anyone in the group</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="60">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span class="card__no">02</span></div>
             <h3 data-i18n="models.2.title">Configured per group</h3>
-            <p data-i18n="models.2.body">
-              Each group has its own model and runner; provider settings stack, so chat can go to a fast model and heavy turns to a slow one.
-            </p>
+            <p data-i18n="models.2.body">Each group has its own model and runner; provider settings stack, so chat can go to a fast model and heavy turns to a slow one.</p>
             <ul class="card__chips"><li data-i18n="models.2.c1">per group</li><li data-i18n="models.2.c2">fast / slow split</li><li data-i18n="models.2.c3">your keys</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span class="card__no">03</span></div>
             <h3 data-i18n="models.3.title">Memory outlives the model</h3>
-            <p data-i18n-html="models.3.body">
-              The project’s <code>CLAUDE.md</code>, <code>AGENTS.md</code> and memory directory are handed to whichever agent starts. Text-only models work too: images become placeholder text.
-            </p>
+            <p data-i18n-html="models.3.body">The project’s <code>CLAUDE.md</code>, <code>AGENTS.md</code> and memory directory are handed to whichever agent starts. Text-only models work too: images become placeholder text.</p>
             <ul class="card__chips"><li>CLAUDE.md</li><li>AGENTS.md</li><li data-i18n="models.3.c3">text-only safe</li></ul>
           </li>
         </ol>
@@ -517,9 +570,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · Design system</p>
         <h2 class="section__h" data-reveal data-i18n-html="dsn.h">A design system the bot <em>actually follows.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">
-          Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.</p>
 
         <div class="dsn">
           <figure class="dsn__fig" data-reveal>
@@ -532,9 +583,7 @@
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
               <div>
                 <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
-                <p data-i18n-html="dsn.1.body">
-                  <code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.
-                </p>
+                <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.</p>
                 <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">extract from a reference image or URL</li><li>lucide · tabler · phosphor · pixelart</li></ul>
               </div>
             </li>
@@ -542,9 +591,7 @@
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
               <div>
                 <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
-                <p data-i18n="dsn.2.body">
-                  Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.
-                </p>
+                <p data-i18n="dsn.2.body">Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.</p>
                 <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
               </div>
             </li>
@@ -552,9 +599,7 @@
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
               <div>
                 <h3 data-i18n="dsn.3.title">Images without a key</h3>
-                <p data-i18n="dsn.3.body">
-                  Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.
-                </p>
+                <p data-i18n="dsn.3.body">Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.</p>
                 <ul class="card__chips"><li data-i18n="dsn.3.c1">edit in place</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent</li></ul>
               </div>
             </li>
@@ -562,9 +607,7 @@
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
               <div>
                 <h3 data-i18n="dsn.4.title">Preview in the group</h3>
-                <p data-i18n="dsn.4.body">
-                  A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.
-                </p>
+                <p data-i18n="dsn.4.body">A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.</p>
                 <ul class="card__chips"><li data-i18n="dsn.4.c1">LAN preview</li><li data-i18n="dsn.4.c2">fixed port per group</li><li data-i18n="dsn.4.c3">auto-stop</li></ul>
               </div>
             </li>
@@ -577,9 +620,7 @@
             <h3 data-i18n="dsn.board.h">The whiteboard loop</h3>
             <span class="chip chip--lark"><span data-i18n="plat.lark">Lark</span> <span data-i18n="dsn.board.only">only</span></span>
           </div>
-          <p data-i18n="dsn.board.body">
-            The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.
-          </p>
+          <p data-i18n="dsn.board.body">The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.</p>
         </div>
       </section>
 
@@ -587,96 +628,56 @@
       <section id="scenarios" class="section section--scenarios">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="scenarios.kicker">05 · Scenarios</p>
-        <h2 class="section__h" data-reveal data-i18n-html="scenarios.h">
-          Six groups, <em>six jobs.</em>
-        </h2>
-        <p class="lede lede--wide" data-reveal data-i18n="scenarios.lede">
-          The same daemon, bound to different projects: ask in the group, watch it work, take the result.
-        </p>
+        <h2 class="section__h" data-reveal data-i18n-html="scenarios.h">Six groups, <em>six jobs.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="scenarios.lede">The same daemon, bound to different projects: ask in the group, watch it work, take the result.</p>
 
         <ol class="scenarios">
           <li class="scenario" data-reveal>
             <div class="scenario__tag"><span class="scenario__hash">#</span>bugs</div>
             <h3 data-i18n="scenarios.1.title">Paste the error; a PR comes back.</h3>
-            <p class="scenario__scene" data-i18n-html="scenarios.1.scene">
-              A 500 trace lands in the engineering group.
-            </p>
-            <p class="scenario__act" data-i18n="scenarios.1.act">
-              SintBot reads the trace, finds the cause in the project directory, fixes it, opens the PR and posts the diff in the thread.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.1.win">
-              <i>Why it wins:</i> error, fix, PR — one thread, nobody at a terminal.
-            </p>
+            <p class="scenario__scene" data-i18n-html="scenarios.1.scene">A 500 trace lands in the engineering group.</p>
+            <p class="scenario__act" data-i18n="scenarios.1.act">SintBot reads the trace, finds the cause in the project directory, fixes it, opens the PR and posts the diff in the thread.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.1.win"><i>Why it wins:</i> error, fix, PR — one thread, nobody at a terminal.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="60">
             <div class="scenario__tag"><span class="scenario__hash">#</span>design</div>
             <h3 data-i18n="scenarios.2.title">One sentence, one homepage.</h3>
-            <p class="scenario__scene" data-i18n="scenarios.2.scene">
-              A designer asks for a first version of the landing page.
-            </p>
-            <p class="scenario__act" data-i18n="scenarios.2.act">
-              It reads the style file — or first offers three candidates, say tech-dark, precision-instrument and Swiss grid — builds the page and posts the check result with it.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.2.win">
-              <i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.
-            </p>
+            <p class="scenario__scene" data-i18n="scenarios.2.scene">A designer asks for a first version of the landing page.</p>
+            <p class="scenario__act" data-i18n="scenarios.2.act">It reads the style file — or first offers three candidates, say tech-dark, precision-instrument and Swiss grid — builds the page and posts the check result with it.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="120">
             <div class="scenario__tag"><span class="scenario__hash">#</span>standup</div>
             <h3 data-i18n="scenarios.3.title">A standup that files itself at 09:30.</h3>
-            <p class="scenario__scene" data-i18n="scenarios.3.scene">
-              Someone types one sentence to schedule it.
-            </p>
-            <p class="scenario__act" data-i18n="scenarios.3.act">
-              At 09:30 the task fires like an incoming message: SintBot collects 24 hours of commits and posts the summary.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.3.win">
-              <i>Why it wins:</i> happens whether or not humans show up.
-            </p>
+            <p class="scenario__scene" data-i18n="scenarios.3.scene">Someone types one sentence to schedule it.</p>
+            <p class="scenario__act" data-i18n="scenarios.3.act">At 09:30 the task fires like an incoming message: SintBot collects 24 hours of commits and posts the summary.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.3.win"><i>Why it wins:</i> happens whether or not humans show up.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="180">
             <div class="scenario__tag"><span class="scenario__hash">#</span>ship-room</div>
             <h3 data-i18n="scenarios.4.title">Swap the brain mid-project.</h3>
-            <p class="scenario__scene" data-i18n-html="scenarios.4.scene">
-              Someone types <code>/model</code> and a name.
-            </p>
-            <p class="scenario__act" data-i18n="scenarios.4.act">
-              Same project, same memory files — the next turn runs on GLM instead of Claude. Cost is your call, per group.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.4.win">
-              <i>Why it wins:</i> one agent, many brains, no reconfiguration.
-            </p>
+            <p class="scenario__scene" data-i18n-html="scenarios.4.scene">Someone types <code>/model</code> and a name.</p>
+            <p class="scenario__act" data-i18n="scenarios.4.act">Same project, same memory files — the next turn runs on GLM instead of Claude. Cost is your call, per group.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.4.win"><i>Why it wins:</i> one agent, many brains, no reconfiguration.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="240">
             <div class="scenario__tag"><span class="scenario__hash">#</span>deploys</div>
             <h3 data-i18n="scenarios.5.title">Read-only here, full access there.</h3>
-            <p class="scenario__scene" data-i18n="scenarios.5.scene">
-              Two groups are bound to the same project.
-            </p>
-            <p class="scenario__act" data-i18n="scenarios.5.act">
-              The read-only group can look, not touch; only the full-access group changes code and deploys. Secrets are masked before anything leaves.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.5.win">
-              <i>Why it wins:</i> permissions live on the group, not in someone’s head.
-            </p>
+            <p class="scenario__scene" data-i18n="scenarios.5.scene">Two groups are bound to the same project.</p>
+            <p class="scenario__act" data-i18n="scenarios.5.act">The read-only group can look, not touch; only the full-access group changes code and deploys. Secrets are masked before anything leaves.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.5.win"><i>Why it wins:</i> permissions live on the group, not in someone’s head.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="300">
             <div class="scenario__tag"><span class="scenario__hash">#</span>review</div>
             <h3 data-i18n="scenarios.6.title">Review the prototype without leaving the group.</h3>
-            <p class="scenario__scene" data-i18n="scenarios.6.scene">
-              The page is done; the team wants to click through it.
-            </p>
-            <p class="scenario__act" data-i18n-html="scenarios.6.act">
-              SintBot serves it on the local network and posts the link; <code>/issue</code> files feedback with the last turn’s technical fingerprint attached.
-            </p>
-            <p class="scenario__win" data-i18n-html="scenarios.6.win">
-              <i>Why it wins:</i> feedback lands with context, not screenshots.
-            </p>
+            <p class="scenario__scene" data-i18n="scenarios.6.scene">The page is done; the team wants to click through it.</p>
+            <p class="scenario__act" data-i18n-html="scenarios.6.act">SintBot serves it on the local network and posts the link; <code>/issue</code> files feedback with the last turn’s technical fingerprint attached.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.6.win"><i>Why it wins:</i> feedback lands with context, not screenshots.</p>
           </li>
         </ol>
       </section>
@@ -686,9 +687,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="gov.kicker">06 · Governance</p>
         <h2 class="section__h" data-reveal data-i18n-html="gov.h">Read-only <em>until you say otherwise.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="gov.lede">
-          Three layers, all set per group and never globally — a group you have not configured can read and nothing else.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="gov.lede">Three layers, all set per group and never globally — a group you have not configured can read and nothing else.</p>
 
         <ol class="gov-tiers" data-reveal>
           <li class="gov-tier">
@@ -715,25 +714,19 @@
           <li class="card" data-reveal>
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-eye-off"/></svg><span class="card__no">01</span></div>
             <h3 data-i18n="gov.1.title">Redacted on the way out</h3>
-            <p data-i18n="gov.1.body">
-              Thirteen patterns are masked before a message reaches the group — bearer tokens, JWTs, API-key prefixes, AWS, GitHub, PEM, key-value secrets, emails, phones. Secrets always; PII per group.
-            </p>
+            <p data-i18n="gov.1.body">Thirteen patterns are masked before a message reaches the group — bearer tokens, JWTs, API-key prefixes, AWS, GitHub, PEM, key-value secrets, emails, phones. Secrets always; PII per group.</p>
             <ul class="card__chips"><li data-i18n="gov.1.c1">13 patterns</li><li data-i18n="gov.1.c2">secrets always</li><li data-i18n="gov.1.c3">PII per group</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="60">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-terminal"/></svg><span class="card__no">02</span></div>
             <h3 data-i18n="gov.2.title">Eight commands, in the group</h3>
-            <p data-i18n-html="gov.2.body">
-              <code>/status</code> reports elapsed time, steps, latest activity, queue and session; <code>/hud</code> shows quota. The group is warned when the Claude 5-hour window passes 90% or the Codex 7-day window passes 95%.
-            </p>
+            <p data-i18n-html="gov.2.body"><code>/status</code> reports elapsed time, steps, latest activity, queue and session; <code>/hud</code> shows quota. The group is warned when the Claude 5-hour window passes 90% or the Codex 7-day window passes 95%.</p>
             <ul class="card__chips"><li>/help</li><li>/model</li><li>/new</li><li>/stop</li><li>/skip</li><li>/status</li><li>/issue</li><li>/hud</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-notebook-pen"/></svg><span class="card__no">03</span></div>
             <h3 data-i18n="gov.3.title">Quiet when it should be</h3>
-            <p data-i18n-html="gov.3.body">
-              Pause a group and nothing runs, scheduled tasks included. Small talk gets no reply; a recalled message stops its turn. <code>/issue</code> files feedback with the last turn’s fingerprint attached.
-            </p>
+            <p data-i18n-html="gov.3.body">Pause a group and nothing runs, scheduled tasks included. Small talk gets no reply; a recalled message stops its turn. <code>/issue</code> files feedback with the last turn’s fingerprint attached.</p>
             <ul class="card__chips"><li data-i18n="gov.3.c1">pause a group</li><li data-i18n="gov.3.c2">recall stops the turn</li><li data-i18n="gov.3.c3">feedback book</li></ul>
           </li>
         </ol>
@@ -744,9 +737,7 @@
             <h3 data-i18n="gov.takeover.h">Browser takeover</h3>
             <span class="chip chip--lark"><span data-i18n="plat.lark">Lark</span> <span data-i18n="dsn.board.only">only</span></span>
           </div>
-          <p data-i18n="gov.takeover.body">
-            When a job in its browser hits a login, a verification code, a slider or a QR code, it posts a card: a screenshot of that page, why it needs you, one button. Tap it and work the page yourself from your phone or desk — tap, drag, type, pinch to zoom; the login stays on its side and it carries on. The link opens once, lasts 10 minutes by default and reaches only that page, and the card flips to in use, ended or expired. Nobody pastes a password or a code into the group.
-          </p>
+          <p data-i18n="gov.takeover.body">When a job in its browser hits a login, a verification code, a slider or a QR code, it posts a card: a screenshot of that page, why it needs you, one button. Tap it and work the page yourself from your phone or desk — tap, drag, type, pinch to zoom; the login stays on its side and it carries on. The link opens once, lasts 10 minutes by default and reaches only that page, and the card flips to in use, ended or expired. Nobody pastes a password or a code into the group.</p>
         </div>
       </section>
 
@@ -755,9 +746,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="con.kicker">07 · Console</p>
         <h2 class="section__h" data-reveal data-i18n-html="con.h">One local page for <em>every group.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="con.lede">
-          The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Lark.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="con.lede">The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Lark.</p>
 
         <div class="con-wrap">
           <div class="con" data-reveal aria-label="Console mock">
@@ -839,57 +828,43 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="ops.kicker">08 · Reliability</p>
         <h2 class="section__h" data-reveal data-i18n-html="ops.h">Built to run <em>for weeks.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="ops.lede">
-          A daemon nobody watches has to look after itself: turns cannot hang, queues cannot pile up, restarts lose nothing.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n="ops.lede">A daemon nobody watches has to look after itself: turns cannot hang, queues cannot pile up, restarts lose nothing.</p>
 
         <ol class="cards">
           <li class="card" data-reveal>
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-heart-pulse"/></svg><span class="card__no">01</span></div>
             <h3 data-i18n="ops.1.title">Never hangs</h3>
-            <p data-i18n="ops.1.body">
-              A 30-minute cap per turn, two turns at once across groups, “received” after 25 silent seconds, a hard release at 20; sessions compact at 400k tokens and a watchdog reconnects.
-            </p>
+            <p data-i18n="ops.1.body">A 30-minute cap per turn, two turns at once across groups, “received” after 25 silent seconds, a hard release at 20; sessions compact at 400k tokens and a watchdog reconnects.</p>
             <ul class="card__chips"><li data-i18n="ops.1.c1">30-min cap</li><li data-i18n="ops.1.c2">watchdog</li><li data-i18n="ops.1.c3">auto-compaction</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="60">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-layers"/></svg><span class="card__no">02</span></div>
             <h3 data-i18n="ops.2.title">One queue per group, merged</h3>
-            <p data-i18n-html="ops.2.body">
-              One lock and one queue per group; messages that arrive mid-turn are merged into the next turn. <code>/stop</code> clears the queue, <code>/skip</code> only the current turn.
-            </p>
+            <p data-i18n-html="ops.2.body">One lock and one queue per group; messages that arrive mid-turn are merged into the next turn. <code>/stop</code> clears the queue, <code>/skip</code> only the current turn.</p>
             <ul class="card__chips"><li data-i18n="ops.2.c1">one lock per group</li><li data-i18n="ops.2.c2">merge on dequeue</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="120">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span class="card__no">03</span></div>
             <h3 data-i18n="ops.3.title">Restarts redo, not forget</h3>
-            <p data-i18n="ops.3.body">
-              A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, NSSM or Task Scheduler on Windows.
-            </p>
+            <p data-i18n="ops.3.body">A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, NSSM or Task Scheduler on Windows.</p>
             <ul class="card__chips"><li data-i18n="ops.3.c1">redo within 2h</li><li>launchd</li><li>NSSM</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="180">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-calendar-clock"/></svg><span class="card__no">04</span></div>
             <h3 data-i18n="ops.4.title">Scheduled in one sentence</h3>
-            <p data-i18n="ops.4.body">
-              Cron, aliases like daily, or plain “every day at 09:00”. A task can wake the agent like a message, post a fixed reminder, or run once.
-            </p>
+            <p data-i18n="ops.4.body">Cron, aliases like daily, or plain “every day at 09:00”. A task can wake the agent like a message, post a fixed reminder, or run once.</p>
             <ul class="card__chips"><li>cron</li><li data-i18n="ops.4.c2">natural language</li><li data-i18n="ops.4.c3">one-off</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="240">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-bell"/></svg><span class="card__no">05</span></div>
             <h3 data-i18n="ops.5.title">Says what is going on</h3>
-            <p data-i18n="ops.5.body">
-              After an upgrade it posts the new abilities to each group. If the model is overloaded it says so plainly, keeps what it had written and carries on when you say “continue”; a compacted session is announced, with the quota left when the model reports one.
-            </p>
+            <p data-i18n="ops.5.body">After an upgrade it posts the new abilities to each group. If the model is overloaded it says so plainly, keeps what it had written and carries on when you say “continue”; a compacted session is announced, with the quota left when the model reports one.</p>
             <ul class="card__chips"><li data-i18n="ops.5.c1">upgrade broadcast</li><li data-i18n="ops.5.c2">plain-language errors</li><li data-i18n="ops.5.c3">compaction notice</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="300">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">Small footprint, smart egress</h3>
-            <p data-i18n="ops.6.body">
-              Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.
-            </p>
+            <p data-i18n="ops.6.body">Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
             <ul class="card__chips"><li>Node ≥ 18.17</li><li data-i18n="ops.6.c2">2 runtime deps</li><li data-i18n="ops.6.c3">auto proxy split</li></ul>
           </li>
         </ol>
@@ -900,9 +875,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · Free plugin</p>
         <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>cc-bot</em> — the free way to run it.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede">
-          <code>cc-bot</code> is an MIT Claude Code plugin: it lives inside your interactive session, follows that session’s model and brings Slack and Lark adapters — no daemon, no console.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>cc-bot</code> is an MIT Claude Code plugin: it lives inside your interactive session, follows that session’s model and brings Slack and Lark adapters — no daemon, no console.</p>
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">Claude Code plugin · v0.1.48</span></span>
           <span class="chip">MIT</span>
@@ -911,9 +884,7 @@
         </div>
 
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">Four steps to a chat-driven repo.</h3>
-        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">
-          <code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.
-        </p>
+        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.</p>
 
         <ol class="steps" id="install">
           <li class="step" data-reveal>
@@ -923,17 +894,13 @@
 <span class="tk-p">/plugin marketplace add</span> WaterTian/cc-bot
 <span class="tk-p">/plugin install</span> cc-bot@cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot
 /plugin install cc-bot@cc-bot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">
-              Then run <code>/cc-bot:setup</code> in any project. When asked "which IM?", pick <b>Slack</b>.
-            </p>
+            <p class="step__after" data-i18n-html="install.1.after">Then run <code>/cc-bot:setup</code> in any project. When asked "which IM?", pick <b>Slack</b>.</p>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">Create the Slack app from the manifest</h3>
-            <p class="step__after" data-i18n-html="install.2.after">
-              Open <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>. Paste the YAML below.
-            </p>
+            <p class="step__after" data-i18n-html="install.2.after">Open <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>. Paste the YAML below.</p>
             <details class="step__details">
               <summary><span data-i18n="install.2.toggle">Show the manifest</span><span class="step__details-hint" aria-hidden="true">YAML</span></summary>
               <pre class="code"><code><span class="tk-c"># templates/slack-manifest.yaml — bot scopes &amp; Socket Mode</span>
@@ -1007,32 +974,20 @@ settings:
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
             <h3 data-i18n="install.3.title">Generate the two tokens</h3>
-            <p class="step__after" data-i18n="install.3.after">
-              In the new app's Basic Information page:
-            </p>
+            <p class="step__after" data-i18n="install.3.after">In the new app's Basic Information page:</p>
             <ul class="step__list">
-              <li data-i18n-html="install.3.li1">
-                <b>App-Level Token</b> — name it <code>cc-bot-socket</code>, scope <code>connections:write</code>. Copy the <code>xapp-1-…</code> value.
-              </li>
-              <li data-i18n-html="install.3.li2">
-                <em>Install to Workspace</em> → Allow. Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).
-              </li>
+              <li data-i18n-html="install.3.li1"><b>App-Level Token</b> — name it <code>cc-bot-socket</code>, scope <code>connections:write</code>. Copy the <code>xapp-1-…</code> value.</li>
+              <li data-i18n-html="install.3.li2"><em>Install to Workspace</em> → Allow. Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).</li>
             </ul>
-            <p class="step__after" data-i18n-html="install.3.tail">
-              Paste both when <code>/cc-bot:setup</code> prompts. cc-bot verifies via <code>auth.test</code> and writes them into <code>.cc-bot/profiles/active.json</code>.
-            </p>
+            <p class="step__after" data-i18n-html="install.3.tail">Paste both when <code>/cc-bot:setup</code> prompts. cc-bot verifies via <code>auth.test</code> and writes them into <code>.cc-bot/profiles/active.json</code>.</p>
           </li>
 
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
             <h3 data-i18n="install.4.title">Invite cc-bot to a channel</h3>
-            <p class="step__after" data-i18n-html="install.4.after">
-              Paste the channel ID. In Slack, run <code>/invite @cc-bot</code> — bot sends a probe. Then bring it online:
-            </p>
+            <p class="step__after" data-i18n-html="install.4.after">Paste the channel ID. In Slack, run <code>/invite @cc-bot</code> — bot sends a probe. Then bring it online:</p>
             <pre class="code"><code><span class="tk-p">/cc-bot:start</span></code><button class="copy" data-copy="/cc-bot:start" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n="install.4.tail">
-              An "online" message lands in your channel. From here, talk to it like a teammate.
-            </p>
+            <p class="step__after" data-i18n="install.4.tail">An "online" message lands in your channel. From here, talk to it like a teammate.</p>
           </li>
         </ol>
 
@@ -1054,9 +1009,7 @@ settings:
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="pricing.kicker">Pricing</p>
         <h2 class="section__h" data-reveal data-i18n-html="pricing.h">Two ways to <em>run it.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="pricing.lede">
-          <code>cc-bot</code> is free and MIT. A Pro subscription supports development and gets you the <code>sintbot</code> daemon, provided as is.
-        </p>
+        <p class="lede lede--wide" data-reveal data-i18n-html="pricing.lede"><code>cc-bot</code> is free and MIT. A Pro subscription supports development and gets you the <code>sintbot</code> daemon, provided as is.</p>
 
         <ol class="plans">
           <li class="plan" data-reveal>
@@ -1089,18 +1042,31 @@ settings:
           </li>
         </ol>
 
-        <p class="plans__note" data-reveal data-i18n-html="pricing.note">
-          sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the current package. It is provided as is: the subscription does not include support response times, onboarding, updates or new features. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep what you received, but don't redistribute or resell it (<a href="/terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.
-        </p>
+        <p class="plans__note" data-reveal data-i18n-html="pricing.note">sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the current package. It is provided as is: the subscription does not include support response times, onboarding, updates or new features. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep what you received, but don't redistribute or resell it (<a href="/terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.</p>
+      </section>
+
+      <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
+      <section id="faq" class="section section--faq">
+        <div class="rule" aria-hidden="true"></div>
+        <p class="section__kicker" data-reveal data-i18n="faq.kicker">FAQ</p>
+        <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
+        <dl class="faq">
+          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">It is not a public download. A Pro subscription supports development; after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? <code>cc-bot</code> installs into Claude Code in two commands.</dd></div>
+        </dl>
       </section>
 
       <!-- CTA -->
       <section class="section section--cta">
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Put the project in the group.</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">
-            See the daemon at work in a Lark or Slack group, or start free: <code>cc-bot</code> installs into Claude Code in two commands.
-          </p>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Lark or Slack group, or start free: <code>cc-bot</code> installs into Claude Code in two commands.</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
@@ -1134,9 +1100,7 @@ settings:
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">
-        SintBot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.
-      </p>
+      <p class="foot__meta" data-i18n="foot.meta">SintBot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.</p>
     </footer>
 
     <a href="#top" class="to-top">

@@ -587,6 +587,52 @@
       zh: `sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把当前版本的安装包发给你。它按现状提供：订阅不包含支持响应时间、接入引导、后续更新或新功能。它以可读源码形式交付，适用「源码可见、不可再分发」的许可：可在自有的至多三台设备上运行与修改，已收到的版本可永久继续使用，但不得再分发或转售（<a href="/terms.html">条款</a>）。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
     },
 
+    // ---- faq -------------------------------------------------------------
+    // Also the source of the FAQPage JSON-LD and /llms.txt (scripts/build-zh.mjs):
+    // answers must stay plain facts that the daemon's current version backs up.
+    "faq.kicker": { en: "FAQ", zh: "常见问题" },
+    "faq.h":      { en: `Asked often, <em>answered plainly.</em>`, zh: `常被问到的，<em>直接回答。</em>` },
+    "faq.1.q": { en: "What is SintBot?", zh: "SintBot 是什么？" },
+    "faq.1.a": {
+      en: "A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.",
+      zh: "一个跑在你自己机器上的守护进程：把一个聊天群（飞书或 Slack）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。"
+    },
+    "faq.2.q": { en: "How is it different from cc-bot?", zh: "它和 cc-bot 有什么区别？" },
+    "faq.2.a": {
+      en: "cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.",
+      zh: "cc-bot 是免费、MIT 许可的 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
+    },
+    "faq.3.q": { en: "Which models can it use?", zh: "支持哪些模型？" },
+    "faq.3.a": {
+      en: "Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.",
+      zh: "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。"
+    },
+    "faq.4.q": { en: "Does switching models lose the project's memory?", zh: "换模型会丢掉项目记忆吗？" },
+    "faq.4.a": {
+      en: "No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.",
+      zh: "不会。换模型会开一段新对话，但项目里的 CLAUDE.md、AGENTS.md 和记忆目录会交给接下来运行的 agent，约定和长期记忆都还在。长会话会自动压缩。"
+    },
+    "faq.5.q": { en: "Where do my code and data live?", zh: "代码和数据存在哪？" },
+    "faq.5.a": {
+      en: "On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.",
+      zh: "都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。"
+    },
+    "faq.6.q": { en: "Do I need a server or a public IP?", zh: "需要服务器或公网 IP 吗？" },
+    "faq.6.a": {
+      en: "No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.",
+      zh: "不需要。它跑在一台常开的 Mac 或 Windows 电脑上，只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。"
+    },
+    "faq.7.q": { en: "What can the agent do by default?", zh: "默认情况下 agent 能做什么？" },
+    "faq.7.a": {
+      en: "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.",
+      zh: "只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群完全访问或某档工具预设，agent 始终只能在这个群绑定的项目目录里工作。"
+    },
+    "faq.8.q": { en: "How do I get SintBot?", zh: "怎么获取 SintBot？" },
+    "faq.8.a": {
+      en: `It is not a public download. A Pro subscription supports development; after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? <code>cc-bot</code> installs into Claude Code in two commands.`,
+      zh: `它不是公开下载。订阅 Pro 是支持项目开发；付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，即可获取当前版本的安装包。按现状提供，以可读源码形式交付，适用源码可见的许可。想先免费试？<code>cc-bot</code> 两条命令就能装进 Claude Code。`
+    },
+
     // ---- cta / footer ----------------------------------------------------
     "cta.h": { en: "Put the project in the group.", zh: "把项目放进群里。" },
     "cta.p": {
