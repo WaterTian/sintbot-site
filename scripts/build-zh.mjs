@@ -95,7 +95,9 @@ function jsonLd(lang) {
       name: "SintBot",
       url: page,
       applicationCategory: "DeveloperApplication",
-      operatingSystem: "macOS, Windows",
+      operatingSystem: "macOS",
+      license: "https://opensource.org/licenses/MIT",
+      isAccessibleForFree: true,
       inLanguage: lang === "zh" ? "zh-CN" : "en",
       description: t["meta.description"][lang],
     },
@@ -152,9 +154,11 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 - [SintBot (English)](${SITE}/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
-- [Terms of Service](${SITE}/terms.html): licensing of sintbot and cc-bot, subscription terms
+- [SintBot on GitHub](https://github.com/WaterTian/sintbot): source code and docs (MIT)
+- [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
+- [Terms of Service](${SITE}/terms.html): licensing and acceptable use
 - [Privacy Policy](${SITE}/privacy.html): what the site and the software do and do not send
-- [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the free, MIT-licensed Claude Code plugin
+- [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the companion MIT-licensed Claude Code plugin
 
 ## FAQ
 

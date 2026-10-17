@@ -10,10 +10,10 @@
   // 0) i18n ----------------------------------------------------------------
   // Code blocks, command names and identifiers stay English in both modes.
 
-  // cc-bot version — single source of truth for every cc-bot version string
-  // on the page. Mirror of WaterTian/cc-bot (.claude-plugin/plugin.json).
-  // Bump this one line only; the plugin section below interpolates it.
-  const VERSION = "0.1.48";
+  // sintbot version — single source of truth for the version shown in the setup
+  // section. Mirror of the published npm package (WaterTian/sintbot package.json).
+  // Bump this one line only; the setup section below interpolates it.
+  const VERSION = "1.0.0";
 
   const translations = {
     // ---- <head> — the single source for title / description / share card.
@@ -37,11 +37,10 @@
     "nav.design":        { en: "Design",         zh: "设计" },
     "nav.console":       { en: "Console",        zh: "控制台" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
-    "nav.pricing":       { en: "Pricing",        zh: "定价" },
 
     // ---- hero ------------------------------------------------------------
-    "hero.eyebrow":      { en: "Self-hosted daemon · Lark & Slack · Claude Code & Codex",
-                           zh: "自托管守护进程 · 飞书 & Slack · Claude Code & Codex" },
+    "hero.eyebrow":      { en: "Open source · self-hosted · Lark & Slack · Claude Code & Codex",
+                           zh: "开源 · 自托管 · 飞书 & Slack · Claude Code & Codex" },
     "hero.titleEn": {
       en: `<span data-reveal data-reveal-delay="0">Say it in the group.</span>
            <em data-reveal data-reveal-delay="120">Any model, one memory.</em>
@@ -59,8 +58,8 @@
       zh: "看它怎么工作"
     },
     "hero.cta.plugin": {
-      en: "Free plugin",
-      zh: "免费插件"
+      en: "Source on GitHub",
+      zh: "GitHub 源码"
     },
 
     // ---- hero mockups ----------------------------------------------------
@@ -100,8 +99,8 @@
     },
     "what.bot.title":{ en: "Group-project AI", zh: "群项目 AI" },
     "what.bot.body": {
-      en: `<code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. <code>cc-bot</code> is the free plugin for your own Claude Code session.`,
-      zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。<code>cc-bot</code> 是免费插件，装进你自己的 Claude Code 会话。`
+      en: `<code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.`,
+      zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。MIT 开源；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。`
     },
     "what.bot.link": { en: "See it on Lark and Slack →", zh: "看飞书与 Slack 里的样子 →" },
 
@@ -475,116 +474,51 @@
     "ops.6.c2": { en: "2 runtime deps", zh: "2 个运行时依赖" },
     "ops.6.c3": { en: "auto proxy split", zh: "代理自动分流" },
 
-    // ---- cc-bot plugin ---------------------------------------------------
-    "plugin.kicker": { en: "09 · Free plugin", zh: "09 · 免费插件" },
-    "plugin.h":      { en: `<em>cc-bot</em> — the free way to run it.`, zh: `<em>cc-bot</em>——免费的另一种跑法。` },
+    // ---- setup (open-source daemon from npm) ------------------------------
+    // The command shown on the site is the `sintbot` alias (the package also installs a shorter
+    // command; the site uses only the product name). Every step must match the daemon's README.
+    "plugin.kicker": { en: "09 · Setup", zh: "09 · 接入" },
+    "plugin.h":      { en: `<em>Open source</em> — up and running in minutes.`, zh: `<em>开源</em>，几分钟跑起来。` },
     "plugin.lede": {
-      en: `<code>cc-bot</code> is an MIT Claude Code plugin: it lives inside your interactive session, follows that session’s model and brings Slack and Lark adapters — no daemon, no console.`,
-      zh: `<code>cc-bot</code> 是 MIT 的 Claude Code 插件：活在你的交互会话里，跟随该会话的模型，自带 Slack 与飞书适配器——没有守护进程、没有控制台。`
+      en: `<code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and a logged-in <code>claude</code> (Claude Code) — add <code>codex</code> if you want GPT groups.`,
+      zh: `<code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上，并装好、登录 <code>claude</code>（Claude Code）；要开 GPT 群再加 <code>codex</code>。`
     },
-    "plugin.meta.kind": { en: `Claude Code plugin · v${VERSION}`, zh: `Claude Code 插件 · v${VERSION}` },
+    "plugin.meta.kind": { en: `npm · sintbot v${VERSION}`, zh: `npm · sintbot v${VERSION}` },
 
-    "install.h":      { en: "Four steps to a chat-driven repo.", zh: "四步开启群聊驱动的仓库。" },
+    "install.h":      { en: "From npm to your group in four steps.", zh: "从 npm 到群里，四步。" },
     "install.lede":   {
-      en: `<code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.`,
-      zh: `<code>/cc-bot:setup</code> 在 Claude Code 内完整跑完——幂等、识别版本、能自动识别的都自动识别。`
+      en: `<code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.`,
+      zh: `大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。`
     },
-    "install.1.title": { en: "Install the cc-bot plugin", zh: "安装 cc-bot 插件" },
+    "install.1.title": { en: "Install from npm", zh: "从 npm 安装" },
     "install.1.after": {
-      en: `Then run <code>/cc-bot:setup</code> in any project. When asked "which IM?", pick <b>Slack</b>.`,
-      zh: `然后在任意项目里执行 <code>/cc-bot:setup</code>。问到 IM 时选 <b>Slack</b>。`
+      en: `Installs the <code>sintbot</code> command. If <code>claude</code> is not logged in on this machine yet, run <code>claude auth login</code> first.`,
+      zh: `装好后就有 <code>sintbot</code> 命令。这台机器上的 <code>claude</code> 还没登录的话，先跑一次 <code>claude auth login</code>。`
     },
-    "install.2.title": { en: "Create the Slack app from the manifest", zh: "用 manifest 创建 Slack 应用" },
+    "install.2.title": { en: "Create the chat bot", zh: "建好聊天机器人" },
     "install.2.after": {
-      en: `Open <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>. Paste the YAML below.`,
-      zh: `打开 <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>，粘贴下面的 YAML。`
+      en: `A Feishu (Lark) self-built app using the long-connection event mode, or a Slack app created from the manifest in the repository — no public IP either way. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a>. Then add the bot to your group.`,
+      zh: `飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用——两边都不需要公网 IP。分步说明：<a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a>。建好后把机器人拉进群。`
     },
-    "install.2.toggle": { en: "Show the manifest", zh: "展开 manifest" },
-    "install.3.title": { en: "Generate the two tokens", zh: "生成两个 Token" },
-    "install.3.after": { en: "In the new app's Basic Information page:", zh: "在新建应用的 Basic Information 页面：" },
-    "install.3.li1":   {
-      en: `<b>App-Level Token</b> — name it <code>cc-bot-socket</code>, scope <code>connections:write</code>. Copy the <code>xapp-1-…</code> value.`,
-      zh: `<b>App-Level Token</b>——命名为 <code>cc-bot-socket</code>，scope 选 <code>connections:write</code>，复制 <code>xapp-1-…</code>。`
+    "install.3.title": { en: "Run the setup wizard", zh: "跑一遍向导" },
+    "install.3.after": {
+      en: `Pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.`,
+      zh: `选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。`
     },
-    "install.3.li2":   {
-      en: `<em>Install to Workspace</em> → Allow. Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).`,
-      zh: `<em>Install to Workspace</em> → Allow，复制 <b>Bot User OAuth Token</b>（<code>xoxb-…</code>）。`
-    },
-    "install.3.tail":  {
-      en: `Paste both when <code>/cc-bot:setup</code> prompts. cc-bot verifies via <code>auth.test</code> and writes them into <code>.cc-bot/profiles/active.json</code>.`,
-      zh: `<code>/cc-bot:setup</code> 提示时把两个 token 粘进去。cc-bot 通过 <code>auth.test</code> 校验，写入 <code>.cc-bot/profiles/active.json</code>。`
-    },
-    "install.4.title": { en: "Invite cc-bot to a channel", zh: "把 cc-bot 拉进频道" },
+    "install.4.title": { en: "Keep it running", zh: "常驻运行" },
     "install.4.after": {
-      en: `Paste the channel ID. In Slack, run <code>/invite @cc-bot</code> — bot sends a probe. Then bring it online:`,
-      zh: `把 channel ID 粘进去，在 Slack 里执行 <code>/invite @cc-bot</code>，bot 会发一条探测消息。然后上线：`
-    },
-    "install.4.tail":  {
-      en: `An "online" message lands in your channel. From here, talk to it like a teammate.`,
-      zh: `频道会收到一条上线消息。接下来，把它当队友一样说话即可。`
+      en: `Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). Now @ the bot in your group. The local console is at <code>http://127.0.0.1:4600</code>.`,
+      zh: `崩溃自动拉起、登录即启动（macOS 用 launchd；Linux 的 systemd 为实验性；Windows 上只打印设置命令）。然后在群里 @ 机器人就行。本地控制台在 <code>http://127.0.0.1:4600</code>。`
     },
 
-    "commands.h":      { en: "Slash commands", zh: "斜杠命令" },
-    "commands.setup":  { en: "interactive Slack / Lark onboarding", zh: "Slack / 飞书 引导式接入" },
-    "commands.start":  { en: "bring the bot online",                zh: "上线" },
-    "commands.stop":   { en: "take it offline",                     zh: "下线" },
-    "commands.new":    { en: "clone the profile template",          zh: "克隆 profile 模板" },
-    "commands.switch": { en: "swap active profile",                 zh: "切换当前 profile" },
-    "commands.doctor": { en: "health check & diagnostics",          zh: "健康检查与诊断" },
-
-    // ---- pricing ---------------------------------------------------------
-    "pricing.kicker": { en: "Pricing", zh: "定价" },
-    "pricing.h": {
-      en: `Two ways to <em>run it.</em>`,
-      zh: `<em>两种</em>跑法。`
-    },
-    "pricing.lede": {
-      en: `<code>cc-bot</code> is free and MIT. A Pro subscription supports development and gets you the <code>sintbot</code> daemon, provided as is.`,
-      zh: `<code>cc-bot</code> 免费、MIT。订阅 Pro 是支持项目开发，可获取 <code>sintbot</code> 守护进程，按现状提供。`
-    },
-
-    "pricing.free.name":    { en: "Free", zh: "Free" },
-    "pricing.free.amount":  { en: "$0", zh: "$0" },
-    "pricing.free.cycle":   { en: "/ forever", zh: "/ 永久" },
-    "pricing.free.tagline": { en: "A Claude Code plugin — lives inside your session.", zh: "一个 Claude Code 插件——活在你的会话里。" },
-    "pricing.free.f0": {
-      en: "Installs into Claude Code as a plugin — it runs in an interactive session and uses whatever model that session runs",
-      zh: "以插件形式装进 Claude Code——跑在交互会话里，用的就是该会话的模型"
-    },
-    "pricing.free.f1": {
-      en: "Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD",
-      zh: "cc-bot 完整核心——Slack + 飞书适配器、多会话调度、权限矩阵、HUD"
-    },
-    "pricing.free.f2": {
-      en: "MIT licensed, self-hosted on your own machine",
-      zh: "MIT 许可，在你自己机器上自托管"
-    },
-    "pricing.free.f3": {
-      en: "Community support via GitHub Issues",
-      zh: "GitHub Issues 社区支持"
-    },
-    "pricing.free.cta": { en: "Get cc-bot", zh: "获取 cc-bot" },
-    "pricing.pro.name":    { en: "Pro", zh: "Pro" },
-    "pricing.pro.amount":  { en: "$19.90", zh: "$19.90" },
-    "pricing.pro.cycle":   { en: "/ month", zh: "/ 月" },
-    "pricing.pro.tagline": {
-      en: "Support development and get the sintbot package to self-host.",
-      zh: "支持项目开发，获取可自托管的 sintbot 安装包。"
-    },
-    "pricing.pro.fsintbot": {
-      en: `<b>sintbot</b> — the daemon: <b>Lark</b> and <b>Slack</b>, Claude Code and Codex with a swappable model per group, per-group permissions and redaction, the design toolchain, the local console, and scheduled tasks. <a href="#platforms">See what it does</a>.`,
-      zh: `<b>sintbot</b>——守护进程：<b>飞书</b>与 <b>Slack</b>，Claude Code 与 Codex、模型按群可换，按群的权限与脱敏，设计工具链，本地控制台，定时任务。<a href="#platforms">看它能做什么</a>。`
-    },
-    "pricing.pro.f1": { en: "Everything in Free", zh: "Free 的全部" },
-    "pricing.pro.f2": {
-      en: "Provided as is — no support response times, onboarding or update commitments",
-      zh: "按现状提供——不承诺支持响应时间、接入引导或后续更新"
-    },
-    "pricing.pro.cta": { en: "Subscribe to Pro", zh: "订阅 Pro" },
-
-    "pricing.note": {
-      en: `sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the current package. It is provided as is: the subscription does not include support response times, onboarding, updates or new features. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep what you received, but don't redistribute or resell it (<a href="/terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.`,
-      zh: `sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把当前版本的安装包发给你。它按现状提供：订阅不包含支持响应时间、接入引导、后续更新或新功能。它以可读源码形式交付，适用「源码可见、不可再分发」的许可：可在自有的至多三台设备上运行与修改，已收到的版本可永久继续使用，但不得再分发或转售（<a href="/terms.html">条款</a>）。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。`
+    "commands.h":       { en: "Everyday commands", zh: "常用命令" },
+    "commands.doctor":  { en: "health check & diagnostics", zh: "体检与诊断" },
+    "commands.service": { en: "is the service up, and what is it doing", zh: "服务在不在、在做什么" },
+    "commands.trial":   { en: "a read-only trial turn in the terminal", zh: "在终端里只读试跑一轮" },
+    "commands.chat":    { en: "in the group: switch model, check progress, stop, start fresh (Slack uses a ! prefix)", zh: "群里：换模型、看进度、叫停、开新会话（Slack 里用 ! 前缀）" },
+    "plugin.ccbot": {
+      en: `Prefer a plugin that lives inside your own Claude Code session? <code>cc-bot</code> (MIT) does that: <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>.`,
+      zh: `更想要一个装在你自己 Claude Code 会话里的插件？<code>cc-bot</code>（MIT）就是：<a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>。`
     },
 
     // ---- faq -------------------------------------------------------------
@@ -599,8 +533,8 @@
     },
     "faq.2.q": { en: "How is it different from cc-bot?", zh: "它和 cc-bot 有什么区别？" },
     "faq.2.a": {
-      en: "cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.",
-      zh: "cc-bot 是免费、MIT 许可的 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
+      en: "Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.",
+      zh: "两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
     },
     "faq.3.q": { en: "Which models can it use?", zh: "支持哪些模型？" },
     "faq.3.a": {
@@ -619,8 +553,8 @@
     },
     "faq.6.q": { en: "Do I need a server or a public IP?", zh: "需要服务器或公网 IP 吗？" },
     "faq.6.a": {
-      en: "No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.",
-      zh: "不需要。它跑在一台常开的 Mac 或 Windows 电脑上，只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。"
+      en: "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.",
+      zh: "不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。"
     },
     "faq.7.q": { en: "What can the agent do by default?", zh: "默认情况下 agent 能做什么？" },
     "faq.7.a": {
@@ -629,26 +563,26 @@
     },
     "faq.8.q": { en: "How do I get SintBot?", zh: "怎么获取 SintBot？" },
     "faq.8.a": {
-      en: `It is not a public download. A Pro subscription supports development; after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? <code>cc-bot</code> installs into Claude Code in two commands.`,
-      zh: `它不是公开下载。订阅 Pro 是支持项目开发；付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，即可获取当前版本的安装包。按现状提供，以可读源码形式交付，适用源码可见的许可。想先免费试？<code>cc-bot</code> 两条命令就能装进 Claude Code。`
+      en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.`,
+      zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。`
     },
 
     // ---- cta / footer ----------------------------------------------------
     "cta.h": { en: "Put the project in the group.", zh: "把项目放进群里。" },
     "cta.p": {
-      en: `See the daemon at work in a Lark or Slack group, or start free: <code>cc-bot</code> installs into Claude Code in two commands.`,
-      zh: `看守护进程在飞书群或 Slack 群里怎么干活；想先免费试，<code>cc-bot</code> 两条命令装进 Claude Code。`
+      en: `See the daemon at work in a Lark or Slack group, or install it now: <code>npm i -g sintbot</code>.`,
+      zh: `看守护进程在飞书群或 Slack 群里怎么干活，或者现在就装：<code>npm i -g sintbot</code>。`
     },
     "cta.see": {
       en: "See how it works",
       zh: "看它怎么工作"
     },
     "cta.plugin": {
-      en: "Free plugin on GitHub",
-      zh: "GitHub 上的免费插件"
+      en: "Source on GitHub",
+      zh: "GitHub 上的源码"
     },
 
-    "foot.tag":     { en: "Self-hosted · Lark & Slack · cc-bot is MIT · desktop pet in the works", zh: "自托管 · 飞书 & Slack · cc-bot 采用 MIT · 桌宠研发中" },
+    "foot.tag":     { en: "Open source (MIT) · self-hosted · Lark & Slack · desktop pet in the works", zh: "MIT 开源 · 自托管 · 飞书 & Slack · 桌宠研发中" },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
@@ -919,11 +853,11 @@
   document.querySelectorAll(".copy[data-copy]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const text = btn.getAttribute("data-copy") || "";
-      if (text.includes("/plugin install")) {
+      if (text.includes("npm i -g sintbot")) {
         track("copy-install");
-      } else if (text.includes("display_information")) {
-        track("copy-manifest");
-      } else if (text.includes("/cc-bot:start")) {
+      } else if (text.includes("sintbot setup")) {
+        track("copy-setup");
+      } else if (text.includes("service install")) {
         track("copy-start");
       } else {
         track("copy-other");
@@ -944,9 +878,9 @@
     btn.addEventListener("click", () => track("cta-meet"));
   });
 
-  // secondary CTA — hero + closing 'Free plugin' (GitHub; github-click fires too)
-  document.querySelectorAll('[data-track="cta-plugin"]').forEach((a) => {
-    a.addEventListener("click", () => track("cta-plugin"));
+  // secondary CTA — hero + closing 'Source on GitHub' (github-click fires too)
+  document.querySelectorAll('[data-track="cta-github"]').forEach((a) => {
+    a.addEventListener("click", () => track("cta-github"));
   });
 
   // outbound GitHub links
@@ -957,19 +891,6 @@
   // pillar card clicks
   document.querySelectorAll('.pillar__link').forEach((a) => {
     a.addEventListener("click", () => track("pillar-click"));
-  });
-
-  // pricing CTAs — Pro (Creem checkout) vs Free (GitHub)
-  document.querySelectorAll('.plan--pro .plan__cta').forEach((a) => {
-    a.addEventListener("click", () => track("pricing-pro-click"));
-  });
-  document.querySelectorAll('.plan:not(.plan--pro) .plan__cta').forEach((a) => {
-    a.addEventListener("click", () => track("pricing-free-click"));
-  });
-
-  // manifest disclosure — how many people actually open the YAML
-  document.querySelectorAll(".step__details").forEach((d) => {
-    d.addEventListener("toggle", () => { if (d.open) track("manifest-open"); });
   });
 
   // section reach — fire once the first time each section scrolls into view

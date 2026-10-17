@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Privacy Policy — SintBot</title>
-    <meta name="description" content="SintBot privacy policy: no accounts, anonymous analytics, no tracking. Payments handled by Creem as Merchant of Record." />
+    <meta name="description" content="SintBot privacy policy: no accounts, anonymous analytics, no tracking; the open-source software sends nothing to us." />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/privacy.html" />
     <link rel="stylesheet" href="./styles.css" />
@@ -99,9 +99,9 @@
       <!-- English -->
       <section lang="en">
         <h1>Privacy Policy</h1>
-        <p class="doc__updated">Last updated: September 15, 2026</p>
+        <p class="doc__updated">Last updated: October 17, 2026</p>
 
-        <p>SintBot ("we", "us") operates the website <a href="https://sintbot.com">sintbot.com</a>, the open-source <code>cc-bot</code> software, and <code>sintbot</code> — the self-hosted daemon delivered with SintBot Pro. This policy explains what little data the site touches, how purchases are handled, and what the software you run does and does not send us. We keep it deliberately minimal.</p>
+        <p>SintBot ("we", "us") operates the website <a href="https://sintbot.com">sintbot.com</a> and publishes two pieces of open-source software: <code>sintbot</code>, the self-hosted daemon, and <code>cc-bot</code>, the Claude Code plugin. This policy explains what little data the site touches, and what the software does and does not send. We keep it deliberately minimal.</p>
 
         <h2>No accounts, no direct collection</h2>
         <p>The website has no login, no account system, and no forms. We do not directly collect names, emails, or other personal information when you browse the site.</p>
@@ -112,14 +112,11 @@
         <h2>Local storage</h2>
         <p>Your browser's <code>localStorage</code> is used only to remember your language preference (English or Chinese). Nothing is sent to us.</p>
 
-        <h2>Purchases (SintBot Pro)</h2>
-        <p>When you subscribe to SintBot Pro, payment is processed by <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> acting as our Merchant of Record. Your name, email, and payment details are submitted to and handled by Creem under their privacy policy: <a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>. We receive only the information needed to send you the software and manage your subscription.</p>
-
         <h2>The cc-bot software</h2>
         <p>The <code>cc-bot</code> software runs entirely on your own machine. It does not send your code, credentials, or data to us. It communicates only with the services you configure (such as your Slack or Lark workspace and the AI models you connect).</p>
 
         <h2>The sintbot daemon</h2>
-        <p>The <code>sintbot</code> daemon runs on your own machines. It does not send your code, credentials, conversations, or project data to us. It talks only to the services you configure: your Lark or Slack workspace, the AI model endpoints you point it at, and whatever tools you enable for it. Its records — chat sessions, run logs, usage counters — are written to the machine it runs on and stay there; we have no access to them and no telemetry is sent back. Outbound messages pass through a redaction step that masks secret-shaped strings before anything is posted to your workspace.</p>
+        <p>The <code>sintbot</code> daemon runs on your own machines. We run no server for it and receive nothing from it: no telemetry, no usage data. Its records — sessions, run logs, usage counters — are written on the machine it runs on and stay there. What leaves that machine goes only to the services you set up: prompts, group messages and the files and command output the model reads go to the model provider you chose for that group (through the <code>claude</code> or <code>codex</code> command-line tools, whose own behavior is up to their providers); messages, files and cards go through your chat platform; quota and balance lookups for the console use the logins or keys already on the machine. Its local console page loads fonts from Google Fonts in the browser that opens it. Outgoing messages are redacted first, masking strings that look like secrets before they reach your workspace.</p>
         <p>Your workspace provider and your chosen AI providers handle data under their own privacy policies. Which providers see your data is entirely determined by how you configure the daemon.</p>
 
         <h2>The desktop pet</h2>
@@ -132,9 +129,9 @@
       <!-- 中文 -->
       <section class="doc__lang" lang="zh">
         <h1>隐私政策</h1>
-        <p class="doc__updated">最后更新：2026 年 9 月 15 日</p>
+        <p class="doc__updated">最后更新：2026 年 10 月 17 日</p>
 
-        <p>SintBot（「我们」）运营网站 <a href="https://sintbot.com">sintbot.com</a>、开源软件 <code>cc-bot</code>，以及随 SintBot Pro 交付的自托管守护进程 <code>sintbot</code>。本政策说明本站接触到的极少量数据、购买流程如何处理，以及你运行的软件会与不会把什么发给我们。我们刻意把它做到最简。</p>
+        <p>SintBot（「我们」）运营网站 <a href="https://sintbot.com">sintbot.com</a>，并发布两个开源软件：自托管守护进程 <code>sintbot</code> 与 Claude Code 插件 <code>cc-bot</code>。本政策说明本站接触到的极少量数据，以及这些软件会与不会发送什么。我们刻意把它做到最简。</p>
 
         <h2>无账号、不直接收集</h2>
         <p>本站没有登录、没有账号系统、没有表单。你浏览本站时，我们不会直接收集姓名、邮箱或其他个人信息。</p>
@@ -145,14 +142,11 @@
         <h2>本地存储</h2>
         <p>浏览器的 <code>localStorage</code> 仅用于记住你的语言偏好（英文或中文），不会向我们发送任何内容。</p>
 
-        <h2>购买（SintBot Pro）</h2>
-        <p>订阅 SintBot Pro 时，支付由 <a href="https://www.creem.io" target="_blank" rel="noopener">Creem</a> 作为 Merchant of Record（卖方记录方）处理。你的姓名、邮箱和支付信息提交给 Creem，并按其隐私政策处理：<a href="https://www.creem.io/privacy" target="_blank" rel="noopener">creem.io/privacy</a>。我们只接收发送软件和管理订阅所必需的信息。</p>
-
         <h2>cc-bot 软件</h2>
         <p><code>cc-bot</code> 软件完全运行在你自己的机器上，不会把你的代码、凭证或数据传给我们。它只与你自己配置的服务通信（比如你的 Slack / 飞书 workspace 和你接入的 AI 模型）。</p>
 
         <h2>sintbot 守护进程</h2>
-        <p><code>sintbot</code> 守护进程运行在你自己的机器上。它不会把你的代码、凭证、对话或项目数据传给我们。它只与你自己配置的服务通信：你的飞书或 Slack workspace、你指定的 AI 模型端点，以及你为它启用的工具。它产生的记录——会话、运行日志、用量计数——写在它所运行的那台机器上并留在那里，我们无从访问，也不会有任何遥测回传。出站消息会先经过脱敏，把疑似密钥的字符串遮掉，再发进你的 workspace。</p>
+        <p><code>sintbot</code> 守护进程运行在你自己的机器上。我们没有为它运行任何服务器，也不从它接收任何东西：没有遥测、没有使用数据。它产生的记录——会话、运行日志、用量计数——写在它所运行的那台机器上并留在那里。会离开这台机器的只发往你自己设置的服务：每一轮的提示词、群消息以及模型读到的文件与命令输出，经 <code>claude</code> 或 <code>codex</code> 命令行发给你给这个群选的模型服务商（这两个命令行自身的行为由其提供方决定）；消息、文件与卡片经你的聊天平台收发；控制台查询额度与余额时，用的是这台机器上已有的登录态或 key。它的本地控制台页面会在打开它的浏览器里从 Google Fonts 加载字体。出站消息会先经过脱敏，把疑似密钥的字符串遮掉，再发进你的 workspace。</p>
         <p>你的 workspace 服务商与你选用的 AI 服务商，按它们各自的隐私政策处理数据。哪些服务商会看到你的数据，完全由你如何配置这个守护进程决定。</p>
 
         <h2>桌宠</h2>

@@ -8,9 +8,11 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 - [SintBot (English)](https://sintbot.com/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](https://sintbot.com/zh/): 同一页面的中文版
-- [Terms of Service](https://sintbot.com/terms.html): licensing of sintbot and cc-bot, subscription terms
+- [SintBot on GitHub](https://github.com/WaterTian/sintbot): source code and docs (MIT)
+- [sintbot on npm](https://www.npmjs.com/package/sintbot): install with `npm i -g sintbot`
+- [Terms of Service](https://sintbot.com/terms.html): licensing and acceptable use
 - [Privacy Policy](https://sintbot.com/privacy.html): what the site and the software do and do not send
-- [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the free, MIT-licensed Claude Code plugin
+- [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the companion MIT-licensed Claude Code plugin
 
 ## FAQ
 
@@ -20,7 +22,7 @@ A self-hosted daemon that binds a chat group — Lark or Slack — to a project 
 
 ### How is it different from cc-bot?
 
-cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
+Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
 
 ### Which models can it use?
 
@@ -36,7 +38,7 @@ On your machine: project directories, sessions, memory and logs stay there. The 
 
 ### Do I need a server or a public IP?
 
-No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.
+No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.
 
 ### What can the agent do by default?
 
@@ -44,7 +46,7 @@ Read only. Permissions are set per group, never globally: an unconfigured group 
 
 ### How do I get SintBot?
 
-It is not a public download. A Pro subscription supports development; after checkout, write to support@sintbot.com from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? cc-bot installs into Claude Code in two commands.
+Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/WaterTian/sintbot.
 
 ## 中文
 
@@ -58,7 +60,7 @@ It is not a public download. A Pro subscription supports development; after chec
 
 ### 它和 cc-bot 有什么区别？
 
-cc-bot 是免费、MIT 许可的 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。
+两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。
 
 ### 支持哪些模型？
 
@@ -74,7 +76,7 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM�
 
 ### 需要服务器或公网 IP 吗？
 
-不需要。它跑在一台常开的 Mac 或 Windows 电脑上，只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。
+不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。
 
 ### 默认情况下 agent 能做什么？
 
@@ -82,4 +84,4 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM�
 
 ### 怎么获取 SintBot？
 
-它不是公开下载。订阅 Pro 是支持项目开发；付款后用下单邮箱写信到 support@sintbot.com，即可获取当前版本的安装包。按现状提供，以可读源码形式交付，适用源码可见的许可。想先免费试？cc-bot 两条命令就能装进 Claude Code。
+从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/WaterTian/sintbot。

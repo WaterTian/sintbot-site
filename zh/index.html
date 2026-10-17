@@ -48,7 +48,9 @@
             "name": "SintBot",
             "url": "https://sintbot.com/zh/",
             "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "macOS, Windows",
+            "operatingSystem": "macOS",
+            "license": "https://opensource.org/licenses/MIT",
+            "isAccessibleForFree": true,
             "inLanguage": "zh-CN",
             "description": "一个飞书群或 Slack 群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。"
           },
@@ -70,7 +72,7 @@
                 "name": "它和 cc-bot 有什么区别？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "cc-bot 是免费、MIT 许可的 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
+                  "text": "两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
                 }
               },
               {
@@ -102,7 +104,7 @@
                 "name": "需要服务器或公网 IP 吗？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "不需要。它跑在一台常开的 Mac 或 Windows 电脑上，只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。"
+                  "text": "不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。"
                 }
               },
               {
@@ -118,7 +120,7 @@
                 "name": "怎么获取 SintBot？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "它不是公开下载。订阅 Pro 是支持项目开发；付款后用下单邮箱写信到 support@sintbot.com，即可获取当前版本的安装包。按现状提供，以可读源码形式交付，适用源码可见的许可。想先免费试？cc-bot 两条命令就能装进 Claude Code。"
+                  "text": "从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/WaterTian/sintbot。"
                 }
               }
             ]
@@ -231,7 +233,7 @@
         <a href="#console" data-i18n="nav.console">控制台</a>
         <a href="#plugin" data-i18n="nav.setup">接入</a>
         <a
-          href="https://github.com/WaterTian/cc-bot"
+          href="https://github.com/WaterTian/sintbot"
           target="_blank"
           rel="noopener"
           class="nav__cta"
@@ -252,7 +254,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">自托管守护进程 · 飞书 &amp; Slack · Claude Code &amp; Codex</span>
+            <span data-i18n="hero.eyebrow">开源 · 自托管 · 飞书 &amp; Slack · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn"><span class="zh-row" data-reveal data-reveal-delay="0"><span class="zh-big">一群一项目</span><span class="visually-hidden">，</span><span class="zh-note"><span>一句话</span><span>就开工</span></span></span>
@@ -265,8 +267,8 @@
               <span data-i18n="hero.cta.primary">看它怎么工作</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener" data-track="cta-plugin">
-              <span data-i18n="hero.cta.plugin">免费插件</span>
+            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+              <span data-i18n="hero.cta.plugin">GitHub 源码</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
@@ -350,7 +352,7 @@
         <ol class="pillars">
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">群项目 AI</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。<code>cc-bot</code> 是免费插件，装进你自己的 Claude Code 会话。</p>
+            <p data-i18n-html="what.bot.body"><code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。MIT 开源；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。</p>
             <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">看飞书与 Slack 里的样子 →</a>
           </li>
         </ol>
@@ -866,184 +868,60 @@
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">依赖少，出网会分流</h3>
             <p data-i18n="ops.6.body">Node 18.17 起，运行时依赖两个；Claude Code 和 Codex 你自己装。官方 Claude 走代理，国内端点直连，自动分流。</p>
-            <ul class="card__chips"><li>Node ≥ 18.17</li><li data-i18n="ops.6.c2">2 个运行时依赖</li><li data-i18n="ops.6.c3">代理自动分流</li></ul>
+            <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 个运行时依赖</li><li data-i18n="ops.6.c3">代理自动分流</li></ul>
           </li>
         </ol>
       </section>
 
-      <!-- cc-bot: the free plugin -->
+      <!-- Setup: install the open-source daemon from npm -->
       <section id="plugin" class="section section--plugin">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · 免费插件</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>cc-bot</em>——免费的另一种跑法。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>cc-bot</code> 是 MIT 的 Claude Code 插件：活在你的交互会话里，跟随该会话的模型，自带 Slack 与飞书适配器——没有守护进程、没有控制台。</p>
+        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · 接入</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>开源</em>，几分钟跑起来。</h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上，并装好、登录 <code>claude</code>（Claude Code）；要开 GPT 群再加 <code>codex</code>。</p>
         <div class="plugin__meta" data-reveal>
-          <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">Claude Code 插件 · v0.1.48</span></span>
+          <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.0</span></span>
           <span class="chip">MIT</span>
           <span class="chip">Slack · <span data-i18n="plat.lark">飞书</span></span>
-          <a class="chip chip--link" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
-
-        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">四步开启群聊驱动的仓库。</h3>
-        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>/cc-bot:setup</code> 在 Claude Code 内完整跑完——幂等、识别版本、能自动识别的都自动识别。</p>
-
+        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">从 npm 到群里，四步。</h3>
+        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。</p>
         <ol class="steps" id="install">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
-            <h3 data-i18n="install.1.title">安装 cc-bot 插件</h3>
-            <pre class="code"><code><span class="tk-c">#</span> inside Claude Code
-<span class="tk-p">/plugin marketplace add</span> WaterTian/cc-bot
-<span class="tk-p">/plugin install</span> cc-bot@cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot
-/plugin install cc-bot@cc-bot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">然后在任意项目里执行 <code>/cc-bot:setup</code>。问到 IM 时选 <b>Slack</b>。</p>
+            <h3 data-i18n="install.1.title">从 npm 安装</h3>
+            <pre class="code"><code><span class="tk-p">npm i -g</span> sintbot</code><button class="copy" data-copy="npm i -g sintbot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
+            <p class="step__after" data-i18n-html="install.1.after">装好后就有 <code>sintbot</code> 命令。这台机器上的 <code>claude</code> 还没登录的话，先跑一次 <code>claude auth login</code>。</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
-            <h3 data-i18n="install.2.title">用 manifest 创建 Slack 应用</h3>
-            <p class="step__after" data-i18n-html="install.2.after">打开 <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>，粘贴下面的 YAML。</p>
-            <details class="step__details">
-              <summary><span data-i18n="install.2.toggle">展开 manifest</span><span class="step__details-hint" aria-hidden="true">YAML</span></summary>
-              <pre class="code"><code><span class="tk-c"># templates/slack-manifest.yaml — bot scopes &amp; Socket Mode</span>
-<span class="tk-y">display_information</span>:
-  <span class="tk-y">name</span>: cc-bot
-  <span class="tk-y">description</span>: Claude Code-powered group project assistant
-  <span class="tk-y">background_color</span>: <span class="tk-p">"#1f3a2a"</span>
-
-<span class="tk-y">features</span>:
-  <span class="tk-y">bot_user</span>:
-    <span class="tk-y">display_name</span>: cc-bot
-    <span class="tk-y">always_online</span>: <span class="tk-p">true</span>
-
-<span class="tk-y">oauth_config</span>:
-  <span class="tk-y">scopes</span>:
-    <span class="tk-y">bot</span>:
-      - app_mentions:read   <span class="tk-c"># listen for @cc-bot</span>
-      - channels:history    <span class="tk-c"># read public channels</span>
-      - channels:read
-      - chat:write          <span class="tk-c"># post messages</span>
-      - files:read          <span class="tk-c"># download images</span>
-      - files:write
-      - groups:history      <span class="tk-c"># private channels</span>
-      - groups:read
-      - users:read
-
-<span class="tk-y">settings</span>:
-  <span class="tk-y">event_subscriptions</span>:
-    <span class="tk-y">bot_events</span>:
-      - message.channels
-      - message.groups
-      - app_mention
-  <span class="tk-y">interactivity</span>:
-    <span class="tk-y">is_enabled</span>: <span class="tk-p">false</span>
-  <span class="tk-y">org_deploy_enabled</span>: <span class="tk-p">false</span>
-  <span class="tk-y">socket_mode_enabled</span>: <span class="tk-p">true</span>  <span class="tk-c"># no public webhook needed</span>
-  <span class="tk-y">token_rotation_enabled</span>: <span class="tk-p">false</span></code><button class="copy" data-copy="display_information:
-  name: cc-bot
-  description: Claude Code-powered group project assistant
-  background_color: &quot;#1f3a2a&quot;
-features:
-  bot_user:
-    display_name: cc-bot
-    always_online: true
-oauth_config:
-  scopes:
-    bot:
-      - app_mentions:read
-      - channels:history
-      - channels:read
-      - chat:write
-      - files:read
-      - files:write
-      - groups:history
-      - groups:read
-      - users:read
-settings:
-  event_subscriptions:
-    bot_events:
-      - message.channels
-      - message.groups
-      - app_mention
-  interactivity:
-    is_enabled: false
-  org_deploy_enabled: false
-  socket_mode_enabled: true
-  token_rotation_enabled: false" aria-label="Copy manifest" data-i18n="copy">复制</button></pre>
-            </details>
+            <h3 data-i18n="install.2.title">建好聊天机器人</h3>
+            <p class="step__after" data-i18n-html="install.2.after">飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用——两边都不需要公网 IP。分步说明：<a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a>。建好后把机器人拉进群。</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
-            <h3 data-i18n="install.3.title">生成两个 Token</h3>
-            <p class="step__after" data-i18n="install.3.after">在新建应用的 Basic Information 页面：</p>
-            <ul class="step__list">
-              <li data-i18n-html="install.3.li1"><b>App-Level Token</b>——命名为 <code>cc-bot-socket</code>，scope 选 <code>connections:write</code>，复制 <code>xapp-1-…</code>。</li>
-              <li data-i18n-html="install.3.li2"><em>Install to Workspace</em> → Allow，复制 <b>Bot User OAuth Token</b>（<code>xoxb-…</code>）。</li>
-            </ul>
-            <p class="step__after" data-i18n-html="install.3.tail"><code>/cc-bot:setup</code> 提示时把两个 token 粘进去。cc-bot 通过 <code>auth.test</code> 校验，写入 <code>.cc-bot/profiles/active.json</code>。</p>
+            <h3 data-i18n="install.3.title">跑一遍向导</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">复制</button></pre>
+            <p class="step__after" data-i18n-html="install.3.after">选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
-            <h3 data-i18n="install.4.title">把 cc-bot 拉进频道</h3>
-            <p class="step__after" data-i18n-html="install.4.after">把 channel ID 粘进去，在 Slack 里执行 <code>/invite @cc-bot</code>，bot 会发一条探测消息。然后上线：</p>
-            <pre class="code"><code><span class="tk-p">/cc-bot:start</span></code><button class="copy" data-copy="/cc-bot:start" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n="install.4.tail">频道会收到一条上线消息。接下来，把它当队友一样说话即可。</p>
+            <h3 data-i18n="install.4.title">常驻运行</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> service install</code><button class="copy" data-copy="sintbot service install" aria-label="Copy command" data-i18n="copy">复制</button></pre>
+            <p class="step__after" data-i18n-html="install.4.after">崩溃自动拉起、登录即启动（macOS 用 launchd；Linux 的 systemd 为实验性；Windows 上只打印设置命令）。然后在群里 @ 机器人就行。本地控制台在 <code>http://127.0.0.1:4600</code>。</p>
           </li>
         </ol>
-
         <div class="commands" data-reveal>
-          <h3 data-i18n="commands.h">斜杠命令</h3>
+          <h3 data-i18n="commands.h">常用命令</h3>
           <ul>
-            <li><code>/cc-bot:setup</code> — <span data-i18n="commands.setup">Slack / 飞书 引导式接入</span></li>
-            <li><code>/cc-bot:start</code> — <span data-i18n="commands.start">上线</span></li>
-            <li><code>/cc-bot:stop</code> — <span data-i18n="commands.stop">下线</span></li>
-            <li><code>/cc-bot:new-profile &lt;name&gt;</code> — <span data-i18n="commands.new">克隆 profile 模板</span></li>
-            <li><code>/cc-bot:switch &lt;name&gt;</code> — <span data-i18n="commands.switch">切换当前 profile</span></li>
-            <li><code>/cc-bot:doctor</code> — <span data-i18n="commands.doctor">健康检查与诊断</span></li>
+            <li><code>sintbot doctor</code> — <span data-i18n="commands.doctor">体检与诊断</span></li>
+            <li><code>sintbot service status | logs</code> — <span data-i18n="commands.service">服务在不在、在做什么</span></li>
+            <li><code>sintbot agent run "…"</code> — <span data-i18n="commands.trial">在终端里只读试跑一轮</span></li>
+            <li><code>/model</code> <code>/status</code> <code>/stop</code> <code>/new</code> — <span data-i18n="commands.chat">群里：换模型、看进度、叫停、开新会话（Slack 里用 ! 前缀）</span></li>
           </ul>
         </div>
-      </section>
-
-      <!-- Pricing -->
-      <section id="pricing" class="section section--pricing">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="pricing.kicker">定价</p>
-        <h2 class="section__h" data-reveal data-i18n-html="pricing.h"><em>两种</em>跑法。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="pricing.lede"><code>cc-bot</code> 免费、MIT。订阅 Pro 是支持项目开发，可获取 <code>sintbot</code> 守护进程，按现状提供。</p>
-
-        <ol class="plans">
-          <li class="plan" data-reveal>
-            <p class="plan__name" data-i18n="pricing.free.name">Free</p>
-            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.free.amount">$0</span><span class="plan__cycle" data-i18n="pricing.free.cycle">/ 永久</span></p>
-            <p class="plan__tagline" data-i18n="pricing.free.tagline">一个 Claude Code 插件——活在你的会话里。</p>
-            <ul class="plan__feats">
-              <li data-i18n="pricing.free.f0">以插件形式装进 Claude Code——跑在交互会话里，用的就是该会话的模型</li>
-              <li data-i18n="pricing.free.f1">cc-bot 完整核心——Slack + 飞书适配器、多会话调度、权限矩阵、HUD</li>
-              <li data-i18n="pricing.free.f2">MIT 许可，在你自己机器上自托管</li>
-              <li data-i18n="pricing.free.f3">GitHub Issues 社区支持</li>
-            </ul>
-            <a class="btn btn--ghost plan__cta" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
-              <span data-i18n="pricing.free.cta">获取 cc-bot</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </li>
-
-          <li class="plan plan--pro" data-reveal data-reveal-delay="80">
-            <p class="plan__name" data-i18n="pricing.pro.name">Pro</p>
-            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.pro.amount">$19.90</span><span class="plan__cycle" data-i18n="pricing.pro.cycle">/ 月</span></p>
-            <p class="plan__tagline" data-i18n="pricing.pro.tagline">支持项目开发，获取可自托管的 sintbot 安装包。</p>
-            <ul class="plan__feats">
-              <li data-i18n-html="pricing.pro.fsintbot"><b>sintbot</b>——守护进程：<b>飞书</b>与 <b>Slack</b>，Claude Code 与 Codex、模型按群可换，按群的权限与脱敏，设计工具链，本地控制台，定时任务。<a href="#platforms">看它能做什么</a>。</li>
-              <li data-i18n="pricing.pro.f1">Free 的全部</li>
-              <li data-i18n="pricing.pro.f2">按现状提供——不承诺支持响应时间、接入引导或后续更新</li>
-            </ul>
-            <a class="btn btn--ghost plan__cta" href="https://www.creem.io/payment/prod_73MvSNM0cdgiazoMMPYcqM" target="_blank" rel="noopener">
-              <span data-i18n="pricing.pro.cta">订阅 Pro</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </li>
-        </ol>
-
-        <p class="plans__note" data-reveal data-i18n-html="pricing.note">sintbot 不是公开下载——付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，我们把当前版本的安装包发给你。它按现状提供：订阅不包含支持响应时间、接入引导、后续更新或新功能。它以可读源码形式交付，适用「源码可见、不可再分发」的许可：可在自有的至多三台设备上运行与修改，已收到的版本可永久继续使用，但不得再分发或转售（<a href="/terms.html">条款</a>）。价格为 USD。支付与税务由 Creem 作为 Merchant of Record 处理。可随时在 <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a> 取消。</p>
+        <p class="plugin__steps-lede plugin__ccbot" data-reveal data-i18n-html="plugin.ccbot">更想要一个装在你自己 Claude Code 会话里的插件？<code>cc-bot</code>（MIT）就是：<a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>。</p>
       </section>
 
       <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
@@ -1053,13 +931,13 @@ settings:
         <h2 class="section__h" data-reveal data-i18n-html="faq.h">常被问到的，<em>直接回答。</em></h2>
         <dl class="faq">
           <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">SintBot 是什么？</dt><dd data-i18n-html="faq.1.a">一个跑在你自己机器上的守护进程：把一个聊天群（飞书或 Slack）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">它和 cc-bot 有什么区别？</dt><dd data-i18n-html="faq.2.a">cc-bot 是免费、MIT 许可的 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">它和 cc-bot 有什么区别？</dt><dd data-i18n-html="faq.2.a">两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">支持哪些模型？</dt><dd data-i18n-html="faq.3.a">Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">换模型会丢掉项目记忆吗？</dt><dd data-i18n-html="faq.4.a">不会。换模型会开一段新对话，但项目里的 CLAUDE.md、AGENTS.md 和记忆目录会交给接下来运行的 agent，约定和长期记忆都还在。长会话会自动压缩。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">代码和数据存在哪？</dt><dd data-i18n-html="faq.5.a">都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">需要服务器或公网 IP 吗？</dt><dd data-i18n-html="faq.6.a">不需要。它跑在一台常开的 Mac 或 Windows 电脑上，只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">需要服务器或公网 IP 吗？</dt><dd data-i18n-html="faq.6.a">不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">默认情况下 agent 能做什么？</dt><dd data-i18n-html="faq.7.a">只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群完全访问或某档工具预设，agent 始终只能在这个群绑定的项目目录里工作。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">它不是公开下载。订阅 Pro 是支持项目开发；付款后用下单邮箱写信到 <a href="mailto:support@sintbot.com">support@sintbot.com</a>，即可获取当前版本的安装包。按现状提供，以可读源码形式交付，适用源码可见的许可。想先免费试？<code>cc-bot</code> 两条命令就能装进 Claude Code。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。</dd></div>
         </dl>
       </section>
 
@@ -1067,13 +945,13 @@ settings:
       <section class="section section--cta">
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">把项目放进群里。</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">看守护进程在飞书群或 Slack 群里怎么干活；想先免费试，<code>cc-bot</code> 两条命令装进 Claude Code。</p>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">看守护进程在飞书群或 Slack 群里怎么干活，或者现在就装：<code>npm i -g sintbot</code>。</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">看它怎么工作</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener" data-track="cta-plugin">
-              <span data-i18n="cta.plugin">GitHub 上的免费插件</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+              <span data-i18n="cta.plugin">GitHub 上的源码</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
         </div>
@@ -1084,14 +962,13 @@ settings:
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">自托管 · 飞书 &amp; Slack · cc-bot 采用 MIT · 桌宠研发中</span>
+          <span data-i18n="foot.tag">MIT 开源 · 自托管 · 飞书 &amp; Slack · 桌宠研发中</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">平台</a>
           <a href="#design" data-i18n="nav.design">设计</a>
           <a href="#plugin" data-i18n="nav.setup">接入</a>
-          <a href="#pricing" data-i18n="nav.pricing">定价</a>
-          <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
       </div>
       <p class="foot__legal">

@@ -47,7 +47,9 @@
             "name": "SintBot",
             "url": "https://sintbot.com/",
             "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "macOS, Windows",
+            "operatingSystem": "macOS",
+            "license": "https://opensource.org/licenses/MIT",
+            "isAccessibleForFree": true,
             "inLanguage": "en",
             "description": "Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
           },
@@ -69,7 +71,7 @@
                 "name": "How is it different from cc-bot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console."
+                  "text": "Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console."
                 }
               },
               {
@@ -101,7 +103,7 @@
                 "name": "Do I need a server or a public IP?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up."
+                  "text": "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up."
                 }
               },
               {
@@ -117,7 +119,7 @@
                 "name": "How do I get SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "It is not a public download. A Pro subscription supports development; after checkout, write to support@sintbot.com from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? cc-bot installs into Claude Code in two commands."
+                  "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/WaterTian/sintbot."
                 }
               }
             ]
@@ -230,7 +232,7 @@
         <a href="#console" data-i18n="nav.console">Console</a>
         <a href="#plugin" data-i18n="nav.setup">Setup</a>
         <a
-          href="https://github.com/WaterTian/cc-bot"
+          href="https://github.com/WaterTian/sintbot"
           target="_blank"
           rel="noopener"
           class="nav__cta"
@@ -251,7 +253,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Self-hosted daemon · Lark &amp; Slack · Claude Code &amp; Codex</span>
+            <span data-i18n="hero.eyebrow">Open source · self-hosted · Lark &amp; Slack · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
@@ -264,8 +266,8 @@
               <span data-i18n="hero.cta.primary">See how it works</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener" data-track="cta-plugin">
-              <span data-i18n="hero.cta.plugin">Free plugin</span>
+            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+              <span data-i18n="hero.cta.plugin">Source on GitHub</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
@@ -349,7 +351,7 @@
         <ol class="pillars">
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. <code>cc-bot</code> is the free plugin for your own Claude Code session.</p>
+            <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.</p>
             <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Lark and Slack →</a>
           </li>
         </ol>
@@ -865,184 +867,60 @@
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">Small footprint, smart egress</h3>
             <p data-i18n="ops.6.body">Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
-            <ul class="card__chips"><li>Node ≥ 18.17</li><li data-i18n="ops.6.c2">2 runtime deps</li><li data-i18n="ops.6.c3">auto proxy split</li></ul>
+            <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 runtime deps</li><li data-i18n="ops.6.c3">auto proxy split</li></ul>
           </li>
         </ol>
       </section>
 
-      <!-- cc-bot: the free plugin -->
+      <!-- Setup: install the open-source daemon from npm -->
       <section id="plugin" class="section section--plugin">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · Free plugin</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>cc-bot</em> — the free way to run it.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>cc-bot</code> is an MIT Claude Code plugin: it lives inside your interactive session, follows that session’s model and brings Slack and Lark adapters — no daemon, no console.</p>
+        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · Setup</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>Open source</em> — up and running in minutes.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and a logged-in <code>claude</code> (Claude Code) — add <code>codex</code> if you want GPT groups.</p>
         <div class="plugin__meta" data-reveal>
-          <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">Claude Code plugin · v0.1.48</span></span>
+          <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.0</span></span>
           <span class="chip">MIT</span>
           <span class="chip">Slack · <span data-i18n="plat.lark">Lark</span></span>
-          <a class="chip chip--link" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
-
-        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">Four steps to a chat-driven repo.</h3>
-        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>/cc-bot:setup</code> runs the whole flow inside Claude Code — idempotent, version-aware, auto-detects what it can.</p>
-
+        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
+        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.</p>
         <ol class="steps" id="install">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
-            <h3 data-i18n="install.1.title">Install the cc-bot plugin</h3>
-            <pre class="code"><code><span class="tk-c">#</span> inside Claude Code
-<span class="tk-p">/plugin marketplace add</span> WaterTian/cc-bot
-<span class="tk-p">/plugin install</span> cc-bot@cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot
-/plugin install cc-bot@cc-bot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">Then run <code>/cc-bot:setup</code> in any project. When asked "which IM?", pick <b>Slack</b>.</p>
+            <h3 data-i18n="install.1.title">Install from npm</h3>
+            <pre class="code"><code><span class="tk-p">npm i -g</span> sintbot</code><button class="copy" data-copy="npm i -g sintbot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.1.after">Installs the <code>sintbot</code> command. If <code>claude</code> is not logged in on this machine yet, run <code>claude auth login</code> first.</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
-            <h3 data-i18n="install.2.title">Create the Slack app from the manifest</h3>
-            <p class="step__after" data-i18n-html="install.2.after">Open <a href="https://api.slack.com/apps" target="_blank" rel="noopener">api.slack.com/apps</a> → <em>Create New App</em> → <em>From a manifest</em>. Paste the YAML below.</p>
-            <details class="step__details">
-              <summary><span data-i18n="install.2.toggle">Show the manifest</span><span class="step__details-hint" aria-hidden="true">YAML</span></summary>
-              <pre class="code"><code><span class="tk-c"># templates/slack-manifest.yaml — bot scopes &amp; Socket Mode</span>
-<span class="tk-y">display_information</span>:
-  <span class="tk-y">name</span>: cc-bot
-  <span class="tk-y">description</span>: Claude Code-powered group project assistant
-  <span class="tk-y">background_color</span>: <span class="tk-p">"#1f3a2a"</span>
-
-<span class="tk-y">features</span>:
-  <span class="tk-y">bot_user</span>:
-    <span class="tk-y">display_name</span>: cc-bot
-    <span class="tk-y">always_online</span>: <span class="tk-p">true</span>
-
-<span class="tk-y">oauth_config</span>:
-  <span class="tk-y">scopes</span>:
-    <span class="tk-y">bot</span>:
-      - app_mentions:read   <span class="tk-c"># listen for @cc-bot</span>
-      - channels:history    <span class="tk-c"># read public channels</span>
-      - channels:read
-      - chat:write          <span class="tk-c"># post messages</span>
-      - files:read          <span class="tk-c"># download images</span>
-      - files:write
-      - groups:history      <span class="tk-c"># private channels</span>
-      - groups:read
-      - users:read
-
-<span class="tk-y">settings</span>:
-  <span class="tk-y">event_subscriptions</span>:
-    <span class="tk-y">bot_events</span>:
-      - message.channels
-      - message.groups
-      - app_mention
-  <span class="tk-y">interactivity</span>:
-    <span class="tk-y">is_enabled</span>: <span class="tk-p">false</span>
-  <span class="tk-y">org_deploy_enabled</span>: <span class="tk-p">false</span>
-  <span class="tk-y">socket_mode_enabled</span>: <span class="tk-p">true</span>  <span class="tk-c"># no public webhook needed</span>
-  <span class="tk-y">token_rotation_enabled</span>: <span class="tk-p">false</span></code><button class="copy" data-copy="display_information:
-  name: cc-bot
-  description: Claude Code-powered group project assistant
-  background_color: &quot;#1f3a2a&quot;
-features:
-  bot_user:
-    display_name: cc-bot
-    always_online: true
-oauth_config:
-  scopes:
-    bot:
-      - app_mentions:read
-      - channels:history
-      - channels:read
-      - chat:write
-      - files:read
-      - files:write
-      - groups:history
-      - groups:read
-      - users:read
-settings:
-  event_subscriptions:
-    bot_events:
-      - message.channels
-      - message.groups
-      - app_mention
-  interactivity:
-    is_enabled: false
-  org_deploy_enabled: false
-  socket_mode_enabled: true
-  token_rotation_enabled: false" aria-label="Copy manifest" data-i18n="copy">copy</button></pre>
-            </details>
+            <h3 data-i18n="install.2.title">Create the chat bot</h3>
+            <p class="step__after" data-i18n-html="install.2.after">A Feishu (Lark) self-built app using the long-connection event mode, or a Slack app created from the manifest in the repository — no public IP either way. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a>. Then add the bot to your group.</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
-            <h3 data-i18n="install.3.title">Generate the two tokens</h3>
-            <p class="step__after" data-i18n="install.3.after">In the new app's Basic Information page:</p>
-            <ul class="step__list">
-              <li data-i18n-html="install.3.li1"><b>App-Level Token</b> — name it <code>cc-bot-socket</code>, scope <code>connections:write</code>. Copy the <code>xapp-1-…</code> value.</li>
-              <li data-i18n-html="install.3.li2"><em>Install to Workspace</em> → Allow. Copy the <b>Bot User OAuth Token</b> (<code>xoxb-…</code>).</li>
-            </ul>
-            <p class="step__after" data-i18n-html="install.3.tail">Paste both when <code>/cc-bot:setup</code> prompts. cc-bot verifies via <code>auth.test</code> and writes them into <code>.cc-bot/profiles/active.json</code>.</p>
+            <h3 data-i18n="install.3.title">Run the setup wizard</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.3.after">Pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.</p>
           </li>
-
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
-            <h3 data-i18n="install.4.title">Invite cc-bot to a channel</h3>
-            <p class="step__after" data-i18n-html="install.4.after">Paste the channel ID. In Slack, run <code>/invite @cc-bot</code> — bot sends a probe. Then bring it online:</p>
-            <pre class="code"><code><span class="tk-p">/cc-bot:start</span></code><button class="copy" data-copy="/cc-bot:start" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n="install.4.tail">An "online" message lands in your channel. From here, talk to it like a teammate.</p>
+            <h3 data-i18n="install.4.title">Keep it running</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> service install</code><button class="copy" data-copy="sintbot service install" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.4.after">Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). Now @ the bot in your group. The local console is at <code>http://127.0.0.1:4600</code>.</p>
           </li>
         </ol>
-
         <div class="commands" data-reveal>
-          <h3 data-i18n="commands.h">Slash commands</h3>
+          <h3 data-i18n="commands.h">Everyday commands</h3>
           <ul>
-            <li><code>/cc-bot:setup</code> — <span data-i18n="commands.setup">interactive Slack / Lark onboarding</span></li>
-            <li><code>/cc-bot:start</code> — <span data-i18n="commands.start">bring the bot online</span></li>
-            <li><code>/cc-bot:stop</code> — <span data-i18n="commands.stop">take it offline</span></li>
-            <li><code>/cc-bot:new-profile &lt;name&gt;</code> — <span data-i18n="commands.new">clone the profile template</span></li>
-            <li><code>/cc-bot:switch &lt;name&gt;</code> — <span data-i18n="commands.switch">swap active profile</span></li>
-            <li><code>/cc-bot:doctor</code> — <span data-i18n="commands.doctor">health check &amp; diagnostics</span></li>
+            <li><code>sintbot doctor</code> — <span data-i18n="commands.doctor">health check &amp; diagnostics</span></li>
+            <li><code>sintbot service status | logs</code> — <span data-i18n="commands.service">is the service up, and what is it doing</span></li>
+            <li><code>sintbot agent run "…"</code> — <span data-i18n="commands.trial">a read-only trial turn in the terminal</span></li>
+            <li><code>/model</code> <code>/status</code> <code>/stop</code> <code>/new</code> — <span data-i18n="commands.chat">in the group: switch model, check progress, stop, start fresh (Slack uses a ! prefix)</span></li>
           </ul>
         </div>
-      </section>
-
-      <!-- Pricing -->
-      <section id="pricing" class="section section--pricing">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="pricing.kicker">Pricing</p>
-        <h2 class="section__h" data-reveal data-i18n-html="pricing.h">Two ways to <em>run it.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="pricing.lede"><code>cc-bot</code> is free and MIT. A Pro subscription supports development and gets you the <code>sintbot</code> daemon, provided as is.</p>
-
-        <ol class="plans">
-          <li class="plan" data-reveal>
-            <p class="plan__name" data-i18n="pricing.free.name">Free</p>
-            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.free.amount">$0</span><span class="plan__cycle" data-i18n="pricing.free.cycle">/ forever</span></p>
-            <p class="plan__tagline" data-i18n="pricing.free.tagline">A Claude Code plugin — lives inside your session.</p>
-            <ul class="plan__feats">
-              <li data-i18n="pricing.free.f0">Installs into Claude Code as a plugin — it runs in an interactive session and uses whatever model that session runs</li>
-              <li data-i18n="pricing.free.f1">Full cc-bot core — Slack + Lark adapters, multi-session scheduling, permission matrix, HUD</li>
-              <li data-i18n="pricing.free.f2">MIT licensed, self-hosted on your own machine</li>
-              <li data-i18n="pricing.free.f3">Community support via GitHub Issues</li>
-            </ul>
-            <a class="btn btn--ghost plan__cta" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">
-              <span data-i18n="pricing.free.cta">Get cc-bot</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </li>
-
-          <li class="plan plan--pro" data-reveal data-reveal-delay="80">
-            <p class="plan__name" data-i18n="pricing.pro.name">Pro</p>
-            <p class="plan__price"><span class="plan__amount" data-i18n="pricing.pro.amount">$19.90</span><span class="plan__cycle" data-i18n="pricing.pro.cycle">/ month</span></p>
-            <p class="plan__tagline" data-i18n="pricing.pro.tagline">Support development and get the sintbot package to self-host.</p>
-            <ul class="plan__feats">
-              <li data-i18n-html="pricing.pro.fsintbot"><b>sintbot</b> — the daemon: <b>Lark</b> and <b>Slack</b>, Claude Code and Codex with a swappable model per group, per-group permissions and redaction, the design toolchain, the local console, and scheduled tasks. <a href="#platforms">See what it does</a>.</li>
-              <li data-i18n="pricing.pro.f1">Everything in Free</li>
-              <li data-i18n="pricing.pro.f2">Provided as is — no support response times, onboarding or update commitments</li>
-            </ul>
-            <a class="btn btn--ghost plan__cta" href="https://www.creem.io/payment/prod_73MvSNM0cdgiazoMMPYcqM" target="_blank" rel="noopener">
-              <span data-i18n="pricing.pro.cta">Subscribe to Pro</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </li>
-        </ol>
-
-        <p class="plans__note" data-reveal data-i18n-html="pricing.note">sintbot is not a public download — after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address and we send you the current package. It is provided as is: the subscription does not include support response times, onboarding, updates or new features. It ships as readable source under a source-available license: run and modify it on up to three devices you own, keep what you received, but don't redistribute or resell it (<a href="/terms.html">terms</a>). Prices in USD. Payments and taxes are handled by Creem as Merchant of Record. Cancel anytime from the <a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener">Creem customer portal</a>.</p>
+        <p class="plugin__steps-lede plugin__ccbot" data-reveal data-i18n-html="plugin.ccbot">Prefer a plugin that lives inside your own Claude Code session? <code>cc-bot</code> (MIT) does that: <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>.</p>
       </section>
 
       <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
@@ -1052,13 +930,13 @@ settings:
         <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
         <dl class="faq">
           <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">cc-bot is a free, MIT-licensed Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a Mac or Windows machine you keep on, and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">It is not a public download. A Pro subscription supports development; after checkout, write to <a href="mailto:support@sintbot.com">support@sintbot.com</a> from your order address to receive the current package. It is provided as is, as readable source under a source-available license. Want something free first? <code>cc-bot</code> installs into Claude Code in two commands.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
         </dl>
       </section>
 
@@ -1066,13 +944,13 @@ settings:
       <section class="section section--cta">
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Put the project in the group.</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Lark or Slack group, or start free: <code>cc-bot</code> installs into Claude Code in two commands.</p>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Lark or Slack group, or install it now: <code>npm i -g sintbot</code>.</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener" data-track="cta-plugin">
-              <span data-i18n="cta.plugin">Free plugin on GitHub</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+              <span data-i18n="cta.plugin">Source on GitHub</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
         </div>
@@ -1083,14 +961,13 @@ settings:
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Self-hosted · Lark &amp; Slack · cc-bot is MIT · desktop pet in the works</span>
+          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Lark &amp; Slack · desktop pet in the works</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
           <a href="#design" data-i18n="nav.design">Design</a>
           <a href="#plugin" data-i18n="nav.setup">Setup</a>
-          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
-          <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
       </div>
       <p class="foot__legal">
