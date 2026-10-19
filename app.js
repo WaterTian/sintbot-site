@@ -596,8 +596,8 @@
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
-      en: `Not affiliated with Lark, Slack, WeCom (Tencent), Anthropic or OpenAI. Platform logos belong to their owners and are shown only to identify the platforms.`,
-      zh: `与飞书、Slack、企业微信（腾讯）、Anthropic、OpenAI 无任何隶属关系；平台标志归各自所有者，仅用于标明平台。`
+      en: `Not affiliated with Lark, Slack, WeCom (Tencent), Anthropic, OpenAI or any other model provider named here. Logos belong to their owners and are shown only to identify the platforms and models.`,
+      zh: `与飞书、Slack、企业微信（腾讯）、Anthropic、OpenAI 及本站提到的其他模型厂商无任何隶属关系；标志归各自所有者，仅用于标明平台与模型。`
     },
 
     "copy": { en: "copy", zh: "复制" },

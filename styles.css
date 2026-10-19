@@ -511,6 +511,9 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
 .btn--ghost:hover { border-color: var(--signal); color: var(--bone); }
 .btn__arrow { color: inherit; }
 .btn .ico, .nav__cta .ico, .foot__nav .ico, .chip--link .ico { color: inherit; }
+/* 品牌标志(sprite 里的 b-*):彩色的自带颜色,单色的(OpenAI、Codex、GitHub)跟文字色 */
+.brand { flex: none; fill: currentColor; }
+.nav__cta .brand { vertical-align: -2px; margin-right: 6px; }
 
 /* Hero — dual-platform mockup =============================== */
 .hero__mocks {
@@ -743,7 +746,9 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
 
 /* Platform text mark — used in the hero / console mocks; the Platforms cards and the flow diagram use the official logos (assets/platforms/) */
 .plat-mark {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--f-mono);
   font-size: 11px;
   line-height: 1;
@@ -760,7 +765,7 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
   border-color: var(--bone);
   color: var(--ink);
 }
-.plat-mark--xs { font-size: 9.5px; padding: 3px 5px; letter-spacing: 0.1em; }
+.plat-mark--xs { font-size: 9.5px; padding: 3px 5px; letter-spacing: 0.1em; gap: 4px; }
 
 @media (max-width: 820px) {
   .hero__mocks { grid-template-columns: 1fr; gap: 12px; margin-top: 48px; }
@@ -1000,7 +1005,7 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
   transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .plat-card:hover { background: var(--surface-hi); border-color: var(--hair-hi); }
-.plat-logo { width: 24px; height: 24px; flex: none; border-radius: 6px; }
+.plat-logo { width: 24px; height: 24px; }
 .plat-card__note { margin: -8px 0 16px; font-size: 13px; line-height: 1.5; color: var(--text-2); }
 .plat-card__head {
   display: flex;
@@ -1132,6 +1137,7 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
   dominant-baseline: middle;
   font-weight: 400;
 }
+.diagram .d-pill text.d-start { text-anchor: start; }
 .diagram .d-pill--accent rect {
   fill: var(--signal-soft);
   stroke: rgba(214, 143, 68, 0.6);
@@ -1173,7 +1179,8 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
   gap: 4px;
   min-width: 0;
 }
-.model-tile b { font-size: var(--t-body); font-weight: 600; color: var(--bone); }
+.model-tile b { font-size: var(--t-body); font-weight: 600; color: var(--bone); display: flex; align-items: center; gap: 8px; }
+.model-logo { width: 18px; height: 18px; }
 .model-tile i { font-style: normal; font-size: 12px; line-height: 1.4; color: var(--text-2); }
 @media (max-width: 1068px) { .model-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px)  { .model-grid { grid-template-columns: repeat(2, 1fr); } }
