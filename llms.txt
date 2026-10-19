@@ -42,7 +42,7 @@ No. It runs on a computer you keep on — a Mac is the tested setup; Linux suppo
 
 ### What can the agent do by default?
 
-Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.
+Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.
 
 ### How do I get SintBot?
 
@@ -80,7 +80,7 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM�
 
 ### 默认情况下 agent 能做什么？
 
-只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群完全访问或某档工具预设，agent 始终只能在这个群绑定的项目目录里工作。
+只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。
 
 ### 怎么获取 SintBot？
 

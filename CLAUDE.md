@@ -9,11 +9,11 @@
 | | 形态 | 归属 |
 |---|---|---|
 | **cc-bot** | **插件** —— 装进 Claude Code，活在交互会话里，绑死该会话的模型 | Free，MIT，公开仓 `WaterTian/cc-bot`；站上只在接入区末尾留一句入口 |
-| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `WaterTian/sintbot`，npm 包 `sintbot`，**飞书与 Slack 都支持**（每群二选一；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；Discord 站上只写「计划中 / planned」——没有排期就不写版本承诺（2026-09-14 起，原「下一版支持」撤了） |
+| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `WaterTian/sintbot`，npm 包 `sintbot`，**飞书与 Slack 都支持**（每群二选一；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；企业微信守护进程已支持，但开源版真机验过之前不上站；Discord 不上站（2026-10-19 用户定：没有代码就不写「计划中」，开源后它会被当成承诺） |
 
 **命名铁律**：守护进程在站上一律叫 **`sintbot`**（品牌大写 **`SintBot`**，2026-09-05 由 Sintbot 改定 —— 群里、控制台与飞书应用名都是 SintBot，站上再写 Sintbot 就成了同一个产品两个写法）。**内部代号与历史代号一律不上站**（含 `sbot` 及更早的部署代号）——对外只有 sintbot 这一个名字。npm 包同时装了 `sbot` 与 `sintbot` 两个命令，**站上的命令一律写 `sintbot`**（`sintbot setup` / `sintbot service install` …）。本仓库是 Public，连本文件也算对外，写之前先想清楚。
 
-**没有付费版（2026-10 起）**：sintbot 开源后 Pro 订阅停售、定价区与感谢页已删，Creem 商品下架。站上**不写价格、不放付款链接、不写「支持开发 / 打赏 / 赞助」**——要恢复任何收费形式，先想清楚交付的是什么产品（Creem 禁售「没有对应产品的付费」），背景见 `../sintbot-ops/business/creem/`。**站上写的每一句话都会被按字面读**：安装步骤、平台支持、系统支持都要和开源仓 README 当前版本一致（Mac 验证过；Linux 实验性；Windows 未验证）。
+**没有付费版（2026-10 起）**：sintbot 开源后 Pro 订阅停售、定价区与感谢页已删，Creem 商品下架。站上**不写价格、不放付款链接、不写「支持开发 / 打赏 / 赞助」**——要恢复任何收费形式，先想清楚交付的是什么产品（Creem 禁售「没有对应产品的付费」），背景见 `../sintbot-ops/business/creem/`。**站上写的每一句话都会被按字面读**：安装步骤、平台支持、系统支持都要和开源仓 README 当前版本一致（Mac 验证过；Linux 实验性；Windows 未验证）。权限口径照开源仓 `docs/security.md`：只有文件工具锁在项目目录里，命令行没有沙箱——**别写「agent 只能在项目目录里工作」**。
 
 ## 技术栈
 

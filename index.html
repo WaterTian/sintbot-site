@@ -111,7 +111,7 @@
                 "name": "What can the agent do by default?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group."
+                  "text": "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can."
                 }
               },
               {
@@ -202,7 +202,6 @@
 <symbol id="i-key-round" data-icon="lucide/key-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
 <symbol id="i-circle-check" data-icon="lucide/circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></symbol>
 <symbol id="i-triangle-alert" data-icon="lucide/triangle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></symbol>
-<symbol id="i-circle-dashed" data-icon="lucide/circle-dashed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.1 2.182a10 10 0 0 1 3.8 0" /><path d="M13.9 21.818a10 10 0 0 1-3.8 0" /><path d="M17.609 3.721a10 10 0 0 1 2.69 2.7" /><path d="M2.182 13.9a10 10 0 0 1 0-3.8" /><path d="M20.279 17.609a10 10 0 0 1-2.7 2.69" /><path d="M21.818 10.1a10 10 0 0 1 0 3.8" /><path d="M3.721 6.391a10 10 0 0 1 2.7-2.69" /><path d="M6.391 20.279a10 10 0 0 1-2.69-2.7" /></symbol>
 <symbol id="i-cat" data-icon="lucide/cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z" /><path d="M8 14v.5" /><path d="M16 14v.5" /><path d="M11.25 16.25h1.5L12 17l-.75-.75Z" /></symbol>
 <symbol id="i-code" data-icon="lucide/code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></symbol>
 <symbol id="i-check" data-icon="lucide/check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol>
@@ -362,7 +361,7 @@
           <li><span>6</span><i data-i18n="facts.models">model backends, swappable per group</i></li>
           <li><span>16</span><i data-i18n="facts.styles">built-in design styles</i></li>
           <li><span>13</span><i data-i18n="facts.redact">outbound redaction patterns</i></li>
-          <li><span>1,600+</span><i data-i18n="facts.tests">unit tests</i></li>
+          <li><span>1,900+</span><i data-i18n="facts.tests">unit tests</i></li>
         </ul>
       </section>
 
@@ -435,7 +434,6 @@
             <li data-i18n="plat.core.5">same permissions &amp; redaction</li>
             <li data-i18n="plat.core.6">one console</li>
           </ul>
-          <span class="chip chip--next"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-circle-dashed"/></svg><span data-i18n="plat.discord">Discord — planned</span></span>
         </div>
       </section>
 
@@ -447,7 +445,7 @@
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.</p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark or Slack group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, the fenced project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark or Slack group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -520,12 +518,12 @@
             </g>
             <g class="d-pill d-pill--side">
               <rect x="180" y="430" width="240" height="44" rx="10" /><text x="300" y="452" data-i18n-svg="flow.side.console">console · local page</text>
-              <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">project directory · fenced</text>
+              <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">project directory · per group</text>
               <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">design toolchain</text>
             </g>
             <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">style file · check · images · preview</text>
           </svg>
-          <figcaption data-i18n="flow.caption">Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, the fenced project directory and the design toolchain hang off the daemon.</figcaption>
+          <figcaption data-i18n="flow.caption">Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, each group's project directory and the design toolchain hang off the daemon.</figcaption>
         </figure>
       </section>
 
@@ -646,7 +644,7 @@
             <div class="scenario__tag"><span class="scenario__hash">#</span>design</div>
             <h3 data-i18n="scenarios.2.title">One sentence, one homepage.</h3>
             <p class="scenario__scene" data-i18n="scenarios.2.scene">A designer asks for a first version of the landing page.</p>
-            <p class="scenario__act" data-i18n="scenarios.2.act">It reads the style file — or first offers three candidates, say tech-dark, precision-instrument and Swiss grid — builds the page and posts the check result with it.</p>
+            <p class="scenario__act" data-i18n="scenarios.2.act">It reads the style file — or first offers three candidates, say tech-dark, precision-mono and swiss-grid — builds the page and posts the check result with it.</p>
             <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.</p>
           </li>
 
@@ -708,7 +706,7 @@
             <span class="gov-tier__no">③</span>
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-lock"/></svg>
             <h3 data-i18n="gov.t3.title">Directory fence</h3>
-            <p data-i18n="gov.t3.body">The agent works only inside the project directory bound to that group, and groups can only be bound inside your projects root — symlinks included.</p>
+            <p data-i18n="gov.t3.body">File tools stay inside the group's project directory, and groups bind only inside your projects root — symlinks included. Shell commands aren't sandboxed; for OS-level isolation, run it as its own user or in a VM.</p>
           </li>
         </ol>
 
@@ -848,7 +846,7 @@
           <li class="card" data-reveal data-reveal-delay="120">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span class="card__no">03</span></div>
             <h3 data-i18n="ops.3.title">Restarts redo, not forget</h3>
-            <p data-i18n="ops.3.body">A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, NSSM or Task Scheduler on Windows.</p>
+            <p data-i18n="ops.3.body">A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, systemd on Linux (experimental); on Windows it prints the NSSM or pm2 command.</p>
             <ul class="card__chips"><li data-i18n="ops.3.c1">redo within 2h</li><li>launchd</li><li>NSSM</li></ul>
           </li>
           <li class="card" data-reveal data-reveal-delay="180">
@@ -866,7 +864,7 @@
           <li class="card" data-reveal data-reveal-delay="300">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">Small footprint, smart egress</h3>
-            <p data-i18n="ops.6.body">Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
+            <p data-i18n="ops.6.body">Node 22+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
             <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 runtime deps</li><li data-i18n="ops.6.c3">auto proxy split</li></ul>
           </li>
         </ol>
@@ -935,7 +933,7 @@
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
         </dl>
       </section>
@@ -977,7 +975,7 @@
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">SintBot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.</p>
+      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Slack, Lark, Anthropic or OpenAI.</p>
     </footer>
 
     <a href="#top" class="to-top">

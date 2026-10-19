@@ -167,7 +167,6 @@
     "plat.core.4": { en: "progress visible, stoppable", zh: "进度可见可停" },
     "plat.core.5": { en: "same permissions & redaction", zh: "同一套权限与脱敏" },
     "plat.core.6": { en: "one console", zh: "同一个控制台" },
-    "plat.discord": { en: "Discord — planned", zh: "Discord —— 计划中" },
 
     // ---- flow ------------------------------------------------------------
     "flow.kicker": { en: "02 · How it works", zh: "02 · 怎么跑" },
@@ -193,12 +192,12 @@
     "flow.model.note1":   { en: "any Anthropic-compatible endpoint", zh: "任何 Anthropic 兼容端点" },
     "flow.model.note2":   { en: "your subscription or key", zh: "你自己的订阅或 key" },
     "flow.side.console":  { en: "console · local page", zh: "控制台 · 本地网页" },
-    "flow.side.dir":      { en: "project directory · fenced", zh: "项目目录 · 围栏" },
+    "flow.side.dir":      { en: "project directory · per group", zh: "项目目录 · 按群绑定" },
     "flow.side.design":   { en: "design toolchain", zh: "设计工具链" },
     "flow.side.design.note": { en: "style file · check · images · preview", zh: "风格档 · 核对 · 生图 · 预览" },
     "flow.caption": {
-      en: "Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, the fenced project directory and the design toolchain hang off the daemon.",
-      zh: "从左到右：群 → 守护进程 → runner → 模型。虚线：进度与结果回流；控制台、带围栏的项目目录、设计工具链挂在守护进程旁。"
+      en: "Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, each group's project directory and the design toolchain hang off the daemon.",
+      zh: "从左到右：群 → 守护进程 → runner → 模型。虚线：进度与结果回流；控制台、每个群的项目目录、设计工具链挂在守护进程旁。"
     },
 
     // ---- models ----------------------------------------------------------
@@ -301,7 +300,7 @@
     "scenarios.2.title": { en: "One sentence, one homepage.", zh: "一句话，要一版首页。" },
     "scenarios.2.scene": { en: "A designer asks for a first version of the landing page.", zh: "设计群里有人要落地页的第一版。" },
     "scenarios.2.act": {
-      en: "It reads the style file — or first offers three candidates, say tech-dark, precision-instrument and Swiss grid — builds the page and posts the check result with it.",
+      en: "It reads the style file — or first offers three candidates, say tech-dark, precision-mono and swiss-grid — builds the page and posts the check result with it.",
       zh: "它读项目风格档——没有就先给三个候选，比如科技深色、精密仪表、瑞士网格——出图做页面，核对结果随交付一起贴出来。"
     },
     "scenarios.2.win":   { en: `<i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.`, zh: `<i>为什么赢：</i>规范在仓库里，机器人还要证明自己照办了。` },
@@ -346,7 +345,7 @@
     "gov.t2.title": { en: "Tool allow / deny list", zh: "工具白名单 / 黑名单" },
     "gov.t2.body":  { en: "Three presets — read-only, developer, full trust — or your own list.", zh: "三档预设：只读、开发、全信任；也可以自己列。" },
     "gov.t3.title": { en: "Directory fence", zh: "目录围栏" },
-    "gov.t3.body":  { en: "The agent works only inside the project directory bound to that group, and groups can only be bound inside your projects root — symlinks included.", zh: "agent 只能在这个群绑定的项目目录里干活；能绑的目录也只限你的项目根目录之内，符号链接绕不出去。" },
+    "gov.t3.body":  { en: "File tools stay inside the group's project directory, and groups bind only inside your projects root — symlinks included. Shell commands aren't sandboxed; for OS-level isolation, run it as its own user or in a VM.", zh: "文件工具只在本群绑定的项目目录里动，能绑的目录只限项目根目录之内，符号链接绕不出去。命令行没有沙箱；要系统级隔离，请用单独的系统用户或虚拟机跑。" },
     "gov.1.title": { en: "Redacted on the way out", zh: "出站先脱敏" },
     "gov.1.body": {
       en: "Thirteen patterns are masked before a message reaches the group — bearer tokens, JWTs, API-key prefixes, AWS, GitHub, PEM, key-value secrets, emails, phones. Secrets always; PII per group.",
@@ -447,8 +446,8 @@
     "ops.2.c2": { en: "merge on dequeue", zh: "出队合并" },
     "ops.3.title": { en: "Restarts redo, not forget", zh: "重启补做，不丢活" },
     "ops.3.body": {
-      en: "A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, NSSM or Task Scheduler on Windows.",
-      zh: "被发版或重启打断的那一轮，两小时内自动重做。常驻：macOS 用 launchd 并防休眠，Windows 用 NSSM 或任务计划。"
+      en: "A turn cut short by a release or restart is redone automatically within two hours. Runs as a service: launchd on macOS, systemd on Linux (experimental); on Windows it prints the NSSM or pm2 command.",
+      zh: "被发版或重启打断的那一轮，两小时内自动重做。常驻：macOS 用 launchd，Linux 用 systemd（实验性），Windows 给出 NSSM 或 pm2 的现成命令。"
     },
     "ops.3.c1": { en: "redo within 2h", zh: "2 小时内补做" },
     "ops.4.title": { en: "Scheduled in one sentence", zh: "一句话排定时任务" },
@@ -468,8 +467,8 @@
     "ops.5.c3": { en: "compaction notice", zh: "压缩提示" },
     "ops.6.title": { en: "Small footprint, smart egress", zh: "依赖少，出网会分流" },
     "ops.6.body": {
-      en: "Node 18.17+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.",
-      zh: "Node 18.17 起，运行时依赖两个；Claude Code 和 Codex 你自己装。官方 Claude 走代理，国内端点直连，自动分流。"
+      en: "Node 22+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.",
+      zh: "Node 22 起，运行时依赖两个；Claude Code 和 Codex 你自己装。官方 Claude 走代理，国内端点直连，自动分流。"
     },
     "ops.6.c2": { en: "2 runtime deps", zh: "2 个运行时依赖" },
     "ops.6.c3": { en: "auto proxy split", zh: "代理自动分流" },
@@ -558,8 +557,8 @@
     },
     "faq.7.q": { en: "What can the agent do by default?", zh: "默认情况下 agent 能做什么？" },
     "faq.7.a": {
-      en: "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant full access or a tool preset, and the agent is always fenced to the project directory bound to that group.",
-      zh: "只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群完全访问或某档工具预设，agent 始终只能在这个群绑定的项目目录里工作。"
+      en: "Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.",
+      zh: "只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。"
     },
     "faq.8.q": { en: "How do I get SintBot?", zh: "怎么获取 SintBot？" },
     "faq.8.a": {
@@ -586,8 +585,8 @@
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
-      en: "SintBot showcase — rouserlab editorial pacing, the-field motion. Not affiliated with Slack, Lark, Anthropic or OpenAI.",
-      zh: "SintBot 展示站点 —— 节奏取自 rouserlab，动作取自 the-field。与 Slack、飞书、Anthropic、OpenAI 无任何隶属关系。"
+      en: "Not affiliated with Slack, Lark, Anthropic or OpenAI.",
+      zh: "与 Slack、飞书、Anthropic、OpenAI 无任何隶属关系。"
     },
 
     "copy": { en: "copy", zh: "复制" },

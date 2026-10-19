@@ -832,7 +832,6 @@ html:lang(zh) .lede { max-width: 36em; }
   white-space: nowrap;
 }
 .chip .ico { width: 16px; height: 16px; color: var(--text-2); }
-.chip--next { color: var(--text-2); }
 .chip--link { color: var(--signal); transition: border-color var(--dur) var(--ease); }
 .chip--link:hover { border-color: var(--signal); text-decoration: none; }
 .chip--lark { color: var(--text-2); }
