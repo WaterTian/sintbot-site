@@ -100,6 +100,8 @@ html:lang(zh) .cta h2 em {
 }
 html:lang(zh) .section__kicker,
 html:lang(zh) .eyebrow { letter-spacing: 0.12em; }
+/* 首屏小标题只在「·」后折行:词组内是不折行空格,中文再禁掉字间断行(否则「企业微信」会被拆开) */
+.eyebrow { word-break: keep-all; }
 
 a {
   color: inherit;
@@ -739,7 +741,7 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
   color: var(--text-1);
 }
 
-/* Platform text mark (no brand logos) */
+/* Platform text mark — used in the hero / console mocks; the Platforms cards and the flow diagram use the official logos (assets/platforms/) */
 .plat-mark {
   display: inline-block;
   font-family: var(--f-mono);
@@ -985,19 +987,21 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
 /* Platforms ================================================ */
 .plat {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-@media (max-width: 820px) { .plat { grid-template-columns: 1fr; } }
+@media (max-width: 1068px) { .plat { grid-template-columns: 1fr; } }
 .plat-card {
   background: var(--surface);
   border: 1px solid var(--hair);
   border-radius: var(--r-card);
-  padding: 28px 36px;
+  padding: 28px;
   min-width: 0;
   transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .plat-card:hover { background: var(--surface-hi); border-color: var(--hair-hi); }
+.plat-logo { width: 24px; height: 24px; flex: none; border-radius: 6px; }
+.plat-card__note { margin: -8px 0 16px; font-size: 13px; line-height: 1.5; color: var(--text-2); }
 .plat-card__head {
   display: flex;
   align-items: center;

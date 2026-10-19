@@ -6,7 +6,7 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 
 ## What the page covers
 
-**`sintbot`** — a self-hosted daemon that binds a Lark or Slack group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Lark and Slack are both supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free and open source under MIT — source in [`WaterTian/sintbot`](https://github.com/WaterTian/sintbot).
+**`sintbot`** — a self-hosted daemon that binds a Lark, Slack or WeCom group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Lark, Slack and WeCom are all supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free and open source under MIT — source in [`WaterTian/sintbot`](https://github.com/WaterTian/sintbot).
 
 **`cc-bot`** — the companion MIT Claude Code **plugin**: it lives inside an interactive session and is bound to that session's model, with Slack and Lark adapters ([`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot)). The page points to it in one line at the end of the setup section.
 
@@ -26,7 +26,7 @@ python -m http.server 8000   # then visit http://localhost:8000/
 - `index.html` — the single page, in order: hero (a Lark card and a Slack thread from the same daemon) → what it is → platforms → how it works (inline SVG flow) → models → design system → scenarios → governance → console → reliability → setup (npm in four steps, plus the cc-bot pointer) → FAQ → CTA → footer. A Lucide icon sprite is inlined at the top of `<body>`; the page uses no emoji.
 - `styles.css` — raw CSS with custom properties; ink-black canvas, one copper accent, hairline cards. Fraunces (display) + Inter (UI) + JetBrains Mono (code) from Google Fonts, loaded without blocking first paint; Chinese renders in the platform font (PingFang / YaHei), nothing downloaded for it. Transitions only — nothing animates frame by frame.
 - `app.js` — vanilla JS: the `translations` i18n table, IntersectionObserver reveal-on-scroll, soft cursor glow (pointer:fine only), copy-to-clipboard for the install commands, and Umami event tracking. Honors `prefers-reduced-motion`.
-- `assets/` — `favicon.svg`; `og-banner.png` (rendered from `og-banner.source.html` at 1200×630 — re-render after changing its copy); `design-styles.png` (the daemon's 16 built-in styles, rendered by its own toolchain); `logo.png` / `logo.svg` are retained but no longer referenced by the page.
+- `assets/` — `platforms/` (the Lark, Slack and WeCom logos — each platform's own site icon, trademarks of their owners, used only to identify the platform; same set as the daemon's console); `favicon.svg`; `og-banner.png` (rendered from `og-banner.source.html` at 1200×630 — re-render after changing its copy); `design-styles.png` (the daemon's 16 built-in styles, rendered by its own toolchain); `logo.png` / `logo.svg` are retained but no longer referenced by the page.
 - `privacy.html` · `terms.html` — legal pages.
 - `CNAME` — GitHub Pages custom domain (`sintbot.com`); do not delete.
 

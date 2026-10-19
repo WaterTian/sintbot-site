@@ -6,7 +6,7 @@
     <title>SintBot — the group-project AI daemon, on your machine</title>
     <meta
       name="description"
-      content="Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
          bot into your chat", so links get pasted into Slack/Lark/WeChat
@@ -18,17 +18,17 @@
     <meta property="og:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       property="og:description"
-      content="Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <meta property="og:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SintBot — the group-project AI daemon for Lark and Slack, running on your own machine" />
+    <meta property="og:image:alt" content="SintBot — the group-project AI daemon for Lark, Slack and WeCom, running on your own machine" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       name="twitter:description"
-      content="Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -51,7 +51,7 @@
             "license": "https://opensource.org/licenses/MIT",
             "isAccessibleForFree": true,
             "inLanguage": "en",
-            "description": "Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+            "description": "Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
           },
           {
             "@type": "FAQPage",
@@ -63,7 +63,7 @@
                 "name": "What is SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group."
+                  "text": "A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group."
                 }
               },
               {
@@ -103,7 +103,7 @@
                 "name": "Do I need a server or a public IP?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up."
+                  "text": "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up."
                 }
               },
               {
@@ -252,7 +252,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Open source · self-hosted · Lark &amp; Slack · Claude Code &amp; Codex</span>
+            <span data-i18n="hero.eyebrow">Open source · self-hosted · Lark, Slack &amp; WeCom · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
@@ -351,12 +351,12 @@
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
             <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.</p>
-            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Lark and Slack →</a>
+            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Lark, Slack and WeCom →</a>
           </li>
         </ol>
 
         <ul class="facts" data-reveal data-reveal-delay="120" aria-label="By the numbers">
-          <li><span>2</span><i data-i18n="facts.platforms">platforms — Lark and Slack</i></li>
+          <li><span>3</span><i data-i18n="facts.platforms">platforms — Lark, Slack and WeCom</i></li>
           <li><span>2</span><i data-i18n="facts.runners">agent runners — Claude Code and Codex</i></li>
           <li><span>6</span><i data-i18n="facts.models">model backends, swappable per group</i></li>
           <li><span>16</span><i data-i18n="facts.styles">built-in design styles</i></li>
@@ -365,17 +365,17 @@
         </ul>
       </section>
 
-      <!-- Platforms: Lark and Slack, both supported -->
+      <!-- Platforms: Lark, Slack and WeCom, all supported -->
       <section id="platforms" class="section section--plat">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · Platforms</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Lark and Slack, <em>both supported.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">A group can be a Lark group or a Slack channel — each one picks, and one daemon serves both. Everything else is the same: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Lark, Slack and WeCom, <em>all supported.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">A group can be a Lark group, a Slack channel or a WeCom group — each one picks, and one daemon serves all three. The core is the same everywhere: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.</p>
 
         <div class="plat">
           <article class="plat-card plat-card--lark" data-reveal>
             <div class="plat-card__head">
-              <span class="plat-mark plat-mark--lark" data-i18n="plat.lark">Lark</span>
+              <img class="plat-logo" src="/assets/platforms/feishu.png" alt="" width="24" height="24" />
               <h3 data-i18n="plat.lark.h">In a Lark group</h3>
             </div>
             <ul class="plat-list">
@@ -400,7 +400,7 @@
 
           <article class="plat-card plat-card--slack" data-reveal data-reveal-delay="80">
             <div class="plat-card__head">
-              <span class="plat-mark plat-mark--slack">Slack</span>
+              <img class="plat-logo" src="/assets/platforms/slack.png" alt="" width="24" height="24" />
               <h3 data-i18n="plat.slack.h">In a Slack channel</h3>
             </div>
             <ul class="plat-list">
@@ -419,6 +419,31 @@
               <li>
                 <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
                 <div><b data-i18n="plat.slack.4.t">Socket Mode, proxy-friendly</b><p data-i18n="plat.slack.4.b">Outbound only, no public IP; on a restricted network it tunnels through an http proxy.</p></div>
+              </li>
+            </ul>
+          </article>
+          <article class="plat-card plat-card--wecom" data-reveal data-reveal-delay="160">
+            <div class="plat-card__head">
+              <img class="plat-logo" src="/assets/platforms/wecom.png" alt="" width="24" height="24" />
+              <h3 data-i18n="plat.wecom.h">In a WeCom group</h3>
+            </div>
+            <p class="plat-card__note" data-i18n="plat.wecom.note">The newest of the three and the least used in real teams so far — feedback welcome.</p>
+            <ul class="plat-list">
+              <li>
+                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg>
+                <div><b data-i18n="plat.wecom.1.t">Long connection, no verification</b><p data-i18n="plat.wecom.1.b">A smart bot in API mode on a long connection: no public IP, no domain, and a free unverified enterprise is enough.</p></div>
+              </li>
+              <li>
+                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-at-sign"/></svg>
+                <div><b data-i18n="plat.wecom.2.t">Answers when @-mentioned</b><p data-i18n="plat.wecom.2.b">WeCom delivers only messages that @ the bot. Small groups can turn on a follow-up window that answers without @; it is off by default.</p></div>
+              </li>
+              <li>
+                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>
+                <div><b data-i18n="plat.wecom.3.t">Names, images and files</b><p data-i18n="plat.wecom.3.b">Authorize the official wecom-cli and the group shows members’ names and the bot can send images and files; without it, it still works with user IDs.</p></div>
+              </li>
+              <li>
+                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
+                <div><b data-i18n="plat.wecom.4.t">Streaming replies</b><p data-i18n="plat.wecom.4.b">Replies stream into the group; one longer than ten minutes carries on in the next message, and Markdown the client cannot show is rewritten.</p></div>
               </li>
             </ul>
           </article>
@@ -445,7 +470,7 @@
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.</p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark or Slack group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark, Slack or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -467,8 +492,9 @@
             <g class="d-col">
               <rect x="40" y="60" width="200" height="320" rx="18" />
               <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">Group</text>
-              <g class="d-pill d-pill--accent"><rect x="70" y="140" width="140" height="44" rx="22" /><text x="140" y="162" data-i18n-svg="plat.lark">Lark</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="196" width="140" height="44" rx="22" /><text x="140" y="218">Slack</text></g>
+              <g class="d-pill d-pill--accent"><rect x="70" y="140" width="140" height="44" rx="22" /><image href="/assets/platforms/feishu.png" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">Lark</text></g>
+              <g class="d-pill d-pill--accent"><rect x="70" y="196" width="140" height="44" rx="22" /><image href="/assets/platforms/slack.png" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
+              <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><image href="/assets/platforms/wecom.png" x="84" y="264" width="20" height="20" /><text x="150" y="274" data-i18n-svg="plat.wecom">WeCom</text></g>
               <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">just talk to it</text>
               <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">one group · one project</text>
             </g>
@@ -805,7 +831,7 @@
           <ul class="con-points">
             <li data-reveal>
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg>
-              <div><b data-i18n="con.p1.t">Groups and projects</b><p data-i18n="con.p1.b">Create or dissolve a group, bind its project directory, link the repo, pause it; Lark and Slack cards with a preflight.</p></div>
+              <div><b data-i18n="con.p1.t">Groups and projects</b><p data-i18n="con.p1.b">Create or dissolve a group, bind its project directory, link the repo, pause it; Lark, Slack and WeCom cards with a preflight.</p></div>
             </li>
             <li data-reveal data-reveal-delay="60">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg>
@@ -879,7 +905,7 @@
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.0</span></span>
           <span class="chip">MIT</span>
-          <span class="chip">Slack · <span data-i18n="plat.lark">Lark</span></span>
+          <span class="chip"><span data-i18n="plat.lark">Lark</span> · Slack · <span data-i18n="plat.wecom">WeCom</span></span>
           <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
@@ -896,7 +922,7 @@
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">Create the chat bot</h3>
-            <p class="step__after" data-i18n-html="install.2.after">A Feishu (Lark) self-built app using the long-connection event mode, or a Slack app created from the manifest in the repository — no public IP either way. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a>. Then add the bot to your group.</p>
+            <p class="step__after" data-i18n-html="install.2.after">A Feishu (Lark) self-built app using the long-connection event mode, a Slack app created from the manifest in the repository, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
@@ -929,12 +955,12 @@
         <p class="section__kicker" data-reveal data-i18n="faq.kicker">FAQ</p>
         <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
         <dl class="faq">
-          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
         </dl>
@@ -944,7 +970,7 @@
       <section class="section section--cta">
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Put the project in the group.</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Lark or Slack group, or install it now: <code>npm i -g sintbot</code>.</p>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Lark, Slack or WeCom group, or install it now: <code>npm i -g sintbot</code>.</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
@@ -961,7 +987,7 @@
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Lark &amp; Slack · desktop pet in the works</span>
+          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Lark, Slack &amp; WeCom · desktop pet in the works</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
@@ -977,7 +1003,7 @@
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Slack, Lark, Anthropic or OpenAI.</p>
+      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Lark, Slack, WeCom (Tencent), Anthropic or OpenAI. Platform logos belong to their owners and are shown only to identify the platforms.</p>
     </footer>
 
     <a href="#top" class="to-top">

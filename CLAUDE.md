@@ -9,7 +9,7 @@
 | | 形态 | 归属 |
 |---|---|---|
 | **cc-bot** | **插件** —— 装进 Claude Code，活在交互会话里，绑死该会话的模型 | Free，MIT，公开仓 `WaterTian/cc-bot`；站上只在接入区末尾留一句入口 |
-| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `WaterTian/sintbot`，npm 包 `sintbot`，**飞书与 Slack 都支持**（每群二选一；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；企业微信守护进程已支持，但开源版真机验过之前不上站；Discord 不上站（2026-10-19 用户定：没有代码就不写「计划中」，开源后它会被当成承诺） |
+| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `WaterTian/sintbot`，npm 包 `sintbot`，**飞书、Slack、企业微信都支持**（每群选一个平台；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；企业微信 2026-10-19 用户定上站，平台区那栏带一句「三个平台里最新接入的，真实环境里用得最少，欢迎反馈」，真机验过后可去掉；平台区卡片与流程图用三家官网站点图标（`assets/platforms/`，与守护进程控制台同一套），只用来标明平台，页脚有无隶属声明；Discord 不上站（2026-10-19 用户定：没有代码就不写「计划中」，开源后它会被当成承诺） |
 
 **命名铁律**：守护进程在站上一律叫 **`sintbot`**（品牌大写 **`SintBot`**，2026-09-05 由 Sintbot 改定 —— 群里、控制台与飞书应用名都是 SintBot，站上再写 Sintbot 就成了同一个产品两个写法）。**内部代号与历史代号一律不上站**（含 `sbot` 及更早的部署代号）——对外只有 sintbot 这一个名字。npm 包同时装了 `sbot` 与 `sintbot` 两个命令，**站上的命令一律写 `sintbot`**（`sintbot setup` / `sintbot service install` …）。本仓库是 Public，连本文件也算对外，写之前先想清楚。
 

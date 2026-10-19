@@ -1,6 +1,6 @@
 # SintBot
 
-> Bind a Lark or Slack group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.
+> Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.
 
 Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts as the page.
 
@@ -18,7 +18,7 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 ### What is SintBot?
 
-A self-hosted daemon that binds a chat group — Lark or Slack — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.
+A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.
 
 ### How is it different from cc-bot?
 
@@ -38,7 +38,7 @@ On your machine: project directories, sessions, memory and logs stay there. The 
 
 ### Do I need a server or a public IP?
 
-No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack. The console stays on that machine unless you choose to open it up.
+No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.
 
 ### What can the agent do by default?
 
@@ -50,13 +50,13 @@ Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open s
 
 ## 中文
 
-> 一个飞书群或 Slack 群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。
+> 一个飞书、Slack 或企业微信群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。
 
 ## 常见问题
 
 ### SintBot 是什么？
 
-一个跑在你自己机器上的守护进程：把一个聊天群（飞书或 Slack）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。
+一个跑在你自己机器上的守护进程：把一个聊天群（飞书、Slack 或企业微信）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。
 
 ### 它和 cc-bot 有什么区别？
 
@@ -76,7 +76,7 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM�
 
 ### 需要服务器或公网 IP 吗？
 
-不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode。控制台默认只在本机，除非你自己选择开放。
+不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。
 
 ### 默认情况下 agent 能做什么？
 
