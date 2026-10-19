@@ -1545,6 +1545,9 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
   color: var(--text-2);
   max-width: 62ch;
 }
+/* 一键安装那一行:紧贴下面的命令框,命令框再与四步拉开 */
+.plugin__quick { margin: 0 0 12px; }
+.code.plugin__quick-code { margin: 0 0 24px; }
 /* 接入区末尾那句 cc-bot 入口:与上面的常用命令框拉开距离 */
 .plugin__ccbot { margin: 28px 0 0; }
 
