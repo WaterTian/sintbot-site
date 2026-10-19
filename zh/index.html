@@ -865,7 +865,7 @@
           <li class="card" data-reveal data-reveal-delay="300">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">依赖少，出网会分流</h3>
-            <p data-i18n="ops.6.body">Node 22 起，运行时依赖两个；Claude Code 和 Codex 你自己装。官方 Claude 走代理，国内端点直连，自动分流。</p>
+            <p data-i18n="ops.6.body">Node 22 起，运行时依赖两个；Claude Code 和 Codex 另装，配置向导可以代你装。官方 Claude 走代理，国内端点直连，自动分流。</p>
             <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 个运行时依赖</li><li data-i18n="ops.6.c3">代理自动分流</li></ul>
           </li>
         </ol>
@@ -876,7 +876,7 @@
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · 接入</p>
         <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>开源</em>，几分钟跑起来。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上，并装好、登录 <code>claude</code>（Claude Code）；要开 GPT 群再加 <code>codex</code>。</p>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上和 <code>claude</code>（Claude Code）——没装的话配置向导会替你装；只有用 Claude 本身才需要登录。要开 GPT 群再加 <code>codex</code>。</p>
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.0</span></span>
           <span class="chip">MIT</span>
@@ -892,7 +892,7 @@
             <p class="step__no">01</p>
             <h3 data-i18n="install.1.title">从 npm 安装</h3>
             <pre class="code"><code><span class="tk-p">npm i -g</span> sintbot</code><button class="copy" data-copy="npm i -g sintbot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">装好后就有 <code>sintbot</code> 命令。这台机器上的 <code>claude</code> 还没登录的话，先跑一次 <code>claude auth login</code>。</p>
+            <p class="step__after" data-i18n-html="install.1.after">装好后就有 <code>sintbot</code> 命令。第 3 步的向导会检查 Claude Code，没装会问要不要替你装；要用 Claude 本身，登录一次 <code>claude auth login</code>；DeepSeek、GLM 等用 key 的模型不用登录。</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>

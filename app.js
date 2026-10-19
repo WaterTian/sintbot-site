@@ -467,8 +467,8 @@
     "ops.5.c3": { en: "compaction notice", zh: "压缩提示" },
     "ops.6.title": { en: "Small footprint, smart egress", zh: "依赖少，出网会分流" },
     "ops.6.body": {
-      en: "Node 22+ with two runtime dependencies; you install Claude Code and Codex. Official Claude goes through your proxy, domestic endpoints connect direct.",
-      zh: "Node 22 起，运行时依赖两个；Claude Code 和 Codex 你自己装。官方 Claude 走代理，国内端点直连，自动分流。"
+      en: "Node 22+ with two runtime dependencies; Claude Code and Codex are separate installs the setup wizard can do for you. Official Claude goes through your proxy, domestic endpoints connect direct.",
+      zh: "Node 22 起，运行时依赖两个；Claude Code 和 Codex 另装，配置向导可以代你装。官方 Claude 走代理，国内端点直连，自动分流。"
     },
     "ops.6.c2": { en: "2 runtime deps", zh: "2 个运行时依赖" },
     "ops.6.c3": { en: "auto proxy split", zh: "代理自动分流" },
@@ -479,8 +479,8 @@
     "plugin.kicker": { en: "09 · Setup", zh: "09 · 接入" },
     "plugin.h":      { en: `<em>Open source</em> — up and running in minutes.`, zh: `<em>开源</em>，几分钟跑起来。` },
     "plugin.lede": {
-      en: `<code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and a logged-in <code>claude</code> (Claude Code) — add <code>codex</code> if you want GPT groups.`,
-      zh: `<code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上，并装好、登录 <code>claude</code>（Claude Code）；要开 GPT 群再加 <code>codex</code>。`
+      en: `<code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and <code>claude</code> (Claude Code) — the setup wizard installs it if it is missing; log in only if you use Claude itself. Add <code>codex</code> if you want GPT groups.`,
+      zh: `<code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上和 <code>claude</code>（Claude Code）——没装的话配置向导会替你装；只有用 Claude 本身才需要登录。要开 GPT 群再加 <code>codex</code>。`
     },
     "plugin.meta.kind": { en: `npm · sintbot v${VERSION}`, zh: `npm · sintbot v${VERSION}` },
 
@@ -495,8 +495,8 @@
     },
     "install.1.title": { en: "Install from npm", zh: "从 npm 安装" },
     "install.1.after": {
-      en: `Installs the <code>sintbot</code> command. If <code>claude</code> is not logged in on this machine yet, run <code>claude auth login</code> first.`,
-      zh: `装好后就有 <code>sintbot</code> 命令。这台机器上的 <code>claude</code> 还没登录的话，先跑一次 <code>claude auth login</code>。`
+      en: `Installs the <code>sintbot</code> command. The wizard in step 3 checks for Claude Code and offers to install it; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.`,
+      zh: `装好后就有 <code>sintbot</code> 命令。第 3 步的向导会检查 Claude Code，没装会问要不要替你装；要用 Claude 本身，登录一次 <code>claude auth login</code>；DeepSeek、GLM 等用 key 的模型不用登录。`
     },
     "install.2.title": { en: "Create the chat bot", zh: "建好聊天机器人" },
     "install.2.after": {
