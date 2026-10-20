@@ -156,7 +156,7 @@ step_setup() {
     say "  没有可交互的终端,跳过。请在终端里运行:sintbot setup"
     return
   fi
-  say "  向导会依次检查 Claude Code(没装会问要不要装)、配模型、接聊天平台、绑第一个群。"
+  say "  向导会依次检查 Claude Code(没装会问要不要装)、配模型(没有 Claude 订阅就推荐 DeepSeek,粘贴 key 当场试跑)、接聊天平台、绑第一个群。"
   say "  先按 docs/platforms/ 建好机器人并拉进群,向导里才有凭据可填:"
   say "  https://github.com/WaterTian/sintbot/tree/main/docs/platforms"
   run sintbot setup < "$TTY"
@@ -176,7 +176,6 @@ step_service() {
 step_done() {
   say ""
   say "完成。接下来:"
-  say "  · 用 Claude 订阅的话,还没登录就跑一次:claude auth login"
   say "  · 在群里 @ 机器人说一句话"
   say "  · 控制台:http://127.0.0.1:4600(绑群、切模型、看实时活动)"
   say "  · 文档:https://github.com/WaterTian/sintbot"
