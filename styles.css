@@ -744,7 +744,8 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
   color: var(--text-1);
 }
 
-/* Platform text mark — used in the hero / console mocks; the Platforms cards and the flow diagram use the official logos (assets/platforms/) */
+/* Platform text mark — used in the hero / console mocks; the Platforms cards and the flow diagram use the logos from the b-* sprite.
+   Feishu, Slack and WeCom share one look (2026-10-20: the Feishu mark used to sit on a bone-white fill — user: not nice, match Slack). */
 .plat-mark {
   display: inline-flex;
   align-items: center;
@@ -759,11 +760,6 @@ html:lang(zh) .hero__title-en > em { font-weight: 700; }
   border: 1px solid var(--hair-hi);
   color: var(--text-1);
   white-space: nowrap;
-}
-.plat-mark--lark {
-  background: var(--bone);
-  border-color: var(--bone);
-  color: var(--ink);
 }
 .plat-mark--xs { font-size: 9.5px; padding: 3px 5px; letter-spacing: 0.1em; gap: 4px; }
 
