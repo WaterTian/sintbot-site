@@ -992,6 +992,14 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
   gap: 16px;
 }
 @media (max-width: 1068px) { .plat { grid-template-columns: 1fr; } }
+/* The English page leads with Slack (global readers), the Chinese page with Feishu; the markup stays Feishu-first,
+   so the hero mocks, these cards and the flow diagram's group pills are reordered here. */
+html[lang="en"] .mock--slack { order: 1; }
+html[lang="en"] .mock__eq { order: 2; }
+html[lang="en"] .mock--lark { order: 3; }
+html[lang="en"] .plat-card--slack { order: -1; }
+html[lang="en"] .diagram .d-pill--slack { transform: translateY(-56px); }
+html[lang="en"] .diagram .d-pill--feishu { transform: translateY(56px); }
 .plat-card {
   background: var(--surface);
   border: 1px solid var(--hair);

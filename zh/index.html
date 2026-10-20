@@ -321,7 +321,7 @@
           </div>
         </div>
 
-        <!-- Dual-platform mockup: the same daemon in a Lark group and a Slack channel -->
+        <!-- Dual-platform mockup: the same daemon in a Feishu group and a Slack channel (English puts Slack first: styles.css) -->
         <div class="hero__mocks" data-reveal data-reveal-delay="660">
           <aside class="mock mock--lark" aria-label="Example Feishu group">
             <div class="mock__bar">
@@ -414,7 +414,7 @@
         </ul>
       </section>
 
-      <!-- Platforms: Lark, Slack and WeCom, all supported -->
+      <!-- Platforms: Feishu, Slack and WeCom, all supported (English puts Slack first: styles.css) -->
       <section id="platforms" class="section section--plat">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · 平台</p>
@@ -519,7 +519,7 @@
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">你机器上的守护进程核对这个群的权限，把这一轮交给项目目录里的 Claude Code 或 Codex，进度回流到群——模型是你给这个群选的那一个。</p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Feishu, Slack or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Slack, Feishu or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -541,8 +541,8 @@
             <g class="d-col">
               <rect x="40" y="60" width="200" height="320" rx="18" />
               <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">群</text>
-              <g class="d-pill d-pill--accent"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">飞书</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="196" width="140" height="44" rx="22" /><use href="#b-slack" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
+              <g class="d-pill d-pill--accent d-pill--feishu"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">飞书</text></g>
+              <g class="d-pill d-pill--accent d-pill--slack"><rect x="70" y="196" width="140" height="44" rx="22" /><use href="#b-slack" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
               <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><use href="#b-wecom" x="84" y="264" width="20" height="20" /><text x="150" y="274" data-i18n-svg="plat.wecom">企业微信</text></g>
               <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">群里直接说</text>
               <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">一群 · 一项目</text>
@@ -955,7 +955,7 @@
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.2</span></span>
           <span class="chip">MIT</span>
-          <span class="chip"><span data-i18n="plat.lark">飞书</span> · Slack · <span data-i18n="plat.wecom">企业微信</span></span>
+          <span class="chip" data-i18n="plat.trio">飞书 · Slack · 企业微信</span>
           <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">从 npm 到群里，四步。</h3>

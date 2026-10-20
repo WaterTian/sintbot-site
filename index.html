@@ -6,7 +6,7 @@
     <title>SintBot — the group-project AI daemon, on your machine</title>
     <meta
       name="description"
-      content="Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Slack, Feishu or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
          bot into your chat", so links get pasted into Slack/Lark/WeChat
@@ -18,17 +18,17 @@
     <meta property="og:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       property="og:description"
-      content="Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Slack, Feishu or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <meta property="og:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SintBot — the group-project AI daemon for Feishu, Slack and WeCom, running on your own machine" />
+    <meta property="og:image:alt" content="SintBot — the group-project AI daemon for Slack, Feishu and WeCom, running on your own machine" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SintBot — the group-project AI daemon, on your machine" />
     <meta
       name="twitter:description"
-      content="Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+      content="Bind a Slack, Feishu or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
     />
     <meta name="twitter:image" content="https://sintbot.com/assets/og-banner.png" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -56,7 +56,7 @@
               "https://www.npmjs.com/package/sintbot"
             ],
             "inLanguage": "en",
-            "description": "Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
+            "description": "Bind a Slack, Feishu or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project."
           },
           {
             "@type": "FAQPage",
@@ -68,7 +68,7 @@
                 "name": "What is SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A self-hosted daemon that binds a chat group — Feishu, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group."
+                  "text": "A self-hosted daemon that binds a chat group — Slack, Feishu or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group."
                 }
               },
               {
@@ -108,7 +108,7 @@
                 "name": "Do I need a server or a public IP?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Feishu, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up."
+                  "text": "No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: Socket Mode for Slack, a WebSocket long connection for Feishu, a long connection for WeCom. The console stays on that machine unless you choose to open it up."
                 }
               },
               {
@@ -299,7 +299,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Open source · self-hosted · Feishu, Slack &amp; WeCom · Claude Code &amp; Codex</span>
+            <span data-i18n="hero.eyebrow">Open source · self-hosted · Slack, Feishu &amp; WeCom · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
@@ -320,7 +320,7 @@
           </div>
         </div>
 
-        <!-- Dual-platform mockup: the same daemon in a Lark group and a Slack channel -->
+        <!-- Dual-platform mockup: the same daemon in a Feishu group and a Slack channel (English puts Slack first: styles.css) -->
         <div class="hero__mocks" data-reveal data-reveal-delay="660">
           <aside class="mock mock--lark" aria-label="Example Feishu group">
             <div class="mock__bar">
@@ -399,12 +399,12 @@
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
             <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.</p>
-            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Feishu, Slack and WeCom →</a>
+            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Slack, Feishu and WeCom →</a>
           </li>
         </ol>
 
         <ul class="facts" data-reveal data-reveal-delay="120" aria-label="By the numbers">
-          <li><span>3</span><i data-i18n="facts.platforms">platforms — Feishu, Slack and WeCom</i></li>
+          <li><span>3</span><i data-i18n="facts.platforms">platforms — Slack, Feishu and WeCom</i></li>
           <li><span>2</span><i data-i18n="facts.runners">agent runners — Claude Code and Codex</i></li>
           <li><span>6</span><i data-i18n="facts.models">model backends, swappable per group</i></li>
           <li><span>16</span><i data-i18n="facts.styles">built-in design styles</i></li>
@@ -413,12 +413,12 @@
         </ul>
       </section>
 
-      <!-- Platforms: Lark, Slack and WeCom, all supported -->
+      <!-- Platforms: Feishu, Slack and WeCom, all supported (English puts Slack first: styles.css) -->
       <section id="platforms" class="section section--plat">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · Platforms</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Feishu, Slack and WeCom, <em>all supported.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">A group can be a Feishu group, a Slack channel or a WeCom group — each one picks, and one daemon serves all three. The core is the same everywhere: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Slack, Feishu and WeCom, <em>all supported.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">A group can be a Slack channel, a Feishu group or a WeCom group — each one picks, and one daemon serves all three. The core is the same everywhere: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.</p>
 
         <div class="plat">
           <article class="plat-card plat-card--lark" data-reveal>
@@ -518,7 +518,7 @@
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">The daemon on your machine checks the group’s permissions, hands the turn to Claude Code or Codex inside the project directory, and streams progress back — on whatever model you chose for that group.</p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Feishu, Slack or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Slack, Feishu or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -540,8 +540,8 @@
             <g class="d-col">
               <rect x="40" y="60" width="200" height="320" rx="18" />
               <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">Group</text>
-              <g class="d-pill d-pill--accent"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">Feishu</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="196" width="140" height="44" rx="22" /><use href="#b-slack" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
+              <g class="d-pill d-pill--accent d-pill--feishu"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">Feishu</text></g>
+              <g class="d-pill d-pill--accent d-pill--slack"><rect x="70" y="196" width="140" height="44" rx="22" /><use href="#b-slack" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
               <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><use href="#b-wecom" x="84" y="264" width="20" height="20" /><text x="150" y="274" data-i18n-svg="plat.wecom">WeCom</text></g>
               <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">just talk to it</text>
               <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">one group · one project</text>
@@ -880,7 +880,7 @@
           <ul class="con-points">
             <li data-reveal>
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg>
-              <div><b data-i18n="con.p1.t">Groups and projects</b><p data-i18n="con.p1.b">Create or dissolve a group, bind its project directory, link the repo, pause it; Feishu, Slack and WeCom cards with a preflight.</p></div>
+              <div><b data-i18n="con.p1.t">Groups and projects</b><p data-i18n="con.p1.b">Create or dissolve a group, bind its project directory, link the repo, pause it; Slack, Feishu and WeCom cards with a preflight.</p></div>
             </li>
             <li data-reveal data-reveal-delay="60">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg>
@@ -954,7 +954,7 @@
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.2</span></span>
           <span class="chip">MIT</span>
-          <span class="chip"><span data-i18n="plat.lark">Feishu</span> · Slack · <span data-i18n="plat.wecom">WeCom</span></span>
+          <span class="chip" data-i18n="plat.trio">Slack · Feishu · WeCom</span>
           <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
@@ -972,7 +972,7 @@
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">Create the chat bot</h3>
-            <p class="step__after" data-i18n-html="install.2.after">A Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, a Slack app created from the manifest in the repository, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
+            <p class="step__after" data-i18n-html="install.2.after">A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
@@ -1000,7 +1000,7 @@
           <div class="ccbot__main">
             <p class="ccbot__kicker"><svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="ccbot.kicker">Sibling project</span></p>
             <h3 id="ccbot-h" data-i18n="ccbot.h">cc-bot — the plugin edition</h3>
-            <p class="ccbot__body" data-i18n-html="ccbot.body">Prefer to keep it inside Claude Code? cc-bot is a Claude Code plugin: install it in your own session, and the group talks to that session. Feishu and Slack, MIT-licensed.</p>
+            <p class="ccbot__body" data-i18n-html="ccbot.body">Prefer to keep it inside Claude Code? cc-bot is a Claude Code plugin: install it in your own session, and the group talks to that session. Slack and Feishu, MIT-licensed.</p>
             <ul class="ccbot__vs">
               <li data-i18n-html="ccbot.vs.sintbot"><b>SintBot</b>A standalone daemon: no one has to keep a terminal open, and each group gets its own project, model and permissions.</li>
               <li data-i18n-html="ccbot.vs.ccbot"><b>cc-bot</b>A plugin: it runs inside the Claude Code session you already have open, on that session’s model.</li>
@@ -1020,12 +1020,12 @@
         <p class="section__kicker" data-reveal data-i18n="faq.kicker">FAQ</p>
         <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
         <dl class="faq">
-          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Feishu, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Slack, Feishu or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Feishu, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: Socket Mode for Slack, a WebSocket long connection for Feishu, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">Do I need a Claude subscription?</dt><dd data-i18n-html="faq.9.a">No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.</dd></div>
@@ -1038,7 +1038,7 @@
       <section class="section section--cta">
         <div class="cta">
           <h2 data-reveal data-i18n="cta.h">Put the project in the group.</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Feishu, Slack or WeCom group, or install it now: <code>npm i -g sintbot</code>.</p>
+          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">See the daemon at work in a Slack, Feishu or WeCom group, or install it now: <code>npm i -g sintbot</code>.</p>
           <div class="hero__ctas" data-reveal data-reveal-delay="160">
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
@@ -1055,7 +1055,7 @@
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Feishu, Slack &amp; WeCom · desktop pet in the works</span>
+          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Slack, Feishu &amp; WeCom · desktop pet in the works</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
@@ -1071,7 +1071,7 @@
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Feishu, Slack, WeCom (Tencent), Anthropic, OpenAI or any other model provider named here. Logos belong to their owners and are shown only to identify the platforms and models.</p>
+      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Slack, Feishu, WeCom (Tencent), Anthropic, OpenAI or any other model provider named here. Logos belong to their owners and are shown only to identify the platforms and models.</p>
     </footer>
 
     <a href="#top" class="to-top">
