@@ -25,9 +25,10 @@
 
 - `index.html` — 页面结构。2026-09-04 改版后以 sintbot 为主角，区块顺序：hero → what → platforms（飞书 · Slack · 企业微信都支持）→ flow（流程图）→ models → design → scenarios → governance（末尾一张「接管浏览器」卡，飞书限定——卡片只在飞书群发得出）→ console → ops → plugin（锚点沿用 `#plugin`，内容是 sintbot 的四步接入：npm 安装 → 建机器人 → `sintbot setup` → `sintbot service install`，末尾一张 cc-bot 姊妹项目卡）→ faq → cta。`<body>` 顶部内联一份 Lucide 图标 sprite（ISC，描边 1.5、24 网格、`currentColor`），页面上**不用 emoji**，状态一律用 sprite 图标或 CSS 圆点。紧跟着第二份 sprite 放**品牌标志**（`b-*`：三家平台、六个模型、Claude Code / Codex、GitHub，2026-10-19 起），**一律 SVG、不用 PNG**；来源与许可写在那份 sprite 的注释里（飞书 / 企微取自官网，其余取自 Lobe Icons MIT、SVG Logos 与 Simple Icons CC0）；那份 sprite 不能改成 `display:none`，否则符号里的渐变不显示。
 - `styles.css` — 全部样式，原生 CSS 自定义属性，PCB 电路板配色；字阶 token 64/40/24/21/17，文字四级透明度 .92/.56/.4/.1；**不加逐帧动画**（历史教训：描边流光与 WebGL 都因卡顿被撤；首页文字的滚动错层视差 2026-09-15 也撤了——用户：效果不好；**别再加任何滚动联动的位移**），过渡只允许 color / background-color / border-color / opacity
-- `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）
-- `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
-- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格、不写 sameAs**；`/llms.txt` 同为生成物
+- `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）。顶部 `VERSION` = npm 上 sintbot 的最新版（插件卡片与 JSON-LD `softwareVersion` 都读它），**发版后改这一行并跑 `node scripts/build-zh.mjs`**；`.github/workflows/version-check.yml` 每天跑 `scripts/check-version.mjs` 比对 npm，不一致就失败、GitHub 发邮件提醒（2026-10-20 起；此前 1.0.1 / 1.0.2 两次发版都漏改，站上一直写 v1.0.0）
+- `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）（两个 `*.source.html` 不发布到线上，渲染时用本地预览打开）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
+- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。**lastmod 只在页面看得见的文字变了时改成当天**（只动脚本、样式、JSON-LD、统计代码不改）；预提交钩子跑 `scripts/check-lastmod.mjs` 守着这条，也拦「新页面没进 sitemap / sitemap 里的文件不存在」，特例用 `LASTMOD_SKIP=1 git commit` 跳过。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格**；`sameAs` 只放与本站同一实体、公开可打开的页面（GitHub 仓库、npm 包；2026-10-20 开源后加上，cc-bot 是另一个项目不放）；`/llms.txt` 同为生成物
+- `_config.yml` — GitHub Pages 用 Jekyll 构建，没有 front matter 的 `.md` 也会被渲染成网页（`CLAUDE.md` 曾挂在 `/CLAUDE.html`，2026-10-20 发现）。这里列出不发布的维护文件（`CLAUDE.md`、`README.md`、`scripts/`、分享图源文件）；**新增维护用文件记得加进去**，推送后用 curl 确认它 404
 - `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `WaterTian/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 - `google458994d25f5556b8.html` — Google Search Console 的站点验证文件（2026-10-20），**勿删**：删了验证会失效
@@ -44,7 +45,7 @@
 - 文案**不要硬编码**在 HTML —— 用 `data-i18n` / `data-i18n-html` / `data-i18n-svg` 属性标记
 - 所有字符串集中在 `app.js` 的 `translations` 对象，EN + 中文各一份
 - 加新文案 = HTML 标属性 + `translations` 里补两种语言
-- **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。**静态文字全部由 `node scripts/build-zh.mjs` 从 `translations` 生成**：两页的正文（`data-i18n*` 元素）、`<head>`（`meta.*` → 标题/描述/分享卡片/canonical/og:locale/分享图）、JSON-LD（SoftwareApplication + 由 `faq.*` 生成的 FAQPage）、以及 `/llms.txt`。原因：分享卡片和 AI 爬虫都不执行 JS。**改文案只改 `app.js`，然后跑一次脚本**；`index.html` 里 `data-i18n*` 元素的文字、那几个 meta、JSON-LD 和 `zh/index.html`、`llms.txt` 都别手改。预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交（新克隆需 `git config core.hooksPath .githooks`）。
+- **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。**静态文字全部由 `node scripts/build-zh.mjs` 从 `translations` 生成**：两页的正文（`data-i18n*` 元素）、`<head>`（`meta.*` → 标题/描述/分享卡片/canonical/og:locale/分享图）、JSON-LD（SoftwareApplication + 由 `faq.*` 生成的 FAQPage）、以及 `/llms.txt`。原因：分享卡片和 AI 爬虫都不执行 JS。**改文案只改 `app.js`，然后跑一次脚本**；`index.html` 里 `data-i18n*` 元素的文字、那几个 meta、JSON-LD 和 `zh/index.html`、`llms.txt` 都别手改。预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交，以及文字改了却没改 sitemap lastmod 的提交（新克隆需 `git config core.hooksPath .githooks`）。
 - **只在中文页出现的块**（2026-10-19，如接入区「在中国大陆？」）：元素加 `zh-only` 类、`translations` 里英文值留空，英文页由 CSS 整块隐藏。站上对国内用户的口径：聊天平台推荐飞书；没有 Claude 订阅也没有 ChatGPT 时推荐 DeepSeek。
 - **常见问题 `faq.*`**（GEO 用，2026-09-15）：每条回答必须是守护进程当前版本真有的事实，同时进页面、FAQPage 和 llms.txt；新增问题 = `app.js` 加 `faq.N.q/a` + `index.html` 加一行 `faq__item`。
 - 语言规则在 `app.js`（2026-10-20 用户定**默认英文**）：`?lang=` 仅预览、不改地址不存偏好 → `/zh/` 固定中文 → 其余看已存偏好（只有访客亲手点过切换按钮才存，键 `sintbot_site_lang`）→ 否则英文，**不再按浏览器语言自动切中文**；切换按钮原地换语言并用 `history.replaceState` 把地址换成对应路径（不刷新）。中文样式选择器用 `html:lang(zh)`（页面 lang 是 `zh-CN`）。
@@ -68,4 +69,4 @@
 
 唯一长期事项：Namecheap 域名自动续费已关闭，**2027-04 前需手动续费**。
 
-待办（2026-09-15）：① ~~Google Search Console~~ 2026-10-20 已验证（URL 前缀资源 `https://sintbot.com/`，HTML 文件验证，见上「文件」）、sitemap 已提交、首页与 /zh/ 已请求重新编入索引；Bing Webmaster Tools 2026-10-20 已从 Search Console 导入（站点与 sitemap，同一账号），IndexNow 也已通知；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
+待办（2026-09-15）：① ~~Google Search Console~~ 2026-10-20 已验证（URL 前缀资源 `https://sintbot.com/`，HTML 文件验证，见上「文件」）、sitemap 已提交、首页与 /zh/ 已请求重新编入索引；Bing Webmaster Tools 2026-10-20 已从 Search Console 导入（站点与 sitemap，同一账号），IndexNow 也已通知；② GEO 效果：等首页进了搜索索引（约 2026-11 下旬）再建固定题库基线（无品牌词的品类题 + 品牌题 + 纠偏题，每题新对话），没进索引前测 AI 没有信息量；方法见上级目录 `docs/ai-product-promotion-playbook.md`（不在本仓库）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
