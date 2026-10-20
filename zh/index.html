@@ -982,7 +982,22 @@
             <li><code>/model</code> <code>/status</code> <code>/stop</code> <code>/new</code> — <span data-i18n="commands.chat">群里：换模型、看进度、叫停、开新会话（Slack 里用 ! 前缀）</span></li>
           </ul>
         </div>
-        <p class="plugin__steps-lede plugin__ccbot" data-reveal data-i18n-html="plugin.ccbot">更想要一个装在你自己 Claude Code 会话里的插件？<code>cc-bot</code>（MIT）就是：<a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>。</p>
+        <aside class="ccbot" data-reveal aria-labelledby="ccbot-h">
+          <div class="ccbot__main">
+            <p class="ccbot__kicker"><svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="ccbot.kicker">姊妹项目</span></p>
+            <h3 id="ccbot-h" data-i18n="ccbot.h">cc-bot：插件版</h3>
+            <p class="ccbot__body" data-i18n-html="ccbot.body">更想让它待在 Claude Code 里？cc-bot 是一个 Claude Code 插件：装进你自己的会话，群里的消息就交给这个会话处理。支持飞书与 Slack，MIT 许可。</p>
+            <ul class="ccbot__vs">
+              <li data-i18n-html="ccbot.vs.sintbot"><b>SintBot</b>独立守护进程：不用有人守着终端，每个群各有项目、模型和权限。</li>
+              <li data-i18n-html="ccbot.vs.ccbot"><b>cc-bot</b>插件：跑在你已经打开的 Claude Code 会话里，用的就是这个会话的模型。</li>
+            </ul>
+          </div>
+          <div class="ccbot__side">
+            <pre class="code"><code><span class="tk-p">/plugin</span> marketplace add WaterTian/cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
+            <p class="ccbot__then" data-i18n-html="ccbot.then">然后在 Claude Code 里依次运行 <code>/plugin install cc-bot@cc-bot</code> 和 <code>/cc-bot:setup</code>。</p>
+            <a class="chip chip--link" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/cc-bot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+        </aside>
       </section>
 
       <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->

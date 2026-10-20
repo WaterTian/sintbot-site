@@ -538,9 +538,23 @@
     "commands.service": { en: "is the service up, and what is it doing", zh: "服务在不在、在做什么" },
     "commands.trial":   { en: "a read-only trial turn in the terminal", zh: "在终端里只读试跑一轮" },
     "commands.chat":    { en: "in the group: switch model, check progress, stop, start fresh (Slack uses a ! prefix)", zh: "群里：换模型、看进度、叫停、开新会话（Slack 里用 ! 前缀）" },
-    "plugin.ccbot": {
-      en: `Prefer a plugin that lives inside your own Claude Code session? <code>cc-bot</code> (MIT) does that: <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>.`,
-      zh: `更想要一个装在你自己 Claude Code 会话里的插件？<code>cc-bot</code>（MIT）就是：<a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>。`
+    "ccbot.kicker": { en: "Sibling project", zh: "姊妹项目" },
+    "ccbot.h": { en: "cc-bot — the plugin edition", zh: "cc-bot：插件版" },
+    "ccbot.body": {
+      en: `Prefer to keep it inside Claude Code? cc-bot is a Claude Code plugin: install it in your own session, and the group talks to that session. Feishu and Slack, MIT-licensed.`,
+      zh: `更想让它待在 Claude Code 里？cc-bot 是一个 Claude Code 插件：装进你自己的会话，群里的消息就交给这个会话处理。支持飞书与 Slack，MIT 许可。`
+    },
+    "ccbot.vs.sintbot": {
+      en: `<b>SintBot</b>A standalone daemon: no one has to keep a terminal open, and each group gets its own project, model and permissions.`,
+      zh: `<b>SintBot</b>独立守护进程：不用有人守着终端，每个群各有项目、模型和权限。`
+    },
+    "ccbot.vs.ccbot": {
+      en: `<b>cc-bot</b>A plugin: it runs inside the Claude Code session you already have open, on that session’s model.`,
+      zh: `<b>cc-bot</b>插件：跑在你已经打开的 Claude Code 会话里，用的就是这个会话的模型。`
+    },
+    "ccbot.then": {
+      en: `Then run <code>/plugin install cc-bot@cc-bot</code> and <code>/cc-bot:setup</code> inside Claude Code.`,
+      zh: `然后在 Claude Code 里依次运行 <code>/plugin install cc-bot@cc-bot</code> 和 <code>/cc-bot:setup</code>。`
     },
 
     // ---- faq -------------------------------------------------------------

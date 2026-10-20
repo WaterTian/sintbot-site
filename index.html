@@ -981,7 +981,22 @@
             <li><code>/model</code> <code>/status</code> <code>/stop</code> <code>/new</code> — <span data-i18n="commands.chat">in the group: switch model, check progress, stop, start fresh (Slack uses a ! prefix)</span></li>
           </ul>
         </div>
-        <p class="plugin__steps-lede plugin__ccbot" data-reveal data-i18n-html="plugin.ccbot">Prefer a plugin that lives inside your own Claude Code session? <code>cc-bot</code> (MIT) does that: <a href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener">github.com/WaterTian/cc-bot</a>.</p>
+        <aside class="ccbot" data-reveal aria-labelledby="ccbot-h">
+          <div class="ccbot__main">
+            <p class="ccbot__kicker"><svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="ccbot.kicker">Sibling project</span></p>
+            <h3 id="ccbot-h" data-i18n="ccbot.h">cc-bot — the plugin edition</h3>
+            <p class="ccbot__body" data-i18n-html="ccbot.body">Prefer to keep it inside Claude Code? cc-bot is a Claude Code plugin: install it in your own session, and the group talks to that session. Feishu and Slack, MIT-licensed.</p>
+            <ul class="ccbot__vs">
+              <li data-i18n-html="ccbot.vs.sintbot"><b>SintBot</b>A standalone daemon: no one has to keep a terminal open, and each group gets its own project, model and permissions.</li>
+              <li data-i18n-html="ccbot.vs.ccbot"><b>cc-bot</b>A plugin: it runs inside the Claude Code session you already have open, on that session’s model.</li>
+            </ul>
+          </div>
+          <div class="ccbot__side">
+            <pre class="code"><code><span class="tk-p">/plugin</span> marketplace add WaterTian/cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="ccbot__then" data-i18n-html="ccbot.then">Then run <code>/plugin install cc-bot@cc-bot</code> and <code>/cc-bot:setup</code> inside Claude Code.</p>
+            <a class="chip chip--link" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/cc-bot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+        </aside>
       </section>
 
       <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
