@@ -223,7 +223,7 @@
     "models.p.glm":      { en: "your own key", zh: "你自己的 key" },
     "models.p.deepseek": { en: "your own key — our pick without a subscription", zh: "你自己的 key，没订阅时推荐" },
     "models.p.minimax":  { en: "your own key", zh: "你自己的 key" },
-    "models.p.kimi":     { en: "add as a custom endpoint", zh: "控制台自定义添加" },
+    "models.p.kimi":     { en: "your own key — custom endpoint", zh: "你自己的 key，自定义端点" },
     "models.note": {
       en: "No Claude subscription or ChatGPT? Use DeepSeek: paste an API key and it runs. Zhipu GLM and MiniMax work the same way; Kimi and others can be added as custom endpoints.",
       zh: "没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax 同样可以，Kimi 等可以在控制台自定义添加。"
