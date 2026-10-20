@@ -25,11 +25,11 @@
       zh: "SintBot —— 一群一项目，模型随时换，记忆不丢"
     },
     "meta.description": {
-      en: `Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.`,
+      en: `Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.`,
       zh: `一个飞书、Slack 或企业微信群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。`
     },
     "meta.ogAlt": {
-      en: `SintBot — the group-project AI daemon for Lark, Slack and WeCom, running on your own machine`,
+      en: `SintBot — the group-project AI daemon for Feishu, Slack and WeCom, running on your own machine`,
       zh: `SintBot —— 飞书、Slack 与企业微信的群项目 AI 守护进程，全程在你自己的机器上`
     },
 
@@ -40,7 +40,7 @@
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
     // ---- hero ------------------------------------------------------------
-    "hero.eyebrow":      { en: `Open source · self-hosted · Lark, Slack & WeCom · Claude Code & Codex`,
+    "hero.eyebrow":      { en: `Open source · self-hosted · Feishu, Slack & WeCom · Claude Code & Codex`,
                            zh: `开源 · 自托管 · 飞书 · Slack · 企业微信 · Claude Code & Codex` },
     "hero.titleEn": {
       en: `<span data-reveal data-reveal-delay="0">Say it in the group.</span>
@@ -64,7 +64,7 @@
     },
 
     // ---- hero mockups ----------------------------------------------------
-    "plat.lark":         { en: "Lark", zh: "飞书" },
+    "plat.lark":         { en: "Feishu", zh: "飞书" },
     "mock.lark.title":   { en: "Design review",   zh: "设计评审" },
     "mock.lark.kind":    { en: "streaming card",  zh: "流式卡片" },
     "mock.lark.user":    { en: "Mei · Design",    zh: "小梅 · 设计" },
@@ -103,9 +103,9 @@
       en: `<code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.`,
       zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。MIT 开源；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。`
     },
-    "what.bot.link": { en: `See it on Lark, Slack and WeCom →`, zh: `看飞书、Slack 与企业微信里的样子 →` },
+    "what.bot.link": { en: `See it on Feishu, Slack and WeCom →`, zh: `看飞书、Slack 与企业微信里的样子 →` },
 
-    "facts.platforms": { en: `platforms — Lark, Slack and WeCom`, zh: `个平台 —— 飞书、Slack 与企业微信` },
+    "facts.platforms": { en: `platforms — Feishu, Slack and WeCom`, zh: `个平台 —— 飞书、Slack 与企业微信` },
     "facts.runners":   { en: "agent runners — Claude Code and Codex", zh: "套 agent runner —— Claude Code 与 Codex" },
     "facts.models":    { en: "model backends, swappable per group", zh: "种模型后端，按群可换" },
     "facts.styles":    { en: "built-in design styles", zh: "套内置设计风格" },
@@ -114,12 +114,12 @@
 
     // ---- platforms -------------------------------------------------------
     "plat.kicker": { en: "01 · Platforms", zh: "01 · 平台" },
-    "plat.h":      { en: `Lark, Slack and WeCom, <em>all supported.</em>`, zh: `飞书、Slack 与企业微信，<em>都支持。</em>` },
+    "plat.h":      { en: `Feishu, Slack and WeCom, <em>all supported.</em>`, zh: `飞书、Slack 与企业微信，<em>都支持。</em>` },
     "plat.lede": {
-      en: `A group can be a Lark group, a Slack channel or a WeCom group — each one picks, and one daemon serves all three. The core is the same everywhere: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.`,
+      en: `A group can be a Feishu group, a Slack channel or a WeCom group — each one picks, and one daemon serves all three. The core is the same everywhere: one project per group, just talk to it, no public IP, progress you can stop, the same permissions and console.`,
       zh: `群可以是飞书群、Slack 频道，也可以是企业微信群——每个群自己选，一个守护进程同时接三边。核心处处一样：一群一项目、群里直接说、免公网 IP、进度可见可停、同一套权限与控制台。`
     },
-    "plat.lark.h":   { en: "In a Lark group", zh: "在飞书群里" },
+    "plat.lark.h":   { en: "In a Feishu group", zh: "在飞书群里" },
     "plat.lark.1.t": { en: "Streaming card", zh: "流式卡片" },
     "plat.lark.1.b": {
       en: "The card updates while the work runs — how long, what it is doing now, a line per finished step; the answer and its buttons land in the same card, the steps folded away.",
@@ -393,7 +393,7 @@
     "con.kicker": { en: "07 · Console", zh: "07 · 控制台" },
     "con.h":      { en: `One local page for <em>every group.</em>`, zh: `一个本地网页，<em>管所有群。</em>` },
     "con.lede": {
-      en: "The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Lark.",
+      en: "The daemon serves its own console — a single page with no dependencies, on this machine only until you open it: to the LAN behind a password, or on your own HTTPS domain, where only the admins you listed sign in with Feishu.",
       zh: "守护进程自己提供控制台——零依赖的单页网页，默认只在本机；要开出去，局域网靠密码，挂到你自己的 HTTPS 域名上则只放行名单里的管理员用飞书登录。"
     },
     "con.tab.overview": { en: "Overview", zh: "概览" },
@@ -419,7 +419,7 @@
     "con.stream.2":  { en: "10:43 · running tests · 118 passed", zh: "10:43 · 跑测试 · 118 通过" },
     "con.p1.t": { en: "Groups and projects", zh: "群与项目" },
     "con.p1.b": {
-      en: `Create or dissolve a group, bind its project directory, link the repo, pause it; Lark, Slack and WeCom cards with a preflight.`,
+      en: `Create or dissolve a group, bind its project directory, link the repo, pause it; Feishu, Slack and WeCom cards with a preflight.`,
       zh: `建群、解散群，绑项目目录，关联仓库，暂停群；飞书 / Slack / 企业微信接入卡先预检。`
     },
     "con.p2.t": { en: "Models and permissions", zh: "模型与权限" },
@@ -520,7 +520,7 @@
     },
     "install.2.title": { en: "Create the chat bot", zh: "建好聊天机器人" },
     "install.2.after": {
-      en: `A Feishu (Lark) self-built app using the long-connection event mode, a Slack app created from the manifest in the repository, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.`,
+      en: `A Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, a Slack app created from the manifest in the repository, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.`,
       zh: `飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。`
     },
     "install.3.title": { en: "Run the setup wizard", zh: "跑一遍向导" },
@@ -565,7 +565,7 @@
     "faq.h":      { en: `Asked often, <em>answered plainly.</em>`, zh: `常被问到的，<em>直接回答。</em>` },
     "faq.1.q": { en: "What is SintBot?", zh: "SintBot 是什么？" },
     "faq.1.a": {
-      en: `A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.`,
+      en: `A self-hosted daemon that binds a chat group — Feishu, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.`,
       zh: `一个跑在你自己机器上的守护进程：把一个聊天群（飞书、Slack 或企业微信）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。`
     },
     "faq.2.q": { en: "How is it different from cc-bot?", zh: "它和 cc-bot 有什么区别？" },
@@ -590,7 +590,7 @@
     },
     "faq.6.q": { en: "Do I need a server or a public IP?", zh: "需要服务器或公网 IP 吗？" },
     "faq.6.a": {
-      en: `No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.`,
+      en: `No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Feishu, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.`,
       zh: `不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。`
     },
     "faq.7.q": { en: "What can the agent do by default?", zh: "默认情况下 agent 能做什么？" },
@@ -613,11 +613,16 @@
       en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
       zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
     },
+    "faq.11.q": { en: "Does it work with Lark?", zh: "支持国际版 Lark 吗？" },
+    "faq.11.a": {
+      en: "Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark workspaces (larksuite.com) run on a separate open platform and are not supported yet.",
+      zh: "暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。"
+    },
 
     // ---- cta / footer ----------------------------------------------------
     "cta.h": { en: "Put the project in the group.", zh: "把项目放进群里。" },
     "cta.p": {
-      en: `See the daemon at work in a Lark, Slack or WeCom group, or install it now: <code>npm i -g sintbot</code>.`,
+      en: `See the daemon at work in a Feishu, Slack or WeCom group, or install it now: <code>npm i -g sintbot</code>.`,
       zh: `看守护进程在飞书、Slack 或企业微信群里怎么干活，或者现在就装：<code>npm i -g sintbot</code>。`
     },
     "cta.see": {
@@ -629,11 +634,11 @@
       zh: "GitHub 上的源码"
     },
 
-    "foot.tag":     { en: `Open source (MIT) · self-hosted · Lark, Slack & WeCom · desktop pet in the works`, zh: `MIT 开源 · 自托管 · 飞书 · Slack · 企业微信 · 桌宠研发中` },
+    "foot.tag":     { en: `Open source (MIT) · self-hosted · Feishu, Slack & WeCom · desktop pet in the works`, zh: `MIT 开源 · 自托管 · 飞书 · Slack · 企业微信 · 桌宠研发中` },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
-      en: `Not affiliated with Lark, Slack, WeCom (Tencent), Anthropic, OpenAI or any other model provider named here. Logos belong to their owners and are shown only to identify the platforms and models.`,
+      en: `Not affiliated with Feishu, Slack, WeCom (Tencent), Anthropic, OpenAI or any other model provider named here. Logos belong to their owners and are shown only to identify the platforms and models.`,
       zh: `与飞书、Slack、企业微信（腾讯）、Anthropic、OpenAI 及本站提到的其他模型厂商无任何隶属关系；标志归各自所有者，仅用于标明平台与模型。`
     },
 

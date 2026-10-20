@@ -143,6 +143,14 @@
                   "@type": "Answer",
                   "text": "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "支持国际版 Lark 吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。"
+                }
               }
             ]
           }
@@ -315,7 +323,7 @@
 
         <!-- Dual-platform mockup: the same daemon in a Lark group and a Slack channel -->
         <div class="hero__mocks" data-reveal data-reveal-delay="660">
-          <aside class="mock mock--lark" aria-label="Example Lark group">
+          <aside class="mock mock--lark" aria-label="Example Feishu group">
             <div class="mock__bar">
               <span class="plat-mark plat-mark--lark"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">飞书</span></span>
               <span class="mock__title" data-i18n="mock.lark.title">设计评审</span>
@@ -511,7 +519,7 @@
         <p class="lede lede--wide" data-reveal data-i18n="flow.lede">你机器上的守护进程核对这个群的权限，把这一轮交给项目目录里的 Claude Code 或 Codex，进度回流到群——模型是你给这个群选的那一个。</p>
 
         <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Lark, Slack or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Feishu, Slack or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#d68f44" />
@@ -1023,6 +1031,7 @@
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">必须有 Claude 订阅吗？</dt><dd data-i18n-html="faq.9.a">不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">在中国大陆能用吗？</dt><dd data-i18n-html="faq.10.a">能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.11.q">支持国际版 Lark 吗？</dt><dd data-i18n-html="faq.11.a">暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。</dd></div>
         </dl>
       </section>
 

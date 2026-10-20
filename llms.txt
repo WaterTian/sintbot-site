@@ -1,6 +1,6 @@
 # SintBot
 
-> Bind a Lark, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.
+> Bind a Feishu, Slack or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.
 
 Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts as the page.
 
@@ -18,7 +18,7 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 ### What is SintBot?
 
-A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.
+A self-hosted daemon that binds a chat group — Feishu, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.
 
 ### How is it different from cc-bot?
 
@@ -38,7 +38,7 @@ On your machine: project directories, sessions, memory and logs stay there. The 
 
 ### Do I need a server or a public IP?
 
-No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.
+No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Feishu, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.
 
 ### What can the agent do by default?
 
@@ -55,6 +55,10 @@ No. The setup wizard checks whether this machine is logged in to Claude or to Co
 ### Can I use it in mainland China?
 
 Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.
+
+### Does it work with Lark?
+
+Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark workspaces (larksuite.com) run on a separate open platform and are not supported yet.
 
 ## 中文
 
@@ -101,3 +105,7 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；Deep
 ### 在中国大陆能用吗？
 
 能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。
+
+### 支持国际版 Lark 吗？
+
+暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。
