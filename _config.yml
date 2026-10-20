@@ -1,0 +1,8 @@
+# GitHub Pages 用 Jekyll 构建本站:没有 front matter 的 .md 也会被渲染成网页(CLAUDE.md 曾挂在 /CLAUDE.html)。
+# 下面这些是维护用文件,不是网站页面,不发布。点开头的目录(.githooks、.github)Jekyll 本来就不发布。
+exclude:
+  - CLAUDE.md
+  - README.md
+  - scripts
+  - assets/og-banner.source.html
+  - assets/og-banner-zh.source.html
