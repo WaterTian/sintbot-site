@@ -80,7 +80,7 @@
                 "name": "支持哪些模型？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。"
+                  "text": "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。"
                 }
               },
               {
@@ -121,6 +121,22 @@
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/WaterTian/sintbot。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "必须有 Claude 订阅吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "在中国大陆能用吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、火山方舟的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
                 }
               }
             ]
@@ -582,10 +598,11 @@
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-claude"/></svg>Claude</b><i data-i18n="models.p.claude">本机登录态，不用配 key</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-openai"/></svg>GPT</b><i data-i18n="models.p.gpt">走你的 Codex 订阅</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-zhipu"/></svg>GLM</b><i data-i18n="models.p.glm">你自己的 key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">你自己的 key</i></li>
+          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">你自己的 key，没订阅时推荐</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-minimax"/></svg>MiniMax</b><i data-i18n="models.p.minimax">你自己的 key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">你自己的 key</i></li>
+          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">控制台自定义添加</i></li>
         </ul>
+        <p class="models__note" data-reveal data-i18n="models.note">没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax、火山方舟同样可以，Kimi 等可以在控制台自定义添加。</p>
 
         <ol class="cards cards--models">
           <li class="card" data-reveal>
@@ -930,6 +947,7 @@
         <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。</p>
         <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">也可以一行命令做完第 1、3、4 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot，向导里再装 Claude Code，每一步先问你：</p>
         <pre class="code plugin__quick-code" data-reveal><code><span class="tk-p">curl -fsSL</span> https://sintbot.com/install.sh | bash</code><button class="copy" data-copy="curl -fsSL https://sintbot.com/install.sh | bash" aria-label="Copy command" data-i18n="copy">复制</button></pre>
+        <p class="plugin__steps-lede plugin__cn zh-only" data-reveal data-i18n-html="install.cn"><b>在中国大陆？</b>聊天平台用飞书；没有 Claude 订阅就用 DeepSeek，直连、不用代理；Codex 可以不装。向导问「这台机器在中国大陆吗」时答「是」。</p>
         <ol class="steps" id="install">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
@@ -946,7 +964,7 @@
             <p class="step__no">03</p>
             <h3 data-i18n="install.3.title">跑一遍向导</h3>
             <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.3.after">选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。</p>
+            <p class="step__after" data-i18n-html="install.3.after">先看你登录了 Claude 还是 Codex，都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮；再选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
@@ -975,12 +993,14 @@
         <dl class="faq">
           <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">SintBot 是什么？</dt><dd data-i18n-html="faq.1.a">一个跑在你自己机器上的守护进程：把一个聊天群（飞书、Slack 或企业微信）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">它和 cc-bot 有什么区别？</dt><dd data-i18n-html="faq.2.a">两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">支持哪些模型？</dt><dd data-i18n-html="faq.3.a">Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">支持哪些模型？</dt><dd data-i18n-html="faq.3.a">Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">换模型会丢掉项目记忆吗？</dt><dd data-i18n-html="faq.4.a">不会。换模型会开一段新对话，但项目里的 CLAUDE.md、AGENTS.md 和记忆目录会交给接下来运行的 agent，约定和长期记忆都还在。长会话会自动压缩。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">代码和数据存在哪？</dt><dd data-i18n-html="faq.5.a">都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">需要服务器或公网 IP 吗？</dt><dd data-i18n-html="faq.6.a">不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">默认情况下 agent 能做什么？</dt><dd data-i18n-html="faq.7.a">只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">必须有 Claude 订阅吗？</dt><dd data-i18n-html="faq.9.a">不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">在中国大陆能用吗？</dt><dd data-i18n-html="faq.10.a">能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、火山方舟的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。</dd></div>
         </dl>
       </section>
 

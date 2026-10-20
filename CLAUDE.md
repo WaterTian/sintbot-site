@@ -43,6 +43,7 @@
 - 所有字符串集中在 `app.js` 的 `translations` 对象，EN + 中文各一份
 - 加新文案 = HTML 标属性 + `translations` 里补两种语言
 - **两种语言各有地址**（2026-09-15）：`/` = 英文，`/zh/` = 中文。**静态文字全部由 `node scripts/build-zh.mjs` 从 `translations` 生成**：两页的正文（`data-i18n*` 元素）、`<head>`（`meta.*` → 标题/描述/分享卡片/canonical/og:locale/分享图）、JSON-LD（SoftwareApplication + 由 `faq.*` 生成的 FAQPage）、以及 `/llms.txt`。原因：分享卡片和 AI 爬虫都不执行 JS。**改文案只改 `app.js`，然后跑一次脚本**；`index.html` 里 `data-i18n*` 元素的文字、那几个 meta、JSON-LD 和 `zh/index.html`、`llms.txt` 都别手改。预提交钩子 `.githooks/pre-commit` 会拦下不同步的提交（新克隆需 `git config core.hooksPath .githooks`）。
+- **只在中文页出现的块**（2026-10-19，如接入区「在中国大陆？」）：元素加 `zh-only` 类、`translations` 里英文值留空，英文页由 CSS 整块隐藏。站上对国内用户的口径：聊天平台推荐飞书；没有 Claude 订阅也没有 ChatGPT 时推荐 DeepSeek。
 - **常见问题 `faq.*`**（GEO 用，2026-09-15）：每条回答必须是守护进程当前版本真有的事实，同时进页面、FAQPage 和 llms.txt；新增问题 = `app.js` 加 `faq.N.q/a` + `index.html` 加一行 `faq__item`。
 - 语言规则在 `app.js`：`?lang=` 仅预览、不改地址不存偏好 → `/zh/` 固定中文 → 其余看已存偏好、再看浏览器语言；切换按钮原地换语言并用 `history.replaceState` 把地址换成对应路径（不刷新）。中文样式选择器用 `html:lang(zh)`（页面 lang 是 `zh-CN`）。
 - 两张分享图：`og-banner.source.html` → `og-banner.png`，`og-banner-zh.source.html` → `og-banner-zh.png`，改文案后都要重渲。
@@ -65,4 +66,4 @@
 
 唯一长期事项：Namecheap 域名自动续费已关闭，**2027-04 前需手动续费**。
 
-待办（2026-09-15）：① 在 Bing Webmaster Tools / Google Search Console 验证站点并提交 sitemap（需站长登录）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ 站上已列 Kimi，守护进程侧 Kimi 预设尚未公开，需在守护进程开发线对齐。
+待办（2026-09-15）：① 在 Bing Webmaster Tools / Google Search Console 验证站点并提交 sitemap（需站长登录）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。

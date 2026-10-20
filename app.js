@@ -221,9 +221,13 @@
     "models.p.claude":   { en: "local login, no key needed", zh: "本机登录态，不用配 key" },
     "models.p.gpt":      { en: "via your Codex subscription", zh: "走你的 Codex 订阅" },
     "models.p.glm":      { en: "your own key", zh: "你自己的 key" },
-    "models.p.deepseek": { en: "your own key", zh: "你自己的 key" },
+    "models.p.deepseek": { en: "your own key — our pick without a subscription", zh: "你自己的 key，没订阅时推荐" },
     "models.p.minimax":  { en: "your own key", zh: "你自己的 key" },
-    "models.p.kimi":     { en: "your own key", zh: "你自己的 key" },
+    "models.p.kimi":     { en: "add as a custom endpoint", zh: "控制台自定义添加" },
+    "models.note": {
+      en: "No Claude subscription or ChatGPT? Use DeepSeek: paste an API key and it runs. Zhipu GLM, MiniMax and Volcano Ark work the same way; Kimi and others can be added as custom endpoints.",
+      zh: "没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax、火山方舟同样可以，Kimi 等可以在控制台自定义添加。"
+    },
     "models.1.title": { en: "Switch in the group", zh: "群里就能切" },
     "models.1.body": {
       en: `<code>/model</code> lists, <code>/model</code> plus a name switches — anyone in the group can. A switch opens a fresh conversation; the memory files carry over.`,
@@ -504,6 +508,10 @@
       en: `Or let one line do steps 1, 3 and 4 on macOS or Linux — it installs Node 22 if needed, then sintbot, then Claude Code through the wizard, asking before each change:`,
       zh: `也可以一行命令做完第 1、3、4 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot，向导里再装 Claude Code，每一步先问你：`
     },
+    "install.cn": {
+      en: ``,
+      zh: `<b>在中国大陆？</b>聊天平台用飞书；没有 Claude 订阅就用 DeepSeek，直连、不用代理；Codex 可以不装。向导问「这台机器在中国大陆吗」时答「是」。`
+    },
     "install.1.title": { en: "Install from npm", zh: "从 npm 安装" },
     "install.1.after": {
       en: `Installs the <code>sintbot</code> command. The wizard in step 3 checks for Claude Code and offers to install it; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.`,
@@ -516,8 +524,8 @@
     },
     "install.3.title": { en: "Run the setup wizard", zh: "跑一遍向导" },
     "install.3.after": {
-      en: `Pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.`,
-      zh: `选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。`
+      en: `It first checks whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. Then pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.`,
+      zh: `先看你登录了 Claude 还是 Codex，都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮；再选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。`
     },
     "install.4.title": { en: "Keep it running", zh: "常驻运行" },
     "install.4.after": {
@@ -552,8 +560,8 @@
     },
     "faq.3.q": { en: "Which models can it use?", zh: "支持哪些模型？" },
     "faq.3.a": {
-      en: "Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.",
-      zh: "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。"
+      en: "Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model.",
+      zh: "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。"
     },
     "faq.4.q": { en: "Does switching models lose the project's memory?", zh: "换模型会丢掉项目记忆吗？" },
     "faq.4.a": {
@@ -579,6 +587,16 @@
     "faq.8.a": {
       en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.`,
       zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。`
+    },
+    "faq.9.q": { en: "Do I need a Claude subscription?", zh: "必须有 Claude 订阅吗？" },
+    "faq.9.a": {
+      en: "No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.",
+      zh: "不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。"
+    },
+    "faq.10.q": { en: "Can I use it in mainland China?", zh: "在中国大陆能用吗？" },
+    "faq.10.a": {
+      en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Volcano Ark) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
+      zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、火山方舟的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
     },
 
     // ---- cta / footer ----------------------------------------------------

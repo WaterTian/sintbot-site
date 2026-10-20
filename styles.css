@@ -1182,6 +1182,7 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
 .model-tile b { font-size: var(--t-body); font-weight: 600; color: var(--bone); display: flex; align-items: center; gap: 8px; }
 .model-logo { width: 18px; height: 18px; }
 .model-tile i { font-style: normal; font-size: 12px; line-height: 1.4; color: var(--text-2); }
+.models__note { margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: var(--text-2); max-width: 72ch; }
 @media (max-width: 1068px) { .model-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px)  { .model-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -1561,6 +1562,10 @@ html:lang(zh) .pillar h3 { font-weight: 700; }
 .code.plugin__quick-code { margin: 0 0 24px; }
 /* 接入区末尾那句 cc-bot 入口:与上面的常用命令框拉开距离 */
 .plugin__ccbot { margin: 28px 0 0; }
+/* 只在中文页显示的块(「在中国大陆?」):英文文案留空、英文页整块隐藏 */
+html:not(:lang(zh)) .zh-only { display: none; }
+.plugin__cn { margin: 0 0 24px; padding: 12px 16px; border: 1px solid var(--hair); border-left: 2px solid var(--signal); border-radius: var(--r-ui); background: var(--surface); }
+.plugin__cn b { color: var(--bone); font-weight: 600; }
 
 .steps {
   list-style: none;
