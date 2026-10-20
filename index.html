@@ -79,7 +79,7 @@
                 "name": "Which models can it use?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model."
+                  "text": "Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model."
                 }
               },
               {
@@ -120,6 +120,22 @@
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/WaterTian/sintbot."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a Claude subscription?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use it in mainland China?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Volcano Ark) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack."
                 }
               }
             ]
@@ -581,10 +597,11 @@
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-claude"/></svg>Claude</b><i data-i18n="models.p.claude">local login, no key needed</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-openai"/></svg>GPT</b><i data-i18n="models.p.gpt">via your Codex subscription</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-zhipu"/></svg>GLM</b><i data-i18n="models.p.glm">your own key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">your own key</i></li>
+          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">your own key — our pick without a subscription</i></li>
           <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-minimax"/></svg>MiniMax</b><i data-i18n="models.p.minimax">your own key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">your own key</i></li>
+          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">add as a custom endpoint</i></li>
         </ul>
+        <p class="models__note" data-reveal data-i18n="models.note">No Claude subscription or ChatGPT? Use DeepSeek: paste an API key and it runs. Zhipu GLM, MiniMax and Volcano Ark work the same way; Kimi and others can be added as custom endpoints.</p>
 
         <ol class="cards cards--models">
           <li class="card" data-reveal>
@@ -927,6 +944,7 @@
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
         <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.</p>
+        <p class="plugin__steps-lede plugin__cn zh-only" data-reveal data-i18n-html="install.cn"></p>
         <ol class="steps" id="install">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
@@ -943,7 +961,7 @@
             <p class="step__no">03</p>
             <h3 data-i18n="install.3.title">Run the setup wizard</h3>
             <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.3.after">Pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.</p>
+            <p class="step__after" data-i18n-html="install.3.after">It first checks whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. Then pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
@@ -972,12 +990,14 @@
         <dl class="faq">
           <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Lark, Slack or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: a WebSocket long connection for Lark, Socket Mode for Slack, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">Do I need a Claude subscription?</dt><dd data-i18n-html="faq.9.a">No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">Can I use it in mainland China?</dt><dd data-i18n-html="faq.10.a">Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Volcano Ark) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.</dd></div>
         </dl>
       </section>
 

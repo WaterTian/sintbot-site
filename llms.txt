@@ -26,7 +26,7 @@ Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside 
 
 ### Which models can it use?
 
-Claude through your local Claude Code login, GPT through your Codex subscription login, and GLM, DeepSeek, MiniMax or Kimi with your own keys — or any endpoint that speaks the Anthropic API, including an open-source model you host yourself. Each group picks its own, and anyone in the group can switch with /model.
+Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model.
 
 ### Does switching models lose the project's memory?
 
@@ -48,6 +48,14 @@ Read only. Permissions are set per group, never globally: an unconfigured group 
 
 Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/WaterTian/sintbot.
 
+### Do I need a Claude subscription?
+
+No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.
+
+### Can I use it in mainland China?
+
+Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Volcano Ark) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.
+
 ## 中文
 
 > 一个飞书、Slack 或企业微信群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。
@@ -64,7 +72,7 @@ Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open s
 
 ### 支持哪些模型？
 
-Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM、DeepSeek、MiniMax、Kimi 用你自己的 key；也可以接任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型。每个群各选各的，群里任何人都能用 /model 切换。
+Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。
 
 ### 换模型会丢掉项目记忆吗？
 
@@ -85,3 +93,11 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；GLM�
 ### 怎么获取 SintBot？
 
 从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/WaterTian/sintbot。
+
+### 必须有 Claude 订阅吗？
+
+不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。
+
+### 在中国大陆能用吗？
+
+能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、火山方舟的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。
