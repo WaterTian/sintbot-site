@@ -1,0 +1,20 @@
+# 每天核对一次官网写的版本号与 npm 最新版(scripts/check-version.mjs);不一致就失败,GitHub 发邮件提醒。
+name: Version check
+
+on:
+  schedule:
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-version.mjs

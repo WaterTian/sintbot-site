@@ -1,4 +1,6 @@
 #!/bin/sh
-# Refuse a commit whose index.html / zh/index.html heads are out of sync with app.js.
+# Refuse a commit whose index.html / zh/index.html heads are out of sync with app.js,
+# or whose changed page text is missing today's lastmod in sitemap.xml.
 # Enable once per clone: git config core.hooksPath .githooks
-exec node scripts/build-zh.mjs --check
+node scripts/build-zh.mjs --check || exit 1
+exec node scripts/check-lastmod.mjs
