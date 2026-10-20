@@ -67,4 +67,4 @@
 
 唯一长期事项：Namecheap 域名自动续费已关闭，**2027-04 前需手动续费**。
 
-待办（2026-09-15）：① 在 Bing Webmaster Tools / Google Search Console 验证站点并提交 sitemap（需站长登录）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
+待办（2026-09-15）：① ~~Google Search Console~~ 2026-10-20 已验证（URL 前缀资源 `https://sintbot.com/`，HTML 文件验证，见上「文件」）、sitemap 已提交、首页与 /zh/ 已请求重新编入索引；Bing Webmaster Tools 仍待站长登录（可从 Search Console 导入）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
