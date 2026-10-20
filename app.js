@@ -225,8 +225,8 @@
     "models.p.minimax":  { en: "your own key", zh: "你自己的 key" },
     "models.p.kimi":     { en: "add as a custom endpoint", zh: "控制台自定义添加" },
     "models.note": {
-      en: "No Claude subscription or ChatGPT? Use DeepSeek: paste an API key and it runs. Zhipu GLM, MiniMax and Volcano Ark work the same way; Kimi and others can be added as custom endpoints.",
-      zh: "没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax、火山方舟同样可以，Kimi 等可以在控制台自定义添加。"
+      en: "No Claude subscription or ChatGPT? Use DeepSeek: paste an API key and it runs. Zhipu GLM and MiniMax work the same way; Kimi and others can be added as custom endpoints.",
+      zh: "没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax 同样可以，Kimi 等可以在控制台自定义添加。"
     },
     "models.1.title": { en: "Switch in the group", zh: "群里就能切" },
     "models.1.body": {
@@ -609,8 +609,8 @@
     },
     "faq.10.q": { en: "Can I use it in mainland China?", zh: "在中国大陆能用吗？" },
     "faq.10.a": {
-      en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Volcano Ark) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
-      zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、火山方舟的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
+      en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM or MiniMax) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
+      zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax 的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
     },
 
     // ---- cta / footer ----------------------------------------------------
