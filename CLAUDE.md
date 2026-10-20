@@ -28,6 +28,7 @@
 - `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）
 - `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
 - `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格、不写 sameAs**；`/llms.txt` 同为生成物
+- `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `WaterTian/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 
 ## 部署：push 即上线

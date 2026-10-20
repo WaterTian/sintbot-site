@@ -500,6 +500,10 @@
       en: `<code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.`,
       zh: `大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。`
     },
+    "install.quick": {
+      en: `Or let one line do steps 1, 3 and 4 on macOS or Linux — it installs Node 22 if needed, then sintbot, then Claude Code through the wizard, asking before each change:`,
+      zh: `也可以一行命令做完第 1、3、4 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot，向导里再装 Claude Code，每一步先问你：`
+    },
     "install.1.title": { en: "Install from npm", zh: "从 npm 安装" },
     "install.1.after": {
       en: `Installs the <code>sintbot</code> command. The wizard in step 3 checks for Claude Code and offers to install it; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.`,
