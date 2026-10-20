@@ -521,8 +521,8 @@
     },
     "install.2.title": { en: "Create the chat bot", zh: "建好聊天机器人" },
     "install.2.after": {
-      en: `A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.`,
-      zh: `飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。`
+      en: `A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.`,
+      zh: `飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。`
     },
     "install.3.title": { en: "Run the setup wizard", zh: "跑一遍向导" },
     "install.3.after": {
@@ -601,8 +601,8 @@
     },
     "faq.8.q": { en: "How do I get SintBot?", zh: "怎么获取 SintBot？" },
     "faq.8.a": {
-      en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.`,
-      zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。`
+      en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.`,
+      zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>。`
     },
     "faq.9.q": { en: "Do I need a Claude subscription?", zh: "必须有 Claude 订阅吗？" },
     "faq.9.a": {

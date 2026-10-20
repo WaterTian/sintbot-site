@@ -52,7 +52,7 @@
             "license": "https://opensource.org/licenses/MIT",
             "isAccessibleForFree": true,
             "sameAs": [
-              "https://github.com/WaterTian/sintbot",
+              "https://github.com/sintlab/sintbot",
               "https://www.npmjs.com/package/sintbot"
             ],
             "inLanguage": "en",
@@ -124,7 +124,7 @@
                 "name": "How do I get SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/WaterTian/sintbot."
+                  "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/sintlab/sintbot."
                 }
               },
               {
@@ -278,7 +278,7 @@
         <a href="#console" data-i18n="nav.console">Console</a>
         <a href="#plugin" data-i18n="nav.setup">Setup</a>
         <a
-          href="https://github.com/WaterTian/sintbot"
+          href="https://github.com/sintlab/sintbot"
           target="_blank"
           rel="noopener"
           class="nav__cta"
@@ -312,7 +312,7 @@
               <span data-i18n="hero.cta.primary">See how it works</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
               <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg>
               <span data-i18n="hero.cta.plugin">Source on GitHub</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
@@ -955,7 +955,7 @@
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.3</span></span>
           <span class="chip">MIT</span>
           <span class="chip" data-i18n="plat.trio">Slack · Feishu · WeCom</span>
-          <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
         <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.</p>
@@ -972,7 +972,7 @@
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">Create the chat bot</h3>
-            <p class="step__after" data-i18n-html="install.2.after">A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
+            <p class="step__after" data-i18n-html="install.2.after">A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
@@ -1027,7 +1027,7 @@
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: Socket Mode for Slack, a WebSocket long connection for Feishu, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">Do I need a Claude subscription?</dt><dd data-i18n-html="faq.9.a">No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">Can I use it in mainland China?</dt><dd data-i18n-html="faq.10.a">Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.11.q">Does it work with Lark?</dt><dd data-i18n-html="faq.11.a">Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark workspaces (larksuite.com) run on a separate open platform and are not supported yet.</dd></div>
@@ -1043,7 +1043,7 @@
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
               <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg><span data-i18n="cta.plugin">Source on GitHub</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
@@ -1061,7 +1061,7 @@
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
           <a href="#design" data-i18n="nav.design">Design</a>
           <a href="#plugin" data-i18n="nav.setup">Setup</a>
-          <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
       </div>
       <p class="foot__legal">

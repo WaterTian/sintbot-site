@@ -100,7 +100,7 @@ function jsonLd(lang) {
       license: "https://opensource.org/licenses/MIT",
       isAccessibleForFree: true,
       // Same entity elsewhere: only public pages that are SintBot itself (cc-bot is a separate project).
-      sameAs: ["https://github.com/WaterTian/sintbot", "https://www.npmjs.com/package/sintbot"],
+      sameAs: ["https://github.com/sintlab/sintbot", "https://www.npmjs.com/package/sintbot"],
       inLanguage: lang === "zh" ? "zh-CN" : "en",
       description: t["meta.description"][lang],
     },
@@ -157,7 +157,7 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 - [SintBot (English)](${SITE}/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/WaterTian/sintbot): source code and docs (MIT)
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (MIT)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use
 - [Privacy Policy](${SITE}/privacy.html): what the site and the software do and do not send

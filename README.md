@@ -6,7 +6,7 @@ Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds
 
 ## What the page covers
 
-**`sintbot`** — a self-hosted daemon that binds a Feishu, Slack or WeCom group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Feishu (the China edition; Lark is not supported yet), Slack and WeCom are all supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free and open source under MIT — source in [`WaterTian/sintbot`](https://github.com/WaterTian/sintbot).
+**`sintbot`** — a self-hosted daemon that binds a Feishu, Slack or WeCom group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Feishu (the China edition; Lark is not supported yet), Slack and WeCom are all supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free and open source under MIT — source in [`sintlab/sintbot`](https://github.com/sintlab/sintbot).
 
 **`cc-bot`** — the companion MIT Claude Code **plugin**: it lives inside an interactive session and is bound to that session's model, with Feishu and Slack adapters ([`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot)). The page points to it in one line at the end of the setup section.
 

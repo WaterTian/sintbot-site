@@ -53,7 +53,7 @@
             "license": "https://opensource.org/licenses/MIT",
             "isAccessibleForFree": true,
             "sameAs": [
-              "https://github.com/WaterTian/sintbot",
+              "https://github.com/sintlab/sintbot",
               "https://www.npmjs.com/package/sintbot"
             ],
             "inLanguage": "zh-CN",
@@ -125,7 +125,7 @@
                 "name": "怎么获取 SintBot？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/WaterTian/sintbot。"
+                  "text": "从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/sintlab/sintbot。"
                 }
               },
               {
@@ -279,7 +279,7 @@
         <a href="#console" data-i18n="nav.console">控制台</a>
         <a href="#plugin" data-i18n="nav.setup">接入</a>
         <a
-          href="https://github.com/WaterTian/sintbot"
+          href="https://github.com/sintlab/sintbot"
           target="_blank"
           rel="noopener"
           class="nav__cta"
@@ -313,7 +313,7 @@
               <span data-i18n="hero.cta.primary">看它怎么工作</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
               <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg>
               <span data-i18n="hero.cta.plugin">GitHub 源码</span>
               <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
@@ -956,7 +956,7 @@
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.3</span></span>
           <span class="chip">MIT</span>
           <span class="chip" data-i18n="plat.trio">飞书 · Slack · 企业微信</span>
-          <a class="chip chip--link" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">从 npm 到群里，四步。</h3>
         <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。</p>
@@ -973,7 +973,7 @@
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">建好聊天机器人</h3>
-            <p class="step__after" data-i18n-html="install.2.after">飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/WaterTian/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。</p>
+            <p class="step__after" data-i18n-html="install.2.after">飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
@@ -1028,7 +1028,7 @@
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">代码和数据存在哪？</dt><dd data-i18n-html="faq.5.a">都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">需要服务器或公网 IP 吗？</dt><dd data-i18n-html="faq.6.a">不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">默认情况下 agent 能做什么？</dt><dd data-i18n-html="faq.7.a">只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">github.com/WaterTian/sintbot</a>。</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">必须有 Claude 订阅吗？</dt><dd data-i18n-html="faq.9.a">不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">在中国大陆能用吗？</dt><dd data-i18n-html="faq.10.a">能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.11.q">支持国际版 Lark 吗？</dt><dd data-i18n-html="faq.11.a">暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。</dd></div>
@@ -1044,7 +1044,7 @@
             <a class="btn btn--primary" href="#platforms">
               <span data-i18n="cta.see">看它怎么工作</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener" data-track="cta-github">
+            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
               <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg><span data-i18n="cta.plugin">GitHub 上的源码</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
             </a>
           </div>
@@ -1062,7 +1062,7 @@
           <a href="#platforms" data-i18n="nav.platforms">平台</a>
           <a href="#design" data-i18n="nav.design">设计</a>
           <a href="#plugin" data-i18n="nav.setup">接入</a>
-          <a href="https://github.com/WaterTian/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
       </div>
       <p class="foot__legal">

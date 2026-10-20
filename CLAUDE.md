@@ -9,7 +9,7 @@
 | | 形态 | 归属 |
 |---|---|---|
 | **cc-bot** | **插件** —— 装进 Claude Code，活在交互会话里，绑死该会话的模型 | Free，MIT，公开仓 `WaterTian/cc-bot`；站上只在接入区末尾放一张「姊妹项目」小卡（2026-10-19 起：是什么 + 与 SintBot 的两行对比 + Claude Code 里的安装命令与仓库链接），不单开区块 |
-| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `WaterTian/sintbot`，npm 包 `sintbot`，**飞书、Slack、企业微信都支持**（每群选一个平台；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；企业微信 2026-10-19 用户定上站，平台区那栏带一句「三个平台里最新接入的，真实环境里用得最少，欢迎反馈」，真机验过后可去掉；平台、模型与 GitHub 的标志都是 SVG（见下「文件」里的品牌 sprite），只用来标明平台与模型，页脚有无隶属声明；Discord 不上站（2026-10-19 用户定：没有代码就不写「计划中」，开源后它会被当成承诺） |
+| **sintbot** | **独立守护进程** —— 自带消息循环、无需人守终端，无头驱动 **Claude Code 与 Codex 两套 agent**，背后模型可换（Claude / GPT / GLM / DeepSeek / MiniMax / Kimi——2026-09-15 用户拍板站上用 Kimi 替下火山引擎） | **MIT 开源**，公开仓 `sintlab/sintbot`，npm 包 `sintbot`，**飞书、Slack、企业微信都支持**（每群选一个平台；站上写「都支持」，**不用「平级 / side by side」这类比较词**——用户 2026-09-15 定）；企业微信 2026-10-19 用户定上站，平台区那栏带一句「三个平台里最新接入的，真实环境里用得最少，欢迎反馈」，真机验过后可去掉；平台、模型与 GitHub 的标志都是 SVG（见下「文件」里的品牌 sprite），只用来标明平台与模型，页脚有无隶属声明；Discord 不上站（2026-10-19 用户定：没有代码就不写「计划中」，开源后它会被当成承诺） |
 
 **命名铁律**：守护进程在站上一律叫 **`sintbot`**（品牌大写 **`SintBot`**，2026-09-05 由 Sintbot 改定 —— 群里、控制台与飞书应用名都是 SintBot，站上再写 Sintbot 就成了同一个产品两个写法）。**内部代号与历史代号一律不上站**（含 `sbot` 及更早的部署代号）——对外只有 sintbot 这一个名字。npm 包同时装了 `sbot` 与 `sintbot` 两个命令，**站上的命令一律写 `sintbot`**（`sintbot setup` / `sintbot service install` …）。本仓库是 Public，连本文件也算对外，写之前先想清楚。
 
@@ -29,7 +29,7 @@
 - `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）（两个 `*.source.html` 不发布到线上，渲染时用本地预览打开）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
 - `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。**lastmod 只在页面看得见的文字变了时改成当天**（只动脚本、样式、JSON-LD、统计代码不改）；预提交钩子跑 `scripts/check-lastmod.mjs` 守着这条，也拦「新页面没进 sitemap / sitemap 里的文件不存在」，特例用 `LASTMOD_SKIP=1 git commit` 跳过。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格**；`sameAs` 只放与本站同一实体、公开可打开的页面（GitHub 仓库、npm 包；2026-10-20 开源后加上，cc-bot 是另一个项目不放）；`/llms.txt` 同为生成物
 - `_config.yml` — GitHub Pages 用 Jekyll 构建，没有 front matter 的 `.md` 也会被渲染成网页（`CLAUDE.md` 曾挂在 `/CLAUDE.html`，2026-10-20 发现）。这里列出不发布的维护文件（`CLAUDE.md`、`README.md`、`scripts/`、分享图源文件）；**新增维护用文件记得加进去**，推送后用 curl 确认它 404
-- `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `WaterTian/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
+- `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `sintlab/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 - `google458994d25f5556b8.html` — Google Search Console 的站点验证文件（2026-10-20），**勿删**：删了验证会失效
 - `783f94deea5dcec1f553933e980af9db.txt` — IndexNow 密钥文件（2026-10-20），**勿删**。改完站推送上线后跑 `node scripts/indexnow.mjs`，把 sitemap 里的网址推给 Bing 等搜索引擎重新抓取（不用登录站长后台）
