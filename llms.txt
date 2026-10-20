@@ -54,7 +54,7 @@ No. The setup wizard checks whether this machine is logged in to Claude or to Co
 
 ### Can I use it in mainland China?
 
-Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM or MiniMax) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.
+Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.
 
 ## 中文
 
@@ -100,4 +100,4 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；Deep
 
 ### 在中国大陆能用吗？
 
-能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax 的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。
+能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。

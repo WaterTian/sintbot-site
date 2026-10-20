@@ -609,8 +609,8 @@
     },
     "faq.10.q": { en: "Can I use it in mainland China?", zh: "在中国大陆能用吗？" },
     "faq.10.a": {
-      en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM or MiniMax) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
-      zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax 的中国大陆站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
+      en: "Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.",
+      zh: "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
     },
 
     // ---- cta / footer ----------------------------------------------------
