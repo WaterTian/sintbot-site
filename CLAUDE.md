@@ -31,6 +31,7 @@
 - `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `WaterTian/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
 - `google458994d25f5556b8.html` — Google Search Console 的站点验证文件（2026-10-20），**勿删**：删了验证会失效
+- `783f94deea5dcec1f553933e980af9db.txt` — IndexNow 密钥文件（2026-10-20），**勿删**。改完站推送上线后跑 `node scripts/indexnow.mjs`，把 sitemap 里的网址推给 Bing 等搜索引擎重新抓取（不用登录站长后台）
 
 ## 部署：push 即上线
 
@@ -67,4 +68,4 @@
 
 唯一长期事项：Namecheap 域名自动续费已关闭，**2027-04 前需手动续费**。
 
-待办（2026-09-15）：① ~~Google Search Console~~ 2026-10-20 已验证（URL 前缀资源 `https://sintbot.com/`，HTML 文件验证，见上「文件」）、sitemap 已提交、首页与 /zh/ 已请求重新编入索引；Bing Webmaster Tools 仍待站长登录（可从 Search Console 导入）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
+待办（2026-09-15）：① ~~Google Search Console~~ 2026-10-20 已验证（URL 前缀资源 `https://sintbot.com/`，HTML 文件验证，见上「文件」）、sitemap 已提交、首页与 /zh/ 已请求重新编入索引；Bing Webmaster Tools 仍待站长登录（可从 Search Console 导入；在那之前已用 IndexNow 通知 Bing 抓取）；② 约 2026-10-15 检查 GEO 效果（统计里的 AI 来源域名 + 人工问答测试）；③ ~~Kimi 预设~~ 2026-10-19 用户定：Kimi 在站上写成「控制台自定义添加」，预设验证后再改回。
