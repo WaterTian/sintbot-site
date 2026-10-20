@@ -890,9 +890,10 @@
   // Pageview is sent automatically by script.js. Below are intent-level
   // events via umami.track(). script.js loads async (defer); all events
   // fire on user interaction or scroll, by which point window.umami exists.
-  function track(name) {
+  function track(name, data) {
     if (window.umami && typeof window.umami.track === "function") {
-      window.umami.track(name);
+      if (data) window.umami.track(name, data);
+      else window.umami.track(name);
     }
   }
 
@@ -900,12 +901,17 @@
   document.querySelectorAll(".copy[data-copy]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const text = btn.getAttribute("data-copy") || "";
-      if (text.includes("npm i -g sintbot")) {
+      // the one-line installer is the primary install path; it used to land in copy-other
+      if (text.includes("install.sh")) {
+        track("copy-oneline");
+      } else if (text.includes("npm i -g sintbot")) {
         track("copy-install");
       } else if (text.includes("sintbot setup")) {
         track("copy-setup");
       } else if (text.includes("service install")) {
         track("copy-start");
+      } else if (text.includes("cc-bot")) {
+        track("copy-ccbot");
       } else {
         track("copy-other");
       }
@@ -930,9 +936,12 @@
     a.addEventListener("click", () => track("cta-github"));
   });
 
-  // outbound GitHub links
+  // outbound GitHub links — same event name as before, with where it leads
+  // (sintbot repo / cc-bot repo / a platform setup guide) as event data
   document.querySelectorAll('a[href*="github.com/WaterTian"]').forEach((a) => {
-    a.addEventListener("click", () => track("github-click"));
+    const p = new URL(a.href).pathname;
+    const target = p.includes("/docs/") ? "docs" : p.split("/")[2] || "profile";
+    a.addEventListener("click", () => track("github-click", { target }));
   });
 
   // pillar card clicks
