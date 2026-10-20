@@ -26,7 +26,7 @@ const version = appJs.match(/const VERSION = "[^"]*";/);
 const start = appJs.indexOf("const translations = {");
 const end = appJs.indexOf("\n  };\n", start);
 if (!version || start < 0 || end < 0) fail("could not locate VERSION / translations in app.js");
-const t = vm.runInNewContext(`${version[0]}\n${appJs.slice(start, end + 5)}\ntranslations`);
+const { VERSION, translations: t } = vm.runInNewContext(`${version[0]}\n${appJs.slice(start, end + 5)}\n({ VERSION, translations })`);
 for (const k of ["meta.title", "meta.description", "meta.ogAlt"]) {
   if (!t[k] || !t[k].en || !t[k].zh) fail(`translations["${k}"] needs both en and zh`);
 }
@@ -96,8 +96,11 @@ function jsonLd(lang) {
       url: page,
       applicationCategory: "DeveloperApplication",
       operatingSystem: "macOS",
+      softwareVersion: VERSION,
       license: "https://opensource.org/licenses/MIT",
       isAccessibleForFree: true,
+      // Same entity elsewhere: only public pages that are SintBot itself (cc-bot is a separate project).
+      sameAs: ["https://github.com/WaterTian/sintbot", "https://www.npmjs.com/package/sintbot"],
       inLanguage: lang === "zh" ? "zh-CN" : "en",
       description: t["meta.description"][lang],
     },

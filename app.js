@@ -11,9 +11,10 @@
   // Code blocks, command names and identifiers stay English in both modes.
 
   // sintbot version — single source of truth for the version shown in the setup
-  // section. Mirror of the published npm package (WaterTian/sintbot package.json).
-  // Bump this one line only; the setup section below interpolates it.
-  const VERSION = "1.0.0";
+  // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
+  // scripts/check-version.mjs (daily workflow) fails when they drift apart.
+  // Bump this one line only, then run scripts/build-zh.mjs.
+  const VERSION = "1.0.2";
 
   const translations = {
     // ---- <head> — the single source for title / description / share card.
