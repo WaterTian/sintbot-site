@@ -30,6 +30,7 @@
 - `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格、不写 sameAs**；`/llms.txt` 同为生成物
 - `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `WaterTian/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**
+- `google458994d25f5556b8.html` — Google Search Console 的站点验证文件（2026-10-20），**勿删**：删了验证会失效
 
 ## 部署：push 即上线
 
