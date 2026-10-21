@@ -101,6 +101,8 @@ function jsonLd(lang) {
       isAccessibleForFree: true,
       // Same entity elsewhere: only public pages that are SintBot itself (cc-bot is a separate project).
       sameAs: ["https://github.com/sintlab/sintbot", "https://www.npmjs.com/package/sintbot"],
+      // The studio that makes it; sintlab.com links back to this site.
+      publisher: { "@type": "Organization", name: "SintLab", url: "https://sintlab.com/", sameAs: ["https://github.com/sintlab"] },
       inLanguage: lang === "zh" ? "zh-CN" : "en",
       description: t["meta.description"][lang],
     },
@@ -159,6 +161,7 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (MIT)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
+- [SintLab](https://sintlab.com/): the creative technology studio that makes SintBot
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use
 - [Privacy Policy](${SITE}/privacy.html): what the site and the software do and do not send
 - [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the companion MIT-licensed Claude Code plugin

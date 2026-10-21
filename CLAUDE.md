@@ -2,7 +2,7 @@
 
 **sintbot 平台**的展示 / 宣传网站。纯静态、单页、双语 EN/中。线上：https://sintbot.com
 
-站的主角是 **多模型群聊机器人**（sintbot 守护进程）。另一条线 **桌宠**（趴桌面、**会说话、出声反应**、有性格的虚拟伙伴）**2026-09-14 起不再以首页卡片出现**——它的后续载体属于另一条产品线，不在本站叙事内；首页只在页脚留一句「桌宠研发中」（用户拍板）。它的口径仍是「研发中 · 尚未上线」，站上任何地方都不要写成已发布；若将来再上站，用「出声反应」口径（2026-07 定，见提交 `7b0feba` / `1f4df31`），勿往状态展示上写。
+站的主角是 **多模型群聊机器人**（sintbot 守护进程）。另一条线 **桌宠**（趴桌面、**会说话、出声反应**、有性格的虚拟伙伴）**2026-09-14 起不再以首页卡片出现**——它的后续载体属于另一条产品线，不在本站叙事内；页脚原留的一句「桌宠研发中」2026-10-20 也去掉了（用户定），站上不再提桌宠。万一再提，口径仍是「研发中 · 尚未上线」，不要写成已发布；若将来再上站，用「出声反应」口径（2026-07 定，见提交 `7b0feba` / `1f4df31`），勿往状态展示上写。
 
 ### ⚠ 支柱① 是双层的（2026-08-18 起；2026-10 sintbot 开源后两层都是 MIT）
 
@@ -27,7 +27,7 @@
 - `styles.css` — 全部样式，原生 CSS 自定义属性，PCB 电路板配色；字阶 token 64/40/24/21/17，文字四级透明度 .92/.56/.4/.1；**不加逐帧动画**（历史教训：描边流光与 WebGL 都因卡顿被撤；首页文字的滚动错层视差 2026-09-15 也撤了——用户：效果不好；**别再加任何滚动联动的位移**），过渡只允许 color / background-color / border-color / opacity
 - `app.js` — 全部行为：i18n、滚动揭示、光标辉光、复制按钮、Umami 埋点；`?lang=en|zh` 可强制语言（截图与调试用）。顶部 `VERSION` = npm 上 sintbot 的最新版（插件卡片与 JSON-LD `softwareVersion` 都读它），**发版后改这一行并跑 `node scripts/build-zh.mjs`**；`.github/workflows/version-check.yml` 每天跑 `scripts/check-version.mjs` 比对 npm，不一致就失败、GitHub 发邮件提醒（2026-10-20 起；此前 1.0.1 / 1.0.2 两次发版都漏改，站上一直写 v1.0.0）
 - `assets/` — logo、`og-banner.png`（由 `og-banner.source.html` 渲染，改文案后重渲；走 DevTools 通道：emulate 1200×630×1、`document.fonts.ready` 后截 PNG——`chrome --headless --screenshot` 在 Chrome 152 已不出文件）（两个 `*.source.html` 不发布到线上，渲染时用本地预览打开）、`design-styles.png`（守护进程自己渲染的 16 套内置风格预览，深色底；文案有变时用它的设计工具链重出）
-- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。**lastmod 只在页面看得见的文字变了时改成当天**（只动脚本、样式、JSON-LD、统计代码不改）；预提交钩子跑 `scripts/check-lastmod.mjs` 守着这条，也拦「新页面没进 sitemap / sitemap 里的文件不存在」，特例用 `LASTMOD_SKIP=1 git commit` 跳过。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格**；`sameAs` 只放与本站同一实体、公开可打开的页面（GitHub 仓库、npm 包；2026-10-20 开源后加上，cc-bot 是另一个项目不放）；`/llms.txt` 同为生成物
+- `robots.txt` / `sitemap.xml` — 2026-09-15 补；加新公开页时同步进 sitemap。**lastmod 只在页面看得见的文字变了时改成当天**（只动脚本、样式、JSON-LD、统计代码不改）；预提交钩子跑 `scripts/check-lastmod.mjs` 守着这条，也拦「新页面没进 sitemap / sitemap 里的文件不存在」，特例用 `LASTMOD_SKIP=1 git commit` 跳过。JSON-LD 由脚本生成（见「双语 i18n」），**不写价格**；`publisher` 是 SintLab 工作室（sintlab.com，2026-10-20 加，与页脚「A SintLab project / SintLab 出品」链接互指，sintlab.com 首页也链回本站）；`sameAs` 只放与本站同一实体、公开可打开的页面（GitHub 仓库、npm 包；2026-10-20 开源后加上，cc-bot 是另一个项目不放）；`/llms.txt` 同为生成物
 - `_config.yml` — GitHub Pages 用 Jekyll 构建，没有 front matter 的 `.md` 也会被渲染成网页（`CLAUDE.md` 曾挂在 `/CLAUDE.html`，2026-10-20 发现）。这里列出不发布的维护文件（`CLAUDE.md`、`README.md`、`scripts/`、分享图源文件）；**新增维护用文件记得加进去**，推送后用 curl 确认它 404
 - `install.sh` — 一键安装脚本（`curl -fsSL https://sintbot.com/install.sh | bash`）。**是开源仓 `sintlab/sintbot` 根目录 `install.sh` 的副本**，改脚本先改开源仓，再原样拷过来；不在这里单独改
 - `CNAME` — GitHub Pages 自定义域名（`sintbot.com`），**勿删**

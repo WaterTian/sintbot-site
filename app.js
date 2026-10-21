@@ -635,7 +635,8 @@
       zh: "GitHub 上的源码"
     },
 
-    "foot.tag":     { en: `Open source (MIT) · self-hosted · Slack, Feishu & WeCom · desktop pet in the works`, zh: `MIT 开源 · 自托管 · 飞书 · Slack · 企业微信 · 桌宠研发中` },
+    "foot.tag":     { en: `Open source (MIT) · self-hosted · Slack, Feishu & WeCom`, zh: `MIT 开源 · 自托管 · 飞书 · Slack · 企业微信` },
+    "foot.by":      { en: "A SintLab project", zh: "SintLab 出品" },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
     "foot.meta":    {
