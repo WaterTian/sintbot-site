@@ -8,7 +8,7 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 - [SintBot (English)](https://sintbot.com/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](https://sintbot.com/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (MIT)
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (source-available, PolyForm Shield)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with `npm i -g sintbot`
 - [SintLab](https://sintlab.com/): the creative technology studio that makes SintBot
 - [Terms of Service](https://sintbot.com/terms.html): licensing and acceptable use
@@ -23,7 +23,7 @@ A self-hosted daemon that binds a chat group — Slack, Feishu or WeCom — to a
 
 ### How is it different from cc-bot?
 
-Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
+Both are free; cc-bot is MIT-licensed and SintBot is source-available. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
 
 ### Which models can it use?
 
@@ -47,7 +47,7 @@ Read only. Permissions are set per group, never globally: an unconfigured group 
 
 ### How do I get SintBot?
 
-Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/sintlab/sintbot.
+Install it from npm: npm i -g sintbot, then sintbot setup. It is free and source-available under the PolyForm Shield license: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at github.com/sintlab/sintbot.
 
 ### Do I need a Claude subscription?
 
@@ -73,7 +73,7 @@ Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark wo
 
 ### 它和 cc-bot 有什么区别？
 
-两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。
+两者都免费；cc-bot 是 MIT 许可，SintBot 源码公开。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。
 
 ### 支持哪些模型？
 
@@ -97,7 +97,7 @@ Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；Deep
 
 ### 怎么获取 SintBot？
 
-从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、MIT 开源，源码和文档在 github.com/sintlab/sintbot。
+从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、源码公开（PolyForm Shield 许可：自己用、团队或公司内部用、改了自己用都可以，不可以做成竞品），源码和文档在 github.com/sintlab/sintbot。
 
 ### 必须有 Claude 订阅吗？
 

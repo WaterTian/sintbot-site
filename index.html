@@ -49,7 +49,7 @@
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS",
             "softwareVersion": "1.0.4",
-            "license": "https://opensource.org/licenses/MIT",
+            "license": "https://polyformproject.org/licenses/shield/1.0.0",
             "isAccessibleForFree": true,
             "sameAs": [
               "https://github.com/sintlab/sintbot",
@@ -84,7 +84,7 @@
                 "name": "How is it different from cc-bot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console."
+                  "text": "Both are free; cc-bot is MIT-licensed and SintBot is source-available. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console."
                 }
               },
               {
@@ -132,7 +132,7 @@
                 "name": "How do I get SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and open source under the MIT license; source and docs are at github.com/sintlab/sintbot."
+                  "text": "Install it from npm: npm i -g sintbot, then sintbot setup. It is free and source-available under the PolyForm Shield license: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at github.com/sintlab/sintbot."
                 }
               },
               {
@@ -307,7 +307,7 @@
         <div class="hero__inner">
           <p class="eyebrow" data-reveal>
             <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Open source · self-hosted · Slack, Feishu &amp; WeCom · Claude Code &amp; Codex</span>
+            <span data-i18n="hero.eyebrow">Source-available · self-hosted · Slack, Feishu &amp; WeCom · Claude Code &amp; Codex</span>
           </p>
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
@@ -406,7 +406,7 @@
         <ol class="pillars">
           <li class="pillar" data-reveal>
             <h3 data-i18n="what.bot.title">Group-project AI</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.</p>
+            <p data-i18n-html="what.bot.body"><code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Free and source-available; <code>cc-bot</code> is the companion plugin for your own Claude Code session.</p>
             <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See it on Slack, Feishu and WeCom →</a>
           </li>
         </ol>
@@ -953,15 +953,15 @@
         </ol>
       </section>
 
-      <!-- Setup: install the open-source daemon from npm -->
+      <!-- Setup: install the daemon from npm -->
       <section id="plugin" class="section section--plugin">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · Setup</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>Open source</em> — up and running in minutes.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and <code>claude</code> (Claude Code) — the setup wizard installs it if it is missing; log in only if you use Claude itself. Add <code>codex</code> if you want GPT groups.</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>Free</em> — up and running in minutes.</h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> is free, source-available and installs from npm. The machine that runs it needs Node 22 or later and <code>claude</code> (Claude Code) — the setup wizard installs it if it is missing; log in only if you use Claude itself. Add <code>codex</code> if you want GPT groups.</p>
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.4</span></span>
-          <span class="chip">MIT</span>
+          <span class="chip">PolyForm Shield</span>
           <span class="chip" data-i18n="plat.trio">Slack · Feishu · WeCom</span>
           <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
@@ -1029,13 +1029,13 @@
         <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
         <dl class="faq">
           <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A self-hosted daemon that binds a chat group — Slack, Feishu or WeCom — to a project on your own machine. Anyone in the group can hand it work; it runs Claude Code or Codex inside that project and posts progress and results back to the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">How is it different from cc-bot?</dt><dd data-i18n-html="faq.2.a">Both are free; cc-bot is MIT-licensed and SintBot is source-available. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Which models can it use?</dt><dd data-i18n-html="faq.3.a">Claude through your local Claude Code login, GPT through your Codex subscription login, and DeepSeek, GLM or MiniMax with your own keys (without a subscription we recommend DeepSeek). Kimi or any other endpoint that speaks the Anthropic API — including an open-source model you host yourself — can be added as a custom endpoint. Each group picks its own, and anyone in the group can switch with /model.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does switching models lose the project's memory?</dt><dd data-i18n-html="faq.4.a">No. A switch starts a fresh conversation, but the project's CLAUDE.md, AGENTS.md and memory directory are handed to whichever agent runs next, so conventions and long-term notes carry over. Long sessions are compacted automatically.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">Where do my code and data live?</dt><dd data-i18n-html="faq.5.a">On your machine: project directories, sessions, memory and logs stay there. The daemon talks only to the services you configure — your chat platform and your model endpoints — and nothing is sent to us. Secrets are masked before any message reaches the group.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">Do I need a server or a public IP?</dt><dd data-i18n-html="faq.6.a">No. It runs on a computer you keep on — a Mac is the tested setup; Linux support is experimental and Windows is not yet verified — and it only dials out: Socket Mode for Slack, a WebSocket long connection for Feishu, a long connection for WeCom. The console stays on that machine unless you choose to open it up.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">What can the agent do by default?</dt><dd data-i18n-html="faq.7.a">Read only. Permissions are set per group, never globally: an unconfigured group can read and nothing else. You can grant a tool preset or full access. File tools always stay inside the project directory bound to that group, but with full access shell commands can reach anything your user account can.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.</dd></div>
+          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">How do I get SintBot?</dt><dd data-i18n-html="faq.8.a">Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and source-available under the PolyForm Shield license: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">Do I need a Claude subscription?</dt><dd data-i18n-html="faq.9.a">No. The setup wizard checks whether this machine is logged in to Claude or to Codex (ChatGPT); if neither, it recommends DeepSeek — paste an API key and it runs a trial turn on the spot. Claude Code is still the agent framework; it just needs no login. Without Claude or ChatGPT you lose only GPT groups and image generation.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">Can I use it in mainland China?</dt><dd data-i18n-html="faq.10.a">Yes. Use Feishu as the chat platform and DeepSeek (or the mainland sites of Zhipu GLM, MiniMax or Kimi) as the model: they connect directly, with no proxy. A proxy is needed only for Claude, ChatGPT or Slack.</dd></div>
           <div class="faq__item" data-reveal><dt data-i18n="faq.11.q">Does it work with Lark?</dt><dd data-i18n-html="faq.11.a">Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark workspaces (larksuite.com) run on a separate open platform and are not supported yet.</dd></div>
@@ -1063,7 +1063,7 @@
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Open source (MIT) · self-hosted · Slack, Feishu &amp; WeCom</span>
+          <span data-i18n="foot.tag">Source-available · self-hosted · Slack, Feishu &amp; WeCom</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>

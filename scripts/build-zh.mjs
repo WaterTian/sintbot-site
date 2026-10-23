@@ -97,7 +97,7 @@ function jsonLd(lang) {
       applicationCategory: "DeveloperApplication",
       operatingSystem: "macOS",
       softwareVersion: VERSION,
-      license: "https://opensource.org/licenses/MIT",
+      license: "https://polyformproject.org/licenses/shield/1.0.0",
       isAccessibleForFree: true,
       // Same entity elsewhere: only public pages that are SintBot itself (cc-bot is a separate project).
       sameAs: ["https://github.com/sintlab/sintbot", "https://www.npmjs.com/package/sintbot"],
@@ -159,7 +159,7 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 - [SintBot (English)](${SITE}/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (MIT)
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (source-available, PolyForm Shield)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
 - [SintLab](https://sintlab.com/): the creative technology studio that makes SintBot
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use

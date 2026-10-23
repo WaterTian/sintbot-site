@@ -40,8 +40,8 @@
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
     // ---- hero ------------------------------------------------------------
-    "hero.eyebrow":      { en: `Open source · self-hosted · Slack, Feishu & WeCom · Claude Code & Codex`,
-                           zh: `开源 · 自托管 · 飞书 · Slack · 企业微信 · Claude Code & Codex` },
+    "hero.eyebrow":      { en: `Source-available · self-hosted · Slack, Feishu & WeCom · Claude Code & Codex`,
+                           zh: `源码公开 · 自托管 · 飞书 · Slack · 企业微信 · Claude Code & Codex` },
     "hero.titleEn": {
       en: `<span data-reveal data-reveal-delay="0">Say it in the group.</span>
            <em data-reveal data-reveal-delay="120">Any model, one memory.</em>
@@ -101,8 +101,8 @@
     },
     "what.bot.title":{ en: "Group-project AI", zh: "群项目 AI" },
     "what.bot.body": {
-      en: `<code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Open source under MIT; <code>cc-bot</code> is the companion plugin for your own Claude Code session.`,
-      zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。MIT 开源；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。`
+      en: `<code>sintbot</code> is the daemon: one project per group, each turn handed to Claude Code or Codex headless, progress in the group, permissions per group. Free and source-available; <code>cc-bot</code> is the companion plugin for your own Claude Code session.`,
+      zh: `<code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。免费、源码公开；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。`
     },
     "what.bot.link": { en: `See it on Slack, Feishu and WeCom →`, zh: `看飞书、Slack 与企业微信里的样子 →` },
 
@@ -494,10 +494,10 @@
     // The command shown on the site is the `sintbot` alias (the package also installs a shorter
     // command; the site uses only the product name). Every step must match the daemon's README.
     "plugin.kicker": { en: "09 · Setup", zh: "09 · 接入" },
-    "plugin.h":      { en: `<em>Open source</em> — up and running in minutes.`, zh: `<em>开源</em>，几分钟跑起来。` },
+    "plugin.h":      { en: `<em>Free</em> — up and running in minutes.`, zh: `<em>免费</em>，几分钟跑起来。` },
     "plugin.lede": {
-      en: `<code>sintbot</code> is MIT-licensed and installs from npm. The machine that runs it needs Node 22 or later and <code>claude</code> (Claude Code) — the setup wizard installs it if it is missing; log in only if you use Claude itself. Add <code>codex</code> if you want GPT groups.`,
-      zh: `<code>sintbot</code> 采用 MIT 许可，从 npm 安装。跑它的机器需要 Node 22 及以上和 <code>claude</code>（Claude Code）——没装的话配置向导会替你装；只有用 Claude 本身才需要登录。要开 GPT 群再加 <code>codex</code>。`
+      en: `<code>sintbot</code> is free, source-available and installs from npm. The machine that runs it needs Node 22 or later and <code>claude</code> (Claude Code) — the setup wizard installs it if it is missing; log in only if you use Claude itself. Add <code>codex</code> if you want GPT groups.`,
+      zh: `<code>sintbot</code> 免费、源码公开，从 npm 安装。跑它的机器需要 Node 22 及以上和 <code>claude</code>（Claude Code）——没装的话配置向导会替你装；只有用 Claude 本身才需要登录。要开 GPT 群再加 <code>codex</code>。`
     },
     "plugin.meta.kind": { en: `npm · sintbot v${VERSION}`, zh: `npm · sintbot v${VERSION}` },
 
@@ -571,8 +571,8 @@
     },
     "faq.2.q": { en: "How is it different from cc-bot?", zh: "它和 cc-bot 有什么区别？" },
     "faq.2.a": {
-      en: "Both are free and MIT-licensed. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.",
-      zh: "两者都免费、都是 MIT 许可。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
+      en: "Both are free; cc-bot is MIT-licensed and SintBot is source-available. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.",
+      zh: "两者都免费；cc-bot 是 MIT 许可，SintBot 源码公开。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
     },
     "faq.3.q": { en: "Which models can it use?", zh: "支持哪些模型？" },
     "faq.3.a": {
@@ -601,8 +601,8 @@
     },
     "faq.8.q": { en: "How do I get SintBot?", zh: "怎么获取 SintBot？" },
     "faq.8.a": {
-      en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and open source under the MIT license; source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.`,
-      zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、MIT 开源，源码和文档在 <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>。`
+      en: `Install it from npm: <code>npm i -g sintbot</code>, then <code>sintbot setup</code>. It is free and source-available under the PolyForm Shield license: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>.`,
+      zh: `从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、源码公开（PolyForm Shield 许可：自己用、团队或公司内部用、改了自己用都可以，不可以做成竞品），源码和文档在 <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>。`
     },
     "faq.9.q": { en: "Do I need a Claude subscription?", zh: "必须有 Claude 订阅吗？" },
     "faq.9.a": {
@@ -635,7 +635,7 @@
       zh: "GitHub 上的源码"
     },
 
-    "foot.tag":     { en: `Open source (MIT) · self-hosted · Slack, Feishu & WeCom`, zh: `MIT 开源 · 自托管 · 飞书 · Slack · 企业微信` },
+    "foot.tag":     { en: `Source-available · self-hosted · Slack, Feishu & WeCom`, zh: `源码公开 · 自托管 · 飞书 · Slack · 企业微信` },
     "foot.by":      { en: "A SintLab project", zh: "SintLab 出品" },
     "foot.privacy": { en: "Privacy Policy",   zh: "隐私政策" },
     "foot.terms":   { en: "Terms of Service", zh: "服务条款" },
