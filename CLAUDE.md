@@ -13,6 +13,8 @@
 
 **命名铁律**：守护进程在站上一律叫 **`sintbot`**（品牌大写 **`SintBot`**，2026-09-05 由 Sintbot 改定 —— 群里、控制台与飞书应用名都是 SintBot，站上再写 Sintbot 就成了同一个产品两个写法）。**内部代号与历史代号一律不上站**（含 `sbot` 及更早的部署代号）——对外只有 sintbot 这一个名字。npm 包同时装了 `sbot` 与 `sintbot` 两个命令，**站上的命令一律写 `sintbot`**（`sintbot setup` / `sintbot service install` …）。本仓库是 Public，连本文件也算对外，写之前先想清楚。
 
+**作者身份铁律（2026-10-23 用户定）**：SintBot 的唯一作者是 **`WaterTian`**。任何 `author` / `creator` / `developer` / `maintainer` 字段只能写 `WaterTian`，不得出现第二人或组织；SintLab 只可作为 `publisher` / 项目工作室，不是作者。
+
 **没有付费版（2026-10 起）**：sintbot 开源后 Pro 订阅停售、定价区与感谢页已删，Creem 商品下架。站上**不写价格、不放付款链接、不写「支持开发 / 打赏 / 赞助」**——要恢复任何收费形式，先想清楚交付的是什么产品（Creem 禁售「没有对应产品的付费」），背景见 `../sintbot-ops/business/creem/`。**站上写的每一句话都会被按字面读**：安装步骤、平台支持、系统支持都要和开源仓 README 当前版本一致（Mac 验证过；Linux 实验性；Windows 未验证）。权限口径照开源仓 `docs/security.md`：只有文件工具锁在项目目录里，命令行没有沙箱——**别写「agent 只能在项目目录里工作」**。
 
 ## 技术栈

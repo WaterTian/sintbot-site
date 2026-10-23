@@ -1,6 +1,6 @@
 # SintBot
 
-> Bind a Slack, Feishu or WeCom group to a project and anyone on the team can hand it work: SintBot reads and changes code, does design and reports back, on your own machine. Run ChatGPT, Claude, GLM, DeepSeek, Kimi or a model you host, switch in the group per task, and keep one long-term memory per project.
+> Run Claude Code or Codex from Slack, Feishu or WeCom. Each group gets its own project, permissions, queue, schedules and local memory on your machine.
 
 Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts as the page.
 
@@ -8,9 +8,10 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 - [SintBot (English)](https://sintbot.com/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](https://sintbot.com/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (source-available, PolyForm Shield)
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): full source code and docs, publicly available to view and download (PolyForm Shield 1.0.0)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with `npm i -g sintbot`
-- [SintLab](https://sintlab.com/): the creative technology studio that makes SintBot
+- [WaterTian](https://github.com/WaterTian): the sole author of SintBot
+- [SintLab](https://sintlab.com/): the publisher and project studio for SintBot
 - [Terms of Service](https://sintbot.com/terms.html): licensing and acceptable use
 - [Privacy Policy](https://sintbot.com/privacy.html): what the site and the software do and do not send
 - [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the companion MIT-licensed Claude Code plugin
@@ -23,7 +24,7 @@ A self-hosted daemon that binds a chat group — Slack, Feishu or WeCom — to a
 
 ### How is it different from cc-bot?
 
-Both are free; cc-bot is MIT-licensed and SintBot is source-available. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
+Both are free; cc-bot is MIT-licensed, while SintBot's full source code is publicly available to view and download under PolyForm Shield 1.0.0. cc-bot is a Claude Code plugin: it lives inside your interactive session and uses that session's model. SintBot is a standalone daemon — nobody needs to keep a terminal open, each group has its own project, model and permissions, it drives both Claude Code and Codex, and it comes with a local console.
 
 ### Which models can it use?
 
@@ -47,7 +48,7 @@ Read only. Permissions are set per group, never globally: an unconfigured group 
 
 ### How do I get SintBot?
 
-Install it from npm: npm i -g sintbot, then sintbot setup. It is free and source-available under the PolyForm Shield license: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at github.com/sintlab/sintbot.
+Install it from npm: npm i -g sintbot, then sintbot setup. It is free, and its full source code is publicly available to view and download under PolyForm Shield 1.0.0: use and modify it for yourself, your team or your company, but not to build a competing product. Source and docs are at github.com/sintlab/sintbot.
 
 ### Do I need a Claude subscription?
 
@@ -63,7 +64,7 @@ Not yet. SintBot connects to Feishu, the China edition (open.feishu.cn). Lark wo
 
 ## 中文
 
-> 一个飞书、Slack 或企业微信群绑一个项目，团队里谁都能派活：SintBot 在你自己的机器上读代码、改代码、做设计、出报告。ChatGPT、Claude、GLM、DeepSeek、Kimi 或自己部署的开源模型，群里按任务随时切换，项目只有一套长期记忆。
+> 一个群绑定一个项目，在自己的机器上运行 Claude Code 或 Codex；支持独立权限、队列、定时任务和项目记忆，无需公网 IP。
 
 ## 常见问题
 

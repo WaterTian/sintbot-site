@@ -89,6 +89,7 @@ function setOnce(html, re, value, label) {
 
 function jsonLd(lang) {
   const page = lang === "zh" ? `${SITE}/zh/` : `${SITE}/`;
+  const authorId = `${SITE}/#author`;
   const graph = [
     {
       "@type": "SoftwareApplication",
@@ -99,12 +100,21 @@ function jsonLd(lang) {
       softwareVersion: VERSION,
       license: "https://polyformproject.org/licenses/shield/1.0.0",
       isAccessibleForFree: true,
+      author: { "@id": authorId },
+      creator: { "@id": authorId },
       // Same entity elsewhere: only public pages that are SintBot itself (cc-bot is a separate project).
       sameAs: ["https://github.com/sintlab/sintbot", "https://www.npmjs.com/package/sintbot"],
-      // The studio that makes it; sintlab.com links back to this site.
+      // Publishing/project identity only. Authorship belongs solely to WaterTian.
       publisher: { "@type": "Organization", name: "SintLab", url: "https://sintlab.com/", sameAs: ["https://github.com/sintlab"] },
       inLanguage: lang === "zh" ? "zh-CN" : "en",
       description: t["meta.description"][lang],
+    },
+    {
+      "@type": "Person",
+      "@id": authorId,
+      name: "WaterTian",
+      url: "https://github.com/WaterTian",
+      sameAs: ["https://github.com/WaterTian"],
     },
     {
       "@type": "FAQPage",
@@ -159,9 +169,10 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 - [SintBot (English)](${SITE}/): what it does, platforms, models, design toolchain, governance, console, reliability
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/sintlab/sintbot): source code and docs (source-available, PolyForm Shield)
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): full source code and docs, publicly available to view and download (PolyForm Shield 1.0.0)
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
-- [SintLab](https://sintlab.com/): the creative technology studio that makes SintBot
+- [WaterTian](https://github.com/WaterTian): the sole author of SintBot
+- [SintLab](https://sintlab.com/): the publisher and project studio for SintBot
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use
 - [Privacy Policy](${SITE}/privacy.html): what the site and the software do and do not send
 - [cc-bot on GitHub](https://github.com/WaterTian/cc-bot): the companion MIT-licensed Claude Code plugin

@@ -4,13 +4,15 @@ Pure static HTML / CSS / JS — zero build tools, zero dependencies. Single page
 
 Live at <https://sintbot.com>. Push to `main` = GitHub Pages deploys in ~seconds — there is no staging, so verify on the live URL after pushing.
 
+SintBot's sole author is **WaterTian**. SintLab is its publisher and project studio, not an additional author.
+
 ## What the page covers
 
-**`sintbot`** — a self-hosted daemon that binds a Feishu, Slack or WeCom group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Feishu (the China edition; Lark is not supported yet), Slack and WeCom are all supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free and open source under MIT — source in [`sintlab/sintbot`](https://github.com/sintlab/sintbot).
+**`sintbot`** — a self-hosted daemon that binds a Feishu, Slack or WeCom group to a project and runs Claude Code or Codex headless inside it: just say what you need in the group, progress streams back, permissions and redaction are set per group, the model behind the agent is swappable (Claude / GPT / GLM / DeepSeek / MiniMax / Kimi). Feishu (the China edition; Lark is not supported yet), Slack and WeCom are all supported. It comes with a local console and a design toolchain, installs from npm (`npm i -g sintbot`), and is free; its full source code is publicly available to view and download under PolyForm Shield 1.0.0 in [`sintlab/sintbot`](https://github.com/sintlab/sintbot).
 
 **`cc-bot`** — the companion MIT Claude Code **plugin**: it lives inside an interactive session and is bound to that session's model, with Feishu and Slack adapters ([`WaterTian/cc-bot`](https://github.com/WaterTian/cc-bot)). The page points to it in one line at the end of the setup section.
 
-The desktop pet is a separate line; the page mentions it only in the footer as "in the works".
+The desktop pet is a separate product line and is not mentioned on this site.
 
 ## Preview locally
 
