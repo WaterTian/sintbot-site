@@ -4,6 +4,7 @@
 // ② 仓库里每个 .html 页面都得在 sitemap 里,sitemap 里的每个网址也得有对应文件。
 // 确实不该刷的特例:LASTMOD_SKIP=1 git commit ...
 import { execFileSync } from 'node:child_process'
+import { visible } from './visible.mjs'
 
 const SITE = 'https://sintbot.com'
 // 不是网站页面的 .html:搜索后台验证文件、分享图的设计源文件(_config.yml 里也不发布)
@@ -12,16 +13,6 @@ const NOT_PAGES = [/^google[0-9a-f]+\.html$/, /^assets\//]
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
 // rev 为空 = 暂存区里的版本(git show :file)
 const show = (rev, file) => { try { return git('show', `${rev}:${file}`) } catch { return null } }
-
-function visible(html) {
-  if (html == null) return null
-  const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/) || [])[1] || ''
-  const body = html
-    .replace(/<!--[\s\S]*?-->/g, ' ')
-    .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-  return `${desc} ${body}`.replace(/\s+/g, ' ').trim()
-}
 
 const sitemap = show('', 'sitemap.xml')
 if (!sitemap) { console.error('check-lastmod: 暂存区里没有 sitemap.xml'); process.exit(1) }
@@ -32,7 +23,7 @@ for (const m of sitemap.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastm
   lastmod.set(file, m[2])
 }
 
-const today = new Date().toLocaleDateString('sv-SE') // 本机时区的 YYYY-MM-DD
+const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Shanghai' }) // 北京时间的 YYYY-MM-DD(与 sync-version 一致)
 const problems = []
 
 const pages = git('ls-files', '--', '*.html').split('\n').filter((f) => f && !NOT_PAGES.some((re) => re.test(f)))
