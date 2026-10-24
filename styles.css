@@ -1191,37 +1191,16 @@ html[lang="en"] .diagram .d-pill--feishu { transform: translateY(56px); }
 @media (max-width: 640px)  { .model-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* Design system ============================================ */
-.dsn {
-  display: grid;
-  grid-template-columns: 55fr 45fr;
-  gap: 24px;
-  align-items: start;
-}
-@media (max-width: 1068px) { .dsn { grid-template-columns: 1fr; } }
-.dsn__fig {
-  margin: 0;
-  padding: 16px;
-  background: var(--surface);
-  border: 1px solid var(--hair);
-  border-radius: var(--r-card);
-}
-.dsn__fig img { width: 100%; height: auto; aspect-ratio: 1134 / 1022; border-radius: 6px; }
-.dsn__fig figcaption {
-  margin-top: 12px;
-  font-family: var(--f-mono);
-  font-size: var(--t-cap);
-  line-height: 1.5;
-  color: var(--text-2);
-}
 .dsn-points {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
-.dsn-points li {
+@media (max-width: 734px) { .dsn-points { grid-template-columns: 1fr; } }
+.dsn-points > li {
   display: flex;
   gap: 14px;
   align-items: flex-start;
@@ -1232,7 +1211,7 @@ html[lang="en"] .diagram .d-pill--feishu { transform: translateY(56px); }
   min-width: 0;
   transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
-.dsn-points li:hover { background: var(--surface-hi); border-color: var(--hair-hi); }
+.dsn-points > li:hover { background: var(--surface-hi); border-color: var(--hair-hi); }
 .dsn-points .ico { margin-top: 2px; }
 .dsn-points h3 {
   font-family: var(--f-ui);

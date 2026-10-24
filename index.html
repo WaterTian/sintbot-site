@@ -670,47 +670,41 @@
         <h2 class="section__h" data-reveal data-i18n-html="dsn.h">A design system the bot <em>actually follows.</em></h2>
         <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.</p>
 
-        <div class="dsn">
-          <figure class="dsn__fig" data-reveal>
-            <img src="/assets/design-styles.png" width="1134" height="1022" loading="lazy" decoding="async" alt="Sixteen built-in design styles rendered as miniature interface cards" data-i18n-alt="dsn.img.alt" />
-            <figcaption data-i18n="dsn.img.cap">The 16 built-in styles, rendered by the daemon itself. The same preview cards appear in the console and in the group.</figcaption>
-          </figure>
 
-          <ol class="dsn-points">
-            <li data-reveal>
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
-              <div>
-                <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
-                <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.</p>
-                <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">extract from a reference image or URL</li><li>lucide · tabler · phosphor · pixelart</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="60">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-              <div>
-                <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
-                <p data-i18n="dsn.2.body">Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.</p>
-                <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="120">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
-              <div>
-                <h3 data-i18n="dsn.3.title">Images without a key</h3>
-                <p data-i18n="dsn.3.body">Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.</p>
-                <ul class="card__chips"><li data-i18n="dsn.3.c1">edit in place</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="180">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
-              <div>
-                <h3 data-i18n="dsn.4.title">Preview in the group</h3>
-                <p data-i18n="dsn.4.body">A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.</p>
-                <ul class="card__chips"><li data-i18n="dsn.4.c1">LAN preview</li><li data-i18n="dsn.4.c2">fixed port per group</li><li data-i18n="dsn.4.c3">auto-stop</li></ul>
-              </div>
-            </li>
-          </ol>
-        </div>
+        <ol class="dsn-points">
+          <li data-reveal>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
+            <div>
+              <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
+              <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.</p>
+              <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">extract from a reference image or URL</li><li>lucide · tabler · phosphor · pixelart</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="60">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
+            <div>
+              <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
+              <p data-i18n="dsn.2.body">Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.</p>
+              <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="120">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
+            <div>
+              <h3 data-i18n="dsn.3.title">Images without a key</h3>
+              <p data-i18n="dsn.3.body">Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.</p>
+              <ul class="card__chips"><li data-i18n="dsn.3.c1">edit in place</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="180">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
+            <div>
+              <h3 data-i18n="dsn.4.title">Preview in the group</h3>
+              <p data-i18n="dsn.4.body">A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.</p>
+              <ul class="card__chips"><li data-i18n="dsn.4.c1">LAN preview</li><li data-i18n="dsn.4.c2">fixed port per group</li><li data-i18n="dsn.4.c3">auto-stop</li></ul>
+            </div>
+          </li>
+        </ol>
 
         <div class="dsn-board" data-reveal>
           <div class="dsn-board__head">

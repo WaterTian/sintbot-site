@@ -671,47 +671,41 @@
         <h2 class="section__h" data-reveal data-i18n-html="dsn.h">机器人<em>真的遵守</em>的设计系统。</h2>
         <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">16 套内置风格、一份放在项目里的风格档、一道交付前的核对。</p>
 
-        <div class="dsn">
-          <figure class="dsn__fig" data-reveal>
-            <img src="/assets/design-styles.png" width="1134" height="1022" loading="lazy" decoding="async" alt="16 套内置设计风格，渲染成微缩界面卡" data-i18n-alt="dsn.img.alt" />
-            <figcaption data-i18n="dsn.img.cap">16 套内置风格，守护进程自己渲染的。控制台和群里发的预览卡，用的是同一套。</figcaption>
-          </figure>
 
-          <ol class="dsn-points">
-            <li data-reveal>
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
-              <div>
-                <h3 data-i18n="dsn.1.title">agent 必读的风格档</h3>
-                <p data-i18n-html="dsn.1.body">项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。</p>
-                <ul class="card__chips"><li data-i18n="dsn.1.c1">内置 16 套 + 备选 9 套</li><li data-i18n="dsn.1.c2">从参考图或网址提色</li><li>lucide · tabler · phosphor · pixelart</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="60">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-              <div>
-                <h3 data-i18n="dsn.2.title">交付前先核对</h3>
-                <p data-i18n="dsn.2.body">对照风格档查颜色、圆角、字体、图标参数、中文兜底，以及字体在 mac 与 Windows 上是否真的显示——结果贴进交付说明。再按三档宽度真渲染，量重叠、裁切、点击目标、对比度、字号。</p>
-                <ul class="card__chips"><li data-i18n="dsn.2.c1">风格核对</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">字体可得性</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="120">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
-              <div>
-                <h3 data-i18n="dsn.3.title">生图不用 key</h3>
-                <p data-i18n="dsn.3.body">生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。</p>
-                <ul class="card__chips"><li data-i18n="dsn.3.c1">原图上改</li><li data-i18n="dsn.3.c2">局部重绘</li><li data-i18n="dsn.3.c3">透明底</li></ul>
-              </div>
-            </li>
-            <li data-reveal data-reveal-delay="180">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
-              <div>
-                <h3 data-i18n="dsn.4.title">原型直接在群里看</h3>
-                <p data-i18n="dsn.4.body">做好的原型起成局域网服务，端口按群固定；跨轮存活，闲置 30 分钟自动停，控制台里可见可停。</p>
-                <ul class="card__chips"><li data-i18n="dsn.4.c1">局域网预览</li><li data-i18n="dsn.4.c2">按群固定端口</li><li data-i18n="dsn.4.c3">闲置自动停</li></ul>
-              </div>
-            </li>
-          </ol>
-        </div>
+        <ol class="dsn-points">
+          <li data-reveal>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
+            <div>
+              <h3 data-i18n="dsn.1.title">agent 必读的风格档</h3>
+              <p data-i18n-html="dsn.1.body">项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。</p>
+              <ul class="card__chips"><li data-i18n="dsn.1.c1">内置 16 套 + 备选 9 套</li><li data-i18n="dsn.1.c2">从参考图或网址提色</li><li>lucide · tabler · phosphor · pixelart</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="60">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
+            <div>
+              <h3 data-i18n="dsn.2.title">交付前先核对</h3>
+              <p data-i18n="dsn.2.body">对照风格档查颜色、圆角、字体、图标参数、中文兜底，以及字体在 mac 与 Windows 上是否真的显示——结果贴进交付说明。再按三档宽度真渲染，量重叠、裁切、点击目标、对比度、字号。</p>
+              <ul class="card__chips"><li data-i18n="dsn.2.c1">风格核对</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">字体可得性</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="120">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
+            <div>
+              <h3 data-i18n="dsn.3.title">生图不用 key</h3>
+              <p data-i18n="dsn.3.body">生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。</p>
+              <ul class="card__chips"><li data-i18n="dsn.3.c1">原图上改</li><li data-i18n="dsn.3.c2">局部重绘</li><li data-i18n="dsn.3.c3">透明底</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="180">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
+            <div>
+              <h3 data-i18n="dsn.4.title">原型直接在群里看</h3>
+              <p data-i18n="dsn.4.body">做好的原型起成局域网服务，端口按群固定；跨轮存活，闲置 30 分钟自动停，控制台里可见可停。</p>
+              <ul class="card__chips"><li data-i18n="dsn.4.c1">局域网预览</li><li data-i18n="dsn.4.c2">按群固定端口</li><li data-i18n="dsn.4.c3">闲置自动停</li></ul>
+            </div>
+          </li>
+        </ol>
 
         <div class="dsn-board" data-reveal>
           <div class="dsn-board__head">

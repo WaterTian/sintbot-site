@@ -259,9 +259,6 @@
       en: "Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.",
       zh: "16 套内置风格、一份放在项目里的风格档、一道交付前的核对。"
     },
-    "dsn.img.alt": { en: "Sixteen built-in design styles rendered as miniature interface cards", zh: "16 套内置设计风格，渲染成微缩界面卡" },
-    "dsn.img.cap": { en: "The 16 built-in styles, rendered by the daemon itself. The same preview cards appear in the console and in the group.",
-                     zh: "16 套内置风格，守护进程自己渲染的。控制台和群里发的预览卡，用的是同一套。" },
     "dsn.1.title": { en: "A style file the agent must read", zh: "agent 必读的风格档" },
     "dsn.1.body": {
       en: `<code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.`,
