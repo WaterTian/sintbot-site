@@ -1228,6 +1228,10 @@ html[lang="en"] .diagram .d-pill--feishu { transform: translateY(56px); }
   color: var(--text-2);
 }
 .dsn-points > li > div { min-width: 0; }
+/* 「从参考提炼」是这一区的重点:独占一行、标题大一档,其余四张两两一排 */
+.dsn-points > li.dsn-lead { grid-column: 1 / -1; padding: 24px 26px; border-color: var(--hair-hi); }
+.dsn-points > li.dsn-lead h3 { font-size: var(--t-h3); line-height: var(--lh-h3); margin-bottom: 8px; }
+.dsn-points > li.dsn-lead p { font-size: var(--t-body); line-height: var(--lh-body); max-width: 72ch; }
 
 .dsn-board {
   margin-top: 16px;

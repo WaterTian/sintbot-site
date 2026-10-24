@@ -254,47 +254,56 @@
 
     // ---- design ----------------------------------------------------------
     "dsn.kicker": { en: "04 · Design system", zh: "04 · 设计系统" },
-    "dsn.h":      { en: `A design system the bot <em>actually follows.</em>`, zh: `机器人<em>真的遵守</em>的设计系统。` },
+    "dsn.h":      { en: `Bring a reference. Get a style the bot <em>actually follows.</em>`, zh: `给一个参考，得到一套机器人<em>真的遵守</em>的风格。` },
     "dsn.lede": {
-      en: "Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.",
-      zh: "16 套内置风格、一份放在项目里的风格档、一道交付前的核对。"
+      en: "Point it at a site, a project folder or an image you like and it distills a style file, or start from one of sixteen built-in styles. The agent reads that file before every image and page, and checks its work against it before handing anything over.",
+      zh: "给它一个喜欢的网站、项目目录或图片，它提炼出一份风格档；也可以从 16 套内置风格起步。agent 每次出图、做页面前先读这份档，交付前再对照它核对一遍。"
     },
+    "dsn.0.title": { en: "Distill a style from a reference", zh: "从参考提炼风格" },
+    "dsn.0.body": {
+      en: "Paste a public URL or pick a project folder in the console, mini program sources included. It reads the stylesheets, ranks colors, fonts and radii by how often they appear, and fills in a new style: background, text, accent and muted colors, corner radius and shadow depth. Each guess shows its evidence, which colors and how many times, so you know what to adjust before you save. For a picture, send it to the group: the agent pulls a palette from it, then works out the mood and the do’s and don’ts with you in the conversation.",
+      zh: "在控制台贴一个公网网址，或选一个项目目录（小程序源码也认）。它读样式表，按出现次数排出颜色、字体、圆角，填好一套新风格：底色、正文、强调、弱化四个颜色，加上圆角与投影。每一项猜测都附证据（哪几个颜色、各出现几次），保存前就知道该改哪里。参考是一张图的话发到群里，agent 从图里提出色板，再在对话里和你一起写出气质与 Do / Don't。"
+    },
+    "dsn.0.c1": { en: "from a URL", zh: "从网址" },
+    "dsn.0.c2": { en: "from a project folder", zh: "从项目目录" },
+    "dsn.0.c3": { en: "from an image", zh: "从图片" },
+    "dsn.0.c4": { en: "evidence for every guess", zh: "每项附证据" },
     "dsn.1.title": { en: "A style file the agent must read", zh: "agent 必读的风格档" },
     "dsn.1.body": {
-      en: `<code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.`,
+      en: `<code>DESIGN.md</code> at the project root holds the tokens, a written description, do’s and don’ts and an image prompt. The agent reads it before any image or page, and the tokens go into every turn’s brief. A project can keep one file per surface, such as a mini program and an admin panel; company rules go in a user-level folder that every group shares.`,
       zh: `项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。`
     },
     "dsn.1.c1": { en: "16 built-in + 9 alternates", zh: "内置 16 套 + 备选 9 套" },
-    "dsn.1.c2": { en: "extract from a reference image or URL", zh: "从参考图或网址提色" },
+    "dsn.1.c2": { en: "one file per surface", zh: "按用途分多份" },
     "dsn.2.title": { en: "Checked before it is handed over", zh: "交付前先核对" },
     "dsn.2.body": {
-      en: "Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.",
+      en: "Before anything is handed over, the result is checked against the style file: colors, radii, fonts, icon parameters, Chinese fallbacks, and whether each font will actually load on macOS and Windows. The findings go into the hand-off note. A layout audit then renders the page at three widths and measures overlapping or clipped text, small tap targets, low contrast and tiny type.",
       zh: "对照风格档查颜色、圆角、字体、图标参数、中文兜底，以及字体在 mac 与 Windows 上是否真的显示——结果贴进交付说明。再按三档宽度真渲染，量重叠、裁切、点击目标、对比度、字号。"
     },
     "dsn.2.c1": { en: "style check", zh: "风格核对" },
     "dsn.2.c2": { en: "layout audit", zh: "渲染几何体检" },
     "dsn.2.c3": { en: "font availability", zh: "字体可得性" },
-    "dsn.3.title": { en: "Images without a key", zh: "生图不用 key" },
+    "dsn.3.title": { en: "Images without an API key", zh: "生图不用 key" },
     "dsn.3.body": {
-      en: "Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.",
+      en: "Images go through the Codex subscription already signed in on the machine, whatever model the group runs, so there is no API key to manage. The group stays free while it paints, and a progress card updates itself until the image lands. It can edit an existing image, repaint just a masked area or give a true transparent background, and the project’s style file comes along every time.",
       zh: "生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。"
     },
-    "dsn.3.c1": { en: "edit in place", zh: "原图上改" },
+    "dsn.3.c1": { en: "edit an existing image", zh: "原图上改" },
     "dsn.3.c2": { en: "masked repaint", zh: "局部重绘" },
-    "dsn.3.c3": { en: "transparent", zh: "透明底" },
-    "dsn.4.title": { en: "Preview in the group", zh: "原型直接在群里看" },
+    "dsn.3.c3": { en: "transparent background", zh: "透明底" },
+    "dsn.4.title": { en: "Prototypes the group can open", zh: "原型直接在群里看" },
     "dsn.4.body": {
-      en: "A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.",
+      en: "A finished HTML prototype is served on your local network from a port fixed per group, so people in the group can open it on their phones. It keeps running after the turn ends, stops itself after 30 idle minutes, and shows up in the console with a Stop button.",
       zh: "做好的原型起成局域网服务，端口按群固定；跨轮存活，闲置 30 分钟自动停，控制台里可见可停。"
     },
     "dsn.4.c1": { en: "LAN preview", zh: "局域网预览" },
     "dsn.4.c2": { en: "fixed port per group", zh: "按群固定端口" },
-    "dsn.4.c3": { en: "auto-stop", zh: "闲置自动停" },
+    "dsn.4.c3": { en: "stops when idle", zh: "闲置自动停" },
     "dsn.board.h":    { en: "The whiteboard loop", zh: "画板闭环" },
     "dsn.board.only": { en: "only", zh: "限定" },
     "dsn.board.body": {
-      en: "The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.",
-      zh: "第一次要展示图时，守护进程自动建画板并挂成群标签页。画箭头、贴便签、写评论，点「按标注改图」，结果回填同一张卡。历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。"
+      en: "The first time it needs to show an image, it creates a whiteboard and pins it as a tab at the top of the group. Draw arrows, add sticky notes or comment on the board, then say “revise per the annotations” in the group; with auto-detection on, a card appears by itself and one click starts the revision. The new version lands next to the original, and every version and mark stays on the board, so the board becomes the design’s history. Only design work goes on it: material to browse is sent as a searchable page, and a choice between options as a numbered contact sheet.",
+      zh: "第一次要展示图时，自动建画板并挂成群标签页。画箭头、贴便签、写评论，然后在群里说一声「按标注改」；开了自动检测的话，群里会自己弹出卡片，点一下就开始改。新版本放在原图旁边，历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。"
     },
 
     // ---- scenarios -------------------------------------------------------

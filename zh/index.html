@@ -668,20 +668,28 @@
       <section id="design" class="section section--dsn">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · 设计系统</p>
-        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">机器人<em>真的遵守</em>的设计系统。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">16 套内置风格、一份放在项目里的风格档、一道交付前的核对。</p>
+        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">给一个参考，得到一套机器人<em>真的遵守</em>的风格。</h2>
+        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">给它一个喜欢的网站、项目目录或图片，它提炼出一份风格档；也可以从 16 套内置风格起步。agent 每次出图、做页面前先读这份档，交付前再对照它核对一遍。</p>
 
 
         <ol class="dsn-points">
-          <li data-reveal>
+          <li class="dsn-lead" data-reveal>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-scan"/></svg>
+            <div>
+              <h3 data-i18n="dsn.0.title">从参考提炼风格</h3>
+              <p data-i18n="dsn.0.body">在控制台贴一个公网网址，或选一个项目目录（小程序源码也认）。它读样式表，按出现次数排出颜色、字体、圆角，填好一套新风格：底色、正文、强调、弱化四个颜色，加上圆角与投影。每一项猜测都附证据（哪几个颜色、各出现几次），保存前就知道该改哪里。参考是一张图的话发到群里，agent 从图里提出色板，再在对话里和你一起写出气质与 Do / Don't。</p>
+              <ul class="card__chips"><li data-i18n="dsn.0.c1">从网址</li><li data-i18n="dsn.0.c2">从项目目录</li><li data-i18n="dsn.0.c3">从图片</li><li data-i18n="dsn.0.c4">每项附证据</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="60">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
             <div>
               <h3 data-i18n="dsn.1.title">agent 必读的风格档</h3>
               <p data-i18n-html="dsn.1.body">项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。</p>
-              <ul class="card__chips"><li data-i18n="dsn.1.c1">内置 16 套 + 备选 9 套</li><li data-i18n="dsn.1.c2">从参考图或网址提色</li><li>lucide · tabler · phosphor · pixelart</li></ul>
+              <ul class="card__chips"><li data-i18n="dsn.1.c1">内置 16 套 + 备选 9 套</li><li data-i18n="dsn.1.c2">按用途分多份</li><li>Lucide · Tabler · Phosphor · Pixelarticons</li></ul>
             </div>
           </li>
-          <li data-reveal data-reveal-delay="60">
+          <li data-reveal data-reveal-delay="120">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
             <div>
               <h3 data-i18n="dsn.2.title">交付前先核对</h3>
@@ -689,7 +697,7 @@
               <ul class="card__chips"><li data-i18n="dsn.2.c1">风格核对</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">字体可得性</li></ul>
             </div>
           </li>
-          <li data-reveal data-reveal-delay="120">
+          <li data-reveal data-reveal-delay="180">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
             <div>
               <h3 data-i18n="dsn.3.title">生图不用 key</h3>
@@ -697,7 +705,7 @@
               <ul class="card__chips"><li data-i18n="dsn.3.c1">原图上改</li><li data-i18n="dsn.3.c2">局部重绘</li><li data-i18n="dsn.3.c3">透明底</li></ul>
             </div>
           </li>
-          <li data-reveal data-reveal-delay="180">
+          <li data-reveal data-reveal-delay="240">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
             <div>
               <h3 data-i18n="dsn.4.title">原型直接在群里看</h3>
@@ -713,7 +721,7 @@
             <h3 data-i18n="dsn.board.h">画板闭环</h3>
             <span class="chip chip--lark"><span data-i18n="plat.lark">飞书</span> <span data-i18n="dsn.board.only">限定</span></span>
           </div>
-          <p data-i18n="dsn.board.body">第一次要展示图时，守护进程自动建画板并挂成群标签页。画箭头、贴便签、写评论，点「按标注改图」，结果回填同一张卡。历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。</p>
+          <p data-i18n="dsn.board.body">第一次要展示图时，自动建画板并挂成群标签页。画箭头、贴便签、写评论，然后在群里说一声「按标注改」；开了自动检测的话，群里会自己弹出卡片，点一下就开始改。新版本放在原图旁边，历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。</p>
         </div>
       </section>
 

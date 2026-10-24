@@ -667,41 +667,49 @@
       <section id="design" class="section section--dsn">
         <div class="rule" aria-hidden="true"></div>
         <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · Design system</p>
-        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">A design system the bot <em>actually follows.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Sixteen built-in styles, a style file that lives in the project, and a check that runs before anything is handed over.</p>
+        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">Bring a reference. Get a style the bot <em>actually follows.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Point it at a site, a project folder or an image you like and it distills a style file, or start from one of sixteen built-in styles. The agent reads that file before every image and page, and checks its work against it before handing anything over.</p>
 
 
         <ol class="dsn-points">
-          <li data-reveal>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
+          <li class="dsn-lead" data-reveal>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-scan"/></svg>
             <div>
-              <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
-              <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> in the project root — tokens, prose, do/don’t, image prompt — read before any image or page. Keep one per surface; share company rules via a user-level directory.</p>
-              <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">extract from a reference image or URL</li><li>lucide · tabler · phosphor · pixelart</li></ul>
+              <h3 data-i18n="dsn.0.title">Distill a style from a reference</h3>
+              <p data-i18n="dsn.0.body">Paste a public URL or pick a project folder in the console, mini program sources included. It reads the stylesheets, ranks colors, fonts and radii by how often they appear, and fills in a new style: background, text, accent and muted colors, corner radius and shadow depth. Each guess shows its evidence, which colors and how many times, so you know what to adjust before you save. For a picture, send it to the group: the agent pulls a palette from it, then works out the mood and the do’s and don’ts with you in the conversation.</p>
+              <ul class="card__chips"><li data-i18n="dsn.0.c1">from a URL</li><li data-i18n="dsn.0.c2">from a project folder</li><li data-i18n="dsn.0.c3">from an image</li><li data-i18n="dsn.0.c4">evidence for every guess</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="60">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
             <div>
-              <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
-              <p data-i18n="dsn.2.body">Colours, radii, fonts, icon parameters, Chinese fallback and whether the font really renders on mac and Windows — pasted into the delivery note. A layout audit then measures overlaps, clipping, tap targets, contrast and tiny text at three widths.</p>
-              <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
+              <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
+              <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> at the project root holds the tokens, a written description, do’s and don’ts and an image prompt. The agent reads it before any image or page, and the tokens go into every turn’s brief. A project can keep one file per surface, such as a mini program and an admin panel; company rules go in a user-level folder that every group shares.</p>
+              <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">one file per surface</li><li>Lucide · Tabler · Phosphor · Pixelarticons</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="120">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
             <div>
-              <h3 data-i18n="dsn.3.title">Images without a key</h3>
-              <p data-i18n="dsn.3.body">Images borrow the machine’s Codex subscription — no API key, no group lock, and a progress message that updates itself while it paints. Edit on the original, repaint a masked region, transparent background; the style file rides along.</p>
-              <ul class="card__chips"><li data-i18n="dsn.3.c1">edit in place</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent</li></ul>
+              <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
+              <p data-i18n="dsn.2.body">Before anything is handed over, the result is checked against the style file: colors, radii, fonts, icon parameters, Chinese fallbacks, and whether each font will actually load on macOS and Windows. The findings go into the hand-off note. A layout audit then renders the page at three widths and measures overlapping or clipped text, small tap targets, low contrast and tiny type.</p>
+              <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="180">
+            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
+            <div>
+              <h3 data-i18n="dsn.3.title">Images without an API key</h3>
+              <p data-i18n="dsn.3.body">Images go through the Codex subscription already signed in on the machine, whatever model the group runs, so there is no API key to manage. The group stays free while it paints, and a progress card updates itself until the image lands. It can edit an existing image, repaint just a masked area or give a true transparent background, and the project’s style file comes along every time.</p>
+              <ul class="card__chips"><li data-i18n="dsn.3.c1">edit an existing image</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent background</li></ul>
+            </div>
+          </li>
+          <li data-reveal data-reveal-delay="240">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
             <div>
-              <h3 data-i18n="dsn.4.title">Preview in the group</h3>
-              <p data-i18n="dsn.4.body">A finished prototype is served on your local network on a port fixed per group; it survives across turns, stops after 30 idle minutes and can be stopped from the console.</p>
-              <ul class="card__chips"><li data-i18n="dsn.4.c1">LAN preview</li><li data-i18n="dsn.4.c2">fixed port per group</li><li data-i18n="dsn.4.c3">auto-stop</li></ul>
+              <h3 data-i18n="dsn.4.title">Prototypes the group can open</h3>
+              <p data-i18n="dsn.4.body">A finished HTML prototype is served on your local network from a port fixed per group, so people in the group can open it on their phones. It keeps running after the turn ends, stops itself after 30 idle minutes, and shows up in the console with a Stop button.</p>
+              <ul class="card__chips"><li data-i18n="dsn.4.c1">LAN preview</li><li data-i18n="dsn.4.c2">fixed port per group</li><li data-i18n="dsn.4.c3">stops when idle</li></ul>
             </div>
           </li>
         </ol>
@@ -712,7 +720,7 @@
             <h3 data-i18n="dsn.board.h">The whiteboard loop</h3>
             <span class="chip chip--lark"><span data-i18n="plat.lark">Feishu</span> <span data-i18n="dsn.board.only">only</span></span>
           </div>
-          <p data-i18n="dsn.board.body">The first time it shows an image, the daemon creates a whiteboard and pins it as a group tab. Draw arrows, drop notes, comment; press “edit per annotation” and the result returns to the same card. Every version and mark is kept — the board becomes the design’s history. It holds design work only: things to look through go out as a searchable page, a choice as a numbered contact sheet.</p>
+          <p data-i18n="dsn.board.body">The first time it needs to show an image, it creates a whiteboard and pins it as a tab at the top of the group. Draw arrows, add sticky notes or comment on the board, then say “revise per the annotations” in the group; with auto-detection on, a card appears by itself and one click starts the revision. The new version lands next to the original, and every version and mark stays on the board, so the board becomes the design’s history. Only design work goes on it: material to browse is sent as a searchable page, and a choice between options as a numbered contact sheet.</p>
         </div>
       </section>
 
