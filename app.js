@@ -14,7 +14,7 @@
   // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
   // scripts/check-version.mjs (daily workflow) fails when they drift apart.
   // Bump this one line only, then run scripts/build-zh.mjs.
-  const VERSION = "1.0.10";
+  const VERSION = "1.0.11";
 
   const translations = {
     // ---- <head> — the single source for title / description / share card.
