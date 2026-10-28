@@ -964,7 +964,7 @@
           <li class="card" data-reveal data-reveal-delay="300">
             <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
             <h3 data-i18n="ops.6.title">Small footprint, smart egress</h3>
-            <p data-i18n="ops.6.body">Node 22+ with two runtime dependencies; Claude Code and Codex are separate installs the setup wizard can do for you. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
+            <p data-i18n="ops.6.body">Node 22+ with two runtime dependencies; Claude Code is a separate install the setup wizard does for you, and Codex is optional. Official Claude goes through your proxy, domestic endpoints connect direct.</p>
             <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 runtime deps</li><li data-i18n="ops.6.c3">auto proxy split</li></ul>
           </li>
         </ol>
@@ -983,8 +983,8 @@
           <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">From npm to your group in four steps.</h3>
-        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede"><code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.</p>
-        <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">Or let one line do steps 1, 3 and 4 on macOS or Linux — it installs Node 22 if needed, then sintbot, then Claude Code through the wizard, asking before each change:</p>
+        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">The terminal only installs SintBot and sets up a model. The chat platform, group binding, proxy and the rest are set in the local console afterwards.</p>
+        <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">Or let one line do steps 1–3 on macOS or Linux: it installs Node 22 if needed, sintbot and Claude Code, sets up a model, asks once before installing the background service, then opens the console:</p>
         <pre class="code plugin__quick-code" data-reveal><code><span class="tk-p">curl -fsSL</span> https://sintbot.com/install.sh | bash</code><button class="copy" data-copy="curl -fsSL https://sintbot.com/install.sh | bash" aria-label="Copy command" data-i18n="copy">copy</button></pre>
         <p class="plugin__steps-lede plugin__cn zh-only" data-reveal data-i18n-html="install.cn"></p>
         <ol class="steps" id="install">
@@ -992,29 +992,30 @@
             <p class="step__no">01</p>
             <h3 data-i18n="install.1.title">Install from npm</h3>
             <pre class="code"><code><span class="tk-p">npm i -g</span> sintbot</code><button class="copy" data-copy="npm i -g sintbot" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">Installs the <code>sintbot</code> command. The wizard in step 3 checks for Claude Code and offers to install it; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.</p>
+            <p class="step__after" data-i18n-html="install.1.after">Installs the <code>sintbot</code> command. The wizard in step 2 installs Claude Code if it is missing; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="80">
             <p class="step__no">02</p>
-            <h3 data-i18n="install.2.title">Create the chat bot</h3>
-            <p class="step__after" data-i18n-html="install.2.after">A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.</p>
+            <h3 data-i18n="install.2.title">Set up a model</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.2.after">It checks the machine and whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. That is all it asks.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
-            <h3 data-i18n="install.3.title">Run the setup wizard</h3>
-            <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.3.after">It first checks whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. Then pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.</p>
+            <h3 data-i18n="install.3.title">Keep it running</h3>
+            <pre class="code"><code><span class="tk-p">sintbot</span> service install</code><button class="copy" data-copy="sintbot service install" aria-label="Copy command" data-i18n="copy">copy</button></pre>
+            <p class="step__after" data-i18n-html="install.3.after">Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). The local console stays at <code>http://127.0.0.1:4600</code>, even before a chat platform is connected.</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
-            <h3 data-i18n="install.4.title">Keep it running</h3>
-            <pre class="code"><code><span class="tk-p">sintbot</span> service install</code><button class="copy" data-copy="sintbot service install" aria-label="Copy command" data-i18n="copy">copy</button></pre>
-            <p class="step__after" data-i18n-html="install.4.after">Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). Now @ the bot in your group. The local console is at <code>http://127.0.0.1:4600</code>.</p>
+            <h3 data-i18n="install.4.title">Connect your chat platform</h3>
+            <p class="step__after" data-i18n-html="install.4.after">In the console under Settings: a Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Bind the group to a project folder under Groups, then @ the bot in it.</p>
           </li>
         </ol>
         <div class="commands" data-reveal>
           <h3 data-i18n="commands.h">Everyday commands</h3>
           <ul>
+            <li><code>sintbot ui</code> — <span data-i18n="commands.ui">open the console</span></li>
             <li><code>sintbot doctor</code> — <span data-i18n="commands.doctor">health check &amp; diagnostics</span></li>
             <li><code>sintbot service status | logs</code> — <span data-i18n="commands.service">is the service up, and what is it doing</span></li>
             <li><code>sintbot agent run "…"</code> — <span data-i18n="commands.trial">a read-only trial turn in the terminal</span></li>

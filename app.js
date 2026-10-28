@@ -490,8 +490,8 @@
     "ops.5.c3": { en: "compaction notice", zh: "压缩提示" },
     "ops.6.title": { en: "Small footprint, smart egress", zh: "依赖少，出网会分流" },
     "ops.6.body": {
-      en: "Node 22+ with two runtime dependencies; Claude Code and Codex are separate installs the setup wizard can do for you. Official Claude goes through your proxy, domestic endpoints connect direct.",
-      zh: "Node 22 起，运行时依赖两个；Claude Code 和 Codex 另装，配置向导可以代你装。官方 Claude 走代理，国内端点直连，自动分流。"
+      en: "Node 22+ with two runtime dependencies; Claude Code is a separate install the setup wizard does for you, and Codex is optional. Official Claude goes through your proxy, domestic endpoints connect direct.",
+      zh: "Node 22 起，运行时依赖两个；Claude Code 另装，配置向导会代你装，Codex 可选。官方 Claude 走代理，国内端点直连，自动分流。"
     },
     "ops.6.c2": { en: "2 runtime deps", zh: "2 个运行时依赖" },
     "ops.6.c3": { en: "auto proxy split", zh: "代理自动分流" },
@@ -509,39 +509,40 @@
 
     "install.h":      { en: "From npm to your group in four steps.", zh: "从 npm 到群里，四步。" },
     "install.lede":   {
-      en: `<code>sintbot setup</code> does most of it: it checks the machine, verifies the app credentials against the platform and binds your first group to a project folder.`,
-      zh: `大部分事由 <code>sintbot setup</code> 完成：检查环境，拿凭据向平台核验，把第一个群绑到一个项目目录。`
+      en: `The terminal only installs SintBot and sets up a model. The chat platform, group binding, proxy and the rest are set in the local console afterwards.`,
+      zh: `终端里只装好、配好模型；聊天平台、绑群、代理这些，装完在本地控制台里配。`
     },
     "install.quick": {
-      en: `Or let one line do steps 1, 3 and 4 on macOS or Linux — it installs Node 22 if needed, then sintbot, then Claude Code through the wizard, asking before each change:`,
-      zh: `也可以一行命令做完第 1、3、4 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot，向导里再装 Claude Code，每一步先问你：`
+      en: `Or let one line do steps 1–3 on macOS or Linux: it installs Node 22 if needed, sintbot and Claude Code, sets up a model, asks once before installing the background service, then opens the console:`,
+      zh: `也可以一行命令做完第 1–3 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot 和 Claude Code、配好模型，装后台服务前问一句，最后打开控制台：`
     },
     "install.cn": {
       en: ``,
-      zh: `<b>在中国大陆？</b>聊天平台用飞书；没有 Claude 订阅就用 DeepSeek，直连、不用代理；Codex 可以不装。向导问「这台机器在中国大陆吗」时答「是」。`
+      zh: `<b>在中国大陆？</b>聊天平台用飞书；没有 Claude 订阅就用 DeepSeek，直连、不用代理；Codex 可以不装。用 Claude 或 ChatGPT 才要代理，在控制台「设置 → 机器人与网络」里填。`
     },
     "install.1.title": { en: "Install from npm", zh: "从 npm 安装" },
     "install.1.after": {
-      en: `Installs the <code>sintbot</code> command. The wizard in step 3 checks for Claude Code and offers to install it; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.`,
-      zh: `装好后就有 <code>sintbot</code> 命令。第 3 步的向导会检查 Claude Code，没装会问要不要替你装；要用 Claude 本身，登录一次 <code>claude auth login</code>；DeepSeek、GLM 等用 key 的模型不用登录。`
+      en: `Installs the <code>sintbot</code> command. The wizard in step 2 installs Claude Code if it is missing; to use Claude itself, log in once with <code>claude auth login</code>. DeepSeek, GLM and other key-based models need no login.`,
+      zh: `装好后就有 <code>sintbot</code> 命令。第 2 步的向导发现没装 Claude Code 会直接装上；要用 Claude 本身，登录一次 <code>claude auth login</code>；DeepSeek、GLM 等用 key 的模型不用登录。`
     },
-    "install.2.title": { en: "Create the chat bot", zh: "建好聊天机器人" },
+    "install.2.title": { en: "Set up a model", zh: "配好模型" },
     "install.2.after": {
-      en: `A Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Then add the bot to your group.`,
-      zh: `飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。建好后把机器人拉进群。`
+      en: `It checks the machine and whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. That is all it asks.`,
+      zh: `检查环境，看你登录了 Claude 还是 Codex；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。别的都不问。`
     },
-    "install.3.title": { en: "Run the setup wizard", zh: "跑一遍向导" },
+    "install.3.title": { en: "Keep it running", zh: "常驻运行" },
     "install.3.after": {
-      en: `It first checks whether you’re logged in to Claude or Codex; if neither, it recommends DeepSeek and runs a trial turn as soon as you paste the API key. Then pick your platforms, paste the credentials (checked against the platform on the spot), choose a projects folder and bind the first group. It ends with a health check — fix anything marked ✗ before moving on.`,
-      zh: `先看你登录了 Claude 还是 Codex，都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮；再选平台、粘贴凭据（当场向平台核验）、选项目根目录、绑定第一个群。最后跑一遍体检，标 ✗ 的先处理掉再往下走。`
+      en: `Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). The local console stays at <code>http://127.0.0.1:4600</code>, even before a chat platform is connected.`,
+      zh: `崩溃自动拉起、登录即启动（macOS 用 launchd；Linux 的 systemd 为实验性；Windows 上只打印设置命令）。本地控制台常开在 <code>http://127.0.0.1:4600</code>，还没接聊天平台也能打开。`
     },
-    "install.4.title": { en: "Keep it running", zh: "常驻运行" },
+    "install.4.title": { en: "Connect your chat platform", zh: "在控制台接聊天平台" },
     "install.4.after": {
-      en: `Restarted on crash and started at login (macOS launchd; Linux systemd is experimental; on Windows it prints the commands to set one up). Now @ the bot in your group. The local console is at <code>http://127.0.0.1:4600</code>.`,
-      zh: `崩溃自动拉起、登录即启动（macOS 用 launchd；Linux 的 systemd 为实验性；Windows 上只打印设置命令）。然后在群里 @ 机器人就行。本地控制台在 <code>http://127.0.0.1:4600</code>。`
+      en: `In the console under Settings: a Slack app created from the manifest in the repository, a Feishu self-built app (China edition, open.feishu.cn) using the long-connection event mode, or a WeCom smart bot in API mode with a long connection — no public IP in any case. Step-by-step: <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/feishu.md" target="_blank" rel="noopener">Feishu</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/platforms/wecom.md" target="_blank" rel="noopener">WeCom</a>. Bind the group to a project folder under Groups, then @ the bot in it.`,
+      zh: `在控制台「设置」里接：飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。在「群 · 项目」里把群绑到项目目录，然后在群里 @ 机器人。`
     },
 
     "commands.h":       { en: "Everyday commands", zh: "常用命令" },
+    "commands.ui":      { en: "open the console", zh: "打开控制台" },
     "commands.doctor":  { en: "health check & diagnostics", zh: "体检与诊断" },
     "commands.service": { en: "is the service up, and what is it doing", zh: "服务在不在、在做什么" },
     "commands.trial":   { en: "a read-only trial turn in the terminal", zh: "在终端里只读试跑一轮" },
