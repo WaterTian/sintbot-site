@@ -509,12 +509,12 @@
 
     "install.h":      { en: "From npm to your group in four steps.", zh: "从 npm 到群里，四步。" },
     "install.lede":   {
-      en: `The terminal only installs SintBot and sets up a model. The chat platform, group binding, proxy and the rest are set in the local console afterwards.`,
-      zh: `终端里只装好、配好模型；聊天平台、绑群、代理这些，装完在本地控制台里配。`
+      en: `The terminal installs SintBot and sets up a model; connect a chat platform, bind a group and project, and set the proxy in the local console. For AI-assisted installation and first use, follow the <a href="https://github.com/sintlab/sintbot/blob/main/docs/AI-ASSISTED-INSTALL.md" target="_blank" rel="noopener">short guide</a>.`,
+      zh: `终端里装好 SintBot 并配置模型；接聊天平台、绑定群与项目、设置代理都在本地控制台完成。用 AI 助手安装和首次使用，按<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/AI-ASSISTED-INSTALL.md" target="_blank" rel="noopener">简明说明</a>操作。`
     },
     "install.quick": {
-      en: `Or let one line do steps 1–3 on macOS or Linux: it installs Node 22 if needed, sintbot and Claude Code, sets up a model, asks once before installing the background service, then opens the console:`,
-      zh: `也可以一行命令做完第 1–3 步（macOS / Linux）：需要时先装 Node 22，再装 sintbot 和 Claude Code、配好模型，装后台服务前问一句，最后打开控制台：`
+      en: `One-line install for macOS and experimental Linux. Run it in a local interactive terminal: without one, it may install or upgrade Node and skip model setup and the background service. The model trial may use quota or incur a charge; preview with <code>--dry-run</code>:`,
+      zh: `macOS / 实验性 Linux 可一键安装。请在本机交互终端运行：无交互时可能自动安装或升级 Node，并跳过模型配置与后台服务。模型试跑可能消耗额度或产生费用，可先用 <code>--dry-run</code> 预览：`
     },
     "install.cn": {
       en: ``,
