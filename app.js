@@ -35,7 +35,7 @@
 
     "nav.platforms":     { en: "Platforms",      zh: "平台" },
     "nav.models":        { en: "Models",         zh: "模型" },
-    "nav.design":        { en: "Design",         zh: "设计" },
+    "nav.design":        { en: "Visuals",        zh: "视觉协作" },
     "nav.console":       { en: "Console",        zh: "控制台" },
     "nav.setup":         { en: "Setup",          zh: "接入" },
 
@@ -69,10 +69,10 @@
     "mock.lark.title":   { en: "Design review",   zh: "设计评审" },
     "mock.lark.kind":    { en: "streaming card",  zh: "流式卡片" },
     "mock.lark.user":    { en: "Mei · Design",    zh: "小梅 · 设计" },
-    "mock.lark.ask":     { en: "redo the homepage in the tech-dark style",
-                           zh: "把首页按科技深色风格出一版" },
+    "mock.lark.ask":     { en: "update the homepage, keep its current look",
+                           zh: "调整首页，沿用现在的视觉风格" },
     "mock.lark.state":   { en: "Delivered · 4m 21s", zh: "已交付 · 4 分 21 秒" },
-    "mock.lark.l1":      { en: "Read the style file · DESIGN.md", zh: "读取风格档 · DESIGN.md" },
+    "mock.lark.l1":      { en: "Follow the existing project UI", zh: "沿用项目现有界面" },
     "mock.lark.l2":      { en: "Generated two versions · hero + pricing", zh: "生成两版 · 首屏 + 定价" },
     "mock.lark.l3":      { en: "Pre-delivery check · 0 mismatches", zh: "交付前核对 · 0 处不一致" },
     "mock.lark.b1":      { en: "Open preview",     zh: "打开预览" },
@@ -109,7 +109,7 @@
     "facts.platforms": { en: `platforms — Slack, Feishu and WeCom`, zh: `个平台 —— 飞书、Slack 与企业微信` },
     "facts.runners":   { en: "agent runners — Claude Code and Codex", zh: "套 agent runner —— Claude Code 与 Codex" },
     "facts.models":    { en: "model backends, swappable per group", zh: "种模型后端，按群可换" },
-    "facts.styles":    { en: "built-in design styles", zh: "套内置设计风格" },
+    "facts.projects":  { en: "project per group", zh: "群各绑一个项目" },
     "facts.redact":    { en: "outbound redaction patterns", zh: "类出站脱敏模式" },
     "facts.tests":     { en: "unit tests", zh: "个单元测试" },
 
@@ -207,7 +207,7 @@
     "flow.side.console":  { en: "console · local page", zh: "控制台 · 本地网页" },
     "flow.side.dir":      { en: "project directory · per group", zh: "项目目录 · 按群绑定" },
     "flow.side.design":   { en: "design toolchain", zh: "设计工具链" },
-    "flow.side.design.note": { en: "style file · check · images · preview", zh: "风格档 · 核对 · 生图 · 预览" },
+    "flow.side.design.note": { en: "existing look · images · review · preview", zh: "沿用现有风格 · 图片 · 评审 · 预览" },
     "flow.caption": {
       en: "Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, each group's project directory and the design toolchain hang off the daemon.",
       zh: "从左到右：群 → 守护进程 → runner → 模型。虚线：进度与结果回流；控制台、每个群的项目目录、设计工具链挂在守护进程旁。"
@@ -253,40 +253,32 @@
     "models.3.c3": { en: "text-only safe", zh: "纯文本模型可用" },
 
     // ---- design ----------------------------------------------------------
-    "dsn.kicker": { en: "04 · Design system", zh: "04 · 设计系统" },
-    "dsn.h":      { en: `Bring a reference. Get a style the bot <em>actually follows.</em>`, zh: `给一个参考，得到一套机器人<em>真的遵守</em>的风格。` },
+    "dsn.kicker": { en: "04 · Images & review", zh: "04 · 图片与评审" },
+    "dsn.h":      { en: `Visual work that keeps <em>your project's look.</em>`, zh: `做视觉迭代，<em>沿用项目自己的风格。</em>` },
     "dsn.lede": {
-      en: "Point it at a site, a project folder or an image you like and it distills a style file, or start from one of sixteen built-in styles. The agent reads that file before every image and page, and checks its work against it before handing anything over.",
-      zh: "给它一个喜欢的网站、项目目录或图片，它提炼出一份风格档；也可以从 16 套内置风格起步。agent 每次出图、做页面前先读这份档，交付前再对照它核对一遍。"
+      en: "Existing projects start from their current interface and supplied references. Style presets stay optional, and come up only when you explicitly request a new product design without a visual direction.",
+      zh: "已有项目以当前界面和给定参考为准。风格预设始终是可选项；只有明确要求设计全新产品、且尚无视觉方向时，才会提及。"
     },
-    "dsn.0.title": { en: "Distill a style from a reference", zh: "从参考提炼风格" },
+    "dsn.0.title": { en: "Start from the existing project", zh: "从现有项目出发" },
     "dsn.0.body": {
-      en: "Paste a public URL or pick a project folder in the console, mini program sources included. It reads the stylesheets, ranks colors, fonts and radii by how often they appear, and fills in a new style: background, text, accent and muted colors, corner radius and shadow depth. Each guess shows its evidence, which colors and how many times, so you know what to adjust before you save. For a picture, send it to the group: the agent pulls a palette from it, then works out the mood and the do’s and don’ts with you in the conversation.",
-      zh: "在控制台贴一个公网网址，或选一个项目目录（小程序源码也认）。它读样式表，按出现次数排出颜色、字体、圆角，填好一套新风格：底色、正文、强调、弱化四个颜色，加上圆角与投影。每一项猜测都附证据（哪几个颜色、各出现几次），保存前就知道该改哪里。参考是一张图的话发到群里，agent 从图里提出色板，再在对话里和你一起写出气质与 Do / Don't。"
+      en: "For an existing product, the agent starts from its current pages and the references you provide. It keeps changes focused on the request and preserves the surrounding visual conventions.",
+      zh: "处理已有产品时，agent 先看当前页面和你给的参考；改动聚焦在本次要求，并沿用周边已有的视觉规范。"
     },
-    "dsn.0.c1": { en: "from a URL", zh: "从网址" },
-    "dsn.0.c2": { en: "from a project folder", zh: "从项目目录" },
-    "dsn.0.c3": { en: "from an image", zh: "从图片" },
-    "dsn.0.c4": { en: "evidence for every guess", zh: "每项附证据" },
-    "dsn.1.title": { en: "A style file the agent must read", zh: "agent 必读的风格档" },
-    "dsn.1.body": {
-      en: `<code>DESIGN.md</code> at the project root holds the tokens, a written description, do’s and don’ts and an image prompt. The agent reads it before any image or page, and the tokens go into every turn’s brief. A project can keep one file per surface, such as a mini program and an admin panel; company rules go in a user-level folder that every group shares.`,
-      zh: `项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。`
-    },
-    "dsn.1.c1": { en: "16 built-in + 9 alternates", zh: "内置 16 套 + 备选 9 套" },
-    "dsn.1.c2": { en: "one file per surface", zh: "按用途分多份" },
+    "dsn.0.c1": { en: "current UI first", zh: "优先沿用现有界面" },
+    "dsn.0.c2": { en: "reference-led changes", zh: "按参考调整" },
+    "dsn.0.c3": { en: "focused revisions", zh: "只改本次要求" },
     "dsn.2.title": { en: "Checked before it is handed over", zh: "交付前先核对" },
     "dsn.2.body": {
-      en: "Before anything is handed over, the result is checked against the style file: colors, radii, fonts, icon parameters, Chinese fallbacks, and whether each font will actually load on macOS and Windows. The findings go into the hand-off note. A layout audit then renders the page at three widths and measures overlapping or clipped text, small tap targets, low contrast and tiny type.",
-      zh: "对照风格档查颜色、圆角、字体、图标参数、中文兜底，以及字体在 mac 与 Windows 上是否真的显示——结果贴进交付说明。再按三档宽度真渲染，量重叠、裁切、点击目标、对比度、字号。"
+      en: "Before handoff, the result is checked against the request and the project's current interface. A layout review at three widths catches overlap, clipping, small tap targets and low contrast; findings go into the hand-off note.",
+      zh: "交付前对照本次要求和项目现有界面核对，再按三档宽度检查重叠、裁切、点击目标和对比度；结果写进交付说明。"
     },
-    "dsn.2.c1": { en: "style check", zh: "风格核对" },
+    "dsn.2.c1": { en: "project consistency", zh: "项目一致性" },
     "dsn.2.c2": { en: "layout audit", zh: "渲染几何体检" },
-    "dsn.2.c3": { en: "font availability", zh: "字体可得性" },
+    "dsn.2.c3": { en: "responsive review", zh: "响应式检查" },
     "dsn.3.title": { en: "Images without an API key", zh: "生图不用 key" },
     "dsn.3.body": {
-      en: "Images go through the Codex subscription already signed in on the machine, whatever model the group runs, so there is no API key to manage. The group stays free while it paints, and a progress card updates itself until the image lands. It can edit an existing image, repaint just a masked area or give a true transparent background, and the project’s style file comes along every time.",
-      zh: "生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。"
+      en: "Images use the Codex subscription already signed in on the machine, whatever model the group runs. A progress card updates until the result lands; existing images can be edited, masked areas repainted, or backgrounds made transparent.",
+      zh: "生图借机器上已登录的 Codex 订阅，不受群内模型影响。进度卡会更新到结果交付；也能修改原图、局部重绘或去掉背景。"
     },
     "dsn.3.c1": { en: "edit an existing image", zh: "原图上改" },
     "dsn.3.c2": { en: "masked repaint", zh: "局部重绘" },
@@ -323,10 +315,10 @@
     "scenarios.2.title": { en: "One sentence, one homepage.", zh: "一句话，要一版首页。" },
     "scenarios.2.scene": { en: "A designer asks for a first version of the landing page.", zh: "设计群里有人要落地页的第一版。" },
     "scenarios.2.act": {
-      en: "It reads the style file — or first offers three candidates, say tech-dark, precision-mono and swiss-grid — builds the page and posts the check result with it.",
-      zh: "它读项目风格档——没有就先给三个候选，比如科技深色、精密仪表、瑞士网格——出图做页面，核对结果随交付一起贴出来。"
+      en: "It follows the project's existing visual direction. For a clearly requested new product with no direction, it can ask whether the team wants to consider style options before work begins.",
+      zh: "它先沿用项目已有的视觉方向。只有明确要设计全新产品、又没有方向时，才会先询问是否需要看风格选项。"
     },
-    "scenarios.2.win":   { en: `<i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.`, zh: `<i>为什么赢：</i>规范在仓库里，机器人还要证明自己照办了。` },
+    "scenarios.2.win":   { en: `<i>Why it wins:</i> the preview and review notes arrive with the result.`, zh: `<i>为什么赢：</i>交付时一起收到预览与核对说明。` },
     "scenarios.3.title": { en: "A standup that files itself at 09:30.", zh: "每天 09:30，日报自己来。" },
     "scenarios.3.scene": { en: "Someone types one sentence to schedule it.", zh: "有人在群里一句话排了个定时任务。" },
     "scenarios.3.act": {
@@ -412,8 +404,6 @@
     "con.v.perm":    { en: "full access · developer preset", zh: "完全访问 · 开发档" },
     "con.f.model":   { en: "Model", zh: "模型" },
     "con.v.model":   { en: "Claude Code", zh: "Claude Code" },
-    "con.f.style":   { en: "Style file", zh: "风格档" },
-    "con.v.style":   { en: "tech dark", zh: "科技深色" },
     "con.f.preview": { en: "Preview", zh: "预览" },
     "con.v.preview": { en: "on · :4610", zh: "运行中 · :4610" },
     "con.f.last":    { en: "Last turn", zh: "最近一轮" },
@@ -434,10 +424,10 @@
       en: "Per group: model, execution mode, permission preset, PII switch, MCP plugins. Quota used, with Claude and Codex login checks.",
       zh: "按群：模型、执行模式、权限预设、PII 开关、MCP 插件。额度已用，Claude / Codex 登录验证。"
     },
-    "con.p3.t": { en: "Design library", zh: "设计库" },
+    "con.p3.t": { en: "Optional visual tools", zh: "可选视觉工具" },
     "con.p3.b": {
-      en: "The style library as a preview grid, a form for a new style file, ingest from a project, the icon library.",
-      zh: "风格库预览网格、表单新建风格档、从项目收录、图标库。"
+      en: "Style guidance and icon sets for projects that need them; existing projects can keep their established visual direction.",
+      zh: "项目需要时再用风格指引和图标库；已有项目可沿用原有视觉方向。"
     },
     "con.p4.t": { en: "Operations", zh: "运维" },
     "con.p4.b": {

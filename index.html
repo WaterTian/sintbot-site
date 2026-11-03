@@ -297,7 +297,7 @@
       <nav class="nav__menu" aria-label="primary">
         <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
         <a href="#models" data-i18n="nav.models">Models</a>
-        <a href="#design" data-i18n="nav.design">Design</a>
+        <a href="#design" data-i18n="nav.design">Visuals</a>
         <a href="#console" data-i18n="nav.console">Console</a>
         <a href="#plugin" data-i18n="nav.setup">Setup</a>
         <a
@@ -355,7 +355,7 @@
             <ol class="mock__feed">
               <li class="mock__msg mock__msg--me">
                 <b data-i18n="mock.lark.user">Mei · Design</b>
-                <p data-i18n="mock.lark.ask">redo the homepage in the tech-dark style</p>
+                <p data-i18n="mock.lark.ask">update the homepage, keep its current look</p>
               </li>
               <li class="mock__card">
                 <div class="mock__card-head">
@@ -365,7 +365,7 @@
                   <span class="mock__state" data-i18n="mock.lark.state">Delivered · 4m 21s</span>
                 </div>
                 <ul class="mock__lines">
-                  <li data-i18n="mock.lark.l1">Read the style file · DESIGN.md</li>
+                  <li data-i18n="mock.lark.l1">Follow the existing project UI</li>
                   <li data-i18n="mock.lark.l2">Generated two versions · hero + pricing</li>
                   <li data-i18n="mock.lark.l3">Pre-delivery check · 0 mismatches</li>
                 </ul>
@@ -430,7 +430,7 @@
           <li><span>3</span><i data-i18n="facts.platforms">platforms — Slack, Feishu and WeCom</i></li>
           <li><span>2</span><i data-i18n="facts.runners">agent runners — Claude Code and Codex</i></li>
           <li><span>6</span><i data-i18n="facts.models">model backends, swappable per group</i></li>
-          <li><span>16</span><i data-i18n="facts.styles">built-in design styles</i></li>
+          <li><span>1</span><i data-i18n="facts.projects">project per group</i></li>
           <li><span>13</span><i data-i18n="facts.redact">outbound redaction patterns</i></li>
           <li><span>1,900+</span><i data-i18n="facts.tests">unit tests</i></li>
         </ul>
@@ -618,7 +618,7 @@
               <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">project directory · per group</text>
               <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">design toolchain</text>
             </g>
-            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">style file · check · images · preview</text>
+            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">existing look · images · review · preview</text>
           </svg>
           <figcaption data-i18n="flow.caption">Left to right: group → daemon → runner → model. Dotted: progress and results return; the console, each group's project directory and the design toolchain hang off the daemon.</figcaption>
         </figure>
@@ -663,44 +663,36 @@
         </ol>
       </section>
 
-      <!-- Design system -->
+      <!-- Images and review -->
       <section id="design" class="section section--dsn">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · Design system</p>
-        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">Bring a reference. Get a style the bot <em>actually follows.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Point it at a site, a project folder or an image you like and it distills a style file, or start from one of sixteen built-in styles. The agent reads that file before every image and page, and checks its work against it before handing anything over.</p>
+        <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · Images &amp; review</p>
+        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">Visual work that keeps <em>your project's look.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">Existing projects start from their current interface and supplied references. Style presets stay optional, and come up only when you explicitly request a new product design without a visual direction.</p>
 
 
         <ol class="dsn-points">
           <li class="dsn-lead" data-reveal>
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-scan"/></svg>
             <div>
-              <h3 data-i18n="dsn.0.title">Distill a style from a reference</h3>
-              <p data-i18n="dsn.0.body">Paste a public URL or pick a project folder in the console, mini program sources included. It reads the stylesheets, ranks colors, fonts and radii by how often they appear, and fills in a new style: background, text, accent and muted colors, corner radius and shadow depth. Each guess shows its evidence, which colors and how many times, so you know what to adjust before you save. For a picture, send it to the group: the agent pulls a palette from it, then works out the mood and the do’s and don’ts with you in the conversation.</p>
-              <ul class="card__chips"><li data-i18n="dsn.0.c1">from a URL</li><li data-i18n="dsn.0.c2">from a project folder</li><li data-i18n="dsn.0.c3">from an image</li><li data-i18n="dsn.0.c4">evidence for every guess</li></ul>
-            </div>
-          </li>
-          <li data-reveal data-reveal-delay="60">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
-            <div>
-              <h3 data-i18n="dsn.1.title">A style file the agent must read</h3>
-              <p data-i18n-html="dsn.1.body"><code>DESIGN.md</code> at the project root holds the tokens, a written description, do’s and don’ts and an image prompt. The agent reads it before any image or page, and the tokens go into every turn’s brief. A project can keep one file per surface, such as a mini program and an admin panel; company rules go in a user-level folder that every group shares.</p>
-              <ul class="card__chips"><li data-i18n="dsn.1.c1">16 built-in + 9 alternates</li><li data-i18n="dsn.1.c2">one file per surface</li><li>Lucide · Tabler · Phosphor · Pixelarticons</li></ul>
+              <h3 data-i18n="dsn.0.title">Start from the existing project</h3>
+              <p data-i18n="dsn.0.body">For an existing product, the agent starts from its current pages and the references you provide. It keeps changes focused on the request and preserves the surrounding visual conventions.</p>
+              <ul class="card__chips"><li data-i18n="dsn.0.c1">current UI first</li><li data-i18n="dsn.0.c2">reference-led changes</li><li data-i18n="dsn.0.c3">focused revisions</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="120">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
             <div>
               <h3 data-i18n="dsn.2.title">Checked before it is handed over</h3>
-              <p data-i18n="dsn.2.body">Before anything is handed over, the result is checked against the style file: colors, radii, fonts, icon parameters, Chinese fallbacks, and whether each font will actually load on macOS and Windows. The findings go into the hand-off note. A layout audit then renders the page at three widths and measures overlapping or clipped text, small tap targets, low contrast and tiny type.</p>
-              <ul class="card__chips"><li data-i18n="dsn.2.c1">style check</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">font availability</li></ul>
+              <p data-i18n="dsn.2.body">Before handoff, the result is checked against the request and the project's current interface. A layout review at three widths catches overlap, clipping, small tap targets and low contrast; findings go into the hand-off note.</p>
+              <ul class="card__chips"><li data-i18n="dsn.2.c1">project consistency</li><li data-i18n="dsn.2.c2">layout audit</li><li data-i18n="dsn.2.c3">responsive review</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="180">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
             <div>
               <h3 data-i18n="dsn.3.title">Images without an API key</h3>
-              <p data-i18n="dsn.3.body">Images go through the Codex subscription already signed in on the machine, whatever model the group runs, so there is no API key to manage. The group stays free while it paints, and a progress card updates itself until the image lands. It can edit an existing image, repaint just a masked area or give a true transparent background, and the project’s style file comes along every time.</p>
+              <p data-i18n="dsn.3.body">Images use the Codex subscription already signed in on the machine, whatever model the group runs. A progress card updates until the result lands; existing images can be edited, masked areas repainted, or backgrounds made transparent.</p>
               <ul class="card__chips"><li data-i18n="dsn.3.c1">edit an existing image</li><li data-i18n="dsn.3.c2">masked repaint</li><li data-i18n="dsn.3.c3">transparent background</li></ul>
             </div>
           </li>
@@ -744,8 +736,8 @@
             <div class="scenario__tag"><span class="scenario__hash">#</span>design</div>
             <h3 data-i18n="scenarios.2.title">One sentence, one homepage.</h3>
             <p class="scenario__scene" data-i18n="scenarios.2.scene">A designer asks for a first version of the landing page.</p>
-            <p class="scenario__act" data-i18n="scenarios.2.act">It reads the style file — or first offers three candidates, say tech-dark, precision-mono and swiss-grid — builds the page and posts the check result with it.</p>
-            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>Why it wins:</i> the rules are in the repo, and the bot proves it followed them.</p>
+            <p class="scenario__act" data-i18n="scenarios.2.act">It follows the project's existing visual direction. For a clearly requested new product with no direction, it can ask whether the team wants to consider style options before work begins.</p>
+            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>Why it wins:</i> the preview and review notes arrive with the result.</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="120">
@@ -884,7 +876,6 @@
                 <dl class="con__fields">
                   <div><dt data-i18n="con.f.perm">Permissions</dt><dd><span data-i18n="con.v.perm">full access · developer preset</span></dd></div>
                   <div><dt data-i18n="con.f.model">Model</dt><dd>Claude <span class="con__sub" data-i18n="con.v.model">Claude Code</span></dd></div>
-                  <div><dt data-i18n="con.f.style">Style file</dt><dd>DESIGN.md <span class="con__sub" data-i18n="con.v.style">tech dark</span></dd></div>
                   <div><dt data-i18n="con.f.preview">Preview</dt><dd><span class="con__on" data-i18n="con.v.preview">on · :4610</span></dd></div>
                   <div><dt data-i18n="con.f.last">Last turn</dt><dd data-i18n="con.v.last">signup 500 → PR #482 · 6m 12s</dd></div>
                 </dl>
@@ -913,7 +904,7 @@
             </li>
             <li data-reveal data-reveal-delay="120">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-palette"/></svg>
-              <div><b data-i18n="con.p3.t">Design library</b><p data-i18n="con.p3.b">The style library as a preview grid, a form for a new style file, ingest from a project, the icon library.</p></div>
+              <div><b data-i18n="con.p3.t">Optional visual tools</b><p data-i18n="con.p3.b">Style guidance and icon sets for projects that need them; existing projects can keep their established visual direction.</p></div>
             </li>
             <li data-reveal data-reveal-delay="180">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-layout-dashboard"/></svg>
@@ -1085,7 +1076,7 @@
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
-          <a href="#design" data-i18n="nav.design">Design</a>
+          <a href="#design" data-i18n="nav.design">Visuals</a>
           <a href="#plugin" data-i18n="nav.setup">Setup</a>
           <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>

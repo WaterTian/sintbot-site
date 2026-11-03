@@ -1,0 +1,26 @@
+name: npm download monitor
+
+on:
+  schedule:
+    - cron: "30 2 * * *" # 10:30 Asia/Shanghai; after the previous UTC day closes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Collect npm downloads
+        run: node scripts/npm-download-stats.mjs --days 30 --json-out "$RUNNER_TEMP/npm-downloads.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: npm-downloads-${{ github.run_id }}
+          path: ${{ runner.temp }}/npm-downloads.json
+          retention-days: 90

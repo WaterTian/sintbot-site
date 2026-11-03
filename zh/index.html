@@ -298,7 +298,7 @@
       <nav class="nav__menu" aria-label="primary">
         <a href="#platforms" data-i18n="nav.platforms">平台</a>
         <a href="#models" data-i18n="nav.models">模型</a>
-        <a href="#design" data-i18n="nav.design">设计</a>
+        <a href="#design" data-i18n="nav.design">视觉协作</a>
         <a href="#console" data-i18n="nav.console">控制台</a>
         <a href="#plugin" data-i18n="nav.setup">接入</a>
         <a
@@ -356,7 +356,7 @@
             <ol class="mock__feed">
               <li class="mock__msg mock__msg--me">
                 <b data-i18n="mock.lark.user">小梅 · 设计</b>
-                <p data-i18n="mock.lark.ask">把首页按科技深色风格出一版</p>
+                <p data-i18n="mock.lark.ask">调整首页，沿用现在的视觉风格</p>
               </li>
               <li class="mock__card">
                 <div class="mock__card-head">
@@ -366,7 +366,7 @@
                   <span class="mock__state" data-i18n="mock.lark.state">已交付 · 4 分 21 秒</span>
                 </div>
                 <ul class="mock__lines">
-                  <li data-i18n="mock.lark.l1">读取风格档 · DESIGN.md</li>
+                  <li data-i18n="mock.lark.l1">沿用项目现有界面</li>
                   <li data-i18n="mock.lark.l2">生成两版 · 首屏 + 定价</li>
                   <li data-i18n="mock.lark.l3">交付前核对 · 0 处不一致</li>
                 </ul>
@@ -431,7 +431,7 @@
           <li><span>3</span><i data-i18n="facts.platforms">个平台 —— 飞书、Slack 与企业微信</i></li>
           <li><span>2</span><i data-i18n="facts.runners">套 agent runner —— Claude Code 与 Codex</i></li>
           <li><span>6</span><i data-i18n="facts.models">种模型后端，按群可换</i></li>
-          <li><span>16</span><i data-i18n="facts.styles">套内置设计风格</i></li>
+          <li><span>1</span><i data-i18n="facts.projects">群各绑一个项目</i></li>
           <li><span>13</span><i data-i18n="facts.redact">类出站脱敏模式</i></li>
           <li><span>1,900+</span><i data-i18n="facts.tests">个单元测试</i></li>
         </ul>
@@ -619,7 +619,7 @@
               <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">项目目录 · 按群绑定</text>
               <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">设计工具链</text>
             </g>
-            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">风格档 · 核对 · 生图 · 预览</text>
+            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">沿用现有风格 · 图片 · 评审 · 预览</text>
           </svg>
           <figcaption data-i18n="flow.caption">从左到右：群 → 守护进程 → runner → 模型。虚线：进度与结果回流；控制台、每个群的项目目录、设计工具链挂在守护进程旁。</figcaption>
         </figure>
@@ -664,44 +664,36 @@
         </ol>
       </section>
 
-      <!-- Design system -->
+      <!-- Images and review -->
       <section id="design" class="section section--dsn">
         <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · 设计系统</p>
-        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">给一个参考，得到一套机器人<em>真的遵守</em>的风格。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">给它一个喜欢的网站、项目目录或图片，它提炼出一份风格档；也可以从 16 套内置风格起步。agent 每次出图、做页面前先读这份档，交付前再对照它核对一遍。</p>
+        <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · 图片与评审</p>
+        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">做视觉迭代，<em>沿用项目自己的风格。</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">已有项目以当前界面和给定参考为准。风格预设始终是可选项；只有明确要求设计全新产品、且尚无视觉方向时，才会提及。</p>
 
 
         <ol class="dsn-points">
           <li class="dsn-lead" data-reveal>
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-scan"/></svg>
             <div>
-              <h3 data-i18n="dsn.0.title">从参考提炼风格</h3>
-              <p data-i18n="dsn.0.body">在控制台贴一个公网网址，或选一个项目目录（小程序源码也认）。它读样式表，按出现次数排出颜色、字体、圆角，填好一套新风格：底色、正文、强调、弱化四个颜色，加上圆角与投影。每一项猜测都附证据（哪几个颜色、各出现几次），保存前就知道该改哪里。参考是一张图的话发到群里，agent 从图里提出色板，再在对话里和你一起写出气质与 Do / Don't。</p>
-              <ul class="card__chips"><li data-i18n="dsn.0.c1">从网址</li><li data-i18n="dsn.0.c2">从项目目录</li><li data-i18n="dsn.0.c3">从图片</li><li data-i18n="dsn.0.c4">每项附证据</li></ul>
-            </div>
-          </li>
-          <li data-reveal data-reveal-delay="60">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-swatch-book"/></svg>
-            <div>
-              <h3 data-i18n="dsn.1.title">agent 必读的风格档</h3>
-              <p data-i18n-html="dsn.1.body">项目根目录的 <code>DESIGN.md</code>：tokens、文字说明、Do/Don't、生图模板，出图出页面前必读。一个项目可有多份；公司规范放进用户级目录，所有群共用。</p>
-              <ul class="card__chips"><li data-i18n="dsn.1.c1">内置 16 套 + 备选 9 套</li><li data-i18n="dsn.1.c2">按用途分多份</li><li>Lucide · Tabler · Phosphor · Pixelarticons</li></ul>
+              <h3 data-i18n="dsn.0.title">从现有项目出发</h3>
+              <p data-i18n="dsn.0.body">处理已有产品时，agent 先看当前页面和你给的参考；改动聚焦在本次要求，并沿用周边已有的视觉规范。</p>
+              <ul class="card__chips"><li data-i18n="dsn.0.c1">优先沿用现有界面</li><li data-i18n="dsn.0.c2">按参考调整</li><li data-i18n="dsn.0.c3">只改本次要求</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="120">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
             <div>
               <h3 data-i18n="dsn.2.title">交付前先核对</h3>
-              <p data-i18n="dsn.2.body">对照风格档查颜色、圆角、字体、图标参数、中文兜底，以及字体在 mac 与 Windows 上是否真的显示——结果贴进交付说明。再按三档宽度真渲染，量重叠、裁切、点击目标、对比度、字号。</p>
-              <ul class="card__chips"><li data-i18n="dsn.2.c1">风格核对</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">字体可得性</li></ul>
+              <p data-i18n="dsn.2.body">交付前对照本次要求和项目现有界面核对，再按三档宽度检查重叠、裁切、点击目标和对比度；结果写进交付说明。</p>
+              <ul class="card__chips"><li data-i18n="dsn.2.c1">项目一致性</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">响应式检查</li></ul>
             </div>
           </li>
           <li data-reveal data-reveal-delay="180">
             <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
             <div>
               <h3 data-i18n="dsn.3.title">生图不用 key</h3>
-              <p data-i18n="dsn.3.body">生图借机器上的 Codex 订阅：零 API key，不占群锁，画的时候群里有一条自己更新的进度。原图上改、遮罩局部重绘、透明底，项目风格档自动带上。</p>
+              <p data-i18n="dsn.3.body">生图借机器上已登录的 Codex 订阅，不受群内模型影响。进度卡会更新到结果交付；也能修改原图、局部重绘或去掉背景。</p>
               <ul class="card__chips"><li data-i18n="dsn.3.c1">原图上改</li><li data-i18n="dsn.3.c2">局部重绘</li><li data-i18n="dsn.3.c3">透明底</li></ul>
             </div>
           </li>
@@ -745,8 +737,8 @@
             <div class="scenario__tag"><span class="scenario__hash">#</span>design</div>
             <h3 data-i18n="scenarios.2.title">一句话，要一版首页。</h3>
             <p class="scenario__scene" data-i18n="scenarios.2.scene">设计群里有人要落地页的第一版。</p>
-            <p class="scenario__act" data-i18n="scenarios.2.act">它读项目风格档——没有就先给三个候选，比如科技深色、精密仪表、瑞士网格——出图做页面，核对结果随交付一起贴出来。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>为什么赢：</i>规范在仓库里，机器人还要证明自己照办了。</p>
+            <p class="scenario__act" data-i18n="scenarios.2.act">它先沿用项目已有的视觉方向。只有明确要设计全新产品、又没有方向时，才会先询问是否需要看风格选项。</p>
+            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>为什么赢：</i>交付时一起收到预览与核对说明。</p>
           </li>
 
           <li class="scenario" data-reveal data-reveal-delay="120">
@@ -885,7 +877,6 @@
                 <dl class="con__fields">
                   <div><dt data-i18n="con.f.perm">权限</dt><dd><span data-i18n="con.v.perm">完全访问 · 开发档</span></dd></div>
                   <div><dt data-i18n="con.f.model">模型</dt><dd>Claude <span class="con__sub" data-i18n="con.v.model">Claude Code</span></dd></div>
-                  <div><dt data-i18n="con.f.style">风格档</dt><dd>DESIGN.md <span class="con__sub" data-i18n="con.v.style">科技深色</span></dd></div>
                   <div><dt data-i18n="con.f.preview">预览</dt><dd><span class="con__on" data-i18n="con.v.preview">运行中 · :4610</span></dd></div>
                   <div><dt data-i18n="con.f.last">最近一轮</dt><dd data-i18n="con.v.last">signup 500 → PR #482 · 6 分 12 秒</dd></div>
                 </dl>
@@ -914,7 +905,7 @@
             </li>
             <li data-reveal data-reveal-delay="120">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-palette"/></svg>
-              <div><b data-i18n="con.p3.t">设计库</b><p data-i18n="con.p3.b">风格库预览网格、表单新建风格档、从项目收录、图标库。</p></div>
+              <div><b data-i18n="con.p3.t">可选视觉工具</b><p data-i18n="con.p3.b">项目需要时再用风格指引和图标库；已有项目可沿用原有视觉方向。</p></div>
             </li>
             <li data-reveal data-reveal-delay="180">
               <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-layout-dashboard"/></svg>
@@ -1086,7 +1077,7 @@
         </div>
         <nav class="foot__nav" aria-label="footer">
           <a href="#platforms" data-i18n="nav.platforms">平台</a>
-          <a href="#design" data-i18n="nav.design">设计</a>
+          <a href="#design" data-i18n="nav.design">视觉协作</a>
           <a href="#plugin" data-i18n="nav.setup">接入</a>
           <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
