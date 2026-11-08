@@ -1964,3 +1964,68 @@ html:not(:lang(zh)) .zh-only { display: none; }
 .nav__menu > a:not(.nav__cta) { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 4px; }
 .lang-toggle__btn { min-width: 26px; min-height: 26px; }
 .foot__nav a { display: inline-flex; align-items: center; min-height: 26px; padding: 2px 2px; }
+
+
+/* 1.3.0 refinements on the original 733913b site.
+   Preserve its full-width hero, twin message cards, diagram and section layout.
+   These adjustments only apply to the homepage, never the legal documents. */
+body.site-upgrade {
+  --text-2: rgba(243, 238, 229, .70);
+  --text-3: rgba(243, 238, 229, .56);
+}
+body.site-upgrade :where(a, button, summary):focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 4px;
+}
+body.site-upgrade [id] { scroll-margin-top: 100px; }
+body.site-upgrade [data-reveal] { opacity: 1; }
+/* The original reveal may be enabled only after its observer is installed. */
+.reveal-ready body.site-upgrade [data-reveal]:not(.is-in) { opacity: 0; }
+body.site-upgrade .grain,
+body.site-upgrade .nav__word i.nav__trace::before,
+body.site-upgrade .eyebrow__dot,
+body.site-upgrade .mock__working i,
+body.site-upgrade .mock__tick { animation: none; }
+body.site-upgrade .grain { position: absolute; height: 100vh; }
+body.site-upgrade .nav__menu > a:not(.nav__cta),
+body.site-upgrade .nav__cta,
+body.site-upgrade .lang-toggle__btn,
+body.site-upgrade .foot__nav a,
+body.site-upgrade .foot__legal a { min-height: 44px; }
+body.site-upgrade .lang-toggle__btn { min-width: 40px; }
+body.site-upgrade .copy { min-height: 44px; min-width: 60px; }
+body.site-upgrade .code { padding-right: 90px; }
+body.site-upgrade .step__details summary { min-height: 44px; }
+body.site-upgrade .to-top:focus-visible { opacity: 1; pointer-events: auto; }
+body.site-upgrade .copy-status { color: var(--text-2); font-size: 13px; line-height: 1.6; }
+body.site-upgrade .mock { overflow-wrap: anywhere; }
+body.site-upgrade button.mock__btn { cursor: pointer; }
+body.site-upgrade button.mock__btn { min-height: 44px; }
+body.site-upgrade .mock__kind { white-space: normal; }
+body.site-upgrade .mock__eq-text { overflow-wrap: anywhere; }
+@media (max-width: 734px) {
+  body.site-upgrade .nav { flex-wrap: wrap; gap: 8px 12px; }
+  body.site-upgrade .nav__menu { flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+  body.site-upgrade .nav__brand { min-height: 44px; }
+  body.site-upgrade .lang-toggle { padding-block: 0; }
+  body.site-upgrade .nav__cta { display: inline-flex; align-items: center; }
+  body.site-upgrade .step .code { padding: 58px 14px 14px; }
+  body.site-upgrade .step .copy { top: 8px; right: 8px; padding: 8px 12px; }
+  body.site-upgrade .mock__bar { flex-wrap: wrap; }
+  body.site-upgrade .mock__title { white-space: normal; }
+}
+@media (max-width: 380px) {
+  body.site-upgrade .nav__cta { padding-inline: 8px; }
+  body.site-upgrade .lang-toggle { padding-inline: 4px; }
+  body.site-upgrade .lang-toggle__btn { min-width: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.site-upgrade .cursor-glow { display: none; }
+  .reveal-ready body.site-upgrade [data-reveal] { opacity: 1; }
+  body.site-upgrade, body.site-upgrade * { scroll-behavior: auto !important; }
+}
+/* Language anchors keep the original button alignment and both mobile choices. */
+body.site-upgrade .nav__menu .lang-toggle { flex-wrap: nowrap; white-space: nowrap; }
+body.site-upgrade .nav__menu .lang-toggle__btn { display: inline-flex; align-items: center; justify-content: center; }
+
+body.site-upgrade .skip-link:focus { position: absolute; left: var(--gut); top: 12px; width: auto; height: auto; margin: 0; padding: 12px 18px; clip: auto; clip-path: none; overflow: visible; z-index: 100; background: var(--surface); color: var(--bone); }

@@ -63,7 +63,7 @@ function renderBody(html, lang) {
     return a + attr(t[key][lang] != null ? t[key][lang] : t[key].en) + b;
   });
   // which language button reads as active before JS runs
-  result = result.replace(/(<button type="button" data-lang="(en|zh)" class="lang-toggle__btn)( is-active)?(")/g,
+  result = result.replace(/(<(?:button|a)\b[^>]* data-lang="(en|zh)" class="lang-toggle__btn)( is-active)?(")/g,
     (_, a, l, _active, q) => a + (l === lang ? " is-active" : "") + q);
   return result;
 }
