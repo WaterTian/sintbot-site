@@ -17,6 +17,9 @@
   const VERSION = "1.3.0";
 
   const translations = {
+  "nav.install": {en:"Install",zh:"安装指南"},
+  "nav.usage": {en:"Usage",zh:"使用说明"},
+  "install.usage": {en:"Read the usage guide",zh:"阅读使用说明"},
   "nav.features": {"en": "Features", "zh": "功能"},
   "features.kicker": {"en": "MORE THAN A CHAT REPLY", "zh": "从对话，到完整的工作流程"},
   "features.h": {"en": "Code, design and manage.<br><em>In the same project.</em>", "zh": "<span class=\"feature-phrase\">写代码、</span><span class=\"feature-phrase\">做设计、</span><span class=\"feature-phrase\">管项目。</span><br><em>都在同一套工作流里。</em>"},
@@ -123,8 +126,8 @@
     "zh": "从你的 Mac 到群聊，分四步接入。"
   },
   "install.lede": {
-    "en": "Use the <a class=\"install-guide\" href=\"https://github.com/sintlab/sintbot/blob/v1.3.0/docs/install.md\">1.3.0 installation guide</a> for the full configuration and exact startup commands.",
-    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"https://github.com/sintlab/sintbot/blob/v1.3.0/docs/zh-CN/install.md\">1.3.0 安装指南</a>。"
+    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.3.0 installation guide</a> for the full configuration and exact startup commands.",
+    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.3.0 安装指南</a>。"
   },
   "install.quick": {
     "en": "Download the installer, preview its actions with <code>--dry-run</code>, then run the same file. It installs into a separate release directory.",
@@ -338,6 +341,8 @@
     "en": "Get SintBot",
     "zh": "安装 SintBot"
   },
+  "demo.pause": {en: "Pause slideshow", zh: "暂停轮播"},
+  "demo.play": {en: "Play slideshow", zh: "继续轮播"},
   "demo.tab.task": {
     "en": "Give it a task",
     "zh": "群里派活"
@@ -551,7 +556,8 @@
     const description = translations["meta.description"][lang];
     document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach((meta) => meta.content = description);
     document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach((meta) => meta.content = translations["meta.title"][lang]);
-    document.querySelectorAll(".install-guide").forEach((link) => { link.href = `https://github.com/sintlab/sintbot/blob/v1.3.0/docs/${lang === "zh" ? "zh-CN/" : ""}install.md`; });
+    document.querySelectorAll("[data-guide]").forEach(link => {link.href = `${lang === "zh" ? "/zh" : ""}/guide/${link.dataset.guide}/`;});
+    document.querySelectorAll(".install-guide").forEach((link) => { link.href = `${lang === "zh" ? "/zh" : ""}/guide/install/`; });
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");

@@ -32,3 +32,9 @@ SintBot's sole author is WaterTian; SintLab is the publisher. Use the name SintB
 ## Motion details and FAQ (2026-11-08 15:02–15:08)
 
 Reference Taste Skill's public frontend for word-mask hero entrance, native-scroll perspective on desktop and mobile, directional tab reveal, button press/arrow response and navigation background crossfade. Content remains visible without the animation layer. Keep reduced-motion support, rapid-tab cancellation, locale-safe title reconstruction and bounded entrance cleanup. Reused micro-interaction CSS retains the MIT notice and TASTE-SKILL-LICENSE.txt; GSAP keeps its own license. Do not reintroduce the removed license FAQ (user request 15:08); legal documents and third-party license files are retained.
+
+## Autoplay and native guides (2026-11-08 15:13–15:20)
+
+The four showcase tabs cycle automatically while in view (10 seconds for the conversation, 8 seconds for other scenes), with explicit pause, hover/keyboard reading pause, background/offscreen suspension and reduced-motion static fallback. TasteCode-style rows enter with 10px / .6s expo.out, completion states follow, then the previous panel fades out over .22s. Preserve rapid-switch cancellation and measured panel height.
+
+Installation and usage are native bilingual pages at `/guide/install/`, `/guide/usage/` and `/zh/guide/...`, with shared `guide.css` and `guide.js`. Their HTML is maintained directly; homepage copy remains in app.js. Keep the installation guide tied to the exact release commands and configuration, while the usage guide explains the product workflow. Homepage navigation/install/footer point to the local guides; GitHub is not the primary documentation destination. Keep both languages, sitemap, copy controls, anchors and mobile layout aligned.

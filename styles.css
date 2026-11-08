@@ -97,3 +97,13 @@
 .nav.on-light::before,.nav.is-scrolled::before{opacity:0}.nav.on-light::after,.nav.is-scrolled::after{opacity:1}
 .nav__brand,.nav__cta,.lang-toggle__btn{transition:color .3s,background-color .3s,transform var(--m-press) var(--m-ease)}
 @media(prefers-reduced-motion:reduce){.btn:hover,.btn:active,.hero .btn:hover,.hero .btn:active,.nav__cta:hover,.nav__cta:active,.btn:hover .btn__arrow{transform:none}.hero-word__inner{transform:none!important}.nav::before,.nav::after{transition:none}}
+
+/* Timed product walkthrough: progress and TasteCode-inspired completion states. */
+.showcase__toolbar>.showcase__example{margin-left:auto}.showcase__playback{flex:none;display:grid;place-items:center;width:36px;height:36px;background:#ffffff08;color:#c8ced2;border-radius:8px;transition:background .15s}.showcase__playback:hover{background:#ffffff18}.showcase__playback:focus-visible{outline-color:var(--orange-hot);outline-offset:1px}.showcase__playback svg{grid-area:1/1}.showcase__playback .playback-play,.showcase__playback[data-paused=true] .playback-pause{display:none}.showcase__playback[data-paused=true] .playback-play{display:block}.showcase__playback:disabled{opacity:.45}.showcase__progress{position:absolute;bottom:3px;left:12px;right:12px;height:2px;background:#a15b30;transform:scaleX(0);transform-origin:left;border-radius:2px;pointer-events:none}.showcase__workspace{position:relative}.showcase__artifacts{margin-bottom:16px}.showcase__artifacts>span{position:relative}.showcase__artifacts>span>.ico{transition:opacity .24s,transform .48s cubic-bezier(.16,1,.3,1)}.showcase__artifacts>span[data-step-state=run]>.ico{opacity:0;transform:scale(.5)}.showcase__artifacts>span[data-step-state=run]::before{content:"";position:absolute;left:7px;width:10px;height:10px;border:1px solid #d99a6940;border-top-color:#d99a69;border-radius:50%;animation:showcase-spin .8s linear infinite}.showcase__artifacts>span[data-step-state=done]>.ico{opacity:1;transform:scale(1)}
+@keyframes showcase-spin{to{transform:rotate(360deg)}}
+@media(max-width:520px){.showcase__playback{width:32px;height:32px}.showcase__toolbar>.showcase__example{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.showcase__progress{display:none}.showcase__artifacts>span[data-step-state=run]::before{animation:none}}
+
+.showcase[data-scene-paused=true] .showcase__artifacts>span::before{animation-play-state:paused}
+
+.guide-entry{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:28px auto 0}

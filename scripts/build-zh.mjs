@@ -165,6 +165,10 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 - [SintBot (English)](${SITE}/): product workflow, chat platforms, Claude Code and Codex, model choices, visual collaboration and project management
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
+- [Installation guide](${SITE}/guide/install/): complete macOS installation, Feishu configuration and first message
+- [Usage guide](${SITE}/guide/usage/): task briefs, model selection, project notes and daily workflows
+- [安装指南](${SITE}/zh/guide/install/): 安装、配置和验证
+- [使用说明](${SITE}/zh/guide/usage/): 派活、模型、记忆与协作
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.3.0; use the isolated installer and versioned guide on the website
 - [WaterTian](https://github.com/WaterTian): the sole author of SintBot
@@ -191,7 +195,7 @@ ${faq("zh")}
 const MARK = "<!-- GENERATED from /index.html by scripts/build-zh.mjs — edit index.html / app.js, then run the script -->";
 const src = readFileSync(join(root, "index.html"), "utf8");
 const en = renderBody(head(src, "en"), "en");
-const zh = renderBody(head(src, "zh"), "zh").replace("<head>", `<head>\n    ${MARK}`).replaceAll("/v1.3.0/docs/install.md", "/v1.3.0/docs/zh-CN/install.md");
+const zh = renderBody(head(src, "zh"), "zh").replace("<head>", `<head>\n    ${MARK}`).replace(/href="\/guide\/(install|usage)\/"/g, 'href="/zh/guide/$1/"');
 
 const targets = [["index.html", en], [join("zh", "index.html"), zh], ["llms.txt", llms()]];
 if (check) {
