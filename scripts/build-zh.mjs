@@ -170,7 +170,7 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 - [安装指南](${SITE}/zh/guide/install/): 安装、配置和验证
 - [使用说明](${SITE}/zh/guide/usage/): 派活、模型、记忆与协作
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
-- [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.3.0; use the isolated installer and versioned guide on the website
+- [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version ${VERSION}; use the isolated installer and versioned guide on the website
 - [WaterTian](https://github.com/WaterTian): the sole author of SintBot
 - [SintLab](https://sintlab.com/): the publisher and project studio for SintBot
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use

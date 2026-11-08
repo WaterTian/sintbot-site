@@ -48,6 +48,14 @@ if (!write) {
   process.exit(0)
 }
 
+// Same-version runs must preserve reviewed installer fixes made after a tag.
+// Fetch the tagged installer only when advancing the site's version.
+if (site === latest) {
+  console.log(`sync-version: v${site},与 npm 一致,保留当前 install.sh,不用改`)
+  output('changed', 0); output('version', latest)
+  process.exit(0)
+}
+
 // sitemap 里的页面 → 改之前的可见文字,build-zh 之后比对
 const sitemapXml = read('sitemap.xml')
 const pages = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => {
@@ -57,11 +65,6 @@ const pages = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => {
 })
 const before = new Map(pages.map((p) => [p.f, visible(read(p.f))]))
 const changed = []
-
-if (site !== latest) {
-  writeFileSync(file('app.js'), appJs.replace(`const VERSION = "${site}";`, `const VERSION = "${latest}";`))
-  changed.push(`VERSION ${site} → ${latest}`)
-}
 
 // 一键安装脚本是公开仓根目录 install.sh 的副本,跟该版标签对齐
 const raw = get(`https://raw.githubusercontent.com/sintlab/sintbot/v${latest}/install.sh`)
@@ -73,6 +76,11 @@ if (raw.status === 200) {
 } else {
   throw new Error(`取 v${latest} 标签的 install.sh 失败:HTTP ${raw.status}`)
 }
+
+// Do not advance VERSION before a required installer fetch succeeds: otherwise
+// the next same-version run would skip the interrupted upgrade permanently.
+writeFileSync(file('app.js'), appJs.replace(`const VERSION = "${site}";`, `const VERSION = "${latest}";`))
+changed.push(`VERSION ${site} → ${latest}`)
 
 if (!changed.length) {
   console.log(`sync-version: v${site},与 npm 一致,install.sh 也一致,不用改`)
