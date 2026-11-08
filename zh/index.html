@@ -4,34 +4,27 @@
     <!-- GENERATED from /index.html by scripts/build-zh.mjs — edit index.html / app.js, then run the script -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>SintBot：在飞书、Slack、企业微信中运行 Claude Code 和 Codex</title>
+    <title>SintBot 1.3.0 —— 飞书单群里的编码助手</title>
     <meta
       name="description"
-      content="一个群绑定一个项目，在自己的机器上运行 Claude Code 或 Codex；支持独立权限、队列、定时任务和项目记忆，无需公网 IP。"
+      content="SintBot 1.3.0 首版提供 macOS 飞书单群 Codex 消息的内置核心路径；其他平台与多群能力后续迭代。"
     />
-    <!-- Social sharing cards (Open Graph + Twitter). The whole pitch is "share the
-         bot into your chat", so links get pasted into Slack/Lark/WeChat
-         constantly — without these the unfurl is blank. -->
+    <!-- Social sharing copy follows the restricted 1.3.0 scope. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SintBot" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:url" content="https://sintbot.com/zh/" />
-    <meta property="og:title" content="SintBot：在飞书、Slack、企业微信中运行 Claude Code 和 Codex" />
+    <meta property="og:title" content="SintBot 1.3.0 —— 飞书单群里的编码助手" />
     <meta
       property="og:description"
-      content="一个群绑定一个项目，在自己的机器上运行 Claude Code 或 Codex；支持独立权限、队列、定时任务和项目记忆，无需公网 IP。"
+      content="SintBot 1.3.0 首版提供 macOS 飞书单群 Codex 消息的内置核心路径；其他平台与多群能力后续迭代。"
     />
-    <meta property="og:image" content="https://sintbot.com/assets/og-banner-zh.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SintBot 在自己的机器上运行 Claude Code 和 Codex，接入飞书、Slack 与企业微信" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SintBot：在飞书、Slack、企业微信中运行 Claude Code 和 Codex" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SintBot 1.3.0 —— 飞书单群里的编码助手" />
     <meta
       name="twitter:description"
-      content="一个群绑定一个项目，在自己的机器上运行 Claude Code 或 Codex；支持独立权限、队列、定时任务和项目记忆，无需公网 IP。"
+      content="SintBot 1.3.0 首版提供 macOS 飞书单群 Codex 消息的内置核心路径；其他平台与多群能力后续迭代。"
     />
-    <meta name="twitter:image" content="https://sintbot.com/assets/og-banner-zh.png" />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/zh/" />
     <link rel="alternate" hreflang="en" href="https://sintbot.com/" />
@@ -49,7 +42,7 @@
             "url": "https://sintbot.com/zh/",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS",
-            "softwareVersion": "1.0.16",
+            "softwareVersion": "1.3.0",
             "license": "https://polyformproject.org/licenses/shield/1.0.0",
             "isAccessibleForFree": true,
             "author": {
@@ -71,7 +64,7 @@
               ]
             },
             "inLanguage": "zh-CN",
-            "description": "一个群绑定一个项目，在自己的机器上运行 Claude Code 或 Codex；支持独立权限、队列、定时任务和项目记忆，无需公网 IP。"
+            "description": "SintBot 1.3.0 首版提供 macOS 飞书单群 Codex 消息的内置核心路径；其他平台与多群能力后续迭代。"
           },
           {
             "@type": "Person",
@@ -92,87 +85,31 @@
                 "name": "SintBot 是什么？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "一个跑在你自己机器上的守护进程：把一个聊天群（飞书、Slack 或企业微信）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。"
+                  "text": "运行在自己机器上的项目群编码助手。1.3.0 首版内置核心路径支持 macOS 飞书单群中的 Codex 消息轮次。"
                 }
               },
               {
                 "@type": "Question",
-                "name": "它和 cc-bot 有什么区别？",
+                "name": "现有多群安装能直接升级吗？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "两者都免费；cc-bot 是 MIT 许可，SintBot 源码公开。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。"
+                  "text": "暂不能直接切到这个受限路径。请保持当前服务，等待兼容的多群升级与恢复方案。"
                 }
               },
               {
                 "@type": "Question",
-                "name": "支持哪些模型？",
+                "name": "画板和其他聊天平台包含在首版吗？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。"
+                  "text": "不包含。画板、Slack 和企业微信将在后续内置核心版本中完善。"
                 }
               },
               {
                 "@type": "Question",
-                "name": "换模型会丢掉项目记忆吗？",
+                "name": "哪里看安装说明？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "不会。换模型会开一段新对话，但项目里的 CLAUDE.md、AGENTS.md 和记忆目录会交给接下来运行的 agent，约定和长期记忆都还在。长会话会自动压缩。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "代码和数据存在哪？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "需要服务器或公网 IP 吗？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "默认情况下 agent 能做什么？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "怎么获取 SintBot？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "从 npm 安装：npm i -g sintbot，再跑 sintbot setup。免费、源码公开（PolyForm Shield 许可：自己用、团队或公司内部用、改了自己用都可以，不可以做成竞品），源码和文档在 github.com/sintlab/sintbot。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "必须有 Claude 订阅吗？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "在中国大陆能用吗？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "支持国际版 Lark 吗？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。"
+                  "text": "按本页 1.3.0 安装指南操作：安装器把程序放到独立目录，再配置一个群、初始化全新状态并在前台启动。"
                 }
               }
             ]
@@ -213,892 +150,90 @@
       data-website-id="9ea8a003-6b41-41b9-9b1f-af5c0a22d845"
       data-domains="sintbot.com"
     ></script>
+
+    <style>
+      :root { color-scheme: dark; --bg:#0d0e0f; --panel:#18191a; --line:#393531; --text:#f4eee7; --muted:#b7aca0; --accent:#d79a68; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:radial-gradient(circle at 80% 0%,#302016 0%,var(--bg) 46%); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; line-height:1.65; }
+      a { color:var(--accent); text-underline-offset:3px; }
+      .wrap { width:min(1100px,calc(100% - 40px)); margin:auto; }
+      header { border-bottom:1px solid var(--line); }
+      .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+      .brand { color:var(--text); text-decoration:none; font-family:Fraunces,serif; font-size:28px; font-weight:700; letter-spacing:-.03em; }
+      .navlinks { display:flex; flex-wrap:wrap; gap:20px; font-size:14px; }
+      .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font:600 12px JetBrains Mono,monospace; }
+      .hero { padding:110px 0 92px; }
+      h1,h2 { font-family:Fraunces,"PingFang SC",serif; letter-spacing:-.035em; line-height:1.12; }
+      h1 { font-size:clamp(46px,7vw,88px); max-width:900px; margin:16px 0 26px; }
+      h2 { font-size:clamp(32px,4vw,48px); margin:0 0 22px; }
+      p { max-width:800px; }
+      .lede { color:var(--muted); font-size:clamp(18px,2vw,23px); }
+      .pill { display:inline-block; border:1px solid #7b583e; color:#efc6a4; background:#291b13; padding:7px 14px; border-radius:999px; font-size:13px; }
+      section { padding:72px 0; border-top:1px solid var(--line); }
+      .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+      .card { background:var(--panel); border:1px solid var(--line); padding:26px; border-radius:18px; min-height:190px; }
+      .card h3 { margin:0 0 12px; font-size:20px; }
+      .card p { margin:0; color:var(--muted); }
+      .note { border-left:3px solid var(--accent); padding:12px 0 12px 22px; color:var(--muted); max-width:850px; }
+      .faq { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+      .faq article { padding:22px 0; border-top:1px solid var(--line); }
+      .faq h3 { margin:0 0 8px; font-size:18px; }
+      .faq p { color:var(--muted); margin:0; }
+      .cta { display:flex; gap:16px; flex-wrap:wrap; margin-top:28px; }
+      .button { display:inline-flex; align-items:center; border:1px solid var(--accent); border-radius:10px; padding:12px 20px; text-decoration:none; font-weight:600; }
+      .button.primary { color:#18110d; background:var(--accent); }
+      footer { border-top:1px solid var(--line); color:var(--muted); padding:34px 0; font-size:13px; }
+      @media(max-width:720px) { .hero{padding:76px 0 64px;} section{padding:54px 0;} .grid,.faq{grid-template-columns:1fr;} .nav{align-items:flex-start;padding:20px 0;flex-direction:column;} }
+    </style>
   </head>
   <body>
-    <!-- Icon sprite (Lucide, ISC) — referenced as <svg class="ico" width="20" height="20"><use href="#i-name"/></svg> -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><!-- icons: Lucide — ISC (https://lucide.dev), normalized by the design toolchain: stroke 1.5, 24 grid, currentColor -->
-<symbol id="i-folder-git-2" data-icon="lucide/folder-git-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 19a5 5 0 0 1-5-5v8" /><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5" /><circle cx="13" cy="12" r="2" /><circle cx="20" cy="19" r="2" /></symbol>
-<symbol id="i-message-square" data-icon="lucide/message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /></symbol>
-<symbol id="i-loader-circle" data-icon="lucide/loader-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></symbol>
-<symbol id="i-square" data-icon="lucide/square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" /></symbol>
-<symbol id="i-skip-forward" data-icon="lucide/skip-forward" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4v16" /><path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" /></symbol>
-<symbol id="i-activity" data-icon="lucide/activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></symbol>
-<symbol id="i-cpu" data-icon="lucide/cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2" /><path d="M12 2v2" /><path d="M17 20v2" /><path d="M17 2v2" /><path d="M2 12h2" /><path d="M2 17h2" /><path d="M2 7h2" /><path d="M20 12h2" /><path d="M20 17h2" /><path d="M20 7h2" /><path d="M7 20v2" /><path d="M7 2v2" /><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="8" y="8" width="8" height="8" rx="1" /></symbol>
-<symbol id="i-arrow-left-right" data-icon="lucide/arrow-left-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4" /><path d="M4 7h16" /><path d="m16 21 4-4-4-4" /><path d="M20 17H4" /></symbol>
-<symbol id="i-palette" data-icon="lucide/palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
-<symbol id="i-swatch-book" data-icon="lucide/swatch-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z" /><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7" /><path d="M 7 17h.01" /><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8" /></symbol>
-<symbol id="i-list-checks" data-icon="lucide/list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5h8" /><path d="M13 12h8" /><path d="M13 19h8" /><path d="m3 17 2 2 4-4" /><path d="m3 7 2 2 4-4" /></symbol>
-<symbol id="i-scan" data-icon="lucide/scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /></symbol>
-<symbol id="i-image" data-icon="lucide/image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></symbol>
-<symbol id="i-pen-tool" data-icon="lucide/pen-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z" /><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18" /><path d="m2.3 2.3 7.286 7.286" /><circle cx="11" cy="11" r="2" /></symbol>
-<symbol id="i-globe" data-icon="lucide/globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></symbol>
-<symbol id="i-monitor" data-icon="lucide/monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" /><line x1="8" x2="16" y1="21" y2="21" /><line x1="12" x2="12" y1="17" y2="21" /></symbol>
-<symbol id="i-shield-check" data-icon="lucide/shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></symbol>
-<symbol id="i-lock" data-icon="lucide/lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
-<symbol id="i-eye-off" data-icon="lucide/eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" /><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" /><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" /><path d="m2 2 20 20" /></symbol>
-<symbol id="i-folder-lock" data-icon="lucide/folder-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="5" x="14" y="17" rx="1" /><path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" /><path d="M20 17v-2a2 2 0 1 0-4 0v2" /></symbol>
-<symbol id="i-layout-dashboard" data-icon="lucide/layout-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" /></symbol>
-<symbol id="i-calendar-clock" data-icon="lucide/calendar-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14v2.2l1.6 1" /><path d="M16 2v3" /><path d="M21 7.338V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2.338" /><path d="M3 9h5.859" /><path d="M8 2v3" /><circle cx="16" cy="16" r="6" /></symbol>
-<symbol id="i-heart-pulse" data-icon="lucide/heart-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></symbol>
-<symbol id="i-rotate-ccw" data-icon="lucide/rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /></symbol>
-<symbol id="i-layers" data-icon="lucide/layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol>
-<symbol id="i-route" data-icon="lucide/route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3" /><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /><circle cx="18" cy="5" r="3" /></symbol>
-<symbol id="i-plug" data-icon="lucide/plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5" /><path d="M15 8V2" /><path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" /><path d="M9 8V2" /></symbol>
-<symbol id="i-hash" data-icon="lucide/hash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9" /><line x1="4" x2="20" y1="15" y2="15" /><line x1="10" x2="8" y1="3" y2="21" /><line x1="16" x2="14" y1="3" y2="21" /></symbol>
-<symbol id="i-at-sign" data-icon="lucide/at-sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></symbol>
-<symbol id="i-server" data-icon="lucide/server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" /></symbol>
-<symbol id="i-terminal" data-icon="lucide/terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19h8" /><path d="m4 17 6-6-6-6" /></symbol>
-<symbol id="i-arrow-right" data-icon="lucide/arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
-<symbol id="i-arrow-up-right" data-icon="lucide/arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></symbol>
-<symbol id="i-send" data-icon="lucide/send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></symbol>
-<symbol id="i-bell" data-icon="lucide/bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
-<symbol id="i-notebook-pen" data-icon="lucide/notebook-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /><path d="M2 6h4" /><path d="M2 10h4" /><path d="M2 14h4" /><path d="M2 18h4" /><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></symbol>
-<symbol id="i-users" data-icon="lucide/users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" /></symbol>
-<symbol id="i-key-round" data-icon="lucide/key-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
-<symbol id="i-circle-check" data-icon="lucide/circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></symbol>
-<symbol id="i-triangle-alert" data-icon="lucide/triangle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></symbol>
-<symbol id="i-cat" data-icon="lucide/cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z" /><path d="M8 14v.5" /><path d="M16 14v.5" /><path d="M11.25 16.25h1.5L12 17l-.75-.75Z" /></symbol>
-<symbol id="i-code" data-icon="lucide/code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></symbol>
-<symbol id="i-check" data-icon="lucide/check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol>
-<symbol id="i-clock-3" data-icon="lucide/clock-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6h4" /></symbol>
-<symbol id="i-sparkles" data-icon="lucide/sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /><path d="M20 2v4" /><path d="M22 4h-4" /><circle cx="4" cy="20" r="2" /></symbol>
-<symbol id="i-languages" data-icon="lucide/languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></symbol>
-<symbol id="i-zap" data-icon="lucide/zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol>
-<symbol id="i-wand-sparkles" data-icon="lucide/wand-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" /><path d="m14 7 3 3" /><path d="M5 6v4" /><path d="M19 14v4" /><path d="M10 2v2" /><path d="M7 8H3" /><path d="M21 16h-4" /><path d="M11 3H9" /></symbol>
-<symbol id="i-git-pull-request-arrow" data-icon="lucide/git-pull-request-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3" /><path d="M5 9v12" /><circle cx="19" cy="18" r="3" /><path d="m15 9-3-3 3-3" /><path d="M12 6h5a2 2 0 0 1 2 2v7" /></symbol>
-<symbol id="i-file-text" data-icon="lucide/file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></symbol>
-<symbol id="i-play" data-icon="lucide/play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /></symbol>
-</svg>
-    <!-- Brand marks (b-*) — <svg class="brand"><use href="#b-name"/></svg>. Not display:none, or gradients inside symbols stop painting.
-         Lark/Feishu and WeCom: their official sites · Slack: SVG Logos (CC0) · Claude, Claude Code, OpenAI, Codex, Zhipu, DeepSeek, MiniMax, Kimi: Lobe Icons (MIT, © LobeHub) · GitHub: Simple Icons (CC0). Marks belong to their owners. -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-<symbol id="b-feishu" viewBox="3.3 2.3 10.4 11.4"><path d="M8.56 8.26L8.59 8.23C8.61 8.21 8.64 8.19 8.66 8.17L8.7 8.12L8.84 7.99L9.02 7.81L9.18 7.66L9.32 7.51L9.47 7.36L9.61 7.23L9.81 7.03C9.85 7 9.89 6.96 9.92 6.93C10 6.86 10.07 6.8 10.14 6.74C10.21 6.68 10.28 6.63 10.35 6.58C10.46 6.51 10.56 6.44 10.67 6.38C10.77 6.32 10.88 6.26 10.99 6.2C11.09 6.15 11.2 6.11 11.3 6.06C11.36 6.04 11.42 6.02 11.49 6C11.52 5.99 11.55 5.98 11.58 5.97C11.31 4.9 10.81 3.9 10.12 3.05C9.99 2.88 9.79 2.78 9.57 2.78H3.95C3.89 2.78 3.84 2.83 3.84 2.89C3.84 2.92 3.86 2.95 3.88 2.97C5.8 4.38 7.4 6.19 8.55 8.28L8.56 8.26Z" fill="#00D6B9"/><path d="M6.32 13.22C9.23 13.22 11.76 11.61 13.08 9.24C13.13 9.16 13.17 9.08 13.22 8.99C13.15 9.12 13.08 9.24 13 9.35C12.97 9.39 12.94 9.44 12.91 9.48C12.87 9.53 12.83 9.57 12.79 9.62C12.76 9.66 12.73 9.69 12.69 9.73C12.63 9.8 12.55 9.86 12.48 9.93C12.44 9.96 12.4 10 12.36 10.03C12.31 10.07 12.25 10.1 12.2 10.14C12.17 10.16 12.14 10.18 12.1 10.2C12.07 10.22 12.03 10.24 12 10.26C11.93 10.3 11.85 10.34 11.77 10.38C11.71 10.4 11.64 10.43 11.57 10.46C11.5 10.49 11.43 10.51 11.35 10.53C11.23 10.56 11.12 10.59 11 10.6C10.92 10.62 10.83 10.63 10.75 10.63C10.66 10.64 10.57 10.64 10.48 10.64C10.37 10.64 10.27 10.63 10.17 10.62C10.09 10.61 10.02 10.6 9.94 10.59C9.88 10.58 9.81 10.56 9.75 10.55C9.71 10.54 9.68 10.53 9.64 10.52C9.55 10.49 9.45 10.47 9.35 10.44C9.3 10.43 9.26 10.41 9.21 10.4C9.14 10.38 9.07 10.36 9 10.33C8.94 10.32 8.88 10.3 8.82 10.28C8.77 10.26 8.71 10.24 8.66 10.22L8.55 10.18C8.5 10.17 8.45 10.15 8.41 10.14L8.31 10.1C8.25 10.08 8.18 10.05 8.12 10.03C8.08 10.01 8.05 10 8.01 9.99C7.96 9.97 7.91 9.95 7.86 9.93C7.81 9.91 7.76 9.89 7.71 9.87L7.61 9.83L7.48 9.77L7.38 9.73L7.28 9.69L7.2 9.65L7.12 9.62L7.04 9.58L6.96 9.54L6.85 9.49L6.74 9.44C6.7 9.42 6.67 9.4 6.63 9.39L6.53 9.34C4.8 8.47 3.24 7.31 1.92 5.9C1.88 5.86 1.82 5.86 1.77 5.9C1.75 5.92 1.74 5.95 1.74 5.97L1.74 10.94V11.34C1.74 11.58 1.86 11.8 2.05 11.93C3.32 12.77 4.8 13.22 6.32 13.22Z" fill="#3370FF"/><path d="M14.87 6.22C13.88 5.74 12.76 5.63 11.71 5.93C11.67 5.94 11.62 5.95 11.58 5.97C11.55 5.98 11.52 5.99 11.49 6C11.42 6.02 11.36 6.04 11.3 6.06C11.2 6.1 11.09 6.15 10.99 6.2C10.88 6.25 10.77 6.31 10.67 6.37C10.56 6.44 10.46 6.5 10.35 6.58C10.28 6.63 10.21 6.68 10.14 6.73C10.07 6.8 10 6.86 9.92 6.92C9.89 6.96 9.85 6.99 9.81 7.03L9.61 7.22L9.47 7.36L9.32 7.51L9.18 7.66L9.02 7.81L8.84 7.99L8.71 8.12L8.66 8.16C8.64 8.19 8.62 8.21 8.59 8.23L8.56 8.26L8.51 8.31C8.49 8.33 8.48 8.34 8.46 8.36C7.97 8.8 7.43 9.18 6.85 9.49L6.96 9.54L7.04 9.58L7.12 9.62L7.2 9.65L7.29 9.69L7.39 9.74L7.48 9.78L7.61 9.83L7.71 9.87C7.76 9.89 7.81 9.91 7.86 9.93C7.91 9.95 7.96 9.97 8.01 9.99C8.05 10 8.09 10.02 8.12 10.03C8.19 10.05 8.25 10.08 8.31 10.1L8.41 10.14C8.46 10.15 8.5 10.17 8.55 10.19L8.66 10.22C8.71 10.24 8.77 10.26 8.82 10.28C8.88 10.3 8.94 10.31 9 10.33C9.07 10.36 9.14 10.38 9.21 10.4C9.26 10.41 9.31 10.43 9.35 10.44C9.45 10.47 9.55 10.5 9.64 10.52C9.68 10.53 9.71 10.54 9.75 10.55C9.81 10.57 9.88 10.58 9.95 10.59C10.02 10.6 10.1 10.62 10.17 10.62C10.27 10.63 10.38 10.64 10.48 10.64C10.57 10.64 10.66 10.64 10.75 10.63C10.84 10.63 10.92 10.62 11.01 10.61C11.12 10.59 11.24 10.56 11.35 10.53C11.43 10.51 11.5 10.49 11.58 10.46C11.64 10.44 11.71 10.41 11.78 10.38C11.85 10.34 11.93 10.31 12 10.27C12.03 10.25 12.07 10.23 12.11 10.2C12.14 10.18 12.17 10.16 12.2 10.14C12.26 10.1 12.31 10.07 12.36 10.03C12.4 10 12.44 9.96 12.48 9.93C12.55 9.87 12.63 9.8 12.69 9.73C12.73 9.69 12.76 9.66 12.79 9.62C12.83 9.57 12.87 9.52 12.91 9.48C12.94 9.44 12.97 9.4 13 9.36C13.08 9.24 13.15 9.12 13.22 9L13.29 8.85L13.96 7.51L13.97 7.49C14.19 7.01 14.49 6.58 14.87 6.22Z" fill="#133C9A"/></symbol>
-<symbol id="b-slack" viewBox="0 0 256 256"><path fill="#e01e5a" d="M53.841 161.32c0 14.832-11.987 26.82-26.819 26.82S.203 176.152.203 161.32c0-14.831 11.987-26.818 26.82-26.818H53.84zm13.41 0c0-14.831 11.987-26.818 26.819-26.818s26.819 11.987 26.819 26.819v67.047c0 14.832-11.987 26.82-26.82 26.82c-14.83 0-26.818-11.988-26.818-26.82z"/><path fill="#36c5f0" d="M94.07 53.638c-14.832 0-26.82-11.987-26.82-26.819S79.239 0 94.07 0s26.819 11.987 26.819 26.819v26.82zm0 13.613c14.832 0 26.819 11.987 26.819 26.819s-11.987 26.819-26.82 26.819H26.82C11.987 120.889 0 108.902 0 94.069c0-14.83 11.987-26.818 26.819-26.818z"/><path fill="#2eb67d" d="M201.55 94.07c0-14.832 11.987-26.82 26.818-26.82s26.82 11.988 26.82 26.82s-11.988 26.819-26.82 26.819H201.55zm-13.41 0c0 14.832-11.988 26.819-26.82 26.819c-14.831 0-26.818-11.987-26.818-26.82V26.82C134.502 11.987 146.489 0 161.32 0s26.819 11.987 26.819 26.819z"/><path fill="#ecb22e" d="M161.32 201.55c14.832 0 26.82 11.987 26.82 26.818s-11.988 26.82-26.82 26.82c-14.831 0-26.818-11.988-26.818-26.82V201.55zm0-13.41c-14.831 0-26.818-11.988-26.818-26.82c0-14.831 11.987-26.818 26.819-26.818h67.25c14.832 0 26.82 11.987 26.82 26.819s-11.988 26.819-26.82 26.819z"/></symbol>
-<symbol id="b-wecom" viewBox="2.2 2.2 28.6 28.6"><path d="M13.053 2.7c7.033 0 12.754 4.954 12.754 11.084 0 .224-.01.445-.021.667l-.01.136-.102-.09a2.554 2.554 0 0 0-2.532-.504l-.091.03v-.451c-.16-4.558-4.573-8.24-10-8.24-1.13 0-2.217.16-3.232.454l-.43.133C5.673 7.164 3.05 10.241 3.05 13.821c0 2.52 1.3 4.788 3.365 6.348l.094.081a.9.9 0 0 1 .263.667l-.012.124-.351 1.996a.172.172 0 0 0 .254.178l2.293-1.323.085-.042c.2-.088.424-.1.633-.037l.4.115a11.53 11.53 0 0 0 2.98.385 11.59 11.59 0 0 0 3.437-.518l.073-.021.012.076a2.57 2.57 0 0 0 1.63 1.956l.166.064-.167.063a14.35 14.35 0 0 1-5.151.942 14.48 14.48 0 0 1-3.792-.5l-3.79 1.848a.96.96 0 0 1-1.374-.963l.345-3.292C1.9 19.938.3 17.025.3 13.788.3 7.653 6.018 2.7 13.054 2.7z" fill="#0082EF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.29 15.105c.315.315.493.714.533 1.13h.003a4.591 4.591 0 0 0 1.42 2.798l.024.024a.467.467 0 0 1-.009.648.459.459 0 0 1-.648.01l-.024-.025c-.03-.036-.064-.07-.094-.103a4.629 4.629 0 0 0-2.686-1.32 1.877 1.877 0 0 1-1.148-.533 1.853 1.853 0 0 1 0-2.626 1.853 1.853 0 0 1 2.626 0l.003-.003z" fill="#2DBC00"/><path fill-rule="evenodd" clip-rule="evenodd" d="M30.275 22.61a1.836 1.836 0 0 1-1.13.533h-.003a4.624 4.624 0 0 0-2.701 1.326 1.291 1.291 0 0 0-.091.097l-.025.024a.467.467 0 0 1-.648-.009.459.459 0 0 1-.009-.648l.024-.024c.037-.03.07-.063.103-.094a4.63 4.63 0 0 0 1.32-2.686 1.877 1.877 0 0 1 .533-1.148 1.854 1.854 0 0 1 2.627 0 1.854 1.854 0 0 1 0 2.626v.003z" fill="#0082EF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M22.773 27.595a1.836 1.836 0 0 1-.533-1.13h-.003a4.592 4.592 0 0 0-1.324-2.707.994.994 0 0 0-.097-.091l-.024-.024a.467.467 0 0 1 .01-.649.459.459 0 0 1 .647-.009l.025.025c.03.036.063.07.093.102a4.628 4.628 0 0 0 2.687 1.321 1.877 1.877 0 0 1 1.148.533 1.853 1.853 0 0 1 0 2.626 1.854 1.854 0 0 1-2.626 0l-.003.003z" fill="#FB6500"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.785 20.093a1.836 1.836 0 0 1 1.13-.533h.002a4.625 4.625 0 0 0 2.702-1.327c.033-.033.067-.066.09-.097l.025-.024a.467.467 0 0 1 .648.01c.182.181.185.46.01.647l-.025.025c-.036.03-.07.063-.103.093a4.63 4.63 0 0 0-1.32 2.687 1.877 1.877 0 0 1-.533 1.148 1.854 1.854 0 0 1-2.626 0 1.853 1.853 0 0 1 0-2.626v-.003z" fill="#FC0"/></symbol>
-<symbol id="b-claude" viewBox="0 0 24 24"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"/></symbol>
-<symbol id="b-openai" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"/></symbol>
-<symbol id="b-zhipu" viewBox="0 0 24 24"><path d="M11.991 23.503a.24.24 0 00-.244.248.24.24 0 00.244.249.24.24 0 00.245-.249.24.24 0 00-.22-.247l-.025-.001zM9.671 5.365a1.697 1.697 0 011.099 2.132l-.071.172-.016.04-.018.054c-.07.16-.104.32-.104.498-.035.71.47 1.279 1.186 1.314h.366c1.309.053 2.338 1.173 2.286 2.523-.052 1.332-1.152 2.38-2.478 2.327h-.174c-.715.018-1.274.64-1.239 1.368 0 .124.018.23.053.337.209.373.54.658.96.8.75.23 1.517-.125 1.9-.782l.018-.035c.402-.64 1.17-.96 1.92-.711.854.284 1.378 1.226 1.099 2.167a1.661 1.661 0 01-2.077 1.102 1.711 1.711 0 01-.907-.711l-.017-.035c-.2-.323-.463-.58-.851-.711l-.056-.018a1.646 1.646 0 00-1.954.746 1.66 1.66 0 01-1.065.764 1.677 1.677 0 01-1.989-1.279c-.209-.906.332-1.83 1.257-2.043a1.51 1.51 0 01.296-.035h.018c.68-.071 1.151-.622 1.116-1.333a1.307 1.307 0 00-.227-.693 2.515 2.515 0 01-.366-1.403 2.39 2.39 0 01.366-1.208c.14-.195.21-.444.227-.693.018-.71-.506-1.261-1.186-1.332l-.07-.018a1.43 1.43 0 01-.299-.07l-.05-.019a1.7 1.7 0 01-1.047-2.114 1.68 1.68 0 012.094-1.101zm-5.575 10.11c.26-.264.639-.367.994-.27.355.096.633.379.728.74.095.362-.007.748-.267 1.013-.402.41-1.053.41-1.455 0a1.062 1.062 0 010-1.482zm14.845-.294c.359-.09.738.024.992.297.254.274.344.665.237 1.025-.107.36-.396.634-.756.718-.551.128-1.1-.22-1.23-.781a1.05 1.05 0 01.757-1.26zm-.064-4.39c.314.32.49.753.49 1.206 0 .452-.176.886-.49 1.206-.315.32-.74.5-1.185.5-.444 0-.87-.18-1.184-.5a1.727 1.727 0 010-2.412 1.654 1.654 0 012.369 0zm-11.243.163c.364.484.447 1.128.218 1.691a1.665 1.665 0 01-2.188.923c-.855-.36-1.26-1.358-.907-2.228a1.68 1.68 0 011.33-1.038c.593-.08 1.183.169 1.547.652zm11.545-4.221c.368 0 .708.2.892.524.184.324.184.724 0 1.048a1.026 1.026 0 01-.892.524c-.568 0-1.03-.47-1.03-1.048 0-.579.462-1.048 1.03-1.048zm-14.358 0c.368 0 .707.2.891.524.184.324.184.724 0 1.048a1.026 1.026 0 01-.891.524c-.569 0-1.03-.47-1.03-1.048 0-.579.461-1.048 1.03-1.048zm10.031-1.475c.925 0 1.675.764 1.675 1.706s-.75 1.705-1.675 1.705-1.674-.763-1.674-1.705c0-.942.75-1.706 1.674-1.706zm-2.626-.684c.362-.082.653-.356.761-.718a1.062 1.062 0 00-.238-1.028 1.017 1.017 0 00-.996-.294c-.547.14-.881.7-.752 1.257.13.558.675.907 1.225.783zm0 16.876c.359-.087.644-.36.75-.72a1.062 1.062 0 00-.237-1.019 1.018 1.018 0 00-.985-.301 1.037 1.037 0 00-.762.717c-.108.361-.017.754.239 1.028.245.263.606.377.953.305l.043-.01zM17.19 3.5a.631.631 0 00.628-.64c0-.355-.279-.64-.628-.64a.631.631 0 00-.628.64c0 .355.28.64.628.64zm-10.38 0a.631.631 0 00.628-.64c0-.355-.28-.64-.628-.64a.631.631 0 00-.628.64c0 .355.279.64.628.64zm-5.182 7.852a.631.631 0 00-.628.64c0 .354.28.639.628.639a.63.63 0 00.627-.606l.001-.034a.62.62 0 00-.628-.64zm5.182 9.13a.631.631 0 00-.628.64c0 .355.279.64.628.64a.631.631 0 00.628-.64c0-.355-.28-.64-.628-.64zm10.38.018a.631.631 0 00-.628.64c0 .355.28.64.628.64a.631.631 0 00.628-.64c0-.355-.279-.64-.628-.64zm5.182-9.148a.631.631 0 00-.628.64c0 .354.279.639.628.639a.631.631 0 00.628-.64c0-.355-.28-.64-.628-.64zm-.384-4.992a.24.24 0 00.244-.249.24.24 0 00-.244-.249.24.24 0 00-.244.249c0 .142.122.249.244.249zM11.991.497a.24.24 0 00.245-.248A.24.24 0 0011.99 0a.24.24 0 00-.244.249c0 .133.108.236.223.247l.021.001zM2.011 6.36a.24.24 0 00.245-.249.24.24 0 00-.244-.249.24.24 0 00-.244.249.24.24 0 00.244.249zm0 11.263a.24.24 0 00-.243.248.24.24 0 00.244.249.24.24 0 00.244-.249.252.252 0 00-.244-.248zm19.995-.018a.24.24 0 00-.245.248.24.24 0 00.245.25.24.24 0 00.244-.25.252.252 0 00-.244-.248z" fill="#3859FF" fill-rule="nonzero"/></symbol>
-<symbol id="b-deepseek" viewBox="0 0 24 24"><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z" fill="#4D6BFE"/></symbol>
-<symbol id="b-minimax" viewBox="0 0 24 24"><defs><linearGradient id="b-minimax-g0" x1="0%" x2="100.182%" y1="50.057%" y2="50.057%"><stop offset="0%" stop-color="#E2167E"/><stop offset="100%" stop-color="#FE603C"/></linearGradient></defs><path d="M16.278 2c1.156 0 2.093.927 2.093 2.07v12.501a.74.74 0 00.744.709.74.74 0 00.743-.709V9.099a2.06 2.06 0 012.071-2.049A2.06 2.06 0 0124 9.1v6.561a.649.649 0 01-.652.645.649.649 0 01-.653-.645V9.1a.762.762 0 00-.766-.758.762.762 0 00-.766.758v7.472a2.037 2.037 0 01-2.048 2.026 2.037 2.037 0 01-2.048-2.026v-12.5a.785.785 0 00-.788-.753.785.785 0 00-.789.752l-.001 15.904A2.037 2.037 0 0113.441 22a2.037 2.037 0 01-2.048-2.026V18.04c0-.356.292-.645.652-.645.36 0 .652.289.652.645v1.934c0 .263.142.506.372.638.23.131.514.131.744 0a.734.734 0 00.372-.638V4.07c0-1.143.937-2.07 2.093-2.07zm-5.674 0c1.156 0 2.093.927 2.093 2.07v11.523a.648.648 0 01-.652.645.648.648 0 01-.652-.645V4.07a.785.785 0 00-.789-.78.785.785 0 00-.789.78v14.013a2.06 2.06 0 01-2.07 2.048 2.06 2.06 0 01-2.071-2.048V9.1a.762.762 0 00-.766-.758.762.762 0 00-.766.758v3.8a2.06 2.06 0 01-2.071 2.049A2.06 2.06 0 010 12.9v-1.378c0-.357.292-.646.652-.646.36 0 .653.29.653.646V12.9c0 .418.343.757.766.757s.766-.339.766-.757V9.099a2.06 2.06 0 012.07-2.048 2.06 2.06 0 012.071 2.048v8.984c0 .419.343.758.767.758.423 0 .766-.339.766-.758V4.07c0-1.143.937-2.07 2.093-2.07z" fill="url(#b-minimax-g0)" fill-rule="nonzero"/></symbol>
-<symbol id="b-kimi" viewBox="0 0 24 24"><path d="M21.846 0a1.923 1.923 0 110 3.846H20.15a.226.226 0 01-.227-.226V1.923C19.923.861 20.784 0 21.846 0z" fill="#1783FF"/><path d="M11.065 11.199l7.257-7.2c.137-.136.06-.41-.116-.41H14.3a.164.164 0 00-.117.051l-7.82 7.756c-.122.12-.302.013-.302-.179V3.82c0-.127-.083-.23-.185-.23H3.186c-.103 0-.186.103-.186.23V19.77c0 .128.083.23.186.23h2.69c.103 0 .186-.102.186-.23v-3.25c0-.069.025-.135.069-.178l2.424-2.406a.158.158 0 01.205-.023l6.484 4.772a7.677 7.677 0 003.453 1.283c.108.012.2-.095.2-.23v-3.06c0-.117-.07-.212-.164-.227a5.028 5.028 0 01-2.027-.807l-5.613-4.064c-.117-.078-.132-.279-.028-.381z" fill="#fff"/></symbol>
-<symbol id="b-claudecode" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z" fill="#D97757" fill-rule="evenodd"/></symbol>
-<symbol id="b-codex" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M8.086.457a6.105 6.105 0 013.046-.415c1.333.153 2.521.72 3.564 1.7a.117.117 0 00.107.029c1.408-.346 2.762-.224 4.061.366l.063.03.154.076c1.357.703 2.33 1.77 2.918 3.198.278.679.418 1.388.421 2.126a5.655 5.655 0 01-.18 1.631.167.167 0 00.04.155 5.982 5.982 0 011.578 2.891c.385 1.901-.01 3.615-1.183 5.14l-.182.22a6.063 6.063 0 01-2.934 1.851.162.162 0 00-.108.102c-.255.736-.511 1.364-.987 1.992-1.199 1.582-2.962 2.462-4.948 2.451-1.583-.008-2.986-.587-4.21-1.736a.145.145 0 00-.14-.032c-.518.167-1.04.191-1.604.185a5.924 5.924 0 01-2.595-.622 6.058 6.058 0 01-2.146-1.781c-.203-.269-.404-.522-.551-.821a7.74 7.74 0 01-.495-1.283 6.11 6.11 0 01-.017-3.064.166.166 0 00.008-.074.115.115 0 00-.037-.064 5.958 5.958 0 01-1.38-2.202 5.196 5.196 0 01-.333-1.589 6.915 6.915 0 01.188-2.132c.45-1.484 1.309-2.648 2.577-3.493.282-.188.55-.334.802-.438.286-.12.573-.22.861-.304a.129.129 0 00.087-.087A6.016 6.016 0 015.635 2.31C6.315 1.464 7.132.846 8.086.457zm-.804 7.85a.848.848 0 00-1.473.842l1.694 2.965-1.688 2.848a.849.849 0 001.46.864l1.94-3.272a.849.849 0 00.007-.854l-1.94-3.393zm5.446 6.24a.849.849 0 000 1.695h4.848a.849.849 0 000-1.696h-4.848z"/></symbol>
-<symbol id="b-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
-    </svg>
-
-    <!-- Animated grain + noise canvas -->
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
-
-    <!-- Top nav -->
-    <header class="nav" data-reveal>
-      <a class="nav__brand" href="#top" aria-label="SintBot home">
-        <span class="nav__word">Sint<i class="nav__trace" aria-hidden="true"></i>Bot</span>
-      </a>
-      <nav class="nav__menu" aria-label="primary">
-        <a href="#platforms" data-i18n="nav.platforms">平台</a>
-        <a href="#models" data-i18n="nav.models">模型</a>
-        <a href="#design" data-i18n="nav.design">视觉协作</a>
-        <a href="#console" data-i18n="nav.console">控制台</a>
-        <a href="#plugin" data-i18n="nav.setup">接入</a>
-        <a
-          href="https://github.com/sintlab/sintbot"
-          target="_blank"
-          rel="noopener"
-          class="nav__cta"
-           ><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>GitHub <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a
-        >
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button type="button" data-lang="en" class="lang-toggle__btn">EN</button>
-          <span class="lang-toggle__sep" aria-hidden="true">/</span>
-          <button type="button" data-lang="zh" class="lang-toggle__btn is-active">中</button>
-        </div>
-      </nav>
-    </header>
-
-    <main id="top">
-      <!-- Hero -->
-      <section class="hero" aria-labelledby="hero-title">
-
-        <div class="hero__inner">
-          <p class="eyebrow" data-reveal>
-            <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">源码公开 · 自托管 · 飞书 · Slack · 企业微信 · Claude Code &amp; Codex</span>
-          </p>
-          <h1 id="hero-title" class="hero__title">
-            <span class="hero__title-en" data-i18n-html="hero.titleEn"><span class="zh-row" data-reveal data-reveal-delay="0"><span class="zh-big">一群一项目</span><span class="visually-hidden">，</span><span class="zh-note"><span>一句话</span><span>就开工</span></span></span>
-           <span class="zh-row" data-reveal data-reveal-delay="120"><span class="zh-big">模型随时换</span><span class="visually-hidden">，</span><span class="zh-note"><span>记忆</span><span>不丢</span></span></span>
-           <span class="zh-tail" data-reveal data-reveal-delay="240">全程在你自己的机器上</span></span>
-          </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">一个聊天群绑一个项目，团队里谁都能派活，<code>SintBot</code> 在你自己的机器上读代码、改代码、做设计、出报告。模型任选：ChatGPT、Claude，或 GLM、DeepSeek、Kimi、自己部署的开源模型，群里随时切换、不同任务用不同模型；项目的长期记忆只有一套，自动维护、留在本地。</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="540">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="hero.cta.primary">看它怎么工作</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg>
-              <span data-i18n="hero.cta.plugin">GitHub 源码</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Dual-platform mockup: the same daemon in a Feishu group and a Slack channel (English puts Slack first: styles.css) -->
-        <div class="hero__mocks" data-reveal data-reveal-delay="660">
-          <aside class="mock mock--lark" aria-label="Example Feishu group">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--lark"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">飞书</span></span>
-              <span class="mock__title" data-i18n="mock.lark.title">设计评审</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__kind" data-i18n="mock.lark.kind">流式卡片</span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.lark.user">小梅 · 设计</b>
-                <p data-i18n="mock.lark.ask">调整首页，沿用现在的视觉风格</p>
-              </li>
-              <li class="mock__card">
-                <div class="mock__card-head">
-                  <svg class="ico ico--sm mock__was" width="14" height="14" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                  <svg class="ico ico--sm mock__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                  <svg class="ico ico--sm mock__ok" width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>
-                  <span class="mock__state" data-i18n="mock.lark.state">已交付 · 4 分 21 秒</span>
-                </div>
-                <ul class="mock__lines">
-                  <li data-i18n="mock.lark.l1">沿用项目现有界面</li>
-                  <li data-i18n="mock.lark.l2">生成两版 · 首屏 + 定价</li>
-                  <li data-i18n="mock.lark.l3">交付前核对 · 0 处不一致</li>
-                </ul>
-                <div class="mock__btns">
-                  <span class="mock__btn mock__btn--primary" data-i18n="mock.lark.b1">打开预览</span>
-                  <span class="mock__btn" data-i18n="mock.lark.b2">按标注改图</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-
-          <div class="mock__eq" aria-hidden="true">
-            <span class="mock__eq-sign">=</span>
-            <span class="mock__eq-text" data-i18n="mock.eq">同一个守护进程</span>
-          </div>
-
-          <aside class="mock mock--slack" aria-label="Example Slack thread">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--slack"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-slack"/></svg>Slack</span>
-              <span class="mock__title">#ship-room</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__working"><i></i><span data-i18n="mock.slack.working">Working…</span></span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.slack.user">Lin · 产品</b>
-                <p data-i18n="mock.slack.ask">signup 在 staging 报 500，查一下</p>
-              </li>
-              <li class="mock__msg mock__msg--bot">
-                <b>SintBot <span class="mock__app">APP</span></b>
-                <p><span class="dot" aria-hidden="true"></span><span data-i18n="mock.slack.ack">收到，线程里跟进</span></p>
-              </li>
-              <li class="mock__thread">
-                <span class="mock__thread-label" data-i18n="mock.slack.thread">线程 · 3 条回复</span>
-                <p class="mock__progress"><span class="mock__tick" aria-hidden="true"></span><span data-i18n="mock.slack.progress">正在读日志 · 2/5</span></p>
-                <p class="mock__final" data-i18n-html="mock.slack.final">已定位：<code>hashPassword</code> 少了 <code>await</code>，已开 <span class="mock__link">PR #482</span>。</p>
-                <div class="mock__btns">
-                  <span class="mock__btn" data-i18n="mock.slack.b1">停止</span>
-                  <span class="mock__btn" data-i18n="mock.slack.b2">状态</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-        </div>
-      </section>
-
-      <!-- What is SintBot -->
-      <section id="what" class="section section--what">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="what.kicker">它是什么</p>
-        <h2 class="section__h" data-reveal data-i18n-html="what.h">一个守护进程，<em>把项目</em>放进群里。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="what.lede">SintBot 跑在你自己的机器上，进的是团队本来就在用的群；一群绑一个项目，agent 在项目目录里干活、记得上下文。</p>
-        <ol class="pillars">
-          <li class="pillar" data-reveal>
-            <h3 data-i18n="what.bot.title">群项目 AI</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> 是守护进程：一群一项目，每一轮交给无头的 Claude Code 或 Codex，进度在群里、权限按群管。免费、源码公开；<code>cc-bot</code> 是配套插件，装进你自己的 Claude Code 会话。</p>
-            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">看飞书、Slack 与企业微信里的样子 →</a>
-          </li>
-        </ol>
-
-        <ul class="facts" data-reveal data-reveal-delay="120" aria-label="By the numbers">
-          <li><span>3</span><i data-i18n="facts.platforms">个平台 —— 飞书、Slack 与企业微信</i></li>
-          <li><span>2</span><i data-i18n="facts.runners">套 agent runner —— Claude Code 与 Codex</i></li>
-          <li><span>6</span><i data-i18n="facts.models">种模型后端，按群可换</i></li>
-          <li><span>1</span><i data-i18n="facts.projects">群各绑一个项目</i></li>
-          <li><span>13</span><i data-i18n="facts.redact">类出站脱敏模式</i></li>
-          <li><span>1,900+</span><i data-i18n="facts.tests">个单元测试</i></li>
-        </ul>
-      </section>
-
-      <!-- Platforms: Feishu, Slack and WeCom, all supported (English puts Slack first: styles.css) -->
-      <section id="platforms" class="section section--plat">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · 平台</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plat.h">飞书、Slack 与企业微信，<em>都支持。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">群可以是飞书群、Slack 频道，也可以是企业微信群——每个群自己选，一个守护进程同时接三边。核心处处一样：一群一项目、群里直接说、免公网 IP、进度可见可停、同一套权限与控制台。</p>
-
-        <div class="plat">
-          <article class="plat-card plat-card--lark" data-reveal>
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-feishu"/></svg>
-              <h3 data-i18n="plat.lark.h">在飞书群里</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.lark.1.t">流式卡片</b><p data-i18n="plat.lark.1.b">卡片边跑边更新：已跑多久、正在做什么、每完成一步多一行；做完正文和按钮落在同一张卡里，过程收进折叠区。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-pen-tool"/></svg>
-                <div><b data-i18n="plat.lark.2.t">画板闭环</b><p data-i18n="plat.lark.2.b">在画板上画箭头、写便签，点「按标注改图」，改好的图回到同一张卡。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg>
-                <div><b data-i18n="plat.lark.3.t">群内九个动作</b><p data-i18n="plat.lark.3.b">发文件、发图、发消息、读历史、回复、编辑、撤回、下载群文件、表情回应——点个表情、点卡片按钮也能触发它。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.lark.4.t">WebSocket 长连接</b><p data-i18n="plat.lark.4.b">只有守护进程往外连，没有东西往里连。不要公网 IP，不要 webhook。</p></div>
-              </li>
-            </ul>
-          </article>
-
-          <article class="plat-card plat-card--slack" data-reveal data-reveal-delay="80">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-slack"/></svg>
-              <h3 data-i18n="plat.slack.h">在 Slack 频道里</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.slack.1.t">线程内进度</b><p data-i18n="plat.slack.1.b">先回一条回执，线程里节流刷新进度，最终答案单独落地，最后打勾。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-activity"/></svg>
-                <div><b data-i18n="plat.slack.2.t">原生 Working… 状态</b><p data-i18n="plat.slack.2.b">Slack 自己的 agent 状态条，免费版也有；线程里有停止 / 跳过 / 状态按钮，另有 App Home 主页。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-terminal"/></svg>
-                <div><b data-i18n="plat.slack.3.t">命令不被 Slack 吃掉</b><p data-i18n="plat.slack.3.b">斜杠被 Slack 占用时，用 ! 前缀或一条总入口命令。控制台的 Slack 卡负责预检、列频道、绑群。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.slack.4.t">Socket Mode，可走代理</b><p data-i18n="plat.slack.4.b">只出不进，免公网 IP；受限网络可走 http 代理隧道。</p></div>
-              </li>
-            </ul>
-          </article>
-          <article class="plat-card plat-card--wecom" data-reveal data-reveal-delay="160">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-wecom"/></svg>
-              <h3 data-i18n="plat.wecom.h">在企业微信群里</h3>
-            </div>
-            <p class="plat-card__note" data-i18n="plat.wecom.note">三个平台里最新接入的，真实环境里用得最少，欢迎反馈。</p>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg>
-                <div><b data-i18n="plat.wecom.1.t">长连接，企业不用认证</b><p data-i18n="plat.wecom.1.b">智能机器人 · API 模式 · 长连接：不要公网、不要域名，免费注册、未认证的企业就能用。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-at-sign"/></svg>
-                <div><b data-i18n="plat.wecom.2.t">@ 它就回</b><p data-i18n="plat.wecom.2.b">企业微信只推送 @ 机器人的消息。小群可以打开「不 @ 也回复」的跟进窗口，默认关闭。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>
-                <div><b data-i18n="plat.wecom.3.t">姓名、发图、发文件</b><p data-i18n="plat.wecom.3.b">装好并授权官方命令行工具 wecom-cli，群里就显示成员姓名、机器人能发图发文件；不装也能用，只是显示账号。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.wecom.4.t">流式回复</b><p data-i18n="plat.wecom.4.b">回复在群里流式输出；超过 10 分钟的回复自动接成下一条，客户端显示不了的 Markdown 会自动改写。</p></div>
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="plat-core" data-reveal>
-          <p class="plat-core__label" data-i18n="plat.core.label">共同内核</p>
-          <ul class="plat-core__list">
-            <li data-i18n="plat.core.1">一群一项目</li>
-            <li data-i18n="plat.core.2">群里直接说</li>
-            <li data-i18n="plat.core.3">免公网 IP</li>
-            <li data-i18n="plat.core.4">进度可见可停</li>
-            <li data-i18n="plat.core.5">同一套权限与脱敏</li>
-            <li data-i18n="plat.core.6">同一个控制台</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Flow: from @ to delivery -->
-      <section id="flow" class="section section--flow">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="flow.kicker">02 · 怎么跑</p>
-        <h2 class="section__h" data-reveal data-i18n-html="flow.h">从<em>一句话</em>到交付。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="flow.lede">你机器上的守护进程核对这个群的权限，把这一轮交给项目目录里的 Claude Code 或 Codex，进度回流到群——模型是你给这个群选的那一个。</p>
-
-        <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="SintBot flow: a Slack, Feishu or WeCom group talks to the daemon on your machine, which runs Claude Code or Codex against a swappable model; the console, each group's project directory and the design toolchain sit beside the daemon; progress and results return to the group" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#d68f44" />
-                <stop offset="50%" stop-color="#e5b94d" />
-                <stop offset="100%" stop-color="#2fae6f" />
-              </linearGradient>
-              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
-              </marker>
-            </defs>
-
-            <!-- return path: progress + result back to the group -->
-            <g stroke="#3a3a3a" stroke-dasharray="4 6" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M720 60 C 720 22, 140 22, 140 60" />
-            </g>
-            <text x="430" y="18" text-anchor="middle" fill="#888" font-size="12" class="d-note" data-i18n-svg="flow.return">进度 + 结果回群</text>
-
-            <!-- column: group -->
-            <g class="d-col">
-              <rect x="40" y="60" width="200" height="320" rx="18" />
-              <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">群</text>
-              <g class="d-pill d-pill--accent d-pill--feishu"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">飞书</text></g>
-              <g class="d-pill d-pill--accent d-pill--slack"><rect x="70" y="196" width="140" height="44" rx="22" /><use href="#b-slack" x="84" y="208" width="20" height="20" /><text x="150" y="218">Slack</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><use href="#b-wecom" x="84" y="264" width="20" height="20" /><text x="150" y="274" data-i18n-svg="plat.wecom">企业微信</text></g>
-              <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">群里直接说</text>
-              <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">一群 · 一项目</text>
-            </g>
-
-            <!-- column: daemon -->
-            <g class="d-col">
-              <rect x="290" y="60" width="270" height="320" rx="18" />
-              <text x="425" y="100" text-anchor="middle" data-i18n-svg="flow.col.daemon">守护进程 · 你的机器</text>
-              <g class="d-pill d-pill--accent"><rect x="320" y="140" width="210" height="44" rx="10" /><text x="425" y="162" data-i18n-svg="flow.daemon.1">消息循环</text></g>
-              <g class="d-pill"><rect x="320" y="196" width="210" height="44" rx="10" /><text x="425" y="218" data-i18n-svg="flow.daemon.2">一群一项目</text></g>
-              <g class="d-pill"><rect x="320" y="252" width="210" height="44" rx="10" /><text x="425" y="274" data-i18n-svg="flow.daemon.3">权限 · 脱敏</text></g>
-              <text class="d-note" x="425" y="330" text-anchor="middle" data-i18n-svg="flow.daemon.note1">长连接 · 免公网 IP</text>
-              <text class="d-note d-note--em" x="425" y="350" text-anchor="middle" data-i18n-svg="flow.daemon.note2">代码与密钥不出机器</text>
-            </g>
-
-            <!-- column: agent runner -->
-            <g class="d-col">
-              <rect x="610" y="60" width="220" height="320" rx="18" />
-              <text x="720" y="100" text-anchor="middle" data-i18n-svg="flow.col.runner">Agent runner</text>
-              <g class="d-pill d-pill--accent"><rect x="640" y="140" width="160" height="44" rx="10" /><use href="#b-claudecode" x="663" y="152" width="20" height="20" /><text x="734" y="162">Claude Code</text></g>
-              <g class="d-pill d-pill--accent"><rect x="640" y="196" width="160" height="44" rx="10" /><use href="#b-codex" x="686" y="208" width="20" height="20" /><text x="734" y="218">Codex</text></g>
-              <text class="d-note" x="720" y="330" text-anchor="middle" data-i18n-svg="flow.runner.note1">无头，在项目目录里</text>
-              <text class="d-note" x="720" y="350" text-anchor="middle" data-i18n-svg="flow.runner.note2">长任务 · 可停</text>
-            </g>
-
-            <!-- column: model -->
-            <g class="d-col">
-              <rect x="880" y="60" width="280" height="320" rx="18" />
-              <text x="1020" y="100" text-anchor="middle" data-i18n-svg="flow.col.model">模型</text>
-              <g class="d-pill"><rect x="910" y="140" width="220" height="44" rx="10" /><use href="#b-claude" x="947" y="153" width="18" height="18" /><text class="d-start" x="971" y="162">Claude</text><text class="d-start" x="1027.8" y="162">·</text><use href="#b-openai" x="1045.6" y="153" width="18" height="18" /><text class="d-start" x="1069.6" y="162">GPT</text></g>
-              <g class="d-pill"><rect x="910" y="196" width="220" height="44" rx="10" /><use href="#b-zhipu" x="939.2" y="209" width="18" height="18" /><text class="d-start" x="963.2" y="218">GLM</text><text class="d-start" x="996.6" y="218">·</text><use href="#b-deepseek" x="1014.4" y="209" width="18" height="18" /><text class="d-start" x="1038.4" y="218">DeepSeek</text></g>
-              <g class="d-pill"><rect x="910" y="252" width="220" height="44" rx="10" /><use href="#b-minimax" x="939.2" y="265" width="18" height="18" /><text class="d-start" x="963.2" y="274">MiniMax</text><text class="d-start" x="1027.8" y="274">·</text><use href="#b-kimi" x="1045.6" y="265" width="18" height="18" /><text class="d-start" x="1069.6" y="274">Kimi</text></g>
-              <text class="d-note" x="1020" y="330" text-anchor="middle" data-i18n-svg="flow.model.note1">任何 Anthropic 兼容端点</text>
-              <text class="d-note" x="1020" y="350" text-anchor="middle" data-i18n-svg="flow.model.note2">你自己的订阅或 key</text>
-            </g>
-
-            <!-- forward arrows -->
-            <g stroke="url(#gline)" stroke-width="3" fill="none" marker-end="url(#arrow)" color="#e5b94d" class="d-arrow">
-              <path d="M240 218 C 265 218, 270 218, 290 218" />
-              <path d="M560 218 C 585 218, 590 218, 610 218" />
-              <path d="M830 218 C 855 218, 860 218, 880 218" />
-            </g>
-
-            <!-- side rails: console · project directory · design toolchain -->
-            <g stroke="#3a3a3a" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M425 380 V 406 H 300 V 430 M425 406 H 900 V 430 M600 406 V 430" />
-            </g>
-            <g class="d-pill d-pill--side">
-              <rect x="180" y="430" width="240" height="44" rx="10" /><text x="300" y="452" data-i18n-svg="flow.side.console">控制台 · 本地网页</text>
-              <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">项目目录 · 按群绑定</text>
-              <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">设计工具链</text>
-            </g>
-            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">沿用现有风格 · 图片 · 评审 · 预览</text>
-          </svg>
-          <figcaption data-i18n="flow.caption">从左到右：群 → 守护进程 → runner → 模型。虚线：进度与结果回流；控制台、每个群的项目目录、设计工具链挂在守护进程旁。</figcaption>
-        </figure>
-      </section>
-
-      <!-- Models -->
-      <section id="models" class="section section--models">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="models.kicker">03 · 模型</p>
-        <h2 class="section__h" data-reveal data-i18n-html="models.h">同一套 agent，<em>任意大脑。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="models.lede">Claude Code 接任何 Anthropic 兼容端点——GLM、DeepSeek、Kimi、MiniMax，或你自己部署的开源模型；Codex 则用机器上的 ChatGPT 登录态。守护进程一视同仁：换模型只是换下一轮启动时带的参数，项目记忆不变。</p>
-
-        <ul class="model-grid" data-reveal>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-claude"/></svg>Claude</b><i data-i18n="models.p.claude">本机登录态，不用配 key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-openai"/></svg>GPT</b><i data-i18n="models.p.gpt">走你的 Codex 订阅</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-zhipu"/></svg>GLM</b><i data-i18n="models.p.glm">你自己的 key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">你自己的 key，没订阅时推荐</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-minimax"/></svg>MiniMax</b><i data-i18n="models.p.minimax">你自己的 key</i></li>
-          <li class="model-tile"><b><svg class="brand model-logo" width="18" height="18" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">你自己的 key，自定义端点</i></li>
-        </ul>
-        <p class="models__note" data-reveal data-i18n="models.note">没有 Claude 订阅也没有 ChatGPT？推荐 DeepSeek，填一个 API key 就能跑；智谱 GLM、MiniMax 同样可以，Kimi 等可以在控制台自定义添加。</p>
-
-        <ol class="cards cards--models">
-          <li class="card" data-reveal>
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-left-right"/></svg><span class="card__no">01</span></div>
-            <h3 data-i18n="models.1.title">群里就能切</h3>
-            <p data-i18n-html="models.1.body"><code>/model</code> 列出可用，<code>/model</code> 加名字就切，群里谁都能切。切换会开新对话，项目记忆文件带过去。</p>
-            <ul class="card__chips"><li>/model</li><li data-i18n="models.1.c2">新对话</li><li data-i18n="models.1.c3">全员可切</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="60">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span class="card__no">02</span></div>
-            <h3 data-i18n="models.2.title">按群配置</h3>
-            <p data-i18n="models.2.body">每个群有自己的模型和 runner；provider 级设置可以叠加，闲聊走快模型、重活走慢模型。</p>
-            <ul class="card__chips"><li data-i18n="models.2.c1">按群</li><li data-i18n="models.2.c2">快慢分流</li><li data-i18n="models.2.c3">你的 key</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="120">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span class="card__no">03</span></div>
-            <h3 data-i18n="models.3.title">记忆比模型活得久</h3>
-            <p data-i18n-html="models.3.body">项目的 <code>CLAUDE.md</code>、<code>AGENTS.md</code> 和记忆目录，哪个 agent 启动都会拿到。纯文本模型也能用：图片换成占位文本。</p>
-            <ul class="card__chips"><li>CLAUDE.md</li><li>AGENTS.md</li><li data-i18n="models.3.c3">纯文本模型可用</li></ul>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Images and review -->
-      <section id="design" class="section section--dsn">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="dsn.kicker">04 · 图片与评审</p>
-        <h2 class="section__h" data-reveal data-i18n-html="dsn.h">做视觉迭代，<em>沿用项目自己的风格。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="dsn.lede">已有项目以当前界面和给定参考为准。风格预设始终是可选项；只有明确要求设计全新产品、且尚无视觉方向时，才会提及。</p>
-
-
-        <ol class="dsn-points">
-          <li class="dsn-lead" data-reveal>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-scan"/></svg>
-            <div>
-              <h3 data-i18n="dsn.0.title">从现有项目出发</h3>
-              <p data-i18n="dsn.0.body">处理已有产品时，agent 先看当前页面和你给的参考；改动聚焦在本次要求，并沿用周边已有的视觉规范。</p>
-              <ul class="card__chips"><li data-i18n="dsn.0.c1">优先沿用现有界面</li><li data-i18n="dsn.0.c2">按参考调整</li><li data-i18n="dsn.0.c3">只改本次要求</li></ul>
-            </div>
-          </li>
-          <li data-reveal data-reveal-delay="120">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-            <div>
-              <h3 data-i18n="dsn.2.title">交付前先核对</h3>
-              <p data-i18n="dsn.2.body">交付前对照本次要求和项目现有界面核对，再按三档宽度检查重叠、裁切、点击目标和对比度；结果写进交付说明。</p>
-              <ul class="card__chips"><li data-i18n="dsn.2.c1">项目一致性</li><li data-i18n="dsn.2.c2">渲染几何体检</li><li data-i18n="dsn.2.c3">响应式检查</li></ul>
-            </div>
-          </li>
-          <li data-reveal data-reveal-delay="180">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-image"/></svg>
-            <div>
-              <h3 data-i18n="dsn.3.title">生图不用 key</h3>
-              <p data-i18n="dsn.3.body">生图借机器上已登录的 Codex 订阅，不受群内模型影响。进度卡会更新到结果交付；也能修改原图、局部重绘或去掉背景。</p>
-              <ul class="card__chips"><li data-i18n="dsn.3.c1">原图上改</li><li data-i18n="dsn.3.c2">局部重绘</li><li data-i18n="dsn.3.c3">透明底</li></ul>
-            </div>
-          </li>
-          <li data-reveal data-reveal-delay="240">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-globe"/></svg>
-            <div>
-              <h3 data-i18n="dsn.4.title">原型直接在群里看</h3>
-              <p data-i18n="dsn.4.body">做好的原型起成局域网服务，端口按群固定；跨轮存活，闲置 30 分钟自动停，控制台里可见可停。</p>
-              <ul class="card__chips"><li data-i18n="dsn.4.c1">局域网预览</li><li data-i18n="dsn.4.c2">按群固定端口</li><li data-i18n="dsn.4.c3">闲置自动停</li></ul>
-            </div>
-          </li>
-        </ol>
-
-        <div class="dsn-board" data-reveal>
-          <div class="dsn-board__head">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-pen-tool"/></svg>
-            <h3 data-i18n="dsn.board.h">画板闭环</h3>
-            <span class="chip chip--lark"><span data-i18n="plat.lark">飞书</span> <span data-i18n="dsn.board.only">限定</span></span>
-          </div>
-          <p data-i18n="dsn.board.body">第一次要展示图时，自动建画板并挂成群标签页。画箭头、贴便签、写评论，然后在群里说一声「按标注改」；开了自动检测的话，群里会自己弹出卡片，点一下就开始改。新版本放在原图旁边，历史版本与标注全部保留，画板就是这份设计的演变档案。画板只放设计方案：要翻找的做成可搜索的网页发群，要挑一个的出带序号的对照图。</p>
-        </div>
-      </section>
-
-      <!-- Scenarios -->
-      <section id="scenarios" class="section section--scenarios">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="scenarios.kicker">05 · 场景</p>
-        <h2 class="section__h" data-reveal data-i18n-html="scenarios.h">六个群，<em>六种活。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="scenarios.lede">同一个守护进程，绑不同的项目：群里说一句，看着它干，拿走结果。</p>
-
-        <ol class="scenarios">
-          <li class="scenario" data-reveal>
-            <div class="scenario__tag"><span class="scenario__hash">#</span>bugs</div>
-            <h3 data-i18n="scenarios.1.title">报错贴进群，回来的是 PR。</h3>
-            <p class="scenario__scene" data-i18n-html="scenarios.1.scene">研发群里贴了一段 500 堆栈。</p>
-            <p class="scenario__act" data-i18n="scenarios.1.act">SintBot 读堆栈、在项目目录里定位原因、改掉、开 PR，把 diff 贴回线程。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.1.win"><i>为什么赢：</i>报错、修复、PR 在同一条线程里，终端前不用有人。</p>
-          </li>
-
-          <li class="scenario" data-reveal data-reveal-delay="60">
-            <div class="scenario__tag"><span class="scenario__hash">#</span>design</div>
-            <h3 data-i18n="scenarios.2.title">一句话，要一版首页。</h3>
-            <p class="scenario__scene" data-i18n="scenarios.2.scene">设计群里有人要落地页的第一版。</p>
-            <p class="scenario__act" data-i18n="scenarios.2.act">它先沿用项目已有的视觉方向。只有明确要设计全新产品、又没有方向时，才会先询问是否需要看风格选项。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.2.win"><i>为什么赢：</i>交付时一起收到预览与核对说明。</p>
-          </li>
-
-          <li class="scenario" data-reveal data-reveal-delay="120">
-            <div class="scenario__tag"><span class="scenario__hash">#</span>standup</div>
-            <h3 data-i18n="scenarios.3.title">每天 09:30，日报自己来。</h3>
-            <p class="scenario__scene" data-i18n="scenarios.3.scene">有人在群里一句话排了个定时任务。</p>
-            <p class="scenario__act" data-i18n="scenarios.3.act">到 09:30，任务像收到一条消息那样触发：SintBot 汇总 24 小时的提交，发到群里。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.3.win"><i>为什么赢：</i>人到不到，日报都在。</p>
-          </li>
-
-          <li class="scenario" data-reveal data-reveal-delay="180">
-            <div class="scenario__tag"><span class="scenario__hash">#</span>ship-room</div>
-            <h3 data-i18n="scenarios.4.title">项目做到一半，换个大脑。</h3>
-            <p class="scenario__scene" data-i18n-html="scenarios.4.scene">有人在群里敲了 <code>/model</code> 加一个名字。</p>
-            <p class="scenario__act" data-i18n="scenarios.4.act">同一个项目、同一批记忆文件，下一轮从 Claude 换成 GLM 接着干。成本自己定，按群定。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.4.win"><i>为什么赢：</i>一套 agent，多个大脑，不用重新配。</p>
-          </li>
-
-          <li class="scenario" data-reveal data-reveal-delay="240">
-            <div class="scenario__tag"><span class="scenario__hash">#</span>deploys</div>
-            <h3 data-i18n="scenarios.5.title">这个群只能看，那个群才能改。</h3>
-            <p class="scenario__scene" data-i18n="scenarios.5.scene">两个群绑了同一个项目。</p>
-            <p class="scenario__act" data-i18n="scenarios.5.act">只读群能看不能动；完全访问群才能改代码、部署。敏感值出群前先打码。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.5.win"><i>为什么赢：</i>权限挂在群上，不靠人记。</p>
-          </li>
-
-          <li class="scenario" data-reveal data-reveal-delay="300">
-            <div class="scenario__tag"><span class="scenario__hash">#</span>review</div>
-            <h3 data-i18n="scenarios.6.title">原型不出群就能评。</h3>
-            <p class="scenario__scene" data-i18n="scenarios.6.scene">页面做完了，团队想点开看看。</p>
-            <p class="scenario__act" data-i18n-html="scenarios.6.act">SintBot 起成局域网预览，链接发群；<code>/issue</code> 一句话提反馈，上一轮的技术指纹自动附上。</p>
-            <p class="scenario__win" data-i18n-html="scenarios.6.win"><i>为什么赢：</i>反馈带着上下文来，不是一张截图。</p>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Governance -->
-      <section id="governance" class="section section--gov">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="gov.kicker">06 · 治理</p>
-        <h2 class="section__h" data-reveal data-i18n-html="gov.h"><em>默认只读，</em>你说了才能动。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="gov.lede">三层权限，全部按群设、没有全局开关——没配置过的群，只能读。</p>
-
-        <ol class="gov-tiers" data-reveal>
-          <li class="gov-tier">
-            <span class="gov-tier__no">①</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-lock"/></svg>
-            <h3 data-i18n="gov.t1.title">执行模式</h3>
-            <p data-i18n="gov.t1.body">只读，或完全访问。没设就是只读。</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">②</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-            <h3 data-i18n="gov.t2.title">工具白名单 / 黑名单</h3>
-            <p data-i18n="gov.t2.body">三档预设：只读、开发、全信任；也可以自己列。</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">③</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-lock"/></svg>
-            <h3 data-i18n="gov.t3.title">目录围栏</h3>
-            <p data-i18n="gov.t3.body">文件工具只在本群绑定的项目目录里动，能绑的目录只限项目根目录之内，符号链接绕不出去。命令行没有沙箱；要系统级隔离，请用单独的系统用户或虚拟机跑。</p>
-          </li>
-        </ol>
-
-        <ol class="cards">
-          <li class="card" data-reveal>
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-eye-off"/></svg><span class="card__no">01</span></div>
-            <h3 data-i18n="gov.1.title">出站先脱敏</h3>
-            <p data-i18n="gov.1.body">消息到群之前先过 13 类模式：Bearer、JWT、API key 前缀、AWS、GitHub、PEM、键值对、邮箱、手机号。密钥永远遮，PII 按群开关。</p>
-            <ul class="card__chips"><li data-i18n="gov.1.c1">13 类模式</li><li data-i18n="gov.1.c2">密钥永远遮</li><li data-i18n="gov.1.c3">PII 按群</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="60">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-terminal"/></svg><span class="card__no">02</span></div>
-            <h3 data-i18n="gov.2.title">群里八条命令</h3>
-            <p data-i18n-html="gov.2.body"><code>/status</code> 报已跑时长、步数、最近动静、排队、会话；<code>/hud</code> 报额度。Claude 5 小时窗用过 90%、Codex 7 天窗用过 95%，群里会提醒。</p>
-            <ul class="card__chips"><li>/help</li><li>/model</li><li>/new</li><li>/stop</li><li>/skip</li><li>/status</li><li>/issue</li><li>/hud</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="120">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-notebook-pen"/></svg><span class="card__no">03</span></div>
-            <h3 data-i18n="gov.3.title">该安静时安静</h3>
-            <p data-i18n-html="gov.3.body">群一暂停就什么都不跑，定时任务也停。闲聊不回；消息撤回，那一轮就停。<code>/issue</code> 提反馈，自动附上一轮的技术指纹。</p>
-            <ul class="card__chips"><li data-i18n="gov.3.c1">群可暂停</li><li data-i18n="gov.3.c2">撤回即停</li><li data-i18n="gov.3.c3">反馈本</li></ul>
-          </li>
-        </ol>
-
-        <div class="dsn-board" data-reveal>
-          <div class="dsn-board__head">
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-key-round"/></svg>
-            <h3 data-i18n="gov.takeover.h">接管浏览器</h3>
-            <span class="chip chip--lark"><span data-i18n="plat.lark">飞书</span> <span data-i18n="dsn.board.only">限定</span></span>
-          </div>
-          <p data-i18n="gov.takeover.body">它用浏览器干活时撞上登录、验证码、滑块或扫码，会往群里发一张卡：卡住那一页的截图、为什么要你、一个按钮。点开就在手机或电脑上亲手操作那一页——点、拖、输入、两指缩放；登录态留在它那边，它接着干。链接只能打开一次、默认 10 分钟内有效、只通向那一页，卡片会翻成「接管中」「已结束」「已过期」。密码和验证码不用再往群里发。</p>
-        </div>
-      </section>
-
-      <!-- Console -->
-      <section id="console" class="section section--con">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="con.kicker">07 · 控制台</p>
-        <h2 class="section__h" data-reveal data-i18n-html="con.h">一个本地网页，<em>管所有群。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="con.lede">守护进程自己提供控制台——零依赖的单页网页，默认只在本机；要开出去，局域网靠密码，挂到你自己的 HTTPS 域名上则只放行名单里的管理员用飞书登录。</p>
-
-        <div class="con-wrap">
-          <div class="con" data-reveal aria-label="Console mock">
-            <div class="con__bar">
-              <span class="con__dots"><i></i><i></i><i></i></span>
-              <span class="con__brand">Sint<b>Bot</b></span>
-              <ul class="con__tabs">
-                <li class="is-active" data-i18n="con.tab.overview">概览</li>
-                <li data-i18n="con.tab.groups">群 · 项目</li>
-                <li data-i18n="con.tab.models">模型 · 库</li>
-                <li data-i18n="con.tab.settings">设置</li>
-              </ul>
-            </div>
-            <div class="con__body">
-              <ul class="con__groups">
-                <li class="is-active">
-                  <b>storefront</b>
-                  <span><span class="plat-mark plat-mark--lark plat-mark--xs"><svg class="brand" width="10" height="10" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">飞书</span></span> Claude</span>
-                </li>
-                <li>
-                  <b>ship-room</b>
-                  <span><span class="plat-mark plat-mark--slack plat-mark--xs"><svg class="brand" width="10" height="10" aria-hidden="true"><use href="#b-slack"/></svg>Slack</span> GLM</span>
-                </li>
-                <li>
-                  <b>design-review</b>
-                  <span><span class="plat-mark plat-mark--lark plat-mark--xs"><svg class="brand" width="10" height="10" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">飞书</span></span> Codex · GPT</span>
-                </li>
-                <li class="con__groups-more" data-i18n="con.groups.more">+ 新建群</li>
-              </ul>
-              <div class="con__card">
-                <div class="con__card-head">
-                  <b>storefront</b>
-                  <span class="con__path">~/work/storefront</span>
-                </div>
-                <dl class="con__fields">
-                  <div><dt data-i18n="con.f.perm">权限</dt><dd><span data-i18n="con.v.perm">完全访问 · 开发档</span></dd></div>
-                  <div><dt data-i18n="con.f.model">模型</dt><dd>Claude <span class="con__sub" data-i18n="con.v.model">Claude Code</span></dd></div>
-                  <div><dt data-i18n="con.f.preview">预览</dt><dd><span class="con__on" data-i18n="con.v.preview">运行中 · :4610</span></dd></div>
-                  <div><dt data-i18n="con.f.last">最近一轮</dt><dd data-i18n="con.v.last">signup 500 → PR #482 · 6 分 12 秒</dd></div>
-                </dl>
-                <div class="con__actions">
-                  <span class="con__btn" data-i18n="con.a.stop">停止</span>
-                  <span class="con__btn" data-i18n="con.a.new">新会话</span>
-                  <span class="con__btn con__btn--ghost" data-i18n="con.a.say">插话</span>
-                </div>
-                <div class="con__stream">
-                  <span class="con__stream-label" data-i18n="con.stream">实时活动</span>
-                  <span class="con__stream-line" data-i18n="con.stream.1">10:42 · 读取 src/auth/hash.js</span>
-                  <span class="con__stream-line" data-i18n="con.stream.2">10:43 · 跑测试 · 118 通过</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <ul class="con-points">
-            <li data-reveal>
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg>
-              <div><b data-i18n="con.p1.t">群与项目</b><p data-i18n="con.p1.b">建群、解散群，绑项目目录，关联仓库，暂停群；飞书 / Slack / 企业微信接入卡先预检。</p></div>
-            </li>
-            <li data-reveal data-reveal-delay="60">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg>
-              <div><b data-i18n="con.p2.t">模型与权限</b><p data-i18n="con.p2.b">按群：模型、执行模式、权限预设、PII 开关、MCP 插件。额度已用，Claude / Codex 登录验证。</p></div>
-            </li>
-            <li data-reveal data-reveal-delay="120">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-palette"/></svg>
-              <div><b data-i18n="con.p3.t">可选视觉工具</b><p data-i18n="con.p3.b">项目需要时再用风格指引和图标库；已有项目可沿用原有视觉方向。</p></div>
-            </li>
-            <li data-reveal data-reveal-delay="180">
-              <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-layout-dashboard"/></svg>
-              <div><b data-i18n="con.p4.t">运维</b><p data-i18n="con.p4.b">实时活动流、定时任务、运行中的预览、反馈本、版本历史；每群一键停止、新会话、插话。界面中英文可切。</p></div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Ops: built to run for weeks -->
-      <section id="ops" class="section section--ops">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="ops.kicker">08 · 长跑可靠</p>
-        <h2 class="section__h" data-reveal data-i18n-html="ops.h">为<em>连跑几周</em>而写。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="ops.lede">没人盯着的守护进程得自己照顾自己：轮次不挂死，队列不堆积，重启不丢活。</p>
-
-        <ol class="cards">
-          <li class="card" data-reveal>
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-heart-pulse"/></svg><span class="card__no">01</span></div>
-            <h3 data-i18n="ops.1.title">永不挂死</h3>
-            <p data-i18n="ops.1.body">每轮 30 分钟上限，全局同时两轮；25 秒没输出先回「已收到」，卡住 20 秒硬释放；40 万 token 自动压缩，看门狗自动重连。</p>
-            <ul class="card__chips"><li data-i18n="ops.1.c1">30 分钟上限</li><li data-i18n="ops.1.c2">看门狗</li><li data-i18n="ops.1.c3">自动压缩</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="60">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-layers"/></svg><span class="card__no">02</span></div>
-            <h3 data-i18n="ops.2.title">每群一条队列，出队合并</h3>
-            <p data-i18n-html="ops.2.body">每群一把锁、一条队列；跑着时来的消息，出队时合并成一轮。<code>/stop</code> 全停含排队，<code>/skip</code> 只跳当前。</p>
-            <ul class="card__chips"><li data-i18n="ops.2.c1">每群一把锁</li><li data-i18n="ops.2.c2">出队合并</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="120">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span class="card__no">03</span></div>
-            <h3 data-i18n="ops.3.title">重启补做，不丢活</h3>
-            <p data-i18n="ops.3.body">被发版或重启打断的那一轮，两小时内自动重做。常驻：macOS 用 launchd，Linux 用 systemd（实验性），Windows 给出 NSSM 或 pm2 的现成命令。</p>
-            <ul class="card__chips"><li data-i18n="ops.3.c1">2 小时内补做</li><li>launchd</li><li>NSSM</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="180">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-calendar-clock"/></svg><span class="card__no">04</span></div>
-            <h3 data-i18n="ops.4.title">一句话排定时任务</h3>
-            <p data-i18n="ops.4.body">cron、daily 别名，或直接写「每天 09:00」。到点可以像收到消息一样叫醒 agent，也可以只发提醒，或只跑一次。</p>
-            <ul class="card__chips"><li>cron</li><li data-i18n="ops.4.c2">中文简写</li><li data-i18n="ops.4.c3">一次性</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="240">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-bell"/></svg><span class="card__no">05</span></div>
-            <h3 data-i18n="ops.5.title">有事说人话</h3>
-            <p data-i18n="ops.5.body">升级后把新能力发到各个群。模型那边排不上队时说句人话，已经写出来的保住，过一会儿发一句「继续」就接着做；长会话自动压缩会告诉群，查得到额度就一并报上。</p>
-            <ul class="card__chips"><li data-i18n="ops.5.c1">升级播报</li><li data-i18n="ops.5.c2">出错说人话</li><li data-i18n="ops.5.c3">压缩提示</li></ul>
-          </li>
-          <li class="card" data-reveal data-reveal-delay="300">
-            <div class="card__head"><svg class="ico card__ico" width="20" height="20" aria-hidden="true"><use href="#i-route"/></svg><span class="card__no">06</span></div>
-            <h3 data-i18n="ops.6.title">依赖少，出网会分流</h3>
-            <p data-i18n="ops.6.body">Node 22 起，运行时依赖两个；Claude Code 另装，配置向导会代你装，Codex 可选。官方 Claude 走代理，国内端点直连，自动分流。</p>
-            <ul class="card__chips"><li>Node ≥ 22</li><li data-i18n="ops.6.c2">2 个运行时依赖</li><li data-i18n="ops.6.c3">代理自动分流</li></ul>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Setup: install the daemon from npm -->
-      <section id="plugin" class="section section--plugin">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">09 · 接入</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h"><em>免费</em>，几分钟跑起来。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede"><code>sintbot</code> 免费、源码公开，从 npm 安装。跑它的机器需要 Node 22 及以上和 <code>claude</code>（Claude Code）——没装的话配置向导会替你装；只有用 Claude 本身才需要登录。要开 GPT 群再加 <code>codex</code>。</p>
-        <div class="plugin__meta" data-reveal>
-          <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.0.16</span></span>
-          <span class="chip">PolyForm Shield</span>
-          <span class="chip" data-i18n="plat.trio">飞书 · Slack · 企业微信</span>
-          <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-        </div>
-        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">从 npm 到群里，四步。</h3>
-        <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">终端里装好 SintBot 并配置模型；接聊天平台、绑定群与项目、设置代理都在本地控制台完成。用 AI 助手安装和首次使用，按<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/AI-ASSISTED-INSTALL.md" target="_blank" rel="noopener">简明说明</a>操作。</p>
-        <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">macOS / 实验性 Linux 可一键安装。请在本机交互终端运行：无交互时可能自动安装或升级 Node，并跳过模型配置与后台服务。模型试跑可能消耗额度或产生费用，可先用 <code>--dry-run</code> 预览：</p>
-        <pre class="code plugin__quick-code" data-reveal><code><span class="tk-p">curl -fsSL</span> https://sintbot.com/install.sh | bash</code><button class="copy" data-copy="curl -fsSL https://sintbot.com/install.sh | bash" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-        <p class="plugin__steps-lede plugin__cn zh-only" data-reveal data-i18n-html="install.cn"><b>在中国大陆？</b>聊天平台用飞书；没有 Claude 订阅就用 DeepSeek，直连、不用代理；Codex 可以不装。用 Claude 或 ChatGPT 才要代理，在控制台「设置 → 机器人与网络」里填。</p>
-        <ol class="steps" id="install">
-          <li class="step" data-reveal>
-            <p class="step__no">01</p>
-            <h3 data-i18n="install.1.title">从 npm 安装</h3>
-            <pre class="code"><code><span class="tk-p">npm i -g</span> sintbot</code><button class="copy" data-copy="npm i -g sintbot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.1.after">装好后就有 <code>sintbot</code> 命令。第 2 步的向导发现没装 Claude Code 会直接装上；要用 Claude 本身，登录一次 <code>claude auth login</code>；DeepSeek、GLM 等用 key 的模型不用登录。</p>
-          </li>
-          <li class="step" data-reveal data-reveal-delay="80">
-            <p class="step__no">02</p>
-            <h3 data-i18n="install.2.title">配好模型</h3>
-            <pre class="code"><code><span class="tk-p">sintbot</span> setup</code><button class="copy" data-copy="sintbot setup" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.2.after">检查环境，看你登录了 Claude 还是 Codex；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。别的都不问。</p>
-          </li>
-          <li class="step" data-reveal data-reveal-delay="160">
-            <p class="step__no">03</p>
-            <h3 data-i18n="install.3.title">常驻运行</h3>
-            <pre class="code"><code><span class="tk-p">sintbot</span> service install</code><button class="copy" data-copy="sintbot service install" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="step__after" data-i18n-html="install.3.after">崩溃自动拉起、登录即启动（macOS 用 launchd；Linux 的 systemd 为实验性；Windows 上只打印设置命令）。本地控制台常开在 <code>http://127.0.0.1:4600</code>，还没接聊天平台也能打开。</p>
-          </li>
-          <li class="step" data-reveal data-reveal-delay="240">
-            <p class="step__no">04</p>
-            <h3 data-i18n="install.4.title">在控制台接聊天平台</h3>
-            <p class="step__after" data-i18n-html="install.4.after">在控制台「设置」里接：飞书建一个企业自建应用、事件订阅选长连接，或在 Slack 用仓库里的 manifest 建应用，或在企业微信建一个 API 模式、长连接的智能机器人——都不需要公网 IP。分步说明：<a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/feishu.md" target="_blank" rel="noopener">飞书</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/slack.md" target="_blank" rel="noopener">Slack</a> · <a href="https://github.com/sintlab/sintbot/blob/main/docs/zh-CN/platforms/wecom.md" target="_blank" rel="noopener">企业微信</a>。在「群 · 项目」里把群绑到项目目录，然后在群里 @ 机器人。</p>
-          </li>
-        </ol>
-        <div class="commands" data-reveal>
-          <h3 data-i18n="commands.h">常用命令</h3>
-          <ul>
-            <li><code>sintbot ui</code> — <span data-i18n="commands.ui">打开控制台</span></li>
-            <li><code>sintbot doctor</code> — <span data-i18n="commands.doctor">体检与诊断</span></li>
-            <li><code>sintbot service status | logs</code> — <span data-i18n="commands.service">服务在不在、在做什么</span></li>
-            <li><code>sintbot agent run "…"</code> — <span data-i18n="commands.trial">在终端里只读试跑一轮</span></li>
-            <li><code>/model</code> <code>/status</code> <code>/stop</code> <code>/new</code> — <span data-i18n="commands.chat">群里：换模型、看进度、叫停、开新会话（Slack 里用 ! 前缀）</span></li>
-          </ul>
-        </div>
-        <aside class="ccbot" data-reveal aria-labelledby="ccbot-h">
-          <div class="ccbot__main">
-            <p class="ccbot__kicker"><svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="ccbot.kicker">姊妹项目</span></p>
-            <h3 id="ccbot-h" data-i18n="ccbot.h">cc-bot：插件版</h3>
-            <p class="ccbot__body" data-i18n-html="ccbot.body">更想让它待在 Claude Code 里？cc-bot 是一个 Claude Code 插件：装进你自己的会话，群里的消息就交给这个会话处理。支持飞书与 Slack，MIT 许可。</p>
-            <ul class="ccbot__vs">
-              <li data-i18n-html="ccbot.vs.sintbot"><b>SintBot</b>独立守护进程：不用有人守着终端，每个群各有项目、模型和权限。</li>
-              <li data-i18n-html="ccbot.vs.ccbot"><b>cc-bot</b>插件：跑在你已经打开的 Claude Code 会话里，用的就是这个会话的模型。</li>
-            </ul>
-          </div>
-          <div class="ccbot__side">
-            <pre class="code"><code><span class="tk-p">/plugin</span> marketplace add WaterTian/cc-bot</code><button class="copy" data-copy="/plugin marketplace add WaterTian/cc-bot" aria-label="Copy command" data-i18n="copy">复制</button></pre>
-            <p class="ccbot__then" data-i18n-html="ccbot.then">然后在 Claude Code 里依次运行 <code>/plugin install cc-bot@cc-bot</code> 和 <code>/cc-bot:setup</code>。</p>
-            <a class="chip chip--link" href="https://github.com/WaterTian/cc-bot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/WaterTian/cc-bot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-          </div>
-        </aside>
-      </section>
-
-      <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
-      <section id="faq" class="section section--faq">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="faq.kicker">常见问题</p>
-        <h2 class="section__h" data-reveal data-i18n-html="faq.h">常被问到的，<em>直接回答。</em></h2>
-        <dl class="faq">
-          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">SintBot 是什么？</dt><dd data-i18n-html="faq.1.a">一个跑在你自己机器上的守护进程：把一个聊天群（飞书、Slack 或企业微信）绑定到一个项目。群里谁都能派活，它在这个项目里运行 Claude Code 或 Codex，把进度和结果发回群里。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">它和 cc-bot 有什么区别？</dt><dd data-i18n-html="faq.2.a">两者都免费；cc-bot 是 MIT 许可，SintBot 源码公开。cc-bot 是 Claude Code 插件，运行在你的交互会话里，用的就是该会话的模型。SintBot 是独立的守护进程：不需要有人守着终端，每个群有自己的项目、模型和权限，同时驱动 Claude Code 和 Codex，并自带本地控制台。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">支持哪些模型？</dt><dd data-i18n-html="faq.3.a">Claude 用本机的 Claude Code 登录，GPT 用你的 Codex 订阅登录；DeepSeek、GLM、MiniMax 用你自己的 key（没有订阅时推荐 DeepSeek）；Kimi 等任何兼容 Anthropic 接口的端点，包括你自己部署的开源模型，都可以作为自定义端点添加。每个群各选各的，群里任何人都能用 /model 切换。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">换模型会丢掉项目记忆吗？</dt><dd data-i18n-html="faq.4.a">不会。换模型会开一段新对话，但项目里的 CLAUDE.md、AGENTS.md 和记忆目录会交给接下来运行的 agent，约定和长期记忆都还在。长会话会自动压缩。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">代码和数据存在哪？</dt><dd data-i18n-html="faq.5.a">都在你自己的机器上：项目目录、会话、记忆和日志都留在本地。守护进程只和你配置的服务通信（聊天平台和模型端点），不会发给我们。消息发进群之前，密钥类内容会先被遮掉。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">需要服务器或公网 IP 吗？</dt><dd data-i18n-html="faq.6.a">不需要。它跑在一台常开的电脑上（Mac 是验证过的环境；Linux 为实验性支持，Windows 尚未验证），只向外连接：飞书用 WebSocket 长连接，Slack 用 Socket Mode，企业微信用长连接。控制台默认只在本机，除非你自己选择开放。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.7.q">默认情况下 agent 能做什么？</dt><dd data-i18n-html="faq.7.a">只能读。权限按群设置，没有全局开关：没配置过的群只能读取。你可以给某个群一档工具预设或完全访问。文件工具始终只在这个群绑定的项目目录里，但完全访问下，命令行能碰到你这个系统用户能碰到的一切。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.8.q">怎么获取 SintBot？</dt><dd data-i18n-html="faq.8.a">从 npm 安装：<code>npm i -g sintbot</code>，再跑 <code>sintbot setup</code>。免费、源码公开（PolyForm Shield 许可：自己用、团队或公司内部用、改了自己用都可以，不可以做成竞品），源码和文档在 <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">github.com/sintlab/sintbot</a>。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.9.q">必须有 Claude 订阅吗？</dt><dd data-i18n-html="faq.9.a">不需要。配置向导会先看这台机器登录了 Claude 还是 Codex（ChatGPT）；都没有就推荐 DeepSeek，粘贴 API key 当场试跑一轮。执行框架仍是 Claude Code，只是不用登录。没有 Claude 和 ChatGPT 时，用不了的只有 GPT 群和生图。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.10.q">在中国大陆能用吗？</dt><dd data-i18n-html="faq.10.a">能。聊天平台用飞书，模型用 DeepSeek（或智谱 GLM、MiniMax、Kimi 的中国站），都是直连、不用代理。只有用 Claude、ChatGPT 或 Slack 才需要代理。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.11.q">支持国际版 Lark 吗？</dt><dd data-i18n-html="faq.11.a">暂不支持。SintBot 连的是飞书（open.feishu.cn）；Lark（larksuite.com）是另一套开放平台，目前还不支持。</dd></div>
-        </dl>
-      </section>
-
-      <!-- CTA -->
-      <section class="section section--cta">
-        <div class="cta">
-          <h2 data-reveal data-i18n="cta.h">把项目放进群里。</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">看守护进程在飞书、Slack 或企业微信群里怎么干活，或者现在就装：<code>npm i -g sintbot</code>。</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="160">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="cta.see">看它怎么工作</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg><span data-i18n="cta.plugin">GitHub 上的源码</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div class="foot__row">
-        <div class="foot__brand">
-          <strong>SintBot</strong>
-          <span data-i18n="foot.tag">源码公开 · 自托管 · 飞书 · Slack · 企业微信</span>
-        </div>
-        <nav class="foot__nav" aria-label="footer">
-          <a href="#platforms" data-i18n="nav.platforms">平台</a>
-          <a href="#design" data-i18n="nav.design">视觉协作</a>
-          <a href="#plugin" data-i18n="nav.setup">接入</a>
-          <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-        </nav>
+    <header><div class="wrap nav">
+      <a class="brand" href="/">SintBot</a>
+      <nav class="navlinks" aria-label="Navigation"><a href="#scope" data-i18n="nav.scope">支持范围</a><a href="#faq" data-i18n="nav.faq">常见问题</a><a href="https://github.com/sintlab/sintbot" data-i18n="nav.docs">项目文档</a><a href="/zh/">中文</a><a href="/">English</a></nav>
+    </div></header>
+    <main>
+      <div class="wrap hero">
+        <span class="eyebrow" data-i18n="hero.eyebrow">SintBot 1.3.0 · 首版范围</span>
+        <h1 data-i18n="hero.title">飞书单群里的编码助手。</h1>
+        <p class="lede" data-i18n="hero.lede">在 Mac 上，SintBot 将一个飞书群连接到一个项目。群消息经内置核心启动 Codex 轮次，最终答复回到群里。</p>
+        <p class="pill" data-i18n="hero.pill">macOS · 一个飞书群 · Codex 消息路径</p>
       </div>
-      <p class="foot__legal">
-        <a href="https://sintlab.com" target="_blank" rel="noopener" data-i18n="foot.by">SintLab 出品</a>
-        <span aria-hidden="true">·</span>
-        <a href="mailto:support@sintbot.com">support@sintbot.com</a>
-        <span aria-hidden="true">·</span>
-        <a href="/privacy.html" data-i18n="foot.privacy">隐私政策</a>
-        <span aria-hidden="true">·</span>
-        <a href="/terms.html" data-i18n="foot.terms">服务条款</a>
-      </p>
-      <p class="foot__meta" data-i18n="foot.meta">与飞书、Slack、企业微信（腾讯）、Anthropic、OpenAI 及本站提到的其他模型厂商无任何隶属关系；标志归各自所有者，仅用于标明平台与模型。</p>
-    </footer>
-
-    <a href="#top" class="to-top">
-      <span class="visually-hidden" data-i18n="totop.label">返回顶部</span>
-      <span class="to-top__icon" aria-hidden="true">↑</span>
-    </a>
-
-    <script src="/app.js" defer></script>
+      <section id="scope"><div class="wrap">
+        <p class="eyebrow" data-i18n="scope.eyebrow">1.3.0 支持范围</p>
+        <h2 data-i18n="scope.title">先交付可用的核心路径。</h2>
+        <div class="grid">
+          <article class="card"><h3 data-i18n="scope.mac.title">支持 macOS</h3><p data-i18n="scope.mac.body">首版在 Mac 上验收；Linux 和 Windows 后续适配。</p></article>
+          <article class="card"><h3 data-i18n="scope.group.title">一个飞书群</h3><p data-i18n="scope.group.body">一个群绑定一个本机项目；首版内置核心暂不支持一个服务接多个群。</p></article>
+          <article class="card"><h3 data-i18n="scope.turn.title">Codex 消息轮次</h3><p data-i18n="scope.turn.body">在群里发任务，Codex 在绑定项目中工作并回复。建议先用只读权限，运行时保持前台终端开启。</p></article>
+        </div>
+      </div></section>
+      <section id="later"><div class="wrap">
+        <p class="eyebrow" data-i18n="later.eyebrow">后续迭代</p>
+        <h2 data-i18n="later.title">逐步扩展更多能力。</h2>
+        <p class="note" data-i18n="later.body">飞书画板、多群、Slack、企业微信、管理控制台、定时任务和终端聊天不在首版内置核心支持范围。正在使用这些能力的安装应保持当前版本，等待兼容的升级路径。</p>
+      </div></section>
+      <section id="install"><div class="wrap">
+        <h2 data-i18n="install.title">在 Mac 上安装 1.3.0。</h2>
+        <p class="lede" data-i18n="install.body">需要 Node.js 22 及以上，以及已安装并登录的本机 Codex。安装器保留已有全局安装和服务；不要用这个单群版本直接迁移多群安装。</p>
+        <pre style="overflow-x:auto;max-width:100%;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:12px"><code>curl -fsSL https://sintbot.com/install.sh -o /tmp/sintbot-install.sh
+bash /tmp/sintbot-install.sh --dry-run
+bash /tmp/sintbot-install.sh</code></pre>
+        <div class="cta"><a class="button primary" href="https://github.com/sintlab/sintbot/blob/v1.3.0/docs/zh-CN/install.md" data-i18n="install.guide">阅读 1.3.0 安装指南</a><a class="button" href="/install.sh" data-i18n="install.source">查看安装脚本</a></div>
+        <p class="note" data-i18n="license.body">按 PolyForm Shield 1.0.0 分发。安装包包含内置核心，许可及第三方声明随包提供。</p>
+      </div></section>
+      <section id="faq"><div class="wrap">
+        <p class="eyebrow" data-i18n="faq.eyebrow">常见问题</p>
+        <h2 data-i18n="faq.title">先把首版范围说清楚。</h2>
+        <div class="faq">
+          <article><h3 data-i18n="faq.1.q">SintBot 是什么？</h3><p data-i18n="faq.1.a">运行在自己机器上的项目群编码助手。1.3.0 首版内置核心路径支持 macOS 飞书单群中的 Codex 消息轮次。</p></article>
+          <article><h3 data-i18n="faq.2.q">现有多群安装能直接升级吗？</h3><p data-i18n="faq.2.a">暂不能直接切到这个受限路径。请保持当前服务，等待兼容的多群升级与恢复方案。</p></article>
+          <article><h3 data-i18n="faq.3.q">画板和其他聊天平台包含在首版吗？</h3><p data-i18n="faq.3.a">不包含。画板、Slack 和企业微信将在后续内置核心版本中完善。</p></article>
+          <article><h3 data-i18n="faq.4.q">哪里看安装说明？</h3><p data-i18n="faq.4.a">按本页 1.3.0 安装指南操作：安装器把程序放到独立目录，再配置一个群、初始化全新状态并在前台启动。</p></article>
+        </div>
+        <div class="cta"><a class="button primary" href="https://www.npmjs.com/package/sintbot" data-i18n="cta.package">查看安装包</a><a class="button" href="https://github.com/sintlab/sintbot" data-i18n="cta.project">项目仓库</a></div>
+      </div></section>
+    </main>
+    <footer><div class="wrap"><span data-i18n="foot.copy">SintBot 作者 WaterTian · SintLab 发布</span> · <a href="/terms.html" data-i18n="foot.terms">服务条款</a> · <a href="/privacy.html" data-i18n="foot.privacy">隐私政策</a></div></footer>
   </body>
 </html>

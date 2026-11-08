@@ -136,20 +136,16 @@ function head(html, lang) {
   const zh = lang === "zh";
   const pick = (k) => t[k][lang];
   const page = zh ? `${SITE}/zh/` : `${SITE}/`;
-  const banner = `${SITE}/assets/${zh ? "og-banner-zh.png" : "og-banner.png"}`;
   const meta = (attrName, key) => new RegExp(`(<meta\\s+${attrName}="${key}"\\s+content=")[^"]*(")`);
   html = setOnce(html, /(<html lang=")[^"]*(")/, zh ? "zh-CN" : "en", "<html lang>");
   html = setOnce(html, /(<title>)[^<]*(<\/title>)/, text(pick("meta.title")), "<title>");
   html = setOnce(html, meta("name", "description"), attr(pick("meta.description")), "meta description");
   html = setOnce(html, meta("property", "og:title"), attr(pick("meta.title")), "og:title");
   html = setOnce(html, meta("property", "og:description"), attr(pick("meta.description")), "og:description");
-  html = setOnce(html, meta("property", "og:image:alt"), attr(pick("meta.ogAlt")), "og:image:alt");
   html = setOnce(html, meta("name", "twitter:title"), attr(pick("meta.title")), "twitter:title");
   html = setOnce(html, meta("name", "twitter:description"), attr(pick("meta.description")), "twitter:description");
   html = setOnce(html, meta("property", "og:url"), page, "og:url");
   html = setOnce(html, meta("property", "og:locale"), zh ? "zh_CN" : "en_US", "og:locale");
-  html = setOnce(html, meta("property", "og:image"), banner, "og:image");
-  html = setOnce(html, meta("name", "twitter:image"), banner, "twitter:image");
   html = setOnce(html, /(<link rel="canonical" href=")[^"]*(")/, page, "canonical");
   const ld = html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g);
   if (!ld || ld.length !== 1) fail(`expected exactly one JSON-LD block in index.html, found ${ld ? ld.length : 0}`);
@@ -167,10 +163,10 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 ## Pages
 
-- [SintBot (English)](${SITE}/): what it does, platforms, models, design toolchain, governance, console, reliability
+- [SintBot (English)](${SITE}/): 1.3.0 macOS Feishu single-group scope, deferred capabilities and upgrade limits
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
-- [SintBot on GitHub](https://github.com/sintlab/sintbot): full source code and docs, publicly available to view and download (PolyForm Shield 1.0.0)
-- [sintbot on npm](https://www.npmjs.com/package/sintbot): install with \`npm i -g sintbot\`
+- [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
+- [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.3.0; use the isolated installer and versioned guide on the website
 - [WaterTian](https://github.com/WaterTian): the sole author of SintBot
 - [SintLab](https://sintlab.com/): the publisher and project studio for SintBot
 - [Terms of Service](${SITE}/terms.html): licensing and acceptable use
@@ -195,7 +191,7 @@ ${faq("zh")}
 const MARK = "<!-- GENERATED from /index.html by scripts/build-zh.mjs — edit index.html / app.js, then run the script -->";
 const src = readFileSync(join(root, "index.html"), "utf8");
 const en = renderBody(head(src, "en"), "en");
-const zh = renderBody(head(src, "zh"), "zh").replace("<head>", `<head>\n    ${MARK}`);
+const zh = renderBody(head(src, "zh"), "zh").replace("<head>", `<head>\n    ${MARK}`).replaceAll("/v1.3.0/docs/install.md", "/v1.3.0/docs/zh-CN/install.md");
 
 const targets = [["index.html", en], [join("zh", "index.html"), zh], ["llms.txt", llms()]];
 if (check) {
