@@ -9,3 +9,18 @@
 
 .guide-root{scroll-padding-top:0}.guide-article section{scroll-margin-top:var(--guide-offset,140px)}
 @media(max-width:360px){.guide-nav{font-size:11px;gap:6px}.guide-nav__links,.guide-nav nav{gap:8px}.guide-nav>a:first-child{font-size:15px;gap:5px}.guide-nav img{width:24px;height:24px}}
+
+/* Guide titles use the same Chinese rhythm, with a quieter reading scale. */
+html:lang(zh) .guide-article h1{font-size:clamp(34px,4.2vw,54px);line-height:1.3;letter-spacing:.01em;text-wrap:initial}
+html:lang(zh) .guide-article h2{font-size:28px;line-height:1.5;letter-spacing:0;text-wrap:balance}
+html:lang(zh) .guide-article h3{font-size:20px;line-height:1.5;letter-spacing:0}
+html:lang(zh) .guide-toc h2{font-size:12px;line-height:1.5}
+@media(max-width:700px){
+  html:lang(zh) .guide-article h1{font-size:36px;line-height:1.35}
+  html:lang(zh) .guide-article h2{font-size:24px;line-height:1.5}
+  html:lang(zh) .guide-article h3{font-size:18px;line-height:1.55}
+}
+@media(max-width:360px){
+  html:lang(zh) .guide-article h1{font-size:32px}
+  html:lang(zh) .guide-article h2{font-size:22px}
+}

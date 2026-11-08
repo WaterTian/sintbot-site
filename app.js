@@ -21,20 +21,20 @@
   "nav.usage": {en:"Usage",zh:"使用说明"},
   "install.usage": {en:"Read the usage guide",zh:"阅读使用说明"},
   "nav.features": {"en": "Features", "zh": "功能"},
-  "features.kicker": {"en": "MORE THAN A CHAT REPLY", "zh": "从对话，到完整的工作流程"},
-  "features.h": {"en": "Code, design and manage.<br><em>In the same project.</em>", "zh": "<span class=\"feature-phrase\">写代码、</span><span class=\"feature-phrase\">做设计、</span><span class=\"feature-phrase\">管项目。</span><br><em>都在同一套工作流里。</em>"},
+  "features.kicker": {"en": "MORE THAN A CHAT REPLY", "zh": "从对话到完整的工作流程"},
+  "features.h": {"en": "Code, design and manage.<br><em>In the same project.</em>", "zh": "<span class=\"zh-title-line\">代码、设计与项目管理</span><span class=\"zh-title-line\"><em>同一套工作流</em></span>"},
   "features.lede": {"en": "Connect the channels, tools and routines your team uses, with the project as the shared context.", "zh": "把团队的聊天平台、设计工具和日常任务接到一起，围绕同一个项目持续协作。"},
   "features.1.h": {"en": "Feishu, Slack and WeCom", "zh": "飞书、Slack、企业微信"},
   "features.1.p": {"en": "Connect project groups and channels with outbound long connections. Send files, share images and follow task progress where your team already talks.", "zh": "接入团队原来就在用的群和频道，通过长连接工作，免公网 IP。在对话里发图、传文件，查看任务进度与结果。"},
   "features.2.h": {"en": "Design, annotate and preview", "zh": "生图、标注、原型预览"},
   "features.2.p": {"en": "Work from your project’s visual style, generate or edit images, revise from Feishu whiteboard annotations and share interactive prototypes with the team.", "zh": "沿用项目现有风格，生成或修改图片；在飞书画板上标注、按评论迭代，保留设计版本，并把交互原型分享给团队预览。"},
-  "features.3.h": {"en": "One console for your projects", "zh": "一个控制台，管理所有群"},
+  "features.3.h": {"en": "One console for your projects", "zh": "一个控制台管理所有群"},
   "features.3.p": {"en": "Review group activity, running tasks and queues in one place. Configure models, permissions, plugins and previews for each project.", "zh": "集中查看各群忙闲、实时活动、运行任务和消息队列；按项目管理模型、权限、插件与预览，随时查看进度或停止任务。"},
   "features.4.h": {"en": "Schedule the routine work", "zh": "定时提醒与自动任务"},
   "features.4.p": {"en": "Schedule one-off or recurring reminders, agent tasks and scripts. Have checks and reports return to the project group at the right time.", "zh": "安排一次性或周期性的提醒、助手任务和脚本，让日常检查、数据汇总和报告按时回到项目群。"},
   "features.5.h": {"en": "Permissions for each group", "zh": "权限按群配置"},
   "features.5.p": {"en": "Choose read-only, developer or full-trust permissions and configure allowed tools. Mask secrets in outgoing messages and manage personal-data handling per group.", "zh": "按群选择只读、开发或全信任权限，配置允许使用的工具。消息发出前遮盖密钥，个人信息的处理方式按群设置。"},
-  "features.6.h": {"en": "Take over when sign-in needs you", "zh": "需要登录时，接管浏览器"},
+  "features.6.h": {"en": "Take over when sign-in needs you", "zh": "登录时接管浏览器"},
   "features.6.p": {"en": "When a browser task needs sign-in or verification, open its takeover card on your phone or computer. Complete the step yourself, then let the agent continue.", "zh": "浏览器任务遇到登录或验证时，群里会给出页面截图和接管入口。用手机或电脑完成操作后，助手沿用登录状态继续工作。"},
   "flow.ui.task": {"en": "Project group · example", "zh": "项目群 · 示例"},
   "flow.ui.ask": {"en": "Update the homepage. Keep the current look.", "zh": "调整首页，沿用现在的视觉风格。"},
@@ -79,7 +79,7 @@
   },
   "hero.titleEn": {
     "en": "Your coding agents.<br>Right in the group.",
-    "zh": "把编码助手，<br>接进项目群。"
+    "zh": "<span class=\"zh-title-line\">把编码助手</span><span class=\"zh-title-line\">接进项目群</span>"
   },
   "hero.lede": {
     "en": "Put Claude Code or Codex to work from your project group. Choose Claude, GPT, GLM, MiniMax or DeepSeek. Keep your files and project memory on your own machine.",
@@ -95,11 +95,11 @@
   },
   "what.kicker": {
     "en": "FROM THE GROUP TO THE PROJECT",
-    "zh": "从群聊，到项目"
+    "zh": "从群聊到项目"
   },
   "what.h": {
     "en": "A conversation.<br><em>Actual work.</em>",
-    "zh": "群里一句话，<br><em>项目往前走。</em>"
+    "zh": "<span class=\"zh-title-line\">群里一句话</span><span class=\"zh-title-line\"><em>项目往前走</em></span>"
   },
   "what.lede": {
     "en": "SintBot runs on your machine and joins the groups your team already uses. Each group is bound to one project: give it work, follow progress and review the result together.",
@@ -111,7 +111,7 @@
   },
   "plugin.h": {
     "en": "Your next project,<br><em>connected.</em>",
-    "zh": "把下一个项目，<br><em>接进群里。</em>"
+    "zh": "<span class=\"zh-title-line\">把下一个项目</span><span class=\"zh-title-line\"><em>接进群里</em></span>"
   },
   "plugin.lede": {
     "en": "Install SintBot on your Mac and connect a project to Feishu. Prepare Node.js 22 or later and an installed, signed-in <code>codex</code>, then follow the installation guide.",
@@ -123,7 +123,7 @@
   },
   "install.h": {
     "en": "From your Mac to the group, in four steps.",
-    "zh": "从你的 Mac 到群聊，分四步接入。"
+    "zh": "从 Mac 到项目群，四步接入"
   },
   "install.lede": {
     "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.3.0 installation guide</a> for the full configuration and exact startup commands.",
@@ -171,7 +171,7 @@
   },
   "faq.h": {
     "en": "Before you <em>get started.</em>",
-    "zh": "开始之前，<em>把这些说清楚。</em>"
+    "zh": "<span class=\"zh-title-line\">开始之前</span><span class=\"zh-title-line\"><em>把这些说清楚</em></span>"
   },
   "faq.1.q": {
     "en": "What is SintBot?",
@@ -215,7 +215,7 @@
   },
   "cta.h": {
     "en": "Bring the project to the conversation.",
-    "zh": "让项目，回到团队的对话里。"
+    "zh": "<span class=\"zh-title-line\">让项目回到</span><span class=\"zh-title-line\">团队的对话里</span>"
   },
   "cta.p": {
     "en": "Choose your coding agent. Keep your project close.",
@@ -267,7 +267,7 @@
   },
   "models.h": {
     "en": "A model for <em>your way of working.</em>",
-    "zh": "按你的工作方式，<em>选择模型。</em>"
+    "zh": "<span class=\"zh-title-line\">按你的工作方式</span><span class=\"zh-title-line\"><em>选择合适的模型</em></span>"
   },
   "models.lede": {
     "en": "Claude Code and Codex are the coding agents. Claude, GPT, GLM, MiniMax and DeepSeek are the models behind them. Choose the combination that fits your project.",
@@ -307,7 +307,7 @@
   },
   "models.2.title": {
     "en": "Configure each group for its work",
-    "zh": "按群配置，按任务选模型"
+    "zh": "按项目配置，按任务选择"
   },
   "models.2.body": {
     "en": "Each group has its own coding agent and model. Claude Code connects to Claude or compatible services such as GLM, MiniMax and DeepSeek; Codex uses its own account and model configuration.",
@@ -421,7 +421,7 @@
   },
   "demo.models.h": {
     "en": "Same project. A different model.",
-    "zh": "同一个项目，换一种模型。"
+    "zh": "同一个项目，切换不同模型"
   },
   "demo.models.p": {
     "en": "Choose the coding agent, then its model. Claude Code also connects to compatible third-party services.",
@@ -441,7 +441,7 @@
   },
   "demo.memory.h": {
     "en": "Leave the next agent a clear handoff.",
-    "zh": "换个助手，也能接着做。"
+    "zh": "换个助手，接着做"
   },
   "demo.memory.p": {
     "en": "Decisions live with the project, ready for whichever model you choose next.",
@@ -469,7 +469,7 @@
   },
   "demo.local.h": {
     "en": "The work happens in your project.",
-    "zh": "任务在你的项目里完成。"
+    "zh": "任务在你的项目里完成"
   },
   "demo.local.p": {
     "en": "Code, assets and saved notes stay on your machine. The selected model service handles model requests.",
@@ -489,7 +489,7 @@
   },
   "flow.1.h": {
     "en": "One group, one project",
-    "zh": "一群一项目，群里直接派活"
+    "zh": "一群一项目，直接派活"
   },
   "flow.1.p": {
     "en": "Bind a chat group to a project. Anyone on the team can describe a task, add context and ask the agent to read or change code, work on design or prepare a report.",
@@ -505,7 +505,7 @@
   },
   "flow.3.h": {
     "en": "Progress and results return to the group",
-    "zh": "进度和结果，回到群里"
+    "zh": "进度与结果回到群里"
   },
   "flow.3.p": {
     "en": "Follow progress in the group, then review the reply, images or files together. Continue the discussion and ask for changes where the work began.",

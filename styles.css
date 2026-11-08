@@ -107,3 +107,35 @@
 .showcase[data-scene-paused=true] .showcase__artifacts>span::before{animation-play-state:paused}
 
 .guide-entry{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:28px auto 0}
+
+/* Chinese editorial rhythm: semantic lines, natural tracking and strict punctuation.
+   Title lines live in translations so static HTML and language switching agree. */
+html:lang(zh){--zh-heading-leading:1.36}
+html:lang(zh) :is(h1,h2,h3,h4,.faq summary){word-break:normal;line-break:strict;overflow-wrap:normal;letter-spacing:0}
+html:lang(zh) .zh-title-line{display:block}
+html:lang(zh) .hero__title{font-size:clamp(44px,5.2vw,72px);line-height:1.22;letter-spacing:.01em;font-weight:600}
+html:lang(zh) .hero__title .zh-title-line + .zh-title-line{margin-top:.08em}
+html:lang(zh) .section__h{font-size:clamp(30px,3.3vw,44px);line-height:var(--zh-heading-leading);letter-spacing:.015em;max-width:100%;text-wrap:initial}
+html:lang(zh) .section__h .zh-title-line + .zh-title-line{margin-top:.06em}
+html:lang(zh) .section__kicker{font-size:12px;letter-spacing:.12em;line-height:1.65;margin-bottom:18px}
+html:lang(zh) :is(.flow-step,.card) h3{font-size:20px;line-height:1.5;font-weight:600;letter-spacing:0;text-wrap:balance}
+html:lang(zh) .step h3{font-size:18px;line-height:1.5;letter-spacing:0}
+html:lang(zh) .showcase__content h3{font-size:22px;line-height:1.5;letter-spacing:0;text-wrap:balance}
+html:lang(zh) .plugin__steps-h{font-size:24px;line-height:1.5;letter-spacing:0;text-wrap:balance}
+html:lang(zh) .cta h2{font-size:clamp(32px,3.6vw,48px);line-height:1.35;letter-spacing:.01em}
+html:lang(zh) .faq summary{font-size:17px;line-height:1.6}
+@media(max-width:767px){
+  html:lang(zh) :is(.flow-step,.card) h3{font-size:19px}
+  html:lang(zh) .section__h{font-size:32px}
+}
+@media(max-width:520px){
+  html:lang(zh) .hero__title{font-size:clamp(36px,10vw,48px);line-height:1.25;letter-spacing:.01em}
+  html:lang(zh) .section__h{font-size:clamp(25px,7vw,30px);line-height:1.4;letter-spacing:0}
+  html:lang(zh) .section__kicker{font-size:11px;letter-spacing:.1em;margin-bottom:14px}
+  html:lang(zh) :is(.flow-step,.card) h3{font-size:19px;line-height:1.5}
+  html:lang(zh) .step h3{font-size:17px}
+  html:lang(zh) .showcase__content h3{font-size:19px;line-height:1.45}
+  html:lang(zh) .plugin__steps-h{font-size:21px;line-height:1.5;max-width:15em}
+  html:lang(zh) .cta h2{font-size:32px;line-height:1.4}
+  html:lang(zh) .faq summary{font-size:16px;line-height:1.65}
+}
