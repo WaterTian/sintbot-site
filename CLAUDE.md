@@ -28,3 +28,7 @@ SintBot's sole author is WaterTian; SintLab is the publisher. Use the name SintB
 - Keep fonts non-blocking, with system Chinese fallbacks. Follow the reference interaction behavior with reduced-motion and no-JavaScript fallbacks.
 - Preserve CNAME, verification files and site metadata. Do not publish internal maintenance documents; keep `_config.yml` exclusions aligned.
 - Pushing main deploys publicly. Deploy only after the exact npm package and version tag are available. Check the automatic version-sync workflow so it cannot publish mismatched copy or installers; restore it after any release-specific pause only when the live site is verified.
+
+## Motion details and FAQ (2026-11-08 15:02–15:08)
+
+Reference Taste Skill's public frontend for word-mask hero entrance, native-scroll perspective on desktop and mobile, directional tab reveal, button press/arrow response and navigation background crossfade. Content remains visible without the animation layer. Keep reduced-motion support, rapid-tab cancellation, locale-safe title reconstruction and bounded entrance cleanup. Reused micro-interaction CSS retains the MIT notice and TASTE-SKILL-LICENSE.txt; GSAP keeps its own license. Do not reintroduce the removed license FAQ (user request 15:08); legal documents and third-party license files are retained.

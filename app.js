@@ -210,14 +210,6 @@
     "en": "A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu China application configured according to the linked installation guide.",
     "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。"
   },
-  "faq.6.q": {
-    "en": "How is SintBot licensed?",
-    "zh": "SintBot 使用什么许可证？"
-  },
-  "faq.6.a": {
-    "en": "SintBot is distributed under PolyForm Shield 1.0.0. The package includes its built-in core, the license and third-party notices. Model service access is configured separately.",
-    "zh": "SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。"
-  },
   "cta.h": {
     "en": "Bring the project to the conversation.",
     "zh": "让项目，回到团队的对话里。"
@@ -603,6 +595,7 @@
     });
 
     if (persist) { try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* ignore */ } }
+    document.dispatchEvent(new CustomEvent("sintbot:languagechange", { detail: { lang } }));
   }
 
   const initialLang = pickInitialLang();
@@ -624,45 +617,7 @@
     });
   });
 
-  // 1) Reveal on scroll ---------------------------------------------------
-  const revealEls = Array.from(document.querySelectorAll(".hero [data-reveal]"));
-  revealEls.forEach((el) => {
-    const delay = parseInt(el.getAttribute("data-reveal-delay") || "0", 10);
-    if (delay) el.style.transitionDelay = delay + "ms";
-  });
-
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach((el) => el.classList.add("is-in"));
-  } else {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-    );
-    revealEls.forEach((el) => io.observe(el));
-    document.documentElement.classList.add("reveal-ready");
-  }
-
-  // When the language toggles after initial load, the hero title's inner
-  // spans are re-rendered via innerHTML — re-apply reveal state so the new
-  // spans appear instead of staying invisible.
-  function refreshHeroReveal() {
-    document.querySelectorAll(".hero__title-en [data-reveal]").forEach((el) => {
-      const delay = parseInt(el.getAttribute("data-reveal-delay") || "0", 10);
-      if (delay) el.style.transitionDelay = delay + "ms";
-      requestAnimationFrame(() => el.classList.add("is-in"));
-    });
-  }
-  refreshHeroReveal();
-  document.querySelectorAll(".lang-toggle__btn").forEach((btn) => {
-    btn.addEventListener("click", () => requestAnimationFrame(refreshHeroReveal));
-  });
+  // Entrance animation is owned by motion.js; content is visible without it.
 
   // 3) Copy buttons -------------------------------------------------------
   document.querySelectorAll(".copy[data-copy]").forEach((btn) => {

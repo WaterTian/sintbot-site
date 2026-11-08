@@ -38,10 +38,6 @@ No. SintBot and the project run on your machine, but the chat platform and confi
 
 A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu China application configured according to the linked installation guide.
 
-### How is SintBot licensed?
-
-SintBot is distributed under PolyForm Shield 1.0.0. The package includes its built-in core, the license and third-party notices. Model service access is configured separately.
-
 ### Which models can SintBot use?
 
 Use Claude through Claude Code, GPT through Codex, or configure compatible endpoints and your own API keys in Claude Code for GLM, MiniMax and DeepSeek. Kimi and other compatible services can use custom endpoints.
@@ -75,10 +71,6 @@ SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自
 ### 安装需要准备什么？
 
 一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。
-
-### SintBot 使用什么许可证？
-
-SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。
 
 ### SintBot 可以使用哪些模型？
 
