@@ -8,7 +8,7 @@ SintBot connects project groups to local coding agents. Claude Code and Codex ar
 
 ## Palette and product-window refinement (2026-11-08 14:25–14:28)
 
-Keep the Taste Skill composition and interactions, with a restrained SintBot palette: graphite #13171c, copper #dd7d3d and paper #f6f5f1. Use the user-supplied dark app-card reference for the product window: charcoal surfaces, gray user bubble, unboxed assistant progress, fine separators and copper accents. Use the existing black-and-white symbol in assets/favicon.svg for SintBot branding; do not replace it with a letter S or the retired PCB logo. Provider logos and semantic status colors retain their meanings.
+Keep the Taste Skill composition and interactions, with a restrained SintBot palette: graphite #13171c, copper #dd7d3d and paper #f6f5f1. Use the user-supplied dark app-card reference for the product window: charcoal surfaces, gray user bubble, unboxed assistant progress, fine separators and copper accents. Use the exact user-supplied 14:42 image in assets/favicon-20261108.jpg (black disc, white symbol with gray outline) for favicon and SintBot branding; it supersedes the earlier favicon.svg; do not replace it with a letter S or the retired PCB logo. Provider logos and semantic status colors retain their meanings.
 
 ## Current release availability
 
