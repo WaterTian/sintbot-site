@@ -10,6 +10,10 @@ SintBot connects project groups to local coding agents. Claude Code and Codex ar
 
 Keep the Taste Skill composition and interactions, with a restrained SintBot palette: graphite #13171c, copper #dd7d3d and paper #f6f5f1. Use the user-supplied dark app-card reference for the product window: charcoal surfaces, gray user bubble, unboxed assistant progress, fine separators and copper accents. Use the exact user-supplied 14:42 image in assets/favicon-20261108.jpg (black disc, white symbol with gray outline) for favicon and SintBot branding; it supersedes the earlier favicon.svg; do not replace it with a letter S or the retired PCB logo. Provider logos and semantic status colors retain their meanings.
 
+## Workflow cards and copy (2026-11-08 14:48–14:49)
+
+The three workflow panels contain static HTML examples of a group task, agent/model routing and returned files. Never replace them with large icon-only empty plates. Body content stays visible without scroll animation; only hero items use reveal. Stack workflow cards below 768px. Feature copy follows the original 733913b positioning: one group per project, work on your own machine, progress/results in the group, per-group model choice and saved local project memory. Keep current release limitations distinct.
+
 ## Current release availability
 
 SintBot 1.3.0 adds a built-in core and supports macOS, one Feishu group and Codex message turns. Operation is foreground only. Other platforms, model routes, multiple groups, whiteboards, console and schedules are not part of this release. Existing installations using those features keep their current version until a compatible migration is available.

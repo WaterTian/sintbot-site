@@ -17,6 +17,15 @@
   const VERSION = "1.3.0";
 
   const translations = {
+  "flow.ui.task": {"en": "Project group · example", "zh": "项目群 · 示例"},
+  "flow.ui.ask": {"en": "Update the homepage. Keep the current look.", "zh": "调整首页，沿用现在的视觉风格。"},
+  "flow.ui.context": {"en": "Reference attached", "zh": "已附参考图"},
+  "flow.ui.received": {"en": "Working in this project", "zh": "正在项目中处理"},
+  "flow.ui.routes": {"en": "Agent → model", "zh": "执行器 → 模型"},
+  "flow.ui.result": {"en": "Back in the group · example", "zh": "回到群里 · 示例"},
+  "flow.ui.changed": {"en": "Homepage updated", "zh": "首页已更新"},
+  "flow.ui.checked": {"en": "Mobile layout checked", "zh": "手机布局已核对"},
+  "flow.ui.saved": {"en": "Project notes updated", "zh": "项目记录已更新"},
   "meta.title": {
     "en": "SintBot — one project group, your choice of model",
     "zh": "SintBot —— 一群一项目，模型随时换"
@@ -74,8 +83,8 @@
     "zh": "群里一句话，<br><em>项目往前走。</em>"
   },
   "what.lede": {
-    "en": "No need to move the whole team into a terminal. Give the task where you already talk, let the coding agent work and review the result together.",
-    "zh": "不用把整个团队搬进终端。在原来的群里安排任务，让编码助手执行，再一起查看结果。"
+    "en": "SintBot runs on your machine and joins the groups your team already uses. Each group is bound to one project: give it work, follow progress and review the result together.",
+    "zh": "SintBot 跑在你自己的机器上，进的是团队本来就在用的群。一群绑定一个项目，在群里派活、看进度，一起评审结果。"
   },
   "plugin.kicker": {
     "en": "GET STARTED",
@@ -298,28 +307,28 @@
     "zh": "这些路径属于 SintBot 已有的多模型工作方式。当前 1.3.0 内置核心下载包仅覆盖 Codex 路径；使用 Claude Code 与第三方模型的现有安装，请继续保留，等待兼容迁移。"
   },
   "models.1.title": {
-    "en": "Change the model, keep the project",
-    "zh": "换模型，不换项目"
+    "en": "Switch in the group",
+    "zh": "群里就能切"
   },
   "models.1.body": {
-    "en": "In a multi-model installation, switch the configured model for the next turn. The project files stay where they are.",
-    "zh": "在多模型版本中，为下一轮切换已配置的模型，项目文件继续保留在原处。"
+    "en": "In an existing multi-model installation, choose a configured model in the group for the next turn. Switching starts a fresh conversation; project files and saved memory remain.",
+    "zh": "已有多模型版本可在群里选择已配置的模型，让下一轮用它开工。切换会开启新对话，项目文件和已保存的记忆保留。"
   },
   "models.2.title": {
-    "en": "Use your own model service",
-    "zh": "使用自己的模型服务"
+    "en": "Configure each group for its work",
+    "zh": "按群配置，按任务选模型"
   },
   "models.2.body": {
-    "en": "Claude Code connects to Claude or an Anthropic-compatible endpoint. Codex uses its own account and model configuration.",
-    "zh": "Claude Code 连接 Claude 或兼容 Anthropic API 的端点，Codex 使用自己的账号和模型配置。"
+    "en": "Each group has its own coding agent and model. Claude Code connects to Claude or compatible services such as GLM, MiniMax and DeepSeek; Codex uses its own account and model configuration.",
+    "zh": "每个群有自己的执行器和模型。Claude Code 可连接 Claude、GLM、MiniMax、DeepSeek 等兼容服务；Codex 使用自己的账号和模型配置。"
   },
   "models.3.title": {
-    "en": "Keep decisions in shared notes",
-    "zh": "把决定留在项目里"
+    "en": "Memory outlives the model",
+    "zh": "记忆比模型活得久"
   },
   "models.3.body": {
-    "en": "Write conventions and handoffs in project notes. A fresh conversation can read them, without depending on the previous model’s private memory.",
-    "zh": "把约定和交接写进项目笔记，新对话可以继续读取，不依赖上一个模型的私有记忆。"
+    "en": "Keep project conventions, decisions and unfinished work in local shared files such as <code>CLAUDE.md</code> and <code>AGENTS.md</code>. After switching models, a fresh conversation can read those notes and continue.",
+    "zh": "把项目约定、决定和未完成事项写进 <code>CLAUDE.md</code>、<code>AGENTS.md</code> 等共享文件，留在本地。换模型后，新对话可以读取这些记录继续工作。"
   },
   "faq.7.q": {
     "en": "Which models can SintBot use?",
@@ -490,28 +499,28 @@
     "zh": "示例展示 SintBot 的产品工作方式，当前下载版本的支持范围见安装说明。"
   },
   "flow.1.h": {
-    "en": "Give the task",
-    "zh": "在群里安排"
+    "en": "One group, one project",
+    "zh": "一群一项目，群里直接派活"
   },
   "flow.1.p": {
-    "en": "Bind the group to a project. Describe the change, add context and keep the conversation together.",
-    "zh": "把群绑定到项目，说清要做的事、补充上下文，让讨论集中在一起。"
+    "en": "Bind a chat group to a project. Anyone on the team can describe a task, add context and ask the agent to read or change code, work on design or prepare a report.",
+    "zh": "一个聊天群绑定一个项目，团队成员在群里说需求、补充上下文，让助手读代码、改代码、做设计、出报告。"
   },
   "flow.2.h": {
-    "en": "Choose the agent",
-    "zh": "选择执行器与模型"
+    "en": "Work on your own machine",
+    "zh": "在自己的机器上执行"
   },
   "flow.2.p": {
-    "en": "Claude Code or Codex works inside the project with the model and permissions you configure.",
-    "zh": "Claude Code 或 Codex 按你配置的模型与权限，在项目中执行。"
+    "en": "Each turn goes to Claude Code or Codex, working in the bound project directory with the model, tools and permissions you configure.",
+    "zh": "每一轮交给 Claude Code 或 Codex，在绑定的项目目录里工作，使用你配置的模型、工具与权限。"
   },
   "flow.3.h": {
-    "en": "Review the result",
-    "zh": "查看结果，继续迭代"
+    "en": "Progress and results return to the group",
+    "zh": "进度和结果，回到群里"
   },
   "flow.3.p": {
-    "en": "Progress and results return to the group. Keep decisions in project notes for the next turn.",
-    "zh": "进展与结果回到群里。把决定写进项目笔记，让下一轮继续接手。"
+    "en": "Follow progress in the group, then review the reply, images or files together. Continue the discussion and ask for changes where the work began.",
+    "zh": "执行时在群里更新进度，完成后交付回复、图片或文件；团队围绕结果继续讨论和修改。"
   }
   };
 
@@ -624,7 +633,7 @@
   });
 
   // 1) Reveal on scroll ---------------------------------------------------
-  const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+  const revealEls = Array.from(document.querySelectorAll(".hero [data-reveal]"));
   revealEls.forEach((el) => {
     const delay = parseInt(el.getAttribute("data-reveal-delay") || "0", 10);
     if (delay) el.style.transitionDelay = delay + "ms";
