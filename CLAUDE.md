@@ -24,7 +24,7 @@ SintBot's sole author is WaterTian; SintLab is the publisher. Use the name SintB
 
 - Keep English and Chinese copy in `app.js` translations. Generate `index.html`, `zh/index.html` and `llms.txt` with `node scripts/build-zh.mjs`.
 - Run `node scripts/build-zh.mjs --check`, `node scripts/check-lastmod.mjs` and `node --check app.js`; review desktop and mobile pages.
-- Copy `install.sh` unchanged from the audited product release. Do not advertise setup, service or multi-group commands that the release does not support.
+- Keep `install.sh` identical to the audited installer in the product repository. The 2026-11-08 16:04 user instruction replaces the initial release installer with the simplified fresh-user flow. Do not advertise setup, service or multi-group commands that the release does not support.
 - Keep fonts non-blocking, with system Chinese fallbacks. Follow the reference interaction behavior with reduced-motion and no-JavaScript fallbacks.
 - Preserve CNAME, verification files and site metadata. Do not publish internal maintenance documents; keep `_config.yml` exclusions aligned.
 - Pushing main deploys publicly. Deploy only after the exact npm package and version tag are available. Check the automatic version-sync workflow so it cannot publish mismatched copy or installers; restore it after any release-specific pause only when the live site is verified.
@@ -46,3 +46,8 @@ Chinese headings use semantic `.zh-title-line` spans in the homepage translation
 ## English headings and showcase labels (2026-11-08 15:51)
 
 Use concise, concrete English headings without decorative terminal periods. Keep model choice distinct from saved project notes; avoid implying that switching preserves the full conversation. English guide section headings use balanced wrapping and stay aligned with their table-of-contents entries. Showcase tabs are compact nouns (Tasks, Models, Memory, Local work); retain full readable labels in their own 44px hit areas, never overlapping, clipped or ellipsized. The mobile four-column layout must be checked at 320px in both languages with every active indicator position. Use `?lang=en` for English screenshots after language-switch testing, since a saved language preference can change the root URL to Chinese.
+
+
+## One-line installation (2026-11-08 15:59–16:04)
+
+The user explicitly dropped old-version compatibility from the public installation flow. The primary command is `curl -fsSL https://sintbot.com/install.sh | bash`. The installer checks macOS/Node/npm, installs pinned 1.3.0 under `~/.local/share/sintbot` without sudo, and verifies the executable and core. Its whole function is parsed before execution, and it never changes runtime configuration/state or starts a service. Preview and manual version checks are optional; the first initialization/preflight/start sequence is one copy block with failure short-circuiting. Keep both languages, public README/install docs, executable paths and copy payloads consistent. This updates the downloadable installer and docs, not the immutable npm package/tag.

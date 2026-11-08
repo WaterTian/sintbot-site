@@ -243,12 +243,10 @@
           <a class="chip chip--link" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>github.com/sintlab/sintbot <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <div class="guide-entry"><a class="btn btn--primary" href="/zh/guide/install/" data-guide="install" data-i18n="nav.install">安装指南</a><a class="btn btn--ghost" href="/zh/guide/usage/" data-guide="usage" data-i18n="install.usage">阅读使用说明</a></div>
-        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">从 Mac 到项目群，四步接入</h3>
+        <h3 class="plugin__steps-h" data-reveal data-i18n="install.h">一行安装，再连接项目群</h3>
         <p class="plugin__steps-lede" data-reveal data-i18n-html="install.lede">完整配置和准确的启动步骤见 <a class="install-guide" href="/zh/guide/install/">1.3.0 安装指南</a>。</p>
-        <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">先下载安装脚本，用 <code>--dry-run</code> 预览操作，再运行同一文件。程序安装到独立版本目录。</p>
-        <pre class="code plugin__quick-code" data-reveal><code>curl -fsSL https://sintbot.com/install.sh -o /tmp/sintbot-install.sh
-bash /tmp/sintbot-install.sh --dry-run
-bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy="curl -fsSL https://sintbot.com/install.sh -o /tmp/sintbot-install.sh&#10;bash /tmp/sintbot-install.sh --dry-run&#10;bash /tmp/sintbot-install.sh" aria-label="Copy commands" data-i18n="copy">复制</button></pre><p class="copy-status" role="status" aria-live="polite"></p>
+        <p class="plugin__steps-lede plugin__quick" data-reveal data-i18n-html="install.quick">复制一条命令即可安装。安装器自动检查环境、安装程序并验证结果。</p>
+        <pre class="code plugin__quick-code" data-reveal><code>curl -fsSL https://sintbot.com/install.sh | bash</code><button type="button" class="copy" data-copy="curl -fsSL https://sintbot.com/install.sh | bash" aria-label="Copy commands" data-i18n="copy">复制</button></pre><p class="copy-status" role="status" aria-live="polite"></p>
         <ol class="steps" id="install">
           <li class="step" data-reveal>
             <p class="step__no">01</p>
@@ -260,7 +258,7 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
             <p class="step__no">02</p>
             <h3 data-i18n="install.2.title">独立安装</h3>
 
-            <p class="step__after" data-i18n-html="install.2.after">运行上方命令；已有全局包、配置和服务保持不变。</p>
+            <p class="step__after" data-i18n-html="install.2.after">复制上方命令，在终端执行；安装器自动验证程序包。</p>
           </li>
           <li class="step" data-reveal data-reveal-delay="160">
             <p class="step__no">03</p>
@@ -271,7 +269,7 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
           <li class="step" data-reveal data-reveal-delay="240">
             <p class="step__no">04</p>
             <h3 data-i18n="install.4.title">启动并验证消息</h3>
-            <p class="step__after" data-i18n-html="install.4.after">仅新安装初始化全新状态，然后在前台启动。保持终端开启，验证一条只读答复。</p>
+            <p class="step__after" data-i18n-html="install.4.after">全新安装按指南复制一组首次启动命令，保持终端开启，再验证一条只读答复。</p>
           </li>
         </ol>
       </section><section id="faq" class="section section--faq"><div class="section__intro"><div><p class="section__kicker" data-i18n="faq.kicker">你可能想知道</p><h2 class="section__h" data-i18n-html="faq.h"><span class="zh-title-line">开始之前</span><span class="zh-title-line"><em>把这些说清楚</em></span></h2></div></div><div class="faq"><details class="faq__item" open><summary><span data-i18n="faq.7.q">SintBot 可以使用哪些模型？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.7.a">通过 Claude Code 使用 Claude，通过 Codex 使用 GPT；也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。</div></details><details class="faq__item"><summary><span data-i18n="faq.8.q">换模型之后，什么会保留？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.8.a">项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和待办写进项目，下一位助手即可读取记录，接着推进。</div></details><details class="faq__item"><summary><span data-i18n="faq.1.q">SintBot 是什么？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.1.a">把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。在群里派活，按任务选择执行器与模型，让代码、素材和已保存的项目记忆留在同一个项目里。</div></details><details class="faq__item"><summary><span data-i18n="faq.2.q">可以接入哪些聊天平台？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.2.a">SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自己的项目，任务进度和结果回到原来的对话里。</div></details><details class="faq__item"><summary><span data-i18n="faq.3.q">多个项目如何管理？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.3.a">每个群绑定独立的项目目录，配置自己的执行器、模型和权限。在控制台查看各群状态、正在执行的任务、消息队列和定时安排。</div></details><details class="faq__item"><summary><span data-i18n="faq.4.q">全部处理都在离线环境完成吗？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.4.a">不是。SintBot 和项目在本机运行，聊天平台及配置的模型服务仍需联网。模型请求遵循所选执行器的配置及服务商的数据政策。</div></details><details class="faq__item"><summary><span data-i18n="faq.5.q">安装需要准备什么？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.5.a">一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。</div></details></div></section><section class="section section--cta"><div class="cta"><h2 data-i18n-html="cta.h"><span class="zh-title-line">让项目回到</span><span class="zh-title-line">团队的对话里</span></h2><p data-i18n="cta.p">选好编码助手，带着项目一起往前走。</p><a class="btn btn--primary" href="#plugin"><span data-i18n="hero.cta.install">安装 SintBot</span><svg class="ico btn__arrow" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div></section></main>

@@ -122,16 +122,16 @@
     "zh": "npm · sintbot v1.3.0"
   },
   "install.h": {
-    "en": "Connect your Mac in four steps",
-    "zh": "从 Mac 到项目群，四步接入"
+    "en": "Install once, then connect your group",
+    "zh": "一行安装，再连接项目群"
   },
   "install.lede": {
     "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.3.0 installation guide</a> for the full configuration and exact startup commands.",
     "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.3.0 安装指南</a>。"
   },
   "install.quick": {
-    "en": "Download the installer, preview its actions with <code>--dry-run</code>, then run the same file. It installs into a separate release directory.",
-    "zh": "先下载安装脚本，用 <code>--dry-run</code> 预览操作，再运行同一文件。程序安装到独立版本目录。"
+    "en": "Install with one command. The installer checks your environment, installs SintBot and verifies the result.",
+    "zh": "复制一条命令即可安装。安装器自动检查环境、安装程序并验证结果。"
   },
   "install.1.title": {
     "en": "Prepare your Mac",
@@ -146,8 +146,8 @@
     "zh": "独立安装"
   },
   "install.2.after": {
-    "en": "Run the commands above. Existing global packages, configuration and services are left untouched.",
-    "zh": "运行上方命令；已有全局包、配置和服务保持不变。"
+    "en": "Copy the command above and run it in Terminal. The installer verifies the package automatically.",
+    "zh": "复制上方命令，在终端执行；安装器自动验证程序包。"
   },
   "install.3.title": {
     "en": "Link a group",
@@ -162,8 +162,8 @@
     "zh": "启动并验证消息"
   },
   "install.4.after": {
-    "en": "Initialize fresh state only for a new installation, then start in the foreground. Keep the terminal open and verify a read-only reply.",
-    "zh": "仅新安装初始化全新状态，然后在前台启动。保持终端开启，验证一条只读答复。"
+    "en": "For a new installation, copy the combined first-start commands from the guide. Keep the terminal open and verify one read-only reply.",
+    "zh": "全新安装按指南复制一组首次启动命令，保持终端开启，再验证一条只读答复。"
   },
   "faq.kicker": {
     "en": "A FEW GOOD QUESTIONS",
