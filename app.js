@@ -1,5 +1,5 @@
 // sintbot.com — vanilla JS for reveal-on-scroll, copy buttons,
-// soft cursor glow, per-element reveal delays, and EN/zh-CN i18n.
+// per-element reveal delays and EN/zh-CN i18n.
 (function () {
   "use strict";
 
@@ -12,34 +12,30 @@
 
   // sintbot version — single source of truth for the version shown in the setup
   // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
-  // scripts/check-version.mjs (daily workflow) fails when they drift apart.
+  // keep this aligned with the versioned installation guide.
   // Bump this one line only, then run scripts/build-zh.mjs.
   const VERSION = "1.3.0";
 
   const translations = {
   "meta.title": {
-    "en": "SintBot — a coding assistant in your Feishu group",
-    "zh": "SintBot —— 一群一项目，在自己的 Mac 上工作"
+    "en": "SintBot — one project group, your choice of model",
+    "zh": "SintBot —— 一群一项目，模型随时换"
   },
   "meta.description": {
-    "en": "Bind one Feishu group to a project on your Mac. SintBot 1.3.0 runs Codex tasks through its built-in core and brings the answer back to the group.",
-    "zh": "一个飞书群绑定一个 Mac 上的项目，SintBot 1.3.0 通过内置核心运行 Codex 任务，把答复带回群聊。"
+    "en": "Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine.",
+    "zh": "把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
   },
   "meta.ogAlt": {
-    "en": "SintBot 1.3.0 — macOS, Feishu and Codex",
-    "zh": "SintBot 1.3.0 —— macOS、飞书与 Codex"
+    "en": "SintBot — one project group, switch models, keep project memory",
+    "zh": "SintBot —— 一群一项目，模型随时换，项目记忆延续"
   },
   "nav.platforms": {
-    "en": "Capabilities",
-    "zh": "当前能力"
+    "en": "How it works",
+    "zh": "工作方式"
   },
   "nav.models": {
-    "en": "Workflow",
-    "zh": "工作流程"
-  },
-  "nav.design": {
-    "en": "Permissions",
-    "zh": "权限"
+    "en": "Models",
+    "zh": "模型"
   },
   "nav.console": {
     "en": "FAQ",
@@ -50,452 +46,48 @@
     "zh": "安装"
   },
   "hero.eyebrow": {
-    "en": "Built-in core · macOS · one Feishu group · Codex",
-    "zh": "内置核心 · macOS · 飞书单群 · Codex"
+    "en": "One project group. Your choice of model.",
+    "zh": "一群一项目，模型由你选择"
   },
   "hero.titleEn": {
-    "en": "<span data-reveal data-reveal-delay=\"0\">Say it in the group.</span>\n           <em data-reveal data-reveal-delay=\"120\">Your project gets to work.</em>\n           <span data-reveal data-reveal-delay=\"240\">On your own Mac.</span>",
-    "zh": "<span class=\"zh-row\" data-reveal data-reveal-delay=\"0\"><span class=\"zh-big\">一群一项目</span><span class=\"visually-hidden\">，</span><span class=\"zh-note\"><span>一句话</span><span>就开工</span></span></span>\n           <span class=\"zh-row\" data-reveal data-reveal-delay=\"120\"><span class=\"zh-big\">任务本机做</span><span class=\"visually-hidden\">，</span><span class=\"zh-note\"><span>答复</span><span>回群</span></span></span>\n           <span class=\"zh-tail\" data-reveal data-reveal-delay=\"240\">在你自己的 Mac 上，由 Codex 处理</span>"
+    "en": "Your coding agents.<br>Right in the group.",
+    "zh": "把编码助手，<br>接进项目群。"
   },
   "hero.lede": {
-    "en": "Bind a chat group to a project. Send a task in Feishu; <code>SintBot</code> runs Codex inside the project on your Mac and brings the answer back to the conversation. Version 1.3.0 includes the built-in core for one group, with foreground operation.",
-    "zh": "一个聊天群绑定一个项目。在飞书群里发任务，<code>SintBot</code> 让 Codex 在你 Mac 上的项目里处理，再把答复带回群聊。1.3.0 内置核心支持单群，使用时保持前台运行。"
+    "en": "Put Claude Code or Codex to work from your project group. Choose Claude, GPT, GLM, MiniMax or DeepSeek. Keep your files and project memory on your own machine.",
+    "zh": "在项目群里，让 Claude Code 或 Codex 开工。Claude、GPT、GLM、MiniMax、DeepSeek，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
   },
   "hero.cta.primary": {
-    "en": "See how it works",
-    "zh": "看它怎么工作"
-  },
-  "hero.cta.plugin": {
-    "en": "Project on GitHub",
-    "zh": "GitHub 项目"
-  },
-  "plat.lark": {
-    "en": "Feishu",
-    "zh": "飞书"
+    "en": "Explore the workflow",
+    "zh": "看看它怎么工作"
   },
   "plat.trio": {
     "en": "macOS · Feishu · Codex",
     "zh": "macOS · 飞书 · Codex"
   },
-  "mock.lark.title": {
-    "en": "Project group",
-    "zh": "项目群"
-  },
-  "mock.lark.kind": {
-    "en": "example conversation",
-    "zh": "示例对话"
-  },
-  "mock.lark.user": {
-    "en": "You",
-    "zh": "你"
-  },
-  "mock.lark.ask": {
-    "en": "read the README and explain this project; do not change files",
-    "zh": "读一下 README，告诉我项目是做什么的，先不要修改文件"
-  },
-  "mock.lark.state": {
-    "en": "Example answer",
-    "zh": "示例答复"
-  },
-  "mock.lark.l1": {
-    "en": "Read README.md in the bound project",
-    "zh": "读取绑定项目的 README.md"
-  },
-  "mock.lark.l2": {
-    "en": "Summarize the project and its setup",
-    "zh": "整理项目用途与启动步骤"
-  },
-  "mock.lark.l3": {
-    "en": "No files changed",
-    "zh": "未修改文件"
-  },
-  "mock.lark.b1": {
-    "en": "README.md",
-    "zh": "README.md"
-  },
-  "mock.lark.b2": {
-    "en": "Read-only example",
-    "zh": "只读示例"
-  },
-  "mock.eq": {
-    "en": "one project",
-    "zh": "同一个项目"
-  },
-  "mock.slack.working": {
-    "en": "example",
-    "zh": "示例"
-  },
-  "mock.slack.user": {
-    "en": "Local project",
-    "zh": "本机项目"
-  },
-  "mock.slack.ask": {
-    "en": "The same task reaches Codex on your Mac.",
-    "zh": "同一条任务，交给 Mac 上的 Codex。"
-  },
-  "mock.slack.ack": {
-    "en": "Working in the bound project",
-    "zh": "在绑定的项目里处理"
-  },
-  "mock.slack.thread": {
-    "en": "Example · local execution",
-    "zh": "示例 · 本机执行"
-  },
-  "mock.slack.progress": {
-    "en": "Reading README.md",
-    "zh": "读取 README.md"
-  },
-  "mock.slack.final": {
-    "en": "The README describes a small web app, its files and local startup steps.",
-    "zh": "README 描述了一个小型网页应用、文件结构和本地启动步骤。"
-  },
-  "mock.slack.b1": {
-    "en": "Your Mac",
-    "zh": "你的 Mac"
-  },
-  "mock.slack.b2": {
-    "en": "Codex",
-    "zh": "Codex"
-  },
   "what.kicker": {
-    "en": "What it is",
-    "zh": "它是什么"
+    "en": "FROM THE GROUP TO THE PROJECT",
+    "zh": "从群聊，到项目"
   },
   "what.h": {
-    "en": "Your project, <em>in the group.</em>",
-    "zh": "你的项目，<em>接进群聊。</em>"
+    "en": "A conversation.<br><em>Actual work.</em>",
+    "zh": "群里一句话，<br><em>项目往前走。</em>"
   },
   "what.lede": {
-    "en": "SintBot runs on your Mac and connects one Feishu group to one local project. A task in the group becomes a Codex turn in that project.",
-    "zh": "SintBot 在你的 Mac 上运行，把一个飞书群连接到一个本机项目。群里发出的任务，成为这个项目里的 Codex 轮次。"
-  },
-  "what.bot.title": {
-    "en": "A coding assistant for your project group",
-    "zh": "项目群里的编码助手"
-  },
-  "what.bot.body": {
-    "en": "<code>sintbot</code> connects the conversation to the working directory. The 1.3.0 package includes a built-in core and is distributed under PolyForm Shield 1.0.0. Start with a read-only task and the versioned installation guide.",
-    "zh": "<code>sintbot</code> 把群聊与工作目录连接起来。1.3.0 安装包包含内置核心，按 PolyForm Shield 1.0.0 分发。按版本指南安装，从只读任务开始。"
-  },
-  "what.bot.link": {
-    "en": "See the supported route →",
-    "zh": "查看当前支持范围 →"
-  },
-  "facts.platforms": {
-    "en": "supported operating system",
-    "zh": "支持的运行系统"
-  },
-  "facts.runners": {
-    "en": "local agent runner",
-    "zh": "本机执行通道"
-  },
-  "facts.models": {
-    "en": "Node.js required",
-    "zh": "Node.js 版本要求"
-  },
-  "facts.projects": {
-    "en": "project per group",
-    "zh": "每个群绑定的项目"
-  },
-  "facts.redact": {
-    "en": "Feishu group per instance",
-    "zh": "每个实例接入的飞书群"
-  },
-  "facts.tests": {
-    "en": "current release",
-    "zh": "当前发行版本"
-  },
-  "plat.kicker": {
-    "en": "01 · Capabilities",
-    "zh": "01 · 当前能力"
-  },
-  "plat.h": {
-    "en": "Mac, Feishu and Codex. <em>One working route.</em>",
-    "zh": "Mac、飞书与 Codex，<em>接成一条路径。</em>"
-  },
-  "plat.lede": {
-    "en": "The 1.3.0 built-in core supports macOS, one Feishu group and Codex. These three parts connect the conversation to your project; other routes will follow.",
-    "zh": "1.3.0 内置核心支持 macOS、一个飞书群与 Codex。这三部分把对话连接到项目，更多使用方式将在后续完善。"
-  },
-  "plat.lark.h": {
-    "en": "In a Feishu group",
-    "zh": "在飞书群里"
-  },
-  "plat.lark.1.t": {
-    "en": "One bound group",
-    "zh": "一个绑定的群"
-  },
-  "plat.lark.1.b": {
-    "en": "Connect one Feishu group to a local project.",
-    "zh": "连接一个飞书群与本机项目。"
-  },
-  "plat.lark.2.t": {
-    "en": "Tasks in the conversation",
-    "zh": "在对话中派活"
-  },
-  "plat.lark.2.b": {
-    "en": "Describe the work in the group you already use.",
-    "zh": "在原来的群聊里说明要做的事。"
-  },
-  "plat.lark.3.t": {
-    "en": "Replies return to the group",
-    "zh": "答复回到群里"
-  },
-  "plat.lark.3.b": {
-    "en": "Read the result in the same conversation.",
-    "zh": "在同一段对话里查看结果。"
-  },
-  "plat.lark.4.t": {
-    "en": "Feishu China edition",
-    "zh": "飞书中国版"
-  },
-  "plat.lark.4.b": {
-    "en": "Uses Feishu long-connection event delivery.",
-    "zh": "使用飞书长连接接收事件。"
-  },
-  "plat.slack.h": {
-    "en": "On your Mac",
-    "zh": "在你的 Mac 上"
-  },
-  "plat.slack.1.t": {
-    "en": "Local project directory",
-    "zh": "本机项目目录"
-  },
-  "plat.slack.1.b": {
-    "en": "Work happens in the configured project directory.",
-    "zh": "任务在配置的项目目录里执行。"
-  },
-  "plat.slack.2.t": {
-    "en": "Node.js 22 or later",
-    "zh": "Node.js 22 及以上"
-  },
-  "plat.slack.2.b": {
-    "en": "Prepare Node and an authenticated Codex first.",
-    "zh": "先准备 Node 和已登录的 Codex。"
-  },
-  "plat.slack.3.t": {
-    "en": "Separate installation",
-    "zh": "独立安装"
-  },
-  "plat.slack.3.b": {
-    "en": "The installer preserves existing global packages and services.",
-    "zh": "安装器保留已有全局包和服务。"
-  },
-  "plat.slack.4.t": {
-    "en": "Foreground operation",
-    "zh": "前台运行"
-  },
-  "plat.slack.4.b": {
-    "en": "Keep the terminal open while the group uses SintBot.",
-    "zh": "群里使用时保持终端开启。"
-  },
-  "plat.wecom.h": {
-    "en": "Through Codex",
-    "zh": "由 Codex 处理"
-  },
-  "plat.wecom.1.t": {
-    "en": "Codex message turns",
-    "zh": "Codex 消息轮次"
-  },
-  "plat.wecom.1.b": {
-    "en": "Each task is handed to the local Codex installation.",
-    "zh": "任务交给本机安装的 Codex。"
-  },
-  "plat.wecom.2.t": {
-    "en": "Read-only first",
-    "zh": "从只读开始"
-  },
-  "plat.wecom.2.b": {
-    "en": "The installation guide starts with read-only permissions.",
-    "zh": "安装指南以只读权限开始。"
-  },
-  "plat.wecom.3.t": {
-    "en": "Your configured model service",
-    "zh": "你配置的模型服务"
-  },
-  "plat.wecom.3.b": {
-    "en": "Codex uses its own account and model configuration.",
-    "zh": "Codex 使用自身的账号与模型配置。"
-  },
-  "plat.wecom.4.t": {
-    "en": "An answer in context",
-    "zh": "带着项目上下文回复"
-  },
-  "plat.wecom.4.b": {
-    "en": "Ask about the README, code or project structure.",
-    "zh": "可以从 README、代码或项目结构问起。"
-  },
-  "plat.core.label": {
-    "en": "1.3.0 scope",
-    "zh": "1.3.0 范围"
-  },
-  "plat.core.1": {
-    "en": "macOS",
-    "zh": "macOS"
-  },
-  "plat.core.2": {
-    "en": "one Feishu group",
-    "zh": "一个飞书群"
-  },
-  "plat.core.3": {
-    "en": "one local project",
-    "zh": "一个本机项目"
-  },
-  "plat.core.4": {
-    "en": "Codex",
-    "zh": "Codex"
-  },
-  "plat.core.5": {
-    "en": "built-in core",
-    "zh": "内置核心"
-  },
-  "plat.core.6": {
-    "en": "foreground operation",
-    "zh": "前台运行"
-  },
-  "flow.kicker": {
-    "en": "02 · How it works",
-    "zh": "02 · 工作流程"
-  },
-  "flow.h": {
-    "en": "From <em>one sentence</em> to a project task.",
-    "zh": "从<em>一句话</em>，到项目里的任务。"
-  },
-  "flow.lede": {
-    "en": "SintBot receives the group message, runs Codex in the bound project on your Mac and returns the answer. Feishu and the model service remain network services.",
-    "zh": "SintBot 接收群消息，在 Mac 上的绑定项目里运行 Codex，再把答复带回群里。飞书和模型服务仍需要网络连接。"
-  },
-  "flow.return": {
-    "en": "answer back to the group",
-    "zh": "答复回到群聊"
-  },
-  "flow.col.group": {
-    "en": "Feishu group",
-    "zh": "飞书群"
-  },
-  "flow.group.note1": {
-    "en": "send a project task",
-    "zh": "发出项目任务"
-  },
-  "flow.group.note2": {
-    "en": "one group · one project",
-    "zh": "一个群 · 一个项目"
-  },
-  "flow.col.daemon": {
-    "en": "SintBot · your Mac",
-    "zh": "SintBot · 你的 Mac"
-  },
-  "flow.daemon.1": {
-    "en": "built-in core",
-    "zh": "内置核心"
-  },
-  "flow.daemon.2": {
-    "en": "one group · one project",
-    "zh": "一个群 · 一个项目"
-  },
-  "flow.daemon.3": {
-    "en": "configured permissions",
-    "zh": "配置的执行权限"
-  },
-  "flow.daemon.note1": {
-    "en": "Feishu long connection",
-    "zh": "飞书长连接"
-  },
-  "flow.daemon.note2": {
-    "en": "foreground operation",
-    "zh": "前台运行"
-  },
-  "flow.col.runner": {
-    "en": "Agent runner",
-    "zh": "执行通道"
-  },
-  "flow.runner.note1": {
-    "en": "in the project directory",
-    "zh": "在项目目录里执行"
-  },
-  "flow.runner.note2": {
-    "en": "installed and signed in",
-    "zh": "本机安装并登录"
-  },
-  "flow.col.model": {
-    "en": "Model service",
-    "zh": "模型服务"
-  },
-  "flow.model.note1": {
-    "en": "uses Codex configuration",
-    "zh": "使用 Codex 配置"
-  },
-  "flow.model.note2": {
-    "en": "provider policies apply",
-    "zh": "适用服务商政策"
-  },
-  "flow.side.console": {
-    "en": "configuration",
-    "zh": "本机配置"
-  },
-  "flow.side.dir": {
-    "en": "local project directory",
-    "zh": "本机项目目录"
-  },
-  "flow.side.design": {
-    "en": "persistent state",
-    "zh": "持久运行状态"
-  },
-  "flow.side.design.note": {
-    "en": "preserve state on failure",
-    "zh": "失败时保留状态"
-  },
-  "flow.caption": {
-    "en": "Group → SintBot → Codex → model service. The answer returns to the group; configuration, project files and runtime state stay on the Mac. Model requests follow your Codex configuration.",
-    "zh": "群聊 → SintBot → Codex → 模型服务。答复回到群里，配置、项目文件和运行状态保留在 Mac 上；模型请求遵循你的 Codex 配置。"
-  },
-  "gov.kicker": {
-    "en": "03 · Permissions",
-    "zh": "03 · 权限"
-  },
-  "gov.h": {
-    "en": "Read-only <em>for your first task.</em>",
-    "zh": "第一条任务，<em>从只读开始。</em>"
-  },
-  "gov.lede": {
-    "en": "Use the installation guide’s read-only configuration for the first reply. Keep the execution scope and account permissions explicit.",
-    "zh": "先用安装指南中的只读配置验证第一条答复，明确任务范围与账号权限。"
-  },
-  "gov.t1.title": {
-    "en": "Start read-only",
-    "zh": "先用只读权限"
-  },
-  "gov.t1.body": {
-    "en": "Ask for the first line of the README before granting broader access.",
-    "zh": "先让助手返回 README 第一行，再决定是否扩大权限。"
-  },
-  "gov.t2.title": {
-    "en": "Choose the project",
-    "zh": "指定项目范围"
-  },
-  "gov.t2.body": {
-    "en": "Bind the one group to the existing project you want Codex to work in.",
-    "zh": "把这一个群绑定到希望 Codex 处理的现有项目。"
-  },
-  "gov.t3.title": {
-    "en": "Keep credentials local",
-    "zh": "凭据在本机配置"
-  },
-  "gov.t3.body": {
-    "en": "Enter the Feishu app credentials locally. Do not post secrets to the group or commit them to a repository.",
-    "zh": "在本机填写飞书应用凭据，不把密钥发到群里或提交到仓库。"
+    "en": "No need to move the whole team into a terminal. Give the task where you already talk, let the coding agent work and review the result together.",
+    "zh": "不用把整个团队搬进终端。在原来的群里安排任务，让编码助手执行，再一起查看结果。"
   },
   "plugin.kicker": {
-    "en": "04 · Install",
-    "zh": "04 · 安装"
+    "en": "GET STARTED",
+    "zh": "开始使用"
   },
   "plugin.h": {
-    "en": "Install SintBot <em>on your Mac.</em>",
-    "zh": "安装 SintBot，<em>把项目接进群里。</em>"
+    "en": "Your next project,<br><em>connected.</em>",
+    "zh": "把下一个项目，<br><em>接进群里。</em>"
   },
   "plugin.lede": {
-    "en": "The 1.3.0 package includes the built-in core. Prepare macOS, Node.js 22 or later and a working, signed-in <code>codex</code>. The installer does not install Node or sign in to Codex.",
-    "zh": "1.3.0 安装包包含内置核心。需要 macOS、Node.js 22 及以上，以及可正常使用且已登录的 <code>codex</code>。安装器不会安装 Node 或代为登录 Codex。"
+    "en": "This download is the 1.3.0 built-in-core release: macOS, one Feishu group and Codex, running in the foreground. It does not yet include the existing Claude Code and third-party model routes. Prepare Node.js 22 or later and a working, signed-in <code>codex</code>.",
+    "zh": "这里下载的是 1.3.0 内置核心发行版：macOS、一个飞书群、Codex，前台运行；尚未包含已有的 Claude Code 与第三方模型路径。需要 Node.js 22 及以上，以及可正常使用且已登录的 <code>codex</code>。"
   },
   "plugin.meta.kind": {
     "en": "npm · sintbot v1.3.0",
@@ -546,20 +138,20 @@
     "zh": "仅新安装初始化全新状态，然后在前台启动。保持终端开启，验证一条只读答复。"
   },
   "faq.kicker": {
-    "en": "05 · FAQ",
-    "zh": "05 · 常见问题"
+    "en": "A FEW GOOD QUESTIONS",
+    "zh": "你可能想知道"
   },
   "faq.h": {
-    "en": "Asked often, <em>answered plainly.</em>",
-    "zh": "常被问到的，<em>直接回答。</em>"
+    "en": "Before you <em>get started.</em>",
+    "zh": "开始之前，<em>把这些说清楚。</em>"
   },
   "faq.1.q": {
     "en": "What is SintBot?",
     "zh": "SintBot 是什么？"
   },
   "faq.1.a": {
-    "en": "A coding assistant that connects one Feishu group to a local project. In 1.3.0, Codex works on your Mac and returns its answer to the group.",
-    "zh": "连接一个飞书群与本机项目的编码助手。1.3.0 由 Codex 在你的 Mac 上处理任务，再把答复带回群里。"
+    "en": "A coding assistant that connects a project group to Claude Code or Codex on your own machine. You can choose the coding agent and its model service, while keeping the project files and saved notes. The current download has a narrower scope, described below.",
+    "zh": "把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。你可以选择编码执行器及其模型服务，保留项目文件和已保存的笔记。当前下载版本的范围较窄，具体见下方版本说明。"
   },
   "faq.2.q": {
     "en": "What does 1.3.0 support?",
@@ -582,8 +174,8 @@
     "zh": "全部处理都在离线环境完成吗？"
   },
   "faq.4.a": {
-    "en": "No. SintBot and the project run on your Mac, but Feishu and your configured model service require a network connection. Model requests follow Codex configuration and the service provider’s data policy.",
-    "zh": "不是。SintBot 和项目在本机运行，飞书及配置的模型服务仍需联网。模型请求遵循 Codex 配置及服务商的数据政策。"
+    "en": "No. SintBot and the project run on your machine, but the chat platform and configured model services require a network connection. Model requests follow the selected agent’s configuration and the service provider’s data policy.",
+    "zh": "不是。SintBot 和项目在本机运行，聊天平台及配置的模型服务仍需联网。模型请求遵循所选执行器的配置及服务商的数据政策。"
   },
   "faq.5.q": {
     "en": "What do I need to install it?",
@@ -602,24 +194,16 @@
     "zh": "SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。"
   },
   "cta.h": {
-    "en": "Put the project in the group.",
-    "zh": "把项目，接进群里。"
+    "en": "Bring the project to the conversation.",
+    "zh": "让项目，回到团队的对话里。"
   },
   "cta.p": {
-    "en": "Start with one Feishu group and one project on your Mac. Follow the 1.3.0 guide and try a read-only task.",
-    "zh": "从一个飞书群、一个 Mac 上的项目开始。按 1.3.0 指南接入，先试一条只读任务。"
-  },
-  "cta.see": {
-    "en": "See how it works",
-    "zh": "看它怎么工作"
-  },
-  "cta.plugin": {
-    "en": "Project on GitHub",
-    "zh": "GitHub 项目"
+    "en": "Choose your coding agent. Keep your project close.",
+    "zh": "选好编码助手，带着项目一起往前走。"
   },
   "foot.tag": {
-    "en": "Built-in core · macOS · Feishu · Codex",
-    "zh": "内置核心 · macOS · 飞书 · Codex"
+    "en": "Project groups · Claude Code & Codex · Switchable models",
+    "zh": "项目群驱动 · Claude Code 与 Codex · 模型可切换"
   },
   "foot.by": {
     "en": "By WaterTian · A SintLab project",
@@ -634,8 +218,8 @@
     "zh": "服务条款"
   },
   "foot.meta": {
-    "en": "Not affiliated with Feishu, OpenAI or any other provider named here. Product names and logos belong to their respective owners.",
-    "zh": "与飞书、OpenAI 或其他提及的服务商无隶属关系，产品名称及标志归其各自所有者。"
+    "en": "Not affiliated with Feishu, Anthropic, OpenAI or any other provider named here. Product names and logos belong to their respective owners.",
+    "zh": "与飞书、Anthropic、OpenAI 或其他提及的服务商无隶属关系，产品名称及标志归其各自所有者。"
   },
   "copy": {
     "en": "copy",
@@ -648,26 +232,6 @@
   "skip": {
     "en": "Skip to content",
     "zh": "跳到正文"
-  },
-  "flow.group.task": {
-    "en": "Task",
-    "zh": "任务消息"
-  },
-  "flow.group.reply": {
-    "en": "Answer",
-    "zh": "处理答复"
-  },
-  "flow.model.1": {
-    "en": "Configured model",
-    "zh": "配置的模型"
-  },
-  "flow.model.2": {
-    "en": "Codex account",
-    "zh": "Codex 账号"
-  },
-  "flow.model.3": {
-    "en": "Network connection",
-    "zh": "网络连接"
   },
   "upgrade.kicker": {
     "en": "Existing installations",
@@ -692,6 +256,262 @@
   "copy.fail": {
     "en": "Select and copy manually",
     "zh": "请选中命令手动复制"
+  },
+  "models.kicker": {
+    "en": "YOUR AGENTS. YOUR MODELS.",
+    "zh": "执行器可选，模型也可选"
+  },
+  "models.h": {
+    "en": "A model for <em>your way of working.</em>",
+    "zh": "按你的工作方式，<em>选择模型。</em>"
+  },
+  "models.lede": {
+    "en": "Claude Code and Codex are the coding agents. Claude, GPT, GLM, MiniMax and DeepSeek are the models behind them. Choose the combination that fits your project.",
+    "zh": "Claude Code、Codex 是编码执行器；Claude、GPT、GLM、MiniMax、DeepSeek 是背后的模型。为项目选择合适的组合。"
+  },
+  "models.p.claude": {
+    "en": "through Claude Code",
+    "zh": "通过 Claude Code"
+  },
+  "models.p.gpt": {
+    "en": "through Codex",
+    "zh": "通过 Codex"
+  },
+  "models.p.glm": {
+    "en": "Claude Code · your API key",
+    "zh": "Claude Code · 自备 API Key"
+  },
+  "models.p.deepseek": {
+    "en": "Claude Code · your API key",
+    "zh": "Claude Code · 自备 API Key"
+  },
+  "models.p.minimax": {
+    "en": "Claude Code · your API key",
+    "zh": "Claude Code · 自备 API Key"
+  },
+  "models.p.kimi": {
+    "en": "Claude Code · custom endpoint",
+    "zh": "Claude Code · 自定义端点"
+  },
+  "models.note": {
+    "en": "These routes are part of SintBot’s existing multi-model workflow. The 1.3.0 built-in-core download currently covers the Codex route only; keep your existing installation for Claude Code and third-party models until compatible migration is available.",
+    "zh": "这些路径属于 SintBot 已有的多模型工作方式。当前 1.3.0 内置核心下载包仅覆盖 Codex 路径；使用 Claude Code 与第三方模型的现有安装，请继续保留，等待兼容迁移。"
+  },
+  "models.1.title": {
+    "en": "Change the model, keep the project",
+    "zh": "换模型，不换项目"
+  },
+  "models.1.body": {
+    "en": "In a multi-model installation, switch the configured model for the next turn. The project files stay where they are.",
+    "zh": "在多模型版本中，为下一轮切换已配置的模型，项目文件继续保留在原处。"
+  },
+  "models.2.title": {
+    "en": "Use your own model service",
+    "zh": "使用自己的模型服务"
+  },
+  "models.2.body": {
+    "en": "Claude Code connects to Claude or an Anthropic-compatible endpoint. Codex uses its own account and model configuration.",
+    "zh": "Claude Code 连接 Claude 或兼容 Anthropic API 的端点，Codex 使用自己的账号和模型配置。"
+  },
+  "models.3.title": {
+    "en": "Keep decisions in shared notes",
+    "zh": "把决定留在项目里"
+  },
+  "models.3.body": {
+    "en": "Write conventions and handoffs in project notes. A fresh conversation can read them, without depending on the previous model’s private memory.",
+    "zh": "把约定和交接写进项目笔记，新对话可以继续读取，不依赖上一个模型的私有记忆。"
+  },
+  "faq.7.q": {
+    "en": "Which models can SintBot use?",
+    "zh": "SintBot 可以使用哪些模型？"
+  },
+  "faq.7.a": {
+    "en": "Existing multi-model installations use Claude through Claude Code, GPT through Codex, and GLM, MiniMax or DeepSeek through Claude Code with compatible endpoints and your own API keys. Kimi and other compatible providers can use custom endpoints. The 1.3.0 download currently includes only the Codex route.",
+    "zh": "已有的多模型版本可通过 Claude Code 使用 Claude，通过 Codex 使用 GPT，也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。当前 1.3.0 下载包仅包含 Codex 路径。"
+  },
+  "faq.8.q": {
+    "en": "What stays when I switch models?",
+    "zh": "换模型之后，什么会保留？"
+  },
+  "faq.8.a": {
+    "en": "The project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them. It does not automatically transfer every unsaved detail from the previous conversation.",
+    "zh": "项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和未完成事项写进项目，下一位助手即可读取接续，不会自动完整转移上一段对话中尚未保存的细节。"
+  },
+  "hero.cta.install": {
+    "en": "Get SintBot",
+    "zh": "安装 SintBot"
+  },
+  "demo.tab.task": {
+    "en": "Give it a task",
+    "zh": "群里派活"
+  },
+  "demo.tab.models": {
+    "en": "Switch models",
+    "zh": "切换模型"
+  },
+  "demo.tab.memory": {
+    "en": "Keep project memory",
+    "zh": "项目记忆"
+  },
+  "demo.tab.local": {
+    "en": "Work locally",
+    "zh": "本机执行"
+  },
+  "demo.example": {
+    "en": "Workflow example",
+    "zh": "工作流程示例"
+  },
+  "demo.project": {
+    "en": "Website project",
+    "zh": "官网项目"
+  },
+  "demo.sidebar.title": {
+    "en": "YOUR WORKSPACE",
+    "zh": "你的工作区"
+  },
+  "demo.sidebar.task": {
+    "en": "Project conversation",
+    "zh": "项目对话"
+  },
+  "demo.sidebar.models": {
+    "en": "Agents & models",
+    "zh": "执行器与模型"
+  },
+  "demo.sidebar.memory": {
+    "en": "Project notes",
+    "zh": "项目笔记"
+  },
+  "demo.sidebar.files": {
+    "en": "Local files",
+    "zh": "本机文件"
+  },
+  "demo.sidebar.bottom": {
+    "en": "Your machine. Your project.",
+    "zh": "自己的机器，自己的项目。"
+  },
+  "demo.you": {
+    "en": "You",
+    "zh": "你"
+  },
+  "demo.task.ask": {
+    "en": "Keep the original typography. Improve the mobile navigation and show me the changes.",
+    "zh": "沿用原来的字体排版，把手机导航优化一下，做好给我看。"
+  },
+  "demo.task.status": {
+    "en": "Working in the website project",
+    "zh": "正在官网项目里处理"
+  },
+  "demo.task.reply": {
+    "en": "The mobile navigation now fits small screens. The page typography stays the same.",
+    "zh": "手机导航已适配小屏，页面字体和排版保持原样。"
+  },
+  "demo.task.file": {
+    "en": "Navigation updated",
+    "zh": "导航已更新"
+  },
+  "demo.task.check": {
+    "en": "Mobile layout reviewed",
+    "zh": "手机布局已检查"
+  },
+  "demo.task.footer": {
+    "en": "The task, progress and result stay in one conversation.",
+    "zh": "任务、进展与结果，都留在同一段对话里。"
+  },
+  "demo.models.h": {
+    "en": "Same project. A different model.",
+    "zh": "同一个项目，换一种模型。"
+  },
+  "demo.models.p": {
+    "en": "Choose the coding agent, then its model. Claude Code also connects to compatible third-party services.",
+    "zh": "先选编码执行器，再选模型。Claude Code 也可以连接兼容的第三方模型服务。"
+  },
+  "demo.models.route": {
+    "en": "Claude Code route",
+    "zh": "通过 Claude Code"
+  },
+  "demo.models.codex": {
+    "en": "Codex route",
+    "zh": "通过 Codex"
+  },
+  "demo.models.note": {
+    "en": "Switching starts a new conversation. Saved project notes carry over.",
+    "zh": "切换会开启新对话，已保存的项目笔记继续保留。"
+  },
+  "demo.memory.h": {
+    "en": "Leave the next agent a clear handoff.",
+    "zh": "换个助手，也能接着做。"
+  },
+  "demo.memory.p": {
+    "en": "Decisions live with the project, ready for whichever model you choose next.",
+    "zh": "把决定写进项目，下一次选谁，都有据可循。"
+  },
+  "demo.memory.line1": {
+    "en": "# Website project",
+    "zh": "＃ 官网项目"
+  },
+  "demo.memory.line2": {
+    "en": "Keep the existing type and spacing.",
+    "zh": "沿用现有字体与间距。"
+  },
+  "demo.memory.line3": {
+    "en": "Mobile navigation: updated and reviewed.",
+    "zh": "手机导航：已更新并检查。"
+  },
+  "demo.memory.line4": {
+    "en": "Next: review the installation section.",
+    "zh": "下一步：检查安装说明。"
+  },
+  "demo.memory.note": {
+    "en": "Project notes persist. Unsaved chat details are not a shared memory.",
+    "zh": "项目笔记会保留，未保存的聊天细节不会自动共享。"
+  },
+  "demo.local.h": {
+    "en": "The work happens in your project.",
+    "zh": "任务在你的项目里完成。"
+  },
+  "demo.local.p": {
+    "en": "Code, assets and saved notes stay on your machine. The selected model service handles model requests.",
+    "zh": "代码、素材与已保存笔记留在本机，模型请求由所选模型服务处理。"
+  },
+  "demo.local.files": {
+    "en": "Project files",
+    "zh": "项目文件"
+  },
+  "demo.local.result": {
+    "en": "A change you can review",
+    "zh": "可以检查的改动"
+  },
+  "demo.local.status": {
+    "en": "Changes remain in your workspace",
+    "zh": "改动保留在你的工作区"
+  },
+  "demo.scope": {
+    "en": "Examples show SintBot’s product workflow. The current download’s supported scope is listed below.",
+    "zh": "示例展示 SintBot 的产品工作方式，当前下载版本的支持范围见安装说明。"
+  },
+  "flow.1.h": {
+    "en": "Give the task",
+    "zh": "在群里安排"
+  },
+  "flow.1.p": {
+    "en": "Bind the group to a project. Describe the change, add context and keep the conversation together.",
+    "zh": "把群绑定到项目，说清要做的事、补充上下文，让讨论集中在一起。"
+  },
+  "flow.2.h": {
+    "en": "Choose the agent",
+    "zh": "选择执行器与模型"
+  },
+  "flow.2.p": {
+    "en": "Claude Code or Codex works inside the project with the model and permissions you configure.",
+    "zh": "Claude Code 或 Codex 按你配置的模型与权限，在项目中执行。"
+  },
+  "flow.3.h": {
+    "en": "Review the result",
+    "zh": "查看结果，继续迭代"
+  },
+  "flow.3.p": {
+    "en": "Progress and results return to the group. Keep decisions in project notes for the next turn.",
+    "zh": "进展与结果回到群里。把决定写进项目笔记，让下一轮继续接手。"
   }
   };
 
@@ -843,46 +663,6 @@
     btn.addEventListener("click", () => requestAnimationFrame(refreshHeroReveal));
   });
 
-  // 2) Soft cursor glow ---------------------------------------------------
-  // Keep the original pointer-follow effect only when reduced motion is not requested.
-  // (any-pointer: fine) instead of (pointer: fine) covers touch-hybrid laptops.
-  if (!prefersReducedMotion && window.matchMedia("(any-pointer: fine)").matches) {
-    const glow = document.querySelector(".cursor-glow");
-    if (glow) {
-      let raf = 0;
-      let tx = window.innerWidth / 2;
-      let ty = window.innerHeight / 2;
-      let cx = tx;
-      let cy = ty;
-      // Position immediately at viewport center + show, so the glow is
-      // visible even before the first mousemove (Win Chrome: mouseenter
-      // doesn't fire when cursor is already inside the window on load).
-      glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      document.body.classList.add("cursor-on");
-
-      window.addEventListener(
-        "mousemove",
-        (e) => {
-          tx = e.clientX;
-          ty = e.clientY;
-          document.body.classList.add("cursor-on");
-          if (!raf) raf = requestAnimationFrame(tick);
-        },
-        { passive: true }
-      );
-      function tick() {
-        cx += (tx - cx) * 0.14;
-        cy += (ty - cy) * 0.14;
-        glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-        if (Math.abs(tx - cx) > 0.3 || Math.abs(ty - cy) > 0.3) {
-          raf = requestAnimationFrame(tick);
-        } else {
-          raf = 0;
-        }
-      }
-    }
-  }
-
   // 3) Copy buttons -------------------------------------------------------
   document.querySelectorAll(".copy[data-copy]").forEach((btn) => {
     btn.addEventListener("click", async () => {
@@ -992,8 +772,11 @@
     });
   });
 
-  // primary CTA — hero + closing 'See how it works' (#platforms)
-  document.querySelectorAll('.btn--primary[href="#platforms"]').forEach((btn) => {
+  // Installation and workflow calls to action.
+  document.querySelectorAll('.btn[href="#plugin"]').forEach((btn) => {
+    btn.addEventListener("click", () => track("cta-install"));
+  });
+  document.querySelectorAll('.btn[href="#what"]').forEach((btn) => {
     btn.addEventListener("click", () => track("cta-meet"));
   });
 
@@ -1036,11 +819,7 @@
       },
       { threshold: 0.4 }
     );
-    document.querySelectorAll("main section[id]").forEach((s) => secObs.observe(s));
+    document.querySelectorAll("main .section[id]").forEach((s) => secObs.observe(s));
   }
 
-  // 8) (removed 2026-09-15) Hero parallax — the five hero layers used to drift at
-  //    different rates while scrolling, so the headline's own lines slid past
-  //    each other. Judged a distraction, not an effect; nothing scroll-linked
-  //    moves in the hero any more. The one-shot reveal on load stays.
 })();

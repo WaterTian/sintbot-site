@@ -1,29 +1,31 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-type="software">
   <head>
     <!-- GENERATED from /index.html by scripts/build-zh.mjs — edit index.html / app.js, then run the script -->
+    <meta name="page-type" content="software" />
+    <meta name="site-kind" content="software" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>SintBot —— 一群一项目，在自己的 Mac 上工作</title>
+    <title>SintBot —— 一群一项目，模型随时换</title>
     <meta
       name="description"
-      content="一个飞书群绑定一个 Mac 上的项目，SintBot 1.3.0 通过内置核心运行 Codex 任务，把答复带回群聊。"
+      content="把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
     />
-    <!-- Social sharing copy follows the restricted 1.3.0 scope. -->
+    <!-- Product positioning and release-specific installation scope are distinct. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SintBot" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:url" content="https://sintbot.com/zh/" />
-    <meta property="og:title" content="SintBot —— 一群一项目，在自己的 Mac 上工作" />
+    <meta property="og:title" content="SintBot —— 一群一项目，模型随时换" />
     <meta
       property="og:description"
-      content="一个飞书群绑定一个 Mac 上的项目，SintBot 1.3.0 通过内置核心运行 Codex 任务，把答复带回群聊。"
+      content="把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
     />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="SintBot —— 一群一项目，在自己的 Mac 上工作" />
+    <meta name="twitter:title" content="SintBot —— 一群一项目，模型随时换" />
     <meta
       name="twitter:description"
-      content="一个飞书群绑定一个 Mac 上的项目，SintBot 1.3.0 通过内置核心运行 Codex 任务，把答复带回群聊。"
+      content="把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/zh/" />
@@ -64,7 +66,7 @@
               ]
             },
             "inLanguage": "zh-CN",
-            "description": "一个飞书群绑定一个 Mac 上的项目，SintBot 1.3.0 通过内置核心运行 Codex 任务，把答复带回群聊。"
+            "description": "把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
           },
           {
             "@type": "Person",
@@ -85,7 +87,7 @@
                 "name": "SintBot 是什么？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "连接一个飞书群与本机项目的编码助手。1.3.0 由 Codex 在你的 Mac 上处理任务，再把答复带回群里。"
+                  "text": "把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。你可以选择编码执行器及其模型服务，保留项目文件和已保存的笔记。当前下载版本的范围较窄，具体见下方版本说明。"
                 }
               },
               {
@@ -109,7 +111,7 @@
                 "name": "全部处理都在离线环境完成吗？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "不是。SintBot 和项目在本机运行，飞书及配置的模型服务仍需联网。模型请求遵循 Codex 配置及服务商的数据政策。"
+                  "text": "不是。SintBot 和项目在本机运行，聊天平台及配置的模型服务仍需联网。模型请求遵循所选执行器的配置及服务商的数据政策。"
                 }
               },
               {
@@ -127,6 +129,22 @@
                   "@type": "Answer",
                   "text": "SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。"
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "SintBot 可以使用哪些模型？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "已有的多模型版本可通过 Claude Code 使用 Claude，通过 Codex 使用 GPT，也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。当前 1.3.0 下载包仅包含 Codex 路径。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "换模型之后，什么会保留？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和未完成事项写进项目，下一位助手即可读取接续，不会自动完整转移上一段对话中尚未保存的细节。"
+                }
               }
             ]
           }
@@ -134,28 +152,8 @@
       }
     </script>
     <link rel="stylesheet" href="/styles.css" />
-    <!-- Latin webfonts only; Chinese renders in the platform's own font (PingFang / YaHei).
-         Loaded without blocking first paint: where fonts.googleapis.com is unreachable
-         (mainland China) the page must not sit blank waiting for it. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-      />
-    </noscript>
+    <!-- Self-hosted Latin fonts; Chinese uses the system sans-serif. -->
+    <link rel="preload" href="/assets/fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <!-- Analytics: Umami (privacy-first, no cookies, no consent banner) -->
     <!-- ?notrack=1 marks this browser as ours (Umami skips it from then on); ?notrack=0 undoes it -->
@@ -168,7 +166,7 @@
     ></script>
 
   </head>
-  <body class="site-upgrade">
+  <body class="taste-site">
     <!-- Icon sprite (Lucide, ISC) — referenced as <svg class="ico" width="20" height="20"><use href="#i-name"/></svg> -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><!-- icons: Lucide — ISC (https://lucide.dev), normalized by the design toolchain: stroke 1.5, 24 grid, currentColor -->
 <symbol id="i-folder-git-2" data-icon="lucide/folder-git-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 19a5 5 0 0 1-5-5v8" /><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5" /><circle cx="13" cy="12" r="2" /><circle cx="20" cy="19" r="2" /></symbol>
@@ -240,392 +238,12 @@
 <symbol id="b-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
     </svg>
 
-    <!-- Original ambient texture and pointer glow -->
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+<a class="skip-link" href="#main" data-i18n="skip">跳到正文</a><header class="nav" id="top"><a class="nav__brand" href="#top" aria-label="SintBot"><span class="nav__mark" aria-hidden="true">S</span><span class="nav__word">SintBot</span></a><nav class="nav__links" aria-label="Main navigation"><a href="#what" data-i18n="nav.platforms">工作方式</a><a href="#models" data-i18n="nav.models">模型</a><a href="#faq" data-i18n="nav.console">常见问题</a></nav><div class="nav__right"><div class="lang-toggle" aria-label="Language"><a href="/" data-lang="en" class="lang-toggle__btn">EN</a><a href="/zh/" data-lang="zh" class="lang-toggle__btn is-active">中文</a></div><a class="nav__cta" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-github"/></svg><span>GitHub</span></a></div></header>
+<main id="main" tabindex="-1"><section class="hero" aria-labelledby="hero-title"><div class="hero__inner"><a href="#models" class="hero__eyebrow" data-reveal><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="hero.eyebrow">一群一项目，模型由你选择</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><h1 id="hero-title" class="hero__title hero__title-en" data-reveal data-i18n-html="hero.titleEn">把编码助手，<br>接进项目群。</h1><p class="hero__lede" data-reveal data-reveal-delay="80" data-i18n="hero.lede">在项目群里，让 Claude Code 或 Codex 开工。Claude、GPT、GLM、MiniMax、DeepSeek，按任务选择。项目文件与写下的记忆，留在自己的机器上。</p><div class="hero__ctas" data-reveal data-reveal-delay="160"><a class="btn btn--primary" href="#plugin"><span data-i18n="hero.cta.install">安装 SintBot</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><a class="btn btn--ghost" href="#what"><span data-i18n="hero.cta.primary">看看它怎么工作</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div></div><div class="showcase"><div class="showcase__tabs" role="tablist" aria-label="SintBot workflow"><button type="button" class="showcase__tab is-active" id="tab-task" role="tab" aria-selected="true" aria-controls="panel-task" tabindex="0" data-showcase-tab="task" data-i18n="demo.tab.task">群里派活</button><button type="button" class="showcase__tab" id="tab-models" role="tab" aria-selected="false" aria-controls="panel-models" tabindex="-1" data-showcase-tab="models" data-i18n="demo.tab.models">切换模型</button><button type="button" class="showcase__tab" id="tab-memory" role="tab" aria-selected="false" aria-controls="panel-memory" tabindex="-1" data-showcase-tab="memory" data-i18n="demo.tab.memory">项目记忆</button><button type="button" class="showcase__tab" id="tab-local" role="tab" aria-selected="false" aria-controls="panel-local" tabindex="-1" data-showcase-tab="local" data-i18n="demo.tab.local">本机执行</button></div><div class="showcase__window"><div class="showcase__toolbar"><span class="showcase__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>SintBot / <span data-i18n="demo.project">官网项目</span></span><span class="showcase__example" data-i18n="demo.example">工作流程示例</span></div><div class="showcase__body"><aside class="showcase__sidebar"><p class="showcase__sidebar-label" data-i18n="demo.sidebar.title">你的工作区</p><strong><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg><span data-i18n="demo.project">官网项目</span></strong><ul><li class="is-active"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg><span data-i18n="demo.sidebar.task">项目对话</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="demo.sidebar.models">执行器与模型</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="demo.sidebar.memory">项目笔记</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg><span data-i18n="demo.sidebar.files">本机文件</span></li></ul><small data-i18n="demo.sidebar.bottom">自己的机器，自己的项目。</small></aside><div class="showcase__workspace"><section class="showcase__panel" id="panel-task" role="tabpanel" aria-labelledby="tab-task" tabindex="0" data-showcase-panel="task"><div class="showcase__conversation"><div class="showcase__message showcase__message--user"><span class="showcase__avatar">Y</span><div><b data-i18n="demo.you">你</b><p data-i18n="demo.task.ask">沿用原来的字体排版，把手机导航优化一下，做好给我看。</p></div></div><div class="showcase__message showcase__message--bot"><span class="showcase__avatar showcase__avatar--bot">S</span><div><b>SintBot <span class="showcase__agent">Claude Code</span></b><p class="showcase__status"><span></span><span data-i18n="demo.task.status">正在官网项目里处理</span></p><p data-i18n="demo.task.reply">手机导航已适配小屏，页面字体和排版保持原样。</p><div class="showcase__artifacts"><span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="demo.task.file">导航已更新</span></span><span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="demo.task.check">手机布局已检查</span></span></div></div></div><p class="showcase__hint" data-i18n="demo.task.footer">任务、进展与结果，都留在同一段对话里。</p></div></section><section class="showcase__panel" id="panel-models" role="tabpanel" aria-labelledby="tab-models" tabindex="0" data-showcase-panel="models" hidden><div class="showcase__content"><h3 data-i18n="demo.models.h">同一个项目，换一种模型。</h3><p data-i18n="demo.models.p">先选编码执行器，再选模型。Claude Code 也可以连接兼容的第三方模型服务。</p><div class="showcase__model-options"><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-claude"/></svg><b>Claude</b><small data-i18n="demo.models.route">通过 Claude Code</small></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-openai"/></svg><b>GPT</b><small data-i18n="demo.models.codex">通过 Codex</small></div><div class="showcase__model-option is-selected"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-zhipu"/></svg><b>GLM</b><small data-i18n="demo.models.route">通过 Claude Code</small><span class="showcase__selection"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-deepseek"/></svg><b>DeepSeek</b><small data-i18n="demo.models.route">通过 Claude Code</small></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-minimax"/></svg><b>MiniMax</b><small data-i18n="demo.models.route">通过 Claude Code</small></div></div><p class="showcase__hint" data-i18n="demo.models.note">切换会开启新对话，已保存的项目笔记继续保留。</p></div></section><section class="showcase__panel" id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" tabindex="0" data-showcase-panel="memory" hidden><div class="showcase__content"><h3 data-i18n="demo.memory.h">换个助手，也能接着做。</h3><p data-i18n="demo.memory.p">把决定写进项目，下一次选谁，都有据可循。</p><div class="showcase__editor"><div class="showcase__editor-tab"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg>AGENTS.md</div><div class="showcase__editor-line"><span>1</span><code data-i18n="demo.memory.line1">＃ 官网项目</code></div><div class="showcase__editor-line"><span>2</span><code data-i18n="demo.memory.line2">沿用现有字体与间距。</code></div><div class="showcase__editor-line"><span>3</span><code data-i18n="demo.memory.line3">手机导航：已更新并检查。</code></div><div class="showcase__editor-line"><span>4</span><code data-i18n="demo.memory.line4">下一步：检查安装说明。</code></div></div><p class="showcase__hint" data-i18n="demo.memory.note">项目笔记会保留，未保存的聊天细节不会自动共享。</p></div></section><section class="showcase__panel" id="panel-local" role="tabpanel" aria-labelledby="tab-local" tabindex="0" data-showcase-panel="local" hidden><div class="showcase__content"><h3 data-i18n="demo.local.h">任务在你的项目里完成。</h3><p data-i18n="demo.local.p">代码、素材与已保存笔记留在本机，模型请求由所选模型服务处理。</p><div class="showcase__local-grid"><div class="showcase__file-tree"><b data-i18n="demo.local.files">项目文件</b><code>website/<br>├─ index.html<br>├─ styles.css<br>├─ app.js<br>└─ AGENTS.md</code></div><div class="showcase__diff"><b data-i18n="demo.local.result">可以检查的改动</b><code><span class="diff-remove">− min-width: 960px;</span><br><span class="diff-add">+ width: min(100%, 960px);</span><br><span class="diff-add">+ flex-wrap: wrap;</span></code><p class="showcase__status"><span></span><span data-i18n="demo.local.status">改动保留在你的工作区</span></p></div></div></div></section></div></div></div><p class="showcase__scope" data-i18n="demo.scope">示例展示 SintBot 的产品工作方式，当前下载版本的支持范围见安装说明。</p></div></section><section id="what" class="section section--what"><div class="section__intro"><div><p class="section__kicker" data-i18n="what.kicker">从群聊，到项目</p><h2 class="section__h" data-i18n-html="what.h">群里一句话，<br><em>项目往前走。</em></h2></div><p class="lede lede--wide" data-i18n="what.lede">不用把整个团队搬进终端。在原来的群里安排任务，让编码助手执行，再一起查看结果。</p></div><ol class="flow-grid"><li class="flow-step" data-reveal data-reveal-delay="0"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg><span>01</span></div><h3 data-i18n="flow.1.h">在群里安排</h3><p data-i18n="flow.1.p">把群绑定到项目，说清要做的事、补充上下文，让讨论集中在一起。</p></li><li class="flow-step" data-reveal data-reveal-delay="70"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span>02</span></div><h3 data-i18n="flow.2.h">选择执行器与模型</h3><p data-i18n="flow.2.p">Claude Code 或 Codex 按你配置的模型与权限，在项目中执行。</p></li><li class="flow-step" data-reveal data-reveal-delay="140"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>03</span></div><h3 data-i18n="flow.3.h">查看结果，继续迭代</h3><p data-i18n="flow.3.p">进展与结果回到群里。把决定写进项目笔记，让下一轮继续接手。</p></li></ol></section><section id="models" class="section section--models"><div class="section__intro"><div><p class="section__kicker" data-i18n="models.kicker">执行器可选，模型也可选</p><h2 class="section__h" data-i18n-html="models.h">按你的工作方式，<em>选择模型。</em></h2></div><p class="lede lede--wide" data-i18n="models.lede">Claude Code、Codex 是编码执行器；Claude、GPT、GLM、MiniMax、DeepSeek 是背后的模型。为项目选择合适的组合。</p></div><ul class="model-grid"><li class="model-tile" data-reveal data-reveal-delay="0"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-claude"/></svg>Claude</b><i data-i18n="models.p.claude">通过 Claude Code</i></li><li class="model-tile" data-reveal data-reveal-delay="45"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-openai"/></svg>GPT</b><i data-i18n="models.p.gpt">通过 Codex</i></li><li class="model-tile" data-reveal data-reveal-delay="90"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-zhipu"/></svg>GLM</b><i data-i18n="models.p.glm">Claude Code · 自备 API Key</i></li><li class="model-tile" data-reveal data-reveal-delay="135"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">Claude Code · 自备 API Key</i></li><li class="model-tile" data-reveal data-reveal-delay="180"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-minimax"/></svg>MiniMax</b><i data-i18n="models.p.minimax">Claude Code · 自备 API Key</i></li><li class="model-tile" data-reveal data-reveal-delay="225"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">Claude Code · 自定义端点</i></li></ul><ol class="cards cards--models"><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-left-right"/></svg><span class="card__no">01</span></div><h3 data-i18n="models.1.title">换模型，不换项目</h3><p data-i18n-html="models.1.body">在多模型版本中，为下一轮切换已配置的模型，项目文件继续保留在原处。</p></li><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span class="card__no">02</span></div><h3 data-i18n="models.2.title">使用自己的模型服务</h3><p data-i18n-html="models.2.body">Claude Code 连接 Claude 或兼容 Anthropic API 的端点，Codex 使用自己的账号和模型配置。</p></li><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span class="card__no">03</span></div><h3 data-i18n="models.3.title">把决定留在项目里</h3><p data-i18n-html="models.3.body">把约定和交接写进项目笔记，新对话可以继续读取，不依赖上一个模型的私有记忆。</p></li></ol><p class="models__note" data-i18n="models.note">这些路径属于 SintBot 已有的多模型工作方式。当前 1.3.0 内置核心下载包仅覆盖 Codex 路径；使用 Claude Code 与第三方模型的现有安装，请继续保留，等待兼容迁移。</p></section>      <section id="plugin" class="section section--plugin">
 
-    <!-- Top nav -->
-    <header class="nav" data-reveal>
-      <a class="visually-hidden skip-link" href="#top" data-i18n="skip">跳到正文</a>
-      <a class="nav__brand" href="#top" aria-label="SintBot home">
-        <span class="nav__word">Sint<i class="nav__trace" aria-hidden="true"></i>Bot</span>
-      </a>
-      <nav class="nav__menu" aria-label="primary">
-        <a href="#platforms" data-i18n="nav.platforms">当前能力</a>
-        <a href="#flow" data-i18n="nav.models">工作流程</a>
-        <a href="#governance" data-i18n="nav.design">权限</a>
-        <a href="#faq" data-i18n="nav.console">常见问题</a>
-        <a href="#plugin" data-i18n="nav.setup">安装</a>
-        <a
-          href="https://github.com/sintlab/sintbot"
-          target="_blank"
-          rel="noopener"
-          class="nav__cta"
-           ><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>GitHub <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a
-        >
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <a href="/" data-lang="en" class="lang-toggle__btn" lang="en">EN</a>
-          <span class="lang-toggle__sep" aria-hidden="true">/</span>
-          <a href="/zh/" data-lang="zh" class="lang-toggle__btn is-active" lang="zh-CN">中</a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="top" tabindex="-1">
-      <!-- Hero -->
-      <section class="hero" aria-labelledby="hero-title">
-
-        <div class="hero__inner">
-          <p class="eyebrow" data-reveal>
-            <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">内置核心 · macOS · 飞书单群 · Codex</span>
-          </p>
-          <h1 id="hero-title" class="hero__title">
-            <span class="hero__title-en" data-i18n-html="hero.titleEn"><span class="zh-row" data-reveal data-reveal-delay="0"><span class="zh-big">一群一项目</span><span class="visually-hidden">，</span><span class="zh-note"><span>一句话</span><span>就开工</span></span></span>
-           <span class="zh-row" data-reveal data-reveal-delay="120"><span class="zh-big">任务本机做</span><span class="visually-hidden">，</span><span class="zh-note"><span>答复</span><span>回群</span></span></span>
-           <span class="zh-tail" data-reveal data-reveal-delay="240">在你自己的 Mac 上，由 Codex 处理</span></span>
-          </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">一个聊天群绑定一个项目。在飞书群里发任务，<code>SintBot</code> 让 Codex 在你 Mac 上的项目里处理，再把答复带回群聊。1.3.0 内置核心支持单群，使用时保持前台运行。</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="540">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="hero.cta.primary">看它怎么工作</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg>
-              <span data-i18n="hero.cta.plugin">GitHub 项目</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Retained dual-card composition: Feishu conversation and local Codex example. -->
-        <div class="hero__mocks" data-reveal data-reveal-delay="660">
-          <aside class="mock mock--lark" aria-label="Feishu example">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--lark"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">飞书</span></span>
-              <span class="mock__title" data-i18n="mock.lark.title">项目群</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__kind" data-i18n="mock.lark.kind">示例对话</span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.lark.user">你</b>
-                <p data-i18n="mock.lark.ask">读一下 README，告诉我项目是做什么的，先不要修改文件</p>
-              </li>
-              <li class="mock__card">
-                <div class="mock__card-head">
-                  <svg class="ico ico--sm mock__was" width="14" height="14" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                  <svg class="ico ico--sm mock__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                  <svg class="ico ico--sm mock__ok" width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>
-                  <span class="mock__state" data-i18n="mock.lark.state">示例答复</span>
-                </div>
-                <ul class="mock__lines">
-                  <li data-i18n="mock.lark.l1">读取绑定项目的 README.md</li>
-                  <li data-i18n="mock.lark.l2">整理项目用途与启动步骤</li>
-                  <li data-i18n="mock.lark.l3">未修改文件</li>
-                </ul>
-                <div class="mock__btns">
-                  <span class="mock__btn mock__btn--primary" data-i18n="mock.lark.b1">README.md</span>
-                  <span class="mock__btn" data-i18n="mock.lark.b2">只读示例</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-
-          <div class="mock__eq" aria-hidden="true">
-            <span class="mock__eq-sign">=</span>
-            <span class="mock__eq-text" data-i18n="mock.eq">同一个项目</span>
-          </div>
-
-          <aside class="mock mock--slack" aria-label="Codex example">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--slack"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-codex"/></svg>Codex</span>
-              <span class="mock__title">README.md</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__working"><i></i><span data-i18n="mock.slack.working">示例</span></span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.slack.user">本机项目</b>
-                <p data-i18n="mock.slack.ask">同一条任务，交给 Mac 上的 Codex。</p>
-              </li>
-              <li class="mock__msg mock__msg--bot">
-                <b>SintBot <span class="mock__app">APP</span></b>
-                <p><span class="dot" aria-hidden="true"></span><span data-i18n="mock.slack.ack">在绑定的项目里处理</span></p>
-              </li>
-              <li class="mock__thread">
-                <span class="mock__thread-label" data-i18n="mock.slack.thread">示例 · 本机执行</span>
-                <p class="mock__progress"><span class="mock__tick" aria-hidden="true"></span><span data-i18n="mock.slack.progress">读取 README.md</span></p>
-                <p class="mock__final" data-i18n-html="mock.slack.final">README 描述了一个小型网页应用、文件结构和本地启动步骤。</p>
-                <div class="mock__btns">
-                  <span class="mock__btn" data-i18n="mock.slack.b1">你的 Mac</span>
-                  <span class="mock__btn" data-i18n="mock.slack.b2">Codex</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-        </div>
-      </section>
-
-      <!-- What is SintBot -->
-      <section id="what" class="section section--what">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="what.kicker">它是什么</p>
-        <h2 class="section__h" data-reveal data-i18n-html="what.h">你的项目，<em>接进群聊。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="what.lede">SintBot 在你的 Mac 上运行，把一个飞书群连接到一个本机项目。群里发出的任务，成为这个项目里的 Codex 轮次。</p>
-        <ol class="pillars">
-          <li class="pillar" data-reveal>
-            <h3 data-i18n="what.bot.title">项目群里的编码助手</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> 把群聊与工作目录连接起来。1.3.0 安装包包含内置核心，按 PolyForm Shield 1.0.0 分发。按版本指南安装，从只读任务开始。</p>
-            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">查看当前支持范围 →</a>
-          </li>
-        </ol>
-
-        <ul class="facts" data-reveal data-reveal-delay="120" aria-label="By the numbers">
-          <li><span>macOS</span><i data-i18n="facts.platforms">支持的运行系统</i></li>
-          <li><span>Codex</span><i data-i18n="facts.runners">本机执行通道</i></li>
-          <li><span>22+</span><i data-i18n="facts.models">Node.js 版本要求</i></li>
-          <li><span>1</span><i data-i18n="facts.projects">每个群绑定的项目</i></li>
-          <li><span>1</span><i data-i18n="facts.redact">每个实例接入的飞书群</i></li>
-          <li><span>1.3.0</span><i data-i18n="facts.tests">当前发行版本</i></li>
-        </ul>
-      </section>
-
-      <!-- Platforms: Feishu, Slack and WeCom, all supported (English puts Slack first: styles.css) -->
-      <section id="platforms" class="section section--plat">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · 当前能力</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Mac、飞书与 Codex，<em>接成一条路径。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">1.3.0 内置核心支持 macOS、一个飞书群与 Codex。这三部分把对话连接到项目，更多使用方式将在后续完善。</p>
-
-        <div class="plat">
-          <article class="plat-card plat-card--lark" data-reveal>
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-feishu"/></svg>
-              <h3 data-i18n="plat.lark.h">在飞书群里</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.lark.1.t">一个绑定的群</b><p data-i18n="plat.lark.1.b">连接一个飞书群与本机项目。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-pen-tool"/></svg>
-                <div><b data-i18n="plat.lark.2.t">在对话中派活</b><p data-i18n="plat.lark.2.b">在原来的群聊里说明要做的事。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg>
-                <div><b data-i18n="plat.lark.3.t">答复回到群里</b><p data-i18n="plat.lark.3.b">在同一段对话里查看结果。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.lark.4.t">飞书中国版</b><p data-i18n="plat.lark.4.b">使用飞书长连接接收事件。</p></div>
-              </li>
-            </ul>
-          </article>
-
-          <article class="plat-card plat-card--slack" data-reveal data-reveal-delay="80">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#i-monitor"/></svg>
-              <h3 data-i18n="plat.slack.h">在你的 Mac 上</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.slack.1.t">本机项目目录</b><p data-i18n="plat.slack.1.b">任务在配置的项目目录里执行。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-activity"/></svg>
-                <div><b data-i18n="plat.slack.2.t">Node.js 22 及以上</b><p data-i18n="plat.slack.2.b">先准备 Node 和已登录的 Codex。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-terminal"/></svg>
-                <div><b data-i18n="plat.slack.3.t">独立安装</b><p data-i18n="plat.slack.3.b">安装器保留已有全局包和服务。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.slack.4.t">前台运行</b><p data-i18n="plat.slack.4.b">群里使用时保持终端开启。</p></div>
-              </li>
-            </ul>
-          </article>
-          <article class="plat-card plat-card--wecom" data-reveal data-reveal-delay="160">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-codex"/></svg>
-              <h3 data-i18n="plat.wecom.h">由 Codex 处理</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg>
-                <div><b data-i18n="plat.wecom.1.t">Codex 消息轮次</b><p data-i18n="plat.wecom.1.b">任务交给本机安装的 Codex。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-at-sign"/></svg>
-                <div><b data-i18n="plat.wecom.2.t">从只读开始</b><p data-i18n="plat.wecom.2.b">安装指南以只读权限开始。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>
-                <div><b data-i18n="plat.wecom.3.t">你配置的模型服务</b><p data-i18n="plat.wecom.3.b">Codex 使用自身的账号与模型配置。</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.wecom.4.t">带着项目上下文回复</b><p data-i18n="plat.wecom.4.b">可以从 README、代码或项目结构问起。</p></div>
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="plat-core" data-reveal>
-          <p class="plat-core__label" data-i18n="plat.core.label">1.3.0 范围</p>
-          <ul class="plat-core__list">
-            <li data-i18n="plat.core.1">macOS</li>
-            <li data-i18n="plat.core.2">一个飞书群</li>
-            <li data-i18n="plat.core.3">一个本机项目</li>
-            <li data-i18n="plat.core.4">Codex</li>
-            <li data-i18n="plat.core.5">内置核心</li>
-            <li data-i18n="plat.core.6">前台运行</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Flow: from @ to delivery -->
-      <section id="flow" class="section section--flow">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="flow.kicker">02 · 工作流程</p>
-        <h2 class="section__h" data-reveal data-i18n-html="flow.h">从<em>一句话</em>，到项目里的任务。</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="flow.lede">SintBot 接收群消息，在 Mac 上的绑定项目里运行 Codex，再把答复带回群里。飞书和模型服务仍需要网络连接。</p>
-
-        <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="Feishu → SintBot → Codex → model service" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#d68f44" />
-                <stop offset="50%" stop-color="#e5b94d" />
-                <stop offset="100%" stop-color="#2fae6f" />
-              </linearGradient>
-              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
-              </marker>
-            </defs>
-
-            <!-- return path: progress + result back to the group -->
-            <g stroke="#3a3a3a" stroke-dasharray="4 6" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M720 60 C 720 22, 140 22, 140 60" />
-            </g>
-            <text x="430" y="18" text-anchor="middle" fill="#888" font-size="12" class="d-note" data-i18n-svg="flow.return">答复回到群聊</text>
-
-            <!-- column: group -->
-            <g class="d-col">
-              <rect x="40" y="60" width="200" height="320" rx="18" />
-              <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">飞书群</text>
-              <g class="d-pill d-pill--accent d-pill--feishu"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">飞书</text></g>
-              <g class="d-pill d-pill--accent d-pill--slack"><rect x="70" y="196" width="140" height="44" rx="22" /><text x="140" y="218" data-i18n-svg="flow.group.task">任务消息</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><text x="140" y="274" data-i18n-svg="flow.group.reply">处理答复</text></g>
-              <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">发出项目任务</text>
-              <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">一个群 · 一个项目</text>
-            </g>
-
-            <!-- column: daemon -->
-            <g class="d-col">
-              <rect x="290" y="60" width="270" height="320" rx="18" />
-              <text x="425" y="100" text-anchor="middle" data-i18n-svg="flow.col.daemon">SintBot · 你的 Mac</text>
-              <g class="d-pill d-pill--accent"><rect x="320" y="140" width="210" height="44" rx="10" /><text x="425" y="162" data-i18n-svg="flow.daemon.1">内置核心</text></g>
-              <g class="d-pill"><rect x="320" y="196" width="210" height="44" rx="10" /><text x="425" y="218" data-i18n-svg="flow.daemon.2">一个群 · 一个项目</text></g>
-              <g class="d-pill"><rect x="320" y="252" width="210" height="44" rx="10" /><text x="425" y="274" data-i18n-svg="flow.daemon.3">配置的执行权限</text></g>
-              <text class="d-note" x="425" y="330" text-anchor="middle" data-i18n-svg="flow.daemon.note1">飞书长连接</text>
-              <text class="d-note d-note--em" x="425" y="350" text-anchor="middle" data-i18n-svg="flow.daemon.note2">前台运行</text>
-            </g>
-
-            <!-- column: agent runner -->
-            <g class="d-col">
-              <rect x="610" y="60" width="220" height="320" rx="18" />
-              <text x="720" y="100" text-anchor="middle" data-i18n-svg="flow.col.runner">执行通道</text>
-              <g class="d-pill d-pill--accent"><rect x="640" y="196" width="160" height="44" rx="10" /><use href="#b-codex" x="686" y="208" width="20" height="20" /><text x="734" y="218">Codex</text></g>
-              <text class="d-note" x="720" y="330" text-anchor="middle" data-i18n-svg="flow.runner.note1">在项目目录里执行</text>
-              <text class="d-note" x="720" y="350" text-anchor="middle" data-i18n-svg="flow.runner.note2">本机安装并登录</text>
-            </g>
-
-            <!-- column: model -->
-            <g class="d-col">
-              <rect x="880" y="60" width="280" height="320" rx="18" />
-              <text x="1020" y="100" text-anchor="middle" data-i18n-svg="flow.col.model">模型服务</text>
-              <g class="d-pill"><rect x="910" y="140" width="220" height="44" rx="10" /><text x="1020" y="162" data-i18n-svg="flow.model.1">配置的模型</text></g>
-              <g class="d-pill"><rect x="910" y="196" width="220" height="44" rx="10" /><text x="1020" y="218" data-i18n-svg="flow.model.2">Codex 账号</text></g>
-              <g class="d-pill"><rect x="910" y="252" width="220" height="44" rx="10" /><text x="1020" y="274" data-i18n-svg="flow.model.3">网络连接</text></g>
-              <text class="d-note" x="1020" y="330" text-anchor="middle" data-i18n-svg="flow.model.note1">使用 Codex 配置</text>
-              <text class="d-note" x="1020" y="350" text-anchor="middle" data-i18n-svg="flow.model.note2">适用服务商政策</text>
-            </g>
-
-            <!-- forward arrows -->
-            <g stroke="url(#gline)" stroke-width="3" fill="none" marker-end="url(#arrow)" color="#e5b94d" class="d-arrow">
-              <path d="M240 218 C 265 218, 270 218, 290 218" />
-              <path d="M560 218 C 585 218, 590 218, 610 218" />
-              <path d="M830 218 C 855 218, 860 218, 880 218" />
-            </g>
-
-            <!-- side rails: console · project directory · design toolchain -->
-            <g stroke="#3a3a3a" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M425 380 V 406 H 300 V 430 M425 406 H 900 V 430 M600 406 V 430" />
-            </g>
-            <g class="d-pill d-pill--side">
-              <rect x="180" y="430" width="240" height="44" rx="10" /><text x="300" y="452" data-i18n-svg="flow.side.console">本机配置</text>
-              <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">本机项目目录</text>
-              <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">持久运行状态</text>
-            </g>
-            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">失败时保留状态</text>
-          </svg>
-          <figcaption data-i18n="flow.caption">群聊 → SintBot → Codex → 模型服务。答复回到群里，配置、项目文件和运行状态保留在 Mac 上；模型请求遵循你的 Codex 配置。</figcaption>
-        </figure>
-      </section>
-
-
-
-      <!-- Images and review -->
-
-
-      <!-- Scenarios -->
-
-
-      <!-- Governance -->
-      <section id="governance" class="section section--gov">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="gov.kicker">03 · 权限</p>
-        <h2 class="section__h" data-reveal data-i18n-html="gov.h">第一条任务，<em>从只读开始。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="gov.lede">先用安装指南中的只读配置验证第一条答复，明确任务范围与账号权限。</p>
-
-        <ol class="gov-tiers" data-reveal>
-          <li class="gov-tier">
-            <span class="gov-tier__no">①</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-lock"/></svg>
-            <h3 data-i18n="gov.t1.title">先用只读权限</h3>
-            <p data-i18n="gov.t1.body">先让助手返回 README 第一行，再决定是否扩大权限。</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">②</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-            <h3 data-i18n="gov.t2.title">指定项目范围</h3>
-            <p data-i18n="gov.t2.body">把这一个群绑定到希望 Codex 处理的现有项目。</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">③</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-lock"/></svg>
-            <h3 data-i18n="gov.t3.title">凭据在本机配置</h3>
-            <p data-i18n="gov.t3.body">在本机填写飞书应用凭据，不把密钥发到群里或提交到仓库。</p>
-          </li>
-        </ol>
-
-      </section>
-
-
-
-
-
-      <!-- Install the 1.3.0 built-in-core release -->
-      <section id="plugin" class="section section--plugin">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">04 · 安装</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h">安装 SintBot，<em>把项目接进群里。</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede">1.3.0 安装包包含内置核心。需要 macOS、Node.js 22 及以上，以及可正常使用且已登录的 <code>codex</code>。安装器不会安装 Node 或代为登录 Codex。</p>
+        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">开始使用</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plugin.h">把下一个项目，<br><em>接进群里。</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede">这里下载的是 1.3.0 内置核心发行版：macOS、一个飞书群、Codex，前台运行；尚未包含已有的 Claude Code 与第三方模型路径。需要 Node.js 22 及以上，以及可正常使用且已登录的 <code>codex</code>。</p>
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.3.0</span></span>
           <span class="chip">PolyForm Shield</span>
@@ -664,54 +282,16 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
           </li>
         </ol>
         <aside class="ccbot" data-reveal aria-labelledby="upgrade-h"><div class="ccbot__main"><p class="ccbot__kicker" data-i18n="upgrade.kicker">已有安装</p><h3 id="upgrade-h" data-i18n="upgrade.h">保留现有工作方式。</h3><p class="ccbot__body" data-i18n="upgrade.body">如果你正在使用多群、Claude、Slack、企业微信、画板、控制台或定时任务，请保留原版本。这些能力及 Linux/Windows 支持不在 1.3.0 范围内，兼容迁移与更多支持将继续完善。</p></div><div class="ccbot__side"><a class="btn btn--primary install-guide" href="https://github.com/sintlab/sintbot/blob/v1.3.0/docs/zh-CN/install.md" data-i18n="install.guide">阅读 1.3.0 指南</a></div></aside>
-      </section>
-
-      <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
-      <section id="faq" class="section section--faq">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="faq.kicker">05 · 常见问题</p>
-        <h2 class="section__h" data-reveal data-i18n-html="faq.h">常被问到的，<em>直接回答。</em></h2>
-        <dl class="faq">
-          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">SintBot 是什么？</dt><dd data-i18n-html="faq.1.a">连接一个飞书群与本机项目的编码助手。1.3.0 由 Codex 在你的 Mac 上处理任务，再把答复带回群里。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">1.3.0 支持哪些使用方式？</dt><dd data-i18n-html="faq.2.a">macOS、Node.js 22 及以上、一个飞书群与 Codex，使用时在前台运行。多群、其他模型通道、Slack、企业微信、画板、控制台、定时与其他操作系统不包含在本版中。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">现有安装能直接升级吗？</dt><dd data-i18n-html="faq.3.a">依赖本版范围之外的能力时，请保留原版本。单独安装程序不会迁移已有状态，请等待兼容的迁移方案。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">全部处理都在离线环境完成吗？</dt><dd data-i18n-html="faq.4.a">不是。SintBot 和项目在本机运行，飞书及配置的模型服务仍需联网。模型请求遵循 Codex 配置及服务商的数据政策。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">安装需要准备什么？</dt><dd data-i18n-html="faq.5.a">一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按版本指南配置的飞书应用。使用飞书中国版，暂不支持国际版 Lark。</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">SintBot 使用什么许可证？</dt><dd data-i18n-html="faq.6.a">SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。</dd></div>
-
-
-
-
-
-        </dl>
-      </section>
-
-      <!-- CTA -->
-      <section class="section section--cta">
-        <div class="cta">
-          <h2 data-reveal data-i18n="cta.h">把项目，接进群里。</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">从一个飞书群、一个 Mac 上的项目开始。按 1.3.0 指南接入，先试一条只读任务。</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="160">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="cta.see">看它怎么工作</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg><span data-i18n="cta.plugin">GitHub 项目</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
+      </section><section id="faq" class="section section--faq"><div class="section__intro"><div><p class="section__kicker" data-i18n="faq.kicker">你可能想知道</p><h2 class="section__h" data-i18n-html="faq.h">开始之前，<em>把这些说清楚。</em></h2></div></div><div class="faq"><details class="faq__item" open><summary><span data-i18n="faq.7.q">SintBot 可以使用哪些模型？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.7.a">已有的多模型版本可通过 Claude Code 使用 Claude，通过 Codex 使用 GPT，也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。当前 1.3.0 下载包仅包含 Codex 路径。</div></details><details class="faq__item"><summary><span data-i18n="faq.8.q">换模型之后，什么会保留？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.8.a">项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和未完成事项写进项目，下一位助手即可读取接续，不会自动完整转移上一段对话中尚未保存的细节。</div></details><details class="faq__item"><summary><span data-i18n="faq.1.q">SintBot 是什么？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.1.a">把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。你可以选择编码执行器及其模型服务，保留项目文件和已保存的笔记。当前下载版本的范围较窄，具体见下方版本说明。</div></details><details class="faq__item"><summary><span data-i18n="faq.2.q">1.3.0 支持哪些使用方式？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.2.a">macOS、Node.js 22 及以上、一个飞书群与 Codex，使用时在前台运行。多群、其他模型通道、Slack、企业微信、画板、控制台、定时与其他操作系统不包含在本版中。</div></details><details class="faq__item"><summary><span data-i18n="faq.3.q">现有安装能直接升级吗？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.3.a">依赖本版范围之外的能力时，请保留原版本。单独安装程序不会迁移已有状态，请等待兼容的迁移方案。</div></details><details class="faq__item"><summary><span data-i18n="faq.4.q">全部处理都在离线环境完成吗？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.4.a">不是。SintBot 和项目在本机运行，聊天平台及配置的模型服务仍需联网。模型请求遵循所选执行器的配置及服务商的数据政策。</div></details><details class="faq__item"><summary><span data-i18n="faq.5.q">安装需要准备什么？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.5.a">一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按版本指南配置的飞书应用。使用飞书中国版，暂不支持国际版 Lark。</div></details><details class="faq__item"><summary><span data-i18n="faq.6.q">SintBot 使用什么许可证？</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.6.a">SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可证与第三方声明，模型服务需要另行配置。</div></details></div></section><section class="section section--cta"><div class="cta"><h2 data-i18n="cta.h">让项目，回到团队的对话里。</h2><p data-i18n="cta.p">选好编码助手，带着项目一起往前走。</p><a class="btn btn--primary" href="#plugin"><span data-i18n="hero.cta.install">安装 SintBot</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div></section></main>
     <footer class="foot">
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">内置核心 · macOS · 飞书 · Codex</span>
+          <span data-i18n="foot.tag">项目群驱动 · Claude Code 与 Codex · 模型可切换</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
-          <a href="#platforms" data-i18n="nav.platforms">当前能力</a>
-          <a href="#governance" data-i18n="nav.design">权限</a>
+          <a href="#what" data-i18n="nav.platforms">工作方式</a>
+          <a href="#models" data-i18n="nav.models">模型</a>
           <a href="#plugin" data-i18n="nav.setup">安装</a>
           <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
@@ -725,14 +305,12 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">服务条款</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">与飞书、OpenAI 或其他提及的服务商无隶属关系，产品名称及标志归其各自所有者。</p>
+      <p class="foot__meta" data-i18n="foot.meta">与飞书、Anthropic、OpenAI 或其他提及的服务商无隶属关系，产品名称及标志归其各自所有者。</p>
     </footer>
-
-    <a href="#top" class="to-top">
-      <span class="visually-hidden" data-i18n="totop.label">返回顶部</span>
-      <span class="to-top__icon" aria-hidden="true">↑</span>
-    </a>
-
-    <script src="/app.js" defer></script>
-  </body>
+<a href="#top" class="to-top"><span class="visually-hidden" data-i18n="totop.label">返回顶部</span><span aria-hidden="true">↑</span></a>
+<script src="/app.js" defer></script>
+<script src="/assets/vendor/gsap-3.15.0.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger-3.15.0.min.js" defer></script>
+<script src="/motion.js" defer></script>
+</body>
 </html>

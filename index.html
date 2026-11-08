@@ -1,28 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="software">
   <head>
+    <meta name="page-type" content="software" />
+    <meta name="site-kind" content="software" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>SintBot — a coding assistant in your Feishu group</title>
+    <title>SintBot — one project group, your choice of model</title>
     <meta
       name="description"
-      content="Bind one Feishu group to a project on your Mac. SintBot 1.3.0 runs Codex tasks through its built-in core and brings the answer back to the group."
+      content="Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine."
     />
-    <!-- Social sharing copy follows the restricted 1.3.0 scope. -->
+    <!-- Product positioning and release-specific installation scope are distinct. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SintBot" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://sintbot.com/" />
-    <meta property="og:title" content="SintBot — a coding assistant in your Feishu group" />
+    <meta property="og:title" content="SintBot — one project group, your choice of model" />
     <meta
       property="og:description"
-      content="Bind one Feishu group to a project on your Mac. SintBot 1.3.0 runs Codex tasks through its built-in core and brings the answer back to the group."
+      content="Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine."
     />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="SintBot — a coding assistant in your Feishu group" />
+    <meta name="twitter:title" content="SintBot — one project group, your choice of model" />
     <meta
       name="twitter:description"
-      content="Bind one Feishu group to a project on your Mac. SintBot 1.3.0 runs Codex tasks through its built-in core and brings the answer back to the group."
+      content="Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://sintbot.com/" />
@@ -63,7 +65,7 @@
               ]
             },
             "inLanguage": "en",
-            "description": "Bind one Feishu group to a project on your Mac. SintBot 1.3.0 runs Codex tasks through its built-in core and brings the answer back to the group."
+            "description": "Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine."
           },
           {
             "@type": "Person",
@@ -84,7 +86,7 @@
                 "name": "What is SintBot?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A coding assistant that connects one Feishu group to a local project. In 1.3.0, Codex works on your Mac and returns its answer to the group."
+                  "text": "A coding assistant that connects a project group to Claude Code or Codex on your own machine. You can choose the coding agent and its model service, while keeping the project files and saved notes. The current download has a narrower scope, described below."
                 }
               },
               {
@@ -108,7 +110,7 @@
                 "name": "Does everything work offline?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. SintBot and the project run on your Mac, but Feishu and your configured model service require a network connection. Model requests follow Codex configuration and the service provider’s data policy."
+                  "text": "No. SintBot and the project run on your machine, but the chat platform and configured model services require a network connection. Model requests follow the selected agent’s configuration and the service provider’s data policy."
                 }
               },
               {
@@ -126,6 +128,22 @@
                   "@type": "Answer",
                   "text": "SintBot is distributed under PolyForm Shield 1.0.0. The package includes its built-in core, the license and third-party notices. Model service access is configured separately."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "Which models can SintBot use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Existing multi-model installations use Claude through Claude Code, GPT through Codex, and GLM, MiniMax or DeepSeek through Claude Code with compatible endpoints and your own API keys. Kimi and other compatible providers can use custom endpoints. The 1.3.0 download currently includes only the Codex route."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What stays when I switch models?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them. It does not automatically transfer every unsaved detail from the previous conversation."
+                }
               }
             ]
           }
@@ -133,28 +151,8 @@
       }
     </script>
     <link rel="stylesheet" href="/styles.css" />
-    <!-- Latin webfonts only; Chinese renders in the platform's own font (PingFang / YaHei).
-         Loaded without blocking first paint: where fonts.googleapis.com is unreachable
-         (mainland China) the page must not sit blank waiting for it. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-      />
-    </noscript>
+    <!-- Self-hosted Latin fonts; Chinese uses the system sans-serif. -->
+    <link rel="preload" href="/assets/fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <!-- Analytics: Umami (privacy-first, no cookies, no consent banner) -->
     <!-- ?notrack=1 marks this browser as ours (Umami skips it from then on); ?notrack=0 undoes it -->
@@ -167,7 +165,7 @@
     ></script>
 
   </head>
-  <body class="site-upgrade">
+  <body class="taste-site">
     <!-- Icon sprite (Lucide, ISC) — referenced as <svg class="ico" width="20" height="20"><use href="#i-name"/></svg> -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><!-- icons: Lucide — ISC (https://lucide.dev), normalized by the design toolchain: stroke 1.5, 24 grid, currentColor -->
 <symbol id="i-folder-git-2" data-icon="lucide/folder-git-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 19a5 5 0 0 1-5-5v8" /><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5" /><circle cx="13" cy="12" r="2" /><circle cx="20" cy="19" r="2" /></symbol>
@@ -239,392 +237,12 @@
 <symbol id="b-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
     </svg>
 
-    <!-- Original ambient texture and pointer glow -->
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a><header class="nav" id="top"><a class="nav__brand" href="#top" aria-label="SintBot"><span class="nav__mark" aria-hidden="true">S</span><span class="nav__word">SintBot</span></a><nav class="nav__links" aria-label="Main navigation"><a href="#what" data-i18n="nav.platforms">How it works</a><a href="#models" data-i18n="nav.models">Models</a><a href="#faq" data-i18n="nav.console">FAQ</a></nav><div class="nav__right"><div class="lang-toggle" aria-label="Language"><a href="/" data-lang="en" class="lang-toggle__btn is-active">EN</a><a href="/zh/" data-lang="zh" class="lang-toggle__btn">中文</a></div><a class="nav__cta" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-github"/></svg><span>GitHub</span></a></div></header>
+<main id="main" tabindex="-1"><section class="hero" aria-labelledby="hero-title"><div class="hero__inner"><a href="#models" class="hero__eyebrow" data-reveal><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="hero.eyebrow">One project group. Your choice of model.</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><h1 id="hero-title" class="hero__title hero__title-en" data-reveal data-i18n-html="hero.titleEn">Your coding agents.<br>Right in the group.</h1><p class="hero__lede" data-reveal data-reveal-delay="80" data-i18n="hero.lede">Put Claude Code or Codex to work from your project group. Choose Claude, GPT, GLM, MiniMax or DeepSeek. Keep your files and project memory on your own machine.</p><div class="hero__ctas" data-reveal data-reveal-delay="160"><a class="btn btn--primary" href="#plugin"><span data-i18n="hero.cta.install">Get SintBot</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><a class="btn btn--ghost" href="#what"><span data-i18n="hero.cta.primary">Explore the workflow</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div></div><div class="showcase"><div class="showcase__tabs" role="tablist" aria-label="SintBot workflow"><button type="button" class="showcase__tab is-active" id="tab-task" role="tab" aria-selected="true" aria-controls="panel-task" tabindex="0" data-showcase-tab="task" data-i18n="demo.tab.task">Give it a task</button><button type="button" class="showcase__tab" id="tab-models" role="tab" aria-selected="false" aria-controls="panel-models" tabindex="-1" data-showcase-tab="models" data-i18n="demo.tab.models">Switch models</button><button type="button" class="showcase__tab" id="tab-memory" role="tab" aria-selected="false" aria-controls="panel-memory" tabindex="-1" data-showcase-tab="memory" data-i18n="demo.tab.memory">Keep project memory</button><button type="button" class="showcase__tab" id="tab-local" role="tab" aria-selected="false" aria-controls="panel-local" tabindex="-1" data-showcase-tab="local" data-i18n="demo.tab.local">Work locally</button></div><div class="showcase__window"><div class="showcase__toolbar"><span class="showcase__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>SintBot / <span data-i18n="demo.project">Website project</span></span><span class="showcase__example" data-i18n="demo.example">Workflow example</span></div><div class="showcase__body"><aside class="showcase__sidebar"><p class="showcase__sidebar-label" data-i18n="demo.sidebar.title">YOUR WORKSPACE</p><strong><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg><span data-i18n="demo.project">Website project</span></strong><ul><li class="is-active"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg><span data-i18n="demo.sidebar.task">Project conversation</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="demo.sidebar.models">Agents &amp; models</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="demo.sidebar.memory">Project notes</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-git-2"/></svg><span data-i18n="demo.sidebar.files">Local files</span></li></ul><small data-i18n="demo.sidebar.bottom">Your machine. Your project.</small></aside><div class="showcase__workspace"><section class="showcase__panel" id="panel-task" role="tabpanel" aria-labelledby="tab-task" tabindex="0" data-showcase-panel="task"><div class="showcase__conversation"><div class="showcase__message showcase__message--user"><span class="showcase__avatar">Y</span><div><b data-i18n="demo.you">You</b><p data-i18n="demo.task.ask">Keep the original typography. Improve the mobile navigation and show me the changes.</p></div></div><div class="showcase__message showcase__message--bot"><span class="showcase__avatar showcase__avatar--bot">S</span><div><b>SintBot <span class="showcase__agent">Claude Code</span></b><p class="showcase__status"><span></span><span data-i18n="demo.task.status">Working in the website project</span></p><p data-i18n="demo.task.reply">The mobile navigation now fits small screens. The page typography stays the same.</p><div class="showcase__artifacts"><span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="demo.task.file">Navigation updated</span></span><span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="demo.task.check">Mobile layout reviewed</span></span></div></div></div><p class="showcase__hint" data-i18n="demo.task.footer">The task, progress and result stay in one conversation.</p></div></section><section class="showcase__panel" id="panel-models" role="tabpanel" aria-labelledby="tab-models" tabindex="0" data-showcase-panel="models" hidden><div class="showcase__content"><h3 data-i18n="demo.models.h">Same project. A different model.</h3><p data-i18n="demo.models.p">Choose the coding agent, then its model. Claude Code also connects to compatible third-party services.</p><div class="showcase__model-options"><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-claude"/></svg><b>Claude</b><small data-i18n="demo.models.route">Claude Code route</small></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-openai"/></svg><b>GPT</b><small data-i18n="demo.models.codex">Codex route</small></div><div class="showcase__model-option is-selected"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-zhipu"/></svg><b>GLM</b><small data-i18n="demo.models.route">Claude Code route</small><span class="showcase__selection"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-deepseek"/></svg><b>DeepSeek</b><small data-i18n="demo.models.route">Claude Code route</small></div><div class="showcase__model-option"><svg class="brand" width="20" height="20" aria-hidden="true"><use href="#b-minimax"/></svg><b>MiniMax</b><small data-i18n="demo.models.route">Claude Code route</small></div></div><p class="showcase__hint" data-i18n="demo.models.note">Switching starts a new conversation. Saved project notes carry over.</p></div></section><section class="showcase__panel" id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" tabindex="0" data-showcase-panel="memory" hidden><div class="showcase__content"><h3 data-i18n="demo.memory.h">Leave the next agent a clear handoff.</h3><p data-i18n="demo.memory.p">Decisions live with the project, ready for whichever model you choose next.</p><div class="showcase__editor"><div class="showcase__editor-tab"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg>AGENTS.md</div><div class="showcase__editor-line"><span>1</span><code data-i18n="demo.memory.line1"># Website project</code></div><div class="showcase__editor-line"><span>2</span><code data-i18n="demo.memory.line2">Keep the existing type and spacing.</code></div><div class="showcase__editor-line"><span>3</span><code data-i18n="demo.memory.line3">Mobile navigation: updated and reviewed.</code></div><div class="showcase__editor-line"><span>4</span><code data-i18n="demo.memory.line4">Next: review the installation section.</code></div></div><p class="showcase__hint" data-i18n="demo.memory.note">Project notes persist. Unsaved chat details are not a shared memory.</p></div></section><section class="showcase__panel" id="panel-local" role="tabpanel" aria-labelledby="tab-local" tabindex="0" data-showcase-panel="local" hidden><div class="showcase__content"><h3 data-i18n="demo.local.h">The work happens in your project.</h3><p data-i18n="demo.local.p">Code, assets and saved notes stay on your machine. The selected model service handles model requests.</p><div class="showcase__local-grid"><div class="showcase__file-tree"><b data-i18n="demo.local.files">Project files</b><code>website/<br>├─ index.html<br>├─ styles.css<br>├─ app.js<br>└─ AGENTS.md</code></div><div class="showcase__diff"><b data-i18n="demo.local.result">A change you can review</b><code><span class="diff-remove">− min-width: 960px;</span><br><span class="diff-add">+ width: min(100%, 960px);</span><br><span class="diff-add">+ flex-wrap: wrap;</span></code><p class="showcase__status"><span></span><span data-i18n="demo.local.status">Changes remain in your workspace</span></p></div></div></div></section></div></div></div><p class="showcase__scope" data-i18n="demo.scope">Examples show SintBot’s product workflow. The current download’s supported scope is listed below.</p></div></section><section id="what" class="section section--what"><div class="section__intro"><div><p class="section__kicker" data-i18n="what.kicker">FROM THE GROUP TO THE PROJECT</p><h2 class="section__h" data-i18n-html="what.h">A conversation.<br><em>Actual work.</em></h2></div><p class="lede lede--wide" data-i18n="what.lede">No need to move the whole team into a terminal. Give the task where you already talk, let the coding agent work and review the result together.</p></div><ol class="flow-grid"><li class="flow-step" data-reveal data-reveal-delay="0"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg><span>01</span></div><h3 data-i18n="flow.1.h">Give the task</h3><p data-i18n="flow.1.p">Bind the group to a project. Describe the change, add context and keep the conversation together.</p></li><li class="flow-step" data-reveal data-reveal-delay="70"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span>02</span></div><h3 data-i18n="flow.2.h">Choose the agent</h3><p data-i18n="flow.2.p">Claude Code or Codex works inside the project with the model and permissions you configure.</p></li><li class="flow-step" data-reveal data-reveal-delay="140"><div class="flow-step__visual"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>03</span></div><h3 data-i18n="flow.3.h">Review the result</h3><p data-i18n="flow.3.p">Progress and results return to the group. Keep decisions in project notes for the next turn.</p></li></ol></section><section id="models" class="section section--models"><div class="section__intro"><div><p class="section__kicker" data-i18n="models.kicker">YOUR AGENTS. YOUR MODELS.</p><h2 class="section__h" data-i18n-html="models.h">A model for <em>your way of working.</em></h2></div><p class="lede lede--wide" data-i18n="models.lede">Claude Code and Codex are the coding agents. Claude, GPT, GLM, MiniMax and DeepSeek are the models behind them. Choose the combination that fits your project.</p></div><ul class="model-grid"><li class="model-tile" data-reveal data-reveal-delay="0"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-claude"/></svg>Claude</b><i data-i18n="models.p.claude">through Claude Code</i></li><li class="model-tile" data-reveal data-reveal-delay="45"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-openai"/></svg>GPT</b><i data-i18n="models.p.gpt">through Codex</i></li><li class="model-tile" data-reveal data-reveal-delay="90"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-zhipu"/></svg>GLM</b><i data-i18n="models.p.glm">Claude Code · your API key</i></li><li class="model-tile" data-reveal data-reveal-delay="135"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-deepseek"/></svg>DeepSeek</b><i data-i18n="models.p.deepseek">Claude Code · your API key</i></li><li class="model-tile" data-reveal data-reveal-delay="180"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-minimax"/></svg>MiniMax</b><i data-i18n="models.p.minimax">Claude Code · your API key</i></li><li class="model-tile" data-reveal data-reveal-delay="225"><b><svg class="brand model-logo" width="20" height="20" aria-hidden="true"><use href="#b-kimi"/></svg>Kimi</b><i data-i18n="models.p.kimi">Claude Code · custom endpoint</i></li></ul><ol class="cards cards--models"><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-left-right"/></svg><span class="card__no">01</span></div><h3 data-i18n="models.1.title">Change the model, keep the project</h3><p data-i18n-html="models.1.body">In a multi-model installation, switch the configured model for the next turn. The project files stay where they are.</p></li><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-cpu"/></svg><span class="card__no">02</span></div><h3 data-i18n="models.2.title">Use your own model service</h3><p data-i18n-html="models.2.body">Claude Code connects to Claude or an Anthropic-compatible endpoint. Codex uses its own account and model configuration.</p></li><li class="card" data-reveal><div class="card__head"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg><span class="card__no">03</span></div><h3 data-i18n="models.3.title">Keep decisions in shared notes</h3><p data-i18n-html="models.3.body">Write conventions and handoffs in project notes. A fresh conversation can read them, without depending on the previous model’s private memory.</p></li></ol><p class="models__note" data-i18n="models.note">These routes are part of SintBot’s existing multi-model workflow. The 1.3.0 built-in-core download currently covers the Codex route only; keep your existing installation for Claude Code and third-party models until compatible migration is available.</p></section>      <section id="plugin" class="section section--plugin">
 
-    <!-- Top nav -->
-    <header class="nav" data-reveal>
-      <a class="visually-hidden skip-link" href="#top" data-i18n="skip">Skip to content</a>
-      <a class="nav__brand" href="#top" aria-label="SintBot home">
-        <span class="nav__word">Sint<i class="nav__trace" aria-hidden="true"></i>Bot</span>
-      </a>
-      <nav class="nav__menu" aria-label="primary">
-        <a href="#platforms" data-i18n="nav.platforms">Capabilities</a>
-        <a href="#flow" data-i18n="nav.models">Workflow</a>
-        <a href="#governance" data-i18n="nav.design">Permissions</a>
-        <a href="#faq" data-i18n="nav.console">FAQ</a>
-        <a href="#plugin" data-i18n="nav.setup">Install</a>
-        <a
-          href="https://github.com/sintlab/sintbot"
-          target="_blank"
-          rel="noopener"
-          class="nav__cta"
-           ><svg class="brand" width="14" height="14" aria-hidden="true"><use href="#b-github"/></svg>GitHub <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a
-        >
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <a href="/" data-lang="en" class="lang-toggle__btn is-active" lang="en">EN</a>
-          <span class="lang-toggle__sep" aria-hidden="true">/</span>
-          <a href="/zh/" data-lang="zh" class="lang-toggle__btn" lang="zh-CN">中</a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="top" tabindex="-1">
-      <!-- Hero -->
-      <section class="hero" aria-labelledby="hero-title">
-
-        <div class="hero__inner">
-          <p class="eyebrow" data-reveal>
-            <span class="eyebrow__dot"></span>
-            <span data-i18n="hero.eyebrow">Built-in core · macOS · one Feishu group · Codex</span>
-          </p>
-          <h1 id="hero-title" class="hero__title">
-            <span class="hero__title-en" data-i18n-html="hero.titleEn"><span data-reveal data-reveal-delay="0">Say it in the group.</span>
-           <em data-reveal data-reveal-delay="120">Your project gets to work.</em>
-           <span data-reveal data-reveal-delay="240">On your own Mac.</span></span>
-          </h1>
-          <p class="hero__lede" data-reveal data-reveal-delay="420" data-i18n-html="hero.lede">Bind a chat group to a project. Send a task in Feishu; <code>SintBot</code> runs Codex inside the project on your Mac and brings the answer back to the conversation. Version 1.3.0 includes the built-in core for one group, with foreground operation.</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="540">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="hero.cta.primary">See how it works</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg>
-              <span data-i18n="hero.cta.plugin">Project on GitHub</span>
-              <svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Retained dual-card composition: Feishu conversation and local Codex example. -->
-        <div class="hero__mocks" data-reveal data-reveal-delay="660">
-          <aside class="mock mock--lark" aria-label="Feishu example">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--lark"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-feishu"/></svg><span data-i18n="plat.lark">Feishu</span></span>
-              <span class="mock__title" data-i18n="mock.lark.title">Project group</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__kind" data-i18n="mock.lark.kind">example conversation</span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.lark.user">You</b>
-                <p data-i18n="mock.lark.ask">read the README and explain this project; do not change files</p>
-              </li>
-              <li class="mock__card">
-                <div class="mock__card-head">
-                  <svg class="ico ico--sm mock__was" width="14" height="14" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                  <svg class="ico ico--sm mock__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                  <svg class="ico ico--sm mock__ok" width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>
-                  <span class="mock__state" data-i18n="mock.lark.state">Example answer</span>
-                </div>
-                <ul class="mock__lines">
-                  <li data-i18n="mock.lark.l1">Read README.md in the bound project</li>
-                  <li data-i18n="mock.lark.l2">Summarize the project and its setup</li>
-                  <li data-i18n="mock.lark.l3">No files changed</li>
-                </ul>
-                <div class="mock__btns">
-                  <span class="mock__btn mock__btn--primary" data-i18n="mock.lark.b1">README.md</span>
-                  <span class="mock__btn" data-i18n="mock.lark.b2">Read-only example</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-
-          <div class="mock__eq" aria-hidden="true">
-            <span class="mock__eq-sign">=</span>
-            <span class="mock__eq-text" data-i18n="mock.eq">one project</span>
-          </div>
-
-          <aside class="mock mock--slack" aria-label="Codex example">
-            <div class="mock__bar">
-              <span class="plat-mark plat-mark--slack"><svg class="brand" width="12" height="12" aria-hidden="true"><use href="#b-codex"/></svg>Codex</span>
-              <span class="mock__title">README.md</span>
-              <span class="mock__spacer"></span>
-              <span class="mock__working"><i></i><span data-i18n="mock.slack.working">example</span></span>
-            </div>
-            <ol class="mock__feed">
-              <li class="mock__msg mock__msg--me">
-                <b data-i18n="mock.slack.user">Local project</b>
-                <p data-i18n="mock.slack.ask">The same task reaches Codex on your Mac.</p>
-              </li>
-              <li class="mock__msg mock__msg--bot">
-                <b>SintBot <span class="mock__app">APP</span></b>
-                <p><span class="dot" aria-hidden="true"></span><span data-i18n="mock.slack.ack">Working in the bound project</span></p>
-              </li>
-              <li class="mock__thread">
-                <span class="mock__thread-label" data-i18n="mock.slack.thread">Example · local execution</span>
-                <p class="mock__progress"><span class="mock__tick" aria-hidden="true"></span><span data-i18n="mock.slack.progress">Reading README.md</span></p>
-                <p class="mock__final" data-i18n-html="mock.slack.final">The README describes a small web app, its files and local startup steps.</p>
-                <div class="mock__btns">
-                  <span class="mock__btn" data-i18n="mock.slack.b1">Your Mac</span>
-                  <span class="mock__btn" data-i18n="mock.slack.b2">Codex</span>
-                </div>
-              </li>
-            </ol>
-          </aside>
-        </div>
-      </section>
-
-      <!-- What is SintBot -->
-      <section id="what" class="section section--what">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="what.kicker">What it is</p>
-        <h2 class="section__h" data-reveal data-i18n-html="what.h">Your project, <em>in the group.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="what.lede">SintBot runs on your Mac and connects one Feishu group to one local project. A task in the group becomes a Codex turn in that project.</p>
-        <ol class="pillars">
-          <li class="pillar" data-reveal>
-            <h3 data-i18n="what.bot.title">A coding assistant for your project group</h3>
-            <p data-i18n-html="what.bot.body"><code>sintbot</code> connects the conversation to the working directory. The 1.3.0 package includes a built-in core and is distributed under PolyForm Shield 1.0.0. Start with a read-only task and the versioned installation guide.</p>
-            <a class="pillar__link" href="#platforms" data-i18n="what.bot.link">See the supported route →</a>
-          </li>
-        </ol>
-
-        <ul class="facts" data-reveal data-reveal-delay="120" aria-label="By the numbers">
-          <li><span>macOS</span><i data-i18n="facts.platforms">supported operating system</i></li>
-          <li><span>Codex</span><i data-i18n="facts.runners">local agent runner</i></li>
-          <li><span>22+</span><i data-i18n="facts.models">Node.js required</i></li>
-          <li><span>1</span><i data-i18n="facts.projects">project per group</i></li>
-          <li><span>1</span><i data-i18n="facts.redact">Feishu group per instance</i></li>
-          <li><span>1.3.0</span><i data-i18n="facts.tests">current release</i></li>
-        </ul>
-      </section>
-
-      <!-- Platforms: Feishu, Slack and WeCom, all supported (English puts Slack first: styles.css) -->
-      <section id="platforms" class="section section--plat">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plat.kicker">01 · Capabilities</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plat.h">Mac, Feishu and Codex. <em>One working route.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="plat.lede">The 1.3.0 built-in core supports macOS, one Feishu group and Codex. These three parts connect the conversation to your project; other routes will follow.</p>
-
-        <div class="plat">
-          <article class="plat-card plat-card--lark" data-reveal>
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-feishu"/></svg>
-              <h3 data-i18n="plat.lark.h">In a Feishu group</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.lark.1.t">One bound group</b><p data-i18n="plat.lark.1.b">Connect one Feishu group to a local project.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-pen-tool"/></svg>
-                <div><b data-i18n="plat.lark.2.t">Tasks in the conversation</b><p data-i18n="plat.lark.2.b">Describe the work in the group you already use.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-message-square"/></svg>
-                <div><b data-i18n="plat.lark.3.t">Replies return to the group</b><p data-i18n="plat.lark.3.b">Read the result in the same conversation.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.lark.4.t">Feishu China edition</b><p data-i18n="plat.lark.4.b">Uses Feishu long-connection event delivery.</p></div>
-              </li>
-            </ul>
-          </article>
-
-          <article class="plat-card plat-card--slack" data-reveal data-reveal-delay="80">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#i-monitor"/></svg>
-              <h3 data-i18n="plat.slack.h">On your Mac</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.slack.1.t">Local project directory</b><p data-i18n="plat.slack.1.b">Work happens in the configured project directory.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-activity"/></svg>
-                <div><b data-i18n="plat.slack.2.t">Node.js 22 or later</b><p data-i18n="plat.slack.2.b">Prepare Node and an authenticated Codex first.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-terminal"/></svg>
-                <div><b data-i18n="plat.slack.3.t">Separate installation</b><p data-i18n="plat.slack.3.b">The installer preserves existing global packages and services.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-server"/></svg>
-                <div><b data-i18n="plat.slack.4.t">Foreground operation</b><p data-i18n="plat.slack.4.b">Keep the terminal open while the group uses SintBot.</p></div>
-              </li>
-            </ul>
-          </article>
-          <article class="plat-card plat-card--wecom" data-reveal data-reveal-delay="160">
-            <div class="plat-card__head">
-              <svg class="brand plat-logo" width="24" height="24" aria-hidden="true"><use href="#b-codex"/></svg>
-              <h3 data-i18n="plat.wecom.h">Through Codex</h3>
-            </div>
-            <ul class="plat-list">
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg>
-                <div><b data-i18n="plat.wecom.1.t">Codex message turns</b><p data-i18n="plat.wecom.1.b">Each task is handed to the local Codex installation.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-at-sign"/></svg>
-                <div><b data-i18n="plat.wecom.2.t">Read-only first</b><p data-i18n="plat.wecom.2.b">The installation guide starts with read-only permissions.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>
-                <div><b data-i18n="plat.wecom.3.t">Your configured model service</b><p data-i18n="plat.wecom.3.b">Codex uses its own account and model configuration.</p></div>
-              </li>
-              <li>
-                <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-loader-circle"/></svg>
-                <div><b data-i18n="plat.wecom.4.t">An answer in context</b><p data-i18n="plat.wecom.4.b">Ask about the README, code or project structure.</p></div>
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="plat-core" data-reveal>
-          <p class="plat-core__label" data-i18n="plat.core.label">1.3.0 scope</p>
-          <ul class="plat-core__list">
-            <li data-i18n="plat.core.1">macOS</li>
-            <li data-i18n="plat.core.2">one Feishu group</li>
-            <li data-i18n="plat.core.3">one local project</li>
-            <li data-i18n="plat.core.4">Codex</li>
-            <li data-i18n="plat.core.5">built-in core</li>
-            <li data-i18n="plat.core.6">foreground operation</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Flow: from @ to delivery -->
-      <section id="flow" class="section section--flow">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="flow.kicker">02 · How it works</p>
-        <h2 class="section__h" data-reveal data-i18n-html="flow.h">From <em>one sentence</em> to a project task.</h2>
-        <p class="lede lede--wide" data-reveal data-i18n="flow.lede">SintBot receives the group message, runs Codex in the bound project on your Mac and returns the answer. Feishu and the model service remain network services.</p>
-
-        <figure class="diagram" data-reveal>
-          <svg viewBox="0 0 1200 520" role="img" aria-label="Feishu → SintBot → Codex → model service" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gline" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#d68f44" />
-                <stop offset="50%" stop-color="#e5b94d" />
-                <stop offset="100%" stop-color="#2fae6f" />
-              </linearGradient>
-              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
-              </marker>
-            </defs>
-
-            <!-- return path: progress + result back to the group -->
-            <g stroke="#3a3a3a" stroke-dasharray="4 6" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M720 60 C 720 22, 140 22, 140 60" />
-            </g>
-            <text x="430" y="18" text-anchor="middle" fill="#888" font-size="12" class="d-note" data-i18n-svg="flow.return">answer back to the group</text>
-
-            <!-- column: group -->
-            <g class="d-col">
-              <rect x="40" y="60" width="200" height="320" rx="18" />
-              <text x="140" y="100" text-anchor="middle" data-i18n-svg="flow.col.group">Feishu group</text>
-              <g class="d-pill d-pill--accent d-pill--feishu"><rect x="70" y="140" width="140" height="44" rx="22" /><use href="#b-feishu" x="84" y="152" width="20" height="20" /><text x="150" y="162" data-i18n-svg="plat.lark">Feishu</text></g>
-              <g class="d-pill d-pill--accent d-pill--slack"><rect x="70" y="196" width="140" height="44" rx="22" /><text x="140" y="218" data-i18n-svg="flow.group.task">Task</text></g>
-              <g class="d-pill d-pill--accent"><rect x="70" y="252" width="140" height="44" rx="22" /><text x="140" y="274" data-i18n-svg="flow.group.reply">Answer</text></g>
-              <text class="d-note" x="140" y="330" text-anchor="middle" data-i18n-svg="flow.group.note1">send a project task</text>
-              <text class="d-note" x="140" y="350" text-anchor="middle" data-i18n-svg="flow.group.note2">one group · one project</text>
-            </g>
-
-            <!-- column: daemon -->
-            <g class="d-col">
-              <rect x="290" y="60" width="270" height="320" rx="18" />
-              <text x="425" y="100" text-anchor="middle" data-i18n-svg="flow.col.daemon">SintBot · your Mac</text>
-              <g class="d-pill d-pill--accent"><rect x="320" y="140" width="210" height="44" rx="10" /><text x="425" y="162" data-i18n-svg="flow.daemon.1">built-in core</text></g>
-              <g class="d-pill"><rect x="320" y="196" width="210" height="44" rx="10" /><text x="425" y="218" data-i18n-svg="flow.daemon.2">one group · one project</text></g>
-              <g class="d-pill"><rect x="320" y="252" width="210" height="44" rx="10" /><text x="425" y="274" data-i18n-svg="flow.daemon.3">configured permissions</text></g>
-              <text class="d-note" x="425" y="330" text-anchor="middle" data-i18n-svg="flow.daemon.note1">Feishu long connection</text>
-              <text class="d-note d-note--em" x="425" y="350" text-anchor="middle" data-i18n-svg="flow.daemon.note2">foreground operation</text>
-            </g>
-
-            <!-- column: agent runner -->
-            <g class="d-col">
-              <rect x="610" y="60" width="220" height="320" rx="18" />
-              <text x="720" y="100" text-anchor="middle" data-i18n-svg="flow.col.runner">Agent runner</text>
-              <g class="d-pill d-pill--accent"><rect x="640" y="196" width="160" height="44" rx="10" /><use href="#b-codex" x="686" y="208" width="20" height="20" /><text x="734" y="218">Codex</text></g>
-              <text class="d-note" x="720" y="330" text-anchor="middle" data-i18n-svg="flow.runner.note1">in the project directory</text>
-              <text class="d-note" x="720" y="350" text-anchor="middle" data-i18n-svg="flow.runner.note2">installed and signed in</text>
-            </g>
-
-            <!-- column: model -->
-            <g class="d-col">
-              <rect x="880" y="60" width="280" height="320" rx="18" />
-              <text x="1020" y="100" text-anchor="middle" data-i18n-svg="flow.col.model">Model service</text>
-              <g class="d-pill"><rect x="910" y="140" width="220" height="44" rx="10" /><text x="1020" y="162" data-i18n-svg="flow.model.1">Configured model</text></g>
-              <g class="d-pill"><rect x="910" y="196" width="220" height="44" rx="10" /><text x="1020" y="218" data-i18n-svg="flow.model.2">Codex account</text></g>
-              <g class="d-pill"><rect x="910" y="252" width="220" height="44" rx="10" /><text x="1020" y="274" data-i18n-svg="flow.model.3">Network connection</text></g>
-              <text class="d-note" x="1020" y="330" text-anchor="middle" data-i18n-svg="flow.model.note1">uses Codex configuration</text>
-              <text class="d-note" x="1020" y="350" text-anchor="middle" data-i18n-svg="flow.model.note2">provider policies apply</text>
-            </g>
-
-            <!-- forward arrows -->
-            <g stroke="url(#gline)" stroke-width="3" fill="none" marker-end="url(#arrow)" color="#e5b94d" class="d-arrow">
-              <path d="M240 218 C 265 218, 270 218, 290 218" />
-              <path d="M560 218 C 585 218, 590 218, 610 218" />
-              <path d="M830 218 C 855 218, 860 218, 880 218" />
-            </g>
-
-            <!-- side rails: console · project directory · design toolchain -->
-            <g stroke="#3a3a3a" stroke-width="2" fill="none" class="d-arrow-back">
-              <path d="M425 380 V 406 H 300 V 430 M425 406 H 900 V 430 M600 406 V 430" />
-            </g>
-            <g class="d-pill d-pill--side">
-              <rect x="180" y="430" width="240" height="44" rx="10" /><text x="300" y="452" data-i18n-svg="flow.side.console">configuration</text>
-              <rect x="480" y="430" width="240" height="44" rx="10" /><text x="600" y="452" data-i18n-svg="flow.side.dir">local project directory</text>
-              <rect x="780" y="430" width="240" height="44" rx="10" /><text x="900" y="452" data-i18n-svg="flow.side.design">persistent state</text>
-            </g>
-            <text class="d-note" x="900" y="498" text-anchor="middle" data-i18n-svg="flow.side.design.note">preserve state on failure</text>
-          </svg>
-          <figcaption data-i18n="flow.caption">Group → SintBot → Codex → model service. The answer returns to the group; configuration, project files and runtime state stay on the Mac. Model requests follow your Codex configuration.</figcaption>
-        </figure>
-      </section>
-
-
-
-      <!-- Images and review -->
-
-
-      <!-- Scenarios -->
-
-
-      <!-- Governance -->
-      <section id="governance" class="section section--gov">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="gov.kicker">03 · Permissions</p>
-        <h2 class="section__h" data-reveal data-i18n-html="gov.h">Read-only <em>for your first task.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n="gov.lede">Use the installation guide’s read-only configuration for the first reply. Keep the execution scope and account permissions explicit.</p>
-
-        <ol class="gov-tiers" data-reveal>
-          <li class="gov-tier">
-            <span class="gov-tier__no">①</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-lock"/></svg>
-            <h3 data-i18n="gov.t1.title">Start read-only</h3>
-            <p data-i18n="gov.t1.body">Ask for the first line of the README before granting broader access.</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">②</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-list-checks"/></svg>
-            <h3 data-i18n="gov.t2.title">Choose the project</h3>
-            <p data-i18n="gov.t2.body">Bind the one group to the existing project you want Codex to work in.</p>
-          </li>
-          <li class="gov-tier">
-            <span class="gov-tier__no">③</span>
-            <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-folder-lock"/></svg>
-            <h3 data-i18n="gov.t3.title">Keep credentials local</h3>
-            <p data-i18n="gov.t3.body">Enter the Feishu app credentials locally. Do not post secrets to the group or commit them to a repository.</p>
-          </li>
-        </ol>
-
-      </section>
-
-
-
-
-
-      <!-- Install the 1.3.0 built-in-core release -->
-      <section id="plugin" class="section section--plugin">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">04 · Install</p>
-        <h2 class="section__h" data-reveal data-i18n-html="plugin.h">Install SintBot <em>on your Mac.</em></h2>
-        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede">The 1.3.0 package includes the built-in core. Prepare macOS, Node.js 22 or later and a working, signed-in <code>codex</code>. The installer does not install Node or sign in to Codex.</p>
+        <p class="section__kicker" data-reveal data-i18n="plugin.kicker">GET STARTED</p>
+        <h2 class="section__h" data-reveal data-i18n-html="plugin.h">Your next project,<br><em>connected.</em></h2>
+        <p class="lede lede--wide" data-reveal data-i18n-html="plugin.lede">This download is the 1.3.0 built-in-core release: macOS, one Feishu group and Codex, running in the foreground. It does not yet include the existing Claude Code and third-party model routes. Prepare Node.js 22 or later and a working, signed-in <code>codex</code>.</p>
         <div class="plugin__meta" data-reveal>
           <span class="chip"><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="plugin.meta.kind">npm · sintbot v1.3.0</span></span>
           <span class="chip">PolyForm Shield</span>
@@ -663,54 +281,16 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
           </li>
         </ol>
         <aside class="ccbot" data-reveal aria-labelledby="upgrade-h"><div class="ccbot__main"><p class="ccbot__kicker" data-i18n="upgrade.kicker">Existing installations</p><h3 id="upgrade-h" data-i18n="upgrade.h">Keep your current workflow.</h3><p class="ccbot__body" data-i18n="upgrade.body">If you use multiple groups, Claude, Slack, WeCom, whiteboards, the console or schedules, keep your current version. These capabilities and Linux/Windows support are outside 1.3.0; compatible migration and broader support will follow.</p></div><div class="ccbot__side"><a class="btn btn--primary install-guide" href="https://github.com/sintlab/sintbot/blob/v1.3.0/docs/install.md" data-i18n="install.guide">Read the 1.3.0 guide</a></div></aside>
-      </section>
-
-      <!-- FAQ — copy lives in app.js (faq.*); scripts/build-zh.mjs also turns it into FAQPage JSON-LD and /llms.txt -->
-      <section id="faq" class="section section--faq">
-        <div class="rule" aria-hidden="true"></div>
-        <p class="section__kicker" data-reveal data-i18n="faq.kicker">05 · FAQ</p>
-        <h2 class="section__h" data-reveal data-i18n-html="faq.h">Asked often, <em>answered plainly.</em></h2>
-        <dl class="faq">
-          <div class="faq__item" data-reveal><dt data-i18n="faq.1.q">What is SintBot?</dt><dd data-i18n-html="faq.1.a">A coding assistant that connects one Feishu group to a local project. In 1.3.0, Codex works on your Mac and returns its answer to the group.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.2.q">What does 1.3.0 support?</dt><dd data-i18n-html="faq.2.a">macOS, Node.js 22+, one Feishu group and Codex, running in the foreground. Multiple groups, other model routes, Slack, WeCom, whiteboards, the console, schedules and other operating systems are not included.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.3.q">Can I upgrade my existing installation?</dt><dd data-i18n-html="faq.3.a">Keep your previous version if you depend on capabilities outside this release. Installing a separate package does not migrate existing state; wait for a compatible migration procedure.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.4.q">Does everything work offline?</dt><dd data-i18n-html="faq.4.a">No. SintBot and the project run on your Mac, but Feishu and your configured model service require a network connection. Model requests follow Codex configuration and the service provider’s data policy.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.5.q">What do I need to install it?</dt><dd data-i18n-html="faq.5.a">A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu application configured according to the versioned guide. Use Feishu China edition; international Lark is not supported.</dd></div>
-          <div class="faq__item" data-reveal><dt data-i18n="faq.6.q">How is SintBot licensed?</dt><dd data-i18n-html="faq.6.a">SintBot is distributed under PolyForm Shield 1.0.0. The package includes its built-in core, the license and third-party notices. Model service access is configured separately.</dd></div>
-
-
-
-
-
-        </dl>
-      </section>
-
-      <!-- CTA -->
-      <section class="section section--cta">
-        <div class="cta">
-          <h2 data-reveal data-i18n="cta.h">Put the project in the group.</h2>
-          <p data-reveal data-reveal-delay="80" data-i18n-html="cta.p">Start with one Feishu group and one project on your Mac. Follow the 1.3.0 guide and try a read-only task.</p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="160">
-            <a class="btn btn--primary" href="#platforms">
-              <span data-i18n="cta.see">See how it works</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener" data-track="cta-github">
-              <svg class="brand" width="16" height="16" aria-hidden="true"><use href="#b-github"/></svg><span data-i18n="cta.plugin">Project on GitHub</span><svg class="ico ico--sm btn__arrow" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
+      </section><section id="faq" class="section section--faq"><div class="section__intro"><div><p class="section__kicker" data-i18n="faq.kicker">A FEW GOOD QUESTIONS</p><h2 class="section__h" data-i18n-html="faq.h">Before you <em>get started.</em></h2></div></div><div class="faq"><details class="faq__item" open><summary><span data-i18n="faq.7.q">Which models can SintBot use?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.7.a">Existing multi-model installations use Claude through Claude Code, GPT through Codex, and GLM, MiniMax or DeepSeek through Claude Code with compatible endpoints and your own API keys. Kimi and other compatible providers can use custom endpoints. The 1.3.0 download currently includes only the Codex route.</div></details><details class="faq__item"><summary><span data-i18n="faq.8.q">What stays when I switch models?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.8.a">The project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them. It does not automatically transfer every unsaved detail from the previous conversation.</div></details><details class="faq__item"><summary><span data-i18n="faq.1.q">What is SintBot?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.1.a">A coding assistant that connects a project group to Claude Code or Codex on your own machine. You can choose the coding agent and its model service, while keeping the project files and saved notes. The current download has a narrower scope, described below.</div></details><details class="faq__item"><summary><span data-i18n="faq.2.q">What does 1.3.0 support?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.2.a">macOS, Node.js 22+, one Feishu group and Codex, running in the foreground. Multiple groups, other model routes, Slack, WeCom, whiteboards, the console, schedules and other operating systems are not included.</div></details><details class="faq__item"><summary><span data-i18n="faq.3.q">Can I upgrade my existing installation?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.3.a">Keep your previous version if you depend on capabilities outside this release. Installing a separate package does not migrate existing state; wait for a compatible migration procedure.</div></details><details class="faq__item"><summary><span data-i18n="faq.4.q">Does everything work offline?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.4.a">No. SintBot and the project run on your machine, but the chat platform and configured model services require a network connection. Model requests follow the selected agent’s configuration and the service provider’s data policy.</div></details><details class="faq__item"><summary><span data-i18n="faq.5.q">What do I need to install it?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.5.a">A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu application configured according to the versioned guide. Use Feishu China edition; international Lark is not supported.</div></details><details class="faq__item"><summary><span data-i18n="faq.6.q">How is SintBot licensed?</span><span class="faq__plus" aria-hidden="true">+</span></summary><div class="faq__answer" data-i18n-html="faq.6.a">SintBot is distributed under PolyForm Shield 1.0.0. The package includes its built-in core, the license and third-party notices. Model service access is configured separately.</div></details></div></section><section class="section section--cta"><div class="cta"><h2 data-i18n="cta.h">Bring the project to the conversation.</h2><p data-i18n="cta.p">Choose your coding agent. Keep your project close.</p><a class="btn btn--primary" href="#plugin"><span data-i18n="hero.cta.install">Get SintBot</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div></section></main>
     <footer class="foot">
       <div class="foot__row">
         <div class="foot__brand">
           <strong>SintBot</strong>
-          <span data-i18n="foot.tag">Built-in core · macOS · Feishu · Codex</span>
+          <span data-i18n="foot.tag">Project groups · Claude Code &amp; Codex · Switchable models</span>
         </div>
         <nav class="foot__nav" aria-label="footer">
-          <a href="#platforms" data-i18n="nav.platforms">Capabilities</a>
-          <a href="#governance" data-i18n="nav.design">Permissions</a>
+          <a href="#what" data-i18n="nav.platforms">How it works</a>
+          <a href="#models" data-i18n="nav.models">Models</a>
           <a href="#plugin" data-i18n="nav.setup">Install</a>
           <a href="https://github.com/sintlab/sintbot" target="_blank" rel="noopener">Repo <svg class="ico ico--sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </nav>
@@ -724,14 +304,12 @@ bash /tmp/sintbot-install.sh</code><button type="button" class="copy" data-copy=
         <span aria-hidden="true">·</span>
         <a href="/terms.html" data-i18n="foot.terms">Terms of Service</a>
       </p>
-      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Feishu, OpenAI or any other provider named here. Product names and logos belong to their respective owners.</p>
+      <p class="foot__meta" data-i18n="foot.meta">Not affiliated with Feishu, Anthropic, OpenAI or any other provider named here. Product names and logos belong to their respective owners.</p>
     </footer>
-
-    <a href="#top" class="to-top">
-      <span class="visually-hidden" data-i18n="totop.label">Back to top</span>
-      <span class="to-top__icon" aria-hidden="true">↑</span>
-    </a>
-
-    <script src="/app.js" defer></script>
-  </body>
+<a href="#top" class="to-top"><span class="visually-hidden" data-i18n="totop.label">Back to top</span><span aria-hidden="true">↑</span></a>
+<script src="/app.js" defer></script>
+<script src="/assets/vendor/gsap-3.15.0.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger-3.15.0.min.js" defer></script>
+<script src="/motion.js" defer></script>
+</body>
 </html>
