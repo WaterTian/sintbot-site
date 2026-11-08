@@ -6,7 +6,7 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 ## Pages
 
-- [SintBot (English)](https://sintbot.com/): product workflow, Claude Code and Codex, compatible model choices, and the distinct 1.3.0 download scope
+- [SintBot (English)](https://sintbot.com/): product workflow, chat platforms, Claude Code and Codex, model choices, visual collaboration and project management
 - [SintBot（中文）](https://sintbot.com/zh/): 同一页面的中文版
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.3.0; use the isolated installer and versioned guide on the website
@@ -20,15 +20,15 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 
 ### What is SintBot?
 
-A coding assistant that connects a project group to Claude Code or Codex on your own machine. You can choose the coding agent and its model service, while keeping the project files and saved notes. The current download has a narrower scope, described below.
+A coding assistant that connects a project group to Claude Code or Codex on your own machine. Give it tasks in the group, choose the agent and model, and keep project files and saved notes together.
 
-### What does 1.3.0 support?
+### Which chat platforms can I use?
 
-macOS, Node.js 22+, one Feishu group and Codex, running in the foreground. Multiple groups, other model routes, Slack, WeCom, whiteboards, the console, schedules and other operating systems are not included.
+SintBot connects to Feishu groups, Slack channels and WeCom groups. Each group binds to a project, with progress and results returned in the conversation.
 
-### Can I upgrade my existing installation?
+### How do teams manage projects?
 
-Keep your previous version if you depend on capabilities outside this release. Installing a separate package does not migrate existing state; wait for a compatible migration procedure.
+Bind each group to its own project directory and configure its agent, model and permissions. Use the console to review group status, running tasks, queues and schedules.
 
 ### Does everything work offline?
 
@@ -36,7 +36,7 @@ No. SintBot and the project run on your machine, but the chat platform and confi
 
 ### What do I need to install it?
 
-A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu application configured according to the versioned guide. Use Feishu China edition; international Lark is not supported.
+A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu China application configured according to the linked installation guide.
 
 ### How is SintBot licensed?
 
@@ -44,11 +44,11 @@ SintBot is distributed under PolyForm Shield 1.0.0. The package includes its bui
 
 ### Which models can SintBot use?
 
-Existing multi-model installations use Claude through Claude Code, GPT through Codex, and GLM, MiniMax or DeepSeek through Claude Code with compatible endpoints and your own API keys. Kimi and other compatible providers can use custom endpoints. The 1.3.0 download currently includes only the Codex route.
+Use Claude through Claude Code, GPT through Codex, or configure compatible endpoints and your own API keys in Claude Code for GLM, MiniMax and DeepSeek. Kimi and other compatible services can use custom endpoints.
 
 ### What stays when I switch models?
 
-The project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them. It does not automatically transfer every unsaved detail from the previous conversation.
+Project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them and continue.
 
 ## 中文
 
@@ -58,15 +58,15 @@ The project files and saved shared notes remain. Switching starts a fresh conver
 
 ### SintBot 是什么？
 
-把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。你可以选择编码执行器及其模型服务，保留项目文件和已保存的笔记。当前下载版本的范围较窄，具体见下方版本说明。
+把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。在群里派活，按任务选择执行器与模型，让代码、素材和已保存的项目记忆留在同一个项目里。
 
-### 1.3.0 支持哪些使用方式？
+### 可以接入哪些聊天平台？
 
-macOS、Node.js 22 及以上、一个飞书群与 Codex，使用时在前台运行。多群、其他模型通道、Slack、企业微信、画板、控制台、定时与其他操作系统不包含在本版中。
+SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自己的项目，任务进度和结果回到原来的对话里。
 
-### 现有安装能直接升级吗？
+### 多个项目如何管理？
 
-依赖本版范围之外的能力时，请保留原版本。单独安装程序不会迁移已有状态，请等待兼容的迁移方案。
+每个群绑定独立的项目目录，配置自己的执行器、模型和权限。在控制台查看各群状态、正在执行的任务、消息队列和定时安排。
 
 ### 全部处理都在离线环境完成吗？
 
@@ -74,7 +74,7 @@ macOS、Node.js 22 及以上、一个飞书群与 Codex，使用时在前台运�
 
 ### 安装需要准备什么？
 
-一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按版本指南配置的飞书应用。使用飞书中国版，暂不支持国际版 Lark。
+一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。
 
 ### SintBot 使用什么许可证？
 
@@ -82,8 +82,8 @@ SintBot 按 PolyForm Shield 1.0.0 分发。安装包包含内置核心、许可�
 
 ### SintBot 可以使用哪些模型？
 
-已有的多模型版本可通过 Claude Code 使用 Claude，通过 Codex 使用 GPT，也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。当前 1.3.0 下载包仅包含 Codex 路径。
+通过 Claude Code 使用 Claude，通过 Codex 使用 GPT；也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。
 
 ### 换模型之后，什么会保留？
 
-项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和未完成事项写进项目，下一位助手即可读取接续，不会自动完整转移上一段对话中尚未保存的细节。
+项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和待办写进项目，下一位助手即可读取记录，接着推进。

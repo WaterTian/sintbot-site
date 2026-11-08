@@ -17,6 +17,22 @@
   const VERSION = "1.3.0";
 
   const translations = {
+  "nav.features": {"en": "Features", "zh": "功能"},
+  "features.kicker": {"en": "MORE THAN A CHAT REPLY", "zh": "从对话，到完整的工作流程"},
+  "features.h": {"en": "Code, design and manage.<br><em>In the same project.</em>", "zh": "<span class=\"feature-phrase\">写代码、</span><span class=\"feature-phrase\">做设计、</span><span class=\"feature-phrase\">管项目。</span><br><em>都在同一套工作流里。</em>"},
+  "features.lede": {"en": "Connect the channels, tools and routines your team uses, with the project as the shared context.", "zh": "把团队的聊天平台、设计工具和日常任务接到一起，围绕同一个项目持续协作。"},
+  "features.1.h": {"en": "Feishu, Slack and WeCom", "zh": "飞书、Slack、企业微信"},
+  "features.1.p": {"en": "Connect project groups and channels with outbound long connections. Send files, share images and follow task progress where your team already talks.", "zh": "接入团队原来就在用的群和频道，通过长连接工作，免公网 IP。在对话里发图、传文件，查看任务进度与结果。"},
+  "features.2.h": {"en": "Design, annotate and preview", "zh": "生图、标注、原型预览"},
+  "features.2.p": {"en": "Work from your project’s visual style, generate or edit images, revise from Feishu whiteboard annotations and share interactive prototypes with the team.", "zh": "沿用项目现有风格，生成或修改图片；在飞书画板上标注、按评论迭代，保留设计版本，并把交互原型分享给团队预览。"},
+  "features.3.h": {"en": "One console for your projects", "zh": "一个控制台，管理所有群"},
+  "features.3.p": {"en": "Review group activity, running tasks and queues in one place. Configure models, permissions, plugins and previews for each project.", "zh": "集中查看各群忙闲、实时活动、运行任务和消息队列；按项目管理模型、权限、插件与预览，随时查看进度或停止任务。"},
+  "features.4.h": {"en": "Schedule the routine work", "zh": "定时提醒与自动任务"},
+  "features.4.p": {"en": "Schedule one-off or recurring reminders, agent tasks and scripts. Have checks and reports return to the project group at the right time.", "zh": "安排一次性或周期性的提醒、助手任务和脚本，让日常检查、数据汇总和报告按时回到项目群。"},
+  "features.5.h": {"en": "Permissions for each group", "zh": "权限按群配置"},
+  "features.5.p": {"en": "Choose read-only, developer or full-trust permissions and configure allowed tools. Mask secrets in outgoing messages and manage personal-data handling per group.", "zh": "按群选择只读、开发或全信任权限，配置允许使用的工具。消息发出前遮盖密钥，个人信息的处理方式按群设置。"},
+  "features.6.h": {"en": "Take over when sign-in needs you", "zh": "需要登录时，接管浏览器"},
+  "features.6.p": {"en": "When a browser task needs sign-in or verification, open its takeover card on your phone or computer. Complete the step yourself, then let the agent continue.", "zh": "浏览器任务遇到登录或验证时，群里会给出页面截图和接管入口。用手机或电脑完成操作后，助手沿用登录状态继续工作。"},
   "flow.ui.task": {"en": "Project group · example", "zh": "项目群 · 示例"},
   "flow.ui.ask": {"en": "Update the homepage. Keep the current look.", "zh": "调整首页，沿用现在的视觉风格。"},
   "flow.ui.context": {"en": "Reference attached", "zh": "已附参考图"},
@@ -95,8 +111,8 @@
     "zh": "把下一个项目，<br><em>接进群里。</em>"
   },
   "plugin.lede": {
-    "en": "This download is the 1.3.0 built-in-core release: macOS, one Feishu group and Codex, running in the foreground. It does not yet include the existing Claude Code and third-party model routes. Prepare Node.js 22 or later and a working, signed-in <code>codex</code>.",
-    "zh": "这里下载的是 1.3.0 内置核心发行版：macOS、一个飞书群、Codex，前台运行；尚未包含已有的 Claude Code 与第三方模型路径。需要 Node.js 22 及以上，以及可正常使用且已登录的 <code>codex</code>。"
+    "en": "Install SintBot on your Mac and connect a project to Feishu. Prepare Node.js 22 or later and an installed, signed-in <code>codex</code>, then follow the installation guide.",
+    "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，以及已安装并登录的 <code>codex</code>，按安装指南完成配置。"
   },
   "plugin.meta.kind": {
     "en": "npm · sintbot v1.3.0",
@@ -159,24 +175,24 @@
     "zh": "SintBot 是什么？"
   },
   "faq.1.a": {
-    "en": "A coding assistant that connects a project group to Claude Code or Codex on your own machine. You can choose the coding agent and its model service, while keeping the project files and saved notes. The current download has a narrower scope, described below.",
-    "zh": "把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。你可以选择编码执行器及其模型服务，保留项目文件和已保存的笔记。当前下载版本的范围较窄，具体见下方版本说明。"
+    "en": "A coding assistant that connects a project group to Claude Code or Codex on your own machine. Give it tasks in the group, choose the agent and model, and keep project files and saved notes together.",
+    "zh": "把项目群连接到自己机器上的 Claude Code 或 Codex 的编码助手。在群里派活，按任务选择执行器与模型，让代码、素材和已保存的项目记忆留在同一个项目里。"
   },
   "faq.2.q": {
-    "en": "What does 1.3.0 support?",
-    "zh": "1.3.0 支持哪些使用方式？"
+    "en": "Which chat platforms can I use?",
+    "zh": "可以接入哪些聊天平台？"
   },
   "faq.2.a": {
-    "en": "macOS, Node.js 22+, one Feishu group and Codex, running in the foreground. Multiple groups, other model routes, Slack, WeCom, whiteboards, the console, schedules and other operating systems are not included.",
-    "zh": "macOS、Node.js 22 及以上、一个飞书群与 Codex，使用时在前台运行。多群、其他模型通道、Slack、企业微信、画板、控制台、定时与其他操作系统不包含在本版中。"
+    "en": "SintBot connects to Feishu groups, Slack channels and WeCom groups. Each group binds to a project, with progress and results returned in the conversation.",
+    "zh": "SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自己的项目，任务进度和结果回到原来的对话里。"
   },
   "faq.3.q": {
-    "en": "Can I upgrade my existing installation?",
-    "zh": "现有安装能直接升级吗？"
+    "en": "How do teams manage projects?",
+    "zh": "多个项目如何管理？"
   },
   "faq.3.a": {
-    "en": "Keep your previous version if you depend on capabilities outside this release. Installing a separate package does not migrate existing state; wait for a compatible migration procedure.",
-    "zh": "依赖本版范围之外的能力时，请保留原版本。单独安装程序不会迁移已有状态，请等待兼容的迁移方案。"
+    "en": "Bind each group to its own project directory and configure its agent, model and permissions. Use the console to review group status, running tasks, queues and schedules.",
+    "zh": "每个群绑定独立的项目目录，配置自己的执行器、模型和权限。在控制台查看各群状态、正在执行的任务、消息队列和定时安排。"
   },
   "faq.4.q": {
     "en": "Does everything work offline?",
@@ -191,8 +207,8 @@
     "zh": "安装需要准备什么？"
   },
   "faq.5.a": {
-    "en": "A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu application configured according to the versioned guide. Use Feishu China edition; international Lark is not supported.",
-    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按版本指南配置的飞书应用。使用飞书中国版，暂不支持国际版 Lark。"
+    "en": "A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu China application configured according to the linked installation guide.",
+    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。"
   },
   "faq.6.q": {
     "en": "How is SintBot licensed?",
@@ -242,22 +258,6 @@
     "en": "Skip to content",
     "zh": "跳到正文"
   },
-  "upgrade.kicker": {
-    "en": "Existing installations",
-    "zh": "已有安装"
-  },
-  "upgrade.h": {
-    "en": "Keep your current workflow.",
-    "zh": "保留现有工作方式。"
-  },
-  "upgrade.body": {
-    "en": "If you use multiple groups, Claude, Slack, WeCom, whiteboards, the console or schedules, keep your current version. These capabilities and Linux/Windows support are outside 1.3.0; compatible migration and broader support will follow.",
-    "zh": "如果你正在使用多群、Claude、Slack、企业微信、画板、控制台或定时任务，请保留原版本。这些能力及 Linux/Windows 支持不在 1.3.0 范围内，兼容迁移与更多支持将继续完善。"
-  },
-  "install.guide": {
-    "en": "Read the 1.3.0 guide",
-    "zh": "阅读 1.3.0 指南"
-  },
   "copy.ok": {
     "en": "copied",
     "zh": "已复制"
@@ -302,17 +302,13 @@
     "en": "Claude Code · custom endpoint",
     "zh": "Claude Code · 自定义端点"
   },
-  "models.note": {
-    "en": "These routes are part of SintBot’s existing multi-model workflow. The 1.3.0 built-in-core download currently covers the Codex route only; keep your existing installation for Claude Code and third-party models until compatible migration is available.",
-    "zh": "这些路径属于 SintBot 已有的多模型工作方式。当前 1.3.0 内置核心下载包仅覆盖 Codex 路径；使用 Claude Code 与第三方模型的现有安装，请继续保留，等待兼容迁移。"
-  },
   "models.1.title": {
     "en": "Switch in the group",
     "zh": "群里就能切"
   },
   "models.1.body": {
-    "en": "In an existing multi-model installation, choose a configured model in the group for the next turn. Switching starts a fresh conversation; project files and saved memory remain.",
-    "zh": "已有多模型版本可在群里选择已配置的模型，让下一轮用它开工。切换会开启新对话，项目文件和已保存的记忆保留。"
+    "en": "Choose a configured model in the group for the next turn. Switching starts a fresh conversation; project files and saved memory remain.",
+    "zh": "在群里选择已配置的模型，让下一轮用它开工。切换会开启新对话，项目文件和已保存的记忆保留。"
   },
   "models.2.title": {
     "en": "Configure each group for its work",
@@ -335,16 +331,16 @@
     "zh": "SintBot 可以使用哪些模型？"
   },
   "faq.7.a": {
-    "en": "Existing multi-model installations use Claude through Claude Code, GPT through Codex, and GLM, MiniMax or DeepSeek through Claude Code with compatible endpoints and your own API keys. Kimi and other compatible providers can use custom endpoints. The 1.3.0 download currently includes only the Codex route.",
-    "zh": "已有的多模型版本可通过 Claude Code 使用 Claude，通过 Codex 使用 GPT，也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。当前 1.3.0 下载包仅包含 Codex 路径。"
+    "en": "Use Claude through Claude Code, GPT through Codex, or configure compatible endpoints and your own API keys in Claude Code for GLM, MiniMax and DeepSeek. Kimi and other compatible services can use custom endpoints.",
+    "zh": "通过 Claude Code 使用 Claude，通过 Codex 使用 GPT；也可在 Claude Code 中配置兼容端点和自己的 API Key，接入 GLM、MiniMax、DeepSeek。Kimi 等兼容服务可使用自定义端点。"
   },
   "faq.8.q": {
     "en": "What stays when I switch models?",
     "zh": "换模型之后，什么会保留？"
   },
   "faq.8.a": {
-    "en": "The project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them. It does not automatically transfer every unsaved detail from the previous conversation.",
-    "zh": "项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和未完成事项写进项目，下一位助手即可读取接续，不会自动完整转移上一段对话中尚未保存的细节。"
+    "en": "Project files and saved shared notes remain. Switching starts a fresh conversation; record decisions and unfinished work in the project so the next agent can read them and continue.",
+    "zh": "项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和待办写进项目，下一位助手即可读取记录，接着推进。"
   },
   "hero.cta.install": {
     "en": "Get SintBot",
@@ -493,10 +489,6 @@
   "demo.local.status": {
     "en": "Changes remain in your workspace",
     "zh": "改动保留在你的工作区"
-  },
-  "demo.scope": {
-    "en": "Examples show SintBot’s product workflow. The current download’s supported scope is listed below.",
-    "zh": "示例展示 SintBot 的产品工作方式，当前下载版本的支持范围见安装说明。"
   },
   "flow.1.h": {
     "en": "One group, one project",

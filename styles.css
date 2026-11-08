@@ -72,3 +72,10 @@
 .flow-ui__checks .ico{color:#a7bd9c}
 @media(min-width:768px) and (max-width:1000px){.flow-step{padding:20px 16px}.flow-ui{padding:13px;min-height:236px}.flow-ui__route{grid-template-columns:1fr;gap:5px}.flow-ui__models{padding-left:8px}}
 @media(max-width:767px){.flow-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.flow-step{padding:25px}.flow-ui{min-height:0;padding:18px;gap:14px}.flow-ui__message{padding:13px}.flow-ui__bar{font-size:12px}.flow-ui__route b{font-size:13px}.flow-ui__models{font-size:12px}.flow-ui__checks,.flow-ui__status,.flow-ui__attachment,.flow-ui__file{font-size:12px}}
+
+/* Feature summaries follow the existing compact card system. */
+.capability-grid .card{box-shadow:var(--ring);padding:28px}.capability-grid .card__head{margin-bottom:20px}.capability-grid .card p{line-height:1.7}.section--features .lede{max-width:38rem}
+@media(min-width:521px) and (max-width:900px){.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.capability-grid .card{padding:25px}.capability-grid{gap:12px}}
+
+.feature-phrase{display:inline-block;white-space:nowrap}

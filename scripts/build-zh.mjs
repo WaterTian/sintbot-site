@@ -163,7 +163,7 @@ Generated from ${SITE}/ by scripts/build-zh.mjs — the same facts as the page.
 
 ## Pages
 
-- [SintBot (English)](${SITE}/): product workflow, Claude Code and Codex, compatible model choices, and the distinct 1.3.0 download scope
+- [SintBot (English)](${SITE}/): product workflow, chat platforms, Claude Code and Codex, model choices, visual collaboration and project management
 - [SintBot（中文）](${SITE}/zh/): 同一页面的中文版
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
 - [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.3.0; use the isolated installer and versioned guide on the website

@@ -4,7 +4,7 @@ Public repository for sintbot.com. Describe the product separately from the avai
 
 ## Product positioning (user correction, 2026-11-08 13:59)
 
-SintBot connects project groups to local coding agents. Claude Code and Codex are execution routes; Claude, GLM, MiniMax and DeepSeek are models/providers, with compatible third-party endpoints configured through Claude Code. Model choice and project memory are core product capabilities, not peripheral future ideas. The user's later instruction at 14:03 replaces the old visual-preservation requirement: closely follow https://www.tasteskill.dev/ for layout, colors, typography and interactions, using inspected public frontend resources. Keep SintBot content and branding distinct. Do not turn the whole homepage into a Codex-only product because the current release has a narrower implementation. Explain exact release limitations beside installation and in the release FAQ; do not imply that downloading 1.3.0 restores every existing capability.
+SintBot connects project groups to local coding agents. Claude Code and Codex are execution routes; Claude, GLM, MiniMax and DeepSeek are models/providers, with compatible third-party endpoints configured through Claude Code. Model choice and project memory are core product capabilities, not peripheral future ideas. The user's later instruction at 14:03 replaces the old visual-preservation requirement: closely follow https://www.tasteskill.dev/ for layout, colors, typography and interactions, using inspected public frontend resources. Keep SintBot content and branding distinct. Do not turn the whole homepage into a Codex-only product because the current release has a narrower implementation. Keep versioned installation steps accurate without adding marketing lists of unfinished features. Do not claim that a particular package version includes every product capability.
 
 ## Palette and product-window refinement (2026-11-08 14:25–14:28)
 
@@ -12,11 +12,11 @@ Keep the Taste Skill composition and interactions, with a restrained SintBot pal
 
 ## Workflow cards and copy (2026-11-08 14:48–14:49)
 
-The three workflow panels contain static HTML examples of a group task, agent/model routing and returned files. Never replace them with large icon-only empty plates. Body content stays visible without scroll animation; only hero items use reveal. Stack workflow cards below 768px. Feature copy follows the original 733913b positioning: one group per project, work on your own machine, progress/results in the group, per-group model choice and saved local project memory. Keep current release limitations distinct.
+The three workflow panels contain static HTML examples of a group task, agent/model routing and returned files. Never replace them with large icon-only empty plates. Body content stays visible without scroll animation; only hero items use reveal. Stack workflow cards below 768px. Feature copy follows the original 733913b positioning: one group per project, work on your own machine, progress/results in the group, per-group model choice and saved local project memory. Use the product-copy rule below for marketing and keep installation instructions accurate.
 
-## Current release availability
+## Product copy (user correction, 2026-11-08 14:58)
 
-SintBot 1.3.0 adds a built-in core and supports macOS, one Feishu group and Codex message turns. Operation is foreground only. Other platforms, model routes, multiple groups, whiteboards, console and schedules are not part of this release. Existing installations using those features keep their current version until a compatible migration is available.
+Present the complete product workflow using the original 733913b feature descriptions: multiple chat platforms, model choice, local project memory, visual collaboration, console, scheduling, per-group permissions and browser takeover. Do not add unfinished-feature lists, old-version retention notices or future-migration commentary to marketing sections or FAQs. Keep installation prerequisites and the linked versioned instructions accurate; product descriptions must not become a claim that every feature ships in a particular package version. Keep model/network and saved-memory semantics precise.
 
 SintBot's sole author is WaterTian; SintLab is the publisher. Use the name SintBot and the `sintbot` command on the website. The software license is PolyForm Shield 1.0.0; do not change license terms when updating page copy. Do not add prices or payment links.
 
