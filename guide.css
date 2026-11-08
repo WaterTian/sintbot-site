@@ -24,3 +24,8 @@ html:lang(zh) .guide-toc h2{font-size:12px;line-height:1.5}
   html:lang(zh) .guide-article h1{font-size:32px}
   html:lang(zh) .guide-article h2{font-size:22px}
 }
+
+html:lang(en) .guide-article h1{line-height:1.18}
+@media(max-width:700px){html:lang(en) .guide-article h1{font-size:clamp(30px,8.5vw,40px);line-height:1.2}}
+
+html:lang(en) .guide-article :is(h2,h3){text-wrap:balance}

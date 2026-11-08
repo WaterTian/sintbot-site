@@ -139,3 +139,20 @@ html:lang(zh) .faq summary{font-size:17px;line-height:1.6}
   html:lang(zh) .cta h2{font-size:32px;line-height:1.4}
   html:lang(zh) .faq summary{font-size:16px;line-height:1.65}
 }
+
+/* Full tab labels must fit their own hit areas, without overlapping neighboring tabs.
+   Compact English nouns pair with the detailed headings inside each panel. */
+.showcase__tab{min-height:44px;white-space:normal;line-height:1.3;padding-block:8px;overflow-wrap:normal}
+html:lang(en) .hero__title{line-height:1.08}
+html:lang(en) .section__h{line-height:1.18}
+html:lang(en) :is(.card,.flow-step) h3{line-height:1.4;text-wrap:balance}
+html:lang(en) .showcase__content h3{line-height:1.35;text-wrap:balance}
+@media(max-width:520px){
+  .showcase__tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .showcase__tab{font-size:12px;letter-spacing:0;padding:8px 6px}
+  html:lang(en) .hero__title{font-size:clamp(32px,8.8vw,44px);line-height:1.12}
+  html:lang(en) .section__h{font-size:clamp(27px,7vw,31px);line-height:1.22}
+  html:lang(en) .cta h2{font-size:clamp(27px,7.6vw,34px);line-height:1.2}
+}
+
+html:lang(en) :is(.plugin__steps-h,.step h3){text-wrap:balance}

@@ -22,7 +22,7 @@
   "install.usage": {en:"Read the usage guide",zh:"阅读使用说明"},
   "nav.features": {"en": "Features", "zh": "功能"},
   "features.kicker": {"en": "MORE THAN A CHAT REPLY", "zh": "从对话到完整的工作流程"},
-  "features.h": {"en": "Code, design and manage.<br><em>In the same project.</em>", "zh": "<span class=\"zh-title-line\">代码、设计与项目管理</span><span class=\"zh-title-line\"><em>同一套工作流</em></span>"},
+  "features.h": {"en": "Code, design and manage<br><em>in one project</em>", "zh": "<span class=\"zh-title-line\">代码、设计与项目管理</span><span class=\"zh-title-line\"><em>同一套工作流</em></span>"},
   "features.lede": {"en": "Connect the channels, tools and routines your team uses, with the project as the shared context.", "zh": "把团队的聊天平台、设计工具和日常任务接到一起，围绕同一个项目持续协作。"},
   "features.1.h": {"en": "Feishu, Slack and WeCom", "zh": "飞书、Slack、企业微信"},
   "features.1.p": {"en": "Connect project groups and channels with outbound long connections. Send files, share images and follow task progress where your team already talks.", "zh": "接入团队原来就在用的群和频道，通过长连接工作，免公网 IP。在对话里发图、传文件，查看任务进度与结果。"},
@@ -30,11 +30,11 @@
   "features.2.p": {"en": "Work from your project’s visual style, generate or edit images, revise from Feishu whiteboard annotations and share interactive prototypes with the team.", "zh": "沿用项目现有风格，生成或修改图片；在飞书画板上标注、按评论迭代，保留设计版本，并把交互原型分享给团队预览。"},
   "features.3.h": {"en": "One console for your projects", "zh": "一个控制台管理所有群"},
   "features.3.p": {"en": "Review group activity, running tasks and queues in one place. Configure models, permissions, plugins and previews for each project.", "zh": "集中查看各群忙闲、实时活动、运行任务和消息队列；按项目管理模型、权限、插件与预览，随时查看进度或停止任务。"},
-  "features.4.h": {"en": "Schedule the routine work", "zh": "定时提醒与自动任务"},
+  "features.4.h": {"en": "Schedule routine tasks", "zh": "定时提醒与自动任务"},
   "features.4.p": {"en": "Schedule one-off or recurring reminders, agent tasks and scripts. Have checks and reports return to the project group at the right time.", "zh": "安排一次性或周期性的提醒、助手任务和脚本，让日常检查、数据汇总和报告按时回到项目群。"},
   "features.5.h": {"en": "Permissions for each group", "zh": "权限按群配置"},
   "features.5.p": {"en": "Choose read-only, developer or full-trust permissions and configure allowed tools. Mask secrets in outgoing messages and manage personal-data handling per group.", "zh": "按群选择只读、开发或全信任权限，配置允许使用的工具。消息发出前遮盖密钥，个人信息的处理方式按群设置。"},
-  "features.6.h": {"en": "Take over when sign-in needs you", "zh": "登录时接管浏览器"},
+  "features.6.h": {"en": "Take over for sign-in", "zh": "登录时接管浏览器"},
   "features.6.p": {"en": "When a browser task needs sign-in or verification, open its takeover card on your phone or computer. Complete the step yourself, then let the agent continue.", "zh": "浏览器任务遇到登录或验证时，群里会给出页面截图和接管入口。用手机或电脑完成操作后，助手沿用登录状态继续工作。"},
   "flow.ui.task": {"en": "Project group · example", "zh": "项目群 · 示例"},
   "flow.ui.ask": {"en": "Update the homepage. Keep the current look.", "zh": "调整首页，沿用现在的视觉风格。"},
@@ -78,7 +78,7 @@
     "zh": "一群一项目，模型由你选择"
   },
   "hero.titleEn": {
-    "en": "Your coding agents.<br>Right in the group.",
+    "en": "Your coding agents<br>in the group chat",
     "zh": "<span class=\"zh-title-line\">把编码助手</span><span class=\"zh-title-line\">接进项目群</span>"
   },
   "hero.lede": {
@@ -86,7 +86,7 @@
     "zh": "在项目群里，让 Claude Code 或 Codex 开工。Claude、GPT、GLM、MiniMax、DeepSeek，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
   },
   "hero.cta.primary": {
-    "en": "Explore the workflow",
+    "en": "See how it works",
     "zh": "看看它怎么工作"
   },
   "plat.trio": {
@@ -98,7 +98,7 @@
     "zh": "从群聊到项目"
   },
   "what.h": {
-    "en": "A conversation.<br><em>Actual work.</em>",
+    "en": "From group chat<br><em>to project work</em>",
     "zh": "<span class=\"zh-title-line\">群里一句话</span><span class=\"zh-title-line\"><em>项目往前走</em></span>"
   },
   "what.lede": {
@@ -110,7 +110,7 @@
     "zh": "开始使用"
   },
   "plugin.h": {
-    "en": "Your next project,<br><em>connected.</em>",
+    "en": "Your next project<br><em>in the group chat</em>",
     "zh": "<span class=\"zh-title-line\">把下一个项目</span><span class=\"zh-title-line\"><em>接进群里</em></span>"
   },
   "plugin.lede": {
@@ -122,7 +122,7 @@
     "zh": "npm · sintbot v1.3.0"
   },
   "install.h": {
-    "en": "From your Mac to the group, in four steps.",
+    "en": "Connect your Mac in four steps",
     "zh": "从 Mac 到项目群，四步接入"
   },
   "install.lede": {
@@ -142,7 +142,7 @@
     "zh": "确认 Node.js 22 及以上，以及已安装并登录的 Codex，保留原有账号数据。"
   },
   "install.2.title": {
-    "en": "Install separately",
+    "en": "Install SintBot",
     "zh": "独立安装"
   },
   "install.2.after": {
@@ -150,7 +150,7 @@
     "zh": "运行上方命令；已有全局包、配置和服务保持不变。"
   },
   "install.3.title": {
-    "en": "Connect one group",
+    "en": "Link a group",
     "zh": "连接一个群"
   },
   "install.3.after": {
@@ -158,7 +158,7 @@
     "zh": "创建飞书自建应用，配置长连接，将一个群绑定到现有项目，按版本指南完成配置。"
   },
   "install.4.title": {
-    "en": "Start and try a message",
+    "en": "Start and verify",
     "zh": "启动并验证消息"
   },
   "install.4.after": {
@@ -170,7 +170,7 @@
     "zh": "你可能想知道"
   },
   "faq.h": {
-    "en": "Before you <em>get started.</em>",
+    "en": "Before you <em>get started</em>",
     "zh": "<span class=\"zh-title-line\">开始之前</span><span class=\"zh-title-line\"><em>把这些说清楚</em></span>"
   },
   "faq.1.q": {
@@ -214,7 +214,7 @@
     "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。"
   },
   "cta.h": {
-    "en": "Bring the project to the conversation.",
+    "en": "Bring your project<br><em>into the group chat</em>",
     "zh": "<span class=\"zh-title-line\">让项目回到</span><span class=\"zh-title-line\">团队的对话里</span>"
   },
   "cta.p": {
@@ -266,7 +266,7 @@
     "zh": "执行器可选，模型也可选"
   },
   "models.h": {
-    "en": "A model for <em>your way of working.</em>",
+    "en": "Choose the model<br><em>that fits the task</em>",
     "zh": "<span class=\"zh-title-line\">按你的工作方式</span><span class=\"zh-title-line\"><em>选择合适的模型</em></span>"
   },
   "models.lede": {
@@ -298,7 +298,7 @@
     "zh": "Claude Code · 自定义端点"
   },
   "models.1.title": {
-    "en": "Switch in the group",
+    "en": "Switch models in the group",
     "zh": "群里就能切"
   },
   "models.1.body": {
@@ -306,7 +306,7 @@
     "zh": "在群里选择已配置的模型，让下一轮用它开工。切换会开启新对话，项目文件和已保存的记忆保留。"
   },
   "models.2.title": {
-    "en": "Configure each group for its work",
+    "en": "Choose a model for each project",
     "zh": "按项目配置，按任务选择"
   },
   "models.2.body": {
@@ -314,7 +314,7 @@
     "zh": "每个群有自己的执行器和模型。Claude Code 可连接 Claude、GLM、MiniMax、DeepSeek 等兼容服务；Codex 使用自己的账号和模型配置。"
   },
   "models.3.title": {
-    "en": "Memory outlives the model",
+    "en": "Keep shared project notes",
     "zh": "记忆比模型活得久"
   },
   "models.3.body": {
@@ -338,25 +338,25 @@
     "zh": "项目文件和已保存的共享笔记保留。切换会开启新对话；把决定和待办写进项目，下一位助手即可读取记录，接着推进。"
   },
   "hero.cta.install": {
-    "en": "Get SintBot",
+    "en": "Install SintBot",
     "zh": "安装 SintBot"
   },
   "demo.pause": {en: "Pause slideshow", zh: "暂停轮播"},
   "demo.play": {en: "Play slideshow", zh: "继续轮播"},
   "demo.tab.task": {
-    "en": "Give it a task",
+    "en": "Tasks",
     "zh": "群里派活"
   },
   "demo.tab.models": {
-    "en": "Switch models",
+    "en": "Models",
     "zh": "切换模型"
   },
   "demo.tab.memory": {
-    "en": "Keep project memory",
+    "en": "Memory",
     "zh": "项目记忆"
   },
   "demo.tab.local": {
-    "en": "Work locally",
+    "en": "Local work",
     "zh": "本机执行"
   },
   "demo.example": {
@@ -420,7 +420,7 @@
     "zh": "任务、进展与结果，都留在同一段对话里。"
   },
   "demo.models.h": {
-    "en": "Same project. A different model.",
+    "en": "Pick a model for this project",
     "zh": "同一个项目，切换不同模型"
   },
   "demo.models.p": {
@@ -440,7 +440,7 @@
     "zh": "切换会开启新对话，已保存的项目笔记继续保留。"
   },
   "demo.memory.h": {
-    "en": "Leave the next agent a clear handoff.",
+    "en": "Leave notes for the next agent",
     "zh": "换个助手，接着做"
   },
   "demo.memory.p": {
@@ -468,7 +468,7 @@
     "zh": "项目笔记会保留，未保存的聊天细节不会自动共享。"
   },
   "demo.local.h": {
-    "en": "The work happens in your project.",
+    "en": "Work in your local project",
     "zh": "任务在你的项目里完成"
   },
   "demo.local.p": {
@@ -504,7 +504,7 @@
     "zh": "每一轮交给 Claude Code 或 Codex，在绑定的项目目录里工作，使用你配置的模型、工具与权限。"
   },
   "flow.3.h": {
-    "en": "Progress and results return to the group",
+    "en": "Get progress and results in the group",
     "zh": "进度与结果回到群里"
   },
   "flow.3.p": {
