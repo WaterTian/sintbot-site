@@ -2,7 +2,7 @@
 
 The homepage describes SintBot's project-group workflow, Claude Code / Codex execution routes and configurable models, including Claude, GLM, MiniMax and DeepSeek. The visual reference is tasteskill.dev, adapted with SintBot's graphite, copper and paper palette. Preserve the current typography, interactions and supplied JPEG brand icon.
 
-The 1.4.2 download supports macOS, 1–32 Feishu China groups with Codex or Claude Code per group, chat commands and a local console, in the foreground. Keep this exact scope in the bilingual installation guide while the homepage and usage guide describe the product workflow. The primary installation command is `curl -fsSL https://sintbot.com/install.sh | bash`; Feishu credentials and project configuration are separate first-use steps.
+The 1.4.3 download supports macOS, 1–32 Feishu China groups with Codex or Claude Code per group, chat commands and a local console, in the foreground. Keep this exact scope in the bilingual installation guide while the homepage and usage guide describe the product workflow. The primary installation command is `curl -fsSL https://sintbot.com/install.sh | bash`; Feishu credentials and project configuration are separate first-use steps.
 
 Maintain homepage translations in `app.js`, then generate `index.html`, `zh/index.html` and `llms.txt` with `node scripts/build-zh.mjs`. Maintain the bilingual installation and usage guide HTML directly under `guide/` and `zh/guide/`, with shared `guide.css` and `guide.js`.
 
