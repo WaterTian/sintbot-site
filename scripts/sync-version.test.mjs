@@ -48,3 +48,26 @@ test('same explicit target also preserves a post-tag installer fix', t => {
   assert.equal(f.read('install.sh'), f.initial['install.sh'])
   assert.equal(fs.existsSync(path.join(f.root, 'requests')), false)
 })
+
+test('version advance updates visible homepage labels after native guides are reviewed', t => {
+  const f = fixture(t, { latest: '1.3.1' })
+  fs.appendFileSync(path.join(f.root,'app.js'), 'const label = "sintbot v1.3.0 · 1.3.0 installation guide";\n')
+  fs.mkdirSync(path.join(f.root,'guide/install'),{recursive:true})
+  fs.writeFileSync(path.join(f.root,'guide/install/index.html'),'<h1>Reviewed 1.3.1 guide</h1>')
+  const r = f.run('--write')
+  assert.equal(r.status,0,r.stderr)
+  assert.match(f.read('app.js'),/sintbot v1\.3\.1 · 1\.3\.1 installation guide/)
+  assert.equal(f.read('guide/install/index.html'),'<h1>Reviewed 1.3.1 guide</h1>')
+})
+test('unreviewed native guides block version advance before changing any release files', t => {
+  for (const name of ['guide/install/index.html','guide/usage/index.html','zh/guide/install/index.html','zh/guide/usage/index.html']) {
+    const f = fixture(t, { latest: '1.3.1' })
+    fs.mkdirSync(path.dirname(path.join(f.root,name)),{recursive:true})
+    fs.writeFileSync(path.join(f.root,name),'<h1>1.3.0 release capabilities</h1>')
+    const r = f.run('--write')
+    assert.equal(r.status,1)
+    assert.match(r.stderr,/Review .* before advancing the site/)
+    for (const [file,bytes] of Object.entries(f.initial)) assert.equal(f.read(file),bytes)
+    assert.equal(f.read(name),'<h1>1.3.0 release capabilities</h1>')
+  }
+})

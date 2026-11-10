@@ -5,7 +5,7 @@
 //   node scripts/sync-version.mjs --write --target 1.2.3   不查 npm,按给定版本改写(本地验改写结果用,别推)
 // 每小时由 .github/workflows/version-sync.yml 跑 --write;有改动它负责提交、请求 Pages 构建、等线上生效。
 // 在 GitHub Actions 里会把 changed=0|1、version=V 写进 $GITHUB_OUTPUT。
-import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, appendFileSync, existsSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -65,6 +65,15 @@ const pages = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => {
 })
 const before = new Map(pages.map((p) => [p.f, visible(read(p.f))]))
 const changed = []
+const oldVersion = new RegExp(site.replaceAll('.', '\\.') + '(?![0-9])', 'g')
+// Release-specific instructions need a human review. Never relabel an older
+// capability description as verified for a new package just to sync a number.
+for (const guide of ['guide/install/index.html', 'zh/guide/install/index.html',
+  'guide/usage/index.html', 'zh/guide/usage/index.html']) {
+  if (existsSync(file(guide)) && read(guide).match(oldVersion)) {
+    throw new Error(`Review ${guide} for v${latest} before advancing the site; it still documents v${site}`)
+  }
+}
 
 // 一键安装脚本是公开仓根目录 install.sh 的副本,跟该版标签对齐
 const raw = get(`https://raw.githubusercontent.com/sintlab/sintbot/v${latest}/install.sh`)
@@ -79,7 +88,7 @@ if (raw.status === 200) {
 
 // Do not advance VERSION before a required installer fetch succeeds: otherwise
 // the next same-version run would skip the interrupted upgrade permanently.
-writeFileSync(file('app.js'), appJs.replace(`const VERSION = "${site}";`, `const VERSION = "${latest}";`))
+writeFileSync(file('app.js'), appJs.replace(oldVersion, latest))
 changed.push(`VERSION ${site} → ${latest}`)
 
 if (!changed.length) {

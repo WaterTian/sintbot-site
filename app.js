@@ -90,8 +90,8 @@
     "zh": "看看它怎么工作"
   },
   "plat.trio": {
-    "en": "macOS · Feishu · Codex",
-    "zh": "macOS · 飞书 · Codex"
+    "en": "macOS · Feishu · Claude Code / Codex",
+    "zh": "macOS · 飞书 · Claude Code / Codex"
   },
   "what.kicker": {
     "en": "FROM THE GROUP TO THE PROJECT",
@@ -114,8 +114,8 @@
     "zh": "<span class=\"zh-title-line\">把下一个项目</span><span class=\"zh-title-line\"><em>接进群里</em></span>"
   },
   "plugin.lede": {
-    "en": "Install SintBot on your Mac and connect a project to Feishu. Prepare Node.js 22 or later and an installed, signed-in <code>codex</code>, then follow the installation guide.",
-    "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，以及已安装并登录的 <code>codex</code>，按安装指南完成配置。"
+    "en": "Install SintBot on your Mac and connect a project to Feishu. Prepare Node.js 22 or later and either Claude Code or Codex, installed and signed in, then follow the installation guide.",
+    "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，并安装、登录 Claude Code 或 Codex，按安装指南完成配置。"
   },
   "plugin.meta.kind": {
     "en": "npm · sintbot v1.4.12",
@@ -138,8 +138,8 @@
     "zh": "准备运行环境"
   },
   "install.1.after": {
-    "en": "Confirm Node.js 22+ and a working, authenticated Codex. Keep your current account data.",
-    "zh": "确认 Node.js 22 及以上，以及已安装并登录的 Codex，保留原有账号数据。"
+    "en": "Confirm Node.js 22+ and a working, signed-in Claude Code or Codex. Keep your current account data.",
+    "zh": "确认 Node.js 22 及以上，并安装、登录 Claude Code 或 Codex，保留原有账号数据。"
   },
   "install.2.title": {
     "en": "Install SintBot",
@@ -210,8 +210,8 @@
     "zh": "安装需要准备什么？"
   },
   "faq.5.a": {
-    "en": "A Mac with Node.js 22+, an installed and signed-in Codex, and a Feishu China application configured according to the linked installation guide.",
-    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Codex，以及按安装指南配置好的飞书中国版应用。"
+    "en": "A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China application configured according to the installation guide. The installer installs SintBot; app credentials and group binding are configured separately.",
+    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及按安装指南配置好的飞书中国版应用。一行命令安装程序，应用凭据与群绑定仍需单独配置。"
   },
   "cta.h": {
     "en": "Bring your project<br><em>into the group chat</em>",
