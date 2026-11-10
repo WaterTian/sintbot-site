@@ -159,3 +159,6 @@ html:lang(en) :is(.plugin__steps-h,.step h3){text-wrap:balance}
 
 /* Keep phone footer controls tappable without covering reading content. */
 @media(max-width:520px){.foot__nav a,.foot__legal a{display:inline-flex;align-items:center;min-height:44px}.to-top{position:relative;bottom:auto;right:auto;width:44px;height:44px;margin:0 var(--gutter) 24px auto;opacity:1;pointer-events:auto;transform:none}}
+
+/* Recognizable chat platform marks in the channel capability card. */
+.channel-logos{display:inline-flex;align-items:center;gap:10px}.channel-logos .brand{width:24px;height:24px;display:block;overflow:visible}@media(max-width:520px){.channel-logos{gap:9px}.channel-logos .brand{width:22px;height:22px}}
