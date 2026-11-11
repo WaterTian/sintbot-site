@@ -1,66 +1,17 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8" />
-<!-- Chinese share card for https://sintbot.com/zh/ (og-banner-zh.png, 1200×630).
-     Same ground as og-banner.source.html; the headline uses the homepage's 双行夹注 hierarchy.
-     Render: DevTools emulate 1200x630x1, await document.fonts.ready, screenshot PNG. -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --ink:#0a0a0a; --bone:#f3eee5; --bone-2:#e6e0d3; --muted:#7a8a82;
-    --signal:#d68f44; --gold:#e5b94d; --line:#1d2a25;
-    --f-display:"Fraunces",serif; --f-mono:"JetBrains Mono",monospace;
-    --f-song:"Songti SC","Source Han Serif SC","Noto Serif SC",serif;
-    --f-sans:"PingFang SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:1200px;height:630px}
-  body{background:var(--ink);color:var(--bone);position:relative;overflow:hidden}
-  .glow{position:absolute;inset:0;background:
-      radial-gradient(60% 80% at 82% 18%, rgba(229,185,77,.16), transparent 60%),
-      radial-gradient(70% 90% at 90% 40%, rgba(214,143,68,.14), transparent 55%)}
-  .grid{position:absolute;inset:0;opacity:.05;
-    background-image:linear-gradient(var(--bone) 1px,transparent 1px),linear-gradient(90deg,var(--bone) 1px,transparent 1px);
-    background-size:56px 56px;mask-image:radial-gradient(75% 75% at 30% 50%,#000 30%,transparent 78%)}
-  .frame{position:absolute;inset:0;border:1px solid var(--line)}
-  .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 92px 40px}
-
-  .brand{display:flex;align-items:center;gap:22px;margin-bottom:34px}
-  .word{font-family:var(--f-display);font-variation-settings:"opsz" 144;font-size:60px;font-weight:900;line-height:1;letter-spacing:-.02em}
-  .word .tie{color:var(--signal)}
-  .eyebrow{font-family:var(--f-sans);font-size:20px;letter-spacing:.18em;color:var(--muted);display:flex;align-items:center;gap:12px}
-  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
-
-  /* 双行夹注: big Song statement + two-line gold note, the two note lines together = one big character */
-  .row{display:flex;align-items:flex-start;line-height:1}
-  .big{font-family:var(--f-song);font-weight:900;color:var(--bone);white-space:nowrap;letter-spacing:.03em;font-synthesis:none}
-  .note{display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-sans);font-weight:500;color:var(--gold);white-space:nowrap;letter-spacing:.06em;line-height:1}
-  .r1{--s:112px;gap:18px}
-  .r2{--s:78px;gap:14px;margin-top:28px}
-  .r2 .big{font-weight:700}
-  .row .big{font-size:var(--s)}
-  .row .note{height:var(--s);font-size:calc(var(--s)*.46)}
-
-  .tail{display:flex;align-items:center;gap:18px;margin-top:40px;font-family:var(--f-sans);font-size:28px;letter-spacing:.12em;color:var(--bone-2)}
-  .tail::before{content:"";width:56px;height:1px;background:var(--signal)}
-
-  .foot{position:absolute;left:92px;bottom:46px;font-family:var(--f-mono);font-size:21px;letter-spacing:.06em;color:var(--bone)}
-  .badge{position:absolute;right:92px;bottom:42px;font-family:var(--f-sans);font-size:18px;letter-spacing:.12em;color:var(--muted);
-    border:1px solid var(--line);border-radius:999px;padding:8px 18px}
-</style>
-</head>
-<body>
-  <div class="glow"></div><div class="grid"></div><div class="frame"></div>
-  <div class="wrap">
-    <div class="brand"><div class="word">Sint<span class="tie">·</span>Bot</div><div class="eyebrow"><span class="dot"></span>自托管 · 飞书 · Slack · 企业微信</div></div>
-    <div class="row r1"><span class="big">一群一项目</span><span class="note"><span>一句话</span><span>就开工</span></span></div>
-    <div class="row r2"><span class="big">模型随时换</span><span class="note"><span>记忆</span><span>不丢</span></span></div>
-    <div class="tail">全程在你自己的机器上</div>
-  </div>
-  <div class="foot">sintbot.com</div>
-  <div class="badge">Claude Code + Codex · ChatGPT · Claude · GLM · DeepSeek · Kimi</div>
-</body>
-</html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>SintBot share image</title><style>
+@font-face{font-family:ShareSans;src:url('/assets/fonts/google-sans-flex-latin.woff2') format('woff2');font-weight:400 750;font-display:swap}
+*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{position:relative;padding:48px 68px;background:#f6f5f1;color:#13171c;font-family:ShareSans,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;-webkit-font-smoothing:antialiased;font-variation-settings:'ROND' 0}
+header{display:flex;align-items:center;gap:12px;font-size:28px;font-weight:600;letter-spacing:-.02em}header img{width:36px;height:36px;border-radius:50%}
+main{display:grid;grid-template-columns:580px 440px;gap:44px;align-items:center;margin-top:64px}
+h1{margin:0;font-size:62px;line-height:1.12;font-weight:600;letter-spacing:-.035em}h1 em{font-style:normal;color:#9b542e}
+.agents{display:flex;align-items:center;gap:16px;margin:30px 0 0;font-size:23px;font-weight:500;letter-spacing:-.01em}.agent-divider{height:18px;width:1px;background:#13171c35}
+.platforms{display:flex;gap:24px;align-items:center;margin-top:20px;color:#59616a;font-size:17px}.platforms>span{display:inline-flex;align-items:center;gap:8px}.platforms svg{flex:none;display:block;width:20px;height:20px}.platforms>span:first-child svg{width:24px;height:24px;margin-left:-2px;margin-right:-2px}.platforms>span:nth-child(2) svg{width:22px;height:22px;margin-left:-1px;margin-right:-1px}
+.product{height:344px;border-radius:18px;background:#1b2128;color:#f6f5f1;border:1px solid #313840;box-shadow:0 16px 36px -26px #13171c80;overflow:hidden}
+.product-head{height:56px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff14;font-size:16px;color:#c9cfd6}.product-head .project{display:flex;gap:9px;align-items:center}.project img{width:22px;height:22px;border-radius:50%}.runner{font-size:13px;color:#cbb7a6}
+.thread{padding:23px 24px}.ask{margin-left:34px;border:1px solid #ffffff12;border-radius:12px 12px 3px 12px;background:#2b333c;padding:13px 16px;font-size:17px;line-height:1.5;color:#edf0f3}
+.reply{margin-top:23px;display:flex;align-items:flex-start;gap:11px}.reply>img{width:24px;height:24px;border-radius:50%;margin-top:1px}.reply-body{flex:1;min-width:0;font-size:18px;line-height:1.5}.reply-body strong{display:block;font-size:13px;font-weight:500;color:#b8c0c9;margin-bottom:5px}.reply-body p{margin:0}
+.file-result{display:flex;align-items:center;gap:8px;margin-top:15px;padding-top:13px;border-top:1px solid #ffffff14;font-size:14px;line-height:22px;color:#d9dfe4}.file-result svg{width:16px;height:18px;color:#9ca8b5;flex:none}.file-result em{font-size:13px;font-style:normal;color:#adbfaf;margin-left:auto}.file-result em:before{content:'✓';margin-right:6px}.note{margin-top:8px!important;font-size:13px;color:#aeb7c1}
+footer{position:absolute;left:68px;right:68px;bottom:39px;display:flex;justify-content:space-between;align-items:center;gap:28px;border-top:1px solid #13171c1a;padding-top:21px}.models{font-size:17px;color:#636c76;letter-spacing:0}.domain{font-size:19px;font-weight:550;color:#252b32}
+html[lang="zh-CN"] h1{font-size:62px;line-height:1.22;letter-spacing:0}html[lang="zh-CN"] main{margin-top:64px}html[lang="zh-CN"] .agents{margin-top:25px}html[lang="zh-CN"] .reply-body{font-size:17px}
+</style></head><body><!-- Existing site platform marks; product UI is a rendered example of the site's own project-group workflow. --><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="b-feishu" viewBox="0 0 16 16"><path d="M8.56 8.26L8.59 8.23C8.61 8.21 8.64 8.19 8.66 8.17L8.7 8.12L8.84 7.99L9.02 7.81L9.18 7.66L9.32 7.51L9.47 7.36L9.61 7.23L9.81 7.03C9.85 7 9.89 6.96 9.92 6.93C10 6.86 10.07 6.8 10.14 6.74C10.21 6.68 10.28 6.63 10.35 6.58C10.46 6.51 10.56 6.44 10.67 6.38C10.77 6.32 10.88 6.26 10.99 6.2C11.09 6.15 11.2 6.11 11.3 6.06C11.36 6.04 11.42 6.02 11.49 6C11.52 5.99 11.55 5.98 11.58 5.97C11.31 4.9 10.81 3.9 10.12 3.05C9.99 2.88 9.79 2.78 9.57 2.78H3.95C3.89 2.78 3.84 2.83 3.84 2.89C3.84 2.92 3.86 2.95 3.88 2.97C5.8 4.38 7.4 6.19 8.55 8.28L8.56 8.26Z" fill="#00D6B9"/><path d="M6.32 13.22C9.23 13.22 11.76 11.61 13.08 9.24C13.13 9.16 13.17 9.08 13.22 8.99C13.15 9.12 13.08 9.24 13 9.35C12.97 9.39 12.94 9.44 12.91 9.48C12.87 9.53 12.83 9.57 12.79 9.62C12.76 9.66 12.73 9.69 12.69 9.73C12.63 9.8 12.55 9.86 12.48 9.93C12.44 9.96 12.4 10 12.36 10.03C12.31 10.07 12.25 10.1 12.2 10.14C12.17 10.16 12.14 10.18 12.1 10.2C12.07 10.22 12.03 10.24 12 10.26C11.93 10.3 11.85 10.34 11.77 10.38C11.71 10.4 11.64 10.43 11.57 10.46C11.5 10.49 11.43 10.51 11.35 10.53C11.23 10.56 11.12 10.59 11 10.6C10.92 10.62 10.83 10.63 10.75 10.63C10.66 10.64 10.57 10.64 10.48 10.64C10.37 10.64 10.27 10.63 10.17 10.62C10.09 10.61 10.02 10.6 9.94 10.59C9.88 10.58 9.81 10.56 9.75 10.55C9.71 10.54 9.68 10.53 9.64 10.52C9.55 10.49 9.45 10.47 9.35 10.44C9.3 10.43 9.26 10.41 9.21 10.4C9.14 10.38 9.07 10.36 9 10.33C8.94 10.32 8.88 10.3 8.82 10.28C8.77 10.26 8.71 10.24 8.66 10.22L8.55 10.18C8.5 10.17 8.45 10.15 8.41 10.14L8.31 10.1C8.25 10.08 8.18 10.05 8.12 10.03C8.08 10.01 8.05 10 8.01 9.99C7.96 9.97 7.91 9.95 7.86 9.93C7.81 9.91 7.76 9.89 7.71 9.87L7.61 9.83L7.48 9.77L7.38 9.73L7.28 9.69L7.2 9.65L7.12 9.62L7.04 9.58L6.96 9.54L6.85 9.49L6.74 9.44C6.7 9.42 6.67 9.4 6.63 9.39L6.53 9.34C4.8 8.47 3.24 7.31 1.92 5.9C1.88 5.86 1.82 5.86 1.77 5.9C1.75 5.92 1.74 5.95 1.74 5.97L1.74 10.94V11.34C1.74 11.58 1.86 11.8 2.05 11.93C3.32 12.77 4.8 13.22 6.32 13.22Z" fill="#3370FF"/><path d="M14.87 6.22C13.88 5.74 12.76 5.63 11.71 5.93C11.67 5.94 11.62 5.95 11.58 5.97C11.55 5.98 11.52 5.99 11.49 6C11.42 6.02 11.36 6.04 11.3 6.06C11.2 6.1 11.09 6.15 10.99 6.2C10.88 6.25 10.77 6.31 10.67 6.37C10.56 6.44 10.46 6.5 10.35 6.58C10.28 6.63 10.21 6.68 10.14 6.73C10.07 6.8 10 6.86 9.92 6.92C9.89 6.96 9.85 6.99 9.81 7.03L9.61 7.22L9.47 7.36L9.32 7.51L9.18 7.66L9.02 7.81L8.84 7.99L8.71 8.12L8.66 8.16C8.64 8.19 8.62 8.21 8.59 8.23L8.56 8.26L8.51 8.31C8.49 8.33 8.48 8.34 8.46 8.36C7.97 8.8 7.43 9.18 6.85 9.49L6.96 9.54L7.04 9.58L7.12 9.62L7.2 9.65L7.29 9.69L7.39 9.74L7.48 9.78L7.61 9.83L7.71 9.87C7.76 9.89 7.81 9.91 7.86 9.93C7.91 9.95 7.96 9.97 8.01 9.99C8.05 10 8.09 10.02 8.12 10.03C8.19 10.05 8.25 10.08 8.31 10.1L8.41 10.14C8.46 10.15 8.5 10.17 8.55 10.19L8.66 10.22C8.71 10.24 8.77 10.26 8.82 10.28C8.88 10.3 8.94 10.31 9 10.33C9.07 10.36 9.14 10.38 9.21 10.4C9.26 10.41 9.31 10.43 9.35 10.44C9.45 10.47 9.55 10.5 9.64 10.52C9.68 10.53 9.71 10.54 9.75 10.55C9.81 10.57 9.88 10.58 9.95 10.59C10.02 10.6 10.1 10.62 10.17 10.62C10.27 10.63 10.38 10.64 10.48 10.64C10.57 10.64 10.66 10.64 10.75 10.63C10.84 10.63 10.92 10.62 11.01 10.61C11.12 10.59 11.24 10.56 11.35 10.53C11.43 10.51 11.5 10.49 11.58 10.46C11.64 10.44 11.71 10.41 11.78 10.38C11.85 10.34 11.93 10.31 12 10.27C12.03 10.25 12.07 10.23 12.11 10.2C12.14 10.18 12.17 10.16 12.2 10.14C12.26 10.1 12.31 10.07 12.36 10.03C12.4 10 12.44 9.96 12.48 9.93C12.55 9.87 12.63 9.8 12.69 9.73C12.73 9.69 12.76 9.66 12.79 9.62C12.83 9.57 12.87 9.52 12.91 9.48C12.94 9.44 12.97 9.4 13 9.36C13.08 9.24 13.15 9.12 13.22 9L13.29 8.85L13.96 7.51L13.97 7.49C14.19 7.01 14.49 6.58 14.87 6.22Z" fill="#133C9A"/></symbol><symbol id="b-wecom" viewBox="0 0 32 32"><path d="M13.053 2.7c7.033 0 12.754 4.954 12.754 11.084 0 .224-.01.445-.021.667l-.01.136-.102-.09a2.554 2.554 0 0 0-2.532-.504l-.091.03v-.451c-.16-4.558-4.573-8.24-10-8.24-1.13 0-2.217.16-3.232.454l-.43.133C5.673 7.164 3.05 10.241 3.05 13.821c0 2.52 1.3 4.788 3.365 6.348l.094.081a.9.9 0 0 1 .263.667l-.012.124-.351 1.996a.172.172 0 0 0 .254.178l2.293-1.323.085-.042c.2-.088.424-.1.633-.037l.4.115a11.53 11.53 0 0 0 2.98.385 11.59 11.59 0 0 0 3.437-.518l.073-.021.012.076a2.57 2.57 0 0 0 1.63 1.956l.166.064-.167.063a14.35 14.35 0 0 1-5.151.942 14.48 14.48 0 0 1-3.792-.5l-3.79 1.848a.96.96 0 0 1-1.374-.963l.345-3.292C1.9 19.938.3 17.025.3 13.788.3 7.653 6.018 2.7 13.054 2.7z" fill="#0082EF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.29 15.105c.315.315.493.714.533 1.13h.003a4.591 4.591 0 0 0 1.42 2.798l.024.024a.467.467 0 0 1-.009.648.459.459 0 0 1-.648.01l-.024-.025c-.03-.036-.064-.07-.094-.103a4.629 4.629 0 0 0-2.686-1.32 1.877 1.877 0 0 1-1.148-.533 1.853 1.853 0 0 1 0-2.626 1.853 1.853 0 0 1 2.626 0l.003-.003z" fill="#2DBC00"/><path fill-rule="evenodd" clip-rule="evenodd" d="M30.275 22.61a1.836 1.836 0 0 1-1.13.533h-.003a4.624 4.624 0 0 0-2.701 1.326 1.291 1.291 0 0 0-.091.097l-.025.024a.467.467 0 0 1-.648-.009.459.459 0 0 1-.009-.648l.024-.024c.037-.03.07-.063.103-.094a4.63 4.63 0 0 0 1.32-2.686 1.877 1.877 0 0 1 .533-1.148 1.854 1.854 0 0 1 2.627 0 1.854 1.854 0 0 1 0 2.626v.003z" fill="#0082EF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M22.773 27.595a1.836 1.836 0 0 1-.533-1.13h-.003a4.592 4.592 0 0 0-1.324-2.707.994.994 0 0 0-.097-.091l-.024-.024a.467.467 0 0 1 .01-.649.459.459 0 0 1 .647-.009l.025.025c.03.036.063.07.093.102a4.628 4.628 0 0 0 2.687 1.321 1.877 1.877 0 0 1 1.148.533 1.853 1.853 0 0 1 0 2.626 1.854 1.854 0 0 1-2.626 0l-.003.003z" fill="#FB6500"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.785 20.093a1.836 1.836 0 0 1 1.13-.533h.002a4.625 4.625 0 0 0 2.702-1.327c.033-.033.067-.066.09-.097l.025-.024a.467.467 0 0 1 .648.01c.182.181.185.46.01.647l-.025.025c-.036.03-.07.063-.103.093a4.63 4.63 0 0 0-1.32 2.687 1.877 1.877 0 0 1-.533 1.148 1.854 1.854 0 0 1-2.626 0 1.853 1.853 0 0 1 0-2.626v-.003z" fill="#FC0"/></symbol><symbol id="b-slack" viewBox="0 0 256 256"><path fill="#e01e5a" d="M53.841 161.32c0 14.832-11.987 26.82-26.819 26.82S.203 176.152.203 161.32c0-14.831 11.987-26.818 26.82-26.818H53.84zm13.41 0c0-14.831 11.987-26.818 26.819-26.818s26.819 11.987 26.819 26.819v67.047c0 14.832-11.987 26.82-26.82 26.82c-14.83 0-26.818-11.988-26.818-26.82z"/><path fill="#36c5f0" d="M94.07 53.638c-14.832 0-26.82-11.987-26.82-26.819S79.239 0 94.07 0s26.819 11.987 26.819 26.819v26.82zm0 13.613c14.832 0 26.819 11.987 26.819 26.819s-11.987 26.819-26.82 26.819H26.82C11.987 120.889 0 108.902 0 94.069c0-14.83 11.987-26.818 26.819-26.818z"/><path fill="#2eb67d" d="M201.55 94.07c0-14.832 11.987-26.82 26.818-26.82s26.82 11.988 26.82 26.82s-11.988 26.819-26.82 26.819H201.55zm-13.41 0c0 14.832-11.988 26.819-26.82 26.819c-14.831 0-26.818-11.987-26.818-26.82V26.82C134.502 11.987 146.489 0 161.32 0s26.819 11.987 26.819 26.819z"/><path fill="#ecb22e" d="M161.32 201.55c14.832 0 26.82 11.987 26.82 26.818s-11.988 26.82-26.82 26.82c-14.831 0-26.818-11.988-26.818-26.82V201.55zm0-13.41c-14.831 0-26.818-11.988-26.818-26.82c0-14.831 11.987-26.818 26.819-26.818h67.25c14.832 0 26.82 11.987 26.82 26.819s-11.988 26.819-26.82 26.819z"/></symbol></defs></svg><header><img src="/assets/favicon-20261108.jpg" width="38" height="38" alt=""><span>SintBot</span></header><main><div class="copy"><h1>项目群派活<br><em>本机完成工作</em></h1><div class="agents"><span>Claude Code</span><span class="agent-divider" aria-hidden="true"></span><span>Codex</span></div><div class="platforms"><span><svg width="18" height="18" aria-hidden="true"><use href="#b-feishu"/></svg><span>飞书</span></span><span><svg width="18" height="18" aria-hidden="true"><use href="#b-wecom"/></svg><span>企业微信</span></span><span><svg width="18" height="18" aria-hidden="true"><use href="#b-slack"/></svg><span>Slack</span></span></div></div><div class="product"><div class="product-head"><span class="project"><img src="/assets/favicon-20261108.jpg" width="20" height="20" alt="">官网项目</span><span class="runner">Codex</span></div><div class="thread"><div class="ask">调整首页，沿用现有风格。<br>检查手机上的显示效果。</div><div class="reply"><img src="/assets/favicon-20261108.jpg" width="22" height="22" alt=""><div class="reply-body"><strong>SintBot</strong><p>首页已更新。</p><div class="file-result"><svg viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h7l5 5v14H4zM11 1.5v5h5M7 11h6M7 15h6"/></svg><span>index.html</span><em>已检查</em></div><p class="note">项目记录已保存</p></div></div></div></div></main><footer><span class="models">GPT · Claude · GLM · DeepSeek · MiniMax · Kimi</span><span class="domain">sintbot.com</span></footer></body></html>

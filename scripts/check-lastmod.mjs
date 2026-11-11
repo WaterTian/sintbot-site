@@ -8,7 +8,7 @@ import { visible } from './visible.mjs'
 
 const SITE = 'https://sintbot.com'
 // 不是网站页面的 .html:搜索后台验证文件、分享图的设计源文件(_config.yml 里也不发布)
-const NOT_PAGES = [/^google[0-9a-f]+\.html$/, /^assets\//]
+const NOT_PAGES = [/^404\.html$/, /^google[0-9a-f]+\.html$/, /^assets\//]
 
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
 // rev 为空 = 暂存区里的版本(git show :file)

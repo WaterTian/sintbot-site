@@ -1,6 +1,6 @@
 # SintBot
 
-> Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine.
+> SintBot links project work to Claude Code or Codex, with GPT, Claude, GLM, DeepSeek, MiniMax and Kimi. Explore Feishu, WeCom and Slack workflows.
 
 Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts as the page.
 
@@ -52,7 +52,7 @@ Project files and saved shared notes remain. Switching starts a fresh conversati
 
 ## 中文
 
-> 把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。
+> SintBot 面向飞书、企业微信、Slack 项目群，把任务交给本机 Claude Code / Codex。模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。
 
 ## 常见问题
 

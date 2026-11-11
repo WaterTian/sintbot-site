@@ -1,7 +1,7 @@
 /* SintBot — visual system studied from tasteskill.dev, 2026-11-08.
    Palette refined for SintBot: graphite, restrained copper and paper white.
    Original product UI and content; Google Sans fonts under SIL OFL. */
-@font-face{font-family:"Google Sans Flex";font-style:normal;font-weight:1 1000;font-display:swap;src:url('/assets/fonts/google-sans-flex-latin.woff2') format('woff2')}
+@font-face{font-family:"Google Sans Flex";font-style:normal;font-weight:400 750;font-display:swap;src:url('/assets/fonts/google-sans-flex-rounded-latin.woff2') format('woff2')}
 @font-face{font-family:"Google Sans Code";font-style:normal;font-weight:300 800;font-display:swap;src:url('/assets/fonts/google-sans-code-latin.woff2') format('woff2')}
 :root{
   --ink:#252b32;--ink-deep:#13171c;--ink-2:#25252a;--rust:#71442e;
@@ -162,3 +162,10 @@ html:lang(en) :is(.plugin__steps-h,.step h3){text-wrap:balance}
 
 /* Recognizable chat platform marks in the channel capability card. */
 .card--channels{display:flex;flex-direction:column}.channel-platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:18px;padding-top:16px;border-top:1px solid #161b2212}.channel-platform{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;white-space:nowrap;color:var(--text-2);font-size:12px;font-weight:550}.channel-platform .brand{display:block;width:22px;height:22px;overflow:visible}@media(max-width:520px){.channel-platforms{padding-top:16px}.channel-platform{gap:5px;font-size:12px}.channel-platform .brand{width:21px;height:21px}}
+
+/* Brand labels: retain names beside their full-colour marks. */
+.channel-platform{flex-direction:column;gap:7px;align-items:center;text-align:center}.channel-platform .brand{width:28px;height:28px}
+.flow-ui__route>b{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.flow-ui__route>b .brand{width:22px;height:22px}
+.showcase__agent{display:inline-flex;align-items:center;gap:4px}.showcase__agent .brand{width:14px;height:14px}
+
+@media(max-width:400px){.flow-ui__route{grid-template-columns:1fr;gap:8px}.flow-ui__models{padding-left:29px;border-left:0}}

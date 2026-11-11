@@ -49,16 +49,16 @@
   "flow.ui.checked": {"en": "Mobile layout checked", "zh": "手机布局已核对"},
   "flow.ui.saved": {"en": "Project notes updated", "zh": "项目记录已更新"},
   "meta.title": {
-    "en": "SintBot — one project group, your choice of model",
-    "zh": "SintBot —— 一群一项目，模型随时换"
+    "en": "SintBot | Feishu, WeCom & Slack × Claude Code / Codex",
+    "zh": "SintBot｜飞书、企业微信、Slack × Claude Code / Codex"
   },
   "meta.description": {
-    "en": "Connect your project group to Claude Code or Codex. Use Claude, GPT, or GLM, MiniMax and DeepSeek through Claude Code; keep project files and shared notes on your own machine.",
-    "zh": "把项目群接入 Claude Code 或 Codex，可选 Claude、GPT，也可通过 Claude Code 接入 GLM、MiniMax、DeepSeek 等模型。项目文件与共享记忆保留在自己的机器上。"
+    "en": "SintBot links project work to Claude Code or Codex, with GPT, Claude, GLM, DeepSeek, MiniMax and Kimi. Explore Feishu, WeCom and Slack workflows.",
+    "zh": "SintBot 面向飞书、企业微信、Slack 项目群，把任务交给本机 Claude Code / Codex。模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。"
   },
   "meta.ogAlt": {
-    "en": "SintBot — one project group, switch models, keep project memory",
-    "zh": "SintBot —— 一群一项目，模型随时换，项目记忆延续"
+    "en": "SintBot — project groups, Claude Code and Codex, local project files",
+    "zh": "SintBot｜飞书、企业微信、Slack × Claude Code / Codex，项目记忆延续"
   },
   "nav.platforms": {
     "en": "How it works",
@@ -85,8 +85,8 @@
     "zh": "<span class=\"zh-title-line\">把编码助手</span><span class=\"zh-title-line\">接进项目群</span>"
   },
   "hero.lede": {
-    "en": "Put Claude Code or Codex to work from your project group. Choose Claude, GPT, GLM, MiniMax or DeepSeek. Keep your files and project memory on your own machine.",
-    "zh": "在项目群里，让 Claude Code 或 Codex 开工。Claude、GPT、GLM、MiniMax、DeepSeek，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
+    "en": "Put Claude Code or Codex to work from your project group. Choose GPT, Claude, GLM, DeepSeek, MiniMax or Kimi. Keep your files and project memory on your own machine.",
+    "zh": "在项目群里，让 Claude Code 或 Codex 开工。GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
   },
   "hero.cta.primary": {
     "en": "See how it works",
@@ -273,8 +273,8 @@
     "zh": "<span class=\"zh-title-line\">按你的工作方式</span><span class=\"zh-title-line\"><em>选择合适的模型</em></span>"
   },
   "models.lede": {
-    "en": "Claude Code and Codex are the coding agents. Claude, GPT, GLM, MiniMax and DeepSeek are the models behind them. Choose the combination that fits your project.",
-    "zh": "Claude Code、Codex 是编码执行器；Claude、GPT、GLM、MiniMax、DeepSeek 是背后的模型。为项目选择合适的组合。"
+    "en": "Claude Code and Codex are the coding agents. GPT, Claude, GLM, DeepSeek, MiniMax and Kimi are the models behind them. Choose the combination that fits your project.",
+    "zh": "Claude Code、Codex 是编码执行器；GPT、Claude、GLM、DeepSeek、MiniMax、Kimi 是背后的模型。为项目选择合适的组合。"
   },
   "models.p.claude": {
     "en": "through Claude Code",

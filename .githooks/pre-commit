@@ -3,4 +3,5 @@
 # or whose changed page text is missing today's lastmod in sitemap.xml.
 # Enable once per clone: git config core.hooksPath .githooks
 node scripts/build-zh.mjs --check || exit 1
+node scripts/build-guide-seo.mjs --check || exit 1
 exec node scripts/check-lastmod.mjs

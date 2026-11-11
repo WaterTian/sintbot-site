@@ -147,6 +147,11 @@ function head(html, lang) {
   html = setOnce(html, meta("property", "og:url"), page, "og:url");
   html = setOnce(html, meta("property", "og:locale"), zh ? "zh_CN" : "en_US", "og:locale");
   html = setOnce(html, /(<link rel="canonical" href=")[^"]*(")/, page, "canonical");
+  const image = `${SITE}/assets/og-banner${zh ? "-zh" : ""}.png?v=20261111`;
+  html = setOnce(html, meta("property", "og:image"), image, "og:image");
+  html = setOnce(html, meta("property", "og:image:alt"), attr(pick("meta.ogAlt")), "og:image:alt");
+  html = setOnce(html, meta("name", "twitter:image"), image, "twitter:image");
+  html = setOnce(html, meta("name", "twitter:image:alt"), attr(pick("meta.ogAlt")), "twitter:image:alt");
   const ld = html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g);
   if (!ld || ld.length !== 1) fail(`expected exactly one JSON-LD block in index.html, found ${ld ? ld.length : 0}`);
   return html.replace(ld[0], jsonLd(lang));
