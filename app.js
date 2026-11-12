@@ -14,7 +14,7 @@
   // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
   // keep this aligned with the versioned installation guide.
   // Bump this one line only, then run scripts/build-zh.mjs.
-  const VERSION = "1.4.16";
+  const VERSION = "1.4.17";
 
   const translations = {
   "nav.install": {en:"Install",zh:"安装指南"},
@@ -121,16 +121,16 @@
     "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，并安装、登录 Claude Code 或 Codex，按安装指南完成配置。"
   },
   "plugin.meta.kind": {
-    "en": "npm · sintbot v1.4.16",
-    "zh": "npm · sintbot v1.4.16"
+    "en": "npm · sintbot v1.4.17",
+    "zh": "npm · sintbot v1.4.17"
   },
   "install.h": {
     "en": "Install once, then connect your group",
     "zh": "一行安装，再连接项目群"
   },
   "install.lede": {
-    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.16 installation guide</a> for the full configuration and exact startup commands.",
-    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.16 安装指南</a>。"
+    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.17 installation guide</a> for the full configuration and exact startup commands.",
+    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.17 安装指南</a>。"
   },
   "install.quick": {
     "en": "Install with one command. The installer checks your environment, installs SintBot and verifies the result.",
@@ -213,8 +213,8 @@
     "zh": "安装需要准备什么？"
   },
   "faq.5.a": {
-    "en": "A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China application configured according to the installation guide. The installer installs SintBot; app credentials and group binding are configured separately.",
-    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及按安装指南配置好的飞书中国版应用。一行命令安装程序，应用凭据与群绑定仍需单独配置。"
+    "en": "A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. Install SintBot, then confirm a scan on your phone; setup creates the bot app and project group automatically.",
+    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。一行安装后用手机扫码确认，接入流程自动创建机器人应用和项目群。"
   },
   "cta.h": {
     "en": "Bring your project<br><em>into the group chat</em>",

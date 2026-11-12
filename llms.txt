@@ -13,7 +13,7 @@ Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts a
 - [安装指南](https://sintbot.com/zh/guide/install/): 安装、配置和验证
 - [使用说明](https://sintbot.com/zh/guide/usage/): 派活、模型、记忆与协作
 - [SintBot on GitHub](https://github.com/sintlab/sintbot): project and installation documentation for SintBot with its built-in core
-- [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.4.16; use the isolated installer and versioned guide on the website
+- [sintbot on npm](https://www.npmjs.com/package/sintbot): exact version 1.4.17; use the isolated installer and versioned guide on the website
 - [WaterTian](https://github.com/WaterTian): the sole author of SintBot
 - [SintLab](https://sintlab.com/): the publisher and project studio for SintBot
 - [Terms of Service](https://sintbot.com/terms.html): licensing and acceptable use
@@ -40,7 +40,7 @@ No. SintBot and the project run on your machine, but the chat platform and confi
 
 ### What do I need to install it?
 
-A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China application configured according to the installation guide. The installer installs SintBot; app credentials and group binding are configured separately.
+A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. Install SintBot, then confirm a scan on your phone; setup creates the bot app and project group automatically.
 
 ### Which models can SintBot use?
 
@@ -74,7 +74,7 @@ SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自
 
 ### 安装需要准备什么？
 
-一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及按安装指南配置好的飞书中国版应用。一行命令安装程序，应用凭据与群绑定仍需单独配置。
+一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。一行安装后用手机扫码确认，接入流程自动创建机器人应用和项目群。
 
 ### SintBot 可以使用哪些模型？
 
