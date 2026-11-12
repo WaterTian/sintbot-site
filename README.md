@@ -1,5 +1,7 @@
 # SintBot website
 
+Repository: [sintlab/sintbot-site](https://github.com/sintlab/sintbot-site). GitHub Pages serves [sintbot.com](https://sintbot.com/) from `main` using the existing custom domain.
+
 The homepage describes SintBot's project-group workflow, Claude Code / Codex execution routes and configurable models, including Claude, GLM, MiniMax and DeepSeek. The visual reference is tasteskill.dev, adapted with SintBot's graphite, copper and paper palette. Preserve the current typography, interactions and supplied JPEG brand icon.
 
 The 1.4.16 download supports macOS, 1–32 Feishu China groups with Codex or Claude Code per group, chat commands and a local console, in the foreground. Keep this exact scope in the bilingual installation guide while the homepage and usage guide describe the product workflow. The primary installation command is `curl -fsSL https://sintbot.com/install.sh | bash`; Feishu credentials and project configuration are separate first-use steps.

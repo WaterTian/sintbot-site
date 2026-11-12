@@ -1,6 +1,6 @@
 # SintBot website
 
-Public repository for sintbot.com. Describe the product separately from the availability of a specific release. Keep installation statements consistent with the exact released package and versioned installation guide.
+Public repository [sintlab/sintbot-site](https://github.com/sintlab/sintbot-site) for sintbot.com. Describe the product separately from the availability of a specific release. Keep installation statements consistent with the exact released package and versioned installation guide.
 
 ## Product positioning (user correction, 2026-11-08 13:59)
 

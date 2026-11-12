@@ -1,7 +1,7 @@
 # 每小时让官网的版本号跟上 npm 上 sintbot 的最新版(scripts/sync-version.mjs --write)。
 # 有改动:以 WaterTian 身份提交推 main → 请求 Pages 构建(GITHUB_TOKEN 推的提交不会自己触发构建)
 # → 等线上 app.js 显示新版本 → 通知 IndexNow。任何一步失败 = 工作流失败,GitHub 发邮件。
-# 发完版不想等整点:gh workflow run version-sync.yml -R WaterTian/sintbot-site
+# 发完版不想等整点:gh workflow run version-sync.yml -R sintlab/sintbot-site
 name: Version sync
 
 on:
