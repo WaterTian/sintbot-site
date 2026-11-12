@@ -153,20 +153,20 @@
     "zh": "复制上方命令，在终端执行；安装器自动验证程序包。"
   },
   "install.3.title": {
-    "en": "Link a group",
-    "zh": "连接一个群"
+    "en": "Scan to connect",
+    "zh": "扫码接入飞书"
   },
   "install.3.after": {
-    "en": "Create a Feishu custom app, configure its long connection and bind one group to an existing project. Follow the versioned guide.",
-    "zh": "创建飞书自建应用，配置长连接，将一个群绑定到现有项目，按版本指南完成配置。"
+    "en": "Run <code>sintbot connect</code> and scan with Feishu on your phone. SintBot creates the bot app, the project folder and the group, then saves the configuration. Manual setup remains in the guide.",
+    "zh": "运行 <code>sintbot connect</code>，用手机飞书扫码确认。SintBot 自动创建机器人应用、项目目录和群，并写好配置；手动接入仍见指南。"
   },
   "install.4.title": {
     "en": "Start and verify",
     "zh": "启动并验证消息"
   },
   "install.4.after": {
-    "en": "For a new installation, copy the combined first-start commands from the guide. Keep the terminal open and verify one read-only reply.",
-    "zh": "全新安装按指南复制一组首次启动命令，保持终端开启，再验证一条只读答复。"
+    "en": "Run the start command shown after the scan. Keep the terminal open and verify one read-only reply in the new group.",
+    "zh": "运行扫码完成后显示的启动命令，保持终端开启，在新群验证一条只读答复。"
   },
   "faq.kicker": {
     "en": "A FEW GOOD QUESTIONS",
