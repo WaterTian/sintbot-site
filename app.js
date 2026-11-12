@@ -14,7 +14,7 @@
   // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
   // keep this aligned with the versioned installation guide.
   // Bump this one line only, then run scripts/build-zh.mjs.
-  const VERSION = "1.4.17";
+  const VERSION = "1.4.18";
 
   const translations = {
   "nav.install": {en:"Install",zh:"安装指南"},
@@ -121,16 +121,16 @@
     "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，并安装、登录 Claude Code 或 Codex，按安装指南完成配置。"
   },
   "plugin.meta.kind": {
-    "en": "npm · sintbot v1.4.17",
-    "zh": "npm · sintbot v1.4.17"
+    "en": "npm · sintbot v1.4.18",
+    "zh": "npm · sintbot v1.4.18"
   },
   "install.h": {
     "en": "Install once, then connect your group",
     "zh": "一行安装，再连接项目群"
   },
   "install.lede": {
-    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.17 installation guide</a> for the full configuration and exact startup commands.",
-    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.17 安装指南</a>。"
+    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.18 installation guide</a> for the full configuration and exact startup commands.",
+    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.18 安装指南</a>。"
   },
   "install.quick": {
     "en": "Install with one command. The installer checks your environment, installs SintBot and verifies the result.",
@@ -157,16 +157,16 @@
     "zh": "扫码接入飞书"
   },
   "install.3.after": {
-    "en": "Run <code>sintbot connect</code> and scan with Feishu on your phone. SintBot creates the bot app, the project folder and the group, then saves the configuration. Manual setup remains in the guide.",
-    "zh": "运行 <code>sintbot connect</code>，用手机飞书扫码确认。SintBot 自动创建机器人应用、项目目录和群，并写好配置；手动接入仍见指南。"
+    "en": "Open setup using the installation guide. Name the project, choose an executor and confirm the scan in Feishu. SintBot creates the app and group, saving the executor’s live recommended model and thinking depth for the new group.",
+    "zh": "按安装指南打开本机接入页，填项目名、选执行器，再用手机飞书扫码确认。SintBot 自动建应用和群，并为新群保存执行器实时推荐的型号与思考深度。"
   },
   "install.4.title": {
     "en": "Start and verify",
     "zh": "启动并验证消息"
   },
   "install.4.after": {
-    "en": "Run the start command shown after the scan. Keep the terminal open and verify one read-only reply in the new group.",
-    "zh": "运行扫码完成后显示的启动命令，保持终端开启，在新群验证一条只读答复。"
+    "en": "After setup completes, the service starts and the console opens. Keep the terminal open and verify one read-only reply in the new group.",
+    "zh": "接入完成后服务启动，页面切到控制台。保持终端开启，在新群验证一条只读答复。"
   },
   "faq.kicker": {
     "en": "A FEW GOOD QUESTIONS",
