@@ -14,7 +14,7 @@
   // section and the JSON-LD softwareVersion. Mirror of the latest npm release;
   // keep this aligned with the versioned installation guide.
   // Bump this one line only, then run scripts/build-zh.mjs.
-  const VERSION = "1.4.20";
+  const VERSION = "1.4.21";
 
   const translations = {
   "nav.install": {en:"Install",zh:"安装指南"},
@@ -119,16 +119,16 @@
   },
   "plugin.lede": {"en": "Download the macOS app or install from the terminal, then connect your project to Feishu. Keep using your installed and signed-in Claude Code or Codex.", "zh": "下载 macOS 桌面版，或通过终端安装，再将项目接入飞书。沿用已经安装并登录的 Claude Code 或 Codex。"},
   "plugin.meta.kind": {
-    "en": "npm · sintbot v1.4.20",
-    "zh": "npm · sintbot v1.4.20"
+    "en": "npm · sintbot v1.4.21",
+    "zh": "npm · sintbot v1.4.21"
   },
   "install.h": {
     "en": "Install once, then connect your group",
     "zh": "一行安装，再连接项目群"
   },
   "install.lede": {
-    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.20 installation guide</a> for the full configuration and exact startup commands.",
-    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.20 安装指南</a>。"
+    "en": "Use the <a class=\"install-guide\" href=\"/guide/install/\">1.4.21 installation guide</a> for the full configuration and exact startup commands.",
+    "zh": "完整配置和准确的启动步骤见 <a class=\"install-guide\" href=\"/zh/guide/install/\">1.4.21 安装指南</a>。"
   },
   "install.quick": {
     "en": "Install with one command. The installer checks your environment, installs SintBot and verifies the result.",
