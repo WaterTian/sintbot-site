@@ -40,7 +40,7 @@ No. SintBot and the project run on your machine, but the chat platform and confi
 
 ### What do I need to install it?
 
-A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. Install SintBot, then confirm a scan on your phone; setup creates the bot app and project group automatically.
+An Apple silicon Mac for the desktop app, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. The app includes Node.js; terminal installation requires Node.js 22+. Confirm the QR scan on your phone to create the bot app and project group.
 
 ### Which models can SintBot use?
 
@@ -74,7 +74,7 @@ SintBot 可接入飞书群、Slack 频道和企业微信群。每个群绑定自
 
 ### 安装需要准备什么？
 
-一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。一行安装后用手机扫码确认，接入流程自动创建机器人应用和项目群。
+桌面版需要 Apple 芯片 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。App 自带 Node.js；终端安装需要 Node.js 22 及以上。用手机扫码确认后，接入流程自动创建机器人应用和项目群。
 
 ### SintBot 可以使用哪些模型？
 

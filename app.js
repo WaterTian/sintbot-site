@@ -112,14 +112,12 @@
     "en": "GET STARTED",
     "zh": "开始使用"
   },
+  "desktop.download": {"en":"Download for Mac","zh":"下载 Mac 桌面版"},
   "plugin.h": {
     "en": "Your next project<br><em>in the group chat</em>",
     "zh": "<span class=\"zh-title-line\">把下一个项目</span><span class=\"zh-title-line\"><em>接进群里</em></span>"
   },
-  "plugin.lede": {
-    "en": "Install SintBot on your Mac and connect a project to Feishu. Prepare Node.js 22 or later and either Claude Code or Codex, installed and signed in, then follow the installation guide.",
-    "zh": "在自己的 Mac 上安装 SintBot，将项目接入飞书。准备 Node.js 22 及以上，并安装、登录 Claude Code 或 Codex，按安装指南完成配置。"
-  },
+  "plugin.lede": {"en": "Download the macOS app or install from the terminal, then connect your project to Feishu. Keep using your installed and signed-in Claude Code or Codex.", "zh": "下载 macOS 桌面版，或通过终端安装，再将项目接入飞书。沿用已经安装并登录的 Claude Code 或 Codex。"},
   "plugin.meta.kind": {
     "en": "npm · sintbot v1.4.18",
     "zh": "npm · sintbot v1.4.18"
@@ -212,10 +210,7 @@
     "en": "What do I need to install it?",
     "zh": "安装需要准备什么？"
   },
-  "faq.5.a": {
-    "en": "A Mac with Node.js 22+, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. Install SintBot, then confirm a scan on your phone; setup creates the bot app and project group automatically.",
-    "zh": "一台已安装 Node.js 22 及以上的 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。一行安装后用手机扫码确认，接入流程自动创建机器人应用和项目群。"
-  },
+  "faq.5.a": {"en": "An Apple silicon Mac for the desktop app, an installed and signed-in Claude Code or Codex, and a Feishu China team identity. The app includes Node.js; terminal installation requires Node.js 22+. Confirm the QR scan on your phone to create the bot app and project group.", "zh": "桌面版需要 Apple 芯片 Mac、已安装并登录的 Claude Code 或 Codex，以及飞书中国版的企业或团队身份。App 自带 Node.js；终端安装需要 Node.js 22 及以上。用手机扫码确认后，接入流程自动创建机器人应用和项目群。"},
   "cta.h": {
     "en": "Bring your project<br><em>into the group chat</em>",
     "zh": "<span class=\"zh-title-line\">让项目回到</span><span class=\"zh-title-line\">团队的对话里</span>"
