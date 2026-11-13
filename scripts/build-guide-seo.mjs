@@ -15,7 +15,7 @@ for (const file of files) {
   const url = original.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   if (!title || !description || !url) throw Error(`Missing guide metadata: ${file}`);
   const zh = file.startsWith('zh/');
-  const image = `https://sintbot.com/assets/og-banner${zh ? '-zh' : ''}.png?v=20261111`;
+  const image = `https://sintbot.com/assets/og-banner${zh ? '-zh' : ''}.png?v=20261113`;
   const graph = {
     '@context': 'https://schema.org', '@graph': [
       { '@type': 'TechArticle', '@id': `${url}#article`, headline: title, description, url,

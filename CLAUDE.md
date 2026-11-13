@@ -12,7 +12,7 @@ SintBot is positioned in two layers: a personal AI agent that runs on the user's
 
 ## Palette and product-window refinement (2026-11-08 14:25–14:28)
 
-Keep the Taste Skill composition and interactions, with a restrained SintBot palette: graphite #13171c, copper #dd7d3d and paper #f6f5f1. Use the user-supplied dark app-card reference for the product window: charcoal surfaces, gray user bubble, unboxed assistant progress, fine separators and copper accents. Use the exact user-supplied 14:42 image in assets/favicon-20261108.jpg (black disc, white symbol with gray outline) for favicon and SintBot branding; it supersedes the earlier favicon.svg; do not replace it with a letter S or the retired PCB logo. Provider logos and semantic status colors retain their meanings.
+Keep the Taste Skill composition and interactions, with a restrained SintBot palette: graphite #13171c, copper #dd7d3d and paper #f6f5f1. Use the user-supplied dark app-card reference for the product window: charcoal surfaces, gray user bubble, unboxed assistant progress, fine separators and copper accents. The 2026-11-13 decision uses the current console SVG as the brand authority. The matching vector is assets/favicon.svg: use it for site favicons and brand marks, preserving its white backing disc and exact black path. This supersedes the earlier JPEG preference; do not redraw the mark or revive the retired PCB logo. Provider logos and semantic status colors retain their meanings.
 
 ## Workflow cards and copy (2026-11-08 14:48–14:49)
 

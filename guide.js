@@ -35,7 +35,7 @@
   dialog.className = 'guide-zoom';
   const close = document.createElement('button'); close.type = 'button';
   close.textContent = document.documentElement.lang.startsWith('zh') ? '关闭 ×' : 'Close ×';
-  const img = document.createElement('img'); dialog.append(close,img); document.body.append(dialog);
+  const img = document.createElement('img'); img.alt = ''; dialog.append(close,img); document.body.append(dialog);
   let opener;
   const restore = () => { document.body.style.overflow=''; opener?.focus({preventScroll:true}); };
   close.addEventListener('click',()=>dialog.close());
