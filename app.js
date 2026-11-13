@@ -53,8 +53,8 @@
     "zh": "SintBot｜飞书、企业微信、Slack × Claude Code / Codex"
   },
   "meta.description": {
-    "en": "SintBot links project work to Claude Code or Codex, with GPT, Claude, GLM, DeepSeek, MiniMax and Kimi. Explore Feishu, WeCom and Slack workflows.",
-    "zh": "SintBot 面向飞书、企业微信、Slack 项目群，把任务交给本机 Claude Code / Codex。模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。"
+    "en": "SintBot is a personal AI agent on your own Mac. Message it in Feishu or Slack and it works with Claude Code or Codex, alone or in a project group.",
+    "zh": "SintBot 是跑在你自己 Mac 上的个人 AI 助理：在飞书或 Slack 里交代一句，本机的 Claude Code / Codex 就开工。一个人用或进项目群都行，模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。"
   },
   "meta.ogAlt": {
     "en": "SintBot — project groups, Claude Code and Codex, local project files",
@@ -85,8 +85,8 @@
     "zh": "<span class=\"zh-title-line\">把编码助手</span><span class=\"zh-title-line\">接进项目群</span>"
   },
   "hero.lede": {
-    "en": "Put Claude Code or Codex to work from your project group. Choose GPT, Claude, GLM, DeepSeek, MiniMax or Kimi. Keep your files and project memory on your own machine.",
-    "zh": "在项目群里，让 Claude Code 或 Codex 开工。GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
+    "en": "A personal AI agent on your own Mac. Message it in Feishu or Slack and it puts Claude Code or Codex to work: your assistant when you are on your own, the team's teammate in a project group. Choose GPT, Claude, GLM, DeepSeek, MiniMax or Kimi. Your files and project memory stay on your machine.",
+    "zh": "跑在你自己 Mac 上的个人 AI 助理。在飞书或 Slack 里交代一句，它就让 Claude Code 或 Codex 开工：一个人用是助理，进了项目群是团队的同事。GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，按任务选择。项目文件与写下的记忆，留在自己的机器上。"
   },
   "hero.cta.primary": {
     "en": "See how it works",

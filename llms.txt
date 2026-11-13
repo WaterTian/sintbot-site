@@ -1,6 +1,6 @@
 # SintBot
 
-> SintBot links project work to Claude Code or Codex, with GPT, Claude, GLM, DeepSeek, MiniMax and Kimi. Explore Feishu, WeCom and Slack workflows.
+> SintBot is a personal AI agent on your own Mac. Message it in Feishu or Slack and it works with Claude Code or Codex, alone or in a project group.
 
 Generated from https://sintbot.com/ by scripts/build-zh.mjs — the same facts as the page.
 
@@ -52,7 +52,7 @@ Project files and saved shared notes remain. Switching starts a fresh conversati
 
 ## 中文
 
-> SintBot 面向飞书、企业微信、Slack 项目群，把任务交给本机 Claude Code / Codex。模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。
+> SintBot 是跑在你自己 Mac 上的个人 AI 助理：在飞书或 Slack 里交代一句，本机的 Claude Code / Codex 就开工。一个人用或进项目群都行，模型可选 GPT、Claude、GLM、DeepSeek、MiniMax、Kimi，项目文件与共享记忆留在本机。
 
 ## 常见问题
 
