@@ -26,3 +26,26 @@
   }));
   const hero=document.querySelector('.guide-hero');if(hero&&!reduced.matches)hero.animate([{opacity:.4,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:650,easing:'cubic-bezier(.16,1,.3,1)'});
 })();
+
+// Screens remain ordinary image links without JavaScript.
+(() => {
+  const links = [...document.querySelectorAll('[data-guide-image]')];
+  if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+  const dialog = document.createElement('dialog');
+  dialog.className = 'guide-zoom';
+  const close = document.createElement('button'); close.type = 'button';
+  close.textContent = document.documentElement.lang.startsWith('zh') ? '关闭 ×' : 'Close ×';
+  const img = document.createElement('img'); dialog.append(close,img); document.body.append(dialog);
+  let opener;
+  const restore = () => { document.body.style.overflow=''; opener?.focus({preventScroll:true}); };
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+  dialog.addEventListener('close',restore);
+  links.forEach(link=>link.addEventListener('click',e=>{
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();opener=link;img.src=link.href;img.alt=link.querySelector('img').alt;
+    dialog.setAttribute('aria-label',img.alt);dialog.showModal();document.body.style.overflow='hidden';close.focus();
+  }));
+  function revealHash(){const target=document.getElementById(location.hash.slice(1));if(!target)return;let p=target.parentElement;while(p){if(p.tagName==='DETAILS')p.open=true;p=p.parentElement;}requestAnimationFrame(()=>target.scrollIntoView());}
+  addEventListener('hashchange',revealHash);if(location.hash)revealHash();
+})();
